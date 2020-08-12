@@ -1,2 +1,5 @@
 *.dws
 .ipynb_checkpoints
+_toc.yml
+_config.yml
+_build/*
