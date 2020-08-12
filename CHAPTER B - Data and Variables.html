@@ -566,11 +566,6 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     B-3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#b-4">
      B-4
     </a>
@@ -690,12 +685,13 @@
                 
   <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⎕load &#39;res\DyalogTutor_EN.dws&#39;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">)</span><span class="n">load</span> <span class="n">res</span><span class="o">/</span><span class="n">DyalogTutor_EN</span><span class="o">.</span><span class="n">dws</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">                                                                                                  
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">res/DyalogTutor_EN.dws saved Tue Aug 11 09:28:49 2020
+
 Welcome                                                                                           
 -------                                                                                           
 This Workspace contains most of the variables and functions used in the ENglish tutorial.         
@@ -712,24 +708,29 @@ To know in which chapter an object is referenced, type:
 </div>
 <p><strong>Notes &amp; Questions</strong>:</p>
 <ul class="simple">
-<li><p>what programming conventions should be adopted? shoud the original style be kept? e.g. variable naming with upper VS lower case letter for arrays, etc.</p></li>
+<li><p>what programming conventions should be adopted? should the original style be kept? e.g. variable naming with upper VS lower case letter for arrays, etc.</p></li>
 <li><p>Bernard originally talks about how multiple assignment without () on the left is allowed but discouraged for compatibility reasons with other APLs; I kept the paragraph and included a note on how such a thing is bad and should be avoided; should this small part be removed altogether?</p></li>
 <li><p>I wrote <a class="reference external" href="#1.4-Different-Types-of-Numbers">1.4 Different Types of Numbers</a> to include a first reference to complex numbers; is this a good place to mention them for the first time?</p></li>
 <li><p>the first sentence of <a class="reference external" href="#2---Arrays-of-Items">section 2</a> says “an array is a set of zero or more items”; while I don’t think “set” here was intended in the mathematical sense, I changed it to “sequence” as I feel it is more accurate.</p></li>
-<li><p>whenever the author talks about a fictional character, the author assigns them a gender, usually masculine; should I change the examples to be of unspecified gender by using “they/their/them”?</p></li>
+<li><p>can I drop passages in which differences between Dyalog Classic and Dyalog Unicode are explained? Doesn’t everyone just install Dyalog Unicode nowadays?</p></li>
 <li><p>the author talks about () vs [] for indexing in different languages but doesn’t mention the fact that indexing in APL is 1-based while in many other languages it’s 0-based… Shouldn’t this be, at least, mentioned briefly?</p></li>
+<li><p>in section 8 the author demonstrates some user commands like )save )copy )pcopy )load )continue etc, and for many of those uses random paths that do not exist; for that matter, I included the examples formatted like so:</p></li>
 </ul>
+<div class="highlight-apl notranslate"><div class="highlight"><pre><span></span>      <span class="p">)</span><span class="nv">copy</span> <span class="nv">Toolbox</span> <span class="nv">Hammer</span> <span class="nv">Screwdriver</span>
+</pre></div>
+</div>
+<p>should I create an appropriate set of folders/workspaces so that the examples make sense?</p>
 <div class="section" id="chapter-b-data-and-variables">
 <h1>Chapter B: Data and Variables<a class="headerlink" href="#chapter-b-data-and-variables" title="Permalink to this headline">¶</a></h1>
-<p>When you use APL, you type an expression or a command into the session window, and the result of the expression, or a message resulting from the execution of the command, is displayed starting on the next line. So an APL “session” is a sequence of user input lines (expressions and/or commands) interleaved with the results of the expressions.</p>
-<p>To help you see what you have done, APL initially positions the input cursor <span class="math notranslate nohighlight">\(6\)</span> spaces in from the left margin. Unless you deliberately move the cursor before you start typing, the expressions you enter into the system will therefore be indented, whereas the results of the expressions will not. Having been written in Jupyter notebooks, this book mimics some of that behaviour by having code blocks that can be ran interactively by you, the reader.</p>
-<p>In this book, expressions you enter are in a shaded rectangle (an <em><strong>input cell</strong></em>) precedeed by <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[X]:</span></code> and the results of the expressions are precedeed by the corresponding <code class="docutils literal notranslate"><span class="pre">Out[X]:</span></code> and displayed in a white region (the <em><strong>output cell</strong></em>). You can run an input cell by selecting it and pressing <em>Ctrl</em>+<em>Enter</em>; when you do so, the numbers in <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[X]</span></code> and <code class="docutils literal notranslate"><span class="pre">Out[X]</span></code> are updated to indicate the cell has just been ran.</p>
-<p>It is recommended that you go through this tutorial in front of your computer, and experiment by typing the expressions given below into the Dyalog session window. Alternatively, if you are reading the book online in a dynamic format, you can re-run the <em>input cells</em> for yourself. Either way, try changing the expressions, and observe the new results.</p>
+<p>When you use APL, you type an expression or a command into the session window, and the result of the expression (or a message resulting from the execution of the command) is displayed on the next line(s). So an APL “session” is a sequence of user input lines (expressions and/or commands) interleaved with the results of the expressions.</p>
+<p>If you type these expressions and/or commands in the Dyalog APL software you installed, or on the <a class="reference external" href="https://tryapl.org">TryAPL</a>, you will see that APL initially positions the input cursor 6 spaces in from the left margin. Unless you deliberately move the cursor before you start typing, the expressions you enter into the system will therefore be indented; you can evaluate what you type by pressing <kbd>Enter</kbd>, which will make the result appear below what you typed and left aligned with the margin. This interactive session is commonly referred to as an <em><strong>interpreter session</strong></em> because some software is interpreting what you type and providing you with results on the fly.</p>
+<p>This book, however, was written in Jupyter notebooks, which works in a slightly different way. In here, you can find blocks of text (like the one you are reading <em>right now</em>) interleaved with code blocks. Depending on where you are reading this, these code blocks may be static or they may be interactive, allowing you, the reader, to change them and run them at will. The expressions you enter go in the shaded rectangles (the <em><strong>input cells</strong></em>, preceded by a <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[X]:</span></code>) and you can evaluate them by pressing <kbd>Ctrl</kbd>+<kbd>Enter</kbd>. The results of the expressions are then placed inside white rectangles (the <em><strong>output cells</strong></em>, preceded by the corresponding <code class="docutils literal notranslate"><span class="pre">Out[X]:</span></code>) which get updated when you re-evaluate the same <em>input cell</em>.</p>
+<p>It is recommended that you go through this tutorial in front of your computer, and experiment by typing the expressions given below into the Dyalog APL interpreter session. Alternatively, if you are reading the book online in a dynamic format, you are encouraged to re-run the <em>input cells</em> for yourself. Either way, try changing the expressions, and observe the new results.</p>
 <div class="section" id="simple-numeric-values">
 <h2>1 - Simple Numeric Values<a class="headerlink" href="#simple-numeric-values" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="our-first-operations">
 <h3>1.1 Our First Operations<a class="headerlink" href="#our-first-operations" title="Permalink to this headline">¶</a></h3>
-<p>Let’s try some simple expressions (press <em>Enter</em> if you are in a Dyalog session, or <em>Ctrl</em>+<em>Enter</em> if you are reading the Jupyter notebook, to have each expression evaluated):</p>
+<p>Let’s try some simple expressions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">27</span> <span class="o">+</span> <span class="mi">53</span>
@@ -760,11 +761,11 @@ To know in which chapter an object is referenced, type:
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">¯188
 </span></div></div>
 </div>
-<p>Notice that APL uses a different symbol known as <em>high minus</em> (<code class="docutils literal notranslate"><span class="pre">¯</span></code>) to distinguish between a negative value and the function <em>subtract</em> (<code class="docutils literal notranslate"><span class="pre">-</span></code>). If you wish to enter a negative value, you can enter this special symbol by pressing <em>Ctrl</em>+<span class="math notranslate nohighlight">\(2\)</span> (or by clicking the symbol in the “Language Bar”).</p>
+<p>Notice that APL uses a different symbol known as <em>high minus</em> (<code class="docutils literal notranslate"><span class="pre">¯</span></code>) to distinguish between a negative value and the function <em>subtract</em> (<code class="docutils literal notranslate"><span class="pre">-</span></code>). If you wish to enter a negative value, you can enter this special symbol by pressing <kbd>APL</kbd>+<kbd>2</kbd> (or by clicking the symbol in the “Language Bar”).</p>
 <p>Let’s continue with some more expressions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>86 ÷ 4        ⍝ The Divide sign is obtained by pressing Ctrl+=
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>86 ÷ 4        ⍝ The Divide sign is obtained by pressing APL+=
 </pre></div>
 </div>
 </div>
@@ -774,7 +775,7 @@ To know in which chapter an object is referenced, type:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>59 × 8        ⍝ The Multiply sign is obtained by pressing Ctrl+-
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>59 × 8        ⍝ The Multiply sign is obtained by pressing APL+-
 </pre></div>
 </div>
 </div>
@@ -798,7 +799,7 @@ To know in which chapter an object is referenced, type:
 </div>
 <div class="section" id="variables">
 <h3>1.2 Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
-<p>As in any other programming language, it is possible to create variables. Just choose a name and use the assignment arrow (<code class="docutils literal notranslate"><span class="pre">←</span></code>) to assign it to a value. The value can be a single item or several items separated by spaces. The assignment arrow can be entered by pressing <em>Ctrl</em>+[.</p>
+<p>As in any other programming language, it is possible to create variables. Just choose a name and use the assignment arrow (<code class="docutils literal notranslate"><span class="pre">←</span></code>) to assign it to a value. The value can be a single item or several items separated by spaces. The assignment arrow can be entered by pressing <kbd>APL</kbd>+<kbd>[</kbd>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Discount ← 0.15        ⍝ Read it as: Discount gets 0.15
@@ -834,7 +835,7 @@ Purchased ← 4000
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>discount        ⍝ We typed a lower-case &quot;d&quot;, instead of &quot;D&quot;
                 ⍝ The message &quot;VALUE ERROR&quot; means that the
-                ⍝ name discount is currently undefined.
+                ⍝ name &quot;discount&quot; is currently undefined.
 </pre></div>
 </div>
 </div>
@@ -849,8 +850,8 @@ Purchased ← 4000
 </div>
 <p>Variable names must follow certain rules:</p>
 <ul class="simple">
-<li><p>They must contain only letters, in lower or upper-case, including some accented letters (cf. below), and the digits (<span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(9\)</span>).</p></li>
-<li><p>The APL alphabet also includes the Greek letter Delta (<code class="docutils literal notranslate"><span class="pre">∆</span></code>), entered using <em>Ctrl</em>+H, the Underscore sign (<code class="docutils literal notranslate"><span class="pre">_</span></code>), and also the Underscored Delta (<code class="docutils literal notranslate"><span class="pre">⍙</span></code>), entered using <em>Ctrl</em>+. (dot).</p></li>
+<li><p>They must contain only letters, in lower or upper-case, including some accented letters (cf. below), and the digits (0 to 9).</p></li>
+<li><p>The APL alphabet also includes the Greek letter Delta (<code class="docutils literal notranslate"><span class="pre">∆</span></code>), entered using <kbd>APL</kbd>+<kbd>H</kbd>, the Underscore sign (<code class="docutils literal notranslate"><span class="pre">_</span></code>), and also the Underscored Delta (<code class="docutils literal notranslate"><span class="pre">⍙</span></code>), entered using <kbd>APL</kbd>+<kbd>Shift</kbd>+<kbd>.</kbd> (dot).</p></li>
 <li><p>They cannot start with a digit.</p></li>
 </ul>
 <p>The following variable names are valid:</p>
@@ -935,7 +936,7 @@ abcdefghijklmnopqrstuvwxyz
 ∆⍙
 </pre></div>
 </div>
-<p>Additionally, variable names can contain underlined upper cases letters, which look something like <ins>ABCDEFGHIJKLMNOPQRSTUVWXYZ</ins>. It is strongly recommended that you do not use the underscored letters which are only included to support old applications. Today, underscored letters are regarded as an anachronism, and are deprecated in modern versions of APL. They are not part of the Unicode character set and we weren’t even able to include them here, the list above is just styled like the underscored letters, it is not really those letters. When a standard Unicode font is used, the APL underscored letters correspond to the Unicode circled alphabet, which is displayed like this:</p>
+<p>Additionally, variable names can contain underlined upper cases letters, which look something like <ins>ABCDEFGHIJKLMNOPQRSTUVWXYZ</ins>. It is strongly recommended that you do not use the underscored letters which are only included to support old applications. Today, underscored letters are regarded as an anachronism, and are deprecated in modern versions of APL. They are not part of the Unicode character set and we weren’t even able to include them here: the enumeration above is just styled like the underscored letters, it is not really those letters. When a standard Unicode font is used, the APL underscored letters correspond to the Unicode circled alphabet, which is displayed like this:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ
 </pre></div>
 </div>
@@ -1071,7 +1072,7 @@ Colette Bernard Line Now ← Years
 <div class="section" id="different-types-of-numbers">
 <h3>1.4 Different Types of Numbers<a class="headerlink" href="#different-types-of-numbers" title="Permalink to this headline">¶</a></h3>
 <p>We have already used many different numerical values in our examples without worrying too much about what they really are. We should note that, for the computer, not all numbers are created equal.</p>
-<p><em><strong>Integer</strong></em> numbers are the easiest to deal with, and we have seen plenty of them already. Those are the whole numbers and they can be positive, or negative, or <code class="docutils literal notranslate"><span class="pre">0</span></code>:</p>
+<p><em><strong>Integer</strong></em> numbers are the easiest to deal with, and we have seen plenty of them already. Those are the whole numbers and they can be positive, or negative, or 0:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Integers ← ¯3 5 ¯46 10004 0
@@ -1095,7 +1096,7 @@ Floats
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">¯3.4 5.61 45.9
 </span></div></div>
 </div>
-<p>Dyalog APL knows a little bit of maths and will understand that a <em>float</em> with decimal part equal to <span class="math notranslate nohighlight">\(0\)</span> is actually an <em>integer</em>:</p>
+<p>Dyalog APL knows a little bit of maths and will understand that a <em>float</em> with decimal part equal to 0 is actually an <em>integer</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">3.0</span>
@@ -1141,7 +1142,7 @@ Complex
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="n">J0</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>3J0        ⍝ Same as 3.
 </pre></div>
 </div>
 </div>
@@ -1151,7 +1152,7 @@ Complex
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="n">J1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0J1        ⍝ NOT the same as 1.
 </pre></div>
 </div>
 </div>
@@ -1163,10 +1164,10 @@ Complex
 </div>
 <div class="section" id="arrays-of-items">
 <h2>2 - Arrays of Items<a class="headerlink" href="#arrays-of-items" title="Permalink to this headline">¶</a></h2>
-<p>In APL, an <em>array</em> is a sequence of zero or more items. The variable <code class="docutils literal notranslate"><span class="pre">Years</span></code> that we used in the previous section is an array of <span class="math notranslate nohighlight">\(4\)</span> items.</p>
+<p>In APL, an <em>array</em> is a sequence of zero or more items. The variable <code class="docutils literal notranslate"><span class="pre">Years</span></code> that we used in the previous section is an array of 4 items.</p>
 <div class="section" id="create-a-list-or-a-matrix">
 <h3>2.1 Create a List or a Matrix<a class="headerlink" href="#create-a-list-or-a-matrix" title="Permalink to this headline">¶</a></h3>
-<p>To enter a short list of items, just type them one by one separated by spaces, and assign the list to a name. For example, here is the number of TV sets sold during the last <span class="math notranslate nohighlight">\(10\)</span> days by a shopkeeper:</p>
+<p>To enter a short list of items, just type them one by one separated by spaces, and assign the list to a name. For example, here is the number of TV sets sold during the last 10 days by a shopkeeper:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Sales ← 6 1 8 12 3 3 5 4 7 9
@@ -1174,7 +1175,7 @@ Complex
 </div>
 </div>
 </div>
-<p>If you need to enter a very long list of items, which will not easily fit on a single line, please refer to Chapter H, Section <span class="math notranslate nohighlight">\(1\)</span>, where a simple method is explained.</p>
+<p>If you need to enter a very long list of items, which will not easily fit on a single line, please refer to Chapter H, Section 1, where a simple method is explained.</p>
 <p>Imagine now that somebody has noted his income and expenses during the first six months of this year:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1185,40 +1186,40 @@ Complex
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-align:left"><p>January</p></td>
-<td class="text-align:right"><p><span class="math notranslate nohighlight">\(4210\)</span></p></td>
-<td class="text-align:right"><p><span class="math notranslate nohighlight">\(3121\)</span></p></td>
+<td class="text-align:right"><p>4210</p></td>
+<td class="text-align:right"><p>3121</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>February</p></td>
-<td class="text-align:right"><p><span class="math notranslate nohighlight">\(4807\)</span></p></td>
-<td class="text-align:right"><p><span class="math notranslate nohighlight">\(4284\)</span></p></td>
+<td class="text-align:right"><p>4807</p></td>
+<td class="text-align:right"><p>4284</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>March</p></td>
-<td class="text-align:right"><p><span class="math notranslate nohighlight">\(3609\)</span></p></td>
-<td class="text-align:right"><p><span class="math notranslate nohighlight">\(7543\)</span></p></td>
+<td class="text-align:right"><p>3609</p></td>
+<td class="text-align:right"><p>7543</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>April</p></td>
-<td class="text-align:right"><p><span class="math notranslate nohighlight">\(5712\)</span></p></td>
-<td class="text-align:right"><p><span class="math notranslate nohighlight">\(2601\)</span></p></td>
+<td class="text-align:right"><p>5712</p></td>
+<td class="text-align:right"><p>2601</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>May</p></td>
-<td class="text-align:right"><p><span class="math notranslate nohighlight">\(2305\)</span></p></td>
-<td class="text-align:right"><p><span class="math notranslate nohighlight">\(3364\)</span></p></td>
+<td class="text-align:right"><p>2305</p></td>
+<td class="text-align:right"><p>3364</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>June</p></td>
-<td class="text-align:right"><p><span class="math notranslate nohighlight">\(4568\)</span></p></td>
-<td class="text-align:right"><p><span class="math notranslate nohighlight">\(2784\)</span></p></td>
+<td class="text-align:right"><p>4568</p></td>
+<td class="text-align:right"><p>2784</p></td>
 </tr>
 </tbody>
 </table>
 <p>We shall see later how we can store the names of the months; for now, let us just try to store the numeric values from the table above in a variable.</p>
 <p>To do this, we have to give two pieces of information to the computer:</p>
 <ul class="simple">
-<li><p>the <em><strong>shape</strong></em> of the array: in this case, <span class="math notranslate nohighlight">\(6\)</span> rows and <span class="math notranslate nohighlight">\(2\)</span> columns;</p></li>
+<li><p>the <em><strong>shape</strong></em> of the array: in this case, 6 rows and 2 columns;</p></li>
 <li><p>the <em><strong>contents</strong></em> (or <em>items</em>) of the array, in row order.</p></li>
 </ul>
-<p>The function that organises a set of items into an array of a specified shape is known as <em><strong>Reshape</strong></em> and is symbolised by the Greek letter Rho (<code class="docutils literal notranslate"><span class="pre">⍴</span></code>). It is easy to remember that <em>R</em>ho can be entered using <em>Ctrl</em>+R.</p>
+<p>The function that organises a set of items into an array of a specified shape is known as <em><strong>Reshape</strong></em> and is symbolised by the Greek letter Rho (<code class="docutils literal notranslate"><span class="pre">⍴</span></code>). It is easy to remember that <em>R</em>ho can be entered using <kbd>APL</kbd>+<kbd>R</kbd>.</p>
 <p>The <em><strong>Reshape</strong></em> function is used as follows: <code class="docutils literal notranslate"><span class="pre">R←</span> <span class="pre">Shape</span> <span class="pre">⍴</span> <span class="pre">Contents</span></code>.</p>
-<p>For example, to obtain a <span class="math notranslate nohighlight">\(6\)</span> by <span class="math notranslate nohighlight">\(2\)</span> array of items:</p>
+<p>For example, to obtain a 6 by 2 array of items:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Money ← 6 2 ⍴ 4210 3121 4807 4284 3609 7543 5712 2601 2305 3364 4568 2784
@@ -1319,9 +1320,9 @@ Money        ⍝ Let&#39;s verify the result.
 </div>
 <div class="section" id="multi-dimensional-arrays">
 <h3>2.3 Multi-dimensional Arrays<a class="headerlink" href="#multi-dimensional-arrays" title="Permalink to this headline">¶</a></h3>
-<p>APL is not limited to arrays with two dimensions, it can handle arrays with <span class="math notranslate nohighlight">\(3\)</span>, <span class="math notranslate nohighlight">\(4\)</span>, indeep up to <span class="math notranslate nohighlight">\(15\)</span> dimensions.</p>
+<p>APL is not limited to arrays with two dimensions, it can handle arrays with 3, 4, indeed up to 15 dimensions.</p>
 <p>Imagine that a company has stored the production of its assembly lines in a variable named <code class="docutils literal notranslate"><span class="pre">Prod</span></code>.</p>
-<p>The variable contains <span class="math notranslate nohighlight">\(5\)</span> years of production, on <span class="math notranslate nohighlight">\(2\)</span> assembly lines, and for <span class="math notranslate nohighlight">\(12\)</span> months per year. To represent the <span class="math notranslate nohighlight">\(3\)</span> dimensions on the screen, the array is displayed split into sub-arrays each representing a single year, as follows:</p>
+<p>The variable contains 5 years of production, on 2 assembly lines, and for 12 months per year. To represent the 3 dimensions on the screen, the array is displayed split into sub-arrays each representing a single year, as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Prod        ⍝ Notice the blank lines separating the sub-arrays,
@@ -1346,7 +1347,7 @@ Money        ⍝ Let&#39;s verify the result.
 24 35 61 26 22 35 24 20 31 35 47 37
 </span></div></div>
 </div>
-<p>This array is organised in dimensions that represent <span class="math notranslate nohighlight">\(5\)</span> years, <span class="math notranslate nohighlight">\(2\)</span> assembly lines, <span class="math notranslate nohighlight">\(12\)</span> months: it is a three dimensional array. We can also say that its <em><strong>shape</strong></em> is <span class="math notranslate nohighlight">\(5\ 2\ 12\)</span>.</p>
+<p>This array is organised in dimensions that represent 5 years, 2 lines, 12 months: it is a three dimensional array. We can also say that its <em><strong>shape</strong></em> is <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">2</span> <span class="pre">12</span></code>.</p>
 </div>
 </div>
 <div class="section" id="shape-rank-and-vocabulary">
@@ -1357,7 +1358,7 @@ Money        ⍝ Let&#39;s verify the result.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴ Years        ⍝ Read this as &quot;Shape of Years&quot;.
-               ⍝ Years has 4 items
+               ⍝ Years has 4 items.
 </pre></div>
 </div>
 </div>
@@ -1390,7 +1391,7 @@ Shape          ⍝ Prod has 5 sheets (or planes), each having
 <p>Now, what is the shape of <code class="docutils literal notranslate"><span class="pre">Shape</span></code>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴ Shape        ⍝ Prod has 3 dimensions
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴ Shape        ⍝ Prod has 3 dimensions.
 </pre></div>
 </div>
 </div>
@@ -1409,7 +1410,7 @@ Shape          ⍝ Prod has 5 sheets (or planes), each having
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">3
 </span></div></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">Prod</span></code> has <span class="math notranslate nohighlight">\(3\)</span> dimensions; we say that its <em><strong>Rank</strong></em> is <span class="math notranslate nohighlight">\(3\)</span>, or that it is organised along <span class="math notranslate nohighlight">\(3\)</span> criteria which are: Years / Lines / Months.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Prod</span></code> has 3 dimensions; we say that its <em><strong>Rank</strong></em> is 3, or that it is organised along 3 criteria which are: Years / Lines / Months.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴⍴ Money
@@ -1420,7 +1421,7 @@ Shape          ⍝ Prod has 5 sheets (or planes), each having
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">2
 </span></div></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">Money</span></code> has <span class="math notranslate nohighlight">\(2\)</span> dimensions; we say that its <em><strong>Rank</strong></em> is <span class="math notranslate nohighlight">\(2\)</span>, or that it is organised along <span class="math notranslate nohighlight">\(2\)</span> criteria which are: Months / Accounts.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Money</span></code> has 2 dimensions; we say that its <em><strong>Rank</strong></em> is 2, or that it is organised along 2 criteria which are: Months / Accounts.</p>
 <p><strong>Definition</strong>: The <em><strong>Rank</strong></em> of an array is the number of its dimensions. It can be obtained using the expression <code class="docutils literal notranslate"><span class="pre">⍴⍴</span> <span class="pre">Array</span></code>.</p>
 </div>
 <div class="section" id="scaling-down-the-ranks">
@@ -1453,7 +1454,7 @@ Shape          ⍝ Prod has 5 sheets (or planes), each having
 </tbody>
 </table>
 <p>It seems consistent that some array must exist which has a rank equal to …… <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
-<p>Such arrays are single items, like <span class="math notranslate nohighlight">\(1573\)</span> or <span class="math notranslate nohighlight">\(36.29\)</span> or the variable <code class="docutils literal notranslate"><span class="pre">Discount</span></code> used above.</p>
+<p>Such arrays are single items, like 1573 or 36.29 or the variable <code class="docutils literal notranslate"><span class="pre">Discount</span></code> used above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴⍴ Discount    ⍝ A single number has no dimensions.
@@ -1474,11 +1475,11 @@ Shape          ⍝ Prod has 5 sheets (or planes), each having
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">0
 </span></div></div>
 </div>
-<p>We needed <span class="math notranslate nohighlight">\(3\)</span> numbers to express the shape of <code class="docutils literal notranslate"><span class="pre">Prod</span></code>, <span class="math notranslate nohighlight">\(2\)</span> numbers to express the shape of <code class="docutils literal notranslate"><span class="pre">Money</span></code>, and only <span class="math notranslate nohighlight">\(1\)</span> number to express the shape of <code class="docutils literal notranslate"><span class="pre">Years</span></code>… hence to express the shape of <code class="docutils literal notranslate"><span class="pre">1573</span></code> or <code class="docutils literal notranslate"><span class="pre">Discount</span></code>, we need <strong>no</strong> numbers:</p>
+<p>We needed 3 numbers to express the shape of <code class="docutils literal notranslate"><span class="pre">Prod</span></code>, 2 numbers to express the shape of <code class="docutils literal notranslate"><span class="pre">Money</span></code>, and only 1 number to express the shape of <code class="docutils literal notranslate"><span class="pre">Years</span></code>… hence to express the shape of <code class="docutils literal notranslate"><span class="pre">1573</span></code> or <code class="docutils literal notranslate"><span class="pre">Discount</span></code>, we need <strong>no</strong> numbers:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴ 1573        ⍝ The answer displays as a blank line: the shape of
-              ⍝ a single number is an empty array (0 items)
+              ⍝ a single number is an empty array (0 items).
 </pre></div>
 </div>
 </div>
@@ -1488,7 +1489,7 @@ Shape          ⍝ Prod has 5 sheets (or planes), each having
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴ Discount    ⍝ Ditto
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴ Discount    ⍝ Ditto.
 </pre></div>
 </div>
 </div>
@@ -1517,17 +1518,17 @@ Shape          ⍝ Prod has 5 sheets (or planes), each having
 <tr class="row-odd"><td class="text-align:left"><p><em><strong>Scalar</strong></em></p></td>
 <td class="text-align:left"><p>is a single item like</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">Discount</span></code></p></td>
-<td class="text-align:left"><p>its rank is <span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td class="text-align:left"><p>its rank is 0</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p><em><strong>Vector</strong></em></p></td>
 <td class="text-align:left"><p>is a list of items like</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">Years</span></code></p></td>
-<td class="text-align:left"><p>its rank is <span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td class="text-align:left"><p>its rank is 1</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p><em><strong>Matrix</strong></em></p></td>
-<td class="text-align:left"><p>is an array of rank <span class="math notranslate nohighlight">\(2\)</span> like</p></td>
+<td class="text-align:left"><p>is an array of rank 2 like</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">Money</span></code></p></td>
-<td class="text-align:left"><p>its rank is <span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td class="text-align:left"><p>its rank is 2</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p><em><strong>Table</strong></em></p></td>
 <td class="text-align:left"><p>is a common name for a matrix</p></td>
@@ -1535,9 +1536,9 @@ Shape          ⍝ Prod has 5 sheets (or planes), each having
 <td class="text-align:left"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p><em><strong>Cube</strong></em></p></td>
-<td class="text-align:left"><p>is a common name for <span class="math notranslate nohighlight">\(3\)</span>-D arrays like</p></td>
+<td class="text-align:left"><p>is a common name for 3-D arrays like</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">Prod</span></code></p></td>
-<td class="text-align:left"><p>its rank is <span class="math notranslate nohighlight">\(3\)</span></p></td>
+<td class="text-align:left"><p>its rank is 3</p></td>
 </tr>
 </tbody>
 </table>
@@ -1578,6 +1579,7 @@ Shape            ⍝ It looks like a scalar.
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1
 </span></div></div>
 </div>
+<p>This shows, in particular, that <code class="docutils literal notranslate"><span class="pre">⍴</span> <span class="pre">Years</span></code> does <em>not</em> return the length of the vector <code class="docutils literal notranslate"><span class="pre">Years</span></code>. <code class="docutils literal notranslate"><span class="pre">⍴</span> <span class="pre">Years</span></code> returns the shape of <code class="docutils literal notranslate"><span class="pre">Years</span></code>, which is a 1-item vector with the number 4. The length of <code class="docutils literal notranslate"><span class="pre">Years</span></code> (which is the scalar value 4) can be obtained with an appropriate primitive that will be introduced in Chapter C. Until then, use <code class="docutils literal notranslate"><span class="pre">⍴</span></code> with caution.</p>
 </div>
 <div class="section" id="do-not-rely-on-the-visual-aspect-of-a-variable">
 <h4>3.4.2 - Do Not Rely on the Visual Aspect of a Variable<a class="headerlink" href="#do-not-rely-on-the-visual-aspect-of-a-variable" title="Permalink to this headline">¶</a></h4>
@@ -1627,7 +1629,7 @@ M ← 1 4 ⍴ 87 65 21 40
 </div>
 </div>
 </div>
-<p>Similarly, a scalar should not be confused with a <span class="math notranslate nohighlight">\(1\)</span>-item vector or a <span class="math notranslate nohighlight">\(1\)</span>-item matrix, or with any <span class="math notranslate nohighlight">\(1\)</span>-item multi-dimensional array for that matter. The scalar has a rank of <span class="math notranslate nohighlight">\(0\)</span> whereas the vector has rank <span class="math notranslate nohighlight">\(1\)</span>:</p>
+<p>Similarly, a scalar should not be confused with a 1-item vector or a 1-item matrix, or with any 1-item multi-dimensional array for that matter. The scalar has a rank of 0 whereas the vector has rank 1:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>S ←   456        ⍝ Create a scalar.
@@ -1680,7 +1682,8 @@ V ← 1⍴456        ⍝ Create a one-item vector.
 </div>
 <div class="section" id="displaying-long-vectors">
 <h4>3.4.3 - Displaying Long Vectors<a class="headerlink" href="#displaying-long-vectors" title="Permalink to this headline">¶</a></h4>
-<p>If a vector is too long to be displayed in a single line on your screen, the Dyalog session will wrap it onto several lines. But to prevent possible confusion with the display of a matrix, the second line and the following lines will not be aligned at the left margin, but will be indented <span class="math notranslate nohighlight">\(6\)</span> characters to the right. In these Jupyter notebooks the output gets hidden and a horizontal scroll bar is provided. For example:</p>
+<p>If a vector is too long to be displayed in a single line on your screen, the interpreter session will wrap it onto several lines. But to prevent possible confusion with the display of a matrix, the second line and the following lines will not be aligned at the left margin, but will be indented 6 characters to the right.</p>
+<p>In this book the output gets hidden and a horizontal scroll bar is provided. For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Bignum</span>
@@ -1873,9 +1876,9 @@ JuneJanu
 <div class="section" id="facility">
 <h4>Facility<a class="headerlink" href="#facility" title="Permalink to this headline">¶</a></h4>
 <p>You do not have to re-type the entire expression.</p>
-<p>If you are working in the Dyalog interpreter session, just move your cursor up to the line where you defined <code class="docutils literal notranslate"><span class="pre">MonMat</span></code>, add the missing blanks, and press the <em>Enter</em> key.</p>
-<p>APL will then copy the modified line down to the end of your session and automatically restore the original line to its original state. As a consequence, the session window always displays the sequence of expressions and results in the order in which you typed them.</p>
-<p>If you are working with the Jupyter notebook version of this book, you can just go to the input cell where you made your mistake and correct it in place. Otherwise, just copy the cell and correct the mistake in the copy:</p>
+<p>If you are working in the interpreter session, just move your cursor up to the line where you defined <code class="docutils literal notranslate"><span class="pre">MonMat</span></code>, add the missing blanks, and press the <em>Enter</em> key.</p>
+<p>APL will then copy the modified line down to the end of your session and automatically restore the original line to its original state. As a consequence, the interpreter window always displays the sequence of expressions and results in the order in which you typed them.</p>
+<p>If you are working with the Jupyter notebook version of this book, you can just go to the input cell where you made your mistake and correct it in place. Otherwise, just copy the cell and correct the mistake in the copied cell:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>MonMat ← 6 8 ⍴ &#39;January FebruaryMarch   April   May     June    &#39;
@@ -1902,7 +1905,7 @@ June
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">6 8
 </span></div></div>
 </div>
-<p>Now, to enter the months as <span class="math notranslate nohighlight">\(6\)</span> words, one must type each word between quotes, and check that each closing quote is separated from the next opening quote by at least one blank (otherwise it would be interpreted as an apostrophe - remember, the juxtaposition of two quotes in a character string is used to enter a single quote):</p>
+<p>Now, to enter the months as 6 words, one must type each word between quotes, and check that each closing quote is separated from the next opening quote by at least one blank (otherwise it would be interpreted as an apostrophe - remember, the juxtaposition of two quotes in a character string is used to enter a single quote):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>MonVec ← &#39;January&#39; &#39;February&#39; &#39;March&#39; &#39;April&#39; &#39;May&#39; &#39;June&#39;
@@ -1926,7 +1929,7 @@ MonVec
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">6
 </span></div></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">MonVec</span></code> is a vector of a kind that we have not seen before, the items of which are <span class="math notranslate nohighlight">\(6\)</span> sub-arrays. This kind of an array is called a <em><strong>Nested Array</strong></em> and is the reason why we see those black boxes around the months.</p>
+<p><code class="docutils literal notranslate"><span class="pre">MonVec</span></code> is a vector of a kind that we have not seen before, the items of which are 6 sub-arrays. This kind of an array is called a <em><strong>Nested Array</strong></em> and is the reason why we see those black boxes around the months.</p>
 <p>Be patient! We shall study nested arrays very soon in this very chapter.</p>
 </div>
 </div>
@@ -2031,7 +2034,7 @@ Text
 </div>
 </div>
 </div>
-<p>And let us create a matrix of indices:</p>
+<p>And let us create a matrix of indexes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>MyIndex ← 3 5 ⍴ 5 5 4 4 8 6 12 6 11 12 10 6 1 4 9
@@ -2059,7 +2062,7 @@ MyIndex
 66 96 12 74 44
 </span></div></div>
 </div>
-<p>The rule remains true if the indexed vector is a character vector. For example, imagine that we have a matrix named <code class="docutils literal notranslate"><span class="pre">Planning</span></code>, in which some tasks are planned (<span class="math notranslate nohighlight">\(1\)</span>) or not (<span class="math notranslate nohighlight">\(0\)</span>) over the next <span class="math notranslate nohighlight">\(12\)</span> months:</p>
+<p>The rule remains true if the indexed vector is a character vector. For example, imagine that we have a matrix named <code class="docutils literal notranslate"><span class="pre">Planning</span></code>, in which some tasks are planned (1) or not (0) over the next 12 months:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Planning        ⍝ This is not very easy to interpret!
@@ -2074,7 +2077,7 @@ MyIndex
 0 0 1 1 1 1 1 0 0 0 0 0
 </span></div></div>
 </div>
-<p>Let us replace the inactive periods by “<code class="docutils literal notranslate"><span class="pre">-</span></code>“, and the busy periods by “<code class="docutils literal notranslate"><span class="pre">⎕</span></code>”. This beautiful character, named <em><strong>Quad</strong></em>, can be entered by pressing <em>Ctrl</em>+L.</p>
+<p>Let us replace the inactive periods by “<code class="docutils literal notranslate"><span class="pre">-</span></code>“, and the busy periods by “<code class="docutils literal notranslate"><span class="pre">⎕</span></code>”. This beautiful character, named <em><strong>Quad</strong></em>, can be entered by pressing <kbd>APL</kbd>+<kbd>L</kbd>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&#39;-⎕&#39;[Planning+1]        ⍝ Do you understand why we added 1?
@@ -2090,8 +2093,8 @@ MyIndex
 --⎕⎕⎕⎕⎕-----
 </span></div></div>
 </div>
-<p>Of course, the vector to be indexed was composed of only two characters, so the set of indices had to be composed only from the values <span class="math notranslate nohighlight">\(1\)</span> and <span class="math notranslate nohighlight">\(2\)</span>. This is the reason why we added <span class="math notranslate nohighlight">\(1\)</span> to <code class="docutils literal notranslate"><span class="pre">Planning</span></code>.</p>
-<p>All the <span class="math notranslate nohighlight">\(0\)</span>’s in <code class="docutils literal notranslate"><span class="pre">Planning</span></code> have been replaced by the <span class="math notranslate nohighlight">\(1^\text{st}\)</span> item (<code class="docutils literal notranslate"><span class="pre">-</span></code>), and all the <span class="math notranslate nohighlight">\(1\)</span>’s have been replaced by the <span class="math notranslate nohighlight">\(2^\text{nd}\)</span> item (<code class="docutils literal notranslate"><span class="pre">⎕</span></code>).</p>
+<p>Of course, the vector to be indexed was composed of only two characters, so the set of indexes had to be composed only from the values 1 and 2. This is the reason why we added 1 to <code class="docutils literal notranslate"><span class="pre">Planning</span></code>.</p>
+<p>All the 0’s in <code class="docutils literal notranslate"><span class="pre">Planning</span></code> have been replaced by the 1st item (<code class="docutils literal notranslate"><span class="pre">-</span></code>), and all the 1’s have been replaced by the 2nd item (<code class="docutils literal notranslate"><span class="pre">⎕</span></code>).</p>
 </div>
 <div class="section" id="array-indexing">
 <h3>5.3 Array Indexing<a class="headerlink" href="#array-indexing" title="Permalink to this headline">¶</a></h3>
@@ -2111,7 +2114,7 @@ MyIndex
 45 82 74
 </span></div></div>
 </div>
-<p>Indexing an array is very similar to the method we say for vectors, but we now need one index for the row and one for the column; they must be separated by a <em><strong>Semi-colon</strong></em>. For example, to get (or replace) the value <span class="math notranslate nohighlight">\(55\)</span> in row <span class="math notranslate nohighlight">\(4\)</span>, column <span class="math notranslate nohighlight">\(3\)</span>, one types:</p>
+<p>Indexing an array is very similar to the method we say for vectors, but we now need one index for the row and one for the column; they must be separated by a <em><strong>Semi-colon</strong></em>. For example, to get (or replace) the value 55 in row 4, column 3, one types:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="p">[</span><span class="mi">4</span><span class="p">;</span><span class="mi">3</span><span class="p">]</span>
@@ -2135,7 +2138,7 @@ MyIndex
 45 74
 </span></div></div>
 </div>
-<p>The result of indexing may sometimes be surprising. Let us extract <span class="math notranslate nohighlight">\(4\)</span> values from the first column:</p>
+<p>The result of indexing may sometimes be surprising. Let us extract 4 values from the first column:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Tests</span><span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">;</span><span class="mi">1</span><span class="p">]</span>
@@ -2149,8 +2152,8 @@ MyIndex
 <p>You probably expected the result to be displayed like a column? Really sorry!</p>
 <p>The result of this expression is a vector, and a vector is always displayed as a row on the screen.</p>
 <p>We shall see later that it is possible, using a little trick, to cause the result to be displayed vertically.</p>
-<p>When you use indexing, you must specify as many indices or sets of indices as the array’s rank. For a <span class="math notranslate nohighlight">\(3\)</span>-D array, you must specify <span class="math notranslate nohighlight">\(3\)</span> sets of indices, separated by two semi-colons.</p>
-<p>For example, suppose that we would like to extract the production of the <span class="math notranslate nohighlight">\(2^\text{nd}\)</span> assembly line, for the first <span class="math notranslate nohighlight">\(6\)</span> months of the last two years, from the array <code class="docutils literal notranslate"><span class="pre">Prod</span></code>. Let’s express that in order of the <span class="math notranslate nohighlight">\(3\)</span> dimensions: Years/Lines/Months:</p>
+<p>When you use indexing, you must specify as many indexes or sets of indexes as the array’s rank. For a 3-D array, you must specify 3 sets of indexes, separated by two semi-colons.</p>
+<p>For example, suppose that we would like to extract the production of the 2nd assembly line, for the first 6 months of the last 2 years, from the array <code class="docutils literal notranslate"><span class="pre">Prod</span></code>. Let’s express that in order of the 3 dimensions: Years/Lines/Months:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p></p></th>
@@ -2158,20 +2161,20 @@ MyIndex
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p>The last two years are in positions</p></td>
-<td class="text-align:left"><p><span class="math notranslate nohighlight">\(4\ 5\)</span></p></td>
+<tr class="row-even"><td class="text-align:left"><p>The last 2 years are in positions</p></td>
+<td class="text-align:left"><p>4 5</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>The second assembly line</p></td>
-<td class="text-align:left"><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td class="text-align:left"><p>2</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p>The first <span class="math notranslate nohighlight">\(6\)</span> months</p></td>
-<td class="text-align:left"><p><span class="math notranslate nohighlight">\(1\ 2\ 3\ 4\ 5\ 6\)</span></p></td>
+<tr class="row-even"><td class="text-align:left"><p>The first 6 months</p></td>
+<td class="text-align:left"><p>1 2 3 4 5 6</p></td>
 </tr>
 </tbody>
 </table>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Prod[4 5;2;1 2 3 4 5 6]    ⍝ The result is a matrix: 2 years/6 months
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Prod[4 5;2;1 2 3 4 5 6]    ⍝ The result is a matrix: 2 years/6 months.
 </pre></div>
 </div>
 </div>
@@ -2207,7 +2210,7 @@ MyIndex
 </div>
 <div class="section" id="remark-2">
 <h4>Remark 2<a class="headerlink" href="#remark-2" title="Permalink to this headline">¶</a></h4>
-<p>It is also possible to select several items which are not at the intersections of the same rows or columns. To do so requires a special notation where the individual Row/Column indices of each item are embedded in parentheses. The reason for this syntax will become clear in Section 6.3.</p>
+<p>It is also possible to select several items which are not at the intersections of the same rows or columns. To do so requires a special notation where the individual Row/Column indexes of each item are embedded in parentheses. The reason for this syntax will become clear in Section 6.3.</p>
 <p>For example, let us select <code class="docutils literal notranslate"><span class="pre">Tests[2;3]</span></code> together with <code class="docutils literal notranslate"><span class="pre">Tests[5;1]</span></code> and <code class="docutils literal notranslate"><span class="pre">Tests[1;2</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2313,11 +2316,11 @@ Tests
 </div>
 <div class="section" id="warnings">
 <h3>5.5 Warnings<a class="headerlink" href="#warnings" title="Permalink to this headline">¶</a></h3>
-<p>We would like to draw your attention to some selicate details. Here is the first:</p>
+<p>We would like to draw your attention to some delicate details. Here is the first:</p>
 <div class="section" id="shape-compatibility">
 <h4>5.5.1 - Shape Compatibility<a class="headerlink" href="#shape-compatibility" title="Permalink to this headline">¶</a></h4>
-<p>To replace several items in an array, the replacement array must have exactly the <strong>same shape</strong> as the array of indices they replace.</p>
-<p>For example, supposed that we would like to replace the four “corners” of <code class="docutils literal notranslate"><span class="pre">Tests</span></code> with the values <span class="math notranslate nohighlight">\(11\ 22\ 33\ 44\)</span> respectively.</p>
+<p>To replace several items in an array, the replacement array must have exactly the <strong>same shape</strong> as the array of indexes they replace.</p>
+<p>For example, supposed that we would like to replace the four “corners” of <code class="docutils literal notranslate"><span class="pre">Tests</span></code> with the values 11 22 33 44 respectively.</p>
 <p>We <strong>cannot</strong> successfully execute:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2335,7 +2338,7 @@ Tests
 </div>
 </div>
 <p>Notice the <code class="docutils literal notranslate"><span class="pre">LENGTH</span> <span class="pre">ERROR</span></code> that was issued (note that this is a “<strong>Shape</strong> error”).</p>
-<p>If we had extracted these four values, the result would have been a <span class="math notranslate nohighlight">\(2\)</span> by <span class="math notranslate nohighlight">\(2\)</span> matrix:</p>
+<p>If we had extracted these four values, the result would have been a 2 by 2 matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Tests[1 6;1 3]        ⍝ Remember: row 6 was modified above!
@@ -2347,7 +2350,7 @@ Tests
 60 80
 </span></div></div>
 </div>
-<p>So, to replace them, we cannot use a vector, as we have just tried to do. Instead we must organise the replacement array into a <span class="math notranslate nohighlight">\(2\)</span> by <span class="math notranslate nohighlight">\(2\)</span> matrix, like this:</p>
+<p>So, to replace them, we cannot use a vector, as we have just tried to do. Instead we must organise the replacement array into a 2 by 2 matrix, like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Tests[1 6;1 3] ← 2 2 ⍴ 11 22 33 44
@@ -2367,7 +2370,7 @@ Tests        ⍝ Notice the corners have the new values.
 </div>
 <div class="section" id="replace-or-obtain-all-the-values">
 <h4>5.5.2 - Replace or Obtain All the Values<a class="headerlink" href="#replace-or-obtain-all-the-values" title="Permalink to this headline">¶</a></h4>
-<p>To replace <strong>all</strong> of the values in an array with a single value, it is necessary to use brackes in which the indices of all the dimensions have been removed.</p>
+<p>To replace <strong>all</strong> of the values in an array with a single value, it is necessary to use brackets in which the indexes of all the dimensions have been removed.</p>
 <p>For example, imagine that we would like to reset all the values of <code class="docutils literal notranslate"><span class="pre">Tests</span></code> to zero.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Tests</span> <span class="pre">←</span> <span class="pre">0</span></code> would be <strong>wrong</strong>, because that would replace the matrix by a scalar.</p>
 <p>The correct solution is</p>
@@ -2438,11 +2441,11 @@ Contents
 <p>In APL, nearly all of the built-in functions (known as *Primitive Functions) are represented by a single symbol: <code class="docutils literal notranslate"><span class="pre">+</span></code> <code class="docutils literal notranslate"><span class="pre">×</span></code> <code class="docutils literal notranslate"><span class="pre">⍴</span></code> <code class="docutils literal notranslate"><span class="pre">÷</span></code> etc. Bracket indexing, as we introduced above, is an exception: it is represented by two non-contiguous symbols: <code class="docutils literal notranslate"><span class="pre">[</span></code> and <code class="docutils literal notranslate"><span class="pre">]</span></code>. This is one of the reasons why modern versions of APL also include an <em><strong>Index</strong></em> function.</p>
 <p>It is represented by the symbol <code class="docutils literal notranslate"><span class="pre">⌷</span></code>.</p>
 <p><strong>Beware</strong>: this is <strong>not</strong> the symbol <em>Quad</em> used in our planning example a few pages ago!</p>
-<p>In fact, it looks like a <em>Quad</em> which has been <em>squished</em>, hence its name: Squish-Quad, or <em><strong>Squad</strong></em> for short. The <em>Squad</em> is obtained with <em>Ctrl</em>+<em>Shift</em>+L.</p>
+<p>In fact, it looks like a <em>Quad</em> which has been <em>squished</em>, hence its name: Squish-Quad, or <em><strong>Squad</strong></em> for short. The <em>Squad</em> is obtained with <kbd>APL</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd>.</p>
 <p>When applied to a vector, <em>Index</em> takes a single number on its left.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>3 ⌷ Contents        ⍝ This is equivalent to Contents[3]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>3 ⌷ Contents        ⍝ This is equivalent to Contents[3].
 </pre></div>
 </div>
 </div>
@@ -2454,7 +2457,7 @@ Contents
 <p>For a matrix, <em>Index</em> takes a pair of values (row/column) on its left.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>4 2 ⌷ Tests         ⍝ This is equivalent to Tests[4;2]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>4 2 ⌷ Tests         ⍝ This is equivalent to Tests[4;2].
 </pre></div>
 </div>
 </div>
@@ -2465,7 +2468,7 @@ Contents
 <p>It is possible to select several rows and several columns, using a special notation that will be explained in subsequent sections. The left argument of <em>Index</em> is now made of a list of rows followed by a list of columns, both parenthesised:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(1 3 6)(1 3)⌷Tests  ⍝ This is equivalent to Tests[1 3 6;1 3]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(1 3 6)(1 3)⌷Tests  ⍝ This is equivalent to Tests[1 3 6;1 3].
 </pre></div>
 </div>
 </div>
@@ -2479,7 +2482,7 @@ Contents
 </div>
 <div class="section" id="mixed-and-nested-arrays">
 <h2>6 - Mixed and Nested Arrays<a class="headerlink" href="#mixed-and-nested-arrays" title="Permalink to this headline">¶</a></h2>
-<p>Up to now we have dealt only with homogeneous arrays: scalars, vectors or higher rank arrays containing only numbers or only characters. An array was a collection of what we call <em>simple</em> scalars. In the early <span class="math notranslate nohighlight">\(1980\)</span>’s enhanced versions of APL started to appear. They accepted a mixture of numbers and characters within the same array (so-called <em><strong>Mixed Arrays</strong></em>), and arrays could contain sub-arrays as items (so-called <em><strong>Nested Arrays</strong></em>).</p>
+<p>Up to now we have dealt only with homogeneous arrays: scalars, vectors or higher rank arrays containing only numbers or only characters. An array was a collection of what we call <em>simple</em> scalars. In the early 1980’s enhanced versions of APL started to appear. They accepted a mixture of numbers and characters within the same array (so-called <em><strong>Mixed Arrays</strong></em>), and arrays could contain sub-arrays as items (so-called <em><strong>Nested Arrays</strong></em>).</p>
 <p>In this chapter, we shall explore only some basic properties of <em>Mixed</em> and <em>Nested arrays</em>, just to help you understand what might otherwise appear to be unusual behaviour or unexpected error messages. We shall not go any further for now; Chapter I will be entirely dedicated to an extensive study of nested arrays.</p>
 <p>Note that with the current widespread use of <em>Nested arrays</em>, it is now very common to refer to an “old-fashioned” array that is neither <em>Mixed</em> nor <em>Nested</em> as a <em>Simple array</em>.</p>
 <div class="section" id="mixed-arrays">
@@ -2546,16 +2549,46 @@ Contents
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">B'a'g
 </span></div></div>
 </div>
-<p>APL interprets the doubled quotes as apostrophes, which yields <code class="docutils literal notranslate"><span class="pre">B'a'g</span></code>. This is not a sequence of <span class="math notranslate nohighlight">\(3\)</span> scalars, but a <span class="math notranslate nohighlight">\(5\)</span>-item vector:</p>
+<p>APL interprets the doubled quotes as apostrophes, which yields <code class="docutils literal notranslate"><span class="pre">B'a'g</span></code>. This is not a sequence of 3 scalars, but a 5-item vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴ &#39;B&#39;&#39;a&#39;&#39;g&#39;        ⍝ 5 items.
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴ &#39;B&#39; &#39;a&#39; &#39;g&#39;      ⍝ 3 items.
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">3
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴⍴ &#39;B&#39; &#39;a&#39; &#39;g&#39;     ⍝ &quot;No shape&quot;, so this is a scalar
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
 </div>
 <div class="section" id="id2">
 <h4>6.2.2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p>When <code class="docutils literal notranslate"><span class="pre">MixVec</span></code> is displayed (see above), the three letters <code class="docutils literal notranslate"><span class="pre">Bag</span></code> are joined together, like the letters in any vector of characters.</p>
-<p>This presentation might be confused with an array of <span class="math notranslate nohighlight">\(7\)</span> items, whose <span class="math notranslate nohighlight">\(6^\text{th}\)</span> item is the vector <code class="docutils literal notranslate"><span class="pre">'Bag'</span></code>. That would be a <em>Nested Array</em>. We will soon learn how to investigate the structure of an array.</p>
+<p>This presentation might be confused with an array of 7 items, whose 6th item is the vector <code class="docutils literal notranslate"><span class="pre">'Bag'</span></code>. That would be a <em>Nested Array</em>. We will soon learn how to investigate the structure of an array.</p>
 </div>
 <div class="section" id="id3">
 <h4>6.2.3<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<p>This confusing disappears in <code class="docutils literal notranslate"><span class="pre">MixMat</span></code>. Because the items of the matrix must be aligned in columns, “B” is placed under <span class="math notranslate nohighlight">\(44\)</span>, “a” under <span class="math notranslate nohighlight">\(87\)</span>, and “g’ under “K”. Here you can easily see that the three letters <code class="docutils literal notranslate"><span class="pre">Bag</span></code> are really three independent scalars.</p>
+<p>This confusion disappears in <code class="docutils literal notranslate"><span class="pre">MixMat</span></code>. Because the items of the matrix must be aligned in columns, “B” is placed under 44, “a” under 87, and “g’ under “K”. Here you can easily see that the three letters <code class="docutils literal notranslate"><span class="pre">Bag</span></code> are really three independent scalars.</p>
 </div>
 <div class="section" id="id4">
 <h4>6.2.4<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
@@ -2577,7 +2610,7 @@ Contents
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>One ← 2 2 ⍴ 8 6 2 4        ⍝ Create two simple arrays,
-Two ← &#39;Hello&#39;              ⍝ which will be used below
+Two ← &#39;Hello&#39;              ⍝ which will be used below.
 </pre></div>
 </div>
 </div>
@@ -2585,7 +2618,7 @@ Two ← &#39;Hello&#39;              ⍝ which will be used below
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>NesVec ← 87 24 &#39;John&#39; 51 (78 45 23) 95 One 69
-⍴NesVec        ⍝ We have juxtaposed 8 items
+⍴NesVec        ⍝ We have juxtaposed 8 items.
 </pre></div>
 </div>
 </div>
@@ -2606,12 +2639,12 @@ Two ← &#39;Hello&#39;              ⍝ which will be used below
 └──┴──┴────┴──┴────────┴──┴───┴──┘
 </span></div></div>
 </div>
-<p>The Jupyter notebook puts boxes around the items of the vector to make it easier to interpret the result. If the expression above were to be ran in the Dyalog interpreter session, the result would be</p>
+<p>The Jupyter notebook puts boxes around the items of the vector to make it easier to interpret the result. If the expression above were to be ran in the Dyalog APL interpreter session, the result would be</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">87</span> <span class="mi">24</span>  <span class="n">John</span>  <span class="mi">51</span>  <span class="mi">78</span> <span class="mi">45</span> <span class="mi">23</span>  <span class="mi">95</span>  <span class="mi">8</span> <span class="mi">6</span>  <span class="mi">69</span>
                                <span class="mi">2</span> <span class="mi">4</span>    
 </pre></div>
 </div>
-<p>which is a bit difficult to read.</p>
+<p>which is a bit difficult to read and interpret.</p>
 <p>And now, a matrix!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2737,11 +2770,11 @@ Two ← &#39;Hello&#39;              ⍝ which will be used below
 └──────┴───┴─────┘
 </span></div></div>
 </div>
-<p>You probably remember the mixed vector <code class="docutils literal notranslate"><span class="pre">MixVec</span></code>, which contained <span class="math notranslate nohighlight">\(3\)</span> adjacent scalars, “B”, “a”, and “g”. Let us compare the <strong>unboxed</strong> display of <code class="docutils literal notranslate"><span class="pre">MixVec</span></code> with a <span class="math notranslate nohighlight">\(7\)</span> item nested vector, whose <span class="math notranslate nohighlight">\(6^\text{th}\)</span> item contains the word “Bag”:</p>
+<p>You probably remember the mixed vector <code class="docutils literal notranslate"><span class="pre">MixVec</span></code>, which contained 3 adjacent scalars, “B”, “a”, and “g”. Let us compare the <strong>unboxed</strong> display of <code class="docutils literal notranslate"><span class="pre">MixVec</span></code> with a 7 item nested vector, whose 6th item contains the word “Bag”:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>44 87 &#39;K&#39; 12 29 &#39;Bag&#39; 46.3    ⍝ Let us enter the nested array
-                              ⍝ It is displayed like this
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>44 87 &#39;K&#39; 12 29 &#39;Bag&#39; 46.3    ⍝ Let us enter the nested array.
+                              ⍝ It is displayed like this.
 </pre></div>
 </div>
 </div>
@@ -2751,8 +2784,8 @@ Two ← &#39;Hello&#39;              ⍝ which will be used below
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>MixVec                        ⍝ Then let&#39;s look at MixVec
-                              ⍝ It is displayed like this
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>MixVec                        ⍝ Then let&#39;s look at MixVec.
+                              ⍝ It is displayed like this.
 </pre></div>
 </div>
 </div>
@@ -2823,7 +2856,7 @@ K
 -
 </span></div></div>
 </div>
-<p>We see that the display results are centered in a <span class="math notranslate nohighlight">\(3\)</span>-row area; for numerical simple scalars the top and bottom rows are empty, which creates the white region around the <code class="docutils literal notranslate"><span class="pre">37</span></code> you can see above. For character simple scalars, the bottom row underlines the character and the top row is left empty.</p>
+<p>We see that the display results are centered in a 3-row area; for numerical simple scalars the top and bottom rows are empty, which creates the white region around the <code class="docutils literal notranslate"><span class="pre">37</span></code> you can see above. For character simple scalars, the bottom row underlines the character and the top row is left empty.</p>
 <p>However, applied to a vector, <code class="docutils literal notranslate"><span class="pre">DISPLAY</span></code> will provide more information:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2872,7 +2905,7 @@ K
 <h4>6.4.2 - Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>DISPLAY 78 45 12        ⍝ Display a plain numeric (~) vector (→)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>DISPLAY 78 45 12        ⍝ Display a plain numeric (~) vector (→).
 </pre></div>
 </div>
 </div>
@@ -3066,7 +3099,7 @@ Weird            ⍝ The default presentation is difficult to interpret!
 └∊──────────────────────────────────────────────────┘
 </span></div></div>
 </div>
-<p>Imagine now that we want to store the ages of the children of <span class="math notranslate nohighlight">\(5\)</span> families; we could enter them like this:</p>
+<p>Imagine now that we want to store the ages of the children of 5 families; we could enter them like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Children ← (6 2) (35 33 26 21) (7 7) 3 (19 14)
@@ -3172,7 +3205,7 @@ Children
 </div>
 <p>There are many ways to create empty arrays, as we shall discover in the following chapters.</p>
 <p>We shall see later that empty arrays, which you may find surprising, are extremely useful in solving a large number of business problems. In fact, they are often used as the starting point (initial value) for variables that will grow by the iterative addition of new items.</p>
-<p>The empty numeric vector is probably the most frequently used of all empty arrays. For that reason, a special symbol has been designed to represent it: <code class="docutils literal notranslate"><span class="pre">⍬</span></code> (entered by pressing <em>Ctrl</em>+]).</p>
+<p>The empty numeric vector is probably the most frequently used of all empty arrays. For that reason, a special symbol has been designed to represent it: <code class="docutils literal notranslate"><span class="pre">⍬</span></code> (entered by pressing <kbd>APL</kbd>+<kbd>Shift</kbd>+<kbd>]</kbd>).</p>
 <p>Because this symbol is made of a <em>Zero</em> with a <em>Tilde</em> on top of it, it is called <em><strong>Zilde</strong></em>.</p>
 <p>Let us conclude this topic with a rather comforting statement:</p>
 <div class="cell docutils container">
@@ -3192,7 +3225,7 @@ Emptiness ⍴ Presence     ⍝ Give Presence the shape Emptiness
 <p>In the last expression, the <em>Reshape</em> function (<code class="docutils literal notranslate"><span class="pre">⍴</span></code>) returns an array with the shape specified in its left argument <code class="docutils literal notranslate"><span class="pre">Emptiness</span></code>.</p>
 <p>Since <code class="docutils literal notranslate"><span class="pre">Emptiness</span></code> is an empty vector (<code class="docutils literal notranslate"><span class="pre">⍬</span></code>) <em>Reshape</em> will return an array having an empty shape. Such an array is a scalar, so we know that the result of the expression will be a scalar.</p>
 <p><em>Reshape</em> will also fill the scalar with a value, taken from the right argument <code class="docutils literal notranslate"><span class="pre">Presence</span></code>. <code class="docutils literal notranslate"><span class="pre">Presence</span></code> contains the character vector <code class="docutils literal notranslate"><span class="pre">'Friendly'</span></code>, but since we only need one item to fill a scalar, we can only use the <code class="docutils literal notranslate"><span class="pre">'F'</span></code>. The rest of the character vector <code class="docutils literal notranslate"><span class="pre">'Friendly'</span></code> is not used.</p>
-<p>In fact, the expression <code class="docutils literal notranslate"><span class="pre">⍬⍴Array</span></code> is widely used to return the first item of an array as a scalar, and in particular to convert a <span class="math notranslate nohighlight">\(1\)</span>-item vector into a scalar.</p>
+<p>In fact, the expression <code class="docutils literal notranslate"><span class="pre">⍬⍴Array</span></code> is widely used to return the first item of an array as a scalar, and in particular to convert a 1-item vector into a scalar.</p>
 <div class="section" id="id5">
 <h3>Remark<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>Though they both are invisible when displayed, a numeric empty vector (<code class="docutils literal notranslate"><span class="pre">⍬</span></code>) is different from a character empty vector (<code class="docutils literal notranslate"><span class="pre">''</span></code>).</p>
@@ -3207,7 +3240,7 @@ Emptiness ⍴ Presence     ⍝ Give Presence the shape Emptiness
 <li><p>There is also a built-in method in APL, which may be activated through a special SAVE command or function, as will be described later.</p></li>
 </ul>
 <p><img alt="Image with the &quot;Save&quot; options highlighted in the interpreter toolbar'" src="_images/Interpreter_Toolbar_Save.png" /></p>
-<p>An explanation of how APL manages your data is given below.</p>
+<p>An explanation of how APL manages your data in the interpreter session is given below.</p>
 <div class="section" id="the-active-workspace">
 <h3>8.1 The Active Workspace<a class="headerlink" href="#the-active-workspace" title="Permalink to this headline">¶</a></h3>
 <p>When you start a working session with APL, you are allotted an empty portion of memory, which is called a <em><strong>Workspace</strong></em>, or <em><strong>WS</strong></em> for short. This WS is called the <em><strong>Active WS</strong></em>, because it is the area of memory in which you work. You gradually fill it with variables and functions<sup>2</sup> as you create them.</p>
@@ -3333,7 +3366,7 @@ paf     rms
 <p>In many languages, programs must be stored (saved) independently, one after the other, and variables do not exist on their own: they live only during the execution of a program which creates, uses and destroys them.</p>
 <p>In APL, things are different:</p>
 <ul class="simple">
-<li><p>Variables have an independent existence, outside of any program execution; you have seen that it is possible to create variables and manipulate them, at will, without writing any programs. This is similar to interpreter sessions of some other languages, like Python or MATLAB.</p></li>
+<li><p>Variables have an independent existence, outside of any program execution; you have seen that it is possible to create variables and manipulate them, at will, without writing any programs. This is similar to the interpreter sessions of some other languages, like Python or MATLAB.</p></li>
 <li><p>There may be a permanent interaction between programs and variables. Saving only any part of them would be nonsense: one must save the whole context; in other words, one must save the whole <em>active workspace</em>.</p></li>
 </ul>
 <p>This is what we shall discover now.</p>
@@ -3390,7 +3423,7 @@ paf     rms
 <li><p>And you can issue the system command <code class="docutils literal notranslate"><span class="pre">)load</span></code></p></li>
 </ul>
 <p><img alt="An image with the &quot;load&quot; icon highlighted in red" src="_images/Interpreter_Toolbar_Load.png" /></p>
-<p>In all these cases, you will se the familiar file search box, in which you can browse to and select the workspace file you would like to open (or load).</p>
+<p>In all these cases, you will see the familiar file search box, in which you can browse to and select the workspace file you would like to open (or load).</p>
 <p>You can also use the <code class="docutils literal notranslate"><span class="pre">)load</span></code> command followed by a WS name:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3416,17 +3449,9 @@ To know in which chapter an object is referenced, type:
 </span></div></div>
 </div>
 <p>In this case APL will search for your workspace in the folders specified in your “<em>Workspace Search Path</em>” as explained above, unless you specify a full path name. If the path name includes blank characters, you <strong>must</strong> place the whole expression between double quotes, as in the first example below:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>)load &quot;d:\my documents\sixteen tons\coal&quot; ⍝ double quotes are mandatory.
-)load e:\freezer\mummies\ramses2          ⍝ double quotes are not needed.
+<div class="highlight-apl notranslate"><div class="highlight"><pre><span></span>      <span class="p">)</span><span class="nv">load</span> <span class="s2">&quot;d:/my documents/sixteen tons/coal&quot;</span> <span class="c1">⍝ double quotes are mandatory.</span>
+      <span class="p">)</span><span class="nv">load</span> <span class="nv">e</span><span class="bp">:</span><span class="na">/</span><span class="nv">freezer</span><span class="na">/</span><span class="nv">mummies</span><span class="na">/</span><span class="nv">ramses2</span>          <span class="c1">⍝ double quotes are not needed.</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">ws not found
-</span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">ws not found
-</span></div></div>
 </div>
 <div class="section" id="id8">
 <h4>Remark 1<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
@@ -3454,15 +3479,8 @@ To know in which chapter an object is referenced, type:
 <h3>8.5 Merge Workspaces<a class="headerlink" href="#merge-workspaces" title="Permalink to this headline">¶</a></h3>
 <p>Suppose that you would like to use some functions or variables stored in another WS that has previously been saved. You can import them into your active WS using the command <code class="docutils literal notranslate"><span class="pre">)copy</span></code>, followed by the name of the WS and then the names of the functions and variables you want to import.</p>
 <p>For example, imagine that you need <code class="docutils literal notranslate"><span class="pre">Screwdriver</span></code>, <code class="docutils literal notranslate"><span class="pre">Hammer</span></code> and <code class="docutils literal notranslate"><span class="pre">Saw</span></code>, all stored in a WS named <code class="docutils literal notranslate"><span class="pre">Toolbox</span></code>. You can issue the command</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">)</span><span class="n">copy</span> <span class="n">Toolbox</span> <span class="n">Screwdriver</span> <span class="n">Hammer</span> <span class="n">Saw</span>
+<div class="highlight-apl notranslate"><div class="highlight"><pre><span></span>      <span class="p">)</span><span class="nv">copy</span> <span class="nv">Toolbox</span> <span class="nv">Screwdriver</span> <span class="nv">Hammer</span> <span class="nv">Saw</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">ws not found.
-</span></div></div>
 </div>
 <ul class="simple">
 <li><p>The WS name must be the first, and under Microsoft Windows it is not case sensitive.</p></li>
@@ -3471,15 +3489,8 @@ To know in which chapter an object is referenced, type:
 <p>If you specify only the workspace name, all its contents are imported. Be sure that all that stuff is really useful to you.</p>
 <p>When the copy is complete, a confirmation message is issued. Like the message issued by a <code class="docutils literal notranslate"><span class="pre">)load</span></code> command, it tells you when the WS was last saved.</p>
 <p>Of course, you can specify a path in the command; otherwise the WS is searched for in the <em>workspace search path</em> defined in your configuration. Once again, use double quotes if necessary:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">)</span><span class="n">copy</span> <span class="s2">&quot;d:\my documents</span><span class="se">\r</span><span class="s2">ecipes</span><span class="se">\r</span><span class="s2">atatouille&quot;</span>
+<div class="highlight-apl notranslate"><div class="highlight"><pre><span></span>      <span class="p">)</span><span class="nv">copy</span> <span class="s2">&quot;d:/my documents/recipes/ratatouille&quot;</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">ws not found.
-</span></div></div>
 </div>
 <div class="section" id="protected-copy">
 <h4>8.5.1 - Protected Copy<a class="headerlink" href="#protected-copy" title="Permalink to this headline">¶</a></h4>
@@ -3560,7 +3571,7 @@ To know in which chapter an object is referenced, type:
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">res/DyalogTutor_EN.dws saved Tue Aug 11 09:28:49 2020
 </span></div></div>
 </div>
-<p>When imported, the original version of <code class="docutils literal notranslate"><span class="pre">Goof</span></code> will override the version you mistakenly altered. Your active workspace will be correct again, and you will be able to go on with your work (but don’t forget to save it!).</p>
+<p>When imported, the original version of <code class="docutils literal notranslate"><span class="pre">Average</span></code> will override the version you mistakenly altered. Your active workspace will be correct again, and you will be able to go on with your work (but don’t forget to save it!).</p>
 </div>
 <div class="section" id="evolution-of-your-code">
 <h4>8.5.3 - Evolution of Your Code<a class="headerlink" href="#evolution-of-your-code" title="Permalink to this headline">¶</a></h4>
@@ -3590,7 +3601,7 @@ To know in which chapter an object is referenced, type:
 <p>You can close an APL session using three traditional Windows methods, and two APL system commands:</p>
 <ul class="simple">
 <li><p>You can click on the “Close” cross at the top-right corner of your APL window.</p></li>
-<li><p>You can press <em>Alt</em>+F4.</p></li>
+<li><p>You can press <kbd>Alt</kbd>+<kbd>F4</kbd>.</p></li>
 <li><p>You can activate the menu “File” &gt; “Exit”.</p></li>
 <li><p>You can issue the system command <code class="docutils literal notranslate"><span class="pre">)off</span></code>.</p></li>
 <li><p>You can issue the system command <code class="docutils literal notranslate"><span class="pre">)continue</span></code>.</p></li>
@@ -3601,7 +3612,7 @@ To know in which chapter an object is referenced, type:
 <div class="section" id="contents-of-a-ws">
 <h3>Contents of a WS<a class="headerlink" href="#contents-of-a-ws" title="Permalink to this headline">¶</a></h3>
 <p>Generally speaking, a workspace contains functions (programs) and variables which interact to constitute some useful application.</p>
-<p>The large memories of modern computers support bery big workspaces, and a single WS is generally enough to store even a very complex application, or several applications. However, it is good practice to store different applications in different workspaces: accounting, budget, customer care, etc… It is not recommended that you mix several applications in a single WS.</p>
+<p>The large memories of modern computers support very big workspaces, and a single WS is generally enough to store even a very complex application, or several applications. However, it is good practice to store different applications in different workspaces: accounting, budget, customer care, etc… It is not recommended that you mix several applications in a single WS.</p>
 <p>However, if appropriate, it is possible for a function to dynamically load another workspace (without any intervention by the user), and activate a different or complementary application.</p>
 <p>For now, a unique WS should be sufficient to contain all your experiments.</p>
 <p>If several workspaces need to share a command set of utility programs, this can be accomplished by dynamically importing the utilities from a common source. This will be seen in Chapter L.</p>
@@ -3610,13 +3621,13 @@ To know in which chapter an object is referenced, type:
 <h3>Our First System Commands<a class="headerlink" href="#our-first-system-commands" title="Permalink to this headline">¶</a></h3>
 <p>Just to recapitulate, here is a little summary of the system commands we’ve just discovered. Many other commands will be studied in Chapter L. The following conventions are used in the table below:</p>
 <ul class="simple">
-<li><p>The command names are writting using normal characters; the parameters are in <em>italics</em>;</p></li>
+<li><p>The command names are writing using normal characters; the parameters are in <em>italics</em>;</p></li>
 <li><p>Parameters withing {braces} are optional;</p></li>
 <li><p><em>names</em> represents a list of variable or function names;</p></li>
 <li><p><em>wsname</em> is the name of a WS.</p>
 <ul>
 <li><p>This name may contain a file extension, which is only necessary if it is different from “dws”.</p></li>
-<li><p>This name may also be preceeded by an optional path. If the path is not specified, APL searches in all the directories referenced in “Options” &gt; “Configure…” &gt; “Workspace” &gt; “Workspace search path*.</p></li>
+<li><p>This name may also be preceded by an optional path. If the path is not specified, APL searches in all the directories referenced in “Options” &gt; “Configure…” &gt; “Workspace” &gt; “Workspace search path*.</p></li>
 </ul>
 </li>
 </ul>
@@ -3705,11 +3716,7 @@ To know in which chapter an object is referenced, type:
 </div>
 <div class="section" id="b-3">
 <h3>B-3<a class="headerlink" href="#b-3" title="Permalink to this headline">¶</a></h3>
-<p>Find the result of this expression: <code class="docutils literal notranslate"><span class="pre">'LE</span> <span class="pre">CHAT'[75</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">6</span> <span class="pre">7]</span></code>. This amusing example was first given in “<em>Informatique par telephone</em>” of Philip S. Abrams and Gérard Lacourly, Editions Herman, Paris <span class="math notranslate nohighlight">\(1972\)</span>.</p>
-</div>
-<div class="section" id="id10">
-<h3>B-3<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-<p>Find the result of this expression: <code class="docutils literal notranslate"><span class="pre">'LE</span> <span class="pre">CHAT'[75</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">6</span> <span class="pre">7]</span></code>. This amusing example was first given in “<em>Informatique par telephone</em>” of Philip S. Abrams and Gérard Lacourly, Editions Herman, Paris <span class="math notranslate nohighlight">\(1972\)</span>.</p>
+<p>Find the result of this expression: <code class="docutils literal notranslate"><span class="pre">'LE</span> <span class="pre">CHAT'[75</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">6</span> <span class="pre">7]</span></code>. This amusing example was first given in “<em>Informatique par telephone</em>” of Philip S. Abrams and Gérard Lacourly, Editions Herman, Paris 1972.</p>
 </div>
 <div class="section" id="b-4">
 <h3>B-4<a class="headerlink" href="#b-4" title="Permalink to this headline">¶</a></h3>
@@ -3763,7 +3770,7 @@ X[3 5] ← X[4 1]
 </div>
 <div class="section" id="b-8">
 <h3>B-8<a class="headerlink" href="#b-8" title="Permalink to this headline">¶</a></h3>
-<p>One creates a vector, and a set of indices:</p>
+<p>One creates a vector, and a set of indexes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Source ← 10 4 13 3 9 0 7 6 2 13 8 1 5
@@ -3844,12 +3851,12 @@ V4 ← 15 48 &#39;Yes&#39; 52
 </div>
 <div class="section" id="spe-2-representation-of-numbers">
 <h3>Spe-2 Representation of Numbers<a class="headerlink" href="#spe-2-representation-of-numbers" title="Permalink to this headline">¶</a></h3>
-<p>Up to now, we have entered decimal numbers using the most common conventions, like <span class="math notranslate nohighlight">\(3714.12\)</span> or <span class="math notranslate nohighlight">\(0.41\)</span>.</p>
+<p>Up to now, we have entered decimal numbers using the most common conventions, like 3714.12 or 0.41.</p>
 <p>It is also possible to employ other conventions to facilitate typing.</p>
-<p>When the magnitude of a decimal value is less than <span class="math notranslate nohighlight">\(1\)</span> it is not necessary to enter a zero before the decimal point:</p>
+<p>When the magnitude of a decimal value is less than 1 it is not necessary to enter a zero before the decimal point:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.413        ⍝ same as 0.413
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.413        ⍝ same as 0.413.
 </pre></div>
 </div>
 </div>
@@ -3859,7 +3866,7 @@ V4 ← 15 48 &#39;Yes&#39; 52
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>¯.5119      ⍝ same as ¯0.5119
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>¯.5119      ⍝ same as ¯0.5119.
 </pre></div>
 </div>
 </div>
@@ -3868,8 +3875,8 @@ V4 ← 15 48 &#39;Yes&#39; 52
 </span></div></div>
 </div>
 <p>Very large and very small numbers can be entered using <em><strong>scientific</strong></em> (or <em><strong>exponential</strong></em>) <em><strong>representation</strong></em>.</p>
-<p>Using this convention, any “extreme” number can be represented by a “normal” number, the <em>mantissa</em>, multiplied by a power of <span class="math notranslate nohighlight">\(10\)</span>, the <em>exponent</em>.</p>
-<p>For example, <span class="math notranslate nohighlight">\(42781900\)</span> could be represented as:</p>
+<p>Using this convention, any “extreme” number can be represented by a “normal” number, the <em>mantissa</em>, multiplied by a power of 10, the <em>exponent</em>.</p>
+<p>For example, 42781900 could be represented as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
@@ -3878,7 +3885,7 @@ V4 ← 15 48 &#39;Yes&#39; 52
 &amp;= 42781.9 \times 10^4
 \end{align}
 \end{split}\]</div>
-<p>and <span class="math notranslate nohighlight">\(0.0000038421\)</span> could be represented as:</p>
+<p>and 0.0000038421 could be represented as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
@@ -3981,7 +3988,7 @@ V4 ← 15 48 &#39;Yes&#39; 52
 <p>For example,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Prod[2 5 3;2 1;1 2 5 6]    ⍝ Gives a result of shape 3 2 4
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Prod[2 5 3;2 1;1 2 5 6]    ⍝ Gives a result of shape 3 2 4.
 </pre></div>
 </div>
 </div>
@@ -3998,7 +4005,7 @@ V4 ← 15 48 &#39;Yes&#39; 52
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Prod[;2;⍳6]                ⍝ Gives a result of shape 5 6
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Prod[;2;⍳6]                ⍝ Gives a result of shape 5 6.
 </pre></div>
 </div>
 </div>
@@ -4011,8 +4018,8 @@ V4 ← 15 48 &#39;Yes&#39; 52
 </span></div></div>
 </div>
 <p>In the last example, the omitted index refers to the first dimension of <code class="docutils literal notranslate"><span class="pre">Prod</span></code> which is of length <span class="math notranslate nohighlight">\(5\)</span>.</p>
-<p>The second index (<span class="math notranslate nohighlight">\(2\)</span>) is a scalar, and has no dimension.</p>
-<p>That’s why the shape of the result is <span class="math notranslate nohighlight">\(5\ 6\)</span> and not <span class="math notranslate nohighlight">\(5\ 1\ 6\)</span>.</p>
+<p>The second index (2) is a scalar, and has no dimension.</p>
+<p>That’s why the shape of the result is 5 6 and not 5 1 6.</p>
 </div>
 <div class="section" id="spe-3-2-using-ravel-to-preserve-a-dimension">
 <h4>Spe-3.2 - Using Ravel to Preserve a Dimension<a class="headerlink" href="#spe-3-2-using-ravel-to-preserve-a-dimension" title="Permalink to this headline">¶</a></h4>
@@ -4111,7 +4118,7 @@ Mini
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">41 14 19 45
 </span></div></div>
 </div>
-<p>And we were surprised to see the values of a column were displayed horizontally. We can now understand why: the shape of the result is equal to <code class="docutils literal notranslate"><span class="pre">(⍴1</span> <span class="pre">2</span> <span class="pre">5</span> <span class="pre">6),(⍴1)</span></code>. As the shape of a scalar is empty, this expression is equivalent to <code class="docutils literal notranslate"><span class="pre">(⍴1</span> <span class="pre">2</span> <span class="pre">5</span> <span class="pre">6)</span></code>, i.e. <span class="math notranslate nohighlight">\(4\)</span>. The indexing operatoin therefore produces a vector, which is displayed on a single line of the screen.</p>
+<p>And we were surprised to see the values of a column were displayed horizontally. We can now understand why: the shape of the result is equal to <code class="docutils literal notranslate"><span class="pre">(⍴1</span> <span class="pre">2</span> <span class="pre">5</span> <span class="pre">6),(⍴1)</span></code>. As the shape of a scalar is empty, this expression is equivalent to <code class="docutils literal notranslate"><span class="pre">(⍴1</span> <span class="pre">2</span> <span class="pre">5</span> <span class="pre">6)</span></code>, i.e. 4. The indexing operation therefore produces a vector, which is displayed on a single line of the screen.</p>
 <p>To obtain a matrix, we must transform the column index (scalar <span class="math notranslate nohighlight">\(1\)</span>) into a vector: we shall again use <em><strong>Ravel</strong></em>, like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4157,7 +4164,7 @@ A        ⍝ The second item was set to 45, then 67 and finally 50.
 </div>
 <div class="section" id="spe-5-a-problem-with-using-reshape">
 <h3>Spe-5 A Problem With Using Reshape (<code class="docutils literal notranslate"><span class="pre">⍴</span></code>)<a class="headerlink" href="#spe-5-a-problem-with-using-reshape" title="Permalink to this headline">¶</a></h3>
-<p>We want to create a numeric matrix with <span class="math notranslate nohighlight">\(3\)</span> rows, and as many columns as another matrix <code class="docutils literal notranslate"><span class="pre">Trix</span></code>, entirely filled with zeroes.</p>
+<p>We want to create a numeric matrix with 3 rows, and as many columns as another matrix <code class="docutils literal notranslate"><span class="pre">Trix</span></code>, entirely filled with zeros.</p>
 <p>One solution is to first obtain the number of columns of <code class="docutils literal notranslate"><span class="pre">Trix</span></code>, using the <em>Drop</em> (<code class="docutils literal notranslate"><span class="pre">↓</span></code>) function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4170,7 +4177,7 @@ A        ⍝ The second item was set to 45, then 67 and finally 50.
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">8
 </span></div></div>
 </div>
-<p>Then manually build the correct matrix using the number of columns (<span class="math notranslate nohighlight">\(8\)</span>) we obtained previously:</p>
+<p>Then manually build the correct matrix using the number of columns (8) we obtained previously:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>3 8⍴0          ⍝ That&#39;s correct
@@ -4183,7 +4190,7 @@ A        ⍝ The second item was set to 45, then 67 and finally 50.
 0 0 0 0 0 0 0 0
 </span></div></div>
 </div>
-<p>Now let us try to build a generalized solution:</p>
+<p>Now let us try to build a generalised solution:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>nc ← 1↓⍴Trix        ⍝ Calculate the number of columns.
