@@ -39,6 +39,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter X: Solutions" href="CHAPTER X - Exercise Solutions.html" />
     <link rel="prev" title="Chapter A - Getting Started" href="CHAPTER A - Getting Started.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -86,6 +87,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Chapter B: Data and Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CHAPTER X - Exercise Solutions.html">
+   Chapter X: Solutions
   </a>
  </li>
 </ul>
@@ -148,23 +154,6 @@
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/CHAPTER B - Data and Variables.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
 
     </div>
 
@@ -690,30 +679,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">res/DyalogTutor_EN.dws saved Tue Aug 11 09:28:49 2020
-
-Welcome                                                                                           
--------                                                                                           
-This Workspace contains most of the variables and functions used in the ENglish tutorial.         
-You can use and modify them at will for your own tests.                                           
-If you want to preserve and retrieve your modifications, save the                                 
-contents of the workspace before closing your session, by pressing                                
-the "Save" button, or using the "Save as" menu option.                                            
-If you do not want this message displayed again, type:                                            
-      lx←''                                                                                       
-... then save the workspace as indicated above.                                                   
-To know in which chapter an object is referenced, type:                                           
-      )ed Refs                                                                                    
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">ws not found
 </span></div></div>
 </div>
-<p><strong>Notes &amp; Questions</strong>:</p>
-<ul class="simple">
-<li><p>in section 8 the author demonstrates some user commands like )save )copy )pcopy )load )continue etc, and for many of those uses random paths that do not exist; for that matter, I included the examples formatted like so:</p></li>
-</ul>
-<div class="highlight-apl notranslate"><div class="highlight"><pre><span></span>      <span class="p">)</span><span class="nv">copy</span> <span class="nv">Toolbox</span> <span class="nv">Hammer</span> <span class="nv">Screwdriver</span>
-</pre></div>
-</div>
-<p>should I create an appropriate set of folders/workspaces so that the examples make sense?</p>
 <div class="section" id="chapter-b-data-and-variables">
 <h1>Chapter B: Data and Variables<a class="headerlink" href="#chapter-b-data-and-variables" title="Permalink to this headline">¶</a></h1>
 <p>When you use APL, you type an expression or a command into the session window, and the result of the expression (or a message resulting from the execution of the command) is displayed on the next line(s). So an APL “session” is a sequence of user input lines (expressions and/or commands) interleaved with the results of the expressions.</p>
@@ -1234,21 +1202,13 @@ Money        ⍝ Let&#39;s verify the result.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">26 16 22 17 21 44 25 22 23 44 41 33
-43 36 47 49 30 22 57 20 45 60 43 22
-
-44 21 58 57 17 43 47 17 43 26 53 23
-29 19 23 38 53 47 38 22 40 57 35 26
-
-37 27 53 26 29 46 25 26 30 20 32 16
-56 55 25 47 38 27 39 59 20 28 42 25
-
-21 57 55 44 16 54 26 16 55 56 45 45
-16 55 26 20 27 55 36 39 43 38 50 16
-
-27 23 56 41 53 60 39 47 44 47 17 28
-24 35 61 26 22 35 24 20 31 35 47 37
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Prod
+      Prod        ⍝ Notice the blank lines separating the sub-arrays,
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>This array is organised in dimensions that represent 5 years, 2 lines, 12 months: it is a three dimensional array. We can also say that its <em><strong>shape</strong></em> is <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">2</span> <span class="pre">12</span></code>.</p>
 </div>
@@ -1288,8 +1248,19 @@ Shape          ⍝ Prod has 5 sheets (or planes), each having
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">5 2 12
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Prod
+      Shape←⍴Prod
+             ∧
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Shape
+      Shape          ⍝ Prod has 5 sheets (or planes), each having
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>Now, what is the shape of <code class="docutils literal notranslate"><span class="pre">Shape</span></code>?</p>
 <div class="cell docutils container">
@@ -1299,8 +1270,13 @@ Shape          ⍝ Prod has 5 sheets (or planes), each having
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">3
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Shape
+      ⍴Shape        ⍝ Prod has 3 dimensions.
+       ∧
+</pre>
+</div>
+</div>
 </div>
 <p>The same result could have been obtained directly using the expression <code class="docutils literal notranslate"><span class="pre">⍴⍴</span> <span class="pre">Prod</span></code>:</p>
 <div class="cell docutils container">
@@ -1310,8 +1286,13 @@ Shape          ⍝ Prod has 5 sheets (or planes), each having
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">3
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Prod
+      ⍴⍴Prod
+        ∧
+</pre>
+</div>
+</div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Prod</span></code> has 3 dimensions; we say that its <em><strong>Rank</strong></em> is 3, or that it is organised along 3 criteria which are: Years / Lines / Months.</p>
 <div class="cell docutils container">
@@ -1632,8 +1613,13 @@ M ← 1 4 ⍴ 87 65 21 40
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">446.19 231.12 253.59 115.56 262.15 271.78 1.07 180.83 166.92 318.86 240.75 44.94 240.75 90.95 317.79 285.69 4.28 368.08 295.32 379.85 324.21 77.04 77.04 415.16 447.26 33.17 415.16 285.69 202.23 126.26 180.83 81.32 134.82 261.08 343.47 157.29 335.98
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Bignum
+      Bignum
+      ∧
+</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2010,12 +1996,13 @@ MyIndex
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 0 1 1 1 1 1 1 0 0 0
-1 1 1 1 1 1 1 1 0 0 0 0
-0 1 1 1 0 0 0 0 0 1 1 1
-0 0 0 0 0 0 0 1 1 1 1 1
-0 0 1 1 1 1 1 0 0 0 0 0
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Planning
+      Planning
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>This is not very easy to interpret! Let us replace the inactive periods by “<code class="docutils literal notranslate"><span class="pre">-</span></code>“, and the busy periods by “<code class="docutils literal notranslate"><span class="pre">⎕</span></code>”. This beautiful character, named <em><strong>Quad</strong></em>, can be entered by pressing <kbd>APL</kbd>+<kbd>L</kbd>.</p>
 <div class="cell docutils container">
@@ -2025,12 +2012,13 @@ MyIndex
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">---⎕⎕⎕⎕⎕⎕---
-⎕⎕⎕⎕⎕⎕⎕⎕----
--⎕⎕⎕-----⎕⎕⎕
--------⎕⎕⎕⎕⎕
---⎕⎕⎕⎕⎕-----
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Planning
+      '-⎕'[Planning+1]
+           ∧
+</pre>
+</div>
+</div>
 </div>
 <p>Isn’t it magic?</p>
 <p>Do you understand why we added 1 to <code class="docutils literal notranslate"><span class="pre">Planning</span></code>? Of course, the vector to be indexed was composed of only two characters, so the set of indexes had to be composed only from the values 1 and 2 and that is why we used <code class="docutils literal notranslate"><span class="pre">Planning+1</span></code> to index.</p>
@@ -2046,13 +2034,13 @@ MyIndex
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">41 26 38
-14 87 52
-30 28 19
-65 40 55
-19 31 64
-45 82 74
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      Tests
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>Indexing an array is very similar to the method we say for vectors, but we now need one index for the row and one for the column; they must be separated by a <em><strong>Semi-colon</strong></em>. For example, to get (or replace) the value 55 in row 4, column 3, one types:</p>
 <div class="cell docutils container">
@@ -2062,8 +2050,13 @@ MyIndex
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">55
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      Tests[4;3]
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>It is of course possible to select more than one row and more than one column. If so, one obtains all the values situated at the intersections of the specified rows and columns.</p>
 <div class="cell docutils container">
@@ -2073,10 +2066,13 @@ MyIndex
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">41 38
-19 64
-45 74
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      Tests[1 5 6;1 3]
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>The result of indexing may sometimes be surprising. Let us extract 4 values from the first column:</p>
 <div class="cell docutils container">
@@ -2086,8 +2082,13 @@ MyIndex
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">41 14 19 45
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      Tests[1 2 5 6;1]
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>You probably expected the result to be displayed like a column? Really sorry!</p>
 <p>The result of this expression is a vector, and a vector is always displayed as a row on the screen.</p>
@@ -2119,9 +2120,13 @@ MyIndex
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">16 55 26 20 27 55
-24 35 61 26 22 35
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Prod
+      Prod[4 5;2;1 2 3 4 5 6]    ⍝ The result is a matrix: 2 years/6 months.
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <div class="section" id="remark-1">
 <h4>Remark 1<a class="headerlink" href="#remark-1" title="Permalink to this headline">¶</a></h4>
@@ -2133,8 +2138,13 @@ MyIndex
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">38 52
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      Tests[1 2;3]    ⍝ gives rows 1 and 2, column 3
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>whereas</p>
 <div class="cell docutils container">
@@ -2144,8 +2154,13 @@ MyIndex
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">26 38
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      Tests[1;2 3]    ⍝ gives row 1, columns 2 and 3
+      ∧
+</pre>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="remark-2">
@@ -2159,8 +2174,13 @@ MyIndex
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">52 19 26
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      Tests[(2 3)(5 1)(1 2)]
+      ∧
+</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2175,12 +2195,13 @@ MyIndex
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">21 57 55 44 16 54
-16 55 26 20 27 55
-
-27 23 56 41 53 60
-24 35 61 26 22 35
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Prod
+      Prod[4 5;1 2;1 2 3 4 5 6]
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>But it is shorter to type:</p>
 <div class="cell docutils container">
@@ -2191,12 +2212,13 @@ MyIndex
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">21 57 55 44 16 54
-16 55 26 20 27 55
-
-27 23 56 41 53 60
-24 35 61 26 22 35
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Prod
+      Prod[4 5;;1 2 3 4 5 6]    ⍝ The omitted index means
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>In the same way:</p>
 <div class="cell docutils container">
@@ -2207,9 +2229,13 @@ MyIndex
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">16 55 26 20 27 55 36 39 43 38 50 16
-24 35 61 26 22 35 24 20 31 35 47 37
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Prod
+      Prod[4 5;2;]              ⍝ The omitted last index means
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>And finally:</p>
 <div class="cell docutils container">
@@ -2220,21 +2246,13 @@ MyIndex
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">26 16 22
-43 36 47
-
-44 21 58
-29 19 23
-
-37 27 53
-56 55 25
-
-21 57 55
-16 55 26
-
-27 23 56
-24 35 61
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Prod
+      Prod[;;1 2 3]             ⍝ The omitted indices mean
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>This convention also applies to <em>replacing</em> specific items. For example, to change all the items in the last row of <code class="docutils literal notranslate"><span class="pre">Tests</span></code>, we could type:</p>
 <div class="cell docutils container">
@@ -2245,13 +2263,19 @@ Tests
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">41 26 38
-14 87 52
-30 28 19
-65 40 55
-19 31 64
-60 70 80
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      Tests[6;]←60 70 80
+           ∧
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      Tests
+      ∧
+</pre>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="warnings">
@@ -2270,7 +2294,7 @@ Tests
 </div>
 <div class="cell_output docutils container">
 <div class="stderr docutils container">
-<pre class="stderr literal-block">LENGTH ERROR
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
       Tests[1 6;1 3]←11 22 33 44
            ∧
 </pre>
@@ -2286,9 +2310,13 @@ Tests
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">41 38
-60 80
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      Tests[1 6;1 3]        ⍝ Remember: row 6 was modified above!
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>So, to replace them, we cannot use a vector, as we have just tried to do. Instead we must organise the replacement array into a 2 by 2 matrix, like this:</p>
 <div class="cell docutils container">
@@ -2299,13 +2327,19 @@ Tests
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">11 26 22
-14 87 52
-30 28 19
-65 40 55
-19 31 64
-33 70 44
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      Tests[1 6;1 3]←2 2⍴11 22 33 44
+           ∧
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      Tests
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>Notice the corners have the new values.</p>
 </div>
@@ -2324,13 +2358,25 @@ Tests2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 0
-0 0 0
-0 0 0
-0 0 0
-0 0 0
-0 0 0
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      Tests2←Tests
+             ∧
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests2
+      Tests2[;]←0        ⍝ All the rows and columns are replaced by zero.
+            ∧
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests2
+      Tests2
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>For a vector, like <code class="docutils literal notranslate"><span class="pre">Contents</span></code>, we would write</p>
 <div class="cell docutils container">
@@ -2404,8 +2450,13 @@ Contents
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">40
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      4 2⌷Tests         ⍝ Equivalent to Tests[4;2].
+          ∧
+</pre>
+</div>
+</div>
 </div>
 <p>It is possible to select several rows and several columns, using a special notation that will be explained in subsequent sections. The left argument of <em>Index</em> is now made of a list of rows followed by a list of columns, both parenthesised:</p>
 <div class="cell docutils container">
@@ -2415,10 +2466,13 @@ Contents
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">11 22
-30 19
-33 44
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      (1 3 6)(1 3)⌷Tests  ⍝ Equivalent to Tests[1 3 6;1 3].
+                   ∧
+</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2873,14 +2927,13 @@ K
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌┌→───────┐
-↓↓26 22 21│
-││43 47 30│
-││        │
-││44 58 17│
-││29 23 53│
-└└~───────┘
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Prod
+      DISPLAY Prod[1 2;;1 3 5]      ⍝ This array is of rank 3. So, 3 arrows
+              ∧
+</pre>
+</div>
+</div>
 </div>
 <p>Mixed arrays are sometimes more complex to understand.</p>
 <div class="cell docutils container">
@@ -3181,9 +3234,7 @@ Children
 <div class="section" id="the-active-workspace">
 <h3>8.1 The Active Workspace<a class="headerlink" href="#the-active-workspace" title="Permalink to this headline">¶</a></h3>
 <p>When you start a working session with APL, you are allotted an empty portion of memory, which is called a <em><strong>Workspace</strong></em>, or <em><strong>WS</strong></em> for short. This WS is called the <em><strong>Active WS</strong></em>, because it is the area of memory in which you work. You gradually fill it with variables and functions<sup>2</sup> as you create them.</p>
-<blockquote>
-<div><p>² In APL we try to design a computer <em>program</em>, not as a single monolithic procedure, but rather as a set of inter-connecting units known as <em>functions</em> (or <em>user-defined functions</em> to distinguish them from <em>primitive</em> or built-in functions). Each function is ideally small, self-contained, and performs a single specific task.</p>
-</div></blockquote>
+<p><small>² In APL we try to design a computer <em>program</em>, not as a single monolithic procedure, but rather as a set of inter-connecting units known as <em>functions</em> (or <em>user-defined functions</em> to distinguish them from <em>primitive</em> or built-in functions). Each function is ideally small, self-contained, and performs a single specific task.</small></p>
 <p>You can ask the system to give you the list of your variables and functions. To do that, you use a <em><strong>system command</strong></em>: a special word which is recognised by the APL system because its first character is a <em><strong>closing parenthesis</strong></em>: <code class="docutils literal notranslate"><span class="pre">)</span></code>. Some Swedish APLers call that a “banana”.</p>
 <p>The names of system commands are not case sensitive; they can be typed in mixture of upper and lower-case characters.</p>
 <p>Let’s obtain a list of our variable names, using the command <code class="docutils literal notranslate"><span class="pre">)vars</span></code>:</p>
@@ -3195,24 +3246,10 @@ Children
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">AGE     Abstract        Actual  Ages    Alpha   Amount  BHSales Bernard Bignum  Blah    Boys    Bétise_à_Caimbrai       
-CSS1    Car     Categories      Chemistry       Children        Codes   Col_Tree        Colette Contents        Coords  
-Copied  Cost    CounCodes       Countries       Currencies      Damned  Dept    Describe        Discount        Dummy   
-Emptiness       EvenPage        Exp     Fly⍙Airlines    For     Forecast        Friends G       G1      G2      G3      G4
-Gender  Girls   GridData        H       HCaps   Help    Hogwash Hote273 Hundred I4Qty   I4Ref   I6Long  I6Start I6Text  
-Inf     Inv     Invcur  Invest  J       John1   John1f  John1s  L1      L2      L3      L4      Left    Length  Letters 
-Line    M       MLK     MN      MT      Magoo   Manum   Matex   Memo    MixMat  MixVec  MonMat  MonVec  Money   Movies  
-MyIndex MyPage  MyPage2 My_car_is_green Names   NesMat  NesVec  Now     Numbers Nums    OddPage One     Ours    PCodes  
-PG1     PGb     PGt     Pattern Percent PersoAxis       Phrase  Planning        Pool    Prefix  Presence        Price   
-Prices  Prizes  Prod    Purchased       Qty     Rates   RawPS   Refs    Release Res     Results Right   Row_DeepData    
-Row_DeepTree    Row_Tree        SAL     Sailor  Salaries        Sales   Segs    Shape   Singleton       Slices  Small   
-Sold    Status  StudCat StudExp StudRates       Subcon  Suffix  Swansea TM      Tabu    Tale    Tam     Tests   Tests2  
-Text    TheirAge        TheirChildren   TheirSalary     TheirStatus     Three   Tickets Title   Tome    Towns   Trailer 
-Trix    Twelve  Two     V       Values  Vec     Vec3    Vec4    Vec5    Wanabuy Weird   What    Winners Words   X       
-XG1     XG10    XG2     XG4     XG7     XG8     XG9     Xal     Y       Years   Yop     ZID     ZSG     acme    angles  
-bmps    bookid  boxes   comic   demo    guy     homedir htm     htmparas        lx      mat     mm      oneofeach       
-pageref path    pg1     pg2     pgh     rtf     rtf2    rtfbad  rtfbullets      rtfdash rtfg    rtftabs rtftest str     
-text    towerchart      txt     var     zsg     ∆cmap   ∆seatrial       ∆x      
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Amount  Bernard Bétise_à_Caimbrai       Children        Colette Contents        Damned  Discount        Emptiness       
+Fly⍙Airlines    G       H       Hote273 Hundred J       Length  Line    M       MixMat  MixVec  MonMat  MonVec  Money   
+MyIndex My_car_is_green NesMat  NesVec  Now     One     Presence        Purchased       Res     Sales   Shape   Singleton
+Text    Trailer Two     V       Vec     Weird   Years   var     ∆x      
 </span></div></div>
 </div>
 <p>The variables are listed in alphabetic order, but beware, the lower-case alphabet is ordered after the upper-case one. This is the reason why both the variables <code class="docutils literal notranslate"><span class="pre">bmps</span></code> and <code class="docutils literal notranslate"><span class="pre">towerchart</span></code> are listed after <code class="docutils literal notranslate"><span class="pre">Contents</span></code>.</p>
@@ -3224,7 +3261,9 @@ text    towerchart      txt     var     zsg     ∆cmap   ∆seatrial       ∆x
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">not found nesmat
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">not found Tests
+not found nesmat
+not found towerchart
 </span></div></div>
 </div>
 <p>We misspelled the name of one of our variables; the system erased the other ones, and gave us a warning. We can re-issue a command to erase the variable <code class="docutils literal notranslate"><span class="pre">NesMat</span></code>:</p>
@@ -3245,29 +3284,7 @@ text    towerchart      txt     var     zsg     ∆cmap   ∆seatrial       ∆x
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">Absval1 Absval2 Against1        Against2        Against3        All     And     AutoMeasure     Average Bench   Between 
-Booklet BorderedBlocks  Bot     BuildVars       CMDesign        CMDesign1       CMDesign2       CMReport        CMUse   
-CMUse1  CMUse2  CSVTest Calc1   Calc2   Caps    CarOwner        CarOwnerDist    CarOwnerWith    CarSales        
-CarSales_Init   CarSales_Read   CarSales_Store  Classify        Clear   Compare Contraction     Convert CroiBig Croiser 
-CrossCount1     CrossCount2     CrossCount3     CrossCount4     Cut     D2H     DFact1  DFact2  DISP    DISPLAY DP      
-Deciles Decode  DemoCR  DemoHTM DirFun1 Disp    Dispatch        Divisors1       Divisors2       Endless Enlist  Equal   
-ExcelLoop       Excellence      Exchange        Expand  Fact    Flash1  Flash2  Flash3  Flash4  Flash5  Folder  Frame   
-Frame1  Frame2  Frame3  Frame4  Frame6  FrameG  Free    FricA   FricA∆  FricB   FricBGui        FricB∆  GUI1    GUI1_CB1
-GUI1_CB2        GUI2    GUI2_CB2        GUI3    GUI_Combo       GUI_FontDefine  GUI_Fonts       GUI_List        GUI_Menu
-GetContext      Greedy  Grid_Demo1      Grid_Demo2      Grid_Demo3      Growth  H2D     HTMSample       HTMTest HTMWrap 
-Hammer  Hammer2 HorMat  Hypo    In1     In2     Includes        Indents Inmat   Interlace       Invec   John    Lengths 
-Lister  Locked  LockedSurprise  LoopSum MainFunc        MaxPlace        Meanval MergeTest       Mess    Mid     Mirror1 
-Mirror2 NestedRes       Ombra   Only    Ontop   Ordered Outside Overlay PDFTest Paf     PageFit PageRef Palindrome      
-Plus    PlusNoRes       Process Prompt1 Prompt2 QuadRoot        RTFDemo RawGui  Refund  Report  Restore ReverBug        
-ReverLoop       Reverse RichText        Roll    Root    Round1  Round2  SalesRep        Scan4u  Search  Seatrial        
-SecureEdit      ShortWide       Show    Show1   Show2   Show3   Show4   Show5   Show6   ShowMsg ShowSel ShowVowels      
-ShyFun  SkipTest        Sorry   Spin    Split   StudRefund      Styles  SubFunc SubSum  SubTot1 SubTot2 SubTot3 Subtest 
-Surface Surprise        Switch1 Switch2 Switch3 Switcher        Syra1   Syra2   Syracuse        Syracuse1       Syracuse2
-Syracuse3       TTest   TV      TVNew   TVShow  TVZap   TWrap   TableColours    TableDemo       TableIndents    TableStuff
-Test    TestCSV TestDraw        TestFonts       TestFrames      TestTabs        Testgrid        Time    Times   Timo5   To
-ToDistiller     TocTest Top     Totalise        Tox     Typeof  Upper   VerMat  View    Whiten  Willitwork1     
-Willitwork2     Willitwork3     XLSuite1        XLSuite2        XLSuite3        YSetFuns        YSetVars        Yopen   
-paf     rms     
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">DISP    DISPLAY 
 </span></div></div>
 </div>
 <div class="section" id="id6">
@@ -3327,7 +3344,7 @@ paf     rms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">Not saved, this ws is CLEAR WS. Use -force to overwrite
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">MyPreciousWS.dws saved Mon Aug 24 20:21:22 2020
 </span></div></div>
 </div>
 <p>A confirmation message appears, specifying where it has been saved, and the date and time of the operation.</p>
@@ -3346,9 +3363,6 @@ paf     rms
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">DyalogTutor_EN.DWS      
-</span></div></div>
 </div>
 <p>Only one workspace was found in the <code class="docutils literal notranslate"><span class="pre">res</span></code> folder.</p>
 </div>
@@ -3371,20 +3385,7 @@ paf     rms
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">res/DyalogTutor_EN.dws saved Tue Aug 11 09:28:49 2020
-
-Welcome                                                                                           
--------                                                                                           
-This Workspace contains most of the variables and functions used in the ENglish tutorial.         
-You can use and modify them at will for your own tests.                                           
-If you want to preserve and retrieve your modifications, save the                                 
-contents of the workspace before closing your session, by pressing                                
-the "Save" button, or using the "Save as" menu option.                                            
-If you do not want this message displayed again, type:                                            
-      lx←''                                                                                       
-... then save the workspace as indicated above.                                                   
-To know in which chapter an object is referenced, type:                                           
-      )ed Refs                                                                                    
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">ws not found
 </span></div></div>
 </div>
 <p>In this case APL will search for your workspace in the folders specified in your “<em>Workspace Search Path</em>” as explained above, unless you specify a full path name. If the path name includes blank characters, you <strong>must</strong> place the whole expression between double quotes, as in the first example below:</p>
@@ -3465,8 +3466,7 @@ Prod + 3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">res/DyalogTutor_EN.dws saved Tue Aug 11 09:28:49 2020
-not copied Prod
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">ws not found.
 </span></div></div>
 </div>
 <p>Notice how <code class="docutils literal notranslate"><span class="pre">Prod</span></code> was <strong>not</strong> copied from the auxiliary WS because we have defined our own <code class="docutils literal notranslate"><span class="pre">Prod</span></code> above.</p>
@@ -3482,20 +3482,7 @@ not copied Prod
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">res/DyalogTutor_EN.dws saved Tue Aug 11 09:28:49 2020
-
-Welcome                                                                                           
--------                                                                                           
-This Workspace contains most of the variables and functions used in the ENglish tutorial.         
-You can use and modify them at will for your own tests.                                           
-If you want to preserve and retrieve your modifications, save the                                 
-contents of the workspace before closing your session, by pressing                                
-the "Save" button, or using the "Save as" menu option.                                            
-If you do not want this message displayed again, type:                                            
-      lx←''                                                                                       
-... then save the workspace as indicated above.                                                   
-To know in which chapter an object is referenced, type:                                           
-      )ed Refs                                                                                    
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">ws not found
 </span></div></div>
 </div>
 <p>Then you spend some hours adding new functions and variables, changing things here and there, and suddenly, you discover that you made inappropriate changes to a function named <code class="docutils literal notranslate"><span class="pre">Average</span></code>.</p>
@@ -3507,7 +3494,7 @@ To know in which chapter an object is referenced, type:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">res/DyalogTutor_EN.dws saved Tue Aug 11 09:28:49 2020
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">ws not found.
 </span></div></div>
 </div>
 <p>When imported, the original version of <code class="docutils literal notranslate"><span class="pre">Average</span></code> will override the version you mistakenly altered. Your active workspace will be correct again, and you will be able to go on with your work (but don’t forget to save it!).</p>
@@ -3528,7 +3515,7 @@ To know in which chapter an object is referenced, type:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">is res/DyalogTutor_EN.dws
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">is CLEAR WS
 </span></div></div>
 </div>
 <p>Do not be misled by the name that is reported: it just means that the contents of your active WS had initially been loaded from that WS, or have recently been saved under that name. But since it was loaded or saved, your current WS may have been modified, and may no longer be identical to the original copy stored in the library.</p>
@@ -3655,7 +3642,7 @@ To know in which chapter an object is referenced, type:
 </div>
 <div class="section" id="b-3">
 <h3>B-3<a class="headerlink" href="#b-3" title="Permalink to this headline">¶</a></h3>
-<p>Find the result of this expression: <code class="docutils literal notranslate"><span class="pre">'LE</span> <span class="pre">CHAT'[75</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">6</span> <span class="pre">7]</span></code>. This amusing example was first given in “<em>Informatique par telephone</em>” of Philip S. Abrams and Gérard Lacourly, Editions Herman, Paris 1972.</p>
+<p>Find the result of this expression: <code class="docutils literal notranslate"><span class="pre">'LE</span> <span class="pre">CHAT'[7</span> <span class="pre">5</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">6</span> <span class="pre">7]</span></code>. This amusing example was first given in “<em>Informatique par telephone</em>” of Philip S. Abrams and Gérard Lacourly, Editions Herman, Paris 1972.</p>
 </div>
 <div class="section" id="b-4">
 <h3>B-4<a class="headerlink" href="#b-4" title="Permalink to this headline">¶</a></h3>
@@ -3717,12 +3704,28 @@ Set ← 3 3 ⍴ Source[2 4 8 5 12 13 7 4]
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">INDEX ERROR
+      Set←3 3⍴Source[2 4 8 5 12 13 7 4]
+                    ∧
+</pre>
+</div>
+</div>
 </div>
 <p>Then one uses it to index the original vector:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Result ← Source[Set]
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Set
+      Result←Source[Set]
+                    ∧
+</pre>
 </div>
 </div>
 </div>
@@ -3932,15 +3935,13 @@ V4 ← 15 48 &#39;Yes&#39; 52
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">29 19 53 47
-44 21 17 43
-
-24 35 22 35
-27 23 53 60
-
-56 55 38 27
-37 27 29 46
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">INDEX ERROR
+      Prod[2 5 3;2 1;1 2 5 6]    ⍝ Gives a result of shape 3 2 4.
+          ∧
+</pre>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3949,12 +3950,13 @@ V4 ← 15 48 &#39;Yes&#39; 52
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">43 36 47 49 30 22
-29 19 23 38 53 47
-56 55 25 47 38 27
-16 55 26 20 27 55
-24 35 61 26 22 35
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">RANK ERROR
+      Prod[;2;⍳6]                ⍝ Gives a result of shape 5 6.
+          ∧
+</pre>
+</div>
+</div>
 </div>
 <p>In the last example, the omitted index refers to the first dimension of <code class="docutils literal notranslate"><span class="pre">Prod</span></code> which is of length <span class="math notranslate nohighlight">\(5\)</span>.</p>
 <p>The second index (2) is a scalar, and has no dimension.</p>
@@ -3973,9 +3975,19 @@ Mini
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">100  80
-360 520
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Forecast
+      Mini←Forecast[Rows;Cols]
+           ∧
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Mini
+      Mini
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>Generally, <code class="docutils literal notranslate"><span class="pre">Rows</span></code> may contain several row numbers, and <code class="docutils literal notranslate"><span class="pre">Cols</span></code> may contain several column numbers. Applying the preceding rule, it is easy to see that we’ll obtain a sub-matrix <code class="docutils literal notranslate"><span class="pre">Mini</span></code>.</p>
 <p>But it may be that <code class="docutils literal notranslate"><span class="pre">Rows</span></code> or <code class="docutils literal notranslate"><span class="pre">Cols</span></code> are scalars. The result of <code class="docutils literal notranslate"><span class="pre">Mat[Rows;Cols]</span></code> would then not be a sub-matrix, but a scalar or a vector. This could lead to other expressions in your function generating an error or an incorrect result, because they were written expecting matrices.</p>
@@ -3988,8 +4000,19 @@ Mini
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">100 80
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Forecast
+      Mini←Forecast[Rows;Cols]
+           ∧
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Mini
+      Mini
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3998,8 +4021,13 @@ Mini
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">2
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Mini
+      ⍴Mini        ⍝ Mini is a vector now
+       ∧
+</pre>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4010,8 +4038,19 @@ Mini
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">80
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Forecast
+      Mini←Forecast[Rows;Cols]
+           ∧
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Mini
+      Mini
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4020,8 +4059,13 @@ Mini
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Mini
+      ⍴Mini        ⍝ Mini is a scalar now
+       ∧
+</pre>
+</div>
+</div>
 </div>
 <p>To avoid this problem, you can force an index expression to be a vector (perhaps a vector containing only one item) by using <em><strong>Ravel</strong></em> (symbol “<code class="docutils literal notranslate"><span class="pre">,</span></code>”) like this:</p>
 <div class="cell docutils container">
@@ -4032,8 +4076,19 @@ Mini
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">80
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Forecast
+      Mini←Forecast[,Rows;,Cols]
+           ∧
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Mini
+      Mini
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4042,8 +4097,13 @@ Mini
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 1
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Mini
+      ⍴Mini        ⍝ Mini is a matrix now
+       ∧
+</pre>
+</div>
+</div>
 </div>
 <p><em><strong>Ravel</strong></em> shall be discussed in C-14.</p>
 <p>In Section 5.3, we indexed the variable <code class="docutils literal notranslate"><span class="pre">Tests</span></code> like this:</p>
@@ -4054,8 +4114,13 @@ Mini
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">41 14 19 45
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      Tests[1 2 5 6;1]
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>And we were surprised to see the values of a column were displayed horizontally. We can now understand why: the shape of the result is equal to <code class="docutils literal notranslate"><span class="pre">(⍴1</span> <span class="pre">2</span> <span class="pre">5</span> <span class="pre">6),(⍴1)</span></code>. As the shape of a scalar is empty, this expression is equivalent to <code class="docutils literal notranslate"><span class="pre">(⍴1</span> <span class="pre">2</span> <span class="pre">5</span> <span class="pre">6)</span></code>, i.e. 4. The indexing operation therefore produces a vector, which is displayed on a single line of the screen.</p>
 <p>To obtain a matrix, we must transform the column index (scalar <span class="math notranslate nohighlight">\(1\)</span>) into a vector: we shall again use <em><strong>Ravel</strong></em>, like this:</p>
@@ -4066,11 +4131,13 @@ Mini
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">41
-14
-19
-45
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Tests
+      Tests[1 2 5 6;,1]
+      ∧
+</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -4085,7 +4152,7 @@ A[2 3 2 4 2]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">72 73 72 74 72
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">73 74 73 75 73
 </span></div></div>
 </div>
 <p>If a repeated index is used to update the variable, only the last replacement value is retained:</p>
@@ -4097,7 +4164,7 @@ A        ⍝ The second item was set to 45, then 67 and finally 50.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">71 50 19 33 75 76
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">71 72 50 19 33 76
 </span></div></div>
 </div>
 </div>
@@ -4113,8 +4180,13 @@ A        ⍝ The second item was set to 45, then 67 and finally 50.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">8
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Trix
+      1↓⍴Trix        ⍝ Drop is discussed in G-1
+         ∧
+</pre>
+</div>
+</div>
 </div>
 <p>Then manually build the correct matrix using the number of columns (8) we obtained previously:</p>
 <div class="cell docutils container">
@@ -4140,9 +4212,15 @@ New ← 3 nc⍴0        ⍝ That should be the same, no?
 </div>
 <div class="cell_output docutils container">
 <div class="stderr docutils container">
-<pre class="stderr literal-block">DOMAIN ERROR
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Trix
+      nc←1↓⍴Trix        ⍝ Calculate the number of columns.
+            ∧
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: nc
       New←3 nc⍴0        ⍝ That should be the same, no?
-              ∧
+            ∧
 </pre>
 </div>
 </div>
@@ -4163,10 +4241,19 @@ New
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: nc
+      New←(3,nc)⍴0      ⍝ Catenate is discussed in C-10.
+             ∧
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: New
+      New
+      ∧
+</pre>
+</div>
+</div>
 </div>
 <p>A direct solution would be:</p>
 <div class="cell docutils container">
@@ -4177,10 +4264,19 @@ New
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-</span></div></div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: Trix
+      New←(3,1↓⍴Trix)⍴0
+                ∧
+</pre>
+</div>
+<div class="stderr docutils container">
+<pre class="stderr literal-block">VALUE ERROR: Undefined name: New
+      New
+      ∧
+</pre>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="spe-6-monadic-index-or-materialise">
@@ -4206,8 +4302,8 @@ New
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 3
-4 5 6
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 1 2
+3 4 5
 </span></div></div>
 </div>
 <p>The <em>Materialise</em> function may also be used with Objects (See Chapter Q, Object Oriented Programming). Applied to an <em>Enumerable Property of an Object</em>, or an <em>Instance of an Object</em> which has such a Property as its <em>default</em> Property, the same syntax returns all the items in this collection.</p>
@@ -4249,6 +4345,7 @@ New
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="CHAPTER A - Getting Started.html" title="previous page">Chapter A - Getting Started</a>
+    <a class='right-next' id="next-link" href="CHAPTER X - Exercise Solutions.html" title="next page">Chapter X: Solutions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
