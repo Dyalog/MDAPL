@@ -89,6 +89,11 @@
    2. Data and Variables
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CHAPTER C - Some Primitive Functions.html">
+   3. Some Primitive Functions
+  </a>
+ </li>
 </ul>
 
 </nav>
@@ -209,8 +214,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#x-the-dyalog-apl-jupyter-notebook-working-environment">
-     1.2.3. 2.X - The Dyalog APL Jupyter Notebook Working Environment
+    <a class="reference internal nav-link" href="#the-dyalog-apl-jupyter-notebook-working-environment">
+     1.2.3. The Dyalog APL Jupyter Notebook Working Environment
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -229,12 +234,8 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-kbd-apl-kbd-key">
-       1.2.5.2. The
-       <kbd>
-        APL
-       </kbd>
-       Key
+      <a class="reference internal nav-link" href="#the-apl-key">
+       1.2.5.2. The APL Key
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -306,10 +307,12 @@
 </ul>
 <blockquote>
 <div><p>A certain number of specialised booklets will also be published to complement this tutorial; among them are:</p>
-<p> Object Oriented Programming</p>
-<p> SQAPL (Interface to Relational Databases using ODBC)</p>
-<p> NewLeaf (Document formatting and publishing)</p>
-<p> RainPro (Business and Scientific Graphics)</p>
+<ul class="simple">
+<li><p>Object Oriented Programming</p></li>
+<li><p>SQAPL (Interface to Relational Databases using ODBC)</p></li>
+<li><p>NewLeaf (Document formatting and publishing)</p></li>
+<li><p>RainPro (Business and Scientific Graphics)</p></li>
+</ul>
 </div></blockquote>
 <p>where are they?? I could only find some of them at the bottom of <a class="reference external" href="https://www.dyalog.com/tutorials.htm">this webpage</a></p>
 <div class="section" id="getting-started">
@@ -333,7 +336,7 @@
 <p>If you do not intend to install RIDE (there is no need to) you can skip to Subsection 2.2. Otherwise continue reading below.</p>
 <div class="section" id="installing-ride">
 <h4><span class="section-number">1.1.1.1. </span>Installing RIDE<a class="headerlink" href="#installing-ride" title="Permalink to this headline">¶</a></h4>
-<p>If you prefer to install RIDE you can head over to <a class="reference external" href="https://github.com/Dyalog/ride/releases">RIDE’s Releases page on GitHub</a> and download the Windows executable you find there. A default installation will serve your needs. After the installation is complete, refer to Subsection 2.1 on how to work with RIDE.</p>
+<p>If you prefer to install RIDE you can head over to <a class="reference external" href="https://github.com/Dyalog/ride/releases">RIDE’s Releases page on GitHub</a> and download the Windows executable you find there. A default installation will serve your needs. After the installation is complete, refer to the subsection on working with RIDE.</p>
 </div>
 </div>
 <div class="section" id="linux">
@@ -341,7 +344,7 @@
 <p>If your machine is running a Linux distribution, head over to <a class="reference external" href="https://www.dyalog.com/download-zone.htm">Dyalog’s download zone</a> and select the appropriate download with respect to your Linux distribution. After the download is complete you can install the package you just downloaded; once you do this, you can type <code class="docutils literal notranslate"><span class="pre">dyalog</span></code> on your command line to start a very basic terminal session. Try typing <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">3</span></code> and pressing <kbd>Enter</kbd> to see if APL returns the result <code class="docutils literal notranslate"><span class="pre">6</span></code>. If it did, everything is going well.</p>
 <p>If something went wrong or you need more help, you can refer to <a class="reference external" href="https://docs.dyalog.com">Dyalog’s Documentation pages</a>. Under “UNIX-Specific Documentation” you can find more detailed instructions on how to install Dyalog APL on your system.</p>
 <p>After Dyalog APL is installed it is recommended that you also install a suitable IDE, namely RIDE - the Remote IDE for Dyalog APL. Please refer to <a class="reference external" href="https://github.com/Dyalog/ride/releases">RIDE’s Releases page on GitHub</a> to download and install the most recent version of RIDE.</p>
-<p>After the installation is successful you can head over to Subsection 2.1 on working with RIDE.</p>
+<p>After the installation is successful you can head over to the subsection on working with RIDE.</p>
 </div>
 <div class="section" id="macos">
 <h3><span class="section-number">1.1.3. </span>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h3>
@@ -352,7 +355,6 @@
 <h3><span class="section-number">1.1.4. </span>Jupyter Notebook Kernel<a class="headerlink" href="#jupyter-notebook-kernel" title="Permalink to this headline">¶</a></h3>
 <p>This subsection points you to the right pages if you wish to install the Dyalog APL kernel for Jupyter notebooks. If you are a first time APLer or are inexperienced with programming we recommend you skip this for now, as you won’t really need it. Jupyter notebooks allow for a different programming experience and are very suitable for intertwining code snippets and text, like this book. If you just want to follow along the examples in the book you do not need to install this, as a standard APL interpreter session will be enough.</p>
 <p>The Dyalog APL kernel can be found <a class="reference external" href="https://github.com/Dyalog/dyalog-jupyter-kernel">on GitHub</a> and the appropriate installation instructions can be found <a class="reference external" href="https://github.com/Dyalog/dyalog-jupyter-kernel/wiki/1.-Offline-usage">in the wiki pages</a>, along with all the dependencies that are needed. Be sure to have a working Dyalog APL installation before trying to install the Dyalog APL kernel.</p>
-<p>Refer to Subsection X to on working with Dyalog APL Jupyter notebooks.</p>
 </div>
 </div>
 <div class="section" id="first-contact">
@@ -386,7 +388,7 @@
 <p>Having performed the installation without changing the default values, Dyalog APL will also have installed two keyboard layouts on your computer. Depending on your machine, Windows may have switched to one of them automatically when you opened the interpreter, but in any case you can use <kbd>⊞ Win</kbd>+<kbd>Spacebar</kbd> to cycle through the keyboard layouts you have active on your computer. You should find two new keyboards available, their names should be prefixed with your country code (e.g. “UK - ” for United Kingdom) and should then be followed by “Dyalog AltGr” and “Dyalog Ctrl”, respectively. The next subsection will explain the meaning of these references to <kbd>Ctrl</kbd> and <kbd>AltGr</kbd>.</p>
 <p>When you open the standard windows interpreter, your development environment contains the following sections, from top to bottom:</p>
 <ul class="simple">
-<li><p>a menu bar, that you can use to open files, configure the IDE, quit the interpreter session, etc; the menu bar is explored in detail in <a class="reference external" href="https://help.dyalog.com">Dyalog’s help pages</a>, under “UI Guide &gt; Session MenuBar”;</p></li>
+<li><p>a menu bar, that you can use to open files, configure the IDE, quit the interpreter session, etc; the menu bar is explored in detail in <a class="reference external" href="http://help.dyalog.com">Dyalog’s help pages</a>, under “UI Guide &gt; Session MenuBar”;</p></li>
 <li><p>a toolbar with icon shortcuts for common actions you might want to perform;</p></li>
 <li><p>a language bar, which will be described in more detail in Subsection 2.3.1;</p></li>
 <li><p>an empty working area (which should no longer be empty if you did the <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">3</span></code> test) topped by an automatic message with some information on your system, like the Dyalog APL version installed, its serial number and the current date;</p></li>
@@ -395,8 +397,8 @@
 <p>The sections just described are highlighted in red in the figure below, from top to bottom respectively.</p>
 <p><img alt="Screenshot of Windows' default interpreter sections" src="_images/WIN_Interpreter_Sections.png" /></p>
 </div>
-<div class="section" id="x-the-dyalog-apl-jupyter-notebook-working-environment">
-<h3><span class="section-number">1.2.3. </span>2.X - The Dyalog APL Jupyter Notebook Working Environment<a class="headerlink" href="#x-the-dyalog-apl-jupyter-notebook-working-environment" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="the-dyalog-apl-jupyter-notebook-working-environment">
+<h3><span class="section-number">1.2.3. </span>The Dyalog APL Jupyter Notebook Working Environment<a class="headerlink" href="#the-dyalog-apl-jupyter-notebook-working-environment" title="Permalink to this headline">¶</a></h3>
 <p>After successfully installing the Dyalog APL Jupyter kernel, you can fire up the Jupyter notebook server as usual, which should open a browser window like the one in the figure below.</p>
 <p><img alt="Screenshot of Jupyter's main window" src="_images/Jupyter_Window.png" /></p>
 <p>From there you can navigate your file system as per usual and if you click the “New” button on the right, it should open a dropdown list with a couple of different options, “Dyalog APL” being one of them.</p>
@@ -420,7 +422,7 @@
 <h3><span class="section-number">1.2.4. </span>Following Along Online<a class="headerlink" href="#following-along-online" title="Permalink to this headline">¶</a></h3>
 <p>If you want to follow along online, your best two options are</p>
 <ul class="simple">
-<li><p>to read this book in its interactive version <span class="xref myst">here</span>;</p></li>
+<li><p>to read this book in its interactive version;</p></li>
 <li><p>to use <a class="reference external" href="https://tryapl.org/">TryAPL’s</a> “Learn” functionality that allows you to link to a Jupyter notebook (like the chapters of this book) and to run the expressions; bear in mind that TryAPL only supports a subset of the APL language.</p></li>
 </ul>
 </div>
@@ -436,8 +438,8 @@
 <p><img alt="Screenshot of the complete dot tooltip" src="_images/Full_Dot_Tooltip.png" /></p>
 <p>Inside the respective software, pressing a glyph in the language bar will place it in the position your cursor is at, so that is the most basic way of inputting APL glyphs. The recommended way, which we advise you to get used to and that we explain in the following Sub-subsection, is by using the appropriate key bindings.</p>
 </div>
-<div class="section" id="the-kbd-apl-kbd-key">
-<h4><span class="section-number">1.2.5.2. </span>The <kbd>APL</kbd> Key<a class="headerlink" href="#the-kbd-apl-kbd-key" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="the-apl-key">
+<h4><span class="section-number">1.2.5.2. </span>The APL Key<a class="headerlink" href="#the-apl-key" title="Permalink to this headline">¶</a></h4>
 <p>It should come as no surprise to you that by pressing your keyboard keys, you type the symbols the key caps have printed on them. For example, the <kbd>A</kbd> key types an <code class="docutils literal notranslate"><span class="pre">a</span></code> when you press it, and if you press <kbd>Shift</kbd>+<kbd>A</kbd> you type an <code class="docutils literal notranslate"><span class="pre">A</span></code>. With APL we introduce another “shifting” key so that the same key can be used to produce even more symbols. We will refer to this shifting key generally as <kbd>APL</kbd>, because this <kbd>APL</kbd> key can differ depending on the keyboard layout you are using, your operating system and the software you have installed.</p>
 <p>If you already know what your <kbd>APL</kbd> key is, you can verify everything is working as expected by pressing <kbd>APL</kbd>+<kbd>R</kbd>: a <code class="docutils literal notranslate"><span class="pre">⍴</span></code> should be typed, the Greek letter Rho.</p>
 <p>If you do not know which one is your <kbd>APL</kbd> key, we will find out together.</p>
@@ -599,10 +601,10 @@
 <p>While reading the book, reproduce the given examples on your computer and experiment by yourself using different data; you will learn more from your own experiments than from reading our examples.</p>
 <p>Most chapters also include exercises; some are very simple and some are more complex. We recommend that you do try to solve as many exercises as possible. Compare your solutions to the ones we suggest in the Solutions Chapter. APL is so rich that there may be <em>several</em> good solutions to the same problem. Comparing different solutions is always interesting.</p>
 <p>After Chapter D you will be able to write small programs of your own and you may want to print some results, input data using the Graphical User Interface (GUI) or read data from files. These topics are presented in self-contained dedicated chapters, so do not hesitate to go back and forth in the book to read about the features you need.</p>
-<p>Also have a look at the workspaces shipped with Dyalog APL, which are documented at <a class="reference external" href="https://docs.dyalog.com">Dyalog’s Documentation Centre</a>. Dyalog also has <a class="reference external" href="https://github.com/Dyalog">a GitHub repo</a> where more resources can be found.</p>
+<p>Also have a look at the workspaces shipped with Dyalog APL, which are documented at <a class="reference external" href="http://docs.dyalog.com/18.0/Code%20Libraries%20Reference%20Guide.pdf">Dyalog’s Documentation Centre</a>. Dyalog also has <a class="reference external" href="https://github.com/Dyalog">a GitHub repo</a> where more resources can be found.</p>
 <p>This document is only a tutorial; everything cannot be said in these pages and there is plenty of additional information out there:</p>
 <ul class="simple">
-<li><p>the <a class="reference external" href="https://docs.dyalog.com">Documentation Centre</a> and <a class="reference external" href="https://help.dyalog.com">Help pages</a> for the most recent Dyalog APL version containing several manuals:</p>
+<li><p>the <a class="reference external" href="http://docs.dyalog.com/18.0/Code%20Libraries%20Reference%20Guide.pdf">Documentation Centre</a> and <a class="reference external" href="http://help.dyalog.com">Help pages</a> for the most recent Dyalog APL version containing several manuals:</p>
 <ul>
 <li><p>User Guide -</p>
 <ul>

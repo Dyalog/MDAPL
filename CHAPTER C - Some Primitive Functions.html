@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Some Primitive Functions &#8212; My Jupyter Book</title>
+    <title>3. Some Primitive Functions &#8212; My Jupyter Book</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -39,6 +39,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="2. Data and Variables" href="CHAPTER B - Data and Variables.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -76,7 +77,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="CHAPTER A - Getting Started.html">
    1. Getting Started
@@ -85,6 +86,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="CHAPTER B - Data and Variables.html">
    2. Data and Variables
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Some Primitive Functions
   </a>
  </li>
 </ul>
@@ -159,106 +165,106 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definitions">
-   Definitions
+   3.1. Definitions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#some-scalar-dyadic-functions">
-   Some Scalar Dyadic Functions
+   3.2. Some Scalar Dyadic Functions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#definition-and-examples">
-     Definition and Examples
+     3.2.1. Definition and Examples
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#division-by-zero">
-     Division By Zero
+     3.2.2. Division By Zero
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#power">
-     Power
+     3.2.3. Power
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#maximum-minimum">
-     Maximum &amp; Minimum
+     3.2.4. Maximum &amp; Minimum
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#relationship">
-     Relationship
+     3.2.5. Relationship
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#residue">
-     Residue
+     3.2.6. Residue
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#order-of-evaluation">
-   Order of Evaluation
+   3.3. Order of Evaluation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#monadic-scalar-functions">
-   Monadic Scalar Functions
+   3.4. Monadic Scalar Functions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-four-basic-symbols">
-     The Four Basic Symbols
+     3.4.1. The Four Basic Symbols
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#identity">
-       Identity
+       3.4.1.1. Identity
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#negative">
-       Negative
+       3.4.1.2. Negative
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#signum">
-       Signum
+       3.4.1.3. Signum
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#reciprocal">
-       Reciprocal
+       3.4.1.4. Reciprocal
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#other-scalar-monadic-functions">
-     Other Scalar Monadic Functions
+     3.4.2. Other Scalar Monadic Functions
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#exponential">
-       Exponential
+       3.4.2.1. Exponential
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#floor-and-ceiling">
-       Floor and Ceiling
+       3.4.2.2. Floor and Ceiling
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#magnitude-absolute-value">
-       Magnitude (Absolute Value)
+       3.4.2.3. Magnitude (Absolute Value)
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#comparison-symbols">
-       Comparison Symbols
+       3.4.2.4. Comparison Symbols
       </a>
      </li>
     </ul>
@@ -267,324 +273,324 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#processing-binary-data">
-   Processing Binary Data
+   3.5. Processing Binary Data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#membership">
-     Membership
+     3.5.1. Membership
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#binary-algebra">
-     Binary Algebra
+     3.5.2. Binary Algebra
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#without">
-     Without
+     3.5.3. Without
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#processing-nested-arrays">
-   Processing Nested Arrays
+   3.6. Processing Nested Arrays
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#scalar-vs-non-scalar-functions">
-     Scalar vs. Non-scalar Functions
+     3.6.1. Scalar vs. Non-scalar Functions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#be-careful-with-shape-type-compatibility">
-     Be Careful With Shape/Type Compatibility
+     3.6.2. Be Careful With Shape/Type Compatibility
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#reduction">
-   Reduction
+   3.7. Reduction
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#presentation">
-     Presentation
+     3.7.1. Presentation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#definition">
-     Definition
+     3.7.2. Definition
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#reduction-of-binary-data">
-     Reduction of Binary Data
+     3.7.3. Reduction of Binary Data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#reduction-of-nested-arrays">
-     Reduction of Nested Arrays
+     3.7.4. Reduction of Nested Arrays
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#application-1">
-     Application 1
+     3.7.5. Application 1
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#application-2">
-     Application 2
+     3.7.6. Application 2
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#axis-specification">
-   Axis Specification
+   3.8. Axis Specification
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#totals-in-an-array">
-     Totals in an Array
+     3.8.1. Totals in an Array
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#processing-arrays">
-       Processing Arrays
+       3.8.1.1. Processing Arrays
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#axis-is-like-an-operator">
-       Axis Is Like an Operator
+       3.8.1.2. Axis Is Like an Operator
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#id1">
-       Processing Arrays
+       3.8.1.3. Processing Arrays
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-shape-of-the-result">
-     The Shape of the Result
+     3.8.2. The Shape of the Result
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#special-notations">
-     Special Notations
+     3.8.3. Special Notations
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#our-first-program">
-   Our First Program
+   3.9. Our First Program
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#concatenation">
-   Concatenation
+   3.10. Concatenation
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#concatenating-vectors">
-     Concatenating Vectors
+     3.10.1. Concatenating Vectors
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#concatenating-other-arrays">
-     Concatenating Other Arrays
+     3.10.2. Concatenating Other Arrays
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#concatenating-scalars">
-     Concatenating Scalars
+     3.10.3. Concatenating Scalars
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id2">
-     Special Notations
+     3.10.4. Special Notations
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#replication">
-   Replication
+   3.11. Replication
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#basic-approach-compression">
-     Basic Approach: Compression
+     3.11.1. Basic Approach: Compression
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     Replication
+     3.11.2. Replication
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#scalar-left-argument">
-     Scalar Left Argument
+     3.11.3. Scalar Left Argument
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id4">
-     Special Notations
+     3.11.4. Special Notations
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#position-index-of">
-   Position (Index Of)
+   3.12. Position (Index Of)
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#discovery">
-     Discovery
+     3.12.1. Discovery
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#application-3">
-     Application 3
+     3.12.2. Application 3
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#index-generator">
-   Index Generator
+   3.13. Index Generator
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#basic-usage">
-     Basic Usage
+     3.13.1. Basic Usage
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#application-4">
-     Application 4
+     3.13.2. Application 4
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#comparison-of-membership-and-index-of">
-     Comparison of Membership and Index Of
+     3.13.3. Comparison of Membership and Index Of
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#example">
-       Example
+       3.13.3.1. Example
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#first-question">
-       First Question
+       3.13.3.2. First Question
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#second-question">
-       Second Question
+       3.13.3.3. Second Question
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#comparison">
-       Comparison
+       3.13.3.4. Comparison
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#idioms">
-     Idioms
+     3.13.4. Idioms
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#application-5">
-     Application 5
+     3.13.5. Application 5
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#application-6">
-     Application 6
+     3.13.6. Application 6
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ravel">
-   Ravel
+   3.14. Ravel
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#empty-vectors-and-black-holes">
-   Empty Vectors and Black Holes
+   3.15. Empty Vectors and Black Holes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises">
-   Exercises
+   3.16. Exercises
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-specialist-s-section">
-   The Specialist’s Section
+   3.17. The Specialist’s Section
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#division-control-div">
-     Division Control - ⎕DIV
+     3.17.1. Division Control - ⎕DIV
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#derived-functions">
-     Derived Functions
+     3.17.2. Derived Functions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#nor-nand">
-     Nor &amp; Nand
+     3.17.3. Nor &amp; Nand
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#index-generator-of-arrays">
-     Index Generator of Arrays
+     3.17.4. Index Generator of Arrays
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ravel-with-axis">
-     Ravel With Axis
+     3.17.5. Ravel With Axis
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#empty-axis">
-       Empty Axis
+       3.17.5.1. Empty Axis
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#fractional-axis">
-       Fractional Axis
+       3.17.5.2. Fractional Axis
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#a-list-of-dimensions">
-       A List of Dimensions
+       3.17.5.3. A List of Dimensions
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#border-cases">
-       Border Cases
+       3.17.5.4. Border Cases
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id5">
-     Residue
+     3.17.6. Residue
     </a>
    </li>
   </ul>
@@ -600,245 +606,245 @@
               <div>
                 
   <div class="section" id="some-primitive-functions">
-<h1>Some Primitive Functions<a class="headerlink" href="#some-primitive-functions" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>Some Primitive Functions<a class="headerlink" href="#some-primitive-functions" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="definitions">
-<h2>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="some-scalar-dyadic-functions">
-<h2>Some Scalar Dyadic Functions<a class="headerlink" href="#some-scalar-dyadic-functions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Some Scalar Dyadic Functions<a class="headerlink" href="#some-scalar-dyadic-functions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="definition-and-examples">
-<h3>Definition and Examples<a class="headerlink" href="#definition-and-examples" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.1. </span>Definition and Examples<a class="headerlink" href="#definition-and-examples" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="division-by-zero">
-<h3>Division By Zero<a class="headerlink" href="#division-by-zero" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.2. </span>Division By Zero<a class="headerlink" href="#division-by-zero" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="power">
-<h3>Power<a class="headerlink" href="#power" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.3. </span>Power<a class="headerlink" href="#power" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="maximum-minimum">
-<h3>Maximum &amp; Minimum<a class="headerlink" href="#maximum-minimum" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.4. </span>Maximum &amp; Minimum<a class="headerlink" href="#maximum-minimum" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="relationship">
-<h3>Relationship<a class="headerlink" href="#relationship" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.5. </span>Relationship<a class="headerlink" href="#relationship" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="residue">
-<h3>Residue<a class="headerlink" href="#residue" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.6. </span>Residue<a class="headerlink" href="#residue" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="order-of-evaluation">
-<h2>Order of Evaluation<a class="headerlink" href="#order-of-evaluation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3. </span>Order of Evaluation<a class="headerlink" href="#order-of-evaluation" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="monadic-scalar-functions">
-<h2>Monadic Scalar Functions<a class="headerlink" href="#monadic-scalar-functions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4. </span>Monadic Scalar Functions<a class="headerlink" href="#monadic-scalar-functions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="the-four-basic-symbols">
-<h3>The Four Basic Symbols<a class="headerlink" href="#the-four-basic-symbols" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.1. </span>The Four Basic Symbols<a class="headerlink" href="#the-four-basic-symbols" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="identity">
-<h4>Identity<a class="headerlink" href="#identity" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.4.1.1. </span>Identity<a class="headerlink" href="#identity" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="negative">
-<h4>Negative<a class="headerlink" href="#negative" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.4.1.2. </span>Negative<a class="headerlink" href="#negative" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="signum">
-<h4>Signum<a class="headerlink" href="#signum" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.4.1.3. </span>Signum<a class="headerlink" href="#signum" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="reciprocal">
-<h4>Reciprocal<a class="headerlink" href="#reciprocal" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.4.1.4. </span>Reciprocal<a class="headerlink" href="#reciprocal" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
 <div class="section" id="other-scalar-monadic-functions">
-<h3>Other Scalar Monadic Functions<a class="headerlink" href="#other-scalar-monadic-functions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.4.2. </span>Other Scalar Monadic Functions<a class="headerlink" href="#other-scalar-monadic-functions" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="exponential">
-<h4>Exponential<a class="headerlink" href="#exponential" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.4.2.1. </span>Exponential<a class="headerlink" href="#exponential" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="floor-and-ceiling">
-<h4>Floor and Ceiling<a class="headerlink" href="#floor-and-ceiling" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.4.2.2. </span>Floor and Ceiling<a class="headerlink" href="#floor-and-ceiling" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="magnitude-absolute-value">
-<h4>Magnitude (Absolute Value)<a class="headerlink" href="#magnitude-absolute-value" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.4.2.3. </span>Magnitude (Absolute Value)<a class="headerlink" href="#magnitude-absolute-value" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="comparison-symbols">
-<h4>Comparison Symbols<a class="headerlink" href="#comparison-symbols" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.4.2.4. </span>Comparison Symbols<a class="headerlink" href="#comparison-symbols" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
 </div>
 <div class="section" id="processing-binary-data">
-<h2>Processing Binary Data<a class="headerlink" href="#processing-binary-data" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.5. </span>Processing Binary Data<a class="headerlink" href="#processing-binary-data" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="membership">
-<h3>Membership<a class="headerlink" href="#membership" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.5.1. </span>Membership<a class="headerlink" href="#membership" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="binary-algebra">
-<h3>Binary Algebra<a class="headerlink" href="#binary-algebra" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.5.2. </span>Binary Algebra<a class="headerlink" href="#binary-algebra" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="without">
-<h3>Without<a class="headerlink" href="#without" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.5.3. </span>Without<a class="headerlink" href="#without" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="processing-nested-arrays">
-<h2>Processing Nested Arrays<a class="headerlink" href="#processing-nested-arrays" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.6. </span>Processing Nested Arrays<a class="headerlink" href="#processing-nested-arrays" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="scalar-vs-non-scalar-functions">
-<h3>Scalar vs. Non-scalar Functions<a class="headerlink" href="#scalar-vs-non-scalar-functions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.6.1. </span>Scalar vs. Non-scalar Functions<a class="headerlink" href="#scalar-vs-non-scalar-functions" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="be-careful-with-shape-type-compatibility">
-<h3>Be Careful With Shape/Type Compatibility<a class="headerlink" href="#be-careful-with-shape-type-compatibility" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.6.2. </span>Be Careful With Shape/Type Compatibility<a class="headerlink" href="#be-careful-with-shape-type-compatibility" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="reduction">
-<h2>Reduction<a class="headerlink" href="#reduction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.7. </span>Reduction<a class="headerlink" href="#reduction" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="presentation">
-<h3>Presentation<a class="headerlink" href="#presentation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.1. </span>Presentation<a class="headerlink" href="#presentation" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="definition">
-<h3>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.2. </span>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="reduction-of-binary-data">
-<h3>Reduction of Binary Data<a class="headerlink" href="#reduction-of-binary-data" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.3. </span>Reduction of Binary Data<a class="headerlink" href="#reduction-of-binary-data" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="reduction-of-nested-arrays">
-<h3>Reduction of Nested Arrays<a class="headerlink" href="#reduction-of-nested-arrays" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.4. </span>Reduction of Nested Arrays<a class="headerlink" href="#reduction-of-nested-arrays" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="application-1">
-<h3>Application 1<a class="headerlink" href="#application-1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.5. </span>Application 1<a class="headerlink" href="#application-1" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="application-2">
-<h3>Application 2<a class="headerlink" href="#application-2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.7.6. </span>Application 2<a class="headerlink" href="#application-2" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="axis-specification">
-<h2>Axis Specification<a class="headerlink" href="#axis-specification" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.8. </span>Axis Specification<a class="headerlink" href="#axis-specification" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="totals-in-an-array">
-<h3>Totals in an Array<a class="headerlink" href="#totals-in-an-array" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.8.1. </span>Totals in an Array<a class="headerlink" href="#totals-in-an-array" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="processing-arrays">
-<h4>Processing Arrays<a class="headerlink" href="#processing-arrays" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.8.1.1. </span>Processing Arrays<a class="headerlink" href="#processing-arrays" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="axis-is-like-an-operator">
-<h4>Axis Is Like an Operator<a class="headerlink" href="#axis-is-like-an-operator" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.8.1.2. </span>Axis Is Like an Operator<a class="headerlink" href="#axis-is-like-an-operator" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="id1">
-<h4>Processing Arrays<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.8.1.3. </span>Processing Arrays<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
 <div class="section" id="the-shape-of-the-result">
-<h3>The Shape of the Result<a class="headerlink" href="#the-shape-of-the-result" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.8.2. </span>The Shape of the Result<a class="headerlink" href="#the-shape-of-the-result" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="special-notations">
-<h3>Special Notations<a class="headerlink" href="#special-notations" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.8.3. </span>Special Notations<a class="headerlink" href="#special-notations" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="our-first-program">
-<h2>Our First Program<a class="headerlink" href="#our-first-program" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.9. </span>Our First Program<a class="headerlink" href="#our-first-program" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="concatenation">
-<h2>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.10. </span>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="concatenating-vectors">
-<h3>Concatenating Vectors<a class="headerlink" href="#concatenating-vectors" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.10.1. </span>Concatenating Vectors<a class="headerlink" href="#concatenating-vectors" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="concatenating-other-arrays">
-<h3>Concatenating Other Arrays<a class="headerlink" href="#concatenating-other-arrays" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.10.2. </span>Concatenating Other Arrays<a class="headerlink" href="#concatenating-other-arrays" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="concatenating-scalars">
-<h3>Concatenating Scalars<a class="headerlink" href="#concatenating-scalars" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.10.3. </span>Concatenating Scalars<a class="headerlink" href="#concatenating-scalars" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="id2">
-<h3>Special Notations<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.10.4. </span>Special Notations<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="replication">
-<h2>Replication<a class="headerlink" href="#replication" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.11. </span>Replication<a class="headerlink" href="#replication" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="basic-approach-compression">
-<h3>Basic Approach: Compression<a class="headerlink" href="#basic-approach-compression" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.11.1. </span>Basic Approach: Compression<a class="headerlink" href="#basic-approach-compression" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="id3">
-<h3>Replication<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.11.2. </span>Replication<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="scalar-left-argument">
-<h3>Scalar Left Argument<a class="headerlink" href="#scalar-left-argument" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.11.3. </span>Scalar Left Argument<a class="headerlink" href="#scalar-left-argument" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="id4">
-<h3>Special Notations<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.11.4. </span>Special Notations<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="position-index-of">
-<h2>Position (Index Of)<a class="headerlink" href="#position-index-of" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.12. </span>Position (Index Of)<a class="headerlink" href="#position-index-of" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="discovery">
-<h3>Discovery<a class="headerlink" href="#discovery" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.12.1. </span>Discovery<a class="headerlink" href="#discovery" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="application-3">
-<h3>Application 3<a class="headerlink" href="#application-3" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.12.2. </span>Application 3<a class="headerlink" href="#application-3" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="index-generator">
-<h2>Index Generator<a class="headerlink" href="#index-generator" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.13. </span>Index Generator<a class="headerlink" href="#index-generator" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="basic-usage">
-<h3>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.13.1. </span>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="application-4">
-<h3>Application 4<a class="headerlink" href="#application-4" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.13.2. </span>Application 4<a class="headerlink" href="#application-4" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="comparison-of-membership-and-index-of">
-<h3>Comparison of Membership and Index Of<a class="headerlink" href="#comparison-of-membership-and-index-of" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.13.3. </span>Comparison of Membership and Index Of<a class="headerlink" href="#comparison-of-membership-and-index-of" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="example">
-<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.13.3.1. </span>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="first-question">
-<h4>First Question<a class="headerlink" href="#first-question" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.13.3.2. </span>First Question<a class="headerlink" href="#first-question" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="second-question">
-<h4>Second Question<a class="headerlink" href="#second-question" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.13.3.3. </span>Second Question<a class="headerlink" href="#second-question" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="comparison">
-<h4>Comparison<a class="headerlink" href="#comparison" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.13.3.4. </span>Comparison<a class="headerlink" href="#comparison" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
 <div class="section" id="idioms">
-<h3>Idioms<a class="headerlink" href="#idioms" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.13.4. </span>Idioms<a class="headerlink" href="#idioms" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="application-5">
-<h3>Application 5<a class="headerlink" href="#application-5" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.13.5. </span>Application 5<a class="headerlink" href="#application-5" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="application-6">
-<h3>Application 6<a class="headerlink" href="#application-6" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.13.6. </span>Application 6<a class="headerlink" href="#application-6" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="ravel">
-<h2>Ravel<a class="headerlink" href="#ravel" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.14. </span>Ravel<a class="headerlink" href="#ravel" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="empty-vectors-and-black-holes">
-<h2>Empty Vectors and Black Holes<a class="headerlink" href="#empty-vectors-and-black-holes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.15. </span>Empty Vectors and Black Holes<a class="headerlink" href="#empty-vectors-and-black-holes" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.16. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="the-specialist-s-section">
-<h2>The Specialist’s Section<a class="headerlink" href="#the-specialist-s-section" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.17. </span>The Specialist’s Section<a class="headerlink" href="#the-specialist-s-section" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="division-control-div">
-<h3>Division Control - ⎕DIV<a class="headerlink" href="#division-control-div" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.17.1. </span>Division Control - ⎕DIV<a class="headerlink" href="#division-control-div" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="derived-functions">
-<h3>Derived Functions<a class="headerlink" href="#derived-functions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.17.2. </span>Derived Functions<a class="headerlink" href="#derived-functions" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="nor-nand">
-<h3>Nor &amp; Nand<a class="headerlink" href="#nor-nand" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.17.3. </span>Nor &amp; Nand<a class="headerlink" href="#nor-nand" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="index-generator-of-arrays">
-<h3>Index Generator of Arrays<a class="headerlink" href="#index-generator-of-arrays" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.17.4. </span>Index Generator of Arrays<a class="headerlink" href="#index-generator-of-arrays" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="ravel-with-axis">
-<h3>Ravel With Axis<a class="headerlink" href="#ravel-with-axis" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.17.5. </span>Ravel With Axis<a class="headerlink" href="#ravel-with-axis" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="empty-axis">
-<h4>Empty Axis<a class="headerlink" href="#empty-axis" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.17.5.1. </span>Empty Axis<a class="headerlink" href="#empty-axis" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="fractional-axis">
-<h4>Fractional Axis<a class="headerlink" href="#fractional-axis" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.17.5.2. </span>Fractional Axis<a class="headerlink" href="#fractional-axis" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="a-list-of-dimensions">
-<h4>A List of Dimensions<a class="headerlink" href="#a-list-of-dimensions" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.17.5.3. </span>A List of Dimensions<a class="headerlink" href="#a-list-of-dimensions" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="border-cases">
-<h4>Border Cases<a class="headerlink" href="#border-cases" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.17.5.4. </span>Border Cases<a class="headerlink" href="#border-cases" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
 <div class="section" id="id5">
-<h3>Residue<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.17.6. </span>Residue<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>
@@ -871,6 +877,7 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="CHAPTER B - Data and Variables.html" title="previous page"><span class="section-number">2. </span>Data and Variables</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
