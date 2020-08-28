@@ -1485,7 +1485,9 @@ M ← 1 4 ⍴ 87 65 21 40
 <div class="section" id="displaying-long-vectors">
 <h4><span class="section-number">2.3.4.3. </span>Displaying Long Vectors<a class="headerlink" href="#displaying-long-vectors" title="Permalink to this headline">¶</a></h4>
 <p>If a vector is too long to be displayed in a single line on your screen, the interpreter session will wrap it onto several lines. But to prevent possible confusion with the display of a matrix, the second line and the following lines will not be aligned at the left margin, but will be indented 6 characters to the right. To show you what we mean, the figure below contains a screenshot of the Windows IDE when we display the variable <code class="docutils literal notranslate"><span class="pre">Bignum</span></code>; the vector is split in 3 lines and some of the values are only visible if you scroll right.</p>
-<p><img alt="" src="_images/Bignum_Output.png" /></p>
+<div class="figure align-default" id="bignum-output">
+<img alt="_images/Bignum_Output.png" src="_images/Bignum_Output.png" />
+</div>
 <p>Depending on the format in which you are reading this book, you may or may not be able to see all the numbers and they may or may not be laid out in several lines. If they are, then the first line will also not be indented, like in the figure above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3100,7 +3102,10 @@ Children
 <ul class="simple">
 <li><p>there is also a built-in method in APL, which may be activated through a special SAVE command or function, as will be described later in this Section.</p></li>
 </ul>
-<p><img alt="Image with the &quot;Save&quot; options highlighted in the interpreter toolbar'" src="_images/Interpreter_Toolbar_Save.png" /></p>
+<div class="figure align-default" id="interpreter-toolbar-save">
+<img alt="_images/Interpreter_Toolbar_Save.png" src="_images/Interpreter_Toolbar_Save.png" />
+<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Image with the “Save” options highlighted in the interpreter toolbar’</span><a class="headerlink" href="#interpreter-toolbar-save" title="Permalink to this image">¶</a></p>
+</div>
 <p>An explanation of how APL manages your data in the interpreter session is given below.</p>
 <div class="section" id="the-active-workspace">
 <h3><span class="section-number">2.8.1. </span>The Active Workspace<a class="headerlink" href="#the-active-workspace" title="Permalink to this headline">¶</a></h3>
@@ -3185,7 +3190,10 @@ not found towerchart
 </div>
 </div>
 <p>This is a bit brutal: all of the contents of the WS are deleted, and no warning message is issued to notify the user of the consequence before the execution of the command. You should avoid using this command, and instead use the “Clear” button on the interpreter toolbar (highlighted in red below), which asks for confirmation. It is safer.</p>
-<p><img alt="Image with the &quot;Clear&quot; button highlighted in the interpreter toolbar'" src="_images/Interpreter_Toolbar_Clear.png" /></p>
+<div class="figure align-default" id="interpreter-toolbar-clear">
+<img alt="_images/Interpreter_Toolbar_Clear.png" src="_images/Interpreter_Toolbar_Clear.png" />
+<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Image with the “Clear” button highlighted in the interpreter toolbar’</span><a class="headerlink" href="#interpreter-toolbar-clear" title="Permalink to this image">¶</a></p>
+</div>
 <p><em><strong>Remark</strong></em></p>
 <p>In many languages, programs must be stored (saved) independently, one after the other, and variables do not exist on their own: they live only during the execution of a program which creates, uses and destroys them.</p>
 <p>In APL, things are different:</p>
@@ -3211,7 +3219,7 @@ not found towerchart
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">MyPreciousWS.dws saved Thu Aug 27 16:27:15 2020
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">MyPreciousWS.dws saved Fri Aug 28 11:38:27 2020
 </span></div></div>
 </div>
 <p>A confirmation message appears, specifying where it has been saved, and the date and time of the operation.</p>
@@ -3242,7 +3250,10 @@ not found towerchart
 <li><p>You can click on the “Open” icon in the toolbar (highlighted in red below)</p></li>
 <li><p>And you can issue the system command <code class="docutils literal notranslate"><span class="pre">)load</span></code></p></li>
 </ul>
-<p><img alt="An image with the &quot;load&quot; icon highlighted in red" src="_images/Interpreter_Toolbar_Load.png" /></p>
+<div class="figure align-default" id="interpreter-toolbar-load">
+<img alt="_images/Interpreter_Toolbar_Load.png" src="_images/Interpreter_Toolbar_Load.png" />
+<p class="caption"><span class="caption-number">Fig. 2.4 </span><span class="caption-text">An image with the “load” icon highlighted in red</span><a class="headerlink" href="#interpreter-toolbar-load" title="Permalink to this image">¶</a></p>
+</div>
 <p>In all these cases, you will see the familiar file search box, in which you can browse to and select the workspace file you would like to open (or load).</p>
 <p>You can also use the <code class="docutils literal notranslate"><span class="pre">)load</span></code> command followed by a WS name:</p>
 <div class="cell docutils container">
