@@ -71,7 +71,14 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Introduction.html">
+   Introduction - Will You Play APL With Me?
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="CHAPTER A - Getting Started.html">
    1. Getting Started
@@ -1189,7 +1196,10 @@ Shape          ⍝ Prod has 5 sheets (or planes), each having
 </span></div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Money</span></code> has 2 dimensions; we say that its <em><strong>Rank</strong></em> is 2, or that it is organised along 2 criteria which are: Months / Accounts.</p>
-<p><strong>Definition</strong>: The <em><strong>Rank</strong></em> of an array is the number of its dimensions. It can be obtained using the expression <code class="docutils literal notranslate"><span class="pre">⍴⍴</span> <span class="pre">Array</span></code>.</p>
+<div class="note admonition">
+<p class="admonition-title">Definition</p>
+<p>The <em><strong>Rank</strong></em> of an array is the number of its dimensions. It can be obtained using the expression <code class="docutils literal notranslate"><span class="pre">⍴⍴</span> <span class="pre">Array</span></code>.</p>
+</div>
 </div>
 <div class="section" id="scaling-down-the-ranks">
 <h3><span class="section-number">2.3.2. </span>Scaling Down the Ranks<a class="headerlink" href="#scaling-down-the-ranks" title="Permalink to this headline">¶</a></h3>
@@ -1489,6 +1499,7 @@ M ← 1 4 ⍴ 87 65 21 40
 <p>If a vector is too long to be displayed in a single line on your screen, the interpreter session will wrap it onto several lines. But to prevent possible confusion with the display of a matrix, the second line and the following lines will not be aligned at the left margin, but will be indented 6 characters to the right. To show you what we mean, the figure below contains a screenshot of the Windows IDE when we display the variable <code class="docutils literal notranslate"><span class="pre">Bignum</span></code>; the vector is split in 3 lines and some of the values are only visible if you scroll right.</p>
 <div class="figure align-default" id="bignum-output">
 <img alt="_images/Bignum_Output.png" src="_images/Bignum_Output.png" />
+<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">A long variable being wrapped in the Windows IDE</span><a class="headerlink" href="#bignum-output" title="Permalink to this image">¶</a></p>
 </div>
 <p>Depending on the format in which you are reading this book, you may or may not be able to see all the numbers and they may or may not be laid out in several lines. If they are, then the first line will also not be indented, like in the figure above.</p>
 <div class="cell docutils container">
@@ -1685,8 +1696,10 @@ JuneJanu
 </span></div></div>
 </div>
 <p>Oops! We forgot that when the right argument is too short, <code class="docutils literal notranslate"><span class="pre">⍴</span></code> reuses it from the beginning. That’s the reason why the last row is wrong. We must add <span class="math notranslate nohighlight">\(4\)</span> trailing blanks.</p>
-<p><em><strong>Facility</strong></em></p>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
 <p>You do not have to re-type the entire expression.</p>
+</div>
 <p>If you are working in the interpreter session, just move your cursor up to the line where you defined <code class="docutils literal notranslate"><span class="pre">MonMat</span></code>, add the missing blanks, and press the <em>Enter</em> key.</p>
 <p>APL will then copy the modified line down to the end of your session and automatically restore the original line to its original state. As a consequence, the interpreter window always displays the sequence of expressions and results in the order in which you typed them.</p>
 <p>If you are working with the Jupyter notebook version of this book, you can just go to the input cell where you made your mistake and correct it in place. Otherwise, just copy the cell and correct the mistake in the copied cell:</p>
@@ -2011,9 +2024,10 @@ MyIndex
 </div>
 </div>
 </div>
+<!-- begin remark -->
 <p><em><strong>Remark</strong></em></p>
 <p>Because we can select rows and columns, the semi-colon is necessary to tell them apart:</p>
-<div class="cell docutils container">
+<!-- end --><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Tests[1 2;3]    ⍝ gives rows 1 and 2, column 3
 </pre></div>
@@ -2044,8 +2058,10 @@ MyIndex
 </div>
 </div>
 </div>
+<!-- begin remark -->
 <p><em><strong>Remark</strong></em></p>
 <p>It is also possible to select several items which are not at the intersections of the same rows or columns. To do so requires a special notation where the individual Row/Column indexes of each item are embedded in parentheses. The reason for this syntax will become clear in Section 6.3.</p>
+<!-- end -->
 <p>For example, let us select <code class="docutils literal notranslate"><span class="pre">Tests[2;3]</span></code> together with <code class="docutils literal notranslate"><span class="pre">Tests[5;1]</span></code> and <code class="docutils literal notranslate"><span class="pre">Tests[1;2</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2922,8 +2938,10 @@ Weird            ⍝ The default presentation is difficult to interpret!
 └∊───────────────────────────┘
 </span></div></div>
 </div>
-<p><em><strong>Remark</strong></em></p>
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
 <p>Of course, even if APL <strong>can</strong> handle arrays as unusual as the one above, it is <strong>not advisable</strong> to build such arrays! Most nested arrays have a clear and straightforward structure.</p>
+</div>
 <p>Remember: in Section 4.2 we had a list of month names to store, and we had the choice between a matrix and a vector of vectors, that is to say a nested vector.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3090,8 +3108,10 @@ Children
 <p>Since <code class="docutils literal notranslate"><span class="pre">Emptiness</span></code> is an empty vector (<code class="docutils literal notranslate"><span class="pre">⍬</span></code>) <em>Reshape</em> will return an array having an empty shape. Such an array is a scalar, so we know that the result of the expression will be a scalar.</p>
 <p><em>Reshape</em> will also fill the scalar with a value, taken from the right argument <code class="docutils literal notranslate"><span class="pre">Presence</span></code>. <code class="docutils literal notranslate"><span class="pre">Presence</span></code> contains the character vector <code class="docutils literal notranslate"><span class="pre">'Friendly'</span></code>, but since we only need one item to fill a scalar, we can only use the <code class="docutils literal notranslate"><span class="pre">'F'</span></code>. The rest of the character vector <code class="docutils literal notranslate"><span class="pre">'Friendly'</span></code> is not used.</p>
 <p>In fact, the expression <code class="docutils literal notranslate"><span class="pre">⍬⍴Array</span></code> is widely used to return the first item of an array as a scalar, and in particular to convert a 1-item vector into a scalar.</p>
-<p><em><strong>Remark</strong></em></p>
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
 <p>Though they both are invisible when displayed, a numeric empty vector (<code class="docutils literal notranslate"><span class="pre">⍬</span></code>) is different from a character empty vector (<code class="docutils literal notranslate"><span class="pre">''</span></code>).</p>
+</div>
 </div>
 <div class="section" id="workspaces-and-commands">
 <h2><span class="section-number">2.8. </span>Workspaces and Commands<a class="headerlink" href="#workspaces-and-commands" title="Permalink to this headline">¶</a></h2>
@@ -3100,14 +3120,14 @@ Children
 <li><p>in the “File” menu, select “Save” or “Save as”, and use the normal procedure for saving a file (highlighted in red below);</p></li>
 <li><p>you can also click, in the toolbar, on the icon of a diskette (also highlighted in red below; who still knows what a diskette is?), which is equivalent, in APL, to “Save as”.</p></li>
 </ul>
+<div class="figure align-default" id="interpreter-toolbar-save">
+<img alt="_images/Interpreter_Toolbar_Save.png" src="_images/Interpreter_Toolbar_Save.png" />
+<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Windows IDE toolbar with the “Save” toolbar shortcut and the “File” menu highlighted</span><a class="headerlink" href="#interpreter-toolbar-save" title="Permalink to this image">¶</a></p>
+</div>
 <p>If you are using RIDE or if you don’t like clicking menu buttons,</p>
 <ul class="simple">
 <li><p>there is also a built-in method in APL, which may be activated through a special SAVE command or function, as will be described later in this Section.</p></li>
 </ul>
-<div class="figure align-default" id="interpreter-toolbar-save">
-<img alt="_images/Interpreter_Toolbar_Save.png" src="_images/Interpreter_Toolbar_Save.png" />
-<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Image with the “Save” options highlighted in the interpreter toolbar’</span><a class="headerlink" href="#interpreter-toolbar-save" title="Permalink to this image">¶</a></p>
-</div>
 <p>An explanation of how APL manages your data in the interpreter session is given below.</p>
 <div class="section" id="the-active-workspace">
 <h3><span class="section-number">2.8.1. </span>The Active Workspace<a class="headerlink" href="#the-active-workspace" title="Permalink to this headline">¶</a></h3>
@@ -3165,9 +3185,10 @@ not found towerchart
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">DISP    DISPLAY 
 </span></div></div>
 </div>
+<!-- begin remark -->
 <p><em><strong>Remark</strong></em></p>
 <p>One can erase everything from the active workspace (all variables and all functions etc.) and revert to the original “clear” active workspace, by issuing the command</p>
-<div class="cell docutils container">
+<!-- end --><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">)</span><span class="n">clear</span>
 </pre></div>
@@ -3194,8 +3215,9 @@ not found towerchart
 <p>This is a bit brutal: all of the contents of the WS are deleted, and no warning message is issued to notify the user of the consequence before the execution of the command. You should avoid using this command, and instead use the “Clear” button on the interpreter toolbar (highlighted in red below), which asks for confirmation. It is safer.</p>
 <div class="figure align-default" id="interpreter-toolbar-clear">
 <img alt="_images/Interpreter_Toolbar_Clear.png" src="_images/Interpreter_Toolbar_Clear.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Image with the “Clear” button highlighted in the interpreter toolbar’</span><a class="headerlink" href="#interpreter-toolbar-clear" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Windows IDE with the “Clear” toolbar shortcut highlighted</span><a class="headerlink" href="#interpreter-toolbar-clear" title="Permalink to this image">¶</a></p>
 </div>
+<!-- begin remark -->
 <p><em><strong>Remark</strong></em></p>
 <p>In many languages, programs must be stored (saved) independently, one after the other, and variables do not exist on their own: they live only during the execution of a program which creates, uses and destroys them.</p>
 <p>In APL, things are different:</p>
@@ -3204,6 +3226,7 @@ not found towerchart
 <li><p>There may be a permanent interaction between programs and variables. Saving only any part of them would be nonsense: one must save the whole context; in other words, one must save the whole <em>active workspace</em>.</p></li>
 </ul>
 <p>This is what we shall discover now.</p>
+<!-- end -->
 </div>
 <div class="section" id="the-libraries">
 <h3><span class="section-number">2.8.2. </span>The Libraries<a class="headerlink" href="#the-libraries" title="Permalink to this headline">¶</a></h3>
@@ -3254,7 +3277,7 @@ not found towerchart
 </ul>
 <div class="figure align-default" id="interpreter-toolbar-load">
 <img alt="_images/Interpreter_Toolbar_Load.png" src="_images/Interpreter_Toolbar_Load.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4 </span><span class="caption-text">An image with the “load” icon highlighted in red</span><a class="headerlink" href="#interpreter-toolbar-load" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4 </span><span class="caption-text">Windows IDE with the “Load” toolbar shortcut highlighted</span><a class="headerlink" href="#interpreter-toolbar-load" title="Permalink to this image">¶</a></p>
 </div>
 <p>In all these cases, you will see the familiar file search box, in which you can browse to and select the workspace file you would like to open (or load).</p>
 <p>You can also use the <code class="docutils literal notranslate"><span class="pre">)load</span></code> command followed by a WS name:</p>
@@ -3273,16 +3296,19 @@ not found towerchart
       <span class="p">)</span><span class="nv">load</span> <span class="nv">e</span><span class="bp">:</span><span class="na">/</span><span class="nv">freezer</span><span class="na">/</span><span class="nv">mummies</span><span class="na">/</span><span class="nv">ramses2</span>          <span class="c1">⍝ double quotes are not needed.</span>
 </pre></div>
 </div>
+<!-- begin remark -->
 <p><em><strong>Remark</strong></em></p>
 <p>When a WS is loaded, <strong>it replaces the active WS in memory</strong> and becomes the new active WS. If you have not saved the variables and functions you were working on, they are definitely lost! There is no warning message.</p>
 <p>You must be aware of this because in this respect, APL differs from most software environments, in which each new file you open is opened in a separate window.</p>
+<!-- end -->
+<!-- begin remark -->
 <p><em><strong>Remark</strong></em></p>
 <p>When a WS is loaded, a confirmation message appears, like the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="o">/</span><span class="n">DyalogTutor_EN</span><span class="o">.</span><span class="n">dws</span> <span class="n">saved</span> <span class="n">Mon</span> <span class="n">Aug</span> <span class="mi">10</span> <span class="mi">09</span><span class="p">:</span><span class="mi">37</span><span class="p">:</span><span class="mi">51</span> <span class="mi">2020</span>
 </pre></div>
 </div>
 <p>which is the first line of output we got when we loaded the <code class="docutils literal notranslate"><span class="pre">DyalogTutor_EN</span></code> workspace. Note that the date and time reported is the date and time when the WS was last saved.</p>
-</div>
+<!-- end --></div>
 <div class="section" id="file-extensions">
 <h3><span class="section-number">2.8.4. </span>File Extensions<a class="headerlink" href="#file-extensions" title="Permalink to this headline">¶</a></h3>
 <p>The default extension of an APL WS depends on the APL system you use. For Dyalog APL, the extension is <code class="docutils literal notranslate"><span class="pre">dws</span></code>, an acronym for Dyalog WorkSpace.</p>
@@ -3429,7 +3455,7 @@ Prod + 3
 <li><p><em>wsname</em> is the name of a WS.</p>
 <ul>
 <li><p>This name may contain a file extension, which is only necessary if it is different from “dws”.</p></li>
-<li><p>This name may also be preceded by an optional path. If the path is not specified, APL searches in all the directories referenced in “Options” &gt; “Configure…” &gt; “Workspace” &gt; “Workspace search path*.</p></li>
+<li><p>This name may also be preceded by an optional path. If the path is not specified, APL searches in all the directories referenced in “Options” &gt; “Configure…” &gt; “Workspace” &gt; “Workspace search path”.</p></li>
 </ul>
 </li>
 </ul>
@@ -3497,9 +3523,11 @@ Prod + 3
 </div>
 <div class="section" id="exercises">
 <h2><span class="section-number">2.9. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<!-- begin warning -->
 <p><em><strong>Warning</strong></em></p>
 <p><em>The following exercises are designed to train you, not the computer.</em></p>
 <p><em>For this reason, we suggest that you try to answer them on a sheet of paper, not on your computer. When you are sure of your answer, you can test it on the computer.</em></p>
+<!-- end -->
 <p><strong>Exercise 1</strong>:</p>
 <p>Given a scalar <code class="docutils literal notranslate"><span class="pre">S</span></code>, can you transform it into a vector containing one single item? Or the opposite: can you transform a one-item vector <code class="docutils literal notranslate"><span class="pre">V</span></code> into a scalar?</p>
 <p><strong>Exercise 2</strong>:</p>

@@ -71,7 +71,14 @@
 </form>
 
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Introduction.html">
+   Introduction - Will You Play APL With Me?
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    1. Getting Started
@@ -402,7 +409,7 @@
 <p>After installing Dyalog APL on your Windows machine, try firing up the Dyalog APL interpreter, which should open something like this:</p>
 <div class="figure align-default" id="win-empty-interpreter">
 <img alt="_images/Win_Empty_Interpreter.png" src="_images/Win_Empty_Interpreter.png" />
-<p class="caption"><span class="caption-number">Fig. 1.6 </span><span class="caption-text">image of the Windows Dyalog APL interpreter</span><a class="headerlink" href="#win-empty-interpreter" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.6 </span><span class="caption-text">Windows IDE interpreter</span><a class="headerlink" href="#win-empty-interpreter" title="Permalink to this image">¶</a></p>
 </div>
 <p>Try typing <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">3</span></code> and hitting <kbd>Enter</kbd> to see if the interpreter prints a <code class="docutils literal notranslate"><span class="pre">6</span></code> in response.</p>
 <p>Having performed the installation without changing the default values, Dyalog APL will also have installed two keyboard layouts on your computer. Depending on your machine, Windows may have switched to one of them automatically when you opened the interpreter, but in any case you can use <kbd>⊞ Win</kbd>+<kbd>Spacebar</kbd> to cycle through the keyboard layouts you have active on your computer. You should find two new keyboards available, their names should be prefixed with your country code (e.g. “UK - ” for United Kingdom) and should then be followed by “Dyalog AltGr” and “Dyalog Ctrl”, respectively. The next subsection will explain the meaning of these references to <kbd>Ctrl</kbd> and <kbd>AltGr</kbd>.</p>
@@ -417,7 +424,7 @@
 <p>The sections just described are highlighted in red in the figure below, from top to bottom respectively.</p>
 <div class="figure align-default" id="win-interpreter-sections">
 <img alt="_images/WIN_Interpreter_Sections.png" src="_images/WIN_Interpreter_Sections.png" />
-<p class="caption"><span class="caption-number">Fig. 1.7 </span><span class="caption-text">Screenshot of Windows’ default interpreter sections</span><a class="headerlink" href="#win-interpreter-sections" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.7 </span><span class="caption-text">Windows IDE default interpreter sections</span><a class="headerlink" href="#win-interpreter-sections" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="the-dyalog-apl-jupyter-notebook-working-environment">
@@ -425,17 +432,17 @@
 <p>After successfully installing the Dyalog APL Jupyter kernel, you can fire up the Jupyter notebook server as usual, which should open a browser window like the one in the figure below.</p>
 <div class="figure align-default" id="jupyter-window">
 <img alt="_images/Jupyter_Window.png" src="_images/Jupyter_Window.png" />
-<p class="caption"><span class="caption-number">Fig. 1.8 </span><span class="caption-text">Screenshot of Jupyter’s main window</span><a class="headerlink" href="#jupyter-window" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.8 </span><span class="caption-text">Jupyter’s main window</span><a class="headerlink" href="#jupyter-window" title="Permalink to this image">¶</a></p>
 </div>
 <p>From there you can navigate your file system as per usual and if you click the “New” button on the right, it should open a dropdown list with a couple of different options, “Dyalog APL” being one of them.</p>
 <div class="figure align-default" id="jupyter-create-new-notebook">
 <img alt="_images/Jupyter_Create_New_Notebook.png" src="_images/Jupyter_Create_New_Notebook.png" />
-<p class="caption"><span class="caption-number">Fig. 1.9 </span><span class="caption-text">Screenshot of the dropdown list with “Dyalog APL” as an option</span><a class="headerlink" href="#jupyter-create-new-notebook" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.9 </span><span class="caption-text">Dropdown list to choose the Dyalog APL kernel</span><a class="headerlink" href="#jupyter-create-new-notebook" title="Permalink to this image">¶</a></p>
 </div>
 <p>If you press that option, an empty notebook will be created, as shown in the figure below.</p>
 <div class="figure align-default" id="jupyter-new-empty-notebook">
 <img alt="_images/Jupyter_New_Empty_Notebook.png" src="_images/Jupyter_New_Empty_Notebook.png" />
-<p class="caption"><span class="caption-number">Fig. 1.10 </span><span class="caption-text">Screenshot of what an empty Dyalog APL notebook looks like</span><a class="headerlink" href="#jupyter-new-empty-notebook" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.10 </span><span class="caption-text">Empty Dyalog APL notebook</span><a class="headerlink" href="#jupyter-new-empty-notebook" title="Permalink to this image">¶</a></p>
 </div>
 <p>When inside a notebook, you can look at the top right corner to see if it is a Dyalog APL notebook or any other notebook. If it says “Dyalog APL” just below the “Logout” button, then it is a Dyalog APL notebook. If it says anything else, like “Python 3” or “Lua” then it is a different notebook.</p>
 <p>Try typing <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">3</span></code> inside the empty rectangle that shows and press <kbd>Ctrl</kbd>+<kbd>Enter</kbd>. A <code class="docutils literal notranslate"><span class="pre">6</span></code> should be printed just below the expression you typed.</p>
@@ -466,13 +473,13 @@
 <p>One way of inputting APL’s glyphs is through the language bar your IDE has. On the standard Windows interpreter the language bar looks like this when unfolded:</p>
 <div class="figure align-default" id="language-bar">
 <img alt="_images/Language_Bar.png" src="_images/Language_Bar.png" />
-<p class="caption"><span class="caption-number">Fig. 1.11 </span><span class="caption-text">Screenshot of the Windows language bar</span><a class="headerlink" href="#language-bar" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.11 </span><span class="caption-text">Windows IDE language bar</span><a class="headerlink" href="#language-bar" title="Permalink to this image">¶</a></p>
 </div>
 <p>The RIDE will have a similar-looking language bar.</p>
 <p>The language bar contains all the APL glyphs and also provides some summary information on them, like their name, the keyboard shortcuts you can use to type them and basic usage examples. To access this summary information, you can hover over a glyph and a tooltip will appear. The figure below shows the complete tooltip that appears if you hover <code class="docutils literal notranslate"><span class="pre">,</span></code>. Do not worry if you understand nothing of what is going on, that is why you are reading this tutorial.</p>
 <div class="figure align-default" id="full-dot-tooltip">
 <img alt="_images/Full_Dot_Tooltip.png" src="_images/Full_Dot_Tooltip.png" />
-<p class="caption"><span class="caption-number">Fig. 1.12 </span><span class="caption-text">Screenshot of the complete dot tooltip</span><a class="headerlink" href="#full-dot-tooltip" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.12 </span><span class="caption-text">Windows IDE <code class="docutils literal notranslate"><span class="pre">.</span></code> tooltip</span><a class="headerlink" href="#full-dot-tooltip" title="Permalink to this image">¶</a></p>
 </div>
 <p>Inside the respective software, pressing a glyph in the language bar will place it in the position your cursor is at, so that is the most basic way of inputting APL glyphs. The recommended way, which we advise you to get used to and that we explain in the following Sub-subsection, is by using the appropriate key bindings.</p>
 </div>
@@ -484,12 +491,12 @@
 <p>If you are using RIDE, then chances are you are using <kbd>`</kbd> as a hot-key. What this means is, to have a <code class="docutils literal notranslate"><span class="pre">⍴</span></code> printed you first hit <kbd>`</kbd>, which will print a <code>`</code> in your cursor position, and then you hit <kbd>R</kbd>, which will replace <code>`r</code> altogether with <code class="docutils literal notranslate"><span class="pre">⍴</span></code>. If you hover an APL glyph on the RIDE language bar it will open a tooltip which, at the top, tells you the keyboard combination you need to press in order to type the given glyph. The figure below shows the tooltip for <code class="docutils literal notranslate"><span class="pre">⍴</span></code>:</p>
 <div class="figure align-default" id="ride-language-bar-keyboard-tooltip">
 <img alt="_images/RIDE_Language_Bar_Keyboard_Tooltip.png" src="_images/RIDE_Language_Bar_Keyboard_Tooltip.png" />
-<p class="caption"><span class="caption-number">Fig. 1.13 </span><span class="caption-text">RIDE Language Bar Tooltip for Rho</span><a class="headerlink" href="#ride-language-bar-keyboard-tooltip" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.13 </span><span class="caption-text">RIDE tooltip for <code class="docutils literal notranslate"><span class="pre">⍴</span></code></span><a class="headerlink" href="#ride-language-bar-keyboard-tooltip" title="Permalink to this image">¶</a></p>
 </div>
 <p>If you are using the standard Windows interpreter and if you accepted all the installation defaults, then Windows installed two keyboard layouts for you which will let you type APL glyphs anywhere, not only inside the APL interpreter. Your <kbd>APL</kbd> key might change depending on the language of your keyboard layout or even other software you might have installed, but it is highly likely that it is one of <kbd>Ctrl</kbd> or <kbd>Alt</kbd>. To make sure, you can either try the <kbd>Ctrl</kbd>+<kbd>R</kbd> and <kbd>Alt</kbd>+<kbd>R</kbd> combinations to see which one types a <code class="docutils literal notranslate"><span class="pre">⍴</span></code>, or you can hover the glyph <code class="docutils literal notranslate"><span class="pre">⍴</span></code> in the language bar and look at the top of the tooltip that appears, which also gives you instructions on how to type the given glyph. The figure below shows the tooltip for <code class="docutils literal notranslate"><span class="pre">⍴</span></code>:</p>
 <div class="figure align-default" id="standard-windows-interpreter-language-bar-keyboard-tooltip">
 <img alt="_images/Standard_Windows_Interpreter_Language_Bar_Keyboard_Tooltip.png" src="_images/Standard_Windows_Interpreter_Language_Bar_Keyboard_Tooltip.png" />
-<p class="caption"><span class="caption-number">Fig. 1.14 </span><span class="caption-text">Standard Windows Interpreter Language Bar Tooltip for Rho</span><a class="headerlink" href="#standard-windows-interpreter-language-bar-keyboard-tooltip" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.14 </span><span class="caption-text">Windows IDE tooltip for <code class="docutils literal notranslate"><span class="pre">⍴</span></code></span><a class="headerlink" href="#standard-windows-interpreter-language-bar-keyboard-tooltip" title="Permalink to this image">¶</a></p>
 </div>
 <p>In my specific case it says my <kbd>APL</kbd> key is, in fact, the combination <kbd>Ctrl</kbd>+<kbd>Alt</kbd> or, equivalently, <kbd>AltGr</kbd>. That is, if I press <kbd>AltGr</kbd>+<kbd>R</kbd> then I type a <code class="docutils literal notranslate"><span class="pre">⍴</span></code>.</p>
 <p>If you need further help with typing APL glyphs you can refer to the <a class="reference external" href="https://aplwiki.com/wiki/Typing_glyphs">APL Wiki page on “Typing Glyphs”</a>.</p>
