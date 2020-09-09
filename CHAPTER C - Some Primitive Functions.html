@@ -461,6 +461,28 @@
      3.11.2. Concatenating Other Arrays
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concatenating-scalars">
+     3.11.3. Concatenating Scalars
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     3.11.4. Special Notations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#replication">
+   3.12. Replication
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-approach-compression">
+     3.12.1. Basic Approach: Compression
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -3169,11 +3191,486 @@ CCC
 CCC
 </span></div></div>
 </div>
-<p>The possible concatenations are the vertical concatenation of <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>, like the diagram below suggests:</p>
+<p>The possible concatenations are:</p>
+<ul class="simple">
+<li><p>the vertical concatenation of <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>:</p></li>
+</ul>
 <div class="figure align-default" id="vertical-concatenation-ab">
 <img alt="_images/Vertical_Concatenation_AB.png" src="_images/Vertical_Concatenation_AB.png" />
 <p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Matrices <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> concatenated together vertically</span><a class="headerlink" href="#vertical-concatenation-ab" title="Permalink to this image">¶</a></p>
 </div>
+<ul class="simple">
+<li><p>and the horizontal concatenation of <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code>:</p></li>
+</ul>
+<div class="figure align-default" id="horizontal-concatenation-ac">
+<img alt="_images/Horizontal_Concatenation_AC.png" src="_images/Horizontal_Concatenation_AC.png" />
+<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Matrices <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code> concatenated together horizontally</span><a class="headerlink" href="#horizontal-concatenation-ac" title="Permalink to this image">¶</a></p>
+</div>
+<p>It is not possible to concatenate <code class="docutils literal notranslate"><span class="pre">B</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code> because none of their dimensions are compatible.</p>
+<p>To concatenate vertically, we want the two matrices to be stacked on top of each other, creating a matrix with more <em>rows</em>, i.e. we want to create a matrix with a larger 1st dimension:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="nv">B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">AAAA
+AAAA
+AAAA
+BBBB
+BBBB
+</span></div></div>
+</div>
+<p>The shape of the result is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="nv">B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5 4
+</span></div></div>
+</div>
+<p>and writing</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">B</span><span class="o">,</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="nv">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">BBBB
+BBBB
+AAAA
+AAAA
+AAAA
+</span></div></div>
+</div>
+<p>puts <code class="docutils literal notranslate"><span class="pre">B</span></code> on top of <code class="docutils literal notranslate"><span class="pre">A</span></code> instead.</p>
+<p>Similarly, to stack matrices <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code> horizontally we create a matrix where the 2nd dimension is larger:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="nv">C</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">AAAACCC
+AAAACCC
+AAAACCC
+</span></div></div>
+</div>
+<p>The shape of the result is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="nv">C</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">3 7
+</span></div></div>
+</div>
+<p>and writing</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">C</span><span class="o">,</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="nv">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">CCCAAAA
+CCCAAAA
+CCCAAAA
+</span></div></div>
+</div>
+<p>puts <code class="docutils literal notranslate"><span class="pre">C</span></code> to the left of <code class="docutils literal notranslate"><span class="pre">A</span></code> instead.</p>
+<p>In the same way as for <em>Reduction</em>, the <em>Axis</em> operator indicates which dimension will change during the operation, as we can see by inspecting the shapes of <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code> and the stacked matrices:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">3 4
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">2 4
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="nv">B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5 4
+</span></div></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">,[1]</span></code>changes the 1st dimension.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">,[2]</span></code> instead, we change the 2nd dimension:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">3 4
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">C</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">3 3
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="nv">C</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">3 7
+</span></div></div>
+</div>
+<p>The following nested array shows the four possible different catenations side by side:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="nv">B</span><span class="p">)</span> <span class="p">(</span><span class="nv">B</span><span class="o">,</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="nv">A</span><span class="p">)</span> <span class="p">(</span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="nv">C</span><span class="p">)</span> <span class="p">(</span><span class="nv">C</span><span class="o">,</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="nv">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌────┬────┬───────┬───────┐
+│AAAA│BBBB│AAAACCC│CCCAAAA│
+│AAAA│BBBB│AAAACCC│CCCAAAA│
+│AAAA│AAAA│AAAACCC│CCCAAAA│
+│BBBB│AAAA│       │       │
+│BBBB│AAAA│       │       │
+└────┴────┴───────┴───────┘
+</span></div></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Rule</p>
+<p>It is possible to <em><strong>Concatenate</strong></em> two arrays <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> along their <em>I</em><sup>th</sup> dimension, provided that they have the same rank, and provided that all other dimensions have the same lengths.</p>
+<p>The operation is written like this: <code class="docutils literal notranslate"><span class="pre">A,[I]B</span></code></p>
+<p>It is also possible to <em><strong>Concatenate</strong></em> an array <code class="docutils literal notranslate"><span class="pre">A</span></code> of rank <em>N</em> to another array <code class="docutils literal notranslate"><span class="pre">B</span></code> of rank <em>N-1</em>. The concatenation <strong>must</strong> then be done along a dimension of <code class="docutils literal notranslate"><span class="pre">A</span></code> such that its other dimensions are strictly identical to those of <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p>
+</div>
+<p>For example, it is possible to concatenate a vector to a matrix, provided that the vector has the same length as the corresponding dimension of the matrix:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="s1">&#39;JUMP&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">AAAA
+AAAA
+AAAA
+JUMP
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="s1">&#39;TOP&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">AAAAT
+AAAAO
+AAAAP
+</span></div></div>
+</div>
+<p>In the first example, <code class="docutils literal notranslate"><span class="pre">'JUMP'</span></code> has length 4 and the shape of <code class="docutils literal notranslate"><span class="pre">A</span></code> is <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">4</span></code>, so we can see <code class="docutils literal notranslate"><span class="pre">'JUMP'</span></code> as having shape <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">4</span></code> and so we <strong>must</strong> catenate along <code class="docutils literal notranslate"><span class="pre">[1]</span></code>. The shape of the result is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="s1">&#39;JUMP&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">4 4
+</span></div></div>
+</div>
+<p>and we see it was the 1st dimension that changed.</p>
+<p>In the second example, <code class="docutils literal notranslate"><span class="pre">'TOP'</span></code> has length 3 and the shape of <code class="docutils literal notranslate"><span class="pre">A</span></code> is <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">4</span></code>, so we can see <code class="docutils literal notranslate"><span class="pre">'TOP'</span></code> as having shape <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">1</span></code> and so we <strong>must</strong> catenate along <code class="docutils literal notranslate"><span class="pre">[2]</span></code>. The shape of the result is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="s1">&#39;TOP&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">3 5
+</span></div></div>
+</div>
+<p>and we see it was the 2nd dimension that changed.</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>We can add a row of totals to the bottom of a matrix <code class="docutils literal notranslate"><span class="pre">Y</span></code> with an expression like <code class="docutils literal notranslate"><span class="pre">Y,[1]</span> <span class="pre">(+/[1]Y)</span></code>:</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Forecast</span><span class="o">,</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span> <span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="nv">Forecast</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace"> 90  160  420  500   20   30
+110  450  170  370  290  360
+340  190  320  120  510  370
+150  460  240  520  490  280
+690 1260 1150 1510 1310 1040
+</span></div></div>
+</div>
+<p>The parentheses are for ease of interpretation; they are not necessary.</p>
+<p>In a similar way, it is possible to concatenate a matrix to a 3-D array.</p>
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>We would like to append to <code class="docutils literal notranslate"><span class="pre">Prod</span></code> (a 3-D array) the production of a subcontractor, organised as an array of 5 years and 12 months.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="o">⊢</span><span class="nv">Subcon</span> <span class="kd">←</span> <span class="o">?</span><span class="m">5</span> <span class="m">12</span><span class="o">⍴</span><span class="m">20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace"> 9 16 10 18  2  3 11 13 17  5  4  2
+19 12 19  5 15 14 20 17  4  9  5 13
+ 4 16  7  2 14 20 15 17 18 13  6 19
+10  6 20 13  5 19  5 10 17 16 19 20
+18 14 15 15  3  7  9 20  6  8  8 17
+</span></div></div>
+</div>
+<p>The shape of <code class="docutils literal notranslate"><span class="pre">Subcon</span></code> is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">Subcon</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5 12
+</span></div></div>
+</div>
+<p>and the shape of <code class="docutils literal notranslate"><span class="pre">Prod</span></code> is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">Prod</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5 2 12
+</span></div></div>
+</div>
+<p>The two <strong>must</strong> be concatenated along the 2nd dimension of <code class="docutils literal notranslate"><span class="pre">Prod</span></code> and the result will have the shape</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">Prod</span><span class="o">,</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="nv">Subcon</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5 3 12
+</span></div></div>
+</div>
+<p>You see, it is as if <code class="docutils literal notranslate"><span class="pre">Subcon</span></code> had the length 1 along the concatenation dimension (the missing one), i.e. it as if <code class="docutils literal notranslate"><span class="pre">Subcon</span></code> had shape <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">1</span> <span class="pre">12</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Prod</span><span class="o">,</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="nv">Subcon</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace"> 9 16 42 50  2  3 11 45 17 37 29 36
+34 19 32 12 37 15 46 24 49 28 36  9
+ 9 16 10 18  2  3 11 13 17  5  4  2
+
+29  5 45 23 27  4 23 16 39 22 22  2
+46 20 47 17 18 25 13 38 42 38 45 28
+19 12 19  5 15 14 20 17  4  9  5 13
+
+37 19  5 10 30 49 16 18 46 47 47  3
+39 23 41 20  6 40 21 22 40 49 20  1
+ 4 16  7  2 14 20 15 17 18 13  6 19
+
+13 36 12 40 12 15 24 20 21 12 19 25
+ 8 48 22 37 33  1 39 30 50 50  8 35
+10  6 20 13  5 19  5 10 17 16 19 20
+
+38 31 24 40 23  7 20 34 35  6 19 27
+41  1 14 50 17 42  6 35 12 48 30 29
+18 14 15 15  3  7  9 20  6  8  8 17
+</span></div></div>
+</div>
+</div>
+<div class="section" id="concatenating-scalars">
+<h3><span class="section-number">3.11.3. </span>Concatenating Scalars<a class="headerlink" href="#concatenating-scalars" title="Permalink to this headline">¶</a></h3>
+<p>When a scalar is concatenated to an array it is repeated as many times as necessary to match the length of the appropriate dimension of the array.</p>
+<p>Here are two examples, using the matrix <code class="docutils literal notranslate"><span class="pre">A</span></code> from before:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="s1">&#39;-&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">AAAA
+AAAA
+AAAA
+----
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="s1">&#39;*&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">AAAA*
+AAAA*
+AAAA*
+</span></div></div>
+</div>
+<p>This property is very useful, because it saves us working out how many items are needed to match the corresponding dimension of the array.</p>
+<p>We can also concatenate two scalars. The result is of course a 2-item vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">7</span><span class="o">,</span><span class="m">9</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">7 9
+</span></div></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h3><span class="section-number">3.11.4. </span>Special Notations<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>By default, if no axis is specified catenation works along the last dimension of the array(s).</p>
+<p>So</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">A</span><span class="o">,</span><span class="nv">C</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">AAAACCC
+AAAACCC
+AAAACCC
+</span></div></div>
+</div>
+<p>is equivalent to</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="nv">C</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">AAAACCC
+AAAACCC
+AAAACCC
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">A</span><span class="o">,</span><span class="nv">C</span><span class="p">)</span><span class="o">≡</span><span class="p">(</span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="nv">C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<p>APL also includes a special symbol that means “Concatenate along the <strong>first</strong> dimension”; this symbol is a comma topped by a minus sign: <code class="docutils literal notranslate"><span class="pre">⍪</span></code>.</p>
+<p>It can be obtained by <kbd>APL</kbd>+<kbd>Shift</kbd>+<kbd>,</kbd>.</p>
+<p>So</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">A</span><span class="o">⍪</span><span class="nv">B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">AAAA
+AAAA
+AAAA
+BBBB
+BBBB
+</span></div></div>
+</div>
+<p>is equivalent to</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="nv">B</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">AAAA
+AAAA
+AAAA
+BBBB
+BBBB
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">A</span><span class="o">⍪</span><span class="nv">B</span><span class="p">)</span><span class="o">≡</span><span class="p">(</span><span class="nv">A</span><span class="o">,</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="nv">B</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p>If an axis is specified, the operation is processed according to the axis specification, regardless of the symbol (<code class="docutils literal notranslate"><span class="pre">,</span></code> or <code class="docutils literal notranslate"><span class="pre">⍪</span></code>) that is actually used.</p>
+</div>
+<p>This means <code class="docutils literal notranslate"><span class="pre">A,[2]C</span></code> and <code class="docutils literal notranslate"><span class="pre">A⍪[2]C</span></code> are both equivalent to <code class="docutils literal notranslate"><span class="pre">A,C</span></code> and <code class="docutils literal notranslate"><span class="pre">A,[1]B</span></code> and <code class="docutils literal notranslate"><span class="pre">A⍪[1]B</span></code> are both equivalent to <code class="docutils literal notranslate"><span class="pre">A⍪B</span></code>.</p>
+</div>
+</div>
+<div class="section" id="replication">
+<h2><span class="section-number">3.12. </span>Replication<a class="headerlink" href="#replication" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="basic-approach-compression">
+<h3><span class="section-number">3.12.1. </span>Basic Approach: Compression<a class="headerlink" href="#basic-approach-compression" title="Permalink to this headline">¶</a></h3>
+<p>To extract scattered values from a vector, we can use indexing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Contents</span><span class="sr">[</span><span class="m">5</span> <span class="m">6</span> <span class="m">11</span><span class="sr">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">85 96 82
+</span></div></div>
+</div>
+<p>We can also use a new function named <em><strong>Compression</strong></em> (or <em>Compress</em>). It takes a Boolean vector as its left argument, and any array of appropriate shape as its right argument.</p>
 </div>
 </div>
 </div>
