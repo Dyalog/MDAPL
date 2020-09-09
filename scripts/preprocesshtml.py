@@ -11,6 +11,13 @@ except FileNotFoundError:
     print("Could not open ToC.")
     sys.exit()
 
+CUSTOM_ADMONITION_STYLES = {
+    "example": "tip",
+    "rule": "tip",
+    "exercise": "hint",
+    "remark": "tip",
+}
+
 for dic in data:
     try:
         filename = Path(dic["file"]).name
@@ -51,7 +58,7 @@ for dic in data:
                 if m.group(3):
                     style = m.group(3)
                 else:
-                    style = "tip" if adm_header == "remark" else adm_header
+                    style = CUSTOM_ADMONITION_STYLES.get(adm_header, adm_header)
                 text = adm_header.capitalize()
                 end_match = f"<!-- end -->\n"
                 try:
