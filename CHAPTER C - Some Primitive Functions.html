@@ -1182,11 +1182,14 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Rule</p>
-<p>In an APL expression, each function takes as its right argument the result of the entire expression to its right. No functions have higher precedence than any others.If the function is dyadic (takes both a left and a right argument), it takes as its left argument the array immediately to its left, delimited by the next function.This is sometimes called “<em><strong>Right to left evaluation</strong></em>” (although this is not strictly correct).If necessary, one can use <em><strong>Parentheses</strong></em> to force a different order of evaluation.```</p>
+<p>In an APL expression, each function takes as its right argument the result of the entire expression to its right. No functions have higher precedence than any others.</p>
+<p>If the function is dyadic (takes both a left and a right argument), it takes as its left argument the array immediately to its left, delimited by the next function.</p>
+<p>This is sometimes called “<em><strong>Right to left evaluation</strong></em>” (although this is not strictly correct).</p>
+<p>If necessary, one can use <em><strong>Parentheses</strong></em> to force a different order of evaluation.</p>
+</div>
 <p>You must not be confused: each function is itself evaluated in its natural order, so <code class="docutils literal notranslate"><span class="pre">8÷4</span></code> gives 2, not 0.5! The expression “<em>right to left</em>” only means that the first operation executed is the rightmost one.</p>
 <p>If the order of evaluation seems strange to you at first sight, just refer to a plain English sentence: “<em>take the top half of the bottom quarter</em>” does not mean “<em>take the top half first, and then take the bottom quarter</em>”; it means “<em><strong>first</strong> split into quarters and take the bottom one, <strong>then</strong> split that quarter into two halves and take the top half of it</em>”: this is exactly the way that APL works! Even in everyday English language, which we write from left to right, we implicitly use the “right to left evaluation” rule.</p>
 <p>Let us apply this rule to some examples:</p>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span><span class="o">×</span><span class="m">5</span><span class="o">+</span><span class="m">1</span>
@@ -1288,7 +1291,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <div class="warning admonition">
 <p class="admonition-title">Warning</p>
-<p>In the beginning you may encounter some surprises. For example, if <code class="docutils literal notranslate"><span class="pre">V</span></code> is a vector, <code class="docutils literal notranslate"><span class="pre">1+⍴V</span></code> is different from <code class="docutils literal notranslate"><span class="pre">⍴V+1</span></code>. Let us see why, with the following vector:```</p>
+<p>In the beginning you may encounter some surprises. For example, if <code class="docutils literal notranslate"><span class="pre">V</span></code> is a vector, <code class="docutils literal notranslate"><span class="pre">1+⍴V</span></code> is different from <code class="docutils literal notranslate"><span class="pre">⍴V+1</span></code>. Let us see why, with the following vector:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1889,10 +1892,12 @@ June
 <div class="tip admonition">
 <p class="admonition-title">Remark</p>
 <ul class="simple">
-<li><p><em><strong>And</strong></em>, <em><strong>Or</strong></em> and <em><strong>Xor</strong></em> are scalar dyadic functions;- <em><strong>Not</strong></em> is a scalar monadic function;- <em><strong>Membership</strong></em> is a dyadic function, but it is not a scalar function.```</p></li>
+<li><p><em><strong>And</strong></em>, <em><strong>Or</strong></em> and <em><strong>Xor</strong></em> are scalar dyadic functions;</p></li>
+<li><p><em><strong>Not</strong></em> is a scalar monadic function;</p></li>
+<li><p><em><strong>Membership</strong></em> is a dyadic function, but it is not a scalar function.</p></li>
 </ul>
-<p>All these functions can be applied to binary data of any shape. For example, let us see if any of those items of <code class="docutils literal notranslate"><span class="pre">Forecast</span></code>, which are greater than 350 thousand Euros, have been exceeded by <code class="docutils literal notranslate"><span class="pre">Actual</span></code> sales:</p>
 </div>
+<p>All these functions can be applied to binary data of any shape. For example, let us see if any of those items of <code class="docutils literal notranslate"><span class="pre">Forecast</span></code>, which are greater than 350 thousand Euros, have been exceeded by <code class="docutils literal notranslate"><span class="pre">Actual</span></code> sales:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">bin</span> <span class="kd">←</span> <span class="p">(</span><span class="nv">Forecast</span><span class="o">&gt;</span><span class="m">350</span><span class="p">)</span> <span class="o">∧</span> <span class="p">(</span><span class="nv">Actual</span><span class="o">&gt;</span><span class="nv">Forecast</span><span class="p">)</span>
@@ -2317,7 +2322,8 @@ June
 <p>And so on…</p>
 <div class="hint admonition">
 <p class="admonition-title">Exercise</p>
-<p>Try to evaluate the following expression in your head or with pen and paper: <code class="docutils literal notranslate"><span class="pre">23⌈</span> <span class="pre">⌈</span> <span class="pre">⌈/</span> <span class="pre">17.81</span> <span class="pre">21.41</span> <span class="pre">9.34</span> <span class="pre">16.53</span></code>Don’t panic! Remember to evaluate it symbol by symbol, from right to left.```</p>
+<p>Try to evaluate the following expression in your head or with pen and paper: <code class="docutils literal notranslate"><span class="pre">23⌈</span> <span class="pre">⌈</span> <span class="pre">⌈/</span> <span class="pre">17.81</span> <span class="pre">21.41</span> <span class="pre">9.34</span> <span class="pre">16.53</span></code></p>
+<p>Don’t panic! Remember to evaluate it symbol by symbol, from right to left.</p>
 </div>
 </div>
 <div class="section" id="definition">
@@ -2924,9 +2930,10 @@ June
 <p>This rule will help you predict the dimensions of the result of a reduction.</p>
 <div class="tip admonition">
 <p class="admonition-title">Rule</p>
-<p>When <em><strong>Reduction</strong></em> is applied along the Nth dimension of an array, the shape of the result is the same shape of the array, but without its Nth item.The <em><strong>Rank</strong></em> of the result is 1 less than the rank of the original array.```</p>
-<p>Whenever you want to calculate the sum along a particular dimension of an array, think of the dimensions in terms of concrete things: years, lines, months, etc. This should help you.</p>
+<p>When <em><strong>Reduction</strong></em> is applied along the Nth dimension of an array, the shape of the result is the same shape of the array, but without its Nth item.</p>
+<p>The <em><strong>Rank</strong></em> of the result is 1 less than the rank of the original array.</p>
 </div>
+<p>Whenever you want to calculate the sum along a particular dimension of an array, think of the dimensions in terms of concrete things: years, lines, months, etc. This should help you.</p>
 </div>
 <div class="section" id="special-notations">
 <h3><span class="section-number">3.9.3. </span>Special Notations<a class="headerlink" href="#special-notations" title="Permalink to this headline">¶</a></h3>
@@ -2978,9 +2985,9 @@ June
 </div>
 <div class="note admonition">
 <p class="admonition-title">Note</p>
-<p>If one specifies an axis after the symbol <code class="docutils literal notranslate"><span class="pre">/</span></code> or <code class="docutils literal notranslate"><span class="pre">⌿</span></code>, the function is applied along the specified <em>Axis</em>, regardless of the symbol that is actually used.```</p>
-<p>We demonstrate this note with two examples:</p>
+<p>If one specifies an axis after the symbol <code class="docutils literal notranslate"><span class="pre">/</span></code> or <code class="docutils literal notranslate"><span class="pre">⌿</span></code>, the function is applied along the specified <em>Axis</em>, regardless of the symbol that is actually used.</p>
 </div>
+<p>We demonstrate this note with two examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">⌿</span><span class="sr">[</span><span class="m">3</span><span class="sr">]</span><span class="nv">Prod</span><span class="p">)</span><span class="o">≡</span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">3</span><span class="sr">]</span><span class="nv">Prod</span><span class="p">)</span>
