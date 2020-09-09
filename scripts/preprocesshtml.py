@@ -63,10 +63,17 @@ for dic in data:
                     else:
                         print(f"{text} has no closing 'end' in cell {cellid} in file {filename}")
                         sys.exit(1)
+                # check if the lines are in a blockquote
+                intermediate_lines = lines[i+3:matching_line]
+                bq_matches = [re.match(r"^ >( |\n)(.*)$", line) for line in intermediate_lines]
+                if all(bq_matches):
+                    content_lines = [match.group(2) for match in bq_matches]
+                else:
+                    content_lines = intermediate_lines
                 lines = (
                     lines[:i] +
                     [f"```{{admonition}} {text} \n", f":class: {style}"] +
-                    lines[i+2:matching_line] +
+                    content_lines +
                     ["```\n"] +
                     lines[matching_line+1:]
                 )
