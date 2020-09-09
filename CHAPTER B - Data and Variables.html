@@ -170,23 +170,6 @@
 
         <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/RojerGS/MDAPL/master?urlpath=tree/CHAPTER B - Data and Variables.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
     </div>
 
     <!-- Table of contents -->
@@ -1210,10 +1193,6 @@ abcdefghijklmnopqrstuvwxyz
 </span></div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Money</span></code> has 2 dimensions; we say that its <em><strong>Rank</strong></em> is 2, or that it is organised along 2 criteria which are: Months / Accounts.</p>
-<div class="note admonition">
-<p class="admonition-title">Definition</p>
-<p>The <em><strong>Rank</strong></em> of an array is the number of its dimensions. It can be obtained using the expression <code class="docutils literal notranslate"><span class="pre">⍴⍴</span> <span class="pre">Array</span></code>.</p>
-</div>
 </div>
 <div class="section" id="scaling-down-the-ranks">
 <h3><span class="section-number">2.3.2. </span>Scaling Down the Ranks<a class="headerlink" href="#scaling-down-the-ranks" title="Permalink to this headline">¶</a></h3>
@@ -1707,9 +1686,8 @@ JuneJanu
 </span></div></div>
 </div>
 <p>Oops! We forgot that when the right argument is too short, <code class="docutils literal notranslate"><span class="pre">⍴</span></code> reuses it from the beginning. That’s the reason why the last row is wrong. We must add <span class="math notranslate nohighlight">\(4\)</span> trailing blanks.</p>
-<div class="tip admonition">
+<div class="tipyou do not have to re-type the entire expression admonition">
 <p class="admonition-title">Tip</p>
-<p>You do not have to re-type the entire expression.</p>
 <p>If you are working in the interpreter session, just move your cursor up to the line where you defined <code class="docutils literal notranslate"><span class="pre">MonMat</span></code>, add the missing blanks, and press the <em>Enter</em> key.</p>
 <p>APL will then copy the modified line down to the end of your session and automatically restore the original line to its original state. As a consequence, the interpreter window always displays the sequence of expressions and results in the order in which you typed them.</p>
 </div>
@@ -2028,10 +2006,6 @@ June
 </div>
 </div>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Remark</p>
-<p>Because we can select rows and columns, the semi-colon is necessary to tell them apart:</p>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Tests</span><span class="sr">[</span><span class="m">1</span> <span class="m">2</span><span class="sr">;</span><span class="m">3</span><span class="sr">]</span>    <span class="c1">⍝ gives rows 1 and 2, column 3</span>
@@ -2060,10 +2034,6 @@ June
 </pre></div>
 </div>
 </div>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Remark</p>
-<p>It is also possible to select several items which are not at the intersections of the same rows or columns. To do so requires a special notation where the individual Row/Column indexes of each item are embedded in parentheses. The reason for this syntax will become clear in Section 6.3.</p>
 </div>
 <p>For example, let us select <code class="docutils literal notranslate"><span class="pre">Tests[2;3]</span></code> together with <code class="docutils literal notranslate"><span class="pre">Tests[5;1]</span></code> and <code class="docutils literal notranslate"><span class="pre">Tests[1;2</span></code>.</p>
 <div class="cell docutils container">
@@ -2924,10 +2894,6 @@ K
 └∊───────────────────────────┘
 </span></div></div>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Remark</p>
-<p>Of course, even if APL <strong>can</strong> handle arrays as unusual as the one above, it is <strong>not advisable</strong> to build such arrays! Most nested arrays have a clear and straightforward structure.</p>
-</div>
 <p>Remember: in Section 4.2 we had a list of month names to store, and we had the choice between a matrix and a vector of vectors, that is to say a nested vector.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3094,10 +3060,6 @@ K
 <p>Since <code class="docutils literal notranslate"><span class="pre">Emptiness</span></code> is an empty vector (<code class="docutils literal notranslate"><span class="pre">⍬</span></code>) <em>Reshape</em> will return an array having an empty shape. Such an array is a scalar, so we know that the result of the expression will be a scalar.</p>
 <p><em>Reshape</em> will also fill the scalar with a value, taken from the right argument <code class="docutils literal notranslate"><span class="pre">Presence</span></code>. <code class="docutils literal notranslate"><span class="pre">Presence</span></code> contains the character vector <code class="docutils literal notranslate"><span class="pre">'Friendly'</span></code>, but since we only need one item to fill a scalar, we can only use the <code class="docutils literal notranslate"><span class="pre">'F'</span></code>. The rest of the character vector <code class="docutils literal notranslate"><span class="pre">'Friendly'</span></code> is not used.</p>
 <p>In fact, the expression <code class="docutils literal notranslate"><span class="pre">⍬⍴Array</span></code> is widely used to return the first item of an array as a scalar, and in particular to convert a 1-item vector into a scalar.</p>
-<div class="tip admonition">
-<p class="admonition-title">Remark</p>
-<p>Though they both are invisible when displayed, a numeric empty vector (<code class="docutils literal notranslate"><span class="pre">⍬</span></code>) is different from a character empty vector (<code class="docutils literal notranslate"><span class="pre">''</span></code>).</p>
-</div>
 </div>
 <div class="section" id="workspaces-and-commands">
 <h2><span class="section-number">2.8. </span>Workspaces and Commands<a class="headerlink" href="#workspaces-and-commands" title="Permalink to this headline">¶</a></h2>
@@ -3171,10 +3133,6 @@ not found towerchart
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">DISP    DISPLAY 
 </span></div></div>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Remark</p>
-<p>One can erase everything from the active workspace (all variables and all functions etc.) and revert to the original “clear” active workspace, by issuing the command</p>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">)</span><span class="nv">clear</span>
@@ -3203,16 +3161,6 @@ not found towerchart
 <div class="figure align-default" id="interpreter-toolbar-clear">
 <img alt="_images/Interpreter_Toolbar_Clear.png" src="_images/Interpreter_Toolbar_Clear.png" />
 <p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Windows IDE with the “Clear” toolbar shortcut highlighted</span><a class="headerlink" href="#interpreter-toolbar-clear" title="Permalink to this image">¶</a></p>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Remark</p>
-<p>In many languages, programs must be stored (saved) independently, one after the other, and variables do not exist on their own: they live only during the execution of a program which creates, uses and destroys them.</p>
-<p>In APL, things are different:</p>
-<ul class="simple">
-<li><p>Variables have an independent existence, outside of any program execution; you have seen that it is possible to create variables and manipulate them, at will, without writing any programs. This is similar to the interpreter sessions of some other languages, like Python or MATLAB.</p></li>
-<li><p>There may be a permanent interaction between programs and variables. Saving only any part of them would be nonsense: one must save the whole context; in other words, one must save the whole <em>active workspace</em>.</p></li>
-</ul>
-<p>This is what we shall discover now.</p>
 </div>
 </div>
 <div class="section" id="the-libraries">
@@ -3283,14 +3231,9 @@ not found towerchart
       <span class="p">)</span><span class="nv">load</span> <span class="nv">e</span><span class="bp">:</span><span class="na">/</span><span class="nv">freezer</span><span class="na">/</span><span class="nv">mummies</span><span class="na">/</span><span class="nv">ramses2</span>          <span class="c1">⍝ double quotes are not needed.</span>
 </pre></div>
 </div>
-<div class="tip admonition">
+<div class="tipwhen a ws is loaded it replaces the active in memory and becomes new if you have not saved variables functions were working on they are definitely lost there no warning message admonition">
 <p class="admonition-title">Remark</p>
-<p>When a WS is loaded, <strong>it replaces the active WS in memory</strong> and becomes the new active WS. If you have not saved the variables and functions you were working on, they are definitely lost! There is no warning message.</p>
 <p>You must be aware of this because in this respect, APL differs from most software environments, in which each new file you open is opened in a separate window.</p>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Remark</p>
-<p>When a WS is loaded, a confirmation message appears, like the following:</p>
 </div>
 <p>res/DyalogTutor_EN.dws saved Mon Aug 10 09:37:51 2020</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
@@ -3512,9 +3455,8 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 </div>
 <div class="section" id="exercises">
 <h2><span class="section-number">2.9. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<div class="warning admonition">
+<div class="warning-the following exercises are designed to train you not the computer admonition">
 <p class="admonition-title">Warning</p>
-<p><em>The following exercises are designed to train you, not the computer.</em></p>
 <p><em>For this reason, we suggest that you try to answer them on a sheet of paper, not on your computer. When you are sure of your answer, you can test it on the computer.</em></p>
 </div>
 <p><strong>Exercise 1</strong>:</p>

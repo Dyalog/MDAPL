@@ -170,23 +170,6 @@
 
         <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/RojerGS/MDAPL/master?urlpath=tree/CHAPTER C - Some Primitive Functions.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
     </div>
 
     <!-- Table of contents -->
@@ -529,21 +512,21 @@
 <h2><span class="section-number">3.1. </span>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
 <p>In APL data is processed using what we call <em>functions</em>. It is important to distinguish between two types of functions:</p>
 <ol class="simple">
-<li><p><em><strong>Primitive Functions</strong></em>:</p></li>
-</ol>
+<li><p><em><strong>Primitive Functions</strong></em>:</p>
 <ul class="simple">
 <li><p>they are part of the APL language;</p></li>
 <li><p>they are represented by symbols like <code class="docutils literal notranslate"><span class="pre">⍴</span></code>, <code class="docutils literal notranslate"><span class="pre">⍉</span></code> and <code class="docutils literal notranslate"><span class="pre">⌈</span></code>;</p></li>
 <li><p>their behaviour cannot be modified.</p></li>
 </ul>
-<ol class="simple">
-<li><p><em><strong>User-Defined Functions</strong></em>:</p></li>
-</ol>
+</li>
+<li><p><em><strong>User-Defined Functions</strong></em>:</p>
 <ul class="simple">
 <li><p>as their name implies, they are written by the user;</p></li>
 <li><p>they are represented by names, for example <code class="docutils literal notranslate"><span class="pre">Average</span></code> or <code class="docutils literal notranslate"><span class="pre">Budget</span></code>;</p></li>
 <li><p>their behaviour can be modified.</p></li>
 </ul>
+</li>
+</ol>
 <p>APL has a very rich set of primitive functions. In this chapter, we will explore just a few of them; many others will follow in subsequent chapters.</p>
 <p>In the introduction to this book, we mentioned that in traditional mathematics, some symbols can be used with a single argument or two arguments. For example:</p>
 <table class="colwidths-auto table">
@@ -694,10 +677,6 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 160 467 234 519 485 283
 </span></div></div>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Remark</p>
-<p>We initialise the <code class="docutils literal notranslate"><span class="pre">Forecast</span></code> and <code class="docutils literal notranslate"><span class="pre">Actual</span></code> variables with some random values by the use of the <em><strong>Roll</strong></em> function <code class="docutils literal notranslate"><span class="pre">?</span></code>. Notice this assignment is easier to type than some predefined set of values and we can use <code class="docutils literal notranslate"><span class="pre">⎕RL</span></code> to always get the same result. You can learn more about <code class="docutils literal notranslate"><span class="pre">?</span></code> and <code class="docutils literal notranslate"><span class="pre">⎕RL</span></code> later on in the book.</p>
-</div>
 <p>The first thing any self-respecting Sales Director will want to know is the difference between the expected and the actual results. This can be done easily by typing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -840,7 +819,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <div class="section" id="relationship">
 <h3><span class="section-number">3.2.5. </span>Relationship<a class="headerlink" href="#relationship" title="Permalink to this headline">¶</a></h3>
-<p>As in traditional mathematics, APL provided the 6 relationship functions:</p>
+<p>As in traditional mathematics, APL provides the 6 relationship functions:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>APL</p></th>
@@ -1197,18 +1176,12 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">37
 </span></div></div>
 </div>
-<div class="tip admonition">
+<div class="tipin an apl expression each function takes as its right argument the result of entire to no functions have higher precedence than any others-if is dyadic both a left and it array immediately delimited by next function-this sometimes called evaluation although this not strictly correct-if necessary one can use parentheses force different order admonition">
 <p class="admonition-title">Rule</p>
-<blockquote>
-<div><p>In an APL expression, each function takes as its right argument the result of the entire expression to its right. No functions have higher precedence than any others.</p>
-<p>If the function is dyadic (takes both a left and a right argument), it takes as its left argument the array immediately to its left, delimited by the next function.</p>
-<p>This is sometimes called “<em><strong>Right to left evaluation</strong></em>” (although this is not strictly correct).</p>
-<p>If necessary, one can use <em><strong>Parentheses</strong></em> to force a different order of evaluation.</p>
-</div></blockquote>
-</div>
 <p>You must not be confused: each function is itself evaluated in its natural order, so <code class="docutils literal notranslate"><span class="pre">8÷4</span></code> gives 2, not 0.5! The expression “<em>right to left</em>” only means that the first operation executed is the rightmost one.</p>
 <p>If the order of evaluation seems strange to you at first sight, just refer to a plain English sentence: “<em>take the top half of the bottom quarter</em>” does not mean “<em>take the top half first, and then take the bottom quarter</em>”; it means “<em><strong>first</strong> split into quarters and take the bottom one, <strong>then</strong> split that quarter into two halves and take the top half of it</em>”: this is exactly the way that APL works! Even in everyday English language, which we write from left to right, we implicitly use the “right to left evaluation” rule.</p>
 <p>Let us apply this rule to some examples:</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span><span class="o">×</span><span class="m">5</span><span class="o">+</span><span class="m">1</span>
@@ -1307,12 +1280,6 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1
 </span></div></div>
-</div>
-<div class="warning admonition">
-<p class="admonition-title">Warning</p>
-<blockquote>
-<div><p>In the beginning you may encounter some surprises. For example, if <code class="docutils literal notranslate"><span class="pre">V</span></code> is a vector, <code class="docutils literal notranslate"><span class="pre">1+⍴V</span></code> is different from <code class="docutils literal notranslate"><span class="pre">⍴V+1</span></code>. Let us see why, with the following vector:</p>
-</div></blockquote>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1726,10 +1693,6 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <div class="section" id="processing-binary-data">
 <h2><span class="section-number">3.6. </span>Processing Binary Data<a class="headerlink" href="#processing-binary-data" title="Permalink to this headline">¶</a></h2>
-<div class="tip admonition">
-<p class="admonition-title">Remark</p>
-<p>Binary values are most often produced by the comparison functions that we have already seen. However, the result of <em>any</em> function (such as addition or subtraction) which is composed only of 1s and 0s can be used as a binary (or Boolean) value, and may be used as an argument to any of the special primitive functions that apply to Boolean values.</p>
-</div>
 <p>Among the various ways of producing binary results, <em>Membership</em> appears to be one of the most interesting tools.</p>
 <div class="section" id="membership">
 <h3><span class="section-number">3.6.1. </span>Membership<a class="headerlink" href="#membership" title="Permalink to this headline">¶</a></h3>
@@ -1910,17 +1873,10 @@ June
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1 0 1 1 1 0 0
 </span></div></div>
 </div>
-<div class="tip admonition">
+<div class="tip and or xor are scalar dyadic functions not is a monadic function membership but it admonition">
 <p class="admonition-title">Remark</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><em><strong>And</strong></em>, <em><strong>Or</strong></em> and <em><strong>Xor</strong></em> are scalar dyadic functions;</p></li>
-<li><p><em><strong>Not</strong></em> is a scalar monadic function;</p></li>
-<li><p><em><strong>Membership</strong></em> is a dyadic function, but it is not a scalar function.</p></li>
-</ul>
-</div></blockquote>
-</div>
 <p>All these functions can be applied to binary data of any shape. For example, let us see if any of those items of <code class="docutils literal notranslate"><span class="pre">Forecast</span></code>, which are greater than 350 thousand Euros, have been exceeded by <code class="docutils literal notranslate"><span class="pre">Actual</span></code> sales:</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">bin</span> <span class="kd">←</span> <span class="p">(</span><span class="nv">Forecast</span><span class="o">&gt;</span><span class="m">350</span><span class="p">)</span> <span class="o">∧</span> <span class="p">(</span><span class="nv">Actual</span><span class="o">&gt;</span><span class="nv">Forecast</span><span class="p">)</span>
@@ -2343,13 +2299,6 @@ June
 </tbody>
 </table>
 <p>And so on…</p>
-<div class="hint admonition">
-<p class="admonition-title">Exercise</p>
-<blockquote>
-<div><p>Try to evaluate the following expression in your head or with pen and paper: <code class="docutils literal notranslate"><span class="pre">23⌈</span> <span class="pre">⌈</span> <span class="pre">⌈/</span> <span class="pre">17.81</span> <span class="pre">21.41</span> <span class="pre">9.34</span> <span class="pre">16.53</span></code></p>
-<p>Don’t panic! Remember to evaluate it symbol by symbol, from right to left.</p>
-</div></blockquote>
-</div>
 </div>
 <div class="section" id="definition">
 <h3><span class="section-number">3.8.2. </span>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h3>
@@ -2953,14 +2902,6 @@ June
 </div>
 <p>You can see that <em>Reduction</em> of a 3-D array gives a 2-D array, in which the summed dimension has “disappeared”. This is the origin of the term “<em>Reduction</em>”; it <em>reduces</em> the <em>rank</em> of the array.</p>
 <p>This rule will help you predict the dimensions of the result of a reduction.</p>
-<div class="tip admonition">
-<p class="admonition-title">Rule</p>
-<blockquote>
-<div><p>When <em><strong>Reduction</strong></em> is applied along the Nth dimension of an array, the shape of the result is the same shape of the array, but without its Nth item.</p>
-<p>The <em><strong>Rank</strong></em> of the result is 1 less than the rank of the original array.</p>
-</div></blockquote>
-</div>
-<p>Whenever you want to calculate the sum along a particular dimension of an array, think of the dimensions in terms of concrete things: years, lines, months, etc. This should help you.</p>
 </div>
 <div class="section" id="special-notations">
 <h3><span class="section-number">3.9.3. </span>Special Notations<a class="headerlink" href="#special-notations" title="Permalink to this headline">¶</a></h3>
@@ -3010,13 +2951,6 @@ June
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1
 </span></div></div>
 </div>
-<div class="note admonition">
-<p class="admonition-title">Note</p>
-<blockquote>
-<div><p>If one specifies an axis after the symbol <code class="docutils literal notranslate"><span class="pre">/</span></code> or <code class="docutils literal notranslate"><span class="pre">⌿</span></code>, the function is applied along the specified <em>Axis</em>, regardless of the symbol that is actually used.</p>
-</div></blockquote>
-</div>
-<p>We demonstrate this note with two examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">⌿</span><span class="sr">[</span><span class="m">3</span><span class="sr">]</span><span class="nv">Prod</span><span class="p">)</span><span class="o">≡</span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">3</span><span class="sr">]</span><span class="nv">Prod</span><span class="p">)</span>
