@@ -14,9 +14,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -24,12 +23,10 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -572,7 +569,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>It is the same in APL, where most of the symbols (functions) have a <em>monadic</em> and a <em>dyadic</em> meaning. For example, here <code class="docutils literal notranslate"><span class="pre">⍴</span></code> obtains the shape of the <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span></code> vector:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴ 1 2 3 4
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span>
 </pre></div>
 </div>
 </div>
@@ -583,7 +580,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Whereas in here <code class="docutils literal notranslate"><span class="pre">⍴</span></code> changes the shape of the <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span></code> vector to <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">2</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>2 2 ⍴ 1 2 3 4
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="m">2</span> <span class="o">⍴</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span>
 </pre></div>
 </div>
 </div>
@@ -609,7 +606,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>The four basic arithmetic functions, <em><strong>Addition</strong></em>, <em><strong>Subtraction</strong></em>, <em><strong>Multiplication</strong></em> and <em><strong>Division</strong></em> are scalar dyadic functions. They apply themselves between each item of the left argument and the corresponding item of the right argument, like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">9</span> <span class="o">+</span> <span class="mi">2</span> <span class="mi">6</span> <span class="mi">8</span> <span class="mi">4</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="m">3</span> <span class="m">2</span> <span class="m">9</span> <span class="o">+</span> <span class="m">2</span> <span class="m">6</span> <span class="m">8</span> <span class="m">4</span>
 </pre></div>
 </div>
 </div>
@@ -621,7 +618,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>As an example of a function that is <em>not</em> a scalar function, let us look at the <em><strong>Reshape</strong></em> function. There is nothing in common between the shapes of its arguments:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>2 3 ⍴ 6 8 2 1 9 3
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="m">3</span> <span class="o">⍴</span> <span class="m">6</span> <span class="m">8</span> <span class="m">2</span> <span class="m">1</span> <span class="m">9</span> <span class="m">3</span>
 </pre></div>
 </div>
 </div>
@@ -634,7 +631,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Let us explore the behaviour of the basic arithmetic functions on vectors:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="mi">3</span> <span class="mi">2</span> <span class="mi">9</span> <span class="o">-</span> <span class="mi">2</span> <span class="mi">6</span> <span class="mi">8</span> <span class="mi">4</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="m">3</span> <span class="m">2</span> <span class="m">9</span> <span class="o">-</span> <span class="m">2</span> <span class="m">6</span> <span class="m">8</span> <span class="m">4</span>
 </pre></div>
 </div>
 </div>
@@ -644,7 +641,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>5 3 2 9 ÷ 2 6 4 7
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="m">3</span> <span class="m">2</span> <span class="m">9</span> <span class="o">÷</span> <span class="m">2</span> <span class="m">6</span> <span class="m">4</span> <span class="m">7</span>
 </pre></div>
 </div>
 </div>
@@ -654,10 +651,10 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Price ← 5.2 11.5 3.6 4 8.45
-Qty ← 2 1 3 6 2
-Costs ← Price × Qty
-Costs
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Price</span> <span class="kd">←</span> <span class="m">5.2</span> <span class="m">11.5</span> <span class="m">3.6</span> <span class="m">4</span> <span class="m">8.45</span>
+<span class="nv">Qty</span> <span class="kd">←</span> <span class="m">2</span> <span class="m">1</span> <span class="m">3</span> <span class="m">6</span> <span class="m">2</span>
+<span class="nv">Costs</span> <span class="kd">←</span> <span class="nv">Price</span> <span class="o">×</span> <span class="nv">Qty</span>
+<span class="nv">Costs</span>
 </pre></div>
 </div>
 </div>
@@ -669,9 +666,9 @@ Costs
 <p>As we saw in the introduction, a Sales Director makes forecasts for sales of 4 products over the coming 6 months, and assigns them to the variable <code class="docutils literal notranslate"><span class="pre">Forecast</span></code>. At the end of the 6 months, they record the actual values in the variable <code class="docutils literal notranslate"><span class="pre">Actual</span></code>. Here they are:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⎕RL ← 73
-Forecast ← 10×?4 6⍴55
-Forecast
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="nv">Forecast</span> <span class="kd">←</span> <span class="m">10</span><span class="o">×?</span><span class="m">4</span> <span class="m">6</span><span class="o">⍴</span><span class="m">55</span>
+<span class="nv">Forecast</span>
 </pre></div>
 </div>
 </div>
@@ -684,9 +681,9 @@ Forecast
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⎕RL ← 73
-Actual ← Forecast + ¯10+?4 6⍴20
-Actual
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="nv">Actual</span> <span class="kd">←</span> <span class="nv">Forecast</span> <span class="o">+</span> <span class="m">¯10</span><span class="o">+?</span><span class="m">4</span> <span class="m">6</span><span class="o">⍴</span><span class="m">20</span>
+<span class="nv">Actual</span>
 </pre></div>
 </div>
 </div>
@@ -704,7 +701,7 @@ Actual
 <p>The first thing any self-respecting Sales Director will want to know is the difference between the expected and the actual results. This can be done easily by typing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Actual</span> <span class="o">-</span> <span class="n">Forecast</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Actual</span> <span class="o">-</span> <span class="nv">Forecast</span>
 </pre></div>
 </div>
 </div>
@@ -720,7 +717,7 @@ Actual
 <p>For example, if we want to multiply <code class="docutils literal notranslate"><span class="pre">Forecast</span></code> by 2, we can type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Forecast × 2        ⍝ same as 2 × Forecast
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Forecast</span> <span class="o">×</span> <span class="m">2</span>        <span class="c1">⍝ same as 2 × Forecast</span>
 </pre></div>
 </div>
 </div>
@@ -738,16 +735,15 @@ Actual
 <p>An expression such as <code class="docutils literal notranslate"><span class="pre">17÷0</span></code> leads to an error message:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>17÷0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">17</span><span class="o">÷</span><span class="m">0</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="stderr docutils container">
-<pre class="stderr literal-block">DOMAIN ERROR: Divide by zero
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DOMAIN ERROR: Divide by zero
       17÷0
         ∧
-</pre>
+</pre></div>
 </div>
 </div>
 </div>
@@ -755,7 +751,7 @@ Actual
 <p>However, notice what <code class="docutils literal notranslate"><span class="pre">0÷0</span></code> returns:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0÷0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span><span class="o">÷</span><span class="m">0</span>
 </pre></div>
 </div>
 </div>
@@ -772,7 +768,7 @@ Actual
 <p>To calculate the values of: <span class="math notranslate nohighlight">\(4^2\)</span>, <span class="math notranslate nohighlight">\(4^{1.4}\)</span>, <span class="math notranslate nohighlight">\(4^0\)</span>, <span class="math notranslate nohighlight">\(\sqrt 4\)</span>, <span class="math notranslate nohighlight">\(4^{-2.1}\)</span>, <span class="math notranslate nohighlight">\(4^5\)</span> we just need to type</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>4 * 2 1.4 0 0.5 ¯1 ¯2.1 5
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">4</span> <span class="o">*</span> <span class="m">2</span> <span class="m">1.4</span> <span class="m">0</span> <span class="m">0.5</span> <span class="m">¯1</span> <span class="m">¯2.1</span> <span class="m">5</span>
 </pre></div>
 </div>
 </div>
@@ -784,7 +780,7 @@ Actual
 <p>There is no special symbol in APL to represent a square root; it is obtained by raising a value to the power <span class="math notranslate nohighlight">\(\frac12\)</span>. If we take the square root of a negative number, then we get a complex number as a result:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>¯1 * 0.5 
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯1</span> <span class="o">*</span> <span class="m">0.5</span> 
 </pre></div>
 </div>
 </div>
@@ -798,7 +794,7 @@ Actual
 <p><em><strong>Maximum</strong></em> (<code class="docutils literal notranslate"><span class="pre">⌈</span></code>) and <em><strong>Minimum</strong></em> (<code class="docutils literal notranslate"><span class="pre">⌊</span></code>) return respectively the larger of two values and the smaller of two values, whatever their signs. Because they are scalar dyadic functions, they can be applied item by item between any two compatible arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>75 ⌈ 83
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">75</span> <span class="o">⌈</span> <span class="m">83</span>
 </pre></div>
 </div>
 </div>
@@ -808,7 +804,7 @@ Actual
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>19 ⌈ 11 22 ¯20 60
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">19</span> <span class="o">⌈</span> <span class="m">11</span> <span class="m">22</span> <span class="m">¯20</span> <span class="m">60</span>
 </pre></div>
 </div>
 </div>
@@ -818,7 +814,7 @@ Actual
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>52 14 ¯37 18.44 ⌊ ¯60 15 ¯40 11.23
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">52</span> <span class="m">14</span> <span class="m">¯37</span> <span class="m">18.44</span> <span class="o">⌊</span> <span class="m">¯60</span> <span class="m">15</span> <span class="m">¯40</span> <span class="m">11.23</span>
 </pre></div>
 </div>
 </div>
@@ -829,7 +825,7 @@ Actual
 <p><em>Minimum</em> can be used to apply a limit to the values in an array. For example, to set a ceiling of 450 in the matrix <code class="docutils literal notranslate"><span class="pre">Forecast</span></code>, it is sufficient to type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Forecast ⌊ 450
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Forecast</span> <span class="o">⌊</span> <span class="m">450</span>
 </pre></div>
 </div>
 </div>
@@ -876,7 +872,7 @@ Actual
 <p>All these 6 functions return <code class="docutils literal notranslate"><span class="pre">1</span></code> if the relation is true, or <code class="docutils literal notranslate"><span class="pre">0</span></code> if it is false.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">11</span> <span class="o">&lt;</span> <span class="mi">7</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">11</span> <span class="o">&lt;</span> <span class="m">7</span>
 </pre></div>
 </div>
 </div>
@@ -886,7 +882,7 @@ Actual
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>24 ≤ 24 11 33
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">24</span> <span class="o">≤</span> <span class="m">24</span> <span class="m">11</span> <span class="m">33</span>
 </pre></div>
 </div>
 </div>
@@ -896,7 +892,7 @@ Actual
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">=</span> <span class="mi">9</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="o">=</span> <span class="m">9</span>
 </pre></div>
 </div>
 </div>
@@ -906,7 +902,7 @@ Actual
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>3 8 7 ≥ 5 8 0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="m">8</span> <span class="m">7</span> <span class="o">≥</span> <span class="m">5</span> <span class="m">8</span> <span class="m">0</span>
 </pre></div>
 </div>
 </div>
@@ -916,7 +912,7 @@ Actual
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>6 &gt; 2 3⍴7 2 9 3 6 4
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">6</span> <span class="o">&gt;</span> <span class="m">2</span> <span class="m">3</span><span class="o">⍴</span><span class="m">7</span> <span class="m">2</span> <span class="m">9</span> <span class="m">3</span> <span class="m">6</span> <span class="m">4</span>
 </pre></div>
 </div>
 </div>
@@ -929,7 +925,7 @@ Actual
 <p>Note that none of the four symbols <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">≤</span></code> <code class="docutils literal notranslate"><span class="pre">≥</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> can be applied to character arrays. Only <code class="docutils literal notranslate"><span class="pre">=</span></code> and <code class="docutils literal notranslate"><span class="pre">≠</span></code> can be used with character arrays, as illustrated below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;m&#39;</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;m&#39;</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -939,7 +935,7 @@ Actual
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;m&#39;</span> <span class="o">=</span> <span class="s1">&#39;M&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;m&#39;</span> <span class="o">=</span> <span class="s1">&#39;M&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -949,7 +945,7 @@ Actual
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&#39;k&#39; ≠ &#39;a&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;k&#39;</span> <span class="o">≠</span> <span class="s1">&#39;a&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -959,7 +955,7 @@ Actual
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&#39;sorry&#39; ≠ &#39;r&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;sorry&#39;</span> <span class="o">≠</span> <span class="s1">&#39;r&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -970,7 +966,7 @@ Actual
 <p>Because these functions are scalar dyadic functions, they are applied between individual scalars (the letters), not words:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&#39;gold&#39; ≠ &#39;gulf&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;gold&#39;</span> <span class="o">≠</span> <span class="s1">&#39;gulf&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -981,16 +977,15 @@ Actual
 <p>For the same reason, the two words (considered as vectors) must be of equal size, otherwise we get an error:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&#39;male&#39; ≠ &#39;female&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;male&#39;</span> <span class="o">≠</span> <span class="s1">&#39;female&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="stderr docutils container">
-<pre class="stderr literal-block">LENGTH ERROR: Mismatched left and right argument shapes
-      'male'≠'female'
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LENGTH ERROR: Mismatched left and right argument shapes
+      &#39;male&#39;≠&#39;female&#39;
             ∧
-</pre>
+</pre></div>
 </div>
 </div>
 </div>
@@ -1001,7 +996,7 @@ Actual
 <p>In the expression <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">←</span> <span class="pre">X|Y</span></code>, <code class="docutils literal notranslate"><span class="pre">R</span></code> is the remainder of <code class="docutils literal notranslate"><span class="pre">Y</span></code> divided by <code class="docutils literal notranslate"><span class="pre">X</span></code> (<strong>be careful</strong>; the arguments of <em>Residue</em> are given in the reverse order of that used by <em>Division</em> <code class="docutils literal notranslate"><span class="pre">Y÷X</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">7</span> <span class="o">|</span> <span class="mi">54</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">7</span> <span class="o">|</span> <span class="m">54</span>
 </pre></div>
 </div>
 </div>
@@ -1011,7 +1006,7 @@ Actual
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>2 | 216 47 29 28        ⍝ Find even and odd numbers
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="o">|</span> <span class="m">216</span> <span class="m">47</span> <span class="m">29</span> <span class="m">28</span>        <span class="c1">⍝ Find even and odd numbers</span>
 </pre></div>
 </div>
 </div>
@@ -1021,9 +1016,9 @@ Actual
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>X ← 7 4 11 ¯4.3 3 ¯5 6 ¯3
-Y ← 54 84 119 19.6 29 43 ¯14 ¯14
-X | Y
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">X</span> <span class="kd">←</span> <span class="m">7</span> <span class="m">4</span> <span class="m">11</span> <span class="m">¯4.3</span> <span class="m">3</span> <span class="m">¯5</span> <span class="m">6</span> <span class="m">¯3</span>
+<span class="nv">Y</span> <span class="kd">←</span> <span class="m">54</span> <span class="m">84</span> <span class="m">119</span> <span class="m">19.6</span> <span class="m">29</span> <span class="m">43</span> <span class="m">¯14</span> <span class="m">¯14</span>
+<span class="nv">X</span> <span class="o">|</span> <span class="nv">Y</span>
 </pre></div>
 </div>
 </div>
@@ -1035,7 +1030,7 @@ X | Y
 <p>The result <code class="docutils literal notranslate"><span class="pre">R</span></code> is always equal to <code class="docutils literal notranslate"><span class="pre">Y</span> <span class="pre">-</span> <span class="pre">(N×X)</span></code>, where <code class="docutils literal notranslate"><span class="pre">N</span></code> is the largest possible integer such that <code class="docutils literal notranslate"><span class="pre">R</span></code> is always between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">X</span></code>, but never equal to <code class="docutils literal notranslate"><span class="pre">X</span></code>. Some calculations show that <code class="docutils literal notranslate"><span class="pre">N</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">⌊(Y÷X)</span></code>, which means <code class="docutils literal notranslate"><span class="pre">X|Y</span></code> and <code class="docutils literal notranslate"><span class="pre">Y</span> <span class="pre">-</span> <span class="pre">(X</span> <span class="pre">×</span> <span class="pre">(⌊(Y÷X)))</span></code> give the exact same result:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">X</span><span class="o">|</span><span class="n">Y</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">X</span><span class="o">|</span><span class="nv">Y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1045,7 +1040,7 @@ X | Y
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(Y - (X × (⌊(Y÷X))))
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">Y</span> <span class="o">-</span> <span class="p">(</span><span class="nv">X</span> <span class="o">×</span> <span class="p">(</span><span class="o">⌊</span><span class="p">(</span><span class="nv">Y</span><span class="o">÷</span><span class="nv">X</span><span class="p">))))</span>
 </pre></div>
 </div>
 </div>
@@ -1056,7 +1051,7 @@ X | Y
 <p>Using a new dyadic primitive <code class="docutils literal notranslate"><span class="pre">≡</span></code> (obtained with <kbd>APL</kbd>+<kbd>Shift</kbd>+<kbd>;</kbd>) we can ask APL to check if the two arrays are the same, instead of having to compare each array item by item:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(X|Y) ≡ (Y - (X × (⌊(Y÷X))))
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">X</span><span class="o">|</span><span class="nv">Y</span><span class="p">)</span> <span class="o">≡</span> <span class="p">(</span><span class="nv">Y</span> <span class="o">-</span> <span class="p">(</span><span class="nv">X</span> <span class="o">×</span> <span class="p">(</span><span class="o">⌊</span><span class="p">(</span><span class="nv">Y</span><span class="o">÷</span><span class="nv">X</span><span class="p">))))</span>
 </pre></div>
 </div>
 </div>
@@ -1071,7 +1066,7 @@ X | Y
 <p>We have seen above that the dyadic functions <code class="docutils literal notranslate"><span class="pre">=</span></code> and <code class="docutils literal notranslate"><span class="pre">≠</span></code> are scalar, which meant we cannot use them when we wish to check if two arrays are the same or when we wish to check if two arrays are different:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="o">=</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="o">=</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span>
 </pre></div>
 </div>
 </div>
@@ -1083,23 +1078,22 @@ X | Y
 <p>For a similar reason, we can’t even compare vectors of different lengths because dyadic scalar functions expect the shapes of their arguments to match:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;male&#39;</span> <span class="o">=</span> <span class="s1">&#39;female&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;male&#39;</span> <span class="o">=</span> <span class="s1">&#39;female&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="stderr docutils container">
-<pre class="stderr literal-block">LENGTH ERROR: Mismatched left and right argument shapes
-      'male'='female'
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LENGTH ERROR: Mismatched left and right argument shapes
+      &#39;male&#39;=&#39;female&#39;
             ∧
-</pre>
+</pre></div>
 </div>
 </div>
 </div>
 <p>Instead, we must use the <em><strong>Match</strong></em> (<code class="docutils literal notranslate"><span class="pre">≡</span></code>) function to check if two arrays are exactly the same:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1 2 3 4 ≡ 1 2 3 4
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="o">≡</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span>
 </pre></div>
 </div>
 </div>
@@ -1109,7 +1103,7 @@ X | Y
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&#39;male&#39; ≡ &#39;female&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;male&#39;</span> <span class="o">≡</span> <span class="s1">&#39;female&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1120,7 +1114,7 @@ X | Y
 <p>The <em><strong>Not Match</strong></em> (<code class="docutils literal notranslate"><span class="pre">≢</span></code>) primitive (obtained with <kbd>APL</kbd>+<kbd>Shift</kbd>+<kbd>’</kbd>) is the counterpart to <code class="docutils literal notranslate"><span class="pre">≡</span></code> and checks if two arrays are different:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1 2 3 4 ≢ 1 2 3 4
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="o">≢</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span>
 </pre></div>
 </div>
 </div>
@@ -1130,7 +1124,7 @@ X | Y
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&#39;male&#39; ≢ &#39;female&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;male&#39;</span> <span class="o">≢</span> <span class="s1">&#39;female&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1151,7 +1145,7 @@ X | Y
 <p>To evaluate</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>5 × 6 + 7
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="o">×</span> <span class="m">6</span> <span class="o">+</span> <span class="m">7</span>
 </pre></div>
 </div>
 </div>
@@ -1162,7 +1156,7 @@ X | Y
 <p>we first calculate</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="o">+</span> <span class="mi">7</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">6</span> <span class="o">+</span> <span class="m">7</span>
 </pre></div>
 </div>
 </div>
@@ -1173,7 +1167,7 @@ X | Y
 <p>and then multiply by 5, giving 65:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>5 × 13
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="o">×</span> <span class="m">13</span>
 </pre></div>
 </div>
 </div>
@@ -1184,7 +1178,7 @@ X | Y
 <p>By the use of parentheses we can instruct APL to do the multiplication first,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(5 × 6) + 7
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">5</span> <span class="o">×</span> <span class="m">6</span><span class="p">)</span> <span class="o">+</span> <span class="m">7</span>
 </pre></div>
 </div>
 </div>
@@ -1195,7 +1189,7 @@ X | Y
 <p>which an experienced APL programmer would probably write as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>7 + 5 × 6
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">7</span> <span class="o">+</span> <span class="m">5</span> <span class="o">×</span> <span class="m">6</span>
 </pre></div>
 </div>
 </div>
@@ -1217,7 +1211,7 @@ X | Y
 <p>Let us apply this rule to some examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>3×5+1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span><span class="o">×</span><span class="m">5</span><span class="o">+</span><span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -1228,7 +1222,7 @@ X | Y
 <p>First we sum,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="o">+</span><span class="mi">1</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span><span class="o">+</span><span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -1239,7 +1233,7 @@ X | Y
 <p>then we multiply:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>3×6
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span><span class="o">×</span><span class="m">6</span>
 </pre></div>
 </div>
 </div>
@@ -1250,7 +1244,7 @@ X | Y
 <p>Now an example with 3 operations:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>3 6⌊4+2 9&gt;7
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="m">6</span><span class="o">⌊</span><span class="m">4</span><span class="o">+</span><span class="m">2</span> <span class="m">9</span><span class="o">&gt;</span><span class="m">7</span>
 </pre></div>
 </div>
 </div>
@@ -1261,7 +1255,7 @@ X | Y
 <p>First we perform the “greater than” comparison,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="mi">9</span><span class="o">&gt;</span><span class="mi">7</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="m">9</span><span class="o">&gt;</span><span class="m">7</span>
 </pre></div>
 </div>
 </div>
@@ -1272,7 +1266,7 @@ X | Y
 <p>then we add 4</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span><span class="o">+</span><span class="mi">0</span> <span class="mi">1</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">4</span><span class="o">+</span><span class="m">0</span> <span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -1283,7 +1277,7 @@ X | Y
 <p>and finally we take the minimum:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>3 6⌊4 5
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="m">6</span><span class="o">⌊</span><span class="m">4</span> <span class="m">5</span>
 </pre></div>
 </div>
 </div>
@@ -1294,7 +1288,7 @@ X | Y
 <p>An even more complex example, from the end of the subsection on the <em>Residue</em> (<code class="docutils literal notranslate"><span class="pre">|</span></code>) primitive function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(X|Y)≡Y-X×⌊Y÷X
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">X</span><span class="o">|</span><span class="nv">Y</span><span class="p">)</span><span class="o">≡</span><span class="nv">Y</span><span class="o">-</span><span class="nv">X</span><span class="o">×⌊</span><span class="nv">Y</span><span class="o">÷</span><span class="nv">X</span>
 </pre></div>
 </div>
 </div>
@@ -1305,8 +1299,8 @@ X | Y
 <p>Notice that in the example above we still kept a set of parentheses around <code class="docutils literal notranslate"><span class="pre">X|Y</span></code>, because we want <code class="docutils literal notranslate"><span class="pre">≡</span></code> to compare <code class="docutils literal notranslate"><span class="pre">X|Y</span></code> with <code class="docutils literal notranslate"><span class="pre">Y-X×⌊Y÷X</span></code>. To get rid of those parentheses one would need to introduce an intermediate variable, for example like so:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>R ← X|Y
-R≡Y-X×⌊Y÷X
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">R</span> <span class="kd">←</span> <span class="nv">X</span><span class="o">|</span><span class="nv">Y</span>
+<span class="nv">R</span><span class="o">≡</span><span class="nv">Y</span><span class="o">-</span><span class="nv">X</span><span class="o">×⌊</span><span class="nv">Y</span><span class="o">÷</span><span class="nv">X</span>
 </pre></div>
 </div>
 </div>
@@ -1322,7 +1316,7 @@ R≡Y-X×⌊Y÷X
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>V ← 5 2 7
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">V</span> <span class="kd">←</span> <span class="m">5</span> <span class="m">2</span> <span class="m">7</span>
 </pre></div>
 </div>
 </div>
@@ -1330,7 +1324,7 @@ R≡Y-X×⌊Y÷X
 <p>The value of</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1+⍴V
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="o">+⍴</span><span class="nv">V</span>
 </pre></div>
 </div>
 </div>
@@ -1341,7 +1335,7 @@ R≡Y-X×⌊Y÷X
 <p>is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴V
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">V</span>
 </pre></div>
 </div>
 </div>
@@ -1352,7 +1346,7 @@ R≡Y-X×⌊Y÷X
 <p>followed by</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">3</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="o">+</span><span class="m">3</span>
 </pre></div>
 </div>
 </div>
@@ -1363,7 +1357,7 @@ R≡Y-X×⌊Y÷X
 <p>Whereas the value of</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴V+1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">V</span><span class="o">+</span><span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -1374,7 +1368,7 @@ R≡Y-X×⌊Y÷X
 <p>is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">V</span><span class="o">+</span><span class="mi">1</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">V</span><span class="o">+</span><span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -1385,7 +1379,7 @@ R≡Y-X×⌊Y÷X
 <p>followed by</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴6 3 8
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="m">6</span> <span class="m">3</span> <span class="m">8</span>
 </pre></div>
 </div>
 </div>
@@ -1407,7 +1401,7 @@ R≡Y-X×⌊Y÷X
 <p>The Plus sign used monadically is the <em><strong>Conjugate</strong></em> function. It returns the <em><strong>complex conjugate</strong></em> of its arguments:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span> <span class="mi">0</span><span class="n">J1</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span> <span class="m">0J1</span>
 </pre></div>
 </div>
 </div>
@@ -1418,7 +1412,7 @@ R≡Y-X×⌊Y÷X
 <p>When the numbers have no complex part, the function acts as the identity function, as the complex conjugate of a real number is the number itself:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>+ 1 2 3 ¯3 6.5346 56J0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">¯3</span> <span class="m">6.5346</span> <span class="m">56J0</span>
 </pre></div>
 </div>
 </div>
@@ -1429,7 +1423,7 @@ R≡Y-X×⌊Y÷X
 <p>For compatibility reasons, monadic <code class="docutils literal notranslate"><span class="pre">+</span></code> also acts as the identity function if the argument is a character:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+</span> <span class="s1">&#39;a&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span> <span class="s1">&#39;a&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1440,7 +1434,7 @@ R≡Y-X×⌊Y÷X
 <p>Because it is a scalar function, it naturally works with mixed arrays:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>+ &#39;B&#39; 3 &#39;a&#39; ¯3 0J1 &#39;g&#39; 4J¯4
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span> <span class="s1">&#39;B&#39;</span> <span class="m">3</span> <span class="s1">&#39;a&#39;</span> <span class="m">¯3</span> <span class="m">0J1</span> <span class="s1">&#39;g&#39;</span> <span class="m">4J¯4</span>
 </pre></div>
 </div>
 </div>
@@ -1454,7 +1448,7 @@ R≡Y-X×⌊Y÷X
 <p>The Minus sign is the <em><strong>Negative</strong></em> function. It returns the negation of its argument:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- 19 11 ¯33 0 ¯17
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="m">19</span> <span class="m">11</span> <span class="m">¯33</span> <span class="m">0</span> <span class="m">¯17</span>
 </pre></div>
 </div>
 </div>
@@ -1487,7 +1481,7 @@ R≡Y-X×⌊Y÷X
 <p>Some examples follow:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>× 19 11 ¯33 0 ¯17
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">×</span> <span class="m">19</span> <span class="m">11</span> <span class="m">¯33</span> <span class="m">0</span> <span class="m">¯17</span>
 </pre></div>
 </div>
 </div>
@@ -1501,7 +1495,7 @@ R≡Y-X×⌊Y÷X
 <p>No surprise: the Divide symbol gives the <em><strong>Reciprocal</strong></em> or <em><strong>Inverse</strong></em> of its argument:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>÷ 2 ¯4 .3 .25 ¯7
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">÷</span> <span class="m">2</span> <span class="m">¯4</span> <span class="m">.3</span> <span class="m">.25</span> <span class="m">¯7</span>
 </pre></div>
 </div>
 </div>
@@ -1518,7 +1512,7 @@ R≡Y-X×⌊Y÷X
 <p>The expression <code class="docutils literal notranslate"><span class="pre">*N</span></code> gives <span class="math notranslate nohighlight">\(e^N\)</span>, where <span class="math notranslate nohighlight">\(e\)</span> is the base of the natural logarithm, approximately <span class="math notranslate nohighlight">\(2.71828\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="mi">1</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">*</span><span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -1528,7 +1522,7 @@ R≡Y-X×⌊Y÷X
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>* 1 0 3 ¯1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="m">1</span> <span class="m">0</span> <span class="m">3</span> <span class="m">¯1</span>
 </pre></div>
 </div>
 </div>
@@ -1542,8 +1536,8 @@ R≡Y-X×⌊Y÷X
 <p><em><strong>Floor</strong></em> (<code class="docutils literal notranslate"><span class="pre">⌊</span></code>) rounds its argument down, while <em><strong>Ceiling</strong></em> (<code class="docutils literal notranslate"><span class="pre">⌈</span></code>) rounds its argument up, to the nearest smaller or larger integer value, respectively:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>V ← 51.384 48.962 0 12.5 ¯73.27 ¯9.99
-⌊V
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">V</span> <span class="kd">←</span> <span class="m">51.384</span> <span class="m">48.962</span> <span class="m">0</span> <span class="m">12.5</span> <span class="m">¯73.27</span> <span class="m">¯9.99</span>
+<span class="o">⌊</span><span class="nv">V</span>
 </pre></div>
 </div>
 </div>
@@ -1553,7 +1547,7 @@ R≡Y-X×⌊Y÷X
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⌈V
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⌈</span><span class="nv">V</span>
 </pre></div>
 </div>
 </div>
@@ -1564,7 +1558,7 @@ R≡Y-X×⌊Y÷X
 <p>To round a value to the nearest integer a commonly used method is to add 0.5 and then take the <em>Floor</em>, or alternatively, to subtract 0.5 and take the <em>Ceiling</em>, as shown here:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⌊V+0.5
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⌊</span><span class="nv">V</span><span class="o">+</span><span class="m">0.5</span>
 </pre></div>
 </div>
 </div>
@@ -1574,7 +1568,7 @@ R≡Y-X×⌊Y÷X
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⌈V-0.5
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⌈</span><span class="nv">V</span><span class="o">-</span><span class="m">0.5</span>
 </pre></div>
 </div>
 </div>
@@ -1589,8 +1583,8 @@ R≡Y-X×⌊Y÷X
 <p>The monadic stile represents the absolute (unsigned) value of its argument, as shown:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>V ← 29.2 49.3 ¯14.8 0 ¯37.2
-|V
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">V</span> <span class="kd">←</span> <span class="m">29.2</span> <span class="m">49.3</span> <span class="m">¯14.8</span> <span class="m">0</span> <span class="m">¯37.2</span>
+<span class="o">|</span><span class="nv">V</span>
 </pre></div>
 </div>
 </div>
@@ -1601,7 +1595,7 @@ R≡Y-X×⌊Y÷X
 <p>Monadic <code class="docutils literal notranslate"><span class="pre">×</span></code> and monadic <code class="docutils literal notranslate"><span class="pre">|</span></code> are related:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(|V) ≡ (V××V)
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">|</span><span class="nv">V</span><span class="p">)</span> <span class="o">≡</span> <span class="p">(</span><span class="nv">V</span><span class="o">××</span><span class="nv">V</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1621,7 +1615,7 @@ R≡Y-X×⌊Y÷X
 <p>Their monadic name is <em>Same</em> because they act as true identity functions, returning their argument completely unchanged:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢ 1 2 3
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span>
 </pre></div>
 </div>
 </div>
@@ -1631,7 +1625,7 @@ R≡Y-X×⌊Y÷X
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢ &#39;Banana&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span> <span class="s1">&#39;Banana&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1641,7 +1635,7 @@ R≡Y-X×⌊Y÷X
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢ &#39;Bag&#39; 3 (1 2 &#39;Bag&#39;) (&#39;Bag&#39; (&#39;Bag&#39; 3) (2 2⍴1 2 3 4))
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span> <span class="s1">&#39;Bag&#39;</span> <span class="m">3</span> <span class="p">(</span><span class="m">1</span> <span class="m">2</span> <span class="s1">&#39;Bag&#39;</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;Bag&#39;</span> <span class="p">(</span><span class="s1">&#39;Bag&#39;</span> <span class="m">3</span><span class="p">)</span> <span class="p">(</span><span class="m">2</span> <span class="m">2</span><span class="o">⍴</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1658,7 +1652,7 @@ R≡Y-X×⌊Y÷X
 <p>Exactly the same thing happens (i.e. nothing happens) if you replace all the <code class="docutils literal notranslate"><span class="pre">⊢</span></code> above with <code class="docutils literal notranslate"><span class="pre">⊣</span></code>, for example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊣ &#39;Bag&#39; 3 (1 2 &#39;Bag&#39;) (&#39;Bag&#39; (&#39;Bag&#39; 3) (2 2⍴1 2 3 4))
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊣</span> <span class="s1">&#39;Bag&#39;</span> <span class="m">3</span> <span class="p">(</span><span class="m">1</span> <span class="m">2</span> <span class="s1">&#39;Bag&#39;</span><span class="p">)</span> <span class="p">(</span><span class="s1">&#39;Bag&#39;</span> <span class="p">(</span><span class="s1">&#39;Bag&#39;</span> <span class="m">3</span><span class="p">)</span> <span class="p">(</span><span class="m">2</span> <span class="m">2</span><span class="o">⍴</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1675,14 +1669,14 @@ R≡Y-X×⌊Y÷X
 <p>These two functions may look useless, but they are not. For one, a neat little trick we can do with them is to display a value of a variable that we just assigned; for example, compare the two code cells below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Matrix ← 2 3⍴1 2 3 4 5 6        ⍝ Nothing gets displayed explicitly
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Matrix</span> <span class="kd">←</span> <span class="m">2</span> <span class="m">3</span><span class="o">⍴</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span>        <span class="c1">⍝ Nothing gets displayed explicitly</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢Matrix← 2 3⍴1 2 3 4 5 6        ⍝ The value of Matrix is displayed 
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">Matrix</span><span class="kd">←</span> <span class="m">2</span> <span class="m">3</span><span class="o">⍴</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span>        <span class="c1">⍝ The value of Matrix is displayed </span>
 </pre></div>
 </div>
 </div>
@@ -1693,7 +1687,7 @@ R≡Y-X×⌊Y÷X
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊣Matrix← 2 3⍴1 2 3 4 5 6        ⍝ The value of Matrix is displayed
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊣</span><span class="nv">Matrix</span><span class="kd">←</span> <span class="m">2</span> <span class="m">3</span><span class="o">⍴</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span>        <span class="c1">⍝ The value of Matrix is displayed</span>
 </pre></div>
 </div>
 </div>
@@ -1710,7 +1704,7 @@ R≡Y-X×⌊Y÷X
 <p>When used dyadically, the Left Tack returns its left argument and the Right Tack returns its right argument. If you ever forget which dyadic tack returns what, just remember that each tack returns the argument to which it is pointing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1 2 3 ⊣ &#39;Bananas&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="o">⊣</span> <span class="s1">&#39;Bananas&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1720,7 +1714,7 @@ R≡Y-X×⌊Y÷X
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1 2 3 ⊢ &#39;Bananas&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="o">⊢</span> <span class="s1">&#39;Bananas&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1747,7 +1741,7 @@ R≡Y-X×⌊Y÷X
 <p>Some examples will help you understand the function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>23 14 41 19 ∊ 17 88 19 50 51 52 23 40
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">23</span> <span class="m">14</span> <span class="m">41</span> <span class="m">19</span> <span class="o">∊</span> <span class="m">17</span> <span class="m">88</span> <span class="m">19</span> <span class="m">50</span> <span class="m">51</span> <span class="m">52</span> <span class="m">23</span> <span class="m">40</span>
 </pre></div>
 </div>
 </div>
@@ -1760,7 +1754,7 @@ R≡Y-X×⌊Y÷X
 <p>In an earlier chapter we used a matrix containing the first 6 months of the year:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢MonMat ← 6 8⍴&#39;January FebruaryMarch   April   May     June    &#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">MonMat</span> <span class="kd">←</span> <span class="m">6</span> <span class="m">8</span><span class="o">⍴</span><span class="s1">&#39;January FebruaryMarch   April   May     June    &#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1776,7 +1770,7 @@ June
 <p>We can ask if certain letters are present in this matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&#39;December&#39; ∊ MonMat
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;December&#39;</span> <span class="o">∊</span> <span class="nv">MonMat</span>
 </pre></div>
 </div>
 </div>
@@ -1788,7 +1782,7 @@ June
 <p>In this case we used a vector left argument and a matrix right argument. Let’s try it the other way around. The following expression tells us which letters in the matrix <code class="docutils literal notranslate"><span class="pre">MonMat</span></code> appear in the word “Century”:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>MonMat ∊ &#39;Century&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">MonMat</span> <span class="o">∊</span> <span class="s1">&#39;Century&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1804,7 +1798,7 @@ June
 <p>As you might imagine, any comparison between numbers and letters gives zero:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1952 ∊ &#39;1952&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1952</span> <span class="o">∊</span> <span class="s1">&#39;1952&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1814,7 +1808,7 @@ June
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&#39;1952&#39; ∊ 1952
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;1952&#39;</span> <span class="o">∊</span> <span class="m">1952</span>
 </pre></div>
 </div>
 </div>
@@ -1831,7 +1825,7 @@ June
 <p>The function <em><strong>And</strong></em> is represented by the symbol <code class="docutils literal notranslate"><span class="pre">∧</span></code> (<kbd>APL</kbd>+<kbd>0</kbd>), as it is in mathematics. It returns the result 1 if the left <em><strong>and</strong></em> the right arguments are both equal to 1:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0 ∧ 0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="o">∧</span> <span class="m">0</span>
 </pre></div>
 </div>
 </div>
@@ -1841,7 +1835,7 @@ June
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0 ∧ 1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="o">∧</span> <span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -1851,7 +1845,7 @@ June
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1 ∧ 0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="o">∧</span> <span class="m">0</span>
 </pre></div>
 </div>
 </div>
@@ -1861,7 +1855,7 @@ June
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1 ∧ 1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="o">∧</span> <span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -1872,7 +1866,7 @@ June
 <p>We can condense the four expressions above into a single one, given that <code class="docutils literal notranslate"><span class="pre">∧</span></code> is also a scalar function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0 0 1 1 ∧ 0 1 0 1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="o">∧</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -1884,7 +1878,7 @@ June
 <p>The four possible cases are shown in the following expression:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0 0 1 1 ∨ 0 1 0 1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="o">∨</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -1897,7 +1891,7 @@ June
 <p>APL does not need a different symbol for the function, because <em><strong>Xor</strong></em> is the same as on of the comparison functions we have already met: <code class="docutils literal notranslate"><span class="pre">≠</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0 0 1 1 ≠ 0 1 0 1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="o">≠</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -1908,7 +1902,7 @@ June
 <p>The last function is the monadic function <em><strong>Not</strong></em>. Represented by the <em>Tilde</em> <code class="docutils literal notranslate"><span class="pre">~</span></code> (<kbd>APL</kbd>+<kbd>T</kbd>), it converts 0 into 1 and 1 into 0:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">~</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">1</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">~</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -1929,7 +1923,7 @@ June
 <p>All these functions can be applied to binary data of any shape. For example, let us see if any of those items of <code class="docutils literal notranslate"><span class="pre">Forecast</span></code>, which are greater than 350 thousand Euros, have been exceeded by <code class="docutils literal notranslate"><span class="pre">Actual</span></code> sales:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢bin ← (Forecast&gt;350) ∧ (Actual&gt;Forecast)
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">bin</span> <span class="kd">←</span> <span class="p">(</span><span class="nv">Forecast</span><span class="o">&gt;</span><span class="m">350</span><span class="p">)</span> <span class="o">∧</span> <span class="p">(</span><span class="nv">Actual</span><span class="o">&gt;</span><span class="nv">Forecast</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1948,7 +1942,7 @@ June
 <p>This function is called <em><strong>Without</strong></em>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;This Winter is warm&#39;</span> <span class="o">~</span> <span class="n">MonMat</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;This Winter is warm&#39;</span> <span class="o">~</span> <span class="nv">MonMat</span>
 </pre></div>
 </div>
 </div>
@@ -1959,7 +1953,7 @@ June
 <p>Notice how the right argument above (<code class="docutils literal notranslate"><span class="pre">MonMat</span></code>) is a matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Congratulations&#39;</span> <span class="o">~</span> <span class="s1">&#39;ceremony&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Congratulations&#39;</span> <span class="o">~</span> <span class="s1">&#39;ceremony&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1970,7 +1964,7 @@ June
 <p>The uppercase “C” is preserved here because it is different from the lowercase “c”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Matrix</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Matrix</span>
 </pre></div>
 </div>
 </div>
@@ -1981,7 +1975,7 @@ June
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">8</span> <span class="mi">10</span> <span class="mi">12</span> <span class="o">~</span> <span class="n">Matrix</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">2</span> <span class="m">4</span> <span class="m">6</span> <span class="m">8</span> <span class="m">10</span> <span class="m">12</span> <span class="o">~</span> <span class="nv">Matrix</span>
 </pre></div>
 </div>
 </div>
@@ -2000,9 +1994,9 @@ June
 <p>In the “Data and Variables” chapter, we set up a nested vector <code class="docutils literal notranslate"><span class="pre">Children</span></code>, which is composed only of numeric items:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>)copy DISPLAY
-Children ← (6 2) (35 33 26 21) (7 7) 3 (19 14)
-DISPLAY Children
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">)</span><span class="nv">copy</span> <span class="nv">DISPLAY</span>
+<span class="nv">Children</span> <span class="kd">←</span> <span class="p">(</span><span class="m">6</span> <span class="m">2</span><span class="p">)</span> <span class="p">(</span><span class="m">35</span> <span class="m">33</span> <span class="m">26</span> <span class="m">21</span><span class="p">)</span> <span class="p">(</span><span class="m">7</span> <span class="m">7</span><span class="p">)</span> <span class="m">3</span> <span class="p">(</span><span class="m">19</span> <span class="m">14</span><span class="p">)</span>
+<span class="nv">DISPLAY</span> <span class="nv">Children</span>
 </pre></div>
 </div>
 </div>
@@ -2019,7 +2013,7 @@ DISPLAY Children
 <p>For example, when we add 50 to <code class="docutils literal notranslate"><span class="pre">Children</span></code>, the value 50 is added to each of the items of <code class="docutils literal notranslate"><span class="pre">Children</span></code>. As these items are themselves scalars or vectors, adding 50 means adding 50 to each of <em>their</em> individual items. This process continues through all levels of nesting, ensuring that 50 gets added to all the individual items of <code class="docutils literal notranslate"><span class="pre">Children</span></code>. The result is therefore structurally identical to <code class="docutils literal notranslate"><span class="pre">Children</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DISPLAY</span> <span class="n">Children</span> <span class="o">+</span> <span class="mi">50</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">DISPLAY</span> <span class="nv">Children</span> <span class="o">+</span> <span class="m">50</span>
 </pre></div>
 </div>
 </div>
@@ -2035,8 +2029,8 @@ DISPLAY Children
 <p>Non-scalar functions, like <em>Membership</em>, are not pervasive.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>What ← 19 (6 2) 3 (33 26)
-What ∊ Children
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">What</span> <span class="kd">←</span> <span class="m">19</span> <span class="p">(</span><span class="m">6</span> <span class="m">2</span><span class="p">)</span> <span class="m">3</span> <span class="p">(</span><span class="m">33</span> <span class="m">26</span><span class="p">)</span>
+<span class="nv">What</span> <span class="o">∊</span> <span class="nv">Children</span>
 </pre></div>
 </div>
 </div>
@@ -2052,7 +2046,7 @@ What ∊ Children
 <p>It is easy to add a vector of 5 scalar items to <code class="docutils literal notranslate"><span class="pre">Children</span></code>, because each of the 5 scalars can be added to the corresponding item of <code class="docutils literal notranslate"><span class="pre">Children</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Children</span> <span class="o">+</span> <span class="mi">10</span> <span class="mi">20</span> <span class="mi">30</span> <span class="mi">40</span> <span class="mi">50</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Children</span> <span class="o">+</span> <span class="m">10</span> <span class="m">20</span> <span class="m">30</span> <span class="m">40</span> <span class="m">50</span>
 </pre></div>
 </div>
 </div>
@@ -2065,7 +2059,7 @@ What ∊ Children
 <p>But if we try to add a vector of 5 sub-vectors to <code class="docutils literal notranslate"><span class="pre">Children</span></code>, we must ensure that the shape of each sub-vector is compatible with the shape of the corresponding item of <code class="docutils literal notranslate"><span class="pre">Children</span></code>, for example</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Children + (4 8) (5 7 4 9) (1 ¯1) (100 200 500) (14 51)
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Children</span> <span class="o">+</span> <span class="p">(</span><span class="m">4</span> <span class="m">8</span><span class="p">)</span> <span class="p">(</span><span class="m">5</span> <span class="m">7</span> <span class="m">4</span> <span class="m">9</span><span class="p">)</span> <span class="p">(</span><span class="m">1</span> <span class="m">¯1</span><span class="p">)</span> <span class="p">(</span><span class="m">100</span> <span class="m">200</span> <span class="m">500</span><span class="p">)</span> <span class="p">(</span><span class="m">14</span> <span class="m">51</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2078,7 +2072,7 @@ What ∊ Children
 <p>or</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Children + (4 8) 0 (1 ¯1) (100 200 500) ¯100
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Children</span> <span class="o">+</span> <span class="p">(</span><span class="m">4</span> <span class="m">8</span><span class="p">)</span> <span class="m">0</span> <span class="p">(</span><span class="m">1</span> <span class="m">¯1</span><span class="p">)</span> <span class="p">(</span><span class="m">100</span> <span class="m">200</span> <span class="m">500</span><span class="p">)</span> <span class="m">¯100</span>
 </pre></div>
 </div>
 </div>
@@ -2091,16 +2085,15 @@ What ∊ Children
 <p>If there is any incompatibility, a <code class="docutils literal notranslate"><span class="pre">LENGTH</span> <span class="pre">ERROR</span></code> is issued:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Children</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="mi">2</span><span class="p">)(</span><span class="mi">2</span> <span class="mi">3</span><span class="p">)(</span><span class="mi">3</span> <span class="mi">4</span><span class="p">)(</span><span class="mi">4</span> <span class="mi">5</span><span class="p">)(</span><span class="mi">5</span> <span class="mi">6</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Children</span> <span class="o">+</span> <span class="p">(</span><span class="m">1</span> <span class="m">2</span><span class="p">)(</span><span class="m">2</span> <span class="m">3</span><span class="p">)(</span><span class="m">3</span> <span class="m">4</span><span class="p">)(</span><span class="m">4</span> <span class="m">5</span><span class="p">)(</span><span class="m">5</span> <span class="m">6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="stderr docutils container">
-<pre class="stderr literal-block">LENGTH ERROR: Mismatched left and right argument shapes
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LENGTH ERROR: Mismatched left and right argument shapes
       Children+(1 2)(2 3)(3 4)(4 5)(5 6)
               ∧
-</pre>
+</pre></div>
 </div>
 </div>
 </div>
@@ -2114,7 +2107,7 @@ What ∊ Children
 <p>For a vector, this corresponds to its length:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>≢ 1 2 3 4 5 6
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≢</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span>
 </pre></div>
 </div>
 </div>
@@ -2124,7 +2117,7 @@ What ∊ Children
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>≢ &#39;ui&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≢</span> <span class="s1">&#39;ui&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -2135,7 +2128,7 @@ What ∊ Children
 <p>A nested vector is still a vector:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">4</span> <span class="mi">5</span><span class="p">)</span> <span class="s1">&#39;a&#39;</span> <span class="s1">&#39;Bag&#39;</span> <span class="p">(</span><span class="mi">35</span> <span class="s1">&#39;Cat&#39;</span> <span class="mi">42</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">4</span> <span class="m">5</span><span class="p">)</span> <span class="s1">&#39;a&#39;</span> <span class="s1">&#39;Bag&#39;</span> <span class="p">(</span><span class="m">35</span> <span class="s1">&#39;Cat&#39;</span> <span class="m">42</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2149,7 +2142,7 @@ What ∊ Children
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>≢ (4 5) &#39;a&#39; &#39;Bag&#39; (35 &#39;Cat&#39; 42)
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≢</span> <span class="p">(</span><span class="m">4</span> <span class="m">5</span><span class="p">)</span> <span class="s1">&#39;a&#39;</span> <span class="s1">&#39;Bag&#39;</span> <span class="p">(</span><span class="m">35</span> <span class="s1">&#39;Cat&#39;</span> <span class="m">42</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2160,7 +2153,7 @@ What ∊ Children
 <p>For higher dimensional arrays, <em>Tally</em> returns the size of its first dimension:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>≢ 3 3⍴9 8 7 6 5 4 3 2 1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≢</span> <span class="m">3</span> <span class="m">3</span><span class="o">⍴</span><span class="m">9</span> <span class="m">8</span> <span class="m">7</span> <span class="m">6</span> <span class="m">5</span> <span class="m">4</span> <span class="m">3</span> <span class="m">2</span> <span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -2170,7 +2163,7 @@ What ∊ Children
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>≢ 2 5 27⍴0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≢</span> <span class="m">2</span> <span class="m">5</span> <span class="m">27</span><span class="o">⍴</span><span class="m">0</span>
 </pre></div>
 </div>
 </div>
@@ -2185,7 +2178,7 @@ What ∊ Children
 <p>The result of <code class="docutils literal notranslate"><span class="pre">≡</span></code> is really simple to understand. First of all, the depth of a scalar is 0:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>≡1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≡</span><span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -2195,7 +2188,7 @@ What ∊ Children
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>≡&#39;a&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≡</span><span class="s1">&#39;a&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -2205,7 +2198,7 @@ What ∊ Children
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>≡4525324
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≡</span><span class="m">4525324</span>
 </pre></div>
 </div>
 </div>
@@ -2216,7 +2209,7 @@ What ∊ Children
 <p>Then, the depth of an array is 1 larger than the depth of its deepest item, or sub-array. For example, a simple vector like <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span></code> only has scalars as items, whose depths are 0, so the depth of the vector will be 1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>≡1 2 3 4
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≡</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span>
 </pre></div>
 </div>
 </div>
@@ -2227,7 +2220,7 @@ What ∊ Children
 <p>Now let us consider a nested vector composed of simple vectors like the one we just saw.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢Nested ← (1 2 3 4) (3 5) (10 20 30)
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">Nested</span> <span class="kd">←</span> <span class="p">(</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span><span class="p">)</span> <span class="p">(</span><span class="m">3</span> <span class="m">5</span><span class="p">)</span> <span class="p">(</span><span class="m">10</span> <span class="m">20</span> <span class="m">30</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2240,7 +2233,7 @@ What ∊ Children
 <p>The items of <code class="docutils literal notranslate"><span class="pre">Nested</span></code> are vectors of depth 1, so the depth of <code class="docutils literal notranslate"><span class="pre">Nested</span></code> should be 2:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>≡Nested
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≡</span><span class="nv">Nested</span>
 </pre></div>
 </div>
 </div>
@@ -2252,7 +2245,7 @@ What ∊ Children
 <p>For example, <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span></code> has depth 1 and <code class="docutils literal notranslate"><span class="pre">42</span></code> has depth 0, so a vector composed of these two sub-arrays has depth -2:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>≡(1 2 3 4) 42
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≡</span><span class="p">(</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span><span class="p">)</span> <span class="m">42</span>
 </pre></div>
 </div>
 </div>
@@ -2269,7 +2262,7 @@ What ∊ Children
 <p>A few pages ago we calculated the costs of some purchased goods:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢Costs ← Price × Qty
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">Costs</span> <span class="kd">←</span> <span class="nv">Price</span> <span class="o">×</span> <span class="nv">Qty</span>
 </pre></div>
 </div>
 </div>
@@ -2280,7 +2273,7 @@ What ∊ Children
 <p>How much did we spend?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">10.4</span> <span class="o">+</span> <span class="mf">11.5</span> <span class="o">+</span> <span class="mf">10.8</span> <span class="o">+</span> <span class="mi">24</span> <span class="o">+</span> <span class="mf">16.9</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">10.4</span> <span class="o">+</span> <span class="m">11.5</span> <span class="o">+</span> <span class="m">10.8</span> <span class="o">+</span> <span class="m">24</span> <span class="o">+</span> <span class="m">16.9</span>
 </pre></div>
 </div>
 </div>
@@ -2293,7 +2286,7 @@ What ∊ Children
 <p>In APL, the operation is written like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+/</span> <span class="n">Costs</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">Costs</span>
 </pre></div>
 </div>
 </div>
@@ -2365,7 +2358,7 @@ What ∊ Children
 <p>In APL a <em><strong>function</strong></em> works on an <strong>array</strong> or between two arrays to produce a result:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Price × Qty
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Price</span> <span class="o">×</span> <span class="nv">Qty</span>
 </pre></div>
 </div>
 </div>
@@ -2376,7 +2369,7 @@ What ∊ Children
 <p>Whereas an <em><strong>operator</strong></em> applies to one or two <em><strong>operands</strong></em> (its “arguments”) to produce what we call a <em>derived function</em>. That is, after we use the <em>operator</em> on its <em>operands</em>, we get a (derived) function which may then be used with an array, or between two arrays, to produce a result:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+/</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span>
 </pre></div>
 </div>
 </div>
@@ -2389,7 +2382,7 @@ What ∊ Children
 <p>This is the representation APL gives to the <em>Plus Reduction</em>, where the tree-like structure shows that <code class="docutils literal notranslate"><span class="pre">+</span></code> is an operand to <code class="docutils literal notranslate"><span class="pre">/</span></code>. We may then use this derived function with an array in order to get a result:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢Stock ← +/ Qty
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">Stock</span> <span class="kd">←</span> <span class="o">+</span><span class="na">/</span> <span class="nv">Qty</span>
 </pre></div>
 </div>
 </div>
@@ -2413,7 +2406,7 @@ What ∊ Children
 <p>You can verify it on some small examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢Bin ← 1 1 1 0 1 0 1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">Bin</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -2423,7 +2416,7 @@ What ∊ Children
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>∧/ Bin
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">∧</span><span class="na">/</span> <span class="nv">Bin</span>
 </pre></div>
 </div>
 </div>
@@ -2433,7 +2426,7 @@ What ∊ Children
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>∨/ Bin
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">∨</span><span class="na">/</span> <span class="nv">Bin</span>
 </pre></div>
 </div>
 </div>
@@ -2443,7 +2436,7 @@ What ∊ Children
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+/</span> <span class="n">Bin</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">Bin</span>
 </pre></div>
 </div>
 </div>
@@ -2453,7 +2446,7 @@ What ∊ Children
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢AllOnes ← 1∨Bin
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">AllOnes</span> <span class="kd">←</span> <span class="m">1</span><span class="o">∨</span><span class="nv">Bin</span>
 </pre></div>
 </div>
 </div>
@@ -2463,7 +2456,7 @@ What ∊ Children
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>∧/ AllOnes
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">∧</span><span class="na">/</span> <span class="nv">AllOnes</span>
 </pre></div>
 </div>
 </div>
@@ -2474,7 +2467,7 @@ What ∊ Children
 <p>Let us revisit the vector named <code class="docutils literal notranslate"><span class="pre">Contents</span></code>, from the chapter on “Data and Variables”:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢Contents ← 12 56 78 74 85 96 30 22 44 66 82 27
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">Contents</span> <span class="kd">←</span> <span class="m">12</span> <span class="m">56</span> <span class="m">78</span> <span class="m">74</span> <span class="m">85</span> <span class="m">96</span> <span class="m">30</span> <span class="m">22</span> <span class="m">44</span> <span class="m">66</span> <span class="m">82</span> <span class="m">27</span>
 </pre></div>
 </div>
 </div>
@@ -2486,7 +2479,7 @@ What ∊ Children
 <p>Are all the values greater than 20?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>∧/ Contents &gt; 20
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">∧</span><span class="na">/</span> <span class="nv">Contents</span> <span class="o">&gt;</span> <span class="m">20</span>
 </pre></div>
 </div>
 </div>
@@ -2498,7 +2491,7 @@ What ∊ Children
 <p>Is there at least one value smaller than 30?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>∨/ Contents &lt; 30
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">∨</span><span class="na">/</span> <span class="nv">Contents</span> <span class="o">&lt;</span> <span class="m">30</span>
 </pre></div>
 </div>
 </div>
@@ -2510,7 +2503,7 @@ What ∊ Children
 <p>How many values are smaller than 30?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+/</span> <span class="n">Contents</span> <span class="o">&lt;</span> <span class="mi">30</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">Contents</span> <span class="o">&lt;</span> <span class="m">30</span>
 </pre></div>
 </div>
 </div>
@@ -2525,7 +2518,7 @@ What ∊ Children
 <p>When you apply reduction to a nested array, you must check that the items of the nested array are compatible (in shape and type) with the function that you intend to apply:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+/</span> <span class="p">(</span><span class="mi">4</span> <span class="mi">8</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span> <span class="mi">4</span><span class="p">)</span> <span class="mi">10</span> <span class="p">(</span><span class="mi">9</span> <span class="mi">5</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="p">(</span><span class="m">4</span> <span class="m">8</span><span class="p">)</span> <span class="p">(</span><span class="m">1</span> <span class="m">4</span><span class="p">)</span> <span class="m">10</span> <span class="p">(</span><span class="m">9</span> <span class="m">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2539,16 +2532,15 @@ What ∊ Children
 <p>Notice, however, that in the expression below the 3-item vector cannot be added to the other 2-item vectors, so APL reports an error:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+/</span> <span class="p">(</span><span class="mi">4</span> <span class="mi">8</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span> <span class="mi">4</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="mi">9</span> <span class="mi">5</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="p">(</span><span class="m">4</span> <span class="m">8</span><span class="p">)</span> <span class="p">(</span><span class="m">1</span> <span class="m">4</span><span class="p">)</span> <span class="p">(</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span><span class="p">)</span> <span class="p">(</span><span class="m">9</span> <span class="m">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="stderr docutils container">
-<pre class="stderr literal-block">LENGTH ERROR: Mismatched left and right argument shapes
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LENGTH ERROR: Mismatched left and right argument shapes
       +/(4 8)(1 4)(1 2 3)(9 5)
       ∧
-</pre>
+</pre></div>
 </div>
 </div>
 </div>
@@ -2559,7 +2551,7 @@ What ∊ Children
 <p>For example, remember that</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-/</span> <span class="mi">45</span> <span class="mi">9</span> <span class="mi">11</span> <span class="mi">2</span> <span class="mi">5</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="na">/</span> <span class="m">45</span> <span class="m">9</span> <span class="m">11</span> <span class="m">2</span> <span class="m">5</span>
 </pre></div>
 </div>
 </div>
@@ -2570,7 +2562,7 @@ What ∊ Children
 <p>is equivalent to</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">45</span> <span class="o">-</span> <span class="mi">9</span> <span class="o">-</span> <span class="mi">11</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">5</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">45</span> <span class="o">-</span> <span class="m">9</span> <span class="o">-</span> <span class="m">11</span> <span class="o">-</span> <span class="m">2</span> <span class="o">-</span> <span class="m">5</span>
 </pre></div>
 </div>
 </div>
@@ -2581,7 +2573,7 @@ What ∊ Children
 <p>which, by APL’s order of evaluation is equivalent to:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">45</span> <span class="o">-</span> <span class="p">(</span><span class="mi">9</span> <span class="o">-</span> <span class="p">(</span><span class="mi">11</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)))</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">45</span> <span class="o">-</span> <span class="p">(</span><span class="m">9</span> <span class="o">-</span> <span class="p">(</span><span class="m">11</span> <span class="o">-</span> <span class="p">(</span><span class="m">2</span> <span class="o">-</span> <span class="m">5</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -2603,9 +2595,9 @@ What ∊ Children
 <p>The employees of a company are divided into three hierarchical categories, denoted simply 1, 2 and 3. Two variables contain the salaries and the categories of these employees; we define them below and then use <code class="docutils literal notranslate"><span class="pre">⍴</span></code> to show some of their initial values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⎕RL ← 73
-Salaries ← ?100⍴5000
-10⍴Salaries
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="nv">Salaries</span> <span class="kd">←</span> <span class="o">?</span><span class="m">100</span><span class="o">⍴</span><span class="m">5000</span>
+<span class="m">10</span><span class="o">⍴</span><span class="nv">Salaries</span>
 </pre></div>
 </div>
 </div>
@@ -2615,9 +2607,9 @@ Salaries ← ?100⍴5000
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⎕RL ← 73
-Categories ← ?100⍴3
-10⍴Categories
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="nv">Categories</span> <span class="kd">←</span> <span class="o">?</span><span class="m">100</span><span class="o">⍴</span><span class="m">3</span>
+<span class="m">10</span><span class="o">⍴</span><span class="nv">Categories</span>
 </pre></div>
 </div>
 </div>
@@ -2629,7 +2621,7 @@ Categories ← ?100⍴3
 <p>With what we learned in the section about “Reduction of Binary Data” we can also find out how many employees belong in the third category:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+/</span> <span class="n">Categories</span> <span class="o">=</span> <span class="mi">3</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">Categories</span> <span class="o">=</span> <span class="m">3</span>
 </pre></div>
 </div>
 </div>
@@ -2660,7 +2652,7 @@ Categories ← ?100⍴3
 <p>Let us just create a variable containing the three rates shown above:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢Rates ← 8 5 2 ÷ 100
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">Rates</span> <span class="kd">←</span> <span class="m">8</span> <span class="m">5</span> <span class="m">2</span> <span class="o">÷</span> <span class="m">100</span>
 </pre></div>
 </div>
 </div>
@@ -2671,7 +2663,7 @@ Categories ← ?100⍴3
 <p>The first employee is in category 1, so the rate that applies to this person is</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Rates</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Rates</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
@@ -2682,7 +2674,7 @@ Categories ← ?100⍴3
 <p>More generally, the rates applied to all of our employees can easily be obtained with <code class="docutils literal notranslate"><span class="pre">Rates[Categories]</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>10⍴Rates[Categories]
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">10</span><span class="o">⍴</span><span class="nv">Rates</span><span class="sr">[</span><span class="nv">Categories</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
@@ -2693,7 +2685,7 @@ Categories ← ?100⍴3
 <p>Having the rates, we only have to multiply them by the salaries to obtain the individual increases:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>10⍴ Salaries × Rates[Categories]
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">10</span><span class="o">⍴</span> <span class="nv">Salaries</span> <span class="o">×</span> <span class="nv">Rates</span><span class="sr">[</span><span class="nv">Categories</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
@@ -2704,7 +2696,7 @@ Categories ← ?100⍴3
 <p>Finally, by adding them all together, we discover how much it will cost the company:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>+/ Salaries × Rates[Categories]
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">Salaries</span> <span class="o">×</span> <span class="nv">Rates</span><span class="sr">[</span><span class="nv">Categories</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
@@ -2732,7 +2724,7 @@ Categories ← ?100⍴3
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+/</span> <span class="n">Contents</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">Contents</span>
 </pre></div>
 </div>
 </div>
@@ -2745,7 +2737,7 @@ Categories ← ?100⍴3
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>≢Contents
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≢</span><span class="nv">Contents</span>
 </pre></div>
 </div>
 </div>
@@ -2758,7 +2750,7 @@ Categories ← ?100⍴3
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(+/Contents) ÷ (≢Contents)
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="nv">Contents</span><span class="p">)</span> <span class="o">÷</span> <span class="p">(</span><span class="o">≢</span><span class="nv">Contents</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2785,8 +2777,8 @@ Categories ← ?100⍴3
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⎕RL ← 73
-⊢Prod ← ?5 2 12⍴50
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="o">⊢</span><span class="nv">Prod</span> <span class="kd">←</span> <span class="o">?</span><span class="m">5</span> <span class="m">2</span> <span class="m">12</span><span class="o">⍴</span><span class="m">50</span>
 </pre></div>
 </div>
 </div>
@@ -2817,7 +2809,7 @@ Categories ← ?100⍴3
 <p>For example, suppose we want to calculate the total production for the five years. Years are represented by the 1st dimension of <code class="docutils literal notranslate"><span class="pre">Prod</span></code>, so we write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+/</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Prod</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span> <span class="nv">Prod</span>
 </pre></div>
 </div>
 </div>
@@ -2830,7 +2822,7 @@ Categories ← ?100⍴3
 <p>Now, let us add up the production numbers of the two assembly lines. Lines are represented by the 2nd dimension of <code class="docutils literal notranslate"><span class="pre">Prod</span></code>, so we write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+/</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">Prod</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span> <span class="nv">Prod</span>
 </pre></div>
 </div>
 </div>
@@ -2846,7 +2838,7 @@ Categories ← ?100⍴3
 <p>And finally, let us calculate the annual production of each assembly line. Months are represented by the 3rd dimension of <code class="docutils literal notranslate"><span class="pre">Prod</span></code>, so we write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+/</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">Prod</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">3</span><span class="sr">]</span> <span class="nv">Prod</span>
 </pre></div>
 </div>
 </div>
@@ -2874,8 +2866,8 @@ Categories ← ?100⍴3
 <p>Suppose that we would like to multiply each of the rows (or columns) of a matrix by different values; we can use <em>Axis</em> to specify whether we multiply row-wise or column-wise. First, here is a matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⎕RL ← 73
-⊢Tam ← ?3 5⍴9
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="o">⊢</span><span class="nv">Tam</span> <span class="kd">←</span> <span class="o">?</span><span class="m">3</span> <span class="m">5</span><span class="o">⍴</span><span class="m">9</span>
 </pre></div>
 </div>
 </div>
@@ -2888,7 +2880,7 @@ Categories ← ?100⍴3
 <p>Let us multiply row-wise:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Tam×[1]5 2 10
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Tam</span><span class="o">×</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="m">5</span> <span class="m">2</span> <span class="m">10</span>
 </pre></div>
 </div>
 </div>
@@ -2901,7 +2893,7 @@ Categories ← ?100⍴3
 <p>And now column-wise:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Tam×[2]2 5 0 2 1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Tam</span><span class="o">×</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="m">2</span> <span class="m">5</span> <span class="m">0</span> <span class="m">2</span> <span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -2918,7 +2910,7 @@ Categories ← ?100⍴3
 <p>The dimensions of <code class="docutils literal notranslate"><span class="pre">Prod</span></code> are</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴Prod
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">Prod</span>
 </pre></div>
 </div>
 </div>
@@ -2929,7 +2921,7 @@ Categories ← ?100⍴3
 <p>and we can see that the dimensions of <code class="docutils literal notranslate"><span class="pre">+/[1]Prod</span></code>, <code class="docutils literal notranslate"><span class="pre">+/[2]Prod</span></code> and <code class="docutils literal notranslate"><span class="pre">+/[3]Prod</span></code> depend on this shape. In fact, when the axis is 1, the shape of the result is the original shape without the 1st item:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴+/[1]Prod
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴+</span><span class="na">/</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="nv">Prod</span>
 </pre></div>
 </div>
 </div>
@@ -2940,7 +2932,7 @@ Categories ← ?100⍴3
 <p>When the axis is 2, the shape of the result is the original shape without the 2nd item:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴+/[2]Prod
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴+</span><span class="na">/</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="nv">Prod</span>
 </pre></div>
 </div>
 </div>
@@ -2951,7 +2943,7 @@ Categories ← ?100⍴3
 <p>And when the axis is 3, the shape of the result is the original shape without the 3rd item:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⍴+/[3]Prod
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴+</span><span class="na">/</span><span class="sr">[</span><span class="m">3</span><span class="sr">]</span><span class="nv">Prod</span>
 </pre></div>
 </div>
 </div>
@@ -2976,7 +2968,7 @@ Categories ← ?100⍴3
 <p>This means <code class="docutils literal notranslate"><span class="pre">+/Prod</span></code> and <code class="docutils literal notranslate"><span class="pre">+/[3]Prod</span></code> are the same,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(+/Prod)≡(+/[3]Prod)
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="nv">Prod</span><span class="p">)</span><span class="o">≡</span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">3</span><span class="sr">]</span><span class="nv">Prod</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2987,7 +2979,7 @@ Categories ← ?100⍴3
 <p>much like <code class="docutils literal notranslate"><span class="pre">+/Forecast</span></code> and <code class="docutils literal notranslate"><span class="pre">+/[2]Forecast</span></code> are the same:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(+/Forecast)≡(+/[2]Forecast)
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="nv">Forecast</span><span class="p">)</span><span class="o">≡</span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="nv">Forecast</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2999,7 +2991,7 @@ Categories ← ?100⍴3
 <p>This means <code class="docutils literal notranslate"><span class="pre">+⌿Prod</span></code> and <code class="docutils literal notranslate"><span class="pre">+/[1]Prod</span></code> are the same,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(+⌿Prod)≡(+/[1]Prod)
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">⌿</span><span class="nv">Prod</span><span class="p">)</span><span class="o">≡</span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="nv">Prod</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3010,7 +3002,7 @@ Categories ← ?100⍴3
 <p>much like <code class="docutils literal notranslate"><span class="pre">+⌿Forecast</span></code> and <code class="docutils literal notranslate"><span class="pre">+/[1]Forecast</span></code> are the same:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(+⌿Forecast)≡(+/[1]Forecast)
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">⌿</span><span class="nv">Forecast</span><span class="p">)</span><span class="o">≡</span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="nv">Forecast</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3027,7 +3019,7 @@ Categories ← ?100⍴3
 <p>We demonstrate this note with two examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(+⌿[3]Prod)≡(+/[3]Prod)
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">⌿</span><span class="sr">[</span><span class="m">3</span><span class="sr">]</span><span class="nv">Prod</span><span class="p">)</span><span class="o">≡</span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">3</span><span class="sr">]</span><span class="nv">Prod</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3037,7 +3029,7 @@ Categories ← ?100⍴3
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(+⌿[1]Forecast)≡(+/[1]Forecast)
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">⌿</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="nv">Forecast</span><span class="p">)</span><span class="o">≡</span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="nv">Forecast</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3053,7 +3045,7 @@ Categories ← ?100⍴3
 <p>There are many different ways to define functions, and these will be covered in detail in the “User Defined Functions” chapter. For now we shall use the simplest, which is perfectly suitable for straightforward calculation functions like this one. Let’s type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Average ← {(+/⍵)÷(⍴⍵)}
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Average</span> <span class="kd">←</span> <span class="kt">{</span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="bp">⍵</span><span class="p">)</span><span class="o">÷</span><span class="p">(</span><span class="o">⍴</span><span class="bp">⍵</span><span class="p">)</span><span class="kt">}</span>
 </pre></div>
 </div>
 </div>
@@ -3068,7 +3060,7 @@ Categories ← ?100⍴3
 <p>Once defined, this function may be invoked directly, just as if it were a built-in (<em>primitive</em>) function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Average</span> <span class="n">Salaries</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Average</span> <span class="nv">Salaries</span>
 </pre></div>
 </div>
 </div>
@@ -3078,7 +3070,7 @@ Categories ← ?100⍴3
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Average</span> <span class="mi">12</span> <span class="mi">74</span> <span class="mi">56</span> <span class="mi">23</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Average</span> <span class="m">12</span> <span class="m">74</span> <span class="m">56</span> <span class="m">23</span>
 </pre></div>
 </div>
 </div>
@@ -3097,9 +3089,9 @@ Categories ← ?100⍴3
 <p><em>Catenate</em> is easy to understand:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>A ← 24 15 67 89
-B ← 11 33 75
-A,B
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">A</span> <span class="kd">←</span> <span class="m">24</span> <span class="m">15</span> <span class="m">67</span> <span class="m">89</span>
+<span class="nv">B</span> <span class="kd">←</span> <span class="m">11</span> <span class="m">33</span> <span class="m">75</span>
+<span class="nv">A</span><span class="o">,</span><span class="nv">B</span>
 </pre></div>
 </div>
 </div>
@@ -3110,7 +3102,7 @@ A,B
 <p>It is like joining two sentences together, so it is easy to remember which symbol to use. You can see that the length of the result (<code class="docutils literal notranslate"><span class="pre">≢(A,B)</span></code>) is equal to the sum of the lengths of the arguments (<code class="docutils literal notranslate"><span class="pre">(≢A)</span> <span class="pre">+</span> <span class="pre">(≢B)</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>((≢A)+(≢B))=≢A,B
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="o">≢</span><span class="nv">A</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="o">≢</span><span class="nv">B</span><span class="p">))</span><span class="o">=≢</span><span class="nv">A</span><span class="o">,</span><span class="nv">B</span>
 </pre></div>
 </div>
 </div>
@@ -3121,9 +3113,9 @@ A,B
 <p>Character strings are processed in the same way:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>C ← &#39;Tell me&#39;
-D ← &#39;More&#39;
-C,D
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">C</span> <span class="kd">←</span> <span class="s1">&#39;Tell me&#39;</span>
+<span class="nv">D</span> <span class="kd">←</span> <span class="s1">&#39;More&#39;</span>
+<span class="nv">C</span><span class="o">,</span><span class="nv">D</span>
 </pre></div>
 </div>
 </div>
@@ -3135,7 +3127,7 @@ C,D
 <p>When you concatenate an empty vector to another vector, the result is the same as the original. Let us define an empty numeric vector <code class="docutils literal notranslate"><span class="pre">V</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢V ← 0⍴0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">V</span> <span class="kd">←</span> <span class="m">0</span><span class="o">⍴</span><span class="m">0</span>
 </pre></div>
 </div>
 </div>
@@ -3147,7 +3139,7 @@ C,D
 <p>Notice how the numeric vector <code class="docutils literal notranslate"><span class="pre">A</span></code> remains unchanged:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">,</span><span class="n">V</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">A</span><span class="o">,</span><span class="nv">V</span>
 </pre></div>
 </div>
 </div>
@@ -3158,7 +3150,7 @@ C,D
 <p>Similarly, concatenating character strings with <code class="docutils literal notranslate"><span class="pre">''</span></code> does nothing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">D</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">C</span><span class="o">,</span><span class="s1">&#39;&#39;</span><span class="o">,</span><span class="nv">D</span>
 </pre></div>
 </div>
 </div>
@@ -3173,7 +3165,7 @@ C,D
 <p>Let us use three matrices <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢A ← 3 4 ⍴ &#39;A&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">A</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">4</span> <span class="o">⍴</span> <span class="s1">&#39;A&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -3185,7 +3177,7 @@ AAAA
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢B ← 2 4 ⍴ &#39;B&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">B</span> <span class="kd">←</span> <span class="m">2</span> <span class="m">4</span> <span class="o">⍴</span> <span class="s1">&#39;B&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -3196,7 +3188,7 @@ BBBB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>⊢C ← 3 3 ⍴ &#39;C&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">C</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">3</span> <span class="o">⍴</span> <span class="s1">&#39;C&#39;</span>
 </pre></div>
 </div>
 </div>

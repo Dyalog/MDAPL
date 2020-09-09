@@ -14,9 +14,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -24,12 +23,10 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -532,7 +529,7 @@
 <p>Depending on your physical keyboard layout, different APL symbols may be mapped to different keys. Below we use some APL incantations to show what symbols are mapped to what keys in a standard UK keyboard:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>)copy dfns notes.keyboards
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>)copy dfns notes.keyboards
 18↑k↓⍨¯1+⊃⊃⍸&#39;Dyalog APL/en-GB keyboard&#39;⍷k←⎕fmt keyboards
 </pre></div>
 </div>
@@ -564,7 +561,7 @@
 <p>The figure above is relevant because when we introduce new glyphs in the book, we will tell you which key combinations to press but those <em>may not work</em> if your layout is different. As an example, if you look at the figure displayed above, you can see that inside the rectangle for the key <kbd>A</kbd> is the Greek letter Alpha <code class="docutils literal notranslate"><span class="pre">⍺</span></code>. Because it is on the bottom right of the key cap, you can type it with <kbd>APL</kbd>+<kbd>A</kbd>. However, if you look at the French AZERTY keyboard displayed in the figure below, you will see that <code class="docutils literal notranslate"><span class="pre">⍺</span></code> is in the same physical position but inside a different key, <kbd>Q</kbd> in this case.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>)copy dfns notes.keyboards
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>)copy dfns notes.keyboards
 18↑k↓⍨¯1+⊃⊃⍸&#39;Dyalog APL/fr-FR&#39;⍷k←⎕fmt keyboards
 </pre></div>
 </div>
