@@ -67,12 +67,12 @@ for dic in data:
                 intermediate_lines = lines[i+3:matching_line]
                 bq_matches = [re.match(r"^ >( |\n)(.*)$", line) for line in intermediate_lines]
                 if all(bq_matches):
-                    content_lines = [match.group(2) for match in bq_matches]
+                    content_lines = [match.group(2) + "\n" for match in bq_matches]
                 else:
                     content_lines = intermediate_lines
                 lines = (
                     lines[:i] +
-                    [f"```{{admonition}} {text} \n", f":class: {style}"] +
+                    [f"```{{admonition}} {text} \n", f":class: {style}\n"] +
                     content_lines +
                     ["```\n"] +
                     lines[matching_line+1:]
