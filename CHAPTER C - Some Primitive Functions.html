@@ -409,13 +409,6 @@
       <a class="reference internal nav-link" href="#processing-arrays">
        3.9.1.1. Processing Arrays
       </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#i-don-t-like-this-sentence">
-         3.9.1.1.1. I don’t like this sentence:
-        </a>
-       </li>
-      </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#axis-is-like-an-operator">
@@ -511,7 +504,7 @@
 <p>(Re: above) this makes sense if we take into account there already exists a really small subsection that warns the user about reduction of nested arrays, in which the shape and type of the sub-arrays must be compatible for the reduction. This new subsection on the non-commutative reductions is even larger than this one, so I guess it makes sense to have both as sub-sections OR both as warnings, although I prefer it like this.</p>
 <ul class="simple">
 <li><p>Right above <a class="reference external" href="#Application-1">Application 1</a> the author claims reduction with non-commutative functions is rare in business applications. I find it easy to believe, but is it true? Is it worth checking? Should I leave the claim as-is? Remove it?</p></li>
-<li><p><a class="reference external" href="#I-don%27t-like-this-sentence:">Improve this sentence</a>, as it feels like we are about to do something we do not do; we compute smth different from what the sentence says we are going to compute.</p></li>
+<li><p>In <a class="reference external" href="#Processing-Arrays">Processing Arrays</a> we show what <code class="docutils literal notranslate"><span class="pre">+/[1]</span></code>, <code class="docutils literal notranslate"><span class="pre">+/[2]</span></code> and <code class="docutils literal notranslate"><span class="pre">+/[3]</span></code> do on <code class="docutils literal notranslate"><span class="pre">Prod</span></code>. I reworded the sentence before and after the <code class="docutils literal notranslate"><span class="pre">+/[1]</span></code> example to make it more explicit.</p></li>
 </ul>
 <hr class="docutils" />
 <p><strong>References to fix:</strong></p>
@@ -2801,9 +2794,7 @@ June
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+/</span><span class="p">[</span><span class="n">Axis</span><span class="p">]</span> <span class="n">Prod</span>
 </pre></div>
 </div>
-<div class="section" id="i-don-t-like-this-sentence">
-<h5><span class="section-number">3.9.1.1.1. </span>I don’t like this sentence:<a class="headerlink" href="#i-don-t-like-this-sentence" title="Permalink to this headline">¶</a></h5>
-<p>For example, suppose we want to calculate the total production for the five years. Years are represented by the 1st dimension of <code class="docutils literal notranslate"><span class="pre">Prod</span></code>, so we write:</p>
+<p>For example, suppose we want to calculate the total monthly production values over the 5 years. Years are represented by the 1st dimension of <code class="docutils literal notranslate"><span class="pre">Prod</span></code>, so we write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span> <span class="nv">Prod</span>
@@ -2815,7 +2806,7 @@ June
 168 111 156 136 111 123 125 149 193 213 139 102
 </span></div></div>
 </div>
-<p>We obtain a 2 by 12 matrix, giving the production of the 2 assembly lines, month by month.</p>
+<p>We obtain a 2 by 12 matrix, giving the production of the 2 assembly lines, month by month. If we were to divide this matrix by 5, we would get the average production for each month, per assembly line.</p>
 <p>Now, let us add up the production numbers of the two assembly lines. Lines are represented by the 2nd dimension of <code class="docutils literal notranslate"><span class="pre">Prod</span></code>, so we write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2848,7 +2839,6 @@ June
 </span></div></div>
 </div>
 <p>The result is a 5 by 2 matrix, in which the columns contain the annual production of the two assembly lines in each of the five years.</p>
-</div>
 </div>
 <div class="section" id="axis-is-like-an-operator">
 <h4><span class="section-number">3.9.1.2. </span>Axis Is Like an Operator<a class="headerlink" href="#axis-is-like-an-operator" title="Permalink to this headline">¶</a></h4>
@@ -3670,7 +3660,139 @@ BBBB
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">85 96 82
 </span></div></div>
 </div>
-<p>We can also use a new function named <em><strong>Compression</strong></em> (or <em>Compress</em>). It takes a Boolean vector as its left argument, and any array of appropriate shape as its right argument.</p>
+<p>We can also use a new function named <em><strong>Compression</strong></em> (or <em>Compress</em>). It takes a Boolean vector as its left argument, and any array of appropriate shape as its right argument. The items of the right argument which match the 1s in the left argument are preserved, whereas those which match the 0s are removed. It acts like a mask or a filter:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="na">/</span> <span class="m">42</span> <span class="m">15</span> <span class="m">79</span> <span class="m">66</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">15 79
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="na">/</span> <span class="s1">&#39;Drumstick&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Duck
+</span></div></div>
+</div>
+<p>This is extremely useful, because we can use <em>Compression</em> to select items which match a given condition.</p>
+<p>For example, let us extract from <code class="docutils literal notranslate"><span class="pre">Contents</span></code> the values which are greater than 80.</p>
+<p>The Boolean vector for the left argument is obtained by <code class="docutils literal notranslate"><span class="pre">Contents&gt;80</span></code>, and the selection is made by:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">Contents</span><span class="o">&gt;</span><span class="m">80</span><span class="p">)</span> <span class="na">/</span> <span class="nv">Contents</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">85 96 82
+</span></div></div>
+</div>
+<p>Of course, the same operation can be applied to any array of any dimension. For higher dimensional arrays, we can use the <em>Axis</em> to specify along which axis to compress. For example, if we have a matrix of chemical formulas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">Chemistry</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">5</span><span class="o">⍴</span><span class="s1">&#39;H2SO4CaCO3Fe2O3&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">H2SO4
+CaCO3
+Fe2O3
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="na">/</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span> <span class="nv">Chemistry</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">H2SO4
+Fe2O3
+</span></div></div>
+</div>
+<p>By using <code class="docutils literal notranslate"><span class="pre">/[1]</span></code> we are compressing the 1st dimension of <code class="docutils literal notranslate"><span class="pre">Chemistry</span></code>, hence selecting two rows, corresponding to the two 1s in the vector on the left.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="na">/</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span> <span class="nv">Chemistry</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">H2O
+CaO
+FeO
+</span></div></div>
+</div>
+<p>If we use <code class="docutils literal notranslate"><span class="pre">/[2]</span></code> we are compressing the 2nd dimension of <code class="docutils literal notranslate"><span class="pre">Chemistry</span></code>, hence selecting three columns. In this example columns 3 and 5 have been removed.</p>
+<p><em>Compression</em> is an excellent tool which allows you to:</p>
+<ul class="simple">
+<li><p>extract some useful items from a variable;</p></li>
+<li><p>remove some unwanted items from a variable, which is the same thing.</p></li>
+</ul>
+<div class="hint admonition">
+<p class="admonition-title">Advice</p>
+<p>Every time you obtain a Boolean vector, you should immediately think of two major things you can do with it: <em>Count</em> or <em>select</em>.</p>
+</div>
+<p>For example, using <code class="docutils literal notranslate"><span class="pre">Contents</span></code>, we can produce a Boolean vector that shows which items are smaller than 50:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">bin</span> <span class="kd">←</span> <span class="nv">Contents</span> <span class="o">&lt;</span> <span class="m">50</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, we can:</p>
+<ul class="simple">
+<li><p>count the items that are smaller than 50:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">bin</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5
+</span></div></div>
+</div>
+<ul class="simple">
+<li><p>select (or extract) said items:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">bin</span> <span class="na">/</span> <span class="nv">Contents</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">12 30 22 44 27
+</span></div></div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Hint</p>
+<p>Programmers who are new to APL and who are familiar with indexing as the natural selection mechanism may be tempted to use the Boolean selection vector to create some indexes, and then use the indices to select the desired items.</p>
+</div>
+<p>This works very well, for example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">ix</span> <span class="kd">←</span> <span class="nv">bin</span> <span class="na">/</span> <span class="o">⍳⍴</span><span class="nv">Contents</span>
+<span class="nv">Contents</span><span class="sr">[</span><span class="nv">ix</span><span class="sr">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">12 30 22 44 27
+</span></div></div>
+</div>
+<p>However this is an unnecessary complication that wastes memory and processing time, compared to the straightforward selection shown above.</p>
 </div>
 </div>
 </div>
