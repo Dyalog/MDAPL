@@ -201,7 +201,6 @@
   <p><em><strong>Notes &amp; Questions</strong></em>:</p>
 <ul class="simple">
 <li><p>In the <a class="reference external" href="#Dyalog-APL-Operators">appendix on operators</a>, is the outer product really a dyadic operator? I mean, I get that <code class="docutils literal notranslate"><span class="pre">∘.f</span></code> has the function on the right, but it only got one function as “argument”, so shouldn’t it be a monadic operator?</p></li>
-<li><p>Can someone give me an example of a case where using the variant operator <code class="docutils literal notranslate"><span class="pre">⍠</span></code> gives me a dyadic derived function, or is there no such thing?</p></li>
 </ul>
 <div class="section" id="appendices">
 <h1><span class="section-number">4. </span>Appendices<a class="headerlink" href="#appendices" title="Permalink to this headline">¶</a></h1>
@@ -348,11 +347,11 @@
 <h2><span class="section-number">4.2. </span>Dyalog APL Operators<a class="headerlink" href="#dyalog-apl-operators" title="Permalink to this headline">¶</a></h2>
 <p>The following table of primitive operators in Dyalog APL uses the following conventions:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> and <code class="docutils literal notranslate"><span class="pre">g</span></code> represent functions: primitive, user defined, or derived from another operator;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> and <code class="docutils literal notranslate"><span class="pre">g</span></code> represent functions: primitive, user defined or derived from another operator;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Y</span></code> represent the left and right arguments of the derived function, respectively;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> are arrays and they represent left and right operands, respectively;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">N</span></code> also represents an array operand, specifically a numeric one;</p></li>
-<li><p>a distinction is made between the syntax of the operator itself (“Op” in the table below) and the syntax of its derived functions (“Fun” in the table below), as a monadic operator can generate a dyadic derived function or a dyadic operator can generate a monadic derived function; the syntax is indicated by M for <em>Monadic</em> and D for <em>Dyadic</em>.</p></li>
+<li><p>a distinction is made between the syntax of the operator itself (“Op” in the table below) and the syntax of its derived function (“Fun” in the table below), as a monadic operator can generate a dyadic derived function or a dyadic operator can generate a monadic derived function; the syntax is indicated by M for <em>Monadic</em> and D for <em>Dyadic</em>.</p></li>
 </ul>
 <table class="colwidths-auto table">
 <thead>
@@ -383,7 +382,7 @@
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">+/Y</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>Reduce <span class="math notranslate nohighlight">\(n\)</span>-Wise</p></td>
-<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>M</p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f/Y</span></code> or <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f⌿Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">2+/Y</span></code></p></td>
@@ -576,8 +575,8 @@
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>Variant</p></td>
 <td class="text-align:center"><p>D</p></td>
-<td class="text-align:center"><p>M</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(f⍠B)</span> <span class="pre">Y</span></code></p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(f⍠B)</span> <span class="pre">Y</span></code> or <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">(f⍠B)</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">('a'⎕S</span> <span class="pre">0)⍠1⊢Y</span></code></p></td>
 </tr>
 </tbody>

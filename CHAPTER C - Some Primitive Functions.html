@@ -476,6 +476,33 @@
      3.12.1. Basic Approach: Compression
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     3.12.2. Replication
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scalar-left-argument">
+     3.12.3. Scalar Left Argument
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     3.12.4. Special Notations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#position-index-of">
+   3.13. Position (Index Of)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discovery">
+     3.13.1. Discovery
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -518,6 +545,8 @@
 <li><p>update reference to the “Application 2” subsection (search for “The expression we wrote in the”) right in the beginning of <a class="reference external" href="#Our-First-Program">Our First Program</a>;</p></li>
 <li><p>in the same place as above, fix reference to chapter on “User Defined Functions” (search for “these will be covered in detail”);</p></li>
 <li><p>fix reference to “user Defined Functions” chapter (search for “we shall see many other possibilities in the”) right before the <a class="reference external" href="#Concatenation">Concatenation</a> section;</p></li>
+<li><p>ref to “Nested Arrays” chapter under <a class="reference external" href="#Replication">Replication</a> (search for “is new and will be discussed in full”);</p></li>
+<li><p>ref to “Application 4” under <a class="reference external" href="#Discovery">Discovery</a> (search for “there is another function that we can use”);</p></li>
 <li><p>…</p></li>
 </ul>
 <hr class="docutils" />
@@ -3793,6 +3822,198 @@ FeO
 </span></div></div>
 </div>
 <p>However this is an unnecessary complication that wastes memory and processing time, compared to the straightforward selection shown above.</p>
+</div>
+<div class="section" id="id3">
+<h3><span class="section-number">3.12.2. </span>Replication<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>In fact, <em>Compression</em> is just a special case of a more comprehensive function named <em><strong>Replication</strong></em> or <em><strong>Replicate</strong></em>. Its left argument can be any vector of integer values, each of which produces the following result:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Signum of the left item</p></th>
+<th class="text-align:left head"><p>Effect on the corresponding right item</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td class="text-align:left"><p>item is replicated the number of times specified by the left item</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td class="text-align:left"><p>item is suppressed</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">¯1</span></code></p></td>
+<td class="text-align:left"><p>item is replaced by as many “<em><strong>Fill items</strong></em>” as is indicated by the left item</p></td>
+</tr>
+</tbody>
+</table>
+<p>The concept of a “Fill item” is new and will be discussed in full in the “Nested Arrays” chapter. For now, you only need to know that the fill item for a simple numeric array is 0 and the fill item for a simple character array is a blank space.</p>
+<p>Here are some examples, using the same left argument applied to numeric and character vectors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">1</span> <span class="m">3</span> <span class="m">0</span> <span class="na">/</span> <span class="m">42</span> <span class="m">15</span> <span class="m">79</span> <span class="m">66</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">15 79 79 79
+</span></div></div>
+</div>
+<p>42 and 66 have been removed, as their corresponding left items were 0. 15 was replicated 1 time and 79 was replicated 3 times, as indicated by their corresponding left items.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">1</span> <span class="m">3</span> <span class="m">0</span> <span class="na">/</span> <span class="s1">&#39;boat&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">oaaa
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="m">¯3</span> <span class="m">1</span> <span class="m">0</span> <span class="na">/</span> <span class="m">42</span> <span class="m">15</span> <span class="m">79</span> <span class="m">66</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">42 42 0 0 0 79
+</span></div></div>
+</div>
+<p>For the example above, 15 has been replaced by 3 zeroes because the fill item for simple numeric arrays is a zero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="m">¯3</span> <span class="m">1</span> <span class="m">0</span> <span class="na">/</span> <span class="s1">&#39;boat&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">bb   a
+</span></div></div>
+</div>
+<p>For this example, the letter “o” was replaced by 3 blank spaces because the fill item for simple numeric arrays is ” “.</p>
+</div>
+<div class="section" id="scalar-left-argument">
+<h3><span class="section-number">3.12.3. </span>Scalar Left Argument<a class="headerlink" href="#scalar-left-argument" title="Permalink to this headline">¶</a></h3>
+<p>If the left argument of <em>Compression</em> or <em>Replication</em> is a scalar, it applies to all the items of the right argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">v</span> <span class="kd">←</span> <span class="s1">&#39;Phew&#39;</span>
+<span class="m">1</span><span class="na">/</span><span class="nv">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Phew
+</span></div></div>
+</div>
+<p>When the left argument is 1 all the items are retained.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span><span class="na">/</span><span class="nv">v</span>        <span class="c1">⍝ Repeat each letter 3 times.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">PPPhhheeewww
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span><span class="na">/</span><span class="nv">v</span>        <span class="c1">⍝ Repeat each letter 0 times.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;&#39;</span><span class="o">≡</span><span class="m">0</span><span class="na">/</span><span class="nv">v</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<p>As you can see above, when we use 0 as the left argument to <em>Replicate</em> we get an empty vector. Because <code class="docutils literal notranslate"><span class="pre">v</span></code> was a simple character vector, we get an empty character vector.</p>
+</div>
+<div class="section" id="id4">
+<h3><span class="section-number">3.12.4. </span>Special Notations<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Like <em>Reduction</em> and <em>Catenation</em>, <em>Replication</em> works by default along the last dimension of an array. However, it is possible for it to work on any dimension by using the <em>Axis</em>. It is also possible to use <code class="docutils literal notranslate"><span class="pre">⌿</span></code>, which we have already seen, to work on the first dimension by default.</p>
+<p>For example,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="na">⌿</span> <span class="nv">Chemistry</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">CaCO3
+</span></div></div>
+</div>
+<p>which is equivalent to</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="na">/</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span> <span class="nv">Chemistry</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">CaCO3
+</span></div></div>
+</div>
+<p>Beware, the result obtained this way is <strong>not</strong> a vector, but a matrix having only one row:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="m">0</span> <span class="m">1</span> <span class="m">0</span><span class="na">⌿</span><span class="nv">Chemistry</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 5
+</span></div></div>
+</div>
+<p>You must not confuse <em>Reduction</em> and <em>Replication</em>: even if the symbol used is the same, they are completely different operations:</p>
+<ul class="simple">
+<li><p><em><strong>Reduction</strong></em> takes a function as its left operand; it is a monadic <em>operator</em> (e.g. <code class="docutils literal notranslate"><span class="pre">+/</span> <span class="pre">Contents</span></code>);</p></li>
+<li><p><em><strong>Replication</strong></em> takes a vector as its left argument and an array as its right argument; it is a dyadic <em>function</em> (e.g. <code class="docutils literal notranslate"><span class="pre">vec/</span> <span class="pre">Contents</span></code>);</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="position-index-of">
+<h2><span class="section-number">3.13. </span>Position (Index Of)<a class="headerlink" href="#position-index-of" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="discovery">
+<h3><span class="section-number">3.13.1. </span>Discovery<a class="headerlink" href="#discovery" title="Permalink to this headline">¶</a></h3>
+<p>It is very often necessary to locate the positions of particular values in a list of items. To solve this, APL has a special function named <em><strong>Position</strong></em> (also called “<em><strong>Index Of</strong></em>”), represented by the Greek letter Iota (<code class="docutils literal notranslate"><span class="pre">⍳</span></code>). This symbol can be obtained by <kbd>Ctrl</kbd>+<kbd>I</kbd> (the initial letter of Iota). Let us see how it works:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Vec</span> <span class="kd">←</span> <span class="m">15</span> <span class="m">42</span> <span class="m">53</span> <span class="m">19</span> <span class="m">46</span> <span class="m">53</span> <span class="m">82</span> <span class="m">17</span> <span class="m">14</span> <span class="m">53</span> <span class="m">24</span>
+<span class="nv">Vec</span> <span class="o">⍳</span> <span class="m">19</span> <span class="m">14</span> <span class="m">53</span> <span class="m">49</span> <span class="m">15</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">4 9 3 12 1
+</span></div></div>
+</div>
+<p>Above we asked for the positions of 5 values (19, 14, 53, 49 and 15) and naturally we obtain 5 answers.</p>
+<ul class="simple">
+<li><p>The result tells us that 19, 14 and 15 appear in positions 4, 9 and 1 respectively.</p></li>
+<li><p>The result also tells us that 53 appears in position 3. This is of course true, but it also appears in positions 6 and 10, which are not included in the result. This is a necessary restriction: if we had searched for 5 values and obtained 7 results, it would not have been possible to say where each value appears. This is the reason why <em><strong>Index Of</strong></em> returns <em>only the first</em> occurrence of each value.</p></li>
+</ul>
+<p>We shall see later that this is an advantage: if instead we need to find all the positions in which a value occurs, there is another function that we can use (see the “Application 4” section below).</p>
+<ul class="simple">
+<li><p>Surprisingly, the result tells us that 49 appears in position 12, though <code class="docutils literal notranslate"><span class="pre">Vec</span></code> has only 11 items! This is the way that <em>Index Of</em> indicates a missing value. We shall see that it is a great advantage, too.</p></li>
+</ul>
+<p>The following rule explains how dyadic Iota works:</p>
+<div class="tip admonition">
+<p class="admonition-title">Rule</p>
+<p>In the expression <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">←</span> <span class="pre">Vec</span> <span class="pre">⍳</span> <span class="pre">Data</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Vec</span></code> may be any array</p></li>
+</ul>
+<p>…</p>
+</div>
 </div>
 </div>
 </div>
