@@ -3,3 +3,5 @@
 _toc.yml
 _config.yml
 _build/*
+book/*
+res/design.pptx
