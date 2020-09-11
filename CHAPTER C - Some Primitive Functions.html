@@ -503,6 +503,23 @@
      3.13.1. Discovery
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#application-3">
+     3.13.2. Application 3
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#changing-the-frame-of-reference">
+       3.13.2.1. Changing The Frame of Reference
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#general-case">
+     3.13.3. General Case
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -523,7 +540,6 @@
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">0÷0</span></code> and <code class="docutils literal notranslate"><span class="pre">0*0</span></code> are mentioned. would it make sense to discuss briefly why the results of these expressions are mathematically incorrect in the specialist’s section about <code class="docutils literal notranslate"><span class="pre">0÷0</span></code>?</p></li>
 <li><p>by the end of <a class="reference external" href="#Residue">Residue</a> I introduced dyadic <code class="docutils literal notranslate"><span class="pre">≡</span></code>, which flows right to the (new) section on dyadic <code class="docutils literal notranslate"><span class="pre">≡</span></code> and <code class="docutils literal notranslate"><span class="pre">≢</span></code>; does it look good there? then I moved monadic <code class="docutils literal notranslate"><span class="pre">≢≡</span></code> to the “processing nested arrays” section, cf. <a class="reference external" href="#Tally">Tally</a> and <a class="reference external" href="#Depth">Depth</a>. Accepting these changes would then mean refactoring the mention to <code class="docutils literal notranslate"><span class="pre">≡≢</span></code> in the later chapter on nested arrays.</p></li>
-<li><p>the blockquote slightly below <a class="reference external" href="#Order-of-Evaluation">Order Of Evaluation</a> was used to indicate what text actually belongs to the “Rule”; without the blockquote, a reader cannot know where the “Rule” ends; is this an appropriate way of indicating the limits of the rule inside the notebook? Should I surround the rule with horizontal rules <code class="docutils literal notranslate"><span class="pre">---</span></code> instead?</p></li>
 <li><p>Originally, the book said that none of the six comparison functions had a monadic meaning. Now <code class="docutils literal notranslate"><span class="pre">≠</span></code> does. Should we fix the comment or just remove it altogether? (I removed it, it was in the end of the “monadic scalar functions” section)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">⊢</span></code> and <code class="docutils literal notranslate"><span class="pre">⊣</span></code> are so basic, I’ll include them here and make a note that they’ll become more useful when used in conjunction with operators and/or in tacit programming.</p></li>
 <li><p>The section about reduction had a warning about using <code class="docutils literal notranslate"><span class="pre">/</span></code> with non commutative functions, which I think is very pertinent. It just looks awkward in its original place, because it comes at the end of the subsection on reducing binary data (where we only used commutative functions) and before a couple other subsections where we only use commutative functions. I moved the warning to a small sub-section right before the “Application” sub-section, <a class="reference external" href="#Reduction-With-Non-Commutative-Functions">here</a>.</p></li>
@@ -531,7 +547,7 @@
 <p>(Re: above) this makes sense if we take into account there already exists a really small subsection that warns the user about reduction of nested arrays, in which the shape and type of the sub-arrays must be compatible for the reduction. This new subsection on the non-commutative reductions is even larger than this one, so I guess it makes sense to have both as sub-sections OR both as warnings, although I prefer it like this.</p>
 <ul class="simple">
 <li><p>Right above <a class="reference external" href="#Application-1">Application 1</a> the author claims reduction with non-commutative functions is rare in business applications. I find it easy to believe, but is it true? Is it worth checking? Should I leave the claim as-is? Remove it?</p></li>
-<li><p>In <a class="reference external" href="#Processing-Arrays">Processing Arrays</a> we show what <code class="docutils literal notranslate"><span class="pre">+/[1]</span></code>, <code class="docutils literal notranslate"><span class="pre">+/[2]</span></code> and <code class="docutils literal notranslate"><span class="pre">+/[3]</span></code> do on <code class="docutils literal notranslate"><span class="pre">Prod</span></code>. I reworded the sentence before and after the <code class="docutils literal notranslate"><span class="pre">+/[1]</span></code> example to make it more explicit.</p></li>
+<li><p>Check if we can use the term “major cells” in the <a class="reference external" href="#General-Case">General Case</a> of the <em>Index Of</em> function.</p></li>
 </ul>
 <hr class="docutils" />
 <p><strong>References to fix:</strong></p>
@@ -4005,14 +4021,380 @@ FeO
 <ul class="simple">
 <li><p>Surprisingly, the result tells us that 49 appears in position 12, though <code class="docutils literal notranslate"><span class="pre">Vec</span></code> has only 11 items! This is the way that <em>Index Of</em> indicates a missing value. We shall see that it is a great advantage, too.</p></li>
 </ul>
-<p>The following rule explains how dyadic Iota works:</p>
+<p>The following rule explains how dyadic Iota works when the left argument is a vector:</p>
 <div class="tip admonition">
 <p class="admonition-title">Rule</p>
-<p>In the expression <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">←</span> <span class="pre">Vec</span> <span class="pre">⍳</span> <span class="pre">Data</span></code></p>
+<p>In the expression <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">←</span> <span class="pre">Haystack</span> <span class="pre">⍳</span> <span class="pre">Needles</span></code> we look for the <code class="docutils literal notranslate"><span class="pre">Needles</span></code> in the <code class="docutils literal notranslate"><span class="pre">Haystack</span></code>, and</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Vec</span></code> may be any array</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Haystack</span></code> can be a vector of any type: numeric, character, mixed, nested;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Needles</span></code> can be any array (any type, any shape, any rank);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">R</span></code> will have the same rank and shape as <code class="docutils literal notranslate"><span class="pre">Needles</span></code>;</p></li>
+<li><p>the items of <code class="docutils literal notranslate"><span class="pre">R</span></code> contain the positions of the first occurrence of the corresponding items of <code class="docutils literal notranslate"><span class="pre">Needles</span></code> in <code class="docutils literal notranslate"><span class="pre">Haystack</span></code>;</p></li>
+<li><p>items which do not appear in <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> give the result <code class="docutils literal notranslate"><span class="pre">1+≢Haystack</span></code>.</p></li>
 </ul>
-<p>…</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;ABC&#39;</span> <span class="o">⍳</span> <span class="m">57</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">4
+</span></div></div>
+</div>
+<p>A number cannot occur in a 3-item character vector, so the result is 4.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">4</span> <span class="m">8</span> <span class="o">⍳</span> <span class="s1">&#39;4 8&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">3 3 3
+</span></div></div>
+</div>
+<p>Similarly, characters cannot appear in a 2-item numeric vector, so each character results in a 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Alpha</span> <span class="kd">←</span> <span class="s1">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789&#39;</span>
+<span class="nv">Alpha</span> <span class="o">⍳</span> <span class="nv">Chemistry</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">8 30 19 15 32
+3 38  3 15 31
+6 38 30 15 31
+</span></div></div>
+</div>
+<p>The two lower case letters in <code class="docutils literal notranslate"><span class="pre">Chemistry</span></code> give the answer 38 because <code class="docutils literal notranslate"><span class="pre">Alpha</span></code> has 37 items. Also notice how the shape of <code class="docutils literal notranslate"><span class="pre">Chemistry</span></code> and <code class="docutils literal notranslate"><span class="pre">Alpha</span> <span class="pre">⍳</span> <span class="pre">Chemistry</span></code> is the same, like the rule above said.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">⍴</span><span class="nv">Chemistry</span><span class="p">)</span><span class="o">≡</span><span class="p">(</span><span class="o">⍴</span><span class="nv">Alpha</span><span class="o">⍳</span><span class="nv">Chemistry</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<p>We can also use nested vectors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Tee&#39;</span> <span class="p">(</span><span class="m">3</span> <span class="m">7</span><span class="p">)</span> <span class="s1">&#39;Golf&#39;</span> <span class="o">⍳</span> <span class="m">3</span> <span class="m">7</span> <span class="p">(</span><span class="m">3</span> <span class="m">7</span><span class="p">)</span> <span class="s1">&#39;Tee&#39;</span> <span class="s1">&#39;Green&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">4 4 2 1 4
+</span></div></div>
+</div>
+<p>The function <em>Index Of</em> is one of the most important primitive functions in APL. It is very flexible and it can be used in many situations, as shown in the following examples.</p>
+<div class="warning admonition">
+<p class="admonition-title">Warning</p>
+<p>In the expression <code class="docutils literal notranslate"><span class="pre">A⍳B</span></code> we search for <code class="docutils literal notranslate"><span class="pre">B</span></code> in <code class="docutils literal notranslate"><span class="pre">A</span></code> whereas in <code class="docutils literal notranslate"><span class="pre">A∊B</span></code> we search for <code class="docutils literal notranslate"><span class="pre">A</span></code> in <code class="docutils literal notranslate"><span class="pre">B</span></code>. Do not be confused!</p>
+</div>
+</div>
+<div class="section" id="application-3">
+<h3><span class="section-number">3.13.2. </span>Application 3<a class="headerlink" href="#application-3" title="Permalink to this headline">¶</a></h3>
+<p>A car manufacturer decided that they will offer their customers a discount on the catalogue price. The country has been split into 100 geographical areas, and the discount rate will depend on the geographic area according to the following table:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Area</p></th>
+<th class="text-align:center head"><p>Discount</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>17</p></td>
+<td class="text-align:center"><p>9%</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>50</p></td>
+<td class="text-align:center"><p>8%</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>59</p></td>
+<td class="text-align:center"><p>6%</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>84</p></td>
+<td class="text-align:center"><p>5%</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>89</p></td>
+<td class="text-align:center"><p>4%</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Others</p></td>
+<td class="text-align:center"><p>2%</p></td>
+</tr>
+</tbody>
+</table>
+<p>which we save to two vectors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Area</span> <span class="kd">←</span> <span class="m">17</span> <span class="m">50</span> <span class="m">59</span> <span class="m">84</span> <span class="m">89</span>
+<span class="nv">Discount</span> <span class="kd">←</span> <span class="m">9</span> <span class="m">8</span> <span class="m">6</span> <span class="m">5</span> <span class="m">4</span> <span class="m">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first task is to calculate the discount rate to be claimed for a potential customer who lives in area <code class="docutils literal notranslate"><span class="pre">D</span></code>; for example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">D</span> <span class="kd">←</span> <span class="m">84</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let us see if 84 is in the list of favoured areas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Area</span> <span class="o">⍳</span> <span class="nv">D</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">4
+</span></div></div>
+</div>
+<p>We can see that 84 is the 4th item in the list.</p>
+<p>Let us find the current discount rate for this index position:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Discount</span><span class="sr">[</span><span class="m">5</span><span class="sr">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">4
+</span></div></div>
+</div>
+<p>This customer can claim a 5% discount.</p>
+<p>We could simply write</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Discount</span><span class="sr">[</span><span class="nv">Area</span><span class="o">⍳</span><span class="nv">D</span><span class="sr">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5
+</span></div></div>
+</div>
+<p>Now, what if a customer lives in any other area, such as 75, 45 or 93?</p>
+<p>The expression <code class="docutils literal notranslate"><span class="pre">Area⍳D</span></code> will return the result <code class="docutils literal notranslate"><span class="pre">6</span></code> for all these area codes, because these values are absent from <code class="docutils literal notranslate"><span class="pre">Area</span></code>.</p>
+<p>Then <code class="docutils literal notranslate"><span class="pre">Discount[6]</span></code> will always find the rate 2%, as specified. Here we can see that it is an advantage that <em>Index Of</em> returns 1 + the number of items in the vector to be searched.</p>
+<div class="note admonition">
+<p class="admonition-title">A Vector Solution</p>
+<p>The importance of this approach to finding the discount rates is that it is vector-based. If publicity attracts crowds and therefore <code class="docutils literal notranslate"><span class="pre">D</span></code> is no longer a scalar but a vector, the solution is still valid.</p>
+</div>
+<p>As an example, consider the following vector of area codes and the respective discount rates:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">D</span> <span class="kd">←</span> <span class="m">24</span> <span class="m">75</span> <span class="m">89</span> <span class="m">60</span> <span class="m">92</span> <span class="m">50</span> <span class="m">51</span> <span class="m">50</span> <span class="m">84</span> <span class="m">66</span> <span class="m">17</span> <span class="m">89</span>
+<span class="nv">Discount</span><span class="sr">[</span><span class="nv">Area</span><span class="o">⍳</span><span class="nv">D</span><span class="sr">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">2 2 4 2 2 8 2 8 5 2 9 4
+</span></div></div>
+</div>
+<p>We have achieved all this without a program, neither a “loop” nor a “test”. And it works for any number of areas. Readers who know other programming languages will probably appreciate the simplicity of this approach.</p>
+<div class="section" id="changing-the-frame-of-reference">
+<h4><span class="section-number">3.13.2.1. </span>Changing The Frame of Reference<a class="headerlink" href="#changing-the-frame-of-reference" title="Permalink to this headline">¶</a></h4>
+<p>In reality, the expression that we have just written is an example of an algorithm for “<em>changing the frame of reference</em>”. Don’t panic, this term may seem esoteric, but the concept is simple: a list of area numbers (the initial set) is translated into a list of discount rates (the final set). The algorithm comprises only the function <em>Index Of</em> and indexing:</p>
+<div class="algorithm admonition">
+<p class="admonition-title">Algorithm</p>
+<p><code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">←</span> <span class="pre">FinalSet[InitialSet</span> <span class="pre">⍳</span> <span class="pre">Values]</span></code></p>
+</div>
+<p>Let us imagine the initial set to be an alphabet composed of both lowercase and uppercase letters, and the final set to be composed of only uppercase letters, with a blank space in the middle:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">AlphLower</span> <span class="kd">←</span> <span class="s1">&#39;abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
+<span class="nv">AlphUpper</span> <span class="kd">←</span> <span class="s1">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ ABCDEFGHIJKLMNOPQRSTUVWXYZ*&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let us write a sentence; we will write it in French in order to show what happens with missing characters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Tale</span> <span class="kd">←</span> <span class="s1">&#39;Le Petit Chaperon-Rouge a bouffé le Loup&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we apply the algorithm seen above, the expression will convert the text from lower to upper case:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">AlphUpper</span><span class="sr">[</span><span class="nv">AlphLower</span><span class="o">⍳</span><span class="nv">Tale</span><span class="sr">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">LE PETIT CHAPERON*ROUGE A BOUFF* LE LOUP
+</span></div></div>
+</div>
+<p>As one might expect, the characters <code class="docutils literal notranslate"><span class="pre">'-'</span></code> and <code class="docutils literal notranslate"><span class="pre">'é'</span></code>, which are absent from the initial alphabetic set, have been replaced by the <code class="docutils literal notranslate"><span class="pre">'*'</span></code>, the “extra” character at the end of the final set. This works because once again the final set is one item longer than the initial set.</p>
+<p>Once more, the logical steps needed to solve the problem are easily translated into a programming solution, and the programmer can thereby direct all his attention to solving the problem.</p>
+</div>
+</div>
+<div class="section" id="general-case">
+<h3><span class="section-number">3.13.3. </span>General Case<a class="headerlink" href="#general-case" title="Permalink to this headline">¶</a></h3>
+<p>The left argument to <em>Index Of</em> need not be a vector. In fact, in the expression <code class="docutils literal notranslate"><span class="pre">Haystack</span> <span class="pre">⍳</span> <span class="pre">Needles</span></code>, <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> can be an array of any rank, type and shape. However, <code class="docutils literal notranslate"><span class="pre">Needles</span></code> must have a shape that is appropriate for the <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> you use.</p>
+<p>We will see what this means by using a 3-D <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> as an example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">Haystack</span> <span class="kd">←</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span><span class="o">⍴</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 3 4
+5 6 7 8
+9 0 1 2
+
+3 4 5 6
+7 8 9 0
+1 2 3 4
+</span></div></div>
+</div>
+<p>When <em>Index Of</em> is used, the first thing Dyalog APL does is look at its left argument and try to figure out what is the shape of the things contained in the <code class="docutils literal notranslate"><span class="pre">Haystack</span></code>. For that matter, we first inspect the shape of the <code class="docutils literal notranslate"><span class="pre">Haystack</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">Haystack</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">2 3 4
+</span></div></div>
+</div>
+<p>and interpret it as</p>
+<blockquote>
+<div><p>“<em><code class="docutils literal notranslate"><span class="pre">Haystack</span></code> contains 2 items of shape <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">4</span></code></em>”</p>
+</div></blockquote>
+<p>which means we can look for needles with shape <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">4</span></code> inside the <code class="docutils literal notranslate"><span class="pre">Haystack</span></code>. Therefore, for <code class="docutils literal notranslate"><span class="pre">Needles</span></code> to be seen as “<em>containing items of shape <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">4</span></code></em>” its shape must also end in <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">4</span></code>. Whatever is not the final <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">4</span></code> in the shape of <code class="docutils literal notranslate"><span class="pre">Needles</span></code> is what dictates the shape of the final result.</p>
+<p>If the shape of <code class="docutils literal notranslate"><span class="pre">Needles</span></code> is too short for it to match the shape of the items the <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> contains, we get a <code class="docutils literal notranslate"><span class="pre">RANK</span> <span class="pre">ERROR</span></code> because <code class="docutils literal notranslate"><span class="pre">Needles</span></code> doesn’t have enough dimensions.</p>
+<p>Similarly, if the shape of <code class="docutils literal notranslate"><span class="pre">Needles</span></code> is long enough but its trailing dimensions don’t match those of the left argument, we get a <code class="docutils literal notranslate"><span class="pre">LENGTH</span> <span class="pre">ERROR</span></code> because the things we are comparing have different lengths along their dimensions.</p>
+<p>In the table below we give examples of some <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> and <code class="docutils literal notranslate"><span class="pre">Needles</span></code> shapes, along with the shape of the items that <code class="docutils literal notranslate"><span class="pre">⍳</span></code> thinks <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> contains and the shape of the result (remember that <code class="docutils literal notranslate"><span class="pre">⍬</span></code> is the shape of a scalar):</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p><code class="docutils literal notranslate"><span class="pre">⍴Haystack</span></code></p></th>
+<th class="text-align:left head"><p><code class="docutils literal notranslate"><span class="pre">⍴Needles</span></code> must end with</p></th>
+<th class="text-align:left head"><p><code class="docutils literal notranslate"><span class="pre">⍴Needles</span></code></p></th>
+<th class="text-align:left head"><p><code class="docutils literal notranslate"><span class="pre">⍴R</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">4</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">4</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">⍬</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">1</span> <span class="pre">3</span> <span class="pre">4</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">1</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">1</span> <span class="pre">4</span> <span class="pre">4</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">LENGTH</span> <span class="pre">ERROR</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">3</span> <span class="pre">4</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">RANK</span> <span class="pre">ERROR</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">2</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">2</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">⍬</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">LENGTH</span> <span class="pre">ERROR</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">⍬</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">3</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">3</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">⍬</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">⍬</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>As a practical example, if we take the <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> we defined above, we can look for 3 by 4 matrices in there. Our <code class="docutils literal notranslate"><span class="pre">Needles</span></code> variable has 4 such matrices:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">Needles</span> <span class="kd">←</span> <span class="m">4</span> <span class="m">3</span> <span class="m">4</span><span class="o">⍴</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 3 4
+5 6 7 8
+9 0 1 2
+
+3 4 5 6
+7 8 9 0
+1 2 3 4
+
+5 6 7 8
+9 0 1 2
+3 4 5 6
+
+7 8 9 0
+1 2 3 4
+5 6 7 8
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Haystack</span> <span class="o">⍳</span> <span class="nv">Needles</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 3 3
+</span></div></div>
+</div>
+<p>This shows that the first and second matrices were found in positions 1 and 2, respectively, and the third and fourth matrices were found nowhere, thus getting 3 as a result. The result is 3 because 2 is the number of <em>major cells</em> that <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> has.</p>
+<p>Now we write the rule that dictates how <em>Index Of</em> works in the general case:</p>
+<div class="tip admonition">
+<p class="admonition-title">Rule</p>
+<p>In the expression <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">←</span> <span class="pre">Haystack</span> <span class="pre">⍳</span> <span class="pre">Needles</span></code> we look for the <code class="docutils literal notranslate"><span class="pre">Needles</span></code> in the <code class="docutils literal notranslate"><span class="pre">Haystack</span></code>, and</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Haystack</span></code> can be any array of rank <code class="docutils literal notranslate"><span class="pre">r</span></code> with <code class="docutils literal notranslate"><span class="pre">r</span></code> being at least 1;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Needles</span></code> can be any array of rank <code class="docutils literal notranslate"><span class="pre">nr</span></code> with <code class="docutils literal notranslate"><span class="pre">nr</span></code> being at least <code class="docutils literal notranslate"><span class="pre">r-1</span></code>;</p></li>
+<li><p>the last <code class="docutils literal notranslate"><span class="pre">r-1</span></code> numbers of the shape of <code class="docutils literal notranslate"><span class="pre">Needles</span></code> and the last <code class="docutils literal notranslate"><span class="pre">r-1</span></code> numbers of the shape of <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> must be the same;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">R</span></code> has rank equal to <code class="docutils literal notranslate"><span class="pre">nr-r-1</span></code> and shape equal to the first <code class="docutils literal notranslate"><span class="pre">nr-r-1</span></code> numbers of the shape of <code class="docutils literal notranslate"><span class="pre">Needles</span></code>;</p></li>
+<li><p>the items of <code class="docutils literal notranslate"><span class="pre">R</span></code> contain the positions of the first occurrence of the corresponding items of <code class="docutils literal notranslate"><span class="pre">Needles</span></code> in <code class="docutils literal notranslate"><span class="pre">Haystack</span></code>;</p></li>
+<li><p>items which do not appear in <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> give the result <code class="docutils literal notranslate"><span class="pre">1+m</span></code> if <code class="docutils literal notranslate"><span class="pre">m</span></code> is the leading number in the shape of <code class="docutils literal notranslate"><span class="pre">Haystack</span></code>.</p></li>
+</ul>
 </div>
 </div>
 </div>
