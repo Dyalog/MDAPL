@@ -52,14 +52,14 @@ for dic in data:
                 continue
 
             # does this line start an admonition comment?
-            m = re.match(r"<!-- begin (\w+) (style=(\w+) )?-->", lines[i])
+            m = re.match(r"<!-- begin (.+?) (style=(\w+) )?-->", lines[i])
             if m:
                 adm_header = m.group(1)
                 if m.group(3):
                     style = m.group(3)
                 else:
                     style = CUSTOM_ADMONITION_STYLES.get(adm_header, adm_header)
-                text = adm_header.capitalize()
+                text = adm_header.capitalize() if " " not in adm_header else adm_header
                 end_match = f"<!-- end -->\n"
                 try:
                     matching_line = lines.index(end_match)
