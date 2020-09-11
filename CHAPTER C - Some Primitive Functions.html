@@ -1650,7 +1650,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <h2><span class="section-number">3.5. </span>Left and Right Tacks<a class="headerlink" href="#left-and-right-tacks" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="same">
 <h3><span class="section-number">3.5.1. </span>Same<a class="headerlink" href="#same" title="Permalink to this headline">¶</a></h3>
-<p>APL also includes two primitive functions whose monadic name is the same: <em><strong>Same</strong></em>. These two primitives are the <em><strong>Right Tack</strong></em> (<code class="docutils literal notranslate"><span class="pre">⊢</span></code>) and the <em><strong>Left Tack</strong></em>, obtained respectively with <kbd>APL</kbd>+<kbd>\</kbd> and <kbd>APL</kbd>+<kbd>Shift</kbd>+<kbd>\</kbd>.</p>
+<p>APL also includes two primitive functions whose monadic name is the same: <em><strong>Same</strong></em>. These two primitives are the <em><strong>Right Tack</strong></em> (<code class="docutils literal notranslate"><span class="pre">⊢</span></code>) and the <em><strong>Left Tack</strong></em> (<code class="docutils literal notranslate"><span class="pre">⊣</span></code>), obtained respectively with <kbd>APL</kbd>+<kbd>\</kbd> and <kbd>APL</kbd>+<kbd>Shift</kbd>+<kbd>\</kbd>.</p>
 <p>Their monadic name is <em>Same</em> because they act as true identity functions, returning their argument completely unchanged:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1739,8 +1739,8 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <div class="section" id="dyadic-usage">
 <h3><span class="section-number">3.5.2. </span>Dyadic Usage<a class="headerlink" href="#dyadic-usage" title="Permalink to this headline">¶</a></h3>
-<p>The Left and Right Tacks differ in their dyadic usage, of course, otherwise there would be no point in having two primitive functions that behaved in exactly the same manner.</p>
-<p>When used dyadically, the Left Tack returns its left argument and the Right Tack returns its right argument. If you ever forget which dyadic tack returns what, just remember that each tack returns the argument to which it is pointing:</p>
+<p>The <em>Left</em> and <em>Right Tacks</em> differ in their dyadic usage, of course, otherwise there would be no point in having two primitive functions that behaved in exactly the same manner.</p>
+<p>When used dyadically, the <em>Left Tack</em> returns its left argument and the <em>Right Tack</em> returns its right argument. If you ever forget which dyadic tack returns what, just remember that each tack returns the argument to which it is pointing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="o">⊣</span> <span class="s1">&#39;Bananas&#39;</span>
@@ -4068,7 +4068,7 @@ FeO
 6 38 30 15 31
 </span></div></div>
 </div>
-<p>The two lower case letters in <code class="docutils literal notranslate"><span class="pre">Chemistry</span></code> give the answer 38 because <code class="docutils literal notranslate"><span class="pre">Alpha</span></code> has 37 items. Also notice how the shape of <code class="docutils literal notranslate"><span class="pre">Chemistry</span></code> and <code class="docutils literal notranslate"><span class="pre">Alpha</span> <span class="pre">⍳</span> <span class="pre">Chemistry</span></code> is the same, like the rule above said.</p>
+<p>The two lower case letters in <code class="docutils literal notranslate"><span class="pre">Chemistry</span></code> give the answer 38 because <code class="docutils literal notranslate"><span class="pre">Alpha</span></code> has 37 items. Also notice how the shape of <code class="docutils literal notranslate"><span class="pre">Chemistry</span></code> and <code class="docutils literal notranslate"><span class="pre">Alpha</span> <span class="pre">⍳</span> <span class="pre">Chemistry</span></code> is the same, like the rule above specified.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">⍴</span><span class="nv">Chemistry</span><span class="p">)</span><span class="o">≡</span><span class="p">(</span><span class="o">⍴</span><span class="nv">Alpha</span><span class="o">⍳</span><span class="nv">Chemistry</span><span class="p">)</span>
@@ -4158,12 +4158,12 @@ FeO
 <p>Let us find the current discount rate for this index position:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Discount</span><span class="sr">[</span><span class="m">5</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Discount</span><span class="sr">[</span><span class="m">4</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">4
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5
 </span></div></div>
 </div>
 <p>This customer can claim a 5% discount.</p>
@@ -4239,7 +4239,7 @@ FeO
 </div>
 <div class="section" id="general-case">
 <h3><span class="section-number">3.13.3. </span>General Case<a class="headerlink" href="#general-case" title="Permalink to this headline">¶</a></h3>
-<p>The left argument to <em>Index Of</em> need not be a vector. In fact, in the expression <code class="docutils literal notranslate"><span class="pre">Haystack</span> <span class="pre">⍳</span> <span class="pre">Needles</span></code>, <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> can be an array of any rank, type and shape. However, <code class="docutils literal notranslate"><span class="pre">Needles</span></code> must have a shape that is appropriate for the <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> you use.</p>
+<p>The left argument to <em>Index Of</em> need not be a vector. In fact, in the expression <code class="docutils literal notranslate"><span class="pre">Haystack</span> <span class="pre">⍳</span> <span class="pre">Needles</span></code>, <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> can be a much general array of any rank, type and shape, as long as it is <em>not</em> a scalar. However, <code class="docutils literal notranslate"><span class="pre">Needles</span></code> must have a shape that is appropriate for the <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> you use.</p>
 <p>We will see what this means by using a 3-D <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> as an example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4388,10 +4388,10 @@ FeO
 <p class="admonition-title">Rule</p>
 <p>In the expression <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">←</span> <span class="pre">Haystack</span> <span class="pre">⍳</span> <span class="pre">Needles</span></code> we look for the <code class="docutils literal notranslate"><span class="pre">Needles</span></code> in the <code class="docutils literal notranslate"><span class="pre">Haystack</span></code>, and</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Haystack</span></code> can be any array of rank <code class="docutils literal notranslate"><span class="pre">r</span></code> with <code class="docutils literal notranslate"><span class="pre">r</span></code> being at least 1;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Needles</span></code> can be any array of rank <code class="docutils literal notranslate"><span class="pre">nr</span></code> with <code class="docutils literal notranslate"><span class="pre">nr</span></code> being at least <code class="docutils literal notranslate"><span class="pre">r-1</span></code>;</p></li>
-<li><p>the last <code class="docutils literal notranslate"><span class="pre">r-1</span></code> numbers of the shape of <code class="docutils literal notranslate"><span class="pre">Needles</span></code> and the last <code class="docutils literal notranslate"><span class="pre">r-1</span></code> numbers of the shape of <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> must be the same;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">R</span></code> has rank equal to <code class="docutils literal notranslate"><span class="pre">nr-r-1</span></code> and shape equal to the first <code class="docutils literal notranslate"><span class="pre">nr-r-1</span></code> numbers of the shape of <code class="docutils literal notranslate"><span class="pre">Needles</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Haystack</span></code> can be any array of rank <code class="docutils literal notranslate"><span class="pre">hr</span></code> with <code class="docutils literal notranslate"><span class="pre">hr</span></code> being at least 1;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Needles</span></code> can be any array of rank <code class="docutils literal notranslate"><span class="pre">nr</span></code> with <code class="docutils literal notranslate"><span class="pre">nr</span></code> being at least <code class="docutils literal notranslate"><span class="pre">hr-1</span></code>;</p></li>
+<li><p>the last <code class="docutils literal notranslate"><span class="pre">hr-1</span></code> numbers of the shape of <code class="docutils literal notranslate"><span class="pre">Needles</span></code> and the last <code class="docutils literal notranslate"><span class="pre">hr-1</span></code> numbers of the shape of <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> must be the same;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">R</span></code> has rank equal to <code class="docutils literal notranslate"><span class="pre">nr-hr-1</span></code> and shape equal to the first <code class="docutils literal notranslate"><span class="pre">nr-hr-1</span></code> numbers of the shape of <code class="docutils literal notranslate"><span class="pre">Needles</span></code>;</p></li>
 <li><p>the items of <code class="docutils literal notranslate"><span class="pre">R</span></code> contain the positions of the first occurrence of the corresponding items of <code class="docutils literal notranslate"><span class="pre">Needles</span></code> in <code class="docutils literal notranslate"><span class="pre">Haystack</span></code>;</p></li>
 <li><p>items which do not appear in <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> give the result <code class="docutils literal notranslate"><span class="pre">1+m</span></code> if <code class="docutils literal notranslate"><span class="pre">m</span></code> is the leading number in the shape of <code class="docutils literal notranslate"><span class="pre">Haystack</span></code>.</p></li>
 </ul>
