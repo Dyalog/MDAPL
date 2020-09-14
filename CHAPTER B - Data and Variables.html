@@ -1851,7 +1851,7 @@ June
 </div>
 </div>
 </div>
-<p>And let us create a matrix of indexes:</p>
+<p>And let us create a matrix of indices:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">MyIndex</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">5</span> <span class="o">⍴</span> <span class="m">5</span> <span class="m">5</span> <span class="m">4</span> <span class="m">4</span> <span class="m">8</span> <span class="m">6</span> <span class="m">12</span> <span class="m">6</span> <span class="m">11</span> <span class="m">12</span> <span class="m">10</span> <span class="m">6</span> <span class="m">1</span> <span class="m">4</span> <span class="m">9</span>
@@ -1909,7 +1909,7 @@ June
 </div>
 </div>
 <p>Isn’t it magic?</p>
-<p>Do you understand why we added 1 to <code class="docutils literal notranslate"><span class="pre">Planning</span></code>? Of course, the vector to be indexed was composed of only two characters, so the set of indexes had to be composed only from the values 1 and 2 and that is why we used <code class="docutils literal notranslate"><span class="pre">Planning+1</span></code> to index.</p>
+<p>Do you understand why we added 1 to <code class="docutils literal notranslate"><span class="pre">Planning</span></code>? Of course, the vector to be indexed was composed of only two characters, so the set of indices had to be composed only from the values 1 and 2 and that is why we used <code class="docutils literal notranslate"><span class="pre">Planning+1</span></code> to index.</p>
 <p>All the 0’s in <code class="docutils literal notranslate"><span class="pre">Planning</span></code> have been replaced by the 1st item (<code class="docutils literal notranslate"><span class="pre">-</span></code>), and all the 1’s have been replaced by the 2nd item (<code class="docutils literal notranslate"><span class="pre">⎕</span></code>).</p>
 </div>
 <div class="section" id="array-indexing">
@@ -1977,7 +1977,7 @@ June
 <p>You probably expected the result to be displayed like a column? Really sorry!</p>
 <p>The result of this expression is a vector, and a vector is always displayed as a row on the screen.</p>
 <p>We shall see later that it is possible, using a little trick, to cause the result to be displayed vertically.</p>
-<p>When you use indexing, you must specify as many indexes or sets of indexes as the array’s rank. For a 3-D array, you must specify 3 sets of indexes, separated by two semi-colons.</p>
+<p>When you use indexing, you must specify as many indices or sets of indices as the array’s rank. For a 3-D array, you must specify 3 sets of indices, separated by two semi-colons.</p>
 <p>For example, suppose that we would like to extract the production of the 2nd assembly line, for the first 6 months of the last 2 years, from the array <code class="docutils literal notranslate"><span class="pre">Prod</span></code>. Let’s express that in order of the 3 dimensions: Years/Lines/Months:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -2046,7 +2046,7 @@ June
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Remark</p>
-<p>It is also possible to select several items which are not at the intersections of the same rows or columns. To do so requires a special notation where the individual Row/Column indexes of each item are embedded in parentheses. The reason for this syntax will become clear in Section 6.3.</p>
+<p>It is also possible to select several items which are not at the intersections of the same rows or columns. To do so requires a special notation where the individual Row/Column indices of each item are embedded in parentheses. The reason for this syntax will become clear in Section 6.3.</p>
 </div>
 <p>For example, let us select <code class="docutils literal notranslate"><span class="pre">Tests[2;3]</span></code> together with <code class="docutils literal notranslate"><span class="pre">Tests[5;1]</span></code> and <code class="docutils literal notranslate"><span class="pre">Tests[1;2</span></code>.</p>
 <div class="cell docutils container">
@@ -2157,7 +2157,7 @@ June
 <p>We would like to draw your attention to some delicate details. Here is the first:</p>
 <div class="section" id="shape-compatibility">
 <h4><span class="section-number">2.5.5.1. </span>Shape Compatibility<a class="headerlink" href="#shape-compatibility" title="Permalink to this headline">¶</a></h4>
-<p>To replace several items in an array, the replacement array must have exactly the <strong>same shape</strong> as the array of indexes they replace.</p>
+<p>To replace several items in an array, the replacement array must have exactly the <strong>same shape</strong> as the array of indices they replace.</p>
 <p>For example, supposed that we would like to replace the four “corners” of <code class="docutils literal notranslate"><span class="pre">Tests</span></code> with the values 11 22 33 44 respectively.</p>
 <p>We <strong>cannot</strong> successfully execute:</p>
 <div class="cell docutils container">
@@ -2215,7 +2215,7 @@ June
 </div>
 <div class="section" id="replace-or-obtain-all-the-values">
 <h4><span class="section-number">2.5.5.2. </span>Replace or Obtain All the Values<a class="headerlink" href="#replace-or-obtain-all-the-values" title="Permalink to this headline">¶</a></h4>
-<p>To replace <strong>all</strong> of the values in an array with a single value, it is necessary to use brackets in which the indexes of all the dimensions have been removed.</p>
+<p>To replace <strong>all</strong> of the values in an array with a single value, it is necessary to use brackets in which the indices of all the dimensions have been removed.</p>
 <p>For example, imagine that we would like to reset all the values of <code class="docutils literal notranslate"><span class="pre">Tests</span></code> to zero.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Tests</span> <span class="pre">←</span> <span class="pre">0</span></code> would be <strong>wrong</strong>, because that would replace the matrix by a scalar.</p>
 <p>The correct solution is</p>
@@ -3555,7 +3555,7 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 </div>
 <p>Could you guess the value of <code class="docutils literal notranslate"><span class="pre">FindMe</span></code>?</p>
 <p><strong>Exercise 8</strong>:</p>
-<p>One creates a vector, and a set of indexes:</p>
+<p>One creates a vector, and a set of indices:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Source</span> <span class="kd">←</span> <span class="m">10</span> <span class="m">4</span> <span class="m">13</span> <span class="m">3</span> <span class="m">9</span> <span class="m">0</span> <span class="m">7</span> <span class="m">6</span> <span class="m">2</span> <span class="m">13</span> <span class="m">8</span> <span class="m">1</span> <span class="m">5</span>
