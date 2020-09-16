@@ -655,14 +655,7 @@
                 
   <p><strong>Notes &amp; questions:</strong></p>
 <ul class="simple">
-<li><p>we talked about splitting the huge .WS into smaller workspaces, one per chapter; we also talked about defining the data each time we are going to use it. We do this below <a class="reference external" href="#Definition-and-Examples">Definition and Examples</a> with the <code class="docutils literal notranslate"><span class="pre">Forecast</span></code> and <code class="docutils literal notranslate"><span class="pre">Actual</span></code> matrices and included a short remark afterwards or <a class="reference external" href="#Application-1">Application 1</a>. Does it look acceptable?</p></li>
-</ul>
-<p>(Re: above) I figure it might work for simple uniform numerical or character arrays, but if further down the road we need weirder arrays, it’ll become a mess. Also, if further down the road we use utility functions that were predefined in the .WS, what will we do with them? Define them with the user? Maybe we should stick with the .WS… Or maybe .WS/random definition for variables and separate files for each function?</p>
-<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">0÷0</span></code> and <code class="docutils literal notranslate"><span class="pre">0*0</span></code> are mentioned. would it make sense to discuss briefly why the results of these expressions are mathematically incorrect in the specialist’s section about <code class="docutils literal notranslate"><span class="pre">0÷0</span></code>?</p></li>
-<li><p>by the end of <a class="reference external" href="#Residue">Residue</a> I introduced dyadic <code class="docutils literal notranslate"><span class="pre">≡</span></code>, which flows right to the (new) section on dyadic <code class="docutils literal notranslate"><span class="pre">≡</span></code> and <code class="docutils literal notranslate"><span class="pre">≢</span></code>; does it look good there? then I moved monadic <code class="docutils literal notranslate"><span class="pre">≢≡</span></code> to the “processing nested arrays” section, cf. <a class="reference external" href="#Tally">Tally</a> and <a class="reference external" href="#Depth">Depth</a>. Accepting these changes would then mean refactoring the mention to <code class="docutils literal notranslate"><span class="pre">≡≢</span></code> in the later chapter on nested arrays.</p></li>
-<li><p>Originally, the book said that none of the six comparison functions had a monadic meaning. Now <code class="docutils literal notranslate"><span class="pre">≠</span></code> does. Should we fix the comment or just remove it altogether? (I removed it, it was in the end of the “monadic scalar functions” section)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">⊢</span></code> and <code class="docutils literal notranslate"><span class="pre">⊣</span></code> are so basic, I’ll include them here and make a note that they’ll become more useful when used in conjunction with operators and/or in tacit programming.</p></li>
 <li><p>The section about reduction had a warning about using <code class="docutils literal notranslate"><span class="pre">/</span></code> with non commutative functions, which I think is very pertinent. It just looks awkward in its original place, because it comes at the end of the subsection on reducing binary data (where we only used commutative functions) and before a couple other subsections where we only use commutative functions. I moved the warning to a small sub-section right before the “Application” sub-section, <a class="reference external" href="#Reduction-With-Non-Commutative-Functions">here</a>.</p></li>
 </ul>
 <p>(Re: above) this makes sense if we take into account there already exists a really small subsection that warns the user about reduction of nested arrays, in which the shape and type of the sub-arrays must be compatible for the reduction. This new subsection on the non-commutative reductions is even larger than this one, so I guess it makes sense to have both as sub-sections OR both as warnings, although I prefer it like this.</p>
@@ -2965,7 +2958,7 @@ June
 </div>
 <p>We can calculate totals along any of these 3 dimensions: years, lines and months.</p>
 <p>We specify the dimension (or <em><strong>Axis</strong></em>) between brackets after the <em>Reduction</em> symbol:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+/</span><span class="p">[</span><span class="n">Axis</span><span class="p">]</span> <span class="n">Prod</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="nv">Axis</span><span class="sr">]</span> <span class="nv">Prod</span>
 </pre></div>
 </div>
 <p>For example, suppose we want to calculate the total monthly production values over the 5 years. Years are represented by the 1st dimension of <code class="docutils literal notranslate"><span class="pre">Prod</span></code>, so we write:</p>
@@ -5754,42 +5747,42 @@ Fe2O3
 </div>
 <p><strong>Exercise</strong>:</p>
 <p>Can you evaluate the following expressions?</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>3 × 2 + 6 ≠ 3 × 2
-12 6 27 ⌊ 11 + ⍳3
-4 5 6 ⌈ 4 + 2 5 9 &gt; 1 6 8
-7 ⌊ 25 6 17 - (2 × 3) + 9 3 5
-((8 + 6) × 2 + 1) × 3 - 6 ÷ 3
-(⍴4⌈5) + 4⌈5
-1 ⊢ 2 ⊣ 3 ⊢ 4 ⊣ 5 ⊢ 6 ⊣ 7
-1 ⊣ 2 ⊢ 3 ⊣ 4 ⊢ 5 ⊣ 6 ⊢ 7
-1 2 3 ⊢ 4 5 6
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="o">×</span> <span class="m">2</span> <span class="o">+</span> <span class="m">6</span> <span class="o">≠</span> <span class="m">3</span> <span class="o">×</span> <span class="m">2</span>
+<span class="m">12</span> <span class="m">6</span> <span class="m">27</span> <span class="o">⌊</span> <span class="m">11</span> <span class="o">+</span> <span class="o">⍳</span><span class="m">3</span>
+<span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="o">⌈</span> <span class="m">4</span> <span class="o">+</span> <span class="m">2</span> <span class="m">5</span> <span class="m">9</span> <span class="o">&gt;</span> <span class="m">1</span> <span class="m">6</span> <span class="m">8</span>
+<span class="m">7</span> <span class="o">⌊</span> <span class="m">25</span> <span class="m">6</span> <span class="m">17</span> <span class="o">-</span> <span class="p">(</span><span class="m">2</span> <span class="o">×</span> <span class="m">3</span><span class="p">)</span> <span class="o">+</span> <span class="m">9</span> <span class="m">3</span> <span class="m">5</span>
+<span class="p">((</span><span class="m">8</span> <span class="o">+</span> <span class="m">6</span><span class="p">)</span> <span class="o">×</span> <span class="m">2</span> <span class="o">+</span> <span class="m">1</span><span class="p">)</span> <span class="o">×</span> <span class="m">3</span> <span class="o">-</span> <span class="m">6</span> <span class="o">÷</span> <span class="m">3</span>
+<span class="p">(</span><span class="o">⍴</span><span class="m">4</span><span class="o">⌈</span><span class="m">5</span><span class="p">)</span> <span class="o">+</span> <span class="m">4</span><span class="o">⌈</span><span class="m">5</span>
+<span class="m">1</span> <span class="o">⊢</span> <span class="m">2</span> <span class="o">⊣</span> <span class="m">3</span> <span class="o">⊢</span> <span class="m">4</span> <span class="o">⊣</span> <span class="m">5</span> <span class="o">⊢</span> <span class="m">6</span> <span class="o">⊣</span> <span class="m">7</span>
+<span class="m">1</span> <span class="o">⊣</span> <span class="m">2</span> <span class="o">⊢</span> <span class="m">3</span> <span class="o">⊣</span> <span class="m">4</span> <span class="o">⊢</span> <span class="m">5</span> <span class="o">⊣</span> <span class="m">6</span> <span class="o">⊢</span> <span class="m">7</span>
+<span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="o">⊢</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span>
 </pre></div>
 </div>
 <p><strong>Exercise</strong>:</p>
 <p>Try to evaluate the following expressions. <em>Be careful</em>: they are not as simple as might first appear!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="mi">2</span><span class="o">+</span><span class="mi">2</span> <span class="mi">2</span>
-<span class="mi">2</span><span class="o">+</span><span class="mi">2</span> <span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
-<span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
-<span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="m">2</span><span class="o">+</span><span class="m">2</span> <span class="m">2</span>
+<span class="m">2</span><span class="o">+</span><span class="m">2</span> <span class="m">2</span><span class="o">+</span><span class="m">2</span>
+<span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="o">,</span><span class="m">2</span><span class="o">+</span><span class="m">2</span>
+<span class="m">2</span><span class="o">,</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="o">,</span><span class="m">2</span>
 </pre></div>
 </div>
 <p><strong>Exercise</strong>:</p>
 <p>Given the vector <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">←</span> <span class="pre">8</span> <span class="pre">2</span> <span class="pre">7</span> <span class="pre">5</span></code>, compare the results obtained from the following sets of expressions:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1+⍴A
-⍴A+1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="o">+⍴</span><span class="nv">A</span>
+<span class="o">⍴</span><span class="nv">A</span><span class="o">+</span><span class="m">1</span>
 </pre></div>
 </div>
 <p>and</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1+⍳⍴A
-⍳¯1+⍴A
-⍳⍴A-1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="o">+⍳⍴</span><span class="nv">A</span>
+<span class="o">⍳</span><span class="m">¯1</span><span class="o">+⍴</span><span class="nv">A</span>
+<span class="o">⍳⍴</span><span class="nv">A</span><span class="o">-</span><span class="m">1</span>
 </pre></div>
 </div>
 <p><strong>Exercise</strong>:</p>
 <p>Using your knowledge of the order of evaluation in APL, re-write the following expressions without using parentheses.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>((⍳4)-1)⌈3
-7⌊(⍳9)⌈3
-1+((⍳5)=1 4 3 2 5)×5
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="o">⍳</span><span class="m">4</span><span class="p">)</span><span class="o">-</span><span class="m">1</span><span class="p">)</span><span class="o">⌈</span><span class="m">3</span>
+<span class="m">7</span><span class="o">⌊</span><span class="p">(</span><span class="o">⍳</span><span class="m">9</span><span class="p">)</span><span class="o">⌈</span><span class="m">3</span>
+<span class="m">1</span><span class="o">+</span><span class="p">((</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span><span class="o">=</span><span class="m">1</span> <span class="m">4</span> <span class="m">3</span> <span class="m">2</span> <span class="m">5</span><span class="p">)</span><span class="o">×</span><span class="m">5</span>
 </pre></div>
 </div>
 <p><strong>Exercise</strong>:</p>
@@ -5826,22 +5819,22 @@ Fe2O3
 </div>
 </div>
 <p>Evaluate the following expressions:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>G∨D
-~G∧D
-~G∨~D
-D∧~G
-G∧M∨D
-(~D)∧(~G)
-(M⌈G)=(M⌊D)
-(M⌊G)≠(M⌈D)
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">G</span><span class="o">∨</span><span class="nv">D</span>
+<span class="o">~</span><span class="nv">G</span><span class="o">∧</span><span class="nv">D</span>
+<span class="o">~</span><span class="nv">G</span><span class="o">∨~</span><span class="nv">D</span>
+<span class="nv">D</span><span class="o">∧~</span><span class="nv">G</span>
+<span class="nv">G</span><span class="o">∧</span><span class="nv">M</span><span class="o">∨</span><span class="nv">D</span>
+<span class="p">(</span><span class="o">~</span><span class="nv">D</span><span class="p">)</span><span class="o">∧</span><span class="p">(</span><span class="o">~</span><span class="nv">G</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">M</span><span class="o">⌈</span><span class="nv">G</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="nv">M</span><span class="o">⌊</span><span class="nv">D</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">M</span><span class="o">⌊</span><span class="nv">G</span><span class="p">)</span><span class="o">≠</span><span class="p">(</span><span class="nv">M</span><span class="o">⌈</span><span class="nv">D</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Exercise</strong>:</p>
 <p>Evaluate the following expressions:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0 &lt; 0 ≤ 0 = 0 ≥ 0 &gt; 0
-&#39;sugar&#39; ∊ &#39;salt&#39;
-11 ≠ &#39;11&#39;
-&#39;14&#39; ⍳ &#39;41&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="o">&lt;</span> <span class="m">0</span> <span class="o">≤</span> <span class="m">0</span> <span class="o">=</span> <span class="m">0</span> <span class="o">≥</span> <span class="m">0</span> <span class="o">&gt;</span> <span class="m">0</span>
+<span class="s1">&#39;sugar&#39;</span> <span class="o">∊</span> <span class="s1">&#39;salt&#39;</span>
+<span class="m">11</span> <span class="o">≠</span> <span class="s1">&#39;11&#39;</span>
+<span class="s1">&#39;14&#39;</span> <span class="o">⍳</span> <span class="s1">&#39;41&#39;</span>
 </pre></div>
 </div>
 <p><strong>Exercise</strong>:</p>
@@ -5867,27 +5860,27 @@ G∧M∨D
 </div>
 <p><strong>Exercise</strong>:</p>
 <p>We have conducted some experiments on a variable <code class="docutils literal notranslate"><span class="pre">Z</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      2 ⍴ Z
-1 7
-      +⌿ Z
-20
-      Z = 9
-0
-0
-1
-0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>      <span class="m">2</span> <span class="o">⍴</span> <span class="nv">Z</span>
+<span class="m">1</span> <span class="m">7</span>
+      <span class="o">+</span><span class="na">⌿</span> <span class="nv">Z</span>
+<span class="m">20</span>
+      <span class="nv">Z</span> <span class="o">=</span> <span class="m">9</span>
+<span class="m">0</span>
+<span class="m">0</span>
+<span class="m">1</span>
+<span class="m">0</span>
 </pre></div>
 </div>
 <p>What is the value of <code class="docutils literal notranslate"><span class="pre">Z</span></code>?</p>
 <p><strong>Exercise</strong>:</p>
 <p>We have conducted some experiments on a variable <code class="docutils literal notranslate"><span class="pre">Z</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">Z</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span>
-<span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
-      <span class="o">+/</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">Z</span>
-<span class="mi">20</span> <span class="mi">6</span>
-      <span class="o">+/</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Z</span>
-<span class="mi">8</span> <span class="mi">7</span> <span class="mi">6</span> <span class="mi">5</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>      <span class="nv">Z</span> <span class="o">=</span> <span class="m">0</span>
+<span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span>
+<span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span>
+      <span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span> <span class="nv">Z</span>
+<span class="m">20</span> <span class="m">6</span>
+      <span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span> <span class="nv">Z</span>
+<span class="m">8</span> <span class="m">7</span> <span class="m">6</span> <span class="m">5</span>
 </pre></div>
 </div>
 <p>What is the value of <code class="docutils literal notranslate"><span class="pre">Z</span></code>?</p>
@@ -5934,20 +5927,20 @@ G∧M∨D
 <p>Can you tell if/how they are different?</p>
 <p><strong>Exercise</strong>:</p>
 <p>Can you compute the <em>Depth</em> (<code class="docutils literal notranslate"><span class="pre">≡</span></code>) of these arrays:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>42
-42 41 40 39
-2 2⍴42 41 40 39
-1 (2 3) (4 5)
-(1 2) (3 4 5) (6 7 8 9)
-1 (2 (3 (4 (5 (6 7)))))
-(2 2⍴4) (2 2⍴⍳47) (3 6⍴⍳18)
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">42</span>
+<span class="m">42</span> <span class="m">41</span> <span class="m">40</span> <span class="m">39</span>
+<span class="m">2</span> <span class="m">2</span><span class="o">⍴</span><span class="m">42</span> <span class="m">41</span> <span class="m">40</span> <span class="m">39</span>
+<span class="m">1</span> <span class="p">(</span><span class="m">2</span> <span class="m">3</span><span class="p">)</span> <span class="p">(</span><span class="m">4</span> <span class="m">5</span><span class="p">)</span>
+<span class="p">(</span><span class="m">1</span> <span class="m">2</span><span class="p">)</span> <span class="p">(</span><span class="m">3</span> <span class="m">4</span> <span class="m">5</span><span class="p">)</span> <span class="p">(</span><span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span><span class="p">)</span>
+<span class="m">1</span> <span class="p">(</span><span class="m">2</span> <span class="p">(</span><span class="m">3</span> <span class="p">(</span><span class="m">4</span> <span class="p">(</span><span class="m">5</span> <span class="p">(</span><span class="m">6</span> <span class="m">7</span><span class="p">)))))</span>
+<span class="p">(</span><span class="m">2</span> <span class="m">2</span><span class="o">⍴</span><span class="m">4</span><span class="p">)</span> <span class="p">(</span><span class="m">2</span> <span class="m">2</span><span class="o">⍴⍳</span><span class="m">47</span><span class="p">)</span> <span class="p">(</span><span class="m">3</span> <span class="m">6</span><span class="o">⍴⍳</span><span class="m">18</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Exercise</strong>:</p>
 <p>In a vector, we would like to replace all the values that are smaller than 20 by 20, and replace all the values that are greater than 30 by 30. How can we do that?</p>
 <p><strong>Exercise</strong>:</p>
 <p>The following 6 expressions cannot be executed, but instead generate error messages; can you say why?</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>3+(5-(6+2)×4
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>3+(5-(6+2)×4
 121÷(⍳4)-3
 (¯X+5)*2
 ⍴4 5 6+2 3-1
