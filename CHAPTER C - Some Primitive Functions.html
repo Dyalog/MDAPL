@@ -247,13 +247,13 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#negative">
-       3.4.1.2. Negative
+      <a class="reference internal nav-link" href="#negate">
+       3.4.1.2. Negate
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#signum">
-       3.4.1.3. Signum
+      <a class="reference internal nav-link" href="#direction">
+       3.4.1.3. Direction
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
@@ -269,18 +269,18 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#magnitude-absolute-value">
+       3.4.2.1. Magnitude (Absolute Value)
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#exponential">
-       3.4.2.1. Exponential
+       3.4.2.2. Exponential
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#floor-and-ceiling">
-       3.4.2.2. Floor and Ceiling
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#magnitude-absolute-value">
-       3.4.2.3. Magnitude (Absolute Value)
+       3.4.2.3. Floor and Ceiling
       </a>
      </li>
     </ul>
@@ -354,8 +354,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reduction">
-   3.8. Reduction
+  <a class="reference internal nav-link" href="#reduce">
+   3.8. Reduce
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -379,8 +379,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#reduction-with-non-commutative-functions">
-     3.8.5. Reduction With Non Commutative Functions
+    <a class="reference internal nav-link" href="#reduction-with-noncommutative-functions">
+     3.8.5. Reduction With Noncommutative Functions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -440,8 +440,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concatenation">
-   3.11. Concatenation
+  <a class="reference internal nav-link" href="#concatenate">
+   3.11. Concatenate
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -472,18 +472,18 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#replication">
-   3.12. Replication
+  <a class="reference internal nav-link" href="#replicate">
+   3.12. Replicate
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#basic-approach-compression">
-     3.12.1. Basic Approach: Compression
+    <a class="reference internal nav-link" href="#basic-approach-compress">
+     3.12.1. Basic Approach: Compress
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#id3">
-     3.12.2. Replication
+     3.12.2. Replicate
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -754,8 +754,8 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 3 4
 </span></div></div>
 </div>
-<p>There is, however, a major difference. In traditional mathematics, the symbol representing a monadic function is sometimes placed before its argument (as the <span class="math notranslate nohighlight">\(-\)</span> in <span class="math notranslate nohighlight">\(a = -y\)</span>), sometimes after it (as the <span class="math notranslate nohighlight">\(!\)</span> in <span class="math notranslate nohighlight">\(a = y!\)</span>), sometimes on both sides (as the <span class="math notranslate nohighlight">\(|\cdot|\)</span> in <span class="math notranslate nohighlight">\(a = |y|\)</span>), and some other conventions may be found.</p>
-<p>In APL, the symbol representing a monadic functions is <strong>always</strong> placed before its argument, as the <code class="docutils literal notranslate"><span class="pre">⍴</span></code> in <code class="docutils literal notranslate"><span class="pre">⍴Var</span></code>.</p>
+<p>There is, however, a major difference. In traditional mathematics, the symbol representing a monadic function is sometimes placed before its argument (as the <span class="math notranslate nohighlight">\(-\)</span> in <span class="math notranslate nohighlight">\(a = \color{red}{-}y\)</span>), sometimes after it (as the <span class="math notranslate nohighlight">\(!\)</span> in <span class="math notranslate nohighlight">\(a = y\color{red}{!}\)</span>), sometimes on both sides (as the <span class="math notranslate nohighlight">\(|\cdot|\)</span> in <span class="math notranslate nohighlight">\(a = \color{red}|y\color{red}|\)</span>), and some other conventions may be found.</p>
+<p>In APL, the symbol representing a monadic function is <strong>always</strong> placed before its argument, as the <code class="docutils literal notranslate"><span class="pre">⍴</span></code> in <code class="docutils literal notranslate"><span class="pre">⍴Var</span></code>.</p>
 </div>
 <div class="section" id="some-scalar-dyadic-functions">
 <h2><span class="section-number">3.2. </span>Some Scalar Dyadic Functions<a class="headerlink" href="#some-scalar-dyadic-functions" title="Permalink to this headline">¶</a></h2>
@@ -953,6 +953,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">0J1
 </span></div></div>
 </div>
+<p>The subject of “complex numbers” pertains to mathematics, but Dyalog APL has some nice features related to complex numbers and so we will dive deeper into them later on.</p>
 </div>
 <div class="section" id="maximum-minimum">
 <h3><span class="section-number">3.2.4. </span>Maximum &amp; Minimum<a class="headerlink" href="#maximum-minimum" title="Permalink to this headline">¶</a></h3>
@@ -1302,7 +1303,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="section" id="order-of-evaluation">
 <h2><span class="section-number">3.3. </span>Order of Evaluation<a class="headerlink" href="#order-of-evaluation" title="Permalink to this headline">¶</a></h2>
 <p>Like other programming languages, APL allows the programmer to use parentheses to specify the order of evaluation of a complex expression. Thus the expression <code class="docutils literal notranslate"><span class="pre">5×(6+7)</span></code> means “add 6 to 7, then multiply by 5”. In the absence of parentheses, most other programming languages employ rules of precedence to decide how a complex expression such as <code class="docutils literal notranslate"><span class="pre">5×6+7</span></code> would be evaluated. Typically, the result will be 37 because multiplication is given precedence over addition and is performed first.</p>
-<p>When APL was designed, it was decided that the sheer number of primitive functions meant that a set of precedence rules would be impossibly complex to remember and apply. Instead, APL follows the traditional algebraic conventions.</p>
+<p>When APL was designed, it was decided that the sheer number of primitive functions meant that a set of precedence rules would be impossibly complex to remember and apply.</p>
 <p>The solution adopted in APL is simple, and consistent with the rules we apply to calculate complex expressions in traditional algebra. Suppose, for example, that we need to calculate</p>
 <div class="math notranslate nohighlight">
 \[\log \sin \sqrt {x ÷ 3}\]</div>
@@ -1604,8 +1605,8 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </span></div></div>
 </div>
 </div>
-<div class="section" id="negative">
-<h4><span class="section-number">3.4.1.2. </span>Negative<a class="headerlink" href="#negative" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="negate">
+<h4><span class="section-number">3.4.1.2. </span>Negate<a class="headerlink" href="#negate" title="Permalink to this headline">¶</a></h4>
 <p>The Minus sign is the <em><strong>Negative</strong></em> function. It returns the negation of its argument:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1618,9 +1619,9 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </span></div></div>
 </div>
 </div>
-<div class="section" id="signum">
-<h4><span class="section-number">3.4.1.3. </span>Signum<a class="headerlink" href="#signum" title="Permalink to this headline">¶</a></h4>
-<p>The Multiply symbol used monadically is the <em><strong>Signum</strong></em> function. It tells us the sign of its argument, using the following convention:</p>
+<div class="section" id="direction">
+<h4><span class="section-number">3.4.1.3. </span>Direction<a class="headerlink" href="#direction" title="Permalink to this headline">¶</a></h4>
+<p>The Multiply symbol used monadically is the <em><strong>Direction</strong></em> function. For real numbers, it tells us the sign of its argument, using the following convention:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:right head"><p>Result</p></th>
@@ -1650,6 +1651,39 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1 1 ¯1 0 ¯1
 </span></div></div>
 </div>
+<p>But <em>Direction</em> also applies to complex numbers, and does so by extending the idea above. The <em>Direction</em> of a number is that same number re-scaled so that it has magnitude (“length”) 1.</p>
+<p>Let us take the complex number <code class="docutils literal notranslate"><span class="pre">3J4</span></code> as an example. If we look at the figure below, we see that the 3 is represented by the bottom side of the triangle and the 4 by the right side of the triangle. The little arrow that goes from the lower-left to the upper-right vertex of the triangle represents the direction in which <code class="docutils literal notranslate"><span class="pre">3J4</span></code> points.</p>
+<div class="figure align-default" id="direction-right-triangle">
+<img alt="_images/Direction_Right_Triangle.png" src="_images/Direction_Right_Triangle.png" />
+<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">A right triangle with sides 3, 4 and 5 representing the complex number <code class="docutils literal notranslate"><span class="pre">3J4</span></code></span><a class="headerlink" href="#direction-right-triangle" title="Permalink to this image">¶</a></p>
+</div>
+<p>We can also see that said arrow has length 5, as the Pythagorean theorem tells us:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="m">3</span><span class="o">*</span><span class="m">2</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="m">4</span><span class="o">*</span><span class="m">2</span><span class="p">))</span><span class="o">*</span><span class="m">0.5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5
+</span></div></div>
+</div>
+<p>Now <code class="docutils literal notranslate"><span class="pre">×3J4</span></code> is the complex number associated with a triangle that is similar to the one above, but with the arrow measuring 1, exactly like the smaller triangle inside the larger triangle in the figure below:</p>
+<div class="figure align-default" id="direction-right-triangle-scaled">
+<img alt="_images/Direction_Right_Triangle_Scaled.png" src="_images/Direction_Right_Triangle_Scaled.png" />
+<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Scaled down version of the <code class="docutils literal notranslate"><span class="pre">3J4</span></code> triangle</span><a class="headerlink" href="#direction-right-triangle-scaled" title="Permalink to this image">¶</a></p>
+</div>
+<p>We only have to figure out the lengths of the other two sides:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">×</span> <span class="m">3J4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0.6J0.8
+</span></div></div>
+</div>
 </div>
 <div class="section" id="reciprocal">
 <h4><span class="section-number">3.4.1.4. </span>Reciprocal<a class="headerlink" href="#reciprocal" title="Permalink to this headline">¶</a></h4>
@@ -1668,8 +1702,51 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <div class="section" id="other-scalar-monadic-functions">
 <h3><span class="section-number">3.4.2. </span>Other Scalar Monadic Functions<a class="headerlink" href="#other-scalar-monadic-functions" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="magnitude-absolute-value">
+<h4><span class="section-number">3.4.2.1. </span>Magnitude (Absolute Value)<a class="headerlink" href="#magnitude-absolute-value" title="Permalink to this headline">¶</a></h4>
+<p>The monadic stile represents the absolute (unsigned) value of its argument, if its argument only contains real numbers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">V</span> <span class="kd">←</span> <span class="m">29.2</span> <span class="m">49.3</span> <span class="m">¯14.8</span> <span class="m">0</span> <span class="m">¯37.2</span>
+<span class="o">|</span><span class="nv">V</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">29.2 49.3 14.8 0 37.2
+</span></div></div>
+</div>
+<p>Like monadic <code class="docutils literal notranslate"><span class="pre">×</span></code>, monadic <code class="docutils literal notranslate"><span class="pre">|</span></code> generalises nicely for complex numbers. Take the complex number <code class="docutils literal notranslate"><span class="pre">12J5</span></code> and its representation as a right triangle in the figure below.</p>
+<div class="figure align-default" id="magnitude-right-triangle">
+<img alt="_images/Magnitude_Right_Triangle.png" src="_images/Magnitude_Right_Triangle.png" />
+<p class="caption"><span class="caption-number">Fig. 3.3 </span><span class="caption-text">The complex number <code class="docutils literal notranslate"><span class="pre">12J5</span></code> represented by a right triangle</span><a class="headerlink" href="#magnitude-right-triangle" title="Permalink to this image">¶</a></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">|12J5</span></code> is the length that is missing in the figure. In this case, it is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">|</span><span class="m">12J5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">13
+</span></div></div>
+</div>
+<p>From a geometrical point of view it becomes clear that <code class="docutils literal notranslate"><span class="pre">×</span></code> and <code class="docutils literal notranslate"><span class="pre">|</span></code> are related for any number <code class="docutils literal notranslate"><span class="pre">V</span></code>: if we take the small triangle (<code class="docutils literal notranslate"><span class="pre">×V</span></code>) and we multiply it by the length of the larger side (<code class="docutils literal notranslate"><span class="pre">|V</span></code>) then we get the original triangle, which represents the original (complex) number:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">V</span> <span class="kd">←</span> <span class="m">0</span> <span class="m">1</span> <span class="m">¯1</span> <span class="m">2.3</span> <span class="m">¯4.6</span> <span class="m">0J1</span> <span class="m">3J¯4.2</span>
+<span class="nv">V</span><span class="o">≡</span><span class="p">(</span><span class="o">×</span><span class="nv">V</span><span class="p">)</span><span class="o">×|</span><span class="nv">V</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+</div>
 <div class="section" id="exponential">
-<h4><span class="section-number">3.4.2.1. </span>Exponential<a class="headerlink" href="#exponential" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.4.2.2. </span>Exponential<a class="headerlink" href="#exponential" title="Permalink to this headline">¶</a></h4>
 <p>The expression <code class="docutils literal notranslate"><span class="pre">*N</span></code> gives <span class="math notranslate nohighlight">\(e^N\)</span>, where <span class="math notranslate nohighlight">\(e\)</span> is the base of the natural logarithm, approximately <span class="math notranslate nohighlight">\(2.71828\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1693,7 +1770,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 </div>
 <div class="section" id="floor-and-ceiling">
-<h4><span class="section-number">3.4.2.2. </span>Floor and Ceiling<a class="headerlink" href="#floor-and-ceiling" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">3.4.2.3. </span>Floor and Ceiling<a class="headerlink" href="#floor-and-ceiling" title="Permalink to this headline">¶</a></h4>
 <p><em><strong>Floor</strong></em> (<code class="docutils literal notranslate"><span class="pre">⌊</span></code>) rounds its argument down, while <em><strong>Ceiling</strong></em> (<code class="docutils literal notranslate"><span class="pre">⌈</span></code>) rounds its argument up, to the nearest smaller or larger integer value, respectively:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1738,33 +1815,6 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </span></div></div>
 </div>
 <p>The results are the same, except when the decimal part of a number if 0.5. For example, 12.5 above gets rounded to 13 or 12 depending on which method is used.</p>
-</div>
-<div class="section" id="magnitude-absolute-value">
-<h4><span class="section-number">3.4.2.3. </span>Magnitude (Absolute Value)<a class="headerlink" href="#magnitude-absolute-value" title="Permalink to this headline">¶</a></h4>
-<p>The monadic stile represents the absolute (unsigned) value of its argument, as shown:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">V</span> <span class="kd">←</span> <span class="m">29.2</span> <span class="m">49.3</span> <span class="m">¯14.8</span> <span class="m">0</span> <span class="m">¯37.2</span>
-<span class="o">|</span><span class="nv">V</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">29.2 49.3 14.8 0 37.2
-</span></div></div>
-</div>
-<p>Monadic <code class="docutils literal notranslate"><span class="pre">×</span></code> and monadic <code class="docutils literal notranslate"><span class="pre">|</span></code> are related:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">|</span><span class="nv">V</span><span class="p">)</span> <span class="o">≡</span> <span class="p">(</span><span class="nv">V</span><span class="o">××</span><span class="nv">V</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
-</span></div></div>
-</div>
-<p>The above equality, which holds for any numeric array <code class="docutils literal notranslate"><span class="pre">V</span></code>, tells us that the magnitude of a number is equal to the number multiplied by its signum.</p>
 </div>
 </div>
 </div>
@@ -1857,7 +1907,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 4 5 6
 </span></div></div>
 </div>
-<p>These functions become even more useful if we take a look at their dyadic usages (explained next), combined with the power of operators or tacit programming (explained in detail in future chapters).</p>
+<p>These functions become even more useful combined with the power of operators or tacit programming (explained in detail in future chapters), or if we take a look at their dyadic usages (explained next).</p>
 </div>
 <div class="section" id="dyadic-usage">
 <h3><span class="section-number">3.5.2. </span>Dyadic Usage<a class="headerlink" href="#dyadic-usage" title="Permalink to this headline">¶</a></h3>
@@ -2049,7 +2099,7 @@ June
 </div>
 <p><em><strong>Xor</strong></em> is an acronym for <em><strong>eXclusive Or</strong></em>. It returns the result 1 if one of the arguments is equal to 1, but not if both are equal to 1.</p>
 <p>In automation, the same function is generally represented by a circled Plus sign, like <span class="math notranslate nohighlight">\(\oplus\)</span>.</p>
-<p>APL does not need a different symbol for the function, because <em><strong>Xor</strong></em> is the same as on of the comparison functions we have already met: <code class="docutils literal notranslate"><span class="pre">≠</span></code></p>
+<p>APL does not need a different symbol for the function, because <em><strong>Xor</strong></em> is the same as one of the comparison functions we have already met: <code class="docutils literal notranslate"><span class="pre">≠</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="o">≠</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span>
@@ -2198,7 +2248,7 @@ June
 </span></div></div>
 </div>
 <p>The item <code class="docutils literal notranslate"><span class="pre">(6</span> <span class="pre">2)</span></code> of <code class="docutils literal notranslate"><span class="pre">What</span></code> is also an item of <code class="docutils literal notranslate"><span class="pre">Children</span></code>, hence <em>Membership</em> gives the answer 1, and the same is true for the value 3.</p>
-<p>In contrast 19 is only an item of the fifth item of <code class="docutils literal notranslate"><span class="pre">Children</span></code>, it is not an <em>entire</em> item of <code class="docutils literal notranslate"><span class="pre">Children</span></code>. Because a non-pervasive function processes each item as a whole, 19 is not the same as (19 14), so the answer is 0. The same goes for (33 26), which is only part of the second item of <code class="docutils literal notranslate"><span class="pre">Children</span></code>.</p>
+<p>In contrast, 19 is only an item of the fifth item of <code class="docutils literal notranslate"><span class="pre">Children</span></code>, it is not an <em>entire</em> item of <code class="docutils literal notranslate"><span class="pre">Children</span></code>. Because a non-pervasive function processes each item as a whole, 19 is not the same as (19 14), so the answer is 0. The same goes for (33 26), which is only part of the second item of <code class="docutils literal notranslate"><span class="pre">Children</span></code>.</p>
 </div>
 <div class="section" id="be-careful-with-shape-type-compatibility">
 <h3><span class="section-number">3.7.2. </span>Be Careful With Shape/Type Compatibility<a class="headerlink" href="#be-careful-with-shape-type-compatibility" title="Permalink to this headline">¶</a></h3>
@@ -2330,6 +2380,76 @@ June
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">2
 </span></div></div>
 </div>
+<p>For scalars, <em>Tally</em> returns 1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≢</span> <span class="m">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≢</span> <span class="s1">&#39;3&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<p>In case you don’t think it makes sense to have the tally of a scalar return 1, consider the sequence below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≢</span> <span class="s1">&#39;abcd&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">4
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≢</span> <span class="s1">&#39;abc&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">3
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≢</span> <span class="s1">&#39;ab&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">2
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="c1">⍝≢ &#39;a&#39;    ⍝ what should this give??</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≢</span> <span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0
+</span></div></div>
+</div>
+<p>Putting things this way, it sure looks reasonable that <code class="docutils literal notranslate"><span class="pre">≢</span> <span class="pre">'a'</span></code> give 1, right?</p>
 </div>
 <div class="section" id="depth">
 <h3><span class="section-number">3.7.4. </span>Depth<a class="headerlink" href="#depth" title="Permalink to this headline">¶</a></h3>
@@ -2414,8 +2534,8 @@ June
 </div>
 </div>
 </div>
-<div class="section" id="reduction">
-<h2><span class="section-number">3.8. </span>Reduction<a class="headerlink" href="#reduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="reduce">
+<h2><span class="section-number">3.8. </span>Reduce<a class="headerlink" href="#reduce" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="presentation">
 <h3><span class="section-number">3.8.1. </span>Presentation<a class="headerlink" href="#presentation" title="Permalink to this headline">¶</a></h3>
 <p>A few pages ago we calculated the costs of some purchased goods:</p>
@@ -2702,9 +2822,9 @@ June
 </div>
 </div>
 </div>
-<div class="section" id="reduction-with-non-commutative-functions">
-<h3><span class="section-number">3.8.5. </span>Reduction With Non Commutative Functions<a class="headerlink" href="#reduction-with-non-commutative-functions" title="Permalink to this headline">¶</a></h3>
-<p>Another thing to be careful about is the use of reduction with non commutative functions, like <code class="docutils literal notranslate"><span class="pre">-</span></code> or <code class="docutils literal notranslate"><span class="pre">÷</span></code>. Reducing an array by such a function yields results which may be counter-intuitive, but which may nevertheless be useful in a number of applications.</p>
+<div class="section" id="reduction-with-noncommutative-functions">
+<h3><span class="section-number">3.8.5. </span>Reduction With Noncommutative Functions<a class="headerlink" href="#reduction-with-noncommutative-functions" title="Permalink to this headline">¶</a></h3>
+<p>Another thing to be careful about is the use of reduction with noncommutative functions, like <code class="docutils literal notranslate"><span class="pre">-</span></code> or <code class="docutils literal notranslate"><span class="pre">÷</span></code>. Reducing an array by such a function yields results which may be counter-intuitive, but which may nevertheless be useful in a number of applications.</p>
 <p>For example, remember that</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2928,9 +3048,9 @@ June
 <p>We have seen the result of applying reduction to vectors, but what about matrices and higher rank arrays?</p>
 <p>As an example, let us recall the array <code class="docutils literal notranslate"><span class="pre">Prod</span></code>. Its three dimensions represent respectively:</p>
 <ol class="simple">
-<li><p>5 years;</p></li>
-<li><p>2 assembly lines;</p></li>
-<li><p>12 months.</p></li>
+<li><p>  5 years;</p></li>
+<li><p>  2 assembly lines;</p></li>
+<li><p>  12 months.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2957,7 +3077,7 @@ June
 </span></div></div>
 </div>
 <p>We can calculate totals along any of these 3 dimensions: years, lines and months.</p>
-<p>We specify the dimension (or <em><strong>Axis</strong></em>) between brackets after the <em>Reduction</em> symbol:</p>
+<p>We specify the dimension (or <em><strong>Axis</strong></em>) between brackets after the <em>Reduce</em> symbol:</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="nv">Axis</span><span class="sr">]</span> <span class="nv">Prod</span>
 </pre></div>
 </div>
@@ -3012,7 +3132,7 @@ June
 <p>The dimension specified within brackets is the axis along which the function is applied.</p>
 <p>This produces a derived function, and for this reason, the pair of <em>Axis</em> brackets is often called the <em><strong>Axis Operator</strong></em>.</p>
 <p>The syntax for <em>Axis</em> does not quite follow the general syntax for operators, but it shares all other properties with genuine operators. <em>Axis</em> takes a function as its left operand (the derived function <code class="docutils literal notranslate"><span class="pre">+/</span></code> in the last example above), the dimension specification as its “right operand” (3 in the example), and produces a derived function, which is applied to <code class="docutils literal notranslate"><span class="pre">Prod</span></code> to calculate the annual sums.</p>
-<p>Viewed as an operator <em>Axis</em> is therefore dyadic. It is, however, important to emphasise that its “right” argument is not <code class="docutils literal notranslate"><span class="pre">Prod</span></code>, it is the expression within the brackets. This is the first example of an operator that takes an array as an operand. We will find some more as we explore operators later on.</p>
+<p>Viewed as an operator <em>Axis</em> is therefore dyadic. It is, however, important to emphasise that its “right” operand is not <code class="docutils literal notranslate"><span class="pre">Prod</span></code>, it is the expression within the brackets. This is the first example of an operator that takes an array as an operand. We will find some more as we explore operators later on.</p>
 </div>
 <div class="section" id="id1">
 <h4><span class="section-number">3.9.1.3. </span>Processing Arrays<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
@@ -3105,11 +3225,11 @@ June
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">5 2
 </span></div></div>
 </div>
-<p>You can see that <em>Reduction</em> of a 3-D array gives a 2-D array, in which the summed dimension has “disappeared”. This is the origin of the term “<em>Reduction</em>”; it <em>reduces</em> the <em>rank</em> of the array.</p>
+<p>You can see that <em>Reduction</em> of a 3-D array gives a 2-D array, in which the summed dimension has “disappeared”. This is the origin of the term “<em>Reduce</em>”; it <em>reduces</em> the <em>rank</em> of the array.</p>
 <p>This rule will help you predict the dimensions of the result of a reduction.</p>
 <div class="tip admonition">
 <p class="admonition-title">Rule</p>
-<p>When <em><strong>Reduction</strong></em> is applied along the Nth dimension of an array, the shape of the result is the same shape of the array, but without its Nth item.</p>
+<p>When <em><strong>Reduce</strong></em> is applied along the Nth dimension of an array, the shape of the result is the same shape of the array, but without its Nth item.</p>
 <p>The <em><strong>Rank</strong></em> of the result is 1 less than the rank of the original array.</p>
 </div>
 <p>Whenever you want to calculate the sum along a particular dimension of an array, think of the dimensions in terms of concrete things: years, lines, months, etc. This should help you.</p>
@@ -3231,9 +3351,9 @@ June
 <p>The word <code class="docutils literal notranslate"><span class="pre">Average</span></code> can now be used in any APL expression. We have enriched the vocabulary which can be used to process data in this workspace (provided that we save it).</p>
 <p>Be patient: we shall see many other possibilities in the “User Defined Functions” chapter.</p>
 </div>
-<div class="section" id="concatenation">
-<h2><span class="section-number">3.11. </span>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this headline">¶</a></h2>
-<p><em><strong>Concatenation</strong></em> is a dyadic function which joins two arrays together. It is represented by comma (<code class="docutils literal notranslate"><span class="pre">,</span></code>). The function name is normally abbreviated to <em><strong>Catenate</strong></em>, and we will use both terms.</p>
+<div class="section" id="concatenate">
+<h2><span class="section-number">3.11. </span>Concatenate<a class="headerlink" href="#concatenate" title="Permalink to this headline">¶</a></h2>
+<p><em><strong>Concatenate</strong></em> is a dyadic function which joins two arrays together. It is represented by comma (<code class="docutils literal notranslate"><span class="pre">,</span></code>). The function name is normally abbreviated to <em><strong>Catenate</strong></em>, and we will use both terms.</p>
 <div class="section" id="concatenating-vectors">
 <h3><span class="section-number">3.11.1. </span>Concatenating Vectors<a class="headerlink" href="#concatenating-vectors" title="Permalink to this headline">¶</a></h3>
 <p><em>Catenate</em> is easy to understand:</p>
@@ -3354,14 +3474,14 @@ CCC
 </ul>
 <div class="figure align-default" id="vertical-concatenation-ab">
 <img alt="_images/Vertical_Concatenation_AB.png" src="_images/Vertical_Concatenation_AB.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Matrices <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> concatenated together vertically</span><a class="headerlink" href="#vertical-concatenation-ab" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.4 </span><span class="caption-text">Matrices <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> concatenated together vertically</span><a class="headerlink" href="#vertical-concatenation-ab" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p>and the horizontal concatenation of <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code>:</p></li>
 </ul>
 <div class="figure align-default" id="horizontal-concatenation-ac">
 <img alt="_images/Horizontal_Concatenation_AC.png" src="_images/Horizontal_Concatenation_AC.png" />
-<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Matrices <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code> concatenated together horizontally</span><a class="headerlink" href="#horizontal-concatenation-ac" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.5 </span><span class="caption-text">Matrices <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code> concatenated together horizontally</span><a class="headerlink" href="#horizontal-concatenation-ac" title="Permalink to this image">¶</a></p>
 </div>
 <p>It is not possible to concatenate <code class="docutils literal notranslate"><span class="pre">B</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code> because none of their dimensions are compatible.</p>
 <p>To concatenate vertically, we want the two matrices to be stacked on top of each other, creating a matrix with more <em>rows</em>, i.e. we want to create a matrix with a larger 1st dimension:</p>
@@ -3444,7 +3564,7 @@ CCCAAAA
 </span></div></div>
 </div>
 <p>puts <code class="docutils literal notranslate"><span class="pre">C</span></code> to the left of <code class="docutils literal notranslate"><span class="pre">A</span></code> instead.</p>
-<p>In the same way as for <em>Reduction</em>, the <em>Axis</em> operator indicates which dimension will change during the operation, as we can see by inspecting the shapes of <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code> and the stacked matrices:</p>
+<p>In the same way as for <em>Reduce</em>, the <em>Axis</em> operator indicates which dimension will change during the operation, as we can see by inspecting the shapes of <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code>, <code class="docutils literal notranslate"><span class="pre">C</span></code> and the stacked matrices:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">A</span>
@@ -3879,10 +3999,10 @@ BBBB
 <p>which can be computed by a faster method than the 2 steps above.</p>
 </div>
 </div>
-<div class="section" id="replication">
-<h2><span class="section-number">3.12. </span>Replication<a class="headerlink" href="#replication" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="basic-approach-compression">
-<h3><span class="section-number">3.12.1. </span>Basic Approach: Compression<a class="headerlink" href="#basic-approach-compression" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="replicate">
+<h2><span class="section-number">3.12. </span>Replicate<a class="headerlink" href="#replicate" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="basic-approach-compress">
+<h3><span class="section-number">3.12.1. </span>Basic Approach: Compress<a class="headerlink" href="#basic-approach-compress" title="Permalink to this headline">¶</a></h3>
 <p>To extract scattered values from a vector, we can use indexing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3894,7 +4014,7 @@ BBBB
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">85 96 82
 </span></div></div>
 </div>
-<p>We can also use a new function named <em><strong>Compression</strong></em> (or <em>Compress</em>). It takes a Boolean vector as its left argument, and any array of appropriate shape as its right argument. The items of the right argument which match the 1s in the left argument are preserved, whereas those which match the 0s are removed. It acts like a mask or a filter:</p>
+<p>We can also use a new function named <em><strong>Compress</strong></em>. It takes a Boolean vector as its left argument, and any array of appropriate shape as its right argument. The items of the right argument which match the 1s in the left argument are preserved, whereas those which match the 0s are removed. It acts like a mask or a filter:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="na">/</span> <span class="m">42</span> <span class="m">15</span> <span class="m">79</span> <span class="m">66</span>
@@ -3915,7 +4035,7 @@ BBBB
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">Duck
 </span></div></div>
 </div>
-<p>This is extremely useful, because we can use <em>Compression</em> to select items which match a given condition.</p>
+<p>This is extremely useful, because we can use <em>Compress</em> to select items which match a given condition.</p>
 <p>For example, let us extract from <code class="docutils literal notranslate"><span class="pre">Contents</span></code> the values which are greater than 80.</p>
 <p>The Boolean vector for the left argument is obtained by <code class="docutils literal notranslate"><span class="pre">Contents&gt;80</span></code>, and the selection is made by:</p>
 <div class="cell docutils container">
@@ -3966,7 +4086,7 @@ FeO
 </span></div></div>
 </div>
 <p>If we use <code class="docutils literal notranslate"><span class="pre">/[2]</span></code> we are compressing the 2nd dimension of <code class="docutils literal notranslate"><span class="pre">Chemistry</span></code>, hence selecting three columns. In this example columns 3 and 5 have been removed.</p>
-<p><em>Compression</em> is an excellent tool which allows you to:</p>
+<p><em>Compress</em> is an excellent tool which allows you to:</p>
 <ul class="simple">
 <li><p>extract some useful items from a variable;</p></li>
 <li><p>remove some unwanted items from a variable, which is the same thing.</p></li>
@@ -4029,8 +4149,8 @@ FeO
 <p>However this is an unnecessary complication that wastes memory and processing time, compared to the straightforward selection shown above.</p>
 </div>
 <div class="section" id="id3">
-<h3><span class="section-number">3.12.2. </span>Replication<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p>In fact, <em>Compression</em> is just a special case of a more comprehensive function named <em><strong>Replication</strong></em> or <em><strong>Replicate</strong></em>. Its left argument can be any vector of integer values, each of which produces the following result:</p>
+<h3><span class="section-number">3.12.2. </span>Replicate<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>In fact, <em>Compress</em> is just a special case of a more comprehensive function named <em><strong>Replicate</strong></em>. Its left argument can be any vector of integer values, each of which produces the following result:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>Signum of the left item</p></th>
@@ -4097,7 +4217,7 @@ FeO
 </div>
 <div class="section" id="scalar-left-argument">
 <h3><span class="section-number">3.12.3. </span>Scalar Left Argument<a class="headerlink" href="#scalar-left-argument" title="Permalink to this headline">¶</a></h3>
-<p>If the left argument of <em>Compression</em> or <em>Replication</em> is a scalar, it applies to all the items of the right argument.</p>
+<p>If the left argument of <em>Compress</em> or <em>Replicate</em> is a scalar, it applies to all the items of the right argument.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">v</span> <span class="kd">←</span> <span class="s1">&#39;Phew&#39;</span>
@@ -4144,7 +4264,7 @@ FeO
 </div>
 <div class="section" id="id4">
 <h3><span class="section-number">3.12.4. </span>Special Notations<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p>Like <em>Reduction</em> and <em>Catenation</em>, <em>Replication</em> works by default along the last dimension of an array. However, it is possible for it to work on any dimension by using the <em>Axis</em>. It is also possible to use <code class="docutils literal notranslate"><span class="pre">⌿</span></code>, which we have already seen, to work on the first dimension by default.</p>
+<p>Like <em>Reduce</em> and <em>Catenate</em>, <em>Replicate</em> works by default along the last dimension of an array. However, it is possible for it to work on any dimension by using the <em>Axis</em>. It is also possible to use <code class="docutils literal notranslate"><span class="pre">⌿</span></code>, which we have already seen, to work on the first dimension by default.</p>
 <p>For example,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4178,10 +4298,10 @@ FeO
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1 5
 </span></div></div>
 </div>
-<p>You must not confuse <em>Reduction</em> and <em>Replication</em>: even if the symbol used is the same, they are completely different operations:</p>
+<p>You must not confuse <em>Reduce</em> and <em>Replicate</em>: even if the symbol used is the same, they are completely different operations:</p>
 <ul class="simple">
-<li><p><em><strong>Reduction</strong></em> takes a function as its left operand; it is a monadic <em>operator</em> (e.g. <code class="docutils literal notranslate"><span class="pre">+/</span> <span class="pre">Contents</span></code>);</p></li>
-<li><p><em><strong>Replication</strong></em> takes a vector as its left argument and an array as its right argument; it is a dyadic <em>function</em> (e.g. <code class="docutils literal notranslate"><span class="pre">vec/</span> <span class="pre">Contents</span></code>);</p></li>
+<li><p><em><strong>Reduce</strong></em> takes a function as its left operand; it is a monadic <em>operator</em> (e.g. <code class="docutils literal notranslate"><span class="pre">+/</span> <span class="pre">Contents</span></code>);</p></li>
+<li><p><em><strong>Replicate</strong></em> takes a vector as its left argument and an array as its right argument; it is a dyadic <em>function</em> (e.g. <code class="docutils literal notranslate"><span class="pre">vec/</span> <span class="pre">Contents</span></code>);</p></li>
 </ul>
 </div>
 </div>
@@ -4428,7 +4548,7 @@ FeO
 </div>
 <div class="section" id="general-case">
 <h3><span class="section-number">3.13.3. </span>General Case<a class="headerlink" href="#general-case" title="Permalink to this headline">¶</a></h3>
-<p>The left argument to <em>Index Of</em> need not be a vector. In fact, in the expression <code class="docutils literal notranslate"><span class="pre">Haystack</span> <span class="pre">⍳</span> <span class="pre">Needles</span></code>, <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> can be a much general array of any rank, type and shape, as long as it is <em>not</em> a scalar. However, <code class="docutils literal notranslate"><span class="pre">Needles</span></code> must have a shape that is appropriate for the <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> you use.</p>
+<p>The left argument to <em>Index Of</em> need not be a vector. In fact, in the expression <code class="docutils literal notranslate"><span class="pre">Haystack</span> <span class="pre">⍳</span> <span class="pre">Needles</span></code>, <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> can be an array of any rank, type and shape, as long as it is <em>not</em> a scalar. However, <code class="docutils literal notranslate"><span class="pre">Needles</span></code> must have a shape that is appropriate for the <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> you use.</p>
 <p>We will see what this means by using a 3-D <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> as an example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4571,7 +4691,7 @@ FeO
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 3 3
 </span></div></div>
 </div>
-<p>This shows that the first and second matrices were found in positions 1 and 2, respectively, and the third and fourth matrices were found nowhere, thus getting 3 as a result. The result is 3 because 2 is the number of <em>major cells</em> that <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> has.</p>
+<p>This shows that the first and second matrices were found in positions 1 and 2, respectively, and the third and fourth matrices were found nowhere, thus getting 3 as a result. The result is 3 because 2 is the number of items that <code class="docutils literal notranslate"><span class="pre">Haystack</span></code> has.</p>
 <p>Now we write the rule that dictates how <em>Index Of</em> works in the general case:</p>
 <div class="tip admonition">
 <p class="admonition-title">Rule</p>
@@ -4612,7 +4732,7 @@ FeO
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 1 0 1 1 0 0 0 0 1 0
 </span></div></div>
 </div>
-<p>And <em>Where</em> are them?</p>
+<p>And <em>Where</em> are they?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍸</span><span class="nv">Contents</span> <span class="o">&gt;</span> <span class="m">75</span>
@@ -4709,8 +4829,8 @@ FeO
 </div>
 <div class="section" id="increasing-the-dimension">
 <h3><span class="section-number">3.14.2. </span>Increasing The Dimension<a class="headerlink" href="#increasing-the-dimension" title="Permalink to this headline">¶</a></h3>
-<p>Up until now we only used simple vectors as arguments to <em>Iota Underbar</em>, but in the beginning we talked about Boolean <em>arrays</em>, not <em>vectors</em>.</p>
-<p>For higher dimensional arrays <em>Iota Underbar</em> behaves the same way: it returns the indices of the positions that contain 1s. Similar to what we did above, we might want to find all the lowercase vowels in the <code class="docutils literal notranslate"><span class="pre">MonMat</span></code> matrix:</p>
+<p>Up until now we only used simple vectors as arguments to <em>Where</em>, but in the beginning we talked about Boolean <em>arrays</em>, not <em>vectors</em>.</p>
+<p>For higher dimensional arrays <em>Where</em> behaves the same way: it returns the indices of the positions that contain 1s. Similar to what we did above, we might want to find all the lowercase vowels in the <code class="docutils literal notranslate"><span class="pre">MonMat</span></code> matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">MonMat</span>
@@ -4988,7 +5108,7 @@ Egypt         37
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">2471
 </span></div></div>
 </div>
-<p>As mentioned previously in the subsection about <em>Compression</em>, it is a kind of detour to solve this task using indexing, but here it serves to illustrate the different lookup methods.</p>
+<p>As mentioned previously in the subsection about <em>Compress</em>, it is a kind of detour to solve this task using indexing, but here it serves to illustrate the different lookup methods.</p>
 <p>Let us take a look at the selected countries and their positions in <code class="docutils literal notranslate"><span class="pre">BHCodes</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5781,7 +5901,7 @@ Fe2O3
 <span class="o">⍴</span><span class="nv">A</span><span class="o">+</span><span class="m">1</span>
 </pre></div>
 </div>
-<p>and</p>
+<p>and also</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="o">+⍳⍴</span><span class="nv">A</span>
 <span class="o">⍳</span><span class="m">¯1</span><span class="o">+⍴</span><span class="nv">A</span>
 <span class="o">⍳⍴</span><span class="nv">A</span><span class="o">-</span><span class="m">1</span>
@@ -5908,7 +6028,7 @@ Fe2O3
 </div>
 </div>
 <p><strong>Exercise</strong>:</p>
-<p>How many numbers are there in the variable <code class="docutils literal notranslate"><span class="pre">Prod</span></code> used in this chapter?</p>
+<p>How many numbers are there in the variable <code class="docutils literal notranslate"><span class="pre">Prod</span></code> used in this chapter? Try to answer with and without using<em>Ravel</em> (monadic <code class="docutils literal notranslate"><span class="pre">,</span></code>).</p>
 <p><strong>Exercise</strong>:</p>
 <p>How is it possible to remove all the values which do not fall between 20 (inclusive) and 30 (exclusive) from a given vector?</p>
 <p><strong>Exercise</strong>:</p>
@@ -5935,7 +6055,7 @@ Fe2O3
 </div>
 <p>Can you tell if/how they are different?</p>
 <p><strong>Exercise</strong>:</p>
-<p>Can you compute the <em>Depth</em> (<code class="docutils literal notranslate"><span class="pre">≡</span></code>) of these arrays:</p>
+<p>Compute the <em>Depth</em> (<code class="docutils literal notranslate"><span class="pre">≡</span></code>) of these arrays:</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">42</span>
 <span class="m">42</span> <span class="m">41</span> <span class="m">40</span> <span class="m">39</span>
 <span class="m">2</span> <span class="m">2</span><span class="o">⍴</span><span class="m">42</span> <span class="m">41</span> <span class="m">40</span> <span class="m">39</span>
