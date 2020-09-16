@@ -4606,7 +4606,7 @@ FeO
 <p>And <em>Where</em> are them?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸Contents &gt; 75
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍸</span><span class="nv">Contents</span> <span class="o">&gt;</span> <span class="m">75</span>
 </pre></div>
 </div>
 </div>
@@ -4639,7 +4639,7 @@ FeO
 <p>Now that we have a Boolean vector, we can just use <code class="docutils literal notranslate"><span class="pre">⍸</span></code> to find out <em>Where</em> the 1s are:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸Vec=19
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍸</span><span class="nv">Vec</span><span class="o">=</span><span class="m">19</span>
 </pre></div>
 </div>
 </div>
@@ -4651,8 +4651,8 @@ FeO
 <p>Of course the same search technique will work on characters, because what we really care about is the Boolean vector we generate at a later step, not what the initial vector was. For example, let us find all the letters “a” in a sentence:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>Sentence ← &#39;Panama is a canal between Atlantic and Pacific&#39;
-⍸Sentence=&#39;a&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Sentence</span> <span class="kd">←</span> <span class="s1">&#39;Panama is a canal between Atlantic and Pacific&#39;</span>
+<span class="o">⍸</span><span class="nv">Sentence</span><span class="o">=</span><span class="s1">&#39;a&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -4689,7 +4689,7 @@ FeO
 <p>Having computed this Boolean vector, the finishing touch is to compute <em>Where</em> the vowels were found:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸Sentence∊&#39;aeiouy&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍸</span><span class="nv">Sentence</span><span class="o">∊</span><span class="s1">&#39;aeiouy&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -4719,7 +4719,7 @@ June
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸MonMat∊&#39;aeiouy&#39;
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍸</span><span class="nv">MonMat</span><span class="o">∊</span><span class="s1">&#39;aeiouy&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -4758,7 +4758,7 @@ June
 <p>In fact, if the argument to <em>Where</em> is a nested array, you get a <code class="docutils literal notranslate"><span class="pre">DOMAIN</span> <span class="pre">ERROR</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸(0 1)(1 1)
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍸</span><span class="p">(</span><span class="m">0</span> <span class="m">1</span><span class="p">)(</span><span class="m">1</span> <span class="m">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -4800,7 +4800,7 @@ June
 <p>The same argument to <code class="docutils literal notranslate"><span class="pre">⍸</span></code> returns the indices repeated as many times as they are needed:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸3 0 0 2 0 1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍸</span><span class="m">3</span> <span class="m">0</span> <span class="m">0</span> <span class="m">2</span> <span class="m">0</span> <span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -4811,7 +4811,7 @@ June
 <p>In this case, we could even achieve the same effect as the <em>Compress</em> expression above by using <code class="docutils literal notranslate"><span class="pre">[]</span></code> indexing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>&#39;words!&#39;[⍸3 0 0 2 0 1]
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;words!&#39;</span><span class="sr">[</span><span class="o">⍸</span><span class="m">3</span> <span class="m">0</span> <span class="m">0</span> <span class="m">2</span> <span class="m">0</span> <span class="m">1</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
@@ -4823,7 +4823,7 @@ June
 <p>In fact, if the argument array contains negative integers or other numbers which aren’t integers, <code class="docutils literal notranslate"><span class="pre">DOMAIN</span> <span class="pre">ERROR</span></code>s are issued:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸0 0 1 0 ¯1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍸</span><span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">¯1</span>
 </pre></div>
 </div>
 </div>
@@ -4837,7 +4837,7 @@ June
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸0 0 1 0 0.3
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍸</span><span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0.3</span>
 </pre></div>
 </div>
 </div>
@@ -4970,8 +4970,8 @@ Egypt         37
 <p>An alternative solution is to find the <strong>positions</strong> of the selected countries, then using this set of indices to get the amounts, and add them. The result is, of course, the same:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>Positions ← ⍸BHCodes ∊ Selected
-+/BHAmounts[Positions]
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Positions</span> <span class="kd">←</span> <span class="o">⍸</span><span class="nv">BHCodes</span> <span class="o">∊</span> <span class="nv">Selected</span>
+<span class="o">+</span><span class="na">/</span><span class="nv">BHAmounts</span><span class="sr">[</span><span class="nv">Positions</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
@@ -5024,8 +5024,8 @@ Egypt         37
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>Positions ← ⍸Codes ∊ Selected
-Countries[Positions;] , Selected
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Positions</span> <span class="kd">←</span> <span class="o">⍸</span><span class="nv">Codes</span> <span class="o">∊</span> <span class="nv">Selected</span>
+<span class="nv">Countries</span><span class="sr">[</span><span class="nv">Positions</span><span class="sr">;]</span> <span class="o">,</span> <span class="nv">Selected</span>
 </pre></div>
 </div>
 </div>
@@ -5588,7 +5588,7 @@ Fe2O3
 <p>If <code class="docutils literal notranslate"><span class="pre">Y</span></code> contains positive integers, then the result of <code class="docutils literal notranslate"><span class="pre">⍸Y</span></code> will contain some indices that can be used to index into <code class="docutils literal notranslate"><span class="pre">Y</span></code> and the shape of those indices depends on the shape of <code class="docutils literal notranslate"><span class="pre">Y</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸ 1 0 1 0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍸</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span>
 </pre></div>
 </div>
 </div>
@@ -5598,7 +5598,7 @@ Fe2O3
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸ 2 2⍴1 0 1 0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍸</span> <span class="m">2</span> <span class="m">2</span><span class="o">⍴</span><span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span>
 </pre></div>
 </div>
 </div>
@@ -5612,7 +5612,7 @@ Fe2O3
 <p>If we change one of the 1s to a 0, here is what we will be getting:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸ 1 0 0 0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍸</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span>
 </pre></div>
 </div>
 </div>
@@ -5622,7 +5622,7 @@ Fe2O3
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸ 2 2⍴1 0 0 0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍸</span> <span class="m">2</span> <span class="m">2</span><span class="o">⍴</span><span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span>
 </pre></div>
 </div>
 </div>
@@ -5636,7 +5636,7 @@ Fe2O3
 <p>If we change the final 1 to a 0, we will be getting a vector with 0 integers (an empty numeric vector <code class="docutils literal notranslate"><span class="pre">⍬</span></code>) and a vector with 0 vectors of 2 items. For APL, these are <em>not</em> the same thing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸ 0 0 0 0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍸</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span>
 </pre></div>
 </div>
 </div>
@@ -5646,7 +5646,7 @@ Fe2O3
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍬≡⍸ 0 0 0 0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="no">⍬</span><span class="o">≡⍸</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span>
 </pre></div>
 </div>
 </div>
@@ -5656,7 +5656,7 @@ Fe2O3
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸ 2 2⍴0 0 0 0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍸</span> <span class="m">2</span> <span class="m">2</span><span class="o">⍴</span><span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span>
 </pre></div>
 </div>
 </div>
@@ -5668,7 +5668,7 @@ Fe2O3
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍬≡⍸ 2 2⍴0 0 0 0        ⍝ different empty vectors
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="no">⍬</span><span class="o">≡⍸</span> <span class="m">2</span> <span class="m">2</span><span class="o">⍴</span><span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span>        <span class="c1">⍝ different empty vectors</span>
 </pre></div>
 </div>
 </div>
@@ -5703,7 +5703,7 @@ Fe2O3
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⎕SE.Dyalog.Utils.repObj ⍸ 0 0 0 0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕SE</span><span class="na">.</span><span class="nv">Dyalog</span><span class="na">.</span><span class="nv">Utils</span><span class="na">.</span><span class="nv">repObj</span> <span class="o">⍸</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span>
 </pre></div>
 </div>
 </div>
@@ -5713,7 +5713,7 @@ Fe2O3
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⎕SE.Dyalog.Utils.repObj ⍸ 2 2⍴0 0 0 0
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕SE</span><span class="na">.</span><span class="nv">Dyalog</span><span class="na">.</span><span class="nv">Utils</span><span class="na">.</span><span class="nv">repObj</span> <span class="o">⍸</span> <span class="m">2</span> <span class="m">2</span><span class="o">⍴</span><span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span>
 </pre></div>
 </div>
 </div>
@@ -5724,7 +5724,7 @@ Fe2O3
 <p>What the code cell above tells us is that <code class="docutils literal notranslate"><span class="pre">⍸</span> <span class="pre">2</span> <span class="pre">2⍴0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span></code> matches <code class="docutils literal notranslate"><span class="pre">0⍴⊂2⍴0</span></code>, which you can check by copying &amp; pasting the result above, or using <kbd>APL</kbd>+<kbd>Z</kbd> to type <code class="docutils literal notranslate"><span class="pre">⊂</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>(0⍴⊂2⍴0)≡(⍸ 2 2⍴0 0 0 0)
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">0</span><span class="o">⍴⊂</span><span class="m">2</span><span class="o">⍴</span><span class="m">0</span><span class="p">)</span><span class="o">≡</span><span class="p">(</span><span class="o">⍸</span> <span class="m">2</span> <span class="m">2</span><span class="o">⍴</span><span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -5940,12 +5940,12 @@ Fe2O3
 <p>In a vector, we would like to replace all the values that are smaller than 20 by 20, and replace all the values that are greater than 30 by 30. How can we do that?</p>
 <p><strong>Exercise</strong>:</p>
 <p>The following 6 expressions cannot be executed, but instead generate error messages; can you say why?</p>
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>3+(5-(6+2)×4
-121÷(⍳4)-3
-(¯X+5)*2
-⍴4 5 6+2 3-1
-⍳3-5
-⍸1 0 2 ¯1
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span><span class="o">+</span><span class="p">(</span><span class="m">5</span><span class="o">-</span><span class="p">(</span><span class="m">6</span><span class="o">+</span><span class="m">2</span><span class="p">)</span><span class="o">×</span><span class="m">4</span>
+<span class="m">121</span><span class="o">÷</span><span class="p">(</span><span class="o">⍳</span><span class="m">4</span><span class="p">)</span><span class="o">-</span><span class="m">3</span>
+<span class="p">(</span><span class="m">¯</span><span class="nv">X</span><span class="o">+</span><span class="m">5</span><span class="p">)</span><span class="o">*</span><span class="m">2</span>
+<span class="o">⍴</span><span class="m">4</span> <span class="m">5</span> <span class="m">6</span><span class="o">+</span><span class="m">2</span> <span class="m">3</span><span class="o">-</span><span class="m">1</span>
+<span class="o">⍳</span><span class="m">3</span><span class="o">-</span><span class="m">5</span>
+<span class="o">⍸</span><span class="m">1</span> <span class="m">0</span> <span class="m">2</span> <span class="m">¯1</span>
 </pre></div>
 </div>
 <p><strong>Exercise</strong>:</p>
