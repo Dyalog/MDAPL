@@ -621,6 +621,28 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ravel">
+   3.16. Ravel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#empty-vectors-and-black-holes">
+   3.17. Empty Vectors and Black Holes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#not-all-empty-vectors-are-created-equal">
+     3.17.1. Not All Empty Vectors Are Created Equal
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   3.18. Exercises
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -668,6 +690,8 @@
 <li><p>ref to Discovery right after <a class="reference external" href="#Application-4">Application 4</a> (search for “occurrence of a value in a vector (cf. the “Discovery” subsection)”);</p></li>
 <li><p>ref to The Index Function in <a class="reference external" href="#Increasing-The-Dimension">Increasing The Dimension</a> (search for “(cf. the subsection with the same name)”);</p></li>
 <li><p>ref to Basic Approach: Compression in <a class="reference external" href="#First-Question">First Question</a> (search for “As mentioned previously in the subsection about <em>Compression</em>”);</p></li>
+<li><p>In <a class="reference external" href="#Ravel">Ravel</a> we talk about subsection on “Array Indexing” (search for “the result returned is a vector (we already mentioned this in the subsection on “Array Indexing”)”);</p></li>
+<li><p>ref to “Our First Program” in <a class="reference external" href="#Empty-Vectors-and-Black-Holes">Empty Vectors and Black Holes</a> (search for “a function to calculate the average of a vector (see the “Our First Program” section)”);</p></li>
 <li><p>…</p></li>
 </ul>
 <hr class="docutils" />
@@ -681,14 +705,14 @@
 <ul class="simple">
 <li><p>they are part of the APL language;</p></li>
 <li><p>they are represented by symbols like <code class="docutils literal notranslate"><span class="pre">⍴</span></code>, <code class="docutils literal notranslate"><span class="pre">⍉</span></code> and <code class="docutils literal notranslate"><span class="pre">⌈</span></code>;</p></li>
-<li><p>their behaviour cannot be modified.</p></li>
+<li><p>they cannot be overwritten or removed.</p></li>
 </ul>
 </li>
 <li><p><em><strong>User-Defined Functions</strong></em>:</p>
 <ul class="simple">
 <li><p>as their name implies, they are written by the user;</p></li>
 <li><p>they are represented by names, for example <code class="docutils literal notranslate"><span class="pre">Average</span></code> or <code class="docutils literal notranslate"><span class="pre">Budget</span></code>;</p></li>
-<li><p>their behaviour can be modified.</p></li>
+<li><p>they can be overwritten and removed.</p></li>
 </ul>
 </li>
 </ol>
@@ -3178,7 +3202,7 @@ June
 <p>There are many different ways to define functions, and these will be covered in detail in the “User Defined Functions” chapter. For now we shall use the simplest, which is perfectly suitable for straightforward calculation functions like this one. Let’s type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Average</span> <span class="kd">←</span> <span class="kt">{</span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="bp">⍵</span><span class="p">)</span><span class="o">÷</span><span class="p">(</span><span class="o">⍴</span><span class="bp">⍵</span><span class="p">)</span><span class="kt">}</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Average</span> <span class="kd">←</span> <span class="kt">{</span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="bp">⍵</span><span class="p">)</span><span class="o">÷</span><span class="p">(</span><span class="o">≢</span><span class="bp">⍵</span><span class="p">)</span><span class="kt">}</span>
 </pre></div>
 </div>
 </div>
@@ -5341,6 +5365,678 @@ Sweden        66
 </span></div></div>
 </div>
 </div>
+</div>
+<div class="section" id="ravel">
+<h2><span class="section-number">3.16. </span>Ravel<a class="headerlink" href="#ravel" title="Permalink to this headline">¶</a></h2>
+<p>The function <em><strong>Ravel</strong></em> is represented by the monadic use of comma (<code class="docutils literal notranslate"><span class="pre">,</span></code>). Applied to any array, it returns all its items as a vector.</p>
+<p>Naturally, if the array is already a vector, <em>Ravel</em> does not change anything.</p>
+<p>Let us see how it works on some matrices.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="o">⊢</span><span class="nv">Tests</span> <span class="kd">←</span> <span class="o">?</span><span class="m">6</span> <span class="m">3</span><span class="o">⍴</span><span class="m">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">73  16 42
+50   2 67
+11  81 37
+93 100 98
+83  32 76
+51  37 15
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">,</span><span class="nv">Tests</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">73 16 42 50 2 67 11 81 37 93 100 98 83 32 76 51 37 15
+</span></div></div>
+</div>
+<p>The items of the matrix have been strung out and returned as a vector, row by row.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Chemistry</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">H2SO4
+CaCO3
+Fe2O3
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">,</span><span class="nv">Chemistry</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">H2SO4CaCO3Fe2O3
+</span></div></div>
+</div>
+<p>A common use of <em><strong>Ravel</strong></em> is to transform a scalar into a 1-item vector. The difference between a scalar and a 1-item vector is not readily obvious, until you use it as an index into a matrix.</p>
+<p>Suppose that you need to select a particular set of columns <code class="docutils literal notranslate"><span class="pre">Cols</span></code> from the matrix <code class="docutils literal notranslate"><span class="pre">Forecast</span></code>. As long as <code class="docutils literal notranslate"><span class="pre">Cols</span></code> contains more than one value, the result will be a matrix:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Cols</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">4</span> <span class="m">6</span>
+<span class="nv">Forecast</span><span class="sr">[;</span><span class="nv">Cols</span><span class="sr">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace"> 90 500  30
+110 370 360
+340 120 370
+150 520 280
+</span></div></div>
+</div>
+<p>But if <code class="docutils literal notranslate"><span class="pre">Cols</span></code> happens to have only a single value, which is a scalar, the result returned is a vector (we already mentioned this in the subsection on “Array Indexing”):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Cols</span> <span class="kd">←</span> <span class="m">4</span>
+<span class="nv">Forecast</span><span class="sr">[;</span><span class="nv">Cols</span><span class="sr">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">500 370 120 520
+</span></div></div>
+</div>
+<p>The rank of the result may be critical if some other expression in your program expects a matrix.</p>
+<p>To make certain that your indexing expression always returns a matrix, you must ensure that your index will always be a vector by using <em>Ravel</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Forecast</span><span class="sr">[;</span><span class="o">,</span><span class="nv">Cols</span><span class="sr">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">500
+370
+120
+520
+</span></div></div>
+</div>
+<p>With <code class="docutils literal notranslate"><span class="pre">,Cols</span></code>, whatever the rank of <code class="docutils literal notranslate"><span class="pre">Cols</span></code> is, the result will always be a matrix.</p>
+<p><em>Ravel</em> can be associated with an <em>Axis</em> specifier; this will be discussed in the <em>Specialist’s Section</em>.</p>
+</div>
+<div class="section" id="empty-vectors-and-black-holes">
+<h2><span class="section-number">3.17. </span>Empty Vectors and Black Holes<a class="headerlink" href="#empty-vectors-and-black-holes" title="Permalink to this headline">¶</a></h2>
+<p>When we apply a scalar dyadic function to a vector and a scalar, the rule is that the result has the same size as the vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">42</span> <span class="m">75</span> <span class="m">86</span> <span class="m">31</span> <span class="o">+</span> <span class="m">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">52 85 96 41
+</span></div></div>
+</div>
+<p>Above, a scalar added to a 4-item vector gives a 4-item vector, too.</p>
+<p>Below, a 7-item vector compared to a scalar gives a 7-item vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;MAMMOTH&#39;</span> <span class="o">=</span> <span class="s1">&#39;M&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 0 1 1 0 0 0
+</span></div></div>
+</div>
+<p>But what happens if the vector is empty? The rule says that the result must have the same size as the vector: therefore it should be empty, too, regardless of the (scalar) function that we used!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Hole</span> <span class="kd">←</span> <span class="no">⍬</span>
+<span class="nv">Hole</span> <span class="o">+</span> <span class="m">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">
+</span></div></div>
+</div>
+<p>Notice how nothing is displayed above: the result is empty.</p>
+<p>The same thing happens if we multiply by 100, for example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Hole</span> <span class="o">×</span> <span class="m">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Hole</span> <span class="o">=</span> <span class="m">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Hole</span> <span class="o">=</span> <span class="nv">Hole</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">Hole</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Hole</span> <span class="o">≡</span> <span class="no">⍬</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<p>If you were working on the terminal and getting all these empty results, you could compare <code class="docutils literal notranslate"><span class="pre">Hole</span></code> to <code class="docutils literal notranslate"><span class="pre">⍬</span></code> with <em>Match</em> and conclude <code class="docutils literal notranslate"><span class="pre">Hole</span></code> is an empty numeric vector.</p>
+<p>Empty vectors look very much like black holes: they absorb everything (but only when used with scalar functions). This may lead to some unexpected results.</p>
+<div class="section" id="not-all-empty-vectors-are-created-equal">
+<h3><span class="section-number">3.17.1. </span>Not All Empty Vectors Are Created Equal<a class="headerlink" href="#not-all-empty-vectors-are-created-equal" title="Permalink to this headline">¶</a></h3>
+<p>Something that might throw off new APLers is the fact that there are infinitely many different empty vectors. The first two examples being <code class="docutils literal notranslate"><span class="pre">⍬</span></code> and <code class="docutils literal notranslate"><span class="pre">''</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="no">⍬</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">
+</span></div></div>
+</div>
+<p>They look the same when displayed as results, but they are <em>not</em> the same:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="no">⍬</span><span class="o">≡</span><span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0
+</span></div></div>
+</div>
+<p>And this is just the tip of the iceberg. If you recall the rule for <em>Where</em> (monadic <code class="docutils literal notranslate"><span class="pre">⍸</span></code>), we know that <code class="docutils literal notranslate"><span class="pre">⍸Y</span></code> returns an empty vector if <code class="docutils literal notranslate"><span class="pre">Y</span></code> only contains 0s, but an empty vector of <em>what</em>?</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">Y</span></code> contains positive integers, then the result of <code class="docutils literal notranslate"><span class="pre">⍸Y</span></code> will contain some indices that can be used to index into <code class="docutils literal notranslate"><span class="pre">Y</span></code> and the shape of those indices depends on the shape of <code class="docutils literal notranslate"><span class="pre">Y</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸ 1 0 1 0
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 3
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸ 2 2⍴1 0 1 0
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌───┬───┐
+│1 1│2 1│
+└───┴───┘
+</span></div></div>
+</div>
+<p>So in the first example we see a vector with 2 integers and in the second example we see a vector with 2 vectors, each containing 2 items.</p>
+<p>If we change one of the 1s to a 0, here is what we will be getting:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸ 1 0 0 0
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸ 2 2⍴1 0 0 0
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌───┐
+│1 1│
+└───┘
+</span></div></div>
+</div>
+<p>Now we have a vector with 1 integer and a vector with 1 vector of 2 items.</p>
+<p>If we change the final 1 to a 0, we will be getting a vector with 0 integers (an empty numeric vector <code class="docutils literal notranslate"><span class="pre">⍬</span></code>) and a vector with 0 vectors of 2 items. For APL, these are <em>not</em> the same thing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸ 0 0 0 0
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍬≡⍸ 0 0 0 0
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍸ 2 2⍴0 0 0 0
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">
+
+
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⍬≡⍸ 2 2⍴0 0 0 0        ⍝ different empty vectors
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0
+</span></div></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>When you are dealing with empty vectors, you can use the incantation <code class="docutils literal notranslate"><span class="pre">⎕SE.Dyalog.Utils.repObj</span></code> to inspect their actual shape.</p>
+</div>
+<p>To illustrate this incantation, we will see what it returns for the empty vectors we saw above:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕SE</span><span class="na">.</span><span class="nv">Dyalog</span><span class="na">.</span><span class="nv">Utils</span><span class="na">.</span><span class="nv">repObj</span> <span class="s1">&#39;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">''
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕SE</span><span class="na">.</span><span class="nv">Dyalog</span><span class="na">.</span><span class="nv">Utils</span><span class="na">.</span><span class="nv">repObj</span> <span class="no">⍬</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">⍬
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⎕SE.Dyalog.Utils.repObj ⍸ 0 0 0 0
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">⍬
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>⎕SE.Dyalog.Utils.repObj ⍸ 2 2⍴0 0 0 0
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0⍴⊂2⍴0
+</span></div></div>
+</div>
+<p>What the code cell above tells us is that <code class="docutils literal notranslate"><span class="pre">⍸</span> <span class="pre">2</span> <span class="pre">2⍴0</span> <span class="pre">0</span> <span class="pre">0</span> <span class="pre">0</span></code> matches <code class="docutils literal notranslate"><span class="pre">0⍴⊂2⍴0</span></code>, which you can check by copying &amp; pasting the result above, or using <kbd>APL</kbd>+<kbd>Z</kbd> to type <code class="docutils literal notranslate"><span class="pre">⊂</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>(0⍴⊂2⍴0)≡(⍸ 2 2⍴0 0 0 0)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<p>(You will learn about what <code class="docutils literal notranslate"><span class="pre">⊂</span></code> does in a future chapter, don’t worry.)</p>
+<div class="figure align-default" id="hierarchy">
+<img alt="_images/Hierarchy.png" src="_images/Hierarchy.png" />
+</div>
+</div>
+</div>
+<div class="section" id="exercises">
+<h2><span class="section-number">3.18. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<div class="warning admonition">
+<p class="admonition-title">Warning</p>
+<p><em>The following exercises are designed to train you, not the computer.</em></p>
+<p><em>For this reason, we suggest that you try to answer them on a sheet of paper, not on your computer. When you are sure of your answer, you can test it on the computer.</em></p>
+</div>
+<p><strong>Exercise</strong>:</p>
+<p>Can you evaluate the following expressions?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>3 × 2 + 6 ≠ 3 × 2
+12 6 27 ⌊ 11 + ⍳3
+4 5 6 ⌈ 4 + 2 5 9 &gt; 1 6 8
+7 ⌊ 25 6 17 - (2 × 3) + 9 3 5
+((8 + 6) × 2 + 1) × 3 - 6 ÷ 3
+(⍴4⌈5) + 4⌈5
+1 ⊢ 2 ⊣ 3 ⊢ 4 ⊣ 5 ⊢ 6 ⊣ 7
+1 ⊣ 2 ⊢ 3 ⊣ 4 ⊢ 5 ⊣ 6 ⊢ 7
+1 2 3 ⊢ 4 5 6
+</pre></div>
+</div>
+<p><strong>Exercise</strong>:</p>
+<p>Try to evaluate the following expressions. <em>Be careful</em>: they are not as simple as might first appear!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="mi">2</span><span class="o">+</span><span class="mi">2</span> <span class="mi">2</span>
+<span class="mi">2</span><span class="o">+</span><span class="mi">2</span> <span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
+<span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
+<span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p><strong>Exercise</strong>:</p>
+<p>Given the vector <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">←</span> <span class="pre">8</span> <span class="pre">2</span> <span class="pre">7</span> <span class="pre">5</span></code>, compare the results obtained from the following sets of expressions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1+⍴A
+⍴A+1
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1+⍳⍴A
+⍳¯1+⍴A
+⍳⍴A-1
+</pre></div>
+</div>
+<p><strong>Exercise</strong>:</p>
+<p>Using your knowledge of the order of evaluation in APL, re-write the following expressions without using parentheses.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>((⍳4)-1)⌈3
+7⌊(⍳9)⌈3
+1+((⍳5)=1 4 3 2 5)×5
+</pre></div>
+</div>
+<p><strong>Exercise</strong>:</p>
+<p>Given a variable <code class="docutils literal notranslate"><span class="pre">A</span></code>, find an expression which returns the answer 1 if <code class="docutils literal notranslate"><span class="pre">A</span></code> is a scalar, and 0 if it is not.</p>
+<p><strong>Exercise</strong>:</p>
+<p>Given two scalars <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>, write an expressions which gives 7 if <code class="docutils literal notranslate"><span class="pre">A</span></code> is greater than or equal to <code class="docutils literal notranslate"><span class="pre">B</span></code> and 3 if <code class="docutils literal notranslate"><span class="pre">A</span></code> is smaller than <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p>
+<p><strong>Exercise</strong>:</p>
+<p>Given two scalars <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>, find an expression which returns:</p>
+<ul class="simple">
+<li><p>an empty vector, if <code class="docutils literal notranslate"><span class="pre">A</span></code> is zero, whatever the value of <code class="docutils literal notranslate"><span class="pre">B</span></code>;</p></li>
+<li><p>0, if <code class="docutils literal notranslate"><span class="pre">B</span></code> is zero, but <code class="docutils literal notranslate"><span class="pre">A</span></code> is not;</p></li>
+<li><p>3, if neither <code class="docutils literal notranslate"><span class="pre">A</span></code> nor <code class="docutils literal notranslate"><span class="pre">B</span></code> are zero.</p></li>
+</ul>
+<p><strong>Exercise</strong>:</p>
+<p>Unfortunately, your keyboard has been damaged and your <code class="docutils literal notranslate"><span class="pre">∧</span></code> and <code class="docutils literal notranslate"><span class="pre">∨</span></code> keys no longer work. Which other symbols could you use to replace them?</p>
+<p>You can test your solutions on these vectors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">L</span> <span class="kd">←</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span>
+<span class="nv">R</span> <span class="kd">←</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise</strong>:</p>
+<p>Given these three vectors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">G</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span>
+<span class="nv">M</span> <span class="kd">←</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span>
+<span class="nv">D</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Evaluate the following expressions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>G∨D
+~G∧D
+~G∨~D
+D∧~G
+G∧M∨D
+(~D)∧(~G)
+(M⌈G)=(M⌊D)
+(M⌊G)≠(M⌈D)
+</pre></div>
+</div>
+<p><strong>Exercise</strong>:</p>
+<p>Evaluate the following expressions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0 &lt; 0 ≤ 0 = 0 ≥ 0 &gt; 0
+&#39;sugar&#39; ∊ &#39;salt&#39;
+11 ≠ &#39;11&#39;
+&#39;14&#39; ⍳ &#39;41&#39;
+</pre></div>
+</div>
+<p><strong>Exercise</strong>:</p>
+<p>Write an expression to compute the number of times the letter “e” appears in a character vector. You can test it with this vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Text</span> <span class="kd">←</span> <span class="s1">&#39;The silence of the sea&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise</strong>:</p>
+<p>How many expressions can you write to retrieve the last element of a vector? Can you write one that uses the <em>Reduce</em> operator <code class="docutils literal notranslate"><span class="pre">/</span></code>?</p>
+<p>You can test your expressions on these vectors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Vec</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span>
+<span class="nv">Vec</span> <span class="kd">←</span> <span class="p">(</span><span class="m">1</span> <span class="m">2</span><span class="p">)</span> <span class="m">3</span> <span class="p">(</span><span class="m">4</span> <span class="m">5</span><span class="p">)</span> <span class="m">6</span>
+<span class="nv">Vec</span> <span class="kd">←</span> <span class="m">0</span> <span class="p">(</span><span class="m">5</span><span class="o">⍴</span><span class="m">0</span><span class="p">)</span> <span class="p">(</span><span class="m">3</span> <span class="m">4</span><span class="o">⍴</span><span class="m">0</span><span class="p">)</span> <span class="p">(</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span><span class="o">⍴</span><span class="m">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise</strong>:</p>
+<p>We have conducted some experiments on a variable <code class="docutils literal notranslate"><span class="pre">Z</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      2 ⍴ Z
+1 7
+      +⌿ Z
+20
+      Z = 9
+0
+0
+1
+0
+</pre></div>
+</div>
+<p>What is the value of <code class="docutils literal notranslate"><span class="pre">Z</span></code>?</p>
+<p><strong>Exercise</strong>:</p>
+<p>We have conducted some experiments on a variable <code class="docutils literal notranslate"><span class="pre">Z</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>      <span class="n">Z</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="mi">0</span> <span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">1</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+      <span class="o">+/</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="n">Z</span>
+<span class="mi">20</span> <span class="mi">6</span>
+      <span class="o">+/</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="n">Z</span>
+<span class="mi">8</span> <span class="mi">7</span> <span class="mi">6</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<p>What is the value of <code class="docutils literal notranslate"><span class="pre">Z</span></code>?</p>
+<p><strong>Exercise</strong>:</p>
+<p>What are all the <strong>positions</strong> of the letter “e” in the character vector specified in exercise 11?</p>
+<p><strong>Exercise</strong>:</p>
+<p>Given a vector <code class="docutils literal notranslate"><span class="pre">Vec</span></code> of any size and type (numeric or character or even nested), try to extract the items of <code class="docutils literal notranslate"><span class="pre">Vec</span></code> which are in the odd positions (the 1st, the 3rd, the 5th, …).</p>
+<p>You can test your solution on these vectors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Vec</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span>
+<span class="nv">Vec</span> <span class="kd">←</span> <span class="s1">&#39;CROANGGARYANTLULLBAPTWIZOSNSSB&#39;</span>
+<span class="nv">Vec</span> <span class="kd">←</span> <span class="p">(</span><span class="m">1</span> <span class="m">2</span><span class="p">)</span> <span class="p">(</span><span class="m">2</span> <span class="m">3</span><span class="p">)</span> <span class="p">(</span><span class="m">4</span> <span class="m">5</span> <span class="m">6</span><span class="p">)</span> <span class="p">(</span><span class="m">6</span> <span class="m">9</span> <span class="m">42</span> <span class="m">1024</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Exercise</strong>:</p>
+<p>How many numbers are there in the variable <code class="docutils literal notranslate"><span class="pre">Prod</span></code> used in this chapter?</p>
+<p><strong>Exercise</strong>:</p>
+<p>How is it possible to remove all the values which do not fall between 20 (inclusive) and 30 (exclusive) from a given vector?</p>
+<p><strong>Exercise</strong>:</p>
+<p>Notice how these two expressions look the same:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≢</span><span class="nv">Vec</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">4
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">Vec</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">4
+</span></div></div>
+</div>
+<p>Can you tell if/how they are different?</p>
+<p><strong>Exercise</strong>:</p>
+<p>Can you compute the <em>Depth</em> (<code class="docutils literal notranslate"><span class="pre">≡</span></code>) of these arrays:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>42
+42 41 40 39
+2 2⍴42 41 40 39
+1 (2 3) (4 5)
+(1 2) (3 4 5) (6 7 8 9)
+1 (2 (3 (4 (5 (6 7)))))
+(2 2⍴4) (2 2⍴⍳47) (3 6⍴⍳18)
+</pre></div>
+</div>
+<p><strong>Exercise</strong>:</p>
+<p>In a vector, we would like to replace all the values that are smaller than 20 by 20, and replace all the values that are greater than 30 by 30. How can we do that?</p>
+<p><strong>Exercise</strong>:</p>
+<p>The following 6 expressions cannot be executed, but instead generate error messages; can you say why?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>3+(5-(6+2)×4
+121÷(⍳4)-3
+(¯X+5)*2
+⍴4 5 6+2 3-1
+⍳3-5
+⍸1 0 2 ¯1
+</pre></div>
+</div>
+<p><strong>Exercise</strong>:</p>
+<p>Write an APL expression which produces a vector of 17 numbers, the first being 23, with each subsequent number being equal to the preceding one plus 11.</p>
+<p><strong>Exercise</strong>:</p>
+<p>In a shop, each product is identified by a code. You are given a list of the codes and the corresponding prices:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">PCodes</span> <span class="kd">←</span> <span class="m">56</span> <span class="m">66</span> <span class="m">19</span> <span class="m">37</span> <span class="m">44</span> <span class="m">20</span> <span class="m">18</span> <span class="m">23</span> <span class="m">68</span> <span class="m">70</span> <span class="m">82</span>
+<span class="nv">Prices</span> <span class="kd">←</span>  <span class="m">9</span> <span class="m">27</span> <span class="m">10</span> <span class="m">15</span> <span class="m">12</span>  <span class="m">5</span>  <span class="m">8</span>  <span class="m">9</span> <span class="m">98</span>  <span class="m">7</span> <span class="m">22</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A customer gives you a list of items they intend to buy as vector of code/quantity pairs: code, quantity, code, quantity, and so on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Wannabuy</span> <span class="kd">←</span> <span class="m">37</span> <span class="m">1</span> <span class="m">70</span> <span class="m">20</span> <span class="m">19</span> <span class="m">2</span> <span class="m">82</span> <span class="m">5</span> <span class="m">23</span> <span class="m">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Can you evaluate their bill?</p>
+<p>Note that this cannot be done easily in a single (and readable) APL expression, and you will therefore need to write several expressions.</p>
+<p>The correct total should be 375.</p>
+<p><strong>Exercise</strong>:</p>
+<p>We have organised a lottery, and we have created five vectors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">42</span>
+<span class="nv">Tickets</span> <span class="kd">←</span> <span class="o">?</span><span class="m">1000</span><span class="o">⍴</span><span class="m">999999</span>
+<span class="nv">Sold</span> <span class="kd">←</span> <span class="nv">Tickets</span><span class="sr">[</span><span class="p">(</span><span class="m">800</span><span class="o">+?</span><span class="m">200</span><span class="p">)</span><span class="o">?</span><span class="m">1000</span><span class="sr">]</span>
+<span class="nv">Ours</span> <span class="kd">←</span> <span class="nv">Sold</span><span class="sr">[</span><span class="m">200</span><span class="o">?≢</span><span class="nv">Sold</span><span class="sr">]</span>
+<span class="nv">Winners</span> <span class="kd">←</span> <span class="nv">Tickets</span><span class="sr">[</span><span class="m">100</span><span class="o">?</span><span class="m">1000</span><span class="sr">]</span>
+<span class="nv">Prizes</span> <span class="kd">←</span> <span class="o">?</span><span class="m">100</span><span class="o">⍴</span><span class="m">1000</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Tickets</span></code> has the numbers of all the existing tickets;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Sold</span></code> has the numbers of the tickets which have been sold;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ours</span></code> has the numbers of the tickets we bought ourselves;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Winners</span></code> has the numbers of the winning tickets, and</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Prizes</span></code> has the prize amount associated with each respective number in <code class="docutils literal notranslate"><span class="pre">Winners</span></code> vector.</p></li>
+</ul>
+<p>And now, try to answer the following 4 questions:</p>
+<ol class="simple">
+<li><p>What are the numbers of the unsold tickets?</p></li>
+<li><p>Are there some winning tickets which have not been sold?</p></li>
+<li><p>How many winning tickets do <strong>we</strong> have?</p></li>
+<li><p>How much did we win?</p></li>
+</ol>
+<p><strong>Exercise</strong>:</p>
+<p>Can you calculate all the divisors of an integer number <code class="docutils literal notranslate"><span class="pre">N</span></code>?</p>
+<p>Here are some results to check your answer:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><code class="docutils literal notranslate"><span class="pre">N</span></code></p></th>
+<th class="text-align:left head"><p>Divisors</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>1</p></td>
+<td class="text-align:left"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>2</p></td>
+<td class="text-align:left"><p>1 2</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>3</p></td>
+<td class="text-align:left"><p>1 3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>24</p></td>
+<td class="text-align:left"><p>1 2 3 4 6 8 12 24</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>1337</p></td>
+<td class="text-align:left"><p>1 7 191 1337</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>1234321</p></td>
+<td class="text-align:left"><p>1 11 101 121 1111 10201 12221 112211 1234321</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solutions</strong>: the solutions can be found at the end of this chapter.</p>
 </div>
 </div>
 
