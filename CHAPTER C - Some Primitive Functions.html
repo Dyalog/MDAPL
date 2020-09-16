@@ -465,8 +465,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#idioms">
-     3.11.5. Idioms
+    <a class="reference internal nav-link" href="#dyalog-idioms-and-idiomatic-phrases">
+     3.11.5. Dyalog Idioms and Idiomatic Phrases
     </a>
    </li>
   </ul>
@@ -2547,9 +2547,9 @@ June
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">14
 </span></div></div>
 </div>
-<p>In the expression above, the symbol <code class="docutils literal notranslate"><span class="pre">/</span></code> is the operator. It takes the function <code class="docutils literal notranslate"><span class="pre">+</span></code> as its single operand (“argument”) and produces the derived function <code class="docutils literal notranslate"><span class="pre">+/</span></code>. This derived function is then applied to <code class="docutils literal notranslate"><span class="pre">Qty</span></code>, giving a result which is assigned to <code class="docutils literal notranslate"><span class="pre">Stock</span></code> and displayed with <code class="docutils literal notranslate"><span class="pre">⊢</span></code>.</p>
+<p>In the expression above, the symbol <code class="docutils literal notranslate"><span class="pre">/</span></code> is the operator. It takes the function <code class="docutils literal notranslate"><span class="pre">+</span></code> as its single operand (similar to how we give arguments to functions) and produces the derived function <code class="docutils literal notranslate"><span class="pre">+/</span></code>. This derived function is then applied to <code class="docutils literal notranslate"><span class="pre">Qty</span></code>, giving a result which is assigned to <code class="docutils literal notranslate"><span class="pre">Stock</span></code> and displayed with <code class="docutils literal notranslate"><span class="pre">⊢</span></code>.</p>
 <p>Please note that the argument to a monadic function is always to the right of the function, whereas the function applied to a monadic operator (its operand) is always to the left of the operator.</p>
-<p>Many, although not all, of the APL primitive functions may be used as the operand to <em>Reduction</em>; you can even apply a user-defined function. This generality makes Reduction, and other operators, extremely powerful.</p>
+<p>All of the APL primitive functions may be used as the operand to <em>Reduction</em>; you can even apply a dyadic user-defined function. This generality makes Reduction, and other operators, extremely powerful.</p>
 <p>Dyalog APL provides a total of around 20 such powerful <em>operators</em>, listed in Appendix 4. It is also possible to write your own operators, just as it is possible to write your own functions.</p>
 </div>
 <div class="section" id="reduction-of-binary-data">
@@ -3811,8 +3811,8 @@ BBBB
 </div>
 <p>This means <code class="docutils literal notranslate"><span class="pre">A,[2]C</span></code> and <code class="docutils literal notranslate"><span class="pre">A⍪[2]C</span></code> are both equivalent to <code class="docutils literal notranslate"><span class="pre">A,C</span></code> and <code class="docutils literal notranslate"><span class="pre">A,[1]B</span></code> and <code class="docutils literal notranslate"><span class="pre">A⍪[1]B</span></code> are both equivalent to <code class="docutils literal notranslate"><span class="pre">A⍪B</span></code>.</p>
 </div>
-<div class="section" id="idioms">
-<h3><span class="section-number">3.11.5. </span>Idioms<a class="headerlink" href="#idioms" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="dyalog-idioms-and-idiomatic-phrases">
+<h3><span class="section-number">3.11.5. </span>Dyalog Idioms and Idiomatic Phrases<a class="headerlink" href="#dyalog-idioms-and-idiomatic-phrases" title="Permalink to this headline">¶</a></h3>
 <p>It is common to see <em>Catenate</em> used in conjunction with <em>Reduce</em>, as <code class="docutils literal notranslate"><span class="pre">,/</span></code>. Let us start by understanding what it does:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3862,12 +3862,21 @@ BBBB
 └─────────┘
 </span></div></div>
 </div>
-<p>We can see above that <em>Reduce by Catenate</em> joins the items of a vector all together.</p>
-<p>We call <em><strong>Idioms</strong></em> to these common usages of primitives with each other. These are expressions which can be understood as an entity at first sight (with some practice!).</p>
+<p>We can see above that <em>Reduce by Catenate</em> joins all items of a vector together. Using <code class="docutils literal notranslate"><span class="pre">,/</span></code> is so common that you will get used to looking at <code class="docutils literal notranslate"><span class="pre">,/</span></code> and reading it as <em>join</em>, instead of <em>Reduce by Catenate</em>. Like <code class="docutils literal notranslate"><span class="pre">,/</span></code>, there are many expressions which can be understood as an entity at first sight (with some practice!).</p>
 <p>For someone who knows nothing of APL the expression above may take a bit of time to digest (even if they have an extensive knowledge of other programming languages), and they cannot readily appreciate that an APL programmer can understand it immediately, without having to read each of the symbols one by one.</p>
-<p>This is not a paradox. For young children, reading the word “Daddy” is complex. It requires the comprehension of a sequence of letters one-by-one. I presume that you no longer do that, do you? <strong>You do not read the letters</strong>; you understand <strong>the word</strong> as a whole. This is exactly the same for the above idiom.</p>
-<p>Incidentally, it is not just the APL programmer who is capable of processing an idiomatic expression in its entirety. Dyalog APL itself includes a special <em>Idiom Recognition</em> feature that speeds up the processing of APL code for many popular idioms. The Windows IDE even colours these idioms differently.</p>
-<p>We have been using another short idiom fairly often: <code class="docutils literal notranslate"><span class="pre">≢⍴</span></code>, which computes the rank of an array. Other than the idioms automatically recognised by Dyalog APL, there is no objective criteria to determine if a combination of primitives is an idiom or not: it depends on your skill, experience and even the context you are working on.</p>
+<p>This is not a paradox. For young children, reading the word “Daddy” is complex. It requires the comprehension of a sequence of letters one-by-one. I presume that you no longer do that, do you? <strong>You do not read the letters</strong>; you understand <strong>the word</strong> as a whole. This is exactly the same for the above idiomatic phrase.</p>
+<p>These common combinations of primitives are usually termed as <em><strong>Idioms</strong></em> or <em><strong>Idiomatic Phrases</strong></em>. We prefer the latter denomination to avoid any confusion with Dyalog APL’s <em>Idiom Recognition</em>. <span class="xref myst">APL Cart</span> is a very comprehensive online collection of such idiomatic phrases, although not all entries in APL Cart are idiomatic phrases. It is also noteworthy that there is no objective criteria to determine if a combination of primitives is an idiomatic phrase or not: it depends on your skill, experience and even the context you are working on.</p>
+<p>Some idiomatic phrases are so common and useful that Dyalog APL introduced a special <em>Idiom Recognition</em> feature that speeds up the processing of APL code for many popular phrases. Both RIDE and the Windows IDE even have the capability of colouring these differently. For Dyalog APL, an <em>idiom</em> is like a “shortcut primitive” that replaces a sequence of consecutive primitive. This replacement will allow for a later speed up of the code in which it shows up.</p>
+<p>For example, we have also been using another short idiom fairly often: <code class="docutils literal notranslate"><span class="pre">≢⍴</span></code> (or <code class="docutils literal notranslate"><span class="pre">⍴⍴</span></code> in Ancient times) computes the rank of an array. Because <code class="docutils literal notranslate"><span class="pre">≢⍴</span></code> is recognised by Dyalog APL’s idiom recognition feature, the interpreter doesn’t need to process two instructions:</p>
+<ol class="simple">
+<li><p>find shape of right argument;</p></li>
+<li><p>return tally of elements of right argument.</p></li>
+</ol>
+<p>Instead processing a single instruction:</p>
+<ol class="simple">
+<li><p>find rank of right argument,</p></li>
+</ol>
+<p>which can be computed by a faster method than the 2 steps above.</p>
 </div>
 </div>
 <div class="section" id="replication">
@@ -5975,7 +5984,7 @@ Fe2O3
 <p>We have organised a lottery, and we have created five vectors:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">42</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
 <span class="nv">Tickets</span> <span class="kd">←</span> <span class="o">?</span><span class="m">1000</span><span class="o">⍴</span><span class="m">999999</span>
 <span class="nv">Sold</span> <span class="kd">←</span> <span class="nv">Tickets</span><span class="sr">[</span><span class="p">(</span><span class="m">800</span><span class="o">+?</span><span class="m">200</span><span class="p">)</span><span class="o">?</span><span class="m">1000</span><span class="sr">]</span>
 <span class="nv">Ours</span> <span class="kd">←</span> <span class="nv">Sold</span><span class="sr">[</span><span class="m">200</span><span class="o">?≢</span><span class="nv">Sold</span><span class="sr">]</span>
@@ -6000,7 +6009,7 @@ Fe2O3
 <li><p>How much did we win?</p></li>
 </ol>
 <p><strong>Exercise</strong>:</p>
-<p>Can you calculate all the divisors of an integer number <code class="docutils literal notranslate"><span class="pre">N</span></code>?</p>
+<p>Can you calculate all the divisors of a positive integer number <code class="docutils literal notranslate"><span class="pre">N</span></code>?</p>
 <p>Here are some results to check your answer:</p>
 <table class="colwidths-auto table">
 <thead>
