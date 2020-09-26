@@ -36,7 +36,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Getting Started" href="CHAPTER A - Getting Started.html" />
+    <link rel="next" title="1. Getting Started" href="Getting Started.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -76,17 +76,17 @@
 </ul>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="CHAPTER A - Getting Started.html">
+  <a class="reference internal" href="Getting Started.html">
    1. Getting Started
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="CHAPTER B - Data and Variables.html">
+  <a class="reference internal" href="Data and Variables.html">
    2. Data and Variables
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="CHAPTER C - Some Primitive Functions.html">
+  <a class="reference internal" href="Some Primitive Functions.html">
    3. Some Primitive Functions
   </a>
  </li>
@@ -463,7 +463,7 @@
 <li><p>all the standard English letters, numerals and symbols are typed as usual.</p></li>
 <li><p>the majority of the APL symbols are obtained by pressing the <kbd>APL</kbd> key, in conjunction with another key. The <kbd>APL</kbd> key is the key you use to access the symbols on the right half of the keycaps above; the <kbd>APL</kbd> key is system dependant and is usually one of <kbd>Ctrl</kbd>, <kbd>Alt</kbd> or <kbd>AltGr</kbd> (or right <kbd>Alt</kbd>);</p>
 <ul>
-<li><p>the symbols on the bottom-right corner of the keycap are accessed by pressing the <kbd>APL</kbd> key, for example <kbd>APL</kbd>+<kbd>R</kbd> gives <code class="docutils literal notranslate"><span class="pre">⍴</span></code> and <kbd>APL</kbd>+<kbd>E</kbd> gives <code class="docutils literal notranslate"><span class="pre">∊</span></code>;</p></li>
+<li><p>the symbols on the bottom-right corner of the keycap are accessed by pressing the <kbd>APL</kbd> key, for example <kbd>APL</kbd>+<kbd>r</kbd> gives <code class="docutils literal notranslate"><span class="pre">⍴</span></code> and <kbd>APL</kbd>+<kbd>e</kbd> gives <code class="docutils literal notranslate"><span class="pre">∊</span></code>;</p></li>
 <li><p>if you look at the <kbd>E</kbd> key in the figure above, you can see that the symbol <code class="docutils literal notranslate"><span class="pre">⍷</span></code> appears on top of the symbol <code class="docutils literal notranslate"><span class="pre">∊</span></code>. To type the symbols on the top-right corner of a keycap, one uses the <kbd>APL</kbd>+<kbd>Shift</kbd> combo, so that <kbd>APL</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd> types an <code class="docutils literal notranslate"><span class="pre">⍷</span></code>.</p></li>
 </ul>
 </li>
@@ -829,7 +829,7 @@
 <p>The first form is called the “<strong><em>dyadic</em></strong>” use of the symbol.
 The second form is called the “<strong><em>monadic</em></strong>” use of the symbol.</p>
 <p>It is the same in APL, where most of the symbols can have two meanings.</p>
-<p>For example, to find the shape (the dimensions) of an array, one uses the Greek letter Rho (<code class="docutils literal notranslate"><span class="pre">⍴</span></code>), which can be read “<em>shape of …</em>”, in its monadic use. It is produced using <kbd>APL</kbd>+<kbd>R</kbd>.</p>
+<p>For example, to find the shape (the dimensions) of an array, one uses the Greek letter Rho (<code class="docutils literal notranslate"><span class="pre">⍴</span></code>), which can be read “<em>shape of …</em>”, in its monadic use. It is produced using <kbd>APL</kbd>+<kbd>r</kbd>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span> <span class="nv">Price</span>        <span class="c1">⍝ Monadic use</span>
@@ -1079,8 +1079,8 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Average</span></code> is the program name;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">⍵</span></code> is a generic symbol which represents the array passed on the right (type it with <kbd>APL</kbd>+<kbd>W</kbd>);</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">⍺</span></code> would be the generic symbol for the array passed on the left, if any (type it with <kbd>APL</kbd>+<kbd>A</kbd>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">⍵</span></code> is a generic symbol which represents the array passed on the right (type it with <kbd>APL</kbd>+<kbd>w</kbd>);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">⍺</span></code> would be the generic symbol for the array passed on the left, if any (type it with <kbd>APL</kbd>+<kbd>a</kbd>).</p></li>
 </ul>
 <p>The definition of the function is delimited by a set of curly braces <code class="docutils literal notranslate"><span class="pre">{</span></code> and <code class="docutils literal notranslate"><span class="pre">}</span></code>. For more complex functions it is also possible to use a text editor, but this is beyond the scope of this short introduction.</p>
 <p>Once defined, this function may be invoked in a very simple way:</p>
@@ -1212,7 +1212,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </span></div></div>
 </div>
 <p>But if one needs to extract the first 500 items from a long list, typing the integers from 1 to 500 would of course be very inconvenient.</p>
-<p>This is why APL has been given the symbol <code class="docutils literal notranslate"><span class="pre">⍳</span></code> (<em><strong>Iota</strong></em>), which produces the set of the first <span class="math notranslate nohighlight">\(n\)</span> integers (<code class="docutils literal notranslate"><span class="pre">⍳</span></code> can be obtained using <kbd>APL</kbd>+<kbd>I</kbd>).</p>
+<p>This is why APL has been given the symbol <code class="docutils literal notranslate"><span class="pre">⍳</span></code> (<em><strong>Iota</strong></em>), which produces the set of the first <span class="math notranslate nohighlight">\(n\)</span> integers (<code class="docutils literal notranslate"><span class="pre">⍳</span></code> can be obtained using <kbd>APL</kbd>+<kbd>i</kbd>).</p>
 <p>Thus, instead of writing <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span> <span class="pre">6</span> <span class="pre">7</span> <span class="pre">8</span></code>, it is sufficient to write <code class="docutils literal notranslate"><span class="pre">⍳8</span></code>.</p>
 <p>And to extract the first 500 terms of a large vector, one may write: <code class="docutils literal notranslate"><span class="pre">Big[⍳500]</span></code>.</p>
 <p>We shall discover later an even simpler method.</p>
@@ -1597,7 +1597,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Proudly having found all the “a”s, we may wish to find all the vowels.</p>
 <p>Alas, although we can write <code class="docutils literal notranslate"><span class="pre">Phrase</span> <span class="pre">=</span> <span class="pre">'a'</span></code>, because a vector can be compared with a single value, one cannot write <code class="docutils literal notranslate"><span class="pre">Phrase</span> <span class="pre">=</span> <span class="pre">'aeiouy'</span></code>⁽¹⁾, because that would require the item by item comparison of a phrase of 46 letters and “aeiouy” which has only 6.</p>
 <p>In other words: You may compare 46 letters with 46 other letters, or compare them with one letter, but not with 6.</p>
-<p>So we shall use a new function: <em><strong>Membership</strong></em> which is represented by the symbol <code class="docutils literal notranslate"><span class="pre">∊</span></code>, also used in mathematics (<code class="docutils literal notranslate"><span class="pre">∊</span></code> can be obtained by pressing <kbd>APL</kbd>+<kbd>E</kbd>).</p>
+<p>So we shall use a new function: <em><strong>Membership</strong></em> which is represented by the symbol <code class="docutils literal notranslate"><span class="pre">∊</span></code>, also used in mathematics (<code class="docutils literal notranslate"><span class="pre">∊</span></code> can be obtained by pressing <kbd>APL</kbd>+<kbd>e</kbd>).</p>
 <p>The expression <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">∊</span> <span class="pre">B</span></code> returns a Boolean result which indicates which items of the variable <code class="docutils literal notranslate"><span class="pre">A</span></code> appear in the variable <code class="docutils literal notranslate"><span class="pre">B</span></code>, wherever they may be. And it works no matter what are the shapes, the dimensions or the type (numeric or character) of <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>, a pure marvel!</p>
 <p>⁽¹⁾ “Y” is considered to be a vowel in many European languages.</p>
 <p>For example:</p>
@@ -2142,7 +2142,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 24 15  45 27  33 120
 </span></div></div>
 </div>
-<p>The <em>Outer Product</em> symbol is made of a small circle (<kbd>APL</kbd>+<kbd>J</kbd>), a dot, and the function to be applied. It is an <em>operator</em>, as it takes a function (<code class="docutils literal notranslate"><span class="pre">×</span></code> in this case) as an <em>operand</em>.</p>
+<p>The <em>Outer Product</em> symbol is made of a small circle (<kbd>APL</kbd>+<kbd>j</kbd>), a dot, and the function to be applied. It is an <em>operator</em>, as it takes a function (<code class="docutils literal notranslate"><span class="pre">×</span></code> in this case) as an <em>operand</em>.</p>
 <p>Despite of its name “<em>Outer Product</em>” this operator by no means is restricted to working with multiplication. We can replace the symbol for <em>Multiplication</em> by any other dyadic function (like <code class="docutils literal notranslate"><span class="pre">=</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">≥</span></code> or <code class="docutils literal notranslate"><span class="pre">⌈</span></code>), or even functions which you have defined yourself (like <code class="docutils literal notranslate"><span class="pre">Plus</span></code>), and you will understand, as for <em>Reduce</em> which we saw earlier, that <em>Outer Product</em> is an operator of amazing power.</p>
 <p>Let’s have some fun with it:</p>
 <div class="cell docutils container">
@@ -2391,7 +2391,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="CHAPTER A - Getting Started.html" title="next page"><span class="section-number">1. </span>Getting Started</a>
+    <a class='right-next' id="next-link" href="Getting Started.html" title="next page"><span class="section-number">1. </span>Getting Started</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
