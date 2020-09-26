@@ -1,3 +1,12 @@
+"""
+Python script to transform some elements in the notebooks into appropriate MyST markdown notation,
+as supported by the Jupyter Book tool.
+
+As of now, this preprocessing step:
+ - transforms image links into MyST figures
+ - transforms especially marked-up sections into admonitions
+"""
+
 import json
 import re
 import sys

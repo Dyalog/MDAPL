@@ -1,5 +1,5 @@
 """
-Preprocessing script to keep resources up to date.
+Preprocessing script to keep specified resources up to date.
 """
 
 import os
