@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Data and Variables &#8212; Mastering Dyalog APL</title>
+    <title>2. Data and Variables &#8212; Mastering Dyalog APL</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -36,6 +36,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Some Primitive Functions" href="Some-Primitive-Functions.html" />
+    <link rel="prev" title="1. Getting Started" href="Getting-Started.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -73,19 +75,19 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="Getting Started.html">
+  <a class="reference internal" href="Getting-Started.html">
    1. Getting Started
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Data and Variables.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    2. Data and Variables
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Some Primitive Functions.html">
+  <a class="reference internal" href="Some-Primitive-Functions.html">
    3. Some Primitive Functions
   </a>
  </li>
@@ -136,7 +138,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/CHAPTER B - Data and Variables.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/Data-and-Variables.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -179,86 +181,86 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#simple-numeric-values">
-   Simple Numeric Values
+   2.1. Simple Numeric Values
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#our-first-operations">
-     Our First Operations
+     2.1.1. Our First Operations
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#variables">
-     Variables
+     2.1.2. Variables
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#operations-on-variables">
-     Operations on Variables
+     2.1.3. Operations on Variables
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#arrays-of-items">
-   Arrays of Items
+   2.2. Arrays of Items
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-a-list-or-a-matrix">
-     Create a List or a Matrix
+     2.2.1. Create a List or a Matrix
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#special-cases-with-reshape">
-     Special Cases with Reshape
+     2.2.2. Special Cases with Reshape
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#multi-dimensional-arrays">
-     Multi-dimensional Arrays
+     2.2.3. Multi-dimensional Arrays
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#shape-rank-and-vocabulary">
-   Shape, Rank and Vocabulary
+   2.3. Shape, Rank and Vocabulary
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#shape-and-rank">
-     Shape and Rank
+     2.3.1. Shape and Rank
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#scaling-down-the-ranks">
-     Scaling Down the Ranks
+     2.3.2. Scaling Down the Ranks
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#vocabulary">
-     Vocabulary
+     2.3.3. Vocabulary
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#beware">
-     Beware!
+     2.3.4. Beware!
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#the-shape-is-always-a-vector">
-       The Shape is Always a Vector
+       2.3.4.1. The Shape is Always a Vector
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#do-not-rely-on-the-visual-aspect-of-a-variable">
-       Do Not Rely on the Visual Aspect of a Variable
+       2.3.4.2. Do Not Rely on the Visual Aspect of a Variable
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#displaying-long-vectors">
-       Displaying Long Vectors
+       2.3.4.3. Displaying Long Vectors
       </a>
      </li>
     </ul>
@@ -267,142 +269,142 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#simple-character-values">
-   Simple Character Values
+   2.4. Simple Character Values
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#character-vectors-and-scalars">
-     Character Vectors and Scalars
+     2.4.1. Character Vectors and Scalars
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#character-arrays">
-     Character Arrays
+     2.4.2. Character Arrays
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#indexing">
-   Indexing
+   2.5. Indexing
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#traditional-vector-indexing">
-     Traditional Vector Indexing
+     2.5.1. Traditional Vector Indexing
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-shape-of-the-result">
-     The Shape of the Result
+     2.5.2. The Shape of the Result
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#array-indexing">
-     Array Indexing
+     2.5.3. Array Indexing
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#convention">
-     Convention
+     2.5.4. Convention
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#warnings">
-     Warnings
+     2.5.5. Warnings
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#shape-compatibility">
-       Shape Compatibility
+       2.5.5.1. Shape Compatibility
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#replace-or-obtain-all-the-values">
-       Replace or Obtain All the Values
+       2.5.5.2. Replace or Obtain All the Values
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#pass-through-value">
-       “Pass-Through” Value
+       2.5.5.3. “Pass-Through” Value
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-index-function">
-     The Index Function
+     2.5.6. The Index Function
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mixed-and-nested-arrays">
-   Mixed and Nested Arrays
+   2.6. Mixed and Nested Arrays
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#mixed-arrays">
-     Mixed Arrays
+     2.6.1. Mixed Arrays
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#four-important-remarks">
-     Four Important Remarks
+     2.6.2. Four Important Remarks
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
-       6.2.1
+      <a class="reference internal nav-link" href="#data-and-variables-621">
+       2.6.2.1. 6.2.1
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       6.2.2
+      <a class="reference internal nav-link" href="#data-and-variables-622">
+       2.6.2.2. 6.2.2
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id3">
-       6.2.3
+      <a class="reference internal nav-link" href="#data-and-variables-623">
+       2.6.2.3. 6.2.3
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id4">
-       6.2.4
+      <a class="reference internal nav-link" href="#data-and-variables-624">
+       2.6.2.4. 6.2.4
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#nested-arrays">
-     Nested Arrays
+     2.6.3. Nested Arrays
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#display">
-     DISPLAY
+     2.6.4. DISPLAY
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#conventions">
-       Conventions
+       2.6.4.1. Conventions
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#examples">
-       6.4.2 - Examples
+       2.6.4.2. 6.4.2 - Examples
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#be-simple">
-     Be Simple!
+     2.6.5. Be Simple!
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#that-s-not-all-folks">
-     That’s
+     2.6.6. That’s
      <em>
       Not
      </em>
@@ -413,123 +415,123 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#empty-arrays">
-   Empty Arrays
+   2.7. Empty Arrays
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#workspaces-and-commands">
-   Workspaces and Commands
+   2.8. Workspaces and Commands
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-active-workspace">
-     The Active Workspace
+     2.8.1. The Active Workspace
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-libraries">
-     The Libraries
+     2.8.2. The Libraries
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#load-a-ws">
-     Load a WS
+     2.8.3. Load a WS
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#file-extensions">
-     File Extensions
+     2.8.4. File Extensions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#merge-workspaces">
-     Merge Workspaces
+     2.8.5. Merge Workspaces
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#protected-copy">
-       Protected Copy
+       2.8.5.1. Protected Copy
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#intentionally-destructive-copy">
-       Intentionally Destructive Copy
+       2.8.5.2. Intentionally Destructive Copy
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#evolution-of-your-code">
-       Evolution of Your Code
+       2.8.5.3. Evolution of Your Code
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#active-ws-identification">
-       Active WS Identification
+       2.8.5.4. Active WS Identification
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exiting-apl">
-     Exiting APL
+     2.8.6. Exiting APL
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#contents-of-a-ws">
-     Contents of a WS
+     2.8.7. Contents of a WS
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#our-first-system-commands">
-     Our First System Commands
+     2.8.8. Our First System Commands
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#exercises">
-   Exercises
+   2.9. Exercises
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-specialist-s-section">
-   The Specialist’s Section
+   2.10. The Specialist’s Section
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#variable-names">
-     Variable Names
+     2.10.1. Variable Names
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#representation-of-numbers">
-     Representation of Numbers
+     2.10.2. Representation of Numbers
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-shape-of-the-result-of-indexing">
-     The Shape of the Result of Indexing
+     2.10.3. The Shape of the Result of Indexing
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#rule">
-       Rule
+       2.10.3.1. Rule
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#using-ravel-to-preserve-a-dimension">
-       Using Ravel to Preserve a Dimension
+       2.10.3.2. Using Ravel to Preserve a Dimension
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#multiple-usage-of-an-index">
-     Multiple usage of an Index
+     2.10.4. Multiple usage of an Index
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#a-problem-with-using-reshape">
-     A Problem With Using Reshape (
+     2.10.5. A Problem With Using Reshape (
      <code class="docutils literal notranslate">
       <span class="pre">
        ⍴
@@ -540,7 +542,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#monadic-index-or-materialise">
-     Monadic Index, or Materialise (
+     2.10.6. Monadic Index, or Materialise (
      <code class="docutils literal notranslate">
       <span class="pre">
        ⌷
@@ -553,7 +555,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#solutions">
-   Solutions
+   2.11. Solutions
   </a>
  </li>
 </ul>
@@ -577,15 +579,15 @@
 </span></div></div>
 </div>
 <div class="section" id="data-and-variables">
-<h1>Data and Variables<a class="headerlink" href="#data-and-variables" title="Permalink to this headline">¶</a></h1>
+<span id="data-and-variables-data-and-variables"></span><h1><span class="section-number">2. </span>Data and Variables<a class="headerlink" href="#data-and-variables" title="Permalink to this headline">¶</a></h1>
 <p>When you use APL, you type an expression or a command into the session window, and the result of the expression (or a message resulting from the execution of the command) is displayed on the next line(s). So an APL “session” is a sequence of user input lines (expressions and/or commands) interleaved with the results of the expressions.</p>
 <p>If you type these expressions and/or commands in the Dyalog APL software you installed, or on the <a class="reference external" href="https://tryapl.org">TryAPL</a>, you will see that APL initially positions the input cursor 6 spaces in from the left margin. Unless you deliberately move the cursor before you start typing, the expressions you enter into the system will therefore be indented; you can evaluate what you type by pressing <kbd>Enter</kbd>, which will make the result appear below what you typed and left aligned with the margin. This interactive session is commonly referred to as an <em><strong>interpreter session</strong></em> because some software is interpreting what you type and providing you with results on the fly.</p>
 <p>This book, however, was written in Jupyter notebooks, which works in a slightly different way. In here, you can find blocks of text (like the one you are reading <em>right now</em>) interleaved with code blocks. Depending on where you are reading this, these code blocks may be static or they may be interactive, allowing you, the reader, to change them and run them at will. The expressions you enter go in the shaded rectangles (the <em><strong>input cells</strong></em>, preceded by a <code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">[X]:</span></code>) and you can evaluate them by pressing <kbd>Ctrl</kbd>+<kbd>Enter</kbd>. The results of the expressions are then placed inside white rectangles (the <em><strong>output cells</strong></em>, preceded by the corresponding <code class="docutils literal notranslate"><span class="pre">Out[X]:</span></code>) which get updated when you re-evaluate the same <em>input cell</em>.</p>
 <p>It is recommended that you go through this tutorial in front of your computer, and experiment by typing the expressions given below into the Dyalog APL interpreter session. Alternatively, if you are reading the book online in a dynamic format, you are encouraged to re-run the <em>input cells</em> for yourself. Either way, try changing the expressions, and observe the new results.</p>
 <div class="section" id="simple-numeric-values">
-<h2>Simple Numeric Values<a class="headerlink" href="#simple-numeric-values" title="Permalink to this headline">¶</a></h2>
+<span id="data-and-variables-simple-numeric-values"></span><h2><span class="section-number">2.1. </span>Simple Numeric Values<a class="headerlink" href="#simple-numeric-values" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="our-first-operations">
-<h3>Our First Operations<a class="headerlink" href="#our-first-operations" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-our-first-operations"></span><h3><span class="section-number">2.1.1. </span>Our First Operations<a class="headerlink" href="#our-first-operations" title="Permalink to this headline">¶</a></h3>
 <p>Let’s try some simple expressions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -654,7 +656,7 @@
 <p>The slash also has a different meaning in APL, we’ll get to that latter.</p>
 </div>
 <div class="section" id="variables">
-<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-variables"></span><h3><span class="section-number">2.1.2. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
 <p>As in any other programming language, it is possible to create variables. Just choose a name and use the assignment arrow (<code class="docutils literal notranslate"><span class="pre">←</span></code>) to assign it to a value. The value can be a single item or several items separated by spaces. The assignment arrow can be entered by pressing <kbd>APL</kbd>+<kbd>[</kbd>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -706,7 +708,7 @@
 <p>Variable names must follow certain rules:</p>
 <ul class="simple">
 <li><p>They must contain only letters, in lower or upper-case, including some accented letters (cf. below), and the digits (0 to 9).</p></li>
-<li><p>The APL alphabet also includes the Greek letter Delta (<code class="docutils literal notranslate"><span class="pre">∆</span></code>), entered using <kbd>APL</kbd>+<kbd>H</kbd>, the Underscore sign (<code class="docutils literal notranslate"><span class="pre">_</span></code>), and also the Underscored Delta (<code class="docutils literal notranslate"><span class="pre">⍙</span></code>), entered using <kbd>APL</kbd>+<kbd>Shift</kbd>+<kbd>.</kbd> (dot).</p></li>
+<li><p>The APL alphabet also includes the Greek letter Delta (<code class="docutils literal notranslate"><span class="pre">∆</span></code>), entered using <kbd>APL</kbd>+<kbd>h</kbd>, the Underscore sign (<code class="docutils literal notranslate"><span class="pre">_</span></code>), and also the Underscored Delta (<code class="docutils literal notranslate"><span class="pre">⍙</span></code>), entered using <kbd>APL</kbd>+<kbd>Shift</kbd>+<kbd>.</kbd> (dot).</p></li>
 <li><p>They cannot start with a digit.</p></li>
 </ul>
 <p>The following variable names are valid:</p>
@@ -798,7 +800,7 @@ abcdefghijklmnopqrstuvwxyz
 <p><code class="docutils literal notranslate"><span class="pre">∆</span></code> and <code class="docutils literal notranslate"><span class="pre">⍙</span></code> may also cause problems if you ever want to inter-operate with other software, and are best avoided.</p>
 </div>
 <div class="section" id="operations-on-variables">
-<h3>Operations on Variables<a class="headerlink" href="#operations-on-variables" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-operations-on-variables"></span><h3><span class="section-number">2.1.3. </span>Operations on Variables<a class="headerlink" href="#operations-on-variables" title="Permalink to this headline">¶</a></h3>
 <p>Variables can be used in any expression or calculation. For example, if we want to calculate the amount of the discount applied to the things we purchased, we can write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -924,10 +926,10 @@ abcdefghijklmnopqrstuvwxyz
 </div>
 </div>
 <div class="section" id="arrays-of-items">
-<h2>Arrays of Items<a class="headerlink" href="#arrays-of-items" title="Permalink to this headline">¶</a></h2>
+<span id="data-and-variables-arrays-of-items"></span><h2><span class="section-number">2.2. </span>Arrays of Items<a class="headerlink" href="#arrays-of-items" title="Permalink to this headline">¶</a></h2>
 <p>In APL, an <em>array</em> is a sequence of zero or more items. The variable <code class="docutils literal notranslate"><span class="pre">Years</span></code> that we used in the previous section is an array of 4 items.</p>
 <div class="section" id="create-a-list-or-a-matrix">
-<h3>Create a List or a Matrix<a class="headerlink" href="#create-a-list-or-a-matrix" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-create-a-list-or-a-matrix"></span><h3><span class="section-number">2.2.1. </span>Create a List or a Matrix<a class="headerlink" href="#create-a-list-or-a-matrix" title="Permalink to this headline">¶</a></h3>
 <p>To enter a short list of items, just type them one by one separated by spaces, and assign the list to a name. For example, here is the number of TV sets sold during the last 10 days by a shopkeeper:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -978,7 +980,7 @@ abcdefghijklmnopqrstuvwxyz
 <li><p>the <em><strong>shape</strong></em> of the array: in this case, 6 rows and 2 columns;</p></li>
 <li><p>the <em><strong>contents</strong></em> (or <em>items</em>) of the array, in row order.</p></li>
 </ul>
-<p>The function that organises a set of items into an array of a specified shape is known as <em><strong>Reshape</strong></em> and is symbolised by the Greek letter Rho (<code class="docutils literal notranslate"><span class="pre">⍴</span></code>). It is easy to remember that <em>R</em>ho can be entered using <kbd>APL</kbd>+<kbd>R</kbd>.</p>
+<p>The function that organises a set of items into an array of a specified shape is known as <em><strong>Reshape</strong></em> and is symbolised by the Greek letter Rho (<code class="docutils literal notranslate"><span class="pre">⍴</span></code>). It is easy to remember that <em>R</em>ho can be entered using <kbd>APL</kbd>+<kbd>r</kbd>.</p>
 <p>The <em><strong>Reshape</strong></em> function is used as follows: <code class="docutils literal notranslate"><span class="pre">R←</span> <span class="pre">Shape</span> <span class="pre">⍴</span> <span class="pre">Contents</span></code>.</p>
 <p>For example, to obtain a 6 by 2 array of items:</p>
 <div class="cell docutils container">
@@ -999,7 +1001,7 @@ abcdefghijklmnopqrstuvwxyz
 </div>
 </div>
 <div class="section" id="special-cases-with-reshape">
-<h3>Special Cases with Reshape<a class="headerlink" href="#special-cases-with-reshape" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-special-cases-with-reshape"></span><h3><span class="section-number">2.2.2. </span>Special Cases with Reshape<a class="headerlink" href="#special-cases-with-reshape" title="Permalink to this headline">¶</a></h3>
 <p>If there are too many items, the extra items are ignored:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1080,7 +1082,7 @@ abcdefghijklmnopqrstuvwxyz
 </div>
 </div>
 <div class="section" id="multi-dimensional-arrays">
-<h3>Multi-dimensional Arrays<a class="headerlink" href="#multi-dimensional-arrays" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-multi-dimensional-arrays"></span><h3><span class="section-number">2.2.3. </span>Multi-dimensional Arrays<a class="headerlink" href="#multi-dimensional-arrays" title="Permalink to this headline">¶</a></h3>
 <p>APL is not limited to arrays with two dimensions, it can handle arrays with 3, 4, indeed up to 15 dimensions.</p>
 <p>Imagine that a company has stored the production of its assembly lines in a variable named <code class="docutils literal notranslate"><span class="pre">Prod</span></code>.</p>
 <p>The variable contains 5 years of production, on 2 assembly lines, and for 12 months per year. To represent the 3 dimensions on the screen, the array is displayed split into sub-arrays each representing a single year, as follows:</p>
@@ -1103,9 +1105,9 @@ abcdefghijklmnopqrstuvwxyz
 </div>
 </div>
 <div class="section" id="shape-rank-and-vocabulary">
-<h2>Shape, Rank and Vocabulary<a class="headerlink" href="#shape-rank-and-vocabulary" title="Permalink to this headline">¶</a></h2>
+<span id="data-and-variables-shape-rank-and-vocabulary"></span><h2><span class="section-number">2.3. </span>Shape, Rank and Vocabulary<a class="headerlink" href="#shape-rank-and-vocabulary" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="shape-and-rank">
-<h3>Shape and Rank<a class="headerlink" href="#shape-and-rank" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-shape-and-rank"></span><h3><span class="section-number">2.3.1. </span>Shape and Rank<a class="headerlink" href="#shape-and-rank" title="Permalink to this headline">¶</a></h3>
 <p>The symbol <code class="docutils literal notranslate"><span class="pre">⍴</span></code>, which we introduced above, can be used to obtain the lengths of the dimensions or the <em><strong>Shape</strong></em> of an array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1197,7 +1199,7 @@ abcdefghijklmnopqrstuvwxyz
 </div>
 </div>
 <div class="section" id="scaling-down-the-ranks">
-<h3>Scaling Down the Ranks<a class="headerlink" href="#scaling-down-the-ranks" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-scaling-down-the-ranks"></span><h3><span class="section-number">2.3.2. </span>Scaling Down the Ranks<a class="headerlink" href="#scaling-down-the-ranks" title="Permalink to this headline">¶</a></h3>
 <p>Using that formula, we can see that:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1271,7 +1273,7 @@ abcdefghijklmnopqrstuvwxyz
 </div>
 </div>
 <div class="section" id="vocabulary">
-<h3>Vocabulary<a class="headerlink" href="#vocabulary" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-vocabulary"></span><h3><span class="section-number">2.3.3. </span>Vocabulary<a class="headerlink" href="#vocabulary" title="Permalink to this headline">¶</a></h3>
 <p>In this book, we shall use the following terms:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1316,9 +1318,9 @@ abcdefghijklmnopqrstuvwxyz
 </table>
 </div>
 <div class="section" id="beware">
-<h3>Beware!<a class="headerlink" href="#beware" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-beware"></span><h3><span class="section-number">2.3.4. </span>Beware!<a class="headerlink" href="#beware" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="the-shape-is-always-a-vector">
-<h4>The Shape is Always a Vector<a class="headerlink" href="#the-shape-is-always-a-vector" title="Permalink to this headline">¶</a></h4>
+<span id="data-and-variables-the-shape-is-always-a-vector"></span><h4><span class="section-number">2.3.4.1. </span>The Shape is Always a Vector<a class="headerlink" href="#the-shape-is-always-a-vector" title="Permalink to this headline">¶</a></h4>
 <p>The shape of a value is <strong>always</strong> a vector, even if it contains only one item or even no items at all.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1399,7 +1401,7 @@ abcdefghijklmnopqrstuvwxyz
 </div>
 </div>
 <div class="section" id="do-not-rely-on-the-visual-aspect-of-a-variable">
-<h4>Do Not Rely on the Visual Aspect of a Variable<a class="headerlink" href="#do-not-rely-on-the-visual-aspect-of-a-variable" title="Permalink to this headline">¶</a></h4>
+<span id="data-and-variables-do-not-rely-on-the-visual-aspect-of-a-variable"></span><h4><span class="section-number">2.3.4.2. </span>Do Not Rely on the Visual Aspect of a Variable<a class="headerlink" href="#do-not-rely-on-the-visual-aspect-of-a-variable" title="Permalink to this headline">¶</a></h4>
 <p>Although scalars, vectors, and matrices may sometimes look the same when they are displayed, they should not be confused. Just look at the two variables <code class="docutils literal notranslate"><span class="pre">Length</span></code> and <code class="docutils literal notranslate"><span class="pre">Shape</span></code> above, they look the same but one is a scalar and the other is a vector:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1489,11 +1491,11 @@ abcdefghijklmnopqrstuvwxyz
 </div>
 </div>
 <div class="section" id="displaying-long-vectors">
-<h4>Displaying Long Vectors<a class="headerlink" href="#displaying-long-vectors" title="Permalink to this headline">¶</a></h4>
+<span id="data-and-variables-displaying-long-vectors"></span><h4><span class="section-number">2.3.4.3. </span>Displaying Long Vectors<a class="headerlink" href="#displaying-long-vectors" title="Permalink to this headline">¶</a></h4>
 <p>If a vector is too long to be displayed in a single line on your screen, the interpreter session will wrap it onto several lines. But to prevent possible confusion with the display of a matrix, the second line and the following lines will not be aligned at the left margin, but will be indented 6 characters to the right. To show you what we mean, the figure below contains a screenshot of the Windows IDE when we display the variable <code class="docutils literal notranslate"><span class="pre">Bignum</span></code>; the vector is split in 3 lines and some of the values are only visible if you scroll right.</p>
 <div class="figure align-default" id="bignum-output">
 <img alt="_images/Bignum_Output.png" src="_images/Bignum_Output.png" />
-<p class="caption"><span class="caption-text">A long variable being wrapped in the Windows IDE</span><a class="headerlink" href="#bignum-output" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">A long variable being wrapped in the Windows IDE</span><a class="headerlink" href="#bignum-output" title="Permalink to this image">¶</a></p>
 </div>
 <p>Depending on the format in which you are reading this book, you may or may not be able to see all the numbers and they may or may not be laid out in several lines. If they are, then the first line will also not be indented, like in the figure above.</p>
 <div class="cell docutils container">
@@ -1514,9 +1516,9 @@ abcdefghijklmnopqrstuvwxyz
 </div>
 </div>
 <div class="section" id="simple-character-values">
-<h2>Simple Character Values<a class="headerlink" href="#simple-character-values" title="Permalink to this headline">¶</a></h2>
+<span id="data-and-variables-simple-character-values"></span><h2><span class="section-number">2.4. </span>Simple Character Values<a class="headerlink" href="#simple-character-values" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="character-vectors-and-scalars">
-<h3>Character Vectors and Scalars<a class="headerlink" href="#character-vectors-and-scalars" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-character-vectors-and-scalars"></span><h3><span class="section-number">2.4.1. </span>Character Vectors and Scalars<a class="headerlink" href="#character-vectors-and-scalars" title="Permalink to this headline">¶</a></h3>
 <p>Up to now, we have used only numeric values, but we can also create textual data known as a <em>character array</em>. To identify a string of characters as text, we start and end it with a single <em><strong>Quote</strong></em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1648,7 +1650,7 @@ abcdefghijklmnopqrstuvwxyz
 </div>
 </div>
 <div class="section" id="character-arrays">
-<h3>Character Arrays<a class="headerlink" href="#character-arrays" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-character-arrays"></span><h3><span class="section-number">2.4.2. </span>Character Arrays<a class="headerlink" href="#character-arrays" title="Permalink to this headline">¶</a></h3>
 <p>We saw, some pages ago, a list of months:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">January</span>
 <span class="n">February</span>
@@ -1750,9 +1752,9 @@ June
 </div>
 </div>
 <div class="section" id="indexing">
-<h2>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h2>
+<span id="data-and-variables-indexing"></span><h2><span class="section-number">2.5. </span>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="traditional-vector-indexing">
-<h3>Traditional Vector Indexing<a class="headerlink" href="#traditional-vector-indexing" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-traditional-vector-indexing"></span><h3><span class="section-number">2.5.1. </span>Traditional Vector Indexing<a class="headerlink" href="#traditional-vector-indexing" title="Permalink to this headline">¶</a></h3>
 <p>Our variable <code class="docutils literal notranslate"><span class="pre">Contents</span></code> contains the following items:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1836,7 +1838,7 @@ June
 </div>
 </div>
 <div class="section" id="the-shape-of-the-result">
-<h3>The Shape of the Result<a class="headerlink" href="#the-shape-of-the-result" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-the-shape-of-the-result"></span><h3><span class="section-number">2.5.2. </span>The Shape of the Result<a class="headerlink" href="#the-shape-of-the-result" title="Permalink to this headline">¶</a></h3>
 <p>The index may be a numeric array of any shape: scalar, vector, matrix, or an array of higher rank. To understand what happens, there is a simple rule:</p>
 <blockquote>
 <div><p>When a vector is indexed by an array, the result has exactly the <b><i>same shape</i></b> as the index array, as if each item of the index had been replaced by the item it designates.</p>
@@ -1891,7 +1893,7 @@ June
 </div>
 </div>
 </div>
-<p>This is not very easy to interpret! Let us replace the inactive periods by “<code class="docutils literal notranslate"><span class="pre">-</span></code>“, and the busy periods by “<code class="docutils literal notranslate"><span class="pre">⎕</span></code>”. This beautiful character, named <em><strong>Quad</strong></em>, can be entered by pressing <kbd>APL</kbd>+<kbd>L</kbd>.</p>
+<p>This is not very easy to interpret! Let us replace the inactive periods by “<code class="docutils literal notranslate"><span class="pre">-</span></code>“, and the busy periods by “<code class="docutils literal notranslate"><span class="pre">⎕</span></code>”. This beautiful character, named <em><strong>Quad</strong></em>, can be entered by pressing <kbd>APL</kbd>+<kbd>l</kbd>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;-⎕&#39;</span><span class="sr">[</span><span class="nv">Planning</span><span class="o">+</span><span class="m">1</span><span class="sr">]</span>
@@ -1911,7 +1913,7 @@ June
 <p>All the 0’s in <code class="docutils literal notranslate"><span class="pre">Planning</span></code> have been replaced by the 1st item (<code class="docutils literal notranslate"><span class="pre">-</span></code>), and all the 1’s have been replaced by the 2nd item (<code class="docutils literal notranslate"><span class="pre">⎕</span></code>).</p>
 </div>
 <div class="section" id="array-indexing">
-<h3>Array Indexing<a class="headerlink" href="#array-indexing" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-array-indexing"></span><h3><span class="section-number">2.5.3. </span>Array Indexing<a class="headerlink" href="#array-indexing" title="Permalink to this headline">¶</a></h3>
 <p>Just to make some experiments, let us create a new variable, named <code class="docutils literal notranslate"><span class="pre">Tests</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2063,7 +2065,7 @@ June
 </div>
 </div>
 <div class="section" id="convention">
-<h3>Convention<a class="headerlink" href="#convention" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-convention"></span><h3><span class="section-number">2.5.4. </span>Convention<a class="headerlink" href="#convention" title="Permalink to this headline">¶</a></h3>
 <p>To specify <em>all</em> items of a dimension, you just omit the index for that dimension, but you must not omit the semi-colon attached to it.</p>
 <p>In the previous example, to obtain both assembly lines we could have typed:</p>
 <div class="cell docutils container">
@@ -2151,10 +2153,10 @@ June
 </div>
 </div>
 <div class="section" id="warnings">
-<h3>Warnings<a class="headerlink" href="#warnings" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-warnings"></span><h3><span class="section-number">2.5.5. </span>Warnings<a class="headerlink" href="#warnings" title="Permalink to this headline">¶</a></h3>
 <p>We would like to draw your attention to some delicate details. Here is the first:</p>
 <div class="section" id="shape-compatibility">
-<h4>Shape Compatibility<a class="headerlink" href="#shape-compatibility" title="Permalink to this headline">¶</a></h4>
+<span id="data-and-variables-shape-compatibility"></span><h4><span class="section-number">2.5.5.1. </span>Shape Compatibility<a class="headerlink" href="#shape-compatibility" title="Permalink to this headline">¶</a></h4>
 <p>To replace several items in an array, the replacement array must have exactly the <strong>same shape</strong> as the array of indices they replace.</p>
 <p>For example, supposed that we would like to replace the four “corners” of <code class="docutils literal notranslate"><span class="pre">Tests</span></code> with the values 11 22 33 44 respectively.</p>
 <p>We <strong>cannot</strong> successfully execute:</p>
@@ -2212,7 +2214,7 @@ June
 <p>Notice the corners have the new values.</p>
 </div>
 <div class="section" id="replace-or-obtain-all-the-values">
-<h4>Replace or Obtain All the Values<a class="headerlink" href="#replace-or-obtain-all-the-values" title="Permalink to this headline">¶</a></h4>
+<span id="data-and-variables-replace-or-obtain-all-the-values"></span><h4><span class="section-number">2.5.5.2. </span>Replace or Obtain All the Values<a class="headerlink" href="#replace-or-obtain-all-the-values" title="Permalink to this headline">¶</a></h4>
 <p>To replace <strong>all</strong> of the values in an array with a single value, it is necessary to use brackets in which the indices of all the dimensions have been removed.</p>
 <p>For example, imagine that we would like to reset all the values of <code class="docutils literal notranslate"><span class="pre">Tests</span></code> to zero.</p>
 <p><code class="docutils literal notranslate"><span class="pre">Tests</span> <span class="pre">←</span> <span class="pre">0</span></code> would be <strong>wrong</strong>, because that would replace the matrix by a scalar.</p>
@@ -2258,7 +2260,7 @@ June
 <p>to replace all the items with 123.</p>
 </div>
 <div class="section" id="pass-through-value">
-<h4>“Pass-Through” Value<a class="headerlink" href="#pass-through-value" title="Permalink to this headline">¶</a></h4>
+<span id="data-and-variables-pass-through-value"></span><h4><span class="section-number">2.5.5.3. </span>“Pass-Through” Value<a class="headerlink" href="#pass-through-value" title="Permalink to this headline">¶</a></h4>
 <p>Imagine that we have a vector:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2290,7 +2292,7 @@ June
 </div>
 </div>
 <div class="section" id="the-index-function">
-<h3>The Index Function<a class="headerlink" href="#the-index-function" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-the-index-function"></span><h3><span class="section-number">2.5.6. </span>The Index Function<a class="headerlink" href="#the-index-function" title="Permalink to this headline">¶</a></h3>
 <p>In APL, nearly all of the built-in functions (known as <em>Primitive Functions</em>) are represented by a single symbol: <code class="docutils literal notranslate"><span class="pre">+</span></code> <code class="docutils literal notranslate"><span class="pre">×</span></code> <code class="docutils literal notranslate"><span class="pre">⍴</span></code> <code class="docutils literal notranslate"><span class="pre">÷</span></code> etc. Bracket indexing, as we introduced above, is an exception: it is represented by two non-contiguous symbols: <code class="docutils literal notranslate"><span class="pre">[</span></code> and <code class="docutils literal notranslate"><span class="pre">]</span></code>. This is one of the reasons why modern versions of APL also include an <em><strong>Index</strong></em> function.</p>
 <p>It is represented by the symbol <code class="docutils literal notranslate"><span class="pre">⌷</span></code>.</p>
 <p><strong>Beware</strong>: this is <strong>not</strong> the symbol <em>Quad</em> used in our planning example a few pages ago!</p>
@@ -2340,12 +2342,12 @@ June
 </div>
 </div>
 <div class="section" id="mixed-and-nested-arrays">
-<h2>Mixed and Nested Arrays<a class="headerlink" href="#mixed-and-nested-arrays" title="Permalink to this headline">¶</a></h2>
+<span id="data-and-variables-mixed-and-nested-arrays"></span><h2><span class="section-number">2.6. </span>Mixed and Nested Arrays<a class="headerlink" href="#mixed-and-nested-arrays" title="Permalink to this headline">¶</a></h2>
 <p>Up to now we have dealt only with homogeneous arrays: scalars, vectors or higher rank arrays containing only numbers or only characters. An array was a collection of what we call <em>simple</em> scalars. In the early 1980’s enhanced versions of APL started to appear. They accepted a mixture of numbers and characters within the same array (so-called <em><strong>Mixed Arrays</strong></em>), and arrays could contain sub-arrays as items (so-called <em><strong>Nested Arrays</strong></em>).</p>
 <p>In this chapter, we shall explore only some basic properties of <em>Mixed</em> and <em>Nested arrays</em>, just to help you understand what might otherwise appear to be unusual behaviour or unexpected error messages. We shall not go any further for now; Chapter I will be entirely dedicated to an extensive study of nested arrays.</p>
 <p>Note that with the current widespread use of <em>Nested arrays</em>, it is now very common to refer to an “old-fashioned” array that is not <em>Nested</em> as a <em>Simple array</em>.</p>
 <div class="section" id="mixed-arrays">
-<h3>Mixed Arrays<a class="headerlink" href="#mixed-arrays" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-mixed-arrays"></span><h3><span class="section-number">2.6.1. </span>Mixed Arrays<a class="headerlink" href="#mixed-arrays" title="Permalink to this headline">¶</a></h3>
 <p>An array is described as a <em><strong>Mixed Array</strong></em> if it contains a mixture of scalar numbers and scalar characters.</p>
 <p>It is easy to create such an array:</p>
 <div class="cell docutils container">
@@ -2393,9 +2395,9 @@ June
 </div>
 </div>
 <div class="section" id="four-important-remarks">
-<h3>Four Important Remarks<a class="headerlink" href="#four-important-remarks" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id1">
-<h4>6.2.1<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<span id="data-and-variables-four-important-remarks"></span><h3><span class="section-number">2.6.2. </span>Four Important Remarks<a class="headerlink" href="#four-important-remarks" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="data-and-variables-621">
+<span id="id1"></span><h4><span class="section-number">2.6.2.1. </span>6.2.1<a class="headerlink" href="#data-and-variables-621" title="Permalink to this headline">¶</a></h4>
 <p>In a vector like <code class="docutils literal notranslate"><span class="pre">MixVec</span></code>, each letter must be entered as a scalar: embedded within quotes, and separated from the next one by at least one blank space.</p>
 <p>If the space is omitted, for example, if we type</p>
 <div class="cell docutils container">
@@ -2430,22 +2432,22 @@ June
 </span></div></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h4>6.2.2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="data-and-variables-622">
+<span id="id2"></span><h4><span class="section-number">2.6.2.2. </span>6.2.2<a class="headerlink" href="#data-and-variables-622" title="Permalink to this headline">¶</a></h4>
 <p>When <code class="docutils literal notranslate"><span class="pre">MixVec</span></code> is displayed (see above), the three letters <code class="docutils literal notranslate"><span class="pre">Bag</span></code> are joined together, like the letters in any vector of characters.</p>
 <p>This presentation might be confused with an array of 7 items, whose 6th item is the vector <code class="docutils literal notranslate"><span class="pre">'Bag'</span></code>. That would be a <em>Nested Array</em>. We will soon learn how to investigate the structure of an array.</p>
 </div>
-<div class="section" id="id3">
-<h4>6.2.3<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="data-and-variables-623">
+<span id="id3"></span><h4><span class="section-number">2.6.2.3. </span>6.2.3<a class="headerlink" href="#data-and-variables-623" title="Permalink to this headline">¶</a></h4>
 <p>This confusion disappears in <code class="docutils literal notranslate"><span class="pre">MixMat</span></code>. Because the items of the matrix must be aligned in columns, “B” is placed under 44, “a” under 87, and “g’ under “K”. Here you can easily see that the three letters <code class="docutils literal notranslate"><span class="pre">Bag</span></code> are really three independent scalars.</p>
 </div>
-<div class="section" id="id4">
-<h4>6.2.4<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="data-and-variables-624">
+<span id="id4"></span><h4><span class="section-number">2.6.2.4. </span>6.2.4<a class="headerlink" href="#data-and-variables-624" title="Permalink to this headline">¶</a></h4>
 <p>A <em><strong>Mixed</strong></em> array is made up only of simple scalars (numbers or characters); <strong>it is not</strong> a <em>Nested Array</em>.</p>
 </div>
 </div>
 <div class="section" id="nested-arrays">
-<h3>Nested Arrays<a class="headerlink" href="#nested-arrays" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-nested-arrays"></span><h3><span class="section-number">2.6.3. </span>Nested Arrays<a class="headerlink" href="#nested-arrays" title="Permalink to this headline">¶</a></h3>
 <p>An array is said to be <em><strong>Generalised</strong></em> or <em><strong>Nested</strong></em> when one or more of its items are not <em>simple</em> scalars, but are scalars which contain other arrays. The latter may be simple arrays of any shape or rank (vectors, matrices, arrays), or they may themselves be <em>Nested arrays</em>.</p>
 <p>A nested array can be created in a number of ways; we shall begin with the simplest one, known as <em><strong>Vector notation</strong></em>, or <em><strong>Strand notation</strong></em>. Here is how it works:</p>
 <p>The items of an array are just juxtaposed side by side, and each can be identified as an item because it is:</p>
@@ -2648,7 +2650,7 @@ June
 <p>Notice that because <code class="docutils literal notranslate"><span class="pre">MixVec</span></code> is <strong>not</strong> nested it has no boxes around its items.</p>
 </div>
 <div class="section" id="display">
-<h3>DISPLAY<a class="headerlink" href="#display" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-display"></span><h3><span class="section-number">2.6.4. </span>DISPLAY<a class="headerlink" href="#display" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">DISPLAY</span></code> is provided with Dyalog APL in a library workspace which itself is named DISPLAY. Because this library is by default on the <em>Workspace Search Path</em> of APL, you can easily add the DISPLAY function to your active workspace by typing the command:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2723,7 +2725,7 @@ K
 </div>
 <p>The second, rougher, form of presentation is provided for use in circumstances where the line-drawing symbols in the APL font are not displayed or printed as intended. This will depend upon your version of the Operating System and on the display and printer drivers you are using.</p>
 <div class="section" id="conventions">
-<h4>Conventions<a class="headerlink" href="#conventions" title="Permalink to this headline">¶</a></h4>
+<span id="data-and-variables-conventions"></span><h4><span class="section-number">2.6.4.1. </span>Conventions<a class="headerlink" href="#conventions" title="Permalink to this headline">¶</a></h4>
 <p>The upper-left corner of the box provides information about the <strong>shape</strong> of the displayed value:</p>
 <ul class="simple">
 <li><p>a single horizontal arrow for a vector:</p></li>
@@ -2739,7 +2741,7 @@ K
 </ul>
 </div>
 <div class="section" id="examples">
-<h4>6.4.2 - Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">2.6.4.2. </span>6.4.2 - Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">DISPLAY</span> <span class="m">78</span> <span class="m">45</span> <span class="m">12</span>        <span class="c1">⍝ Display a plain numeric (~) vector (→).</span>
@@ -2866,7 +2868,7 @@ K
 </div>
 </div>
 <div class="section" id="be-simple">
-<h3>Be Simple!<a class="headerlink" href="#be-simple" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-be-simple"></span><h3><span class="section-number">2.6.5. </span>Be Simple!<a class="headerlink" href="#be-simple" title="Permalink to this headline">¶</a></h3>
 <p>Up to now, the nested arrays we have met contained only “simple” items (scalars, vectors, matrices). Here is a completely weird matrix, which itself contains a small nested array made of the first two columns of <code class="docutils literal notranslate"><span class="pre">NesMat</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2964,13 +2966,13 @@ K
 <p>This array is not homogeneous; it is made of vectors mixed with a scalar. However, its structure is simple, and consistent. Together with the previous example, it is a pertinent usage of nested arrays.</p>
 </div>
 <div class="section" id="that-s-not-all-folks">
-<h3>That’s <em>Not</em> All, Folks!<a class="headerlink" href="#that-s-not-all-folks" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-thats-not-all-folks"></span><h3><span class="section-number">2.6.6. </span>That’s <em>Not</em> All, Folks!<a class="headerlink" href="#that-s-not-all-folks" title="Permalink to this headline">¶</a></h3>
 <p>In this section we have only described some basic things about nested arrays. APL provides a number of functions designed specifically to manipulate nested arrays, but it would be premature to introduce these now until we have fully explored all of the basic capabilities.</p>
 <p>Nevertheless, if you want to learn a bit more on the subject, just skip to Chapter I.</p>
 </div>
 </div>
 <div class="section" id="empty-arrays">
-<h2>Empty Arrays<a class="headerlink" href="#empty-arrays" title="Permalink to this headline">¶</a></h2>
+<span id="data-and-variables-empty-arrays"></span><h2><span class="section-number">2.7. </span>Empty Arrays<a class="headerlink" href="#empty-arrays" title="Permalink to this headline">¶</a></h2>
 <p>An array is an <em><strong>empty array</strong></em> if the length of one or more of its dimensions is zero. Hence, it is possible to meet many different kinds of empty arrays: vectors, matrices, arrays of any rank or type.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3081,7 +3083,7 @@ K
 </div>
 </div>
 <div class="section" id="workspaces-and-commands">
-<h2>Workspaces and Commands<a class="headerlink" href="#workspaces-and-commands" title="Permalink to this headline">¶</a></h2>
+<span id="data-and-variables-workspaces-and-commands"></span><h2><span class="section-number">2.8. </span>Workspaces and Commands<a class="headerlink" href="#workspaces-and-commands" title="Permalink to this headline">¶</a></h2>
 <p>You have nearly finished this chapter and, naturally, you would like to save the variables you have created. If you are using the Windows IDE you have two graphical ways of doing so:</p>
 <ul class="simple">
 <li><p>in the “File” menu, select “Save” or “Save as”, and use the normal procedure for saving a file (highlighted in red below);</p></li>
@@ -3089,7 +3091,7 @@ K
 </ul>
 <div class="figure align-default" id="interpreter-toolbar-save">
 <img alt="_images/Interpreter_Toolbar_Save.png" src="_images/Interpreter_Toolbar_Save.png" />
-<p class="caption"><span class="caption-text">Windows IDE toolbar with the “Save” toolbar shortcut and the “File” menu highlighted</span><a class="headerlink" href="#interpreter-toolbar-save" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Windows IDE toolbar with the “Save” toolbar shortcut and the “File” menu highlighted</span><a class="headerlink" href="#interpreter-toolbar-save" title="Permalink to this image">¶</a></p>
 </div>
 <p>If you are using RIDE or if you don’t like clicking menu buttons,</p>
 <ul class="simple">
@@ -3097,7 +3099,7 @@ K
 </ul>
 <p>An explanation of how APL manages your data in the interpreter session is given below.</p>
 <div class="section" id="the-active-workspace">
-<h3>The Active Workspace<a class="headerlink" href="#the-active-workspace" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-the-active-workspace"></span><h3><span class="section-number">2.8.1. </span>The Active Workspace<a class="headerlink" href="#the-active-workspace" title="Permalink to this headline">¶</a></h3>
 <p>When you start a working session with APL, you are allotted an empty portion of memory, which is called a <em><strong>Workspace</strong></em>, or <em><strong>WS</strong></em> for short. This WS is called the <em><strong>Active WS</strong></em>, because it is the area of memory in which you work. You gradually fill it with variables and functions<sup>2</sup> as you create them.</p>
 <p><small>² In APL we try to design a computer <em>program</em>, not as a single monolithic procedure, but rather as a set of inter-connecting units known as <em>functions</em> (or <em>user-defined functions</em> to distinguish them from <em>primitive</em> or built-in functions). Each function is ideally small, self-contained, and performs a single specific task.</small></p>
 <p>You can ask the system to give you the list of your variables and functions. To do that, you use a <em><strong>system command</strong></em>: a special word which is recognised by the APL system because its first character is a <em><strong>closing parenthesis</strong></em>: <code class="docutils literal notranslate"><span class="pre">)</span></code>. Some Swedish APLers call that a “banana”.</p>
@@ -3183,7 +3185,7 @@ not found towerchart
 <p>This is a bit brutal: all of the contents of the WS are deleted, and no warning message is issued to notify the user of the consequence before the execution of the command. You should avoid using this command, and instead use the “Clear” button on the interpreter toolbar (highlighted in red below), which asks for confirmation. It is safer.</p>
 <div class="figure align-default" id="interpreter-toolbar-clear">
 <img alt="_images/Interpreter_Toolbar_Clear.png" src="_images/Interpreter_Toolbar_Clear.png" />
-<p class="caption"><span class="caption-text">Windows IDE with the “Clear” toolbar shortcut highlighted</span><a class="headerlink" href="#interpreter-toolbar-clear" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Windows IDE with the “Clear” toolbar shortcut highlighted</span><a class="headerlink" href="#interpreter-toolbar-clear" title="Permalink to this image">¶</a></p>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Remark</p>
@@ -3197,7 +3199,7 @@ not found towerchart
 </div>
 </div>
 <div class="section" id="the-libraries">
-<h3>The Libraries<a class="headerlink" href="#the-libraries" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-the-libraries"></span><h3><span class="section-number">2.8.2. </span>The Libraries<a class="headerlink" href="#the-libraries" title="Permalink to this headline">¶</a></h3>
 <p>Like in most other software environments:</p>
 <ul class="simple">
 <li><p>When you save a WS for the first time, you must give it a name.</p></li>
@@ -3235,7 +3237,7 @@ not found towerchart
 <p>Only one workspace was found in the <code class="docutils literal notranslate"><span class="pre">res</span></code> folder.</p>
 </div>
 <div class="section" id="load-a-ws">
-<h3>Load a WS<a class="headerlink" href="#load-a-ws" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-load-a-ws"></span><h3><span class="section-number">2.8.3. </span>Load a WS<a class="headerlink" href="#load-a-ws" title="Permalink to this headline">¶</a></h3>
 <p>Once a WS has been saved, it may be used again in various ways:</p>
 <ul class="simple">
 <li><p>You can double-click on the WS name in the <em>Windows Explorer</em></p></li>
@@ -3245,7 +3247,7 @@ not found towerchart
 </ul>
 <div class="figure align-default" id="interpreter-toolbar-load">
 <img alt="_images/Interpreter_Toolbar_Load.png" src="_images/Interpreter_Toolbar_Load.png" />
-<p class="caption"><span class="caption-text">Windows IDE with the “Load” toolbar shortcut highlighted</span><a class="headerlink" href="#interpreter-toolbar-load" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4 </span><span class="caption-text">Windows IDE with the “Load” toolbar shortcut highlighted</span><a class="headerlink" href="#interpreter-toolbar-load" title="Permalink to this image">¶</a></p>
 </div>
 <p>In all these cases, you will see the familiar file search box, in which you can browse to and select the workspace file you would like to open (or load).</p>
 <p>You can also use the <code class="docutils literal notranslate"><span class="pre">)load</span></code> command followed by a WS name:</p>
@@ -3280,7 +3282,7 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 </div>
 </div>
 <div class="section" id="file-extensions">
-<h3>File Extensions<a class="headerlink" href="#file-extensions" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-file-extensions"></span><h3><span class="section-number">2.8.4. </span>File Extensions<a class="headerlink" href="#file-extensions" title="Permalink to this headline">¶</a></h3>
 <p>The default extension of an APL WS depends on the APL system you use. For Dyalog APL, the extension is <code class="docutils literal notranslate"><span class="pre">dws</span></code>, an acronym for Dyalog WorkSpace.</p>
 <p>This is only a default extension. When you save a WS, you can give it a different extension, like “old”, “std” or “dev”.</p>
 <p>If you do so, you must be aware that when you load a WS using the <code class="docutils literal notranslate"><span class="pre">)load</span></code> command, and omit the extension, the command will only search for files with a <code class="docutils literal notranslate"><span class="pre">dws</span></code> extension.</p>
@@ -3288,7 +3290,7 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 <p>All these considerations are not mandatory knowledge, since you can navigate through the file search dialog box, or through Windows Explorer to find whichever file you need.</p>
 </div>
 <div class="section" id="merge-workspaces">
-<h3>Merge Workspaces<a class="headerlink" href="#merge-workspaces" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-merge-workspaces"></span><h3><span class="section-number">2.8.5. </span>Merge Workspaces<a class="headerlink" href="#merge-workspaces" title="Permalink to this headline">¶</a></h3>
 <p>Suppose that you would like to use some functions or variables stored in another WS that has previously been saved. You can import them into your active WS using the command <code class="docutils literal notranslate"><span class="pre">)copy</span></code>, followed by the name of the WS and then the names of the functions and variables you want to import.</p>
 <p>For example, imagine that you need <code class="docutils literal notranslate"><span class="pre">Screwdriver</span></code>, <code class="docutils literal notranslate"><span class="pre">Hammer</span></code> and <code class="docutils literal notranslate"><span class="pre">Saw</span></code>, all stored in a WS named <code class="docutils literal notranslate"><span class="pre">Toolbox</span></code>. You can issue the command</p>
 <div class="highlight-apl notranslate"><div class="highlight"><pre><span></span>      <span class="p">)</span><span class="nv">copy</span> <span class="nv">Toolbox</span> <span class="nv">Screwdriver</span> <span class="nv">Hammer</span> <span class="nv">Saw</span>
@@ -3305,7 +3307,7 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 </pre></div>
 </div>
 <div class="section" id="protected-copy">
-<h4>Protected Copy<a class="headerlink" href="#protected-copy" title="Permalink to this headline">¶</a></h4>
+<span id="data-and-variables-protected-copy"></span><h4><span class="section-number">2.8.5.1. </span>Protected Copy<a class="headerlink" href="#protected-copy" title="Permalink to this headline">¶</a></h4>
 <p>When you import the entire contents of another WS, there is a risk that it contains an object (variable or function) which has the same name, but not the same value, as an existing object in your active WS. If so, the imported object <strong>replaces</strong> the current one. Danger!</p>
 <p>You can avoid this by using the <code class="docutils literal notranslate"><span class="pre">)pcopy</span></code> command, with the P standing for “Protected”. If there is a name conflict, the object in the active WS is not overwritten, and a message tells you which objects haven’t been copied. Let’s demonstrate this. First we clear our current WS to simulate a fresh start:</p>
 <div class="cell docutils container">
@@ -3344,7 +3346,7 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 <p>Notice how <code class="docutils literal notranslate"><span class="pre">Prod</span></code> was <strong>not</strong> copied from the auxiliary WS because we have defined our own <code class="docutils literal notranslate"><span class="pre">Prod</span></code> above.</p>
 </div>
 <div class="section" id="intentionally-destructive-copy">
-<h4>Intentionally Destructive Copy<a class="headerlink" href="#intentionally-destructive-copy" title="Permalink to this headline">¶</a></h4>
+<span id="data-and-variables-intentionally-destructive-copy"></span><h4><span class="section-number">2.8.5.2. </span>Intentionally Destructive Copy<a class="headerlink" href="#intentionally-destructive-copy" title="Permalink to this headline">¶</a></h4>
 <p>We saw that an imported object may overwrite an object in the active WS. This is sometimes useful!</p>
 <p>Imagine that you loaded the auxiliary WS:</p>
 <div class="cell docutils container">
@@ -3372,13 +3374,13 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 <p>When imported, the original version of <code class="docutils literal notranslate"><span class="pre">Average</span></code> will override the version you mistakenly altered. Your active workspace will be correct again, and you will be able to go on with your work (but don’t forget to save it!).</p>
 </div>
 <div class="section" id="evolution-of-your-code">
-<h4>Evolution of Your Code<a class="headerlink" href="#evolution-of-your-code" title="Permalink to this headline">¶</a></h4>
+<span id="data-and-variables-evolution-of-your-code"></span><h4><span class="section-number">2.8.5.3. </span>Evolution of Your Code<a class="headerlink" href="#evolution-of-your-code" title="Permalink to this headline">¶</a></h4>
 <p>Imagine that you have imported into your active WS a function named <code class="docutils literal notranslate"><span class="pre">Compute</span></code>, copied from a WS named <code class="docutils literal notranslate"><span class="pre">Utilities</span></code>. When you save your active WS, for example under the name <code class="docutils literal notranslate"><span class="pre">Budget</span></code>, the function <code class="docutils literal notranslate"><span class="pre">Compute</span></code> will be saved with it.</p>
 <p>But now, imagine that the original version of the function <code class="docutils literal notranslate"><span class="pre">Compute</span></code> contained in <code class="docutils literal notranslate"><span class="pre">Utilities</span></code> is modified, or enhanced; what happens? The copy saved with <code class="docutils literal notranslate"><span class="pre">Budget</span></code> is still the old version, and <code class="docutils literal notranslate"><span class="pre">Budget</span></code> may therefore be outdated.</p>
 <p>This is a reason why APL allows a dynamic copy of what you need from a known reference WS. This technique will be explained in Chapter L.</p>
 </div>
 <div class="section" id="active-ws-identification">
-<h4>Active WS Identification<a class="headerlink" href="#active-ws-identification" title="Permalink to this headline">¶</a></h4>
+<span id="data-and-variables-active-ws-identification"></span><h4><span class="section-number">2.8.5.4. </span>Active WS Identification<a class="headerlink" href="#active-ws-identification" title="Permalink to this headline">¶</a></h4>
 <p>You can obtain the name of your current WS by issuing the command:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3395,7 +3397,7 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 </div>
 </div>
 <div class="section" id="exiting-apl">
-<h3>Exiting APL<a class="headerlink" href="#exiting-apl" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-exiting-apl"></span><h3><span class="section-number">2.8.6. </span>Exiting APL<a class="headerlink" href="#exiting-apl" title="Permalink to this headline">¶</a></h3>
 <p>You can close an APL session using three traditional Windows methods, and two APL system commands:</p>
 <ul class="simple">
 <li><p>You can click on the “Close” cross at the top-right corner of your APL window.</p></li>
@@ -3408,7 +3410,7 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 <p>In any case, always <strong>remember to save your work</strong> (if necessary) before you quit.</p>
 </div>
 <div class="section" id="contents-of-a-ws">
-<h3>Contents of a WS<a class="headerlink" href="#contents-of-a-ws" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-contents-of-a-ws"></span><h3><span class="section-number">2.8.7. </span>Contents of a WS<a class="headerlink" href="#contents-of-a-ws" title="Permalink to this headline">¶</a></h3>
 <p>Generally speaking, a workspace contains functions (programs) and variables which interact to constitute some useful application.</p>
 <p>The large memories of modern computers support very big workspaces, and a single WS is generally enough to store even a very complex application, or several applications. However, it is good practice to store different applications in different workspaces: accounting, budget, customer care, etc… It is not recommended that you mix several applications in a single WS.</p>
 <p>However, if appropriate, it is possible for a function to dynamically load another workspace (without any intervention by the user), and activate a different or complementary application.</p>
@@ -3416,7 +3418,7 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 <p>If several workspaces need to share a command set of utility programs, this can be accomplished by dynamically importing the utilities from a common source. This will be seen in Chapter L.</p>
 </div>
 <div class="section" id="our-first-system-commands">
-<h3>Our First System Commands<a class="headerlink" href="#our-first-system-commands" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-our-first-system-commands"></span><h3><span class="section-number">2.8.8. </span>Our First System Commands<a class="headerlink" href="#our-first-system-commands" title="Permalink to this headline">¶</a></h3>
 <p>Just to recapitulate, here is a little summary of the system commands we’ve just discovered. Many other commands will be studied in Chapter L. The following conventions are used in the table below:</p>
 <ul class="simple">
 <li><p>The command names are writing using normal characters; the parameters are in <em>italics</em>;</p></li>
@@ -3492,7 +3494,7 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 </div>
 </div>
 <div class="section" id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<span id="data-and-variables-exercises"></span><h2><span class="section-number">2.9. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <div class="warning admonition">
 <p class="admonition-title">Warning</p>
 <p><em>The following exercises are designed to train you, not the computer.</em></p>
@@ -3626,18 +3628,18 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 <p><strong>Solutions</strong>: the solutions can be found at the end of this chapter.</p>
 </div>
 <div class="section" id="the-specialist-s-section">
-<h2>The Specialist’s Section<a class="headerlink" href="#the-specialist-s-section" title="Permalink to this headline">¶</a></h2>
+<span id="data-and-variables-the-specialists-section"></span><h2><span class="section-number">2.10. </span>The Specialist’s Section<a class="headerlink" href="#the-specialist-s-section" title="Permalink to this headline">¶</a></h2>
 <br />
 <center><i>Each chapter is followed by a "Specialist's Section" like this one. This section is dedicated to skilled APLers, who wish to improve their knowledge.</i>
 <p>You will find here rare or complex usages of the concepts presented in this chapter, or discover extended explanations which need the knowledge of some symbols that will be seen much further in the book.</p>
 <p><b>If you are exploring APL for the first time, skip this section and go to the next chapter.</b></center></p>
 <div class="section" id="variable-names">
-<h3>Variable Names<a class="headerlink" href="#variable-names" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-variable-names"></span><h3><span class="section-number">2.10.1. </span>Variable Names<a class="headerlink" href="#variable-names" title="Permalink to this headline">¶</a></h3>
 <p>Variable names must obey the rules shown in Section B-1.2.</p>
 <p>We have seen that you may use some special characters: Delta (<code class="docutils literal notranslate"><span class="pre">∆</span></code>), Underscore (<code class="docutils literal notranslate"><span class="pre">_</span></code>), and also the Underscored Delta (<code class="docutils literal notranslate"><span class="pre">⍙</span></code>). We do not recommend these symbols; they often make programs difficult to read.</p>
 </div>
 <div class="section" id="representation-of-numbers">
-<h3>Representation of Numbers<a class="headerlink" href="#representation-of-numbers" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-representation-of-numbers"></span><h3><span class="section-number">2.10.2. </span>Representation of Numbers<a class="headerlink" href="#representation-of-numbers" title="Permalink to this headline">¶</a></h3>
 <p>Up to now, we have entered decimal numbers using the most common conventions, like 3714.12 or 0.41.</p>
 <p>It is also possible to employ other conventions to facilitate typing.</p>
 <p>When the magnitude of a decimal value is less than 1 it is not necessary to enter a zero before the decimal point:</p>
@@ -3766,9 +3768,9 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 </div>
 </div>
 <div class="section" id="the-shape-of-the-result-of-indexing">
-<h3>The Shape of the Result of Indexing<a class="headerlink" href="#the-shape-of-the-result-of-indexing" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-the-shape-of-the-result-of-indexing"></span><h3><span class="section-number">2.10.3. </span>The Shape of the Result of Indexing<a class="headerlink" href="#the-shape-of-the-result-of-indexing" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="rule">
-<h4>Rule<a class="headerlink" href="#rule" title="Permalink to this headline">¶</a></h4>
+<span id="data-and-variables-rule"></span><h4><span class="section-number">2.10.3.1. </span>Rule<a class="headerlink" href="#rule" title="Permalink to this headline">¶</a></h4>
 <p>Suppose you are given an array of any rank <code class="docutils literal notranslate"><span class="pre">Array</span></code>.</p>
 <p>The expression <code class="docutils literal notranslate"><span class="pre">Array[A;</span> <span class="pre">B;</span> <span class="pre">C;</span> <span class="pre">...]</span></code> always gives a result with a shape equal to <code class="docutils literal notranslate"><span class="pre">(⍴A),(⍴B),(⍴C),...</span></code>.</p>
 <p>This rule makes it possible to always predict the shape of the result of an indexing operation.</p>
@@ -3806,7 +3808,7 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 <p>That’s why the shape of the result is 5 6 and not 5 1 6.</p>
 </div>
 <div class="section" id="using-ravel-to-preserve-a-dimension">
-<h4>Using Ravel to Preserve a Dimension<a class="headerlink" href="#using-ravel-to-preserve-a-dimension" title="Permalink to this headline">¶</a></h4>
+<span id="data-and-variables-using-ravel-to-preserve-a-dimension"></span><h4><span class="section-number">2.10.3.2. </span>Using Ravel to Preserve a Dimension<a class="headerlink" href="#using-ravel-to-preserve-a-dimension" title="Permalink to this headline">¶</a></h4>
 <p>In a program, a matrix is indexed like <code class="docutils literal notranslate"><span class="pre">Mat[Rows;Cols]</span></code>, for example</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3972,7 +3974,7 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 </div>
 </div>
 <div class="section" id="multiple-usage-of-an-index">
-<h3>Multiple usage of an Index<a class="headerlink" href="#multiple-usage-of-an-index" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-multiple-usage-of-an-index"></span><h3><span class="section-number">2.10.4. </span>Multiple usage of an Index<a class="headerlink" href="#multiple-usage-of-an-index" title="Permalink to this headline">¶</a></h3>
 <p>When an array is indexed, the same item (the second item in the example below) may be selected more than once; for example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3999,7 +4001,7 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 </div>
 </div>
 <div class="section" id="a-problem-with-using-reshape">
-<h3>A Problem With Using Reshape (<code class="docutils literal notranslate"><span class="pre">⍴</span></code>)<a class="headerlink" href="#a-problem-with-using-reshape" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-a-problem-with-using-reshape"></span><h3><span class="section-number">2.10.5. </span>A Problem With Using Reshape (<code class="docutils literal notranslate"><span class="pre">⍴</span></code>)<a class="headerlink" href="#a-problem-with-using-reshape" title="Permalink to this headline">¶</a></h3>
 <p>We want to create a numeric matrix with 3 rows, and as many columns as another matrix <code class="docutils literal notranslate"><span class="pre">Trix</span></code>, entirely filled with zeros.</p>
 <p>One solution is to first obtain the number of columns of <code class="docutils literal notranslate"><span class="pre">Trix</span></code>, using the <em>Drop</em> (<code class="docutils literal notranslate"><span class="pre">↓</span></code>) function:</p>
 <div class="cell docutils container">
@@ -4103,7 +4105,7 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 </div>
 </div>
 <div class="section" id="monadic-index-or-materialise">
-<h3>Monadic Index, or Materialise (<code class="docutils literal notranslate"><span class="pre">⌷</span></code>)<a class="headerlink" href="#monadic-index-or-materialise" title="Permalink to this headline">¶</a></h3>
+<span id="data-and-variables-monadic-index-or-materialise"></span><h3><span class="section-number">2.10.6. </span>Monadic Index, or Materialise (<code class="docutils literal notranslate"><span class="pre">⌷</span></code>)<a class="headerlink" href="#monadic-index-or-materialise" title="Permalink to this headline">¶</a></h3>
 <p>In Section 5.6, we used the <em>Index</em> function with a left argument for indexing.</p>
 <p>Used monadically (without a left argument), <em><strong>Materialise</strong></em> returns all the items of its right argument, whatever its shape:</p>
 <div class="cell docutils container">
@@ -4138,7 +4140,7 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
 </div>
 </div>
 <div class="section" id="solutions">
-<h2>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
+<span id="data-and-variables-solutions"></span><h2><span class="section-number">2.11. </span>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
 <p>The solutions we propose in the following pages are not necessarily the “best” ones; perhaps you will find other solutions that we have never considered. APL is a very rich language, and due to the general nature of its primitive functions and operators there are always plenty of different ways to express different solutions to a given problem. Which one is “the best” depends on many things, for example the level of experience of the programmer, the importance of system performance, the required behaviour in border cases, the requirement to meet certain programming standards and also personal preferences. This is one of the reasons why APL is so pleasant to teach and to learn!</p>
 <p>We advise you to try and solve the exercises before reading the solutions!</p>
 <p><strong>Exercise 1</strong>:</p>
@@ -4588,6 +4590,8 @@ which is the first line of output we got when we loaded the `DyalogTutor_EN` wor
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="Getting-Started.html" title="previous page"><span class="section-number">1. </span>Getting Started</a>
+    <a class='right-next' id="next-link" href="Some-Primitive-Functions.html" title="next page"><span class="section-number">3. </span>Some Primitive Functions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
