@@ -29,9 +29,8 @@ for root, _, files in os.walk(FROM):
             os.makedirs(newroot)
         fullpath = os.path.join(newroot, filename)
         oldpath = os.path.join(root, filename)
-        if (not (exists := os.path.exists(fullpath))
-            or os.path.getmtime(oldpath) > os.path.getmtime(fullpath)
-        ):
+        exists = os.path.exists(fullpath)
+        if (not exists or os.path.getmtime(oldpath) > os.path.getmtime(fullpath)):
             shutil.copyfile(oldpath, fullpath)
             hits += 1
             if exists:
