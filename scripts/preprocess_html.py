@@ -27,7 +27,68 @@ CUSTOM_ADMONITION_STYLES = {
     "remark": "tip",
 }
 
-def image_to_figure(lines, i):
+def safe_hyphenate(string):
+    """Hyphenate a string and remove all non-alphanumeric chars."""
+    return re.sub(r"[^\w-]", "", string.replace(" ", "-"))
+
+def generate_header_labels(filename, lines):
+    """Creates labels for all sections at all depths.
+
+    Looks for lines that start with any number of # and precedes the line
+    with the MyST annotation for a label, where the label name is the safely
+    hyphenated version of the header name.
+    Prefixes each label with the safely hyphenated version of the file name
+    to help prevent duplicate labels.
+    E.g. the header "What is this?" in the file "Oh yeah" gets the label
+    "Oh-yeah-What-is-this"
+    """
+
+    i = 0
+    label_prefix = safe_hyphenate(filename)
+    while i < len(lines):
+        m = re.match(r"^(#)+ (.*)\n$", lines[i])
+        if m:
+            header_name = m.group(2)
+            label_name = safe_hyphenate(header_name)
+            new_lines = [
+                f"({label_prefix}-{label_name})=\n",
+            ]
+            lines = lines[:i] + new_lines + lines[i:]
+            i += 2
+        else:
+            i += 1
+
+    return lines
+
+cross_ref_pattern = re.compile(r" \[.*?\]\((\.(.*?)\.ipynb)?#(.*?)\)")
+def generate_cross_references(filename, lines):
+    """Generates MyST cross-references for (sub-)sections.
+
+    Links that have relative paths are assumed to be cross-references.
+    The relative path is assumed to have a first part pointing to the file name
+    and the second part to the Jupyter-compatible header href.
+    """
+
+    label_prefix = safe_hyphenate(filename)
+    # Define a helper function.
+    sh = safe_hyphenate
+    def replacer_function(match):
+        """cf. https://docs.python.org/3/library/re.html#re.sub"""
+        if match.group(1):
+            return f" {{numref}}`{sh(match.group(2))}-{sh(match.group(3))}`"
+        else:
+            return f" {{numref}}`{label_prefix}-{sh(match.group(3))}`"
+
+    for i, line in enumerate(lines):
+        lines[i] = re.sub(
+            cross_ref_pattern,
+            replacer_function,
+            line,
+        )
+
+    return lines
+
+def image_to_figure(lines):
     """Convert an image link to a MyST figure.
 
     This looks for lines that only contain an image link and format said image
@@ -35,26 +96,30 @@ def image_to_figure(lines, i):
     figure customization is done.
     """
 
+    i = 0
     # Does this line have a ![caption](path.ext) figure?
-    m = re.match(r"!\[(.*)\]\((res/(.*?)\.(.*?))\)", lines[i])
-    if m:
-        caption = m.group(1)
-        path = f"../{m.group(2)}"
-        name = m.group(3)
-        new_lines = [
-            f"```{{figure}} {path}\n",
-            f"---\n",
-            f"name: {name}\n",
-            f"---\n",
-            f"{caption}\n",
-            f"```\n",
-        ]
-        lines = lines[:i] + new_lines + lines[i+1:]
-        i += len(new_lines)
-    
-    return lines, i
+    while i < len(lines):
+        m = re.match(r"!\[(.*)\]\((res/(.*?)\.(.*?))\)", lines[i])
+        if m:
+            caption = m.group(1)
+            path = f"../{m.group(2)}"
+            name = m.group(3)
+            new_lines = [
+                f"```{{figure}} {path}\n",
+                f"---\n",
+                f"name: {name}\n",
+                f"---\n",
+                f"{caption}\n",
+                f"```\n",
+            ]
+            lines = lines[:i] + new_lines + lines[i+1:]
+            i += len(new_lines)
+        else:
+            i += 1
 
-def create_admonition(lines, i):
+    return lines
+
+def create_admonition(lines):
     """Convert an admonition section into a MyST admonition.
 
     This function looks for sections that have been marked-up with HTML comments
@@ -71,43 +136,47 @@ def create_admonition(lines, i):
     https://sphinx-book-theme.readthedocs.io/en/latest/reference/demo.html#admonitions
     """
 
-    # Does this line start an admonition comment?
-    m = re.match(r"<!-- begin (.+?) (style=(\w+) )?-->", lines[i])
-    if m:
-        adm_header = m.group(1)
-        if m.group(3):
-            style = m.group(3)
-        else:
-            style = CUSTOM_ADMONITION_STYLES.get(adm_header, adm_header)
-        text = adm_header.capitalize() if " " not in adm_header else adm_header
-        end_match = f"<!-- end -->\n"
-        try:
-            matching_line = lines.index(end_match)
-        except ValueError:
-            # the matching line is the final line of the markdown cell
-            if lines[-1] == end_match[:-1]:
-                matching_line = len(lines) - 1
+    i = 0
+    while i < len(lines):
+        # Does this line start an admonition comment?
+        m = re.match(r"<!-- begin (.+?) (style=(\w+) )?-->", lines[i])
+        if m:
+            adm_header = m.group(1)
+            if m.group(3):
+                style = m.group(3)
             else:
-                print(f"{text} has no closing 'end' in cell {cellid} in file {filename}")
-                sys.exit(1)
-        # check if the lines are in a blockquote
-        intermediate_lines = lines[i+3:matching_line]
-        bq_matches = [re.match(r"^ >( |\n)(.*)$", line) for line in intermediate_lines]
-        if all(bq_matches):
-            content_lines = [match.group(2) + "\n" for match in bq_matches]
+                style = CUSTOM_ADMONITION_STYLES.get(adm_header, adm_header)
+            text = adm_header.capitalize() if " " not in adm_header else adm_header
+            end_match = f"<!-- end -->\n"
+            try:
+                matching_line = lines.index(end_match)
+            except ValueError:
+                # the matching line is the final line of the markdown cell
+                if lines[-1] == end_match[:-1]:
+                    matching_line = len(lines) - 1
+                else:
+                    print(f"{text} has no closing 'end' in cell {cellid} in file {filename}")
+                    sys.exit(1)
+            # check if the lines are in a blockquote
+            intermediate_lines = lines[i+3:matching_line]
+            bq_matches = [re.match(r"^ >( |\n)(.*)$", line) for line in intermediate_lines]
+            if all(bq_matches):
+                content_lines = [match.group(2) + "\n" for match in bq_matches]
+            else:
+                content_lines = intermediate_lines
+            lines = (
+                lines[:i] +
+                [f"```{{admonition}} {text} \n", f":class: {style}\n"] +
+                content_lines +
+                ["```\n"] +
+                lines[matching_line+1:]
+            )
+            # after doing the maths, this is exactly where we want to resume processing:
+            i = matching_line
         else:
-            content_lines = intermediate_lines
-        lines = (
-            lines[:i] +
-            [f"```{{admonition}} {text} \n", f":class: {style}\n"] +
-            content_lines +
-            ["```\n"] +
-            lines[matching_line+1:]
-        )
-        # after doing the maths, this is exactly where we want to resume processing:
-        i = matching_line
+            i += 1
 
-    return lines, i
+    return lines
 
 for dic in data:
     try:
@@ -121,12 +190,10 @@ for dic in data:
 
     for cellid, cell in enumerate(conts["cells"]):
         lines = cell["source"]
-        i = 0
-        while i < len(lines):
-
-            lines, i = image_to_figure(lines, i)
-            lines, i = create_admonition(lines, i)
-            i += 1
+        lines = generate_header_labels(filename, lines)
+        lines = generate_cross_references(filename, lines)
+        lines = image_to_figure(lines)
+        lines = create_admonition(lines)
 
         cell["source"] = lines
 
