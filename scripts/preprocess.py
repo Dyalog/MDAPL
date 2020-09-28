@@ -5,6 +5,8 @@ as supported by the Jupyter Book tool.
 As of now, this preprocessing step:
  - transforms image links into MyST figures
  - transforms especially marked-up sections into admonitions
+ - generates labels for all headers
+ - converts relative links into references to the respective headers
 """
 
 import json
