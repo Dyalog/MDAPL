@@ -37,7 +37,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Appendices" href="Appendices.html" />
+    <link rel="next" title="4. User Defined Functions" href="User-Defined-Functions.html" />
     <link rel="prev" title="2. Data and Variables" href="Data-and-Variables.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -93,8 +93,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="User-Defined-Functions.html">
+   4. User Defined Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Appendices.html">
-   4. Appendices
+   5. Appendices
   </a>
  </li>
 </ul>
@@ -948,7 +953,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 300 920 480 1040  980 560
 </span></div></div>
 </div>
-<p>A complete list of <em><strong>Scalar Dyadic Functions</strong></em> is given in <a class="reference internal" href="Appendices.html#appendices-scalar-functions"><span class="std std-numref">Section 4.1</span></a>.</p>
+<p>A complete list of <em><strong>Scalar Dyadic Functions</strong></em> is given in <a class="reference internal" href="Appendices.html#appendices-scalar-functions"><span class="std std-numref">Section 5.1</span></a>.</p>
 </div>
 <div class="section" id="division-by-zero">
 <span id="some-primitive-functions-division-by-zero"></span><h3><span class="section-number">3.2.2. </span>Division By Zero<a class="headerlink" href="#division-by-zero" title="Permalink to this headline">¶</a></h3>
@@ -1709,7 +1714,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>But <em>Direction</em> also applies to complex numbers, and does so by extending the idea above. The <em>Direction</em> of a number is that same number re-scaled so that it has magnitude (“length”) 1.</p>
 <p>Let us take the complex number <code class="docutils literal notranslate"><span class="pre">3J4</span></code> as an example. If we look at the figure below, we see that the 3 is represented by the bottom side of the triangle and the 4 by the right side of the triangle. The little arrow that goes from the lower-left to the upper-right vertex of the triangle represents the direction in which <code class="docutils literal notranslate"><span class="pre">3J4</span></code> points.</p>
 <div class="figure align-default" id="direction-right-triangle">
-<img alt="_images/Direction_Right_Triangle.png" src="_images/Direction_Right_Triangle.png" />
+<span id="fig-direction-right-triangle"></span><img alt="_images/Direction_Right_Triangle.png" src="_images/Direction_Right_Triangle.png" />
 <p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">A right triangle with sides 3, 4 and 5 representing the complex number <code class="docutils literal notranslate"><span class="pre">3J4</span></code></span><a class="headerlink" href="#direction-right-triangle" title="Permalink to this image">¶</a></p>
 </div>
 <p>We can also see that said arrow has length 5, as the Pythagorean theorem tells us:</p>
@@ -1725,7 +1730,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <p>Now <code class="docutils literal notranslate"><span class="pre">×3J4</span></code> is the complex number associated with a triangle that is similar to the one above, but with the arrow measuring 1, exactly like the smaller triangle inside the larger triangle in the figure below:</p>
 <div class="figure align-default" id="direction-right-triangle-scaled">
-<img alt="_images/Direction_Right_Triangle_Scaled.png" src="_images/Direction_Right_Triangle_Scaled.png" />
+<span id="fig-direction-right-triangle-scaled"></span><img alt="_images/Direction_Right_Triangle_Scaled.png" src="_images/Direction_Right_Triangle_Scaled.png" />
 <p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Scaled down version of the <code class="docutils literal notranslate"><span class="pre">3J4</span></code> triangle</span><a class="headerlink" href="#direction-right-triangle-scaled" title="Permalink to this image">¶</a></p>
 </div>
 <p>We only have to figure out the lengths of the other two sides:</p>
@@ -1773,7 +1778,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <p>Like monadic <code class="docutils literal notranslate"><span class="pre">×</span></code>, monadic <code class="docutils literal notranslate"><span class="pre">|</span></code> generalises nicely for complex numbers. Take the complex number <code class="docutils literal notranslate"><span class="pre">12J5</span></code> and its representation as a right triangle in the figure below.</p>
 <div class="figure align-default" id="magnitude-right-triangle">
-<img alt="_images/Magnitude_Right_Triangle.png" src="_images/Magnitude_Right_Triangle.png" />
+<span id="fig-magnitude-right-triangle"></span><img alt="_images/Magnitude_Right_Triangle.png" src="_images/Magnitude_Right_Triangle.png" />
 <p class="caption"><span class="caption-number">Fig. 3.3 </span><span class="caption-text">The complex number <code class="docutils literal notranslate"><span class="pre">12J5</span></code> represented by a right triangle</span><a class="headerlink" href="#magnitude-right-triangle" title="Permalink to this image">¶</a></p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">|12J5</span></code> is the length that is missing in the figure. In this case, it is</p>
@@ -2685,7 +2690,7 @@ June
 </div>
 <div class="section" id="definition">
 <span id="some-primitive-functions-definition"></span><h3><span class="section-number">3.8.2. </span>Definition<a class="headerlink" href="#definition" title="Permalink to this headline">¶</a></h3>
-<p>Reduction, represented by the symbol <code class="docutils literal notranslate"><span class="pre">/</span></code>, belongs to a special category of symbols called <em><strong>Operators</strong></em>.</p>
+<p>Reduce, represented by the symbol <code class="docutils literal notranslate"><span class="pre">/</span></code>, belongs to a special category of symbols called <em><strong>Operators</strong></em>.</p>
 <p>In most programming languages the word <em>operator</em> is used to describe operations like addition, subtraction, multiplication, and so on. In APL such operations are called <em>Functions</em>; typical examples are <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">×</span></code> and <code class="docutils literal notranslate"><span class="pre">⍴</span></code>. The word <em>operator</em> has a separate meaning in APL.</p>
 <p>In APL a <em><strong>function</strong></em> works on an <strong>array</strong> or between two arrays to produce a result:</p>
 <div class="cell docutils container">
@@ -2725,7 +2730,7 @@ June
 <p>In the expression above, the symbol <code class="docutils literal notranslate"><span class="pre">/</span></code> is the operator. It takes the function <code class="docutils literal notranslate"><span class="pre">+</span></code> as its single operand (similar to how we give arguments to functions) and produces the derived function <code class="docutils literal notranslate"><span class="pre">+/</span></code>. This derived function is then applied to <code class="docutils literal notranslate"><span class="pre">Qty</span></code>, giving a result which is assigned to <code class="docutils literal notranslate"><span class="pre">Stock</span></code> and displayed with <code class="docutils literal notranslate"><span class="pre">⊢</span></code>.</p>
 <p>Please note that the argument to a monadic function is always to the right of the function, whereas the function applied to a monadic operator (its operand) is always to the left of the operator.</p>
 <p>All of the APL primitive functions may be used as the operand to <em>Reduction</em>; you can even apply a dyadic user-defined function. This generality makes Reduction, and other operators, extremely powerful.</p>
-<p>Dyalog APL provides a total of around 20 such powerful <em>operators</em>, listed in <a class="reference internal" href="Appendices.html#appendices-dyalog-apl-operators"><span class="std std-numref">Section 4.2</span></a>. It is also possible to write your own operators, just as it is possible to write your own functions.</p>
+<p>Dyalog APL provides a total of around 20 such powerful <em>operators</em>, listed in <a class="reference internal" href="Appendices.html#appendices-dyalog-apl-operators"><span class="std std-numref">Section 5.2</span></a>. It is also possible to write your own operators, just as it is possible to write your own functions.</p>
 </div>
 <div class="section" id="reduction-of-binary-data">
 <span id="some-primitive-functions-reduction-of-binary-data"></span><h3><span class="section-number">3.8.3. </span>Reduction of Binary Data<a class="headerlink" href="#reduction-of-binary-data" title="Permalink to this headline">¶</a></h3>
@@ -3528,14 +3533,14 @@ CCC
 <li><p>the vertical concatenation of <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>:</p></li>
 </ul>
 <div class="figure align-default" id="vertical-concatenation-ab">
-<img alt="_images/Vertical_Concatenation_AB.png" src="_images/Vertical_Concatenation_AB.png" />
+<span id="fig-vertical-concatenation-ab"></span><img alt="_images/Vertical_Concatenation_AB.png" src="_images/Vertical_Concatenation_AB.png" />
 <p class="caption"><span class="caption-number">Fig. 3.4 </span><span class="caption-text">Matrices <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> concatenated together vertically</span><a class="headerlink" href="#vertical-concatenation-ab" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p>and the horizontal concatenation of <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code>:</p></li>
 </ul>
 <div class="figure align-default" id="horizontal-concatenation-ac">
-<img alt="_images/Horizontal_Concatenation_AC.png" src="_images/Horizontal_Concatenation_AC.png" />
+<span id="fig-horizontal-concatenation-ac"></span><img alt="_images/Horizontal_Concatenation_AC.png" src="_images/Horizontal_Concatenation_AC.png" />
 <p class="caption"><span class="caption-number">Fig. 3.5 </span><span class="caption-text">Matrices <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code> concatenated together horizontally</span><a class="headerlink" href="#horizontal-concatenation-ac" title="Permalink to this image">¶</a></p>
 </div>
 <p>It is not possible to concatenate <code class="docutils literal notranslate"><span class="pre">B</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code> because none of their dimensions are compatible.</p>
@@ -5918,7 +5923,7 @@ Fe2O3
 </div>
 <p>(You will learn about what <code class="docutils literal notranslate"><span class="pre">⊂</span></code> does in a future chapter, don’t worry.)</p>
 <div class="figure align-default" id="hierarchy">
-<img alt="_images/Hierarchy.png" src="_images/Hierarchy.png" />
+<span id="fig-hierarchy"></span><img alt="_images/Hierarchy.png" src="_images/Hierarchy.png" />
 </div>
 </div>
 </div>
@@ -8679,7 +8684,7 @@ Fe2O3
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="Data-and-Variables.html" title="previous page"><span class="section-number">2. </span>Data and Variables</a>
-    <a class='right-next' id="next-link" href="Appendices.html" title="next page"><span class="section-number">4. </span>Appendices</a>
+    <a class='right-next' id="next-link" href="User-Defined-Functions.html" title="next page"><span class="section-number">4. </span>User Defined Functions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
