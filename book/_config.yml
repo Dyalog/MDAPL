@@ -1,0 +1,16 @@
+title: Mastering Dyalog APL
+author: Bernard Legrand
+copyright: "1982-2020 by Dyalog Ltd"
+
+repository:
+    url: https://github.com/RojerGS/MDAPL
+    
+html:
+    use_repository_button: true
+
+execute:
+    execute_notebooks: cache
+
+launch_buttons:
+    binderhub_url: ""
+    colab_url: ""
