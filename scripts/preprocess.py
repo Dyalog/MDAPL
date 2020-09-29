@@ -91,22 +91,24 @@ def generate_cross_references(filename, lines):
     return lines
 
 def image_to_figure(lines):
-    """Convert an image link to a MyST figure.
+    """Convert an image link to a MyST figure with a label.
 
     This looks for lines that only contain an image link and format said image
     as a MyST figure. The alt text is used as the figure caption and no other
     figure customization is done.
+    The image name is used as the figure label.
     """
 
     i = 0
-    # Does this line have a ![caption](path.ext) figure?
     while i < len(lines):
+        # Does this line have a ![caption](path.ext) figure?
         m = re.match(r"!\[(.*)\]\((res/(.*?)\.(.*?))\)", lines[i])
         if m:
             caption = m.group(1)
             path = f"../{m.group(2)}"
             name = m.group(3)
             new_lines = [
+                f"(fig-{name})=\n",
                 f"```{{figure}} {path}\n",
                 f"---\n",
                 f"name: {name}\n",
@@ -118,6 +120,33 @@ def image_to_figure(lines):
             i += len(new_lines)
         else:
             i += 1
+
+    return lines
+
+figure_ref_pattern = re.compile(r"<!--figure-->.*?<!--(.*?)-->")
+def generate_figure_references(lines):
+    """Generates MyST numbered references for figures.
+
+    References to figures are marked up with <!--figure-->.*<!--names-->
+    where the text between the two HTML comments is to be ignored.
+    `names` is a comma-separated list of figure labels to be inserted.
+    """
+
+    def replacer_function(match):
+        names = list(map(
+            lambda f: f"{{numref}}`fig-{f}`",
+            match.group(1).split(",")
+        ))
+        if len(names) == 1:
+            return names[0]
+        else:
+            return ", ".join(names[:-1]) + " and " + names[-1]
+    for i, line in enumerate(lines):
+        lines[i] = re.sub(
+            figure_ref_pattern,
+            replacer_function,
+            line,
+        )
 
     return lines
 
@@ -194,6 +223,7 @@ for dic in data:
         lines = cell["source"]
         lines = generate_header_labels(filename, lines)
         lines = generate_cross_references(filename, lines)
+        lines = generate_figure_references(lines)
         lines = image_to_figure(lines)
         lines = create_admonition(lines)
 
