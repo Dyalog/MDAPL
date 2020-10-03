@@ -199,11 +199,6 @@
      Setup
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#utilities-and-data">
-     Utilities and Data
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -475,54 +470,6 @@
 </li>
 </ul>
 <p>You may notice that some symbols appear twice on the keyboard. This is the case for the symbols <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">=</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>. These symbols are all part of a normal keyboard but they have been repeated on the APL keyboard, mostly in order to group the symbols used for <em>comparison functions</em> together (look at the bottom-right corner of the keycaps for the numbers 3 to 8). Do not worry: no matter which key you use to produce one of the duplicated symbols, you’ll obtain the same result.</p>
-</div>
-<div class="section" id="utilities-and-data">
-<span id="introduction-utilities-and-data"></span><h3>Utilities and Data<a class="headerlink" href="#utilities-and-data" title="Permalink to this headline">¶</a></h3>
-<p>For most of the examples, you can just type what you read in the following pages, but sometimes you will need some data which we have prepared for you.</p>
-<p>This data is contained in a special file (called a workspace) named <code class="docutils literal notranslate"><span class="pre">DyalogTutor_EN.dws</span></code> which accompanies this book.</p>
-<p>If you don’t have the file, please refer to section A-1 for instructions on how to download it.</p>
-<p>The file can only be opened by Dyalog APL. You can open it as follows:</p>
-<ul class="simple">
-<li><p>In Windows Explorer, double-click on the file’s name. APL will be started, and it will then open the file.</p></li>
-<li><p>Or, start APL by double-clicking on the Dyalog APL icon. The, using the “<code class="docutils literal notranslate"><span class="pre">File/Open</span></code>” menu, search for the file and open it.</p></li>
-<li><p>Alternatively, you can use an APL command to load it into the session, like shown below:</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">)</span><span class="nv">load</span> <span class="nv">res</span><span class="na">/</span><span class="nv">DyalogTutor_EN</span><span class="na">.</span><span class="nv">DWS</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">ws not found
-</span></div></div>
-</div>
-<p>Once the workspace has been loaded, a welcome message is displayed (the message you can see above), and you can check that the workspace contains the variables we shall be using in the following pages:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">)</span><span class="nv">vars</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">k       keyboards       
-</span></div></div>
-</div>
-<p>You can display the contents of any variable by hovering over its name with the mouse-pointer, by double-clicking on its name, or just by typing its name and pressing the <kbd>Enter</kbd> key, like this:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Forecast</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Forecast
-      Forecast
-      ∧
-</pre></div>
-</div>
-</div>
-</div>
 <center><b>Now, you are ready, fasten your seatbelts, we're off!</b></center>
 </div>
 </div>
@@ -617,8 +564,8 @@
 <p>As in any programming language, it is possible to create variables. Just choose a name and use the left arrow to assign it a value. In APL a numeric value can consist of a single number, or several numbers separated by at least one blank space. The arrow can be obtained using <kbd>APL</kbd>+<kbd>[</kbd></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">VAT</span> <span class="kd">←</span> <span class="m">19.6</span>                    <span class="c1">⍝ Read it as: VAT gets 19.6</span>
-<span class="nv">Years</span> <span class="kd">←</span> <span class="m">1952</span> <span class="m">1943</span> <span class="m">1986</span> <span class="m">2007</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">vat</span> <span class="kd">←</span> <span class="m">19.6</span>                    <span class="c1">⍝ Read it as: vat gets 19.6</span>
+<span class="nv">years</span> <span class="kd">←</span> <span class="m">1952</span> <span class="m">1943</span> <span class="m">1986</span> <span class="m">2007</span>
 </pre></div>
 </div>
 </div>
@@ -627,7 +574,7 @@
 <p>To ask for the contents of a variable, just type its name and evaluate it like you did for the previous examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">VAT</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">vat</span>
 </pre></div>
 </div>
 </div>
@@ -637,7 +584,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Years</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">years</span>
 </pre></div>
 </div>
 </div>
@@ -652,36 +599,33 @@
 <p>APL is able to operate on two sets of numbers, provided those two sets have the same “shape”. For the moment, understand this as “the same number of items”. For example, suppose that you have a list of prices of 5 products, and the quantity bought of each:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:left head"><p></p></th>
-<th class="head"><p></p></th>
-<th class="head"><p></p></th>
-<th class="head"><p></p></th>
-<th class="head"><p></p></th>
-<th class="head"><p></p></th>
+<tr class="row-odd"><th class="text-align:center head"><p>Prices</p></th>
+<th class="text-align:center head"><p>Quantities</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p>Prices</p></td>
-<td><p>5.20</p></td>
-<td><p>11.50</p></td>
-<td><p>3.60</p></td>
-<td><p>4.00</p></td>
-<td><p>8.45</p></td>
+<tr class="row-even"><td class="text-align:center"><p>5.20</p></td>
+<td class="text-align:center"><p>2</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Quantities</p></td>
-<td><p>2</p></td>
-<td><p>1</p></td>
-<td><p>3</p></td>
-<td><p>6</p></td>
-<td><p>2</p></td>
+<tr class="row-odd"><td class="text-align:center"><p>11.50</p></td>
+<td class="text-align:center"><p>1</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>3.60</p></td>
+<td class="text-align:center"><p>3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>4.00</p></td>
+<td class="text-align:center"><p>6</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>8.45</p></td>
+<td class="text-align:center"><p>2</p></td>
 </tr>
 </tbody>
 </table>
 <p>You can create two variables like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Price</span> <span class="kd">←</span> <span class="m">5.2</span> <span class="m">11.5</span> <span class="m">3.6</span> <span class="m">4</span> <span class="m">8.45</span>
-<span class="nv">Qty</span>   <span class="kd">←</span> <span class="m">2</span> <span class="m">1</span> <span class="m">3</span> <span class="m">6</span> <span class="m">2</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">price</span> <span class="kd">←</span> <span class="m">5.2</span> <span class="m">11.5</span> <span class="m">3.6</span> <span class="m">4</span> <span class="m">8.45</span>
+<span class="nv">qty</span>   <span class="kd">←</span> <span class="m">2</span> <span class="m">1</span> <span class="m">3</span> <span class="m">6</span> <span class="m">2</span>
 </pre></div>
 </div>
 </div>
@@ -689,8 +633,8 @@
 <p>When multiplied together, the variables are multiplied item by item, and produce a result of the same length. That result can be assigned to a new variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Costs</span> <span class="kd">←</span> <span class="nv">Price</span> <span class="o">×</span> <span class="nv">Qty</span>
-<span class="nv">Costs</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">costs</span> <span class="kd">←</span> <span class="nv">price</span> <span class="o">×</span> <span class="nv">qty</span>
+<span class="nv">costs</span>
 </pre></div>
 </div>
 </div>
@@ -699,54 +643,56 @@
 </span></div></div>
 </div>
 <p>This <em>array processing</em> capability eliminates most of the “loops” which are common to other programming languages. This remains true even if the data is not a simple list but a multi-dimensional array, of almost any size and number of dimensions.</p>
-<p>To make it clear, imagine that a Sales Director makes forecasts for sales of 4 products over the coming 6 months, and assigns them to the variable <code class="docutils literal notranslate"><span class="pre">Forecast</span></code>. At the end of the 6 months, he assigns the real values to the variable <code class="docutils literal notranslate"><span class="pre">Actual</span></code>. Here they are:</p>
+<p>To make it clear, imagine that a Sales Director makes forecasts for sales of 4 products over the coming 6 months, and assigns them to the variable <code class="docutils literal notranslate"><span class="pre">forecast</span></code>. At the end of the 6 months, he assigns the real values to the variable <code class="docutils literal notranslate"><span class="pre">actual</span></code>. Here they are:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Forecast</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="nv">forecast</span> <span class="kd">←</span> <span class="m">10</span><span class="o">×?</span><span class="m">4</span> <span class="m">6</span><span class="o">⍴</span><span class="m">55</span>
+<span class="nv">forecast</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Forecast
-      Forecast
-      ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace"> 90 160 420 500  20  30
+110 450 170 370 290 360
+340 190 320 120 510 370
+150 460 240 520 490 280
+</span></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Actual</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="nv">actual</span> <span class="kd">←</span> <span class="nv">forecast</span> <span class="o">+</span> <span class="m">¯10</span><span class="o">+?</span><span class="m">4</span> <span class="m">6</span><span class="o">⍴</span><span class="m">20</span>
+<span class="nv">actual</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Actual
-      Actual
-      ∧
-</pre></div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace"> 89 166 420 508  12  23
+111 453 177 365 284 352
+349 192 329 115 515 374
+160 467 234 519 485 283
+</span></div></div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
+<p>We initialise the <code class="docutils literal notranslate"><span class="pre">forecast</span></code> and <code class="docutils literal notranslate"><span class="pre">actual</span></code> variables with some random values by the use of the functions <code class="docutils literal notranslate"><span class="pre">⍴</span></code> and <code class="docutils literal notranslate"><span class="pre">?</span></code> and with a magic incantation <code class="docutils literal notranslate"><span class="pre">⎕RL</span></code>. You will learn more about <code class="docutils literal notranslate"><span class="pre">⍴</span></code>, <code class="docutils literal notranslate"><span class="pre">?</span></code> and <code class="docutils literal notranslate"><span class="pre">⎕RL</span></code> later on in the book.</p>
 </div>
-</div>
-<p>We have not yet explained how you can build such arrays of data, but if you have APL installed, these variables are provided in the workspace file named “<code class="docutils literal notranslate"><span class="pre">DyalogTutor_EN.dws</span></code>”. Refer to the “<em>Utilities and Data</em>” section above to see how you can load the workspace and access the data.</p>
-<p>It is clear that the first idea of any Sales Director will be to ask for the differences between what he expected and what he has really got. This can be done easily by typing:</p>
+<p>It is clear that the first idea of any Sales Director will be to ask for the differences between what they expected and what they really got. This can be done easily by typing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Actual</span> <span class="o">-</span> <span class="nv">Forecast</span>        <span class="c1">⍝ Note that to distinguish the sign attached to</span>
-                         <span class="c1">⍝ negative values from subtraction, negative</span>
-                         <span class="c1">⍝ values are shown with a high minus sign.</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">actual</span> <span class="o">-</span> <span class="nv">forecast</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Forecast
-      Actual-Forecast        ⍝ Note that to distinguish the sign attached to
-             ∧
-</pre></div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">¯1 6  0  8 ¯8 ¯7
+ 1 3  7 ¯5 ¯6 ¯8
+ 9 2  9 ¯5  5  4
+10 7 ¯6 ¯1 ¯5  3
+</span></div></div>
 </div>
-</div>
-</div>
-<p>To enter negative values, the high minus sign can be obtained by pressing <kbd>APL</kbd>+<kbd>2</kbd>.</p>
+<p>Note that to distinguish the sign attached to negative values from subtraction, negative values are shown with a high minus sign. The high minus sign can be obtained by pressing <kbd>APL</kbd>+<kbd>2</kbd>.</p>
 <p>In most traditional programming languages, an operation like the one above requires two embedded loops. See what is needed in Python:</p>
 <div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">actual</span><span class="p">)):</span>
@@ -759,11 +705,10 @@
 <p>Even if this may seem obvious to a programmer, it is worth noting that most of the code has nothing to do with the user requirement. The only important thing (subtract forecasts from actual values) is hidden behind the detailed working of the computer program.</p>
 <p>To have a calculation done by a machine, one must translate our human wording into something that the computer can understand. With traditional languages, most of the effort is made by the man, to produce a program like the Python example above. The great advantage of APL is that the man has generally much less effort to make, and the machine does the rest.</p>
 <p>We have seen that APL will work on two variables of the same shape; it also works if one of the variables is a single item, which is called a <strong><em>scalar</em></strong>. If so, the other variable may be of any shape.</p>
-<p>For example, if we want to calculate the amount of 19.6% VAT applied to the variable <code class="docutils literal notranslate"><span class="pre">Price</span></code> above, we can type <code class="docutils literal notranslate"><span class="pre">Price</span> <span class="pre">×</span> <span class="pre">VAT</span> <span class="pre">÷</span> <span class="pre">100</span></code> (or <code class="docutils literal notranslate"><span class="pre">VAT</span> <span class="pre">×</span> <span class="pre">Price</span> <span class="pre">÷</span> <span class="pre">100</span></code> as well), as shown here:</p>
+<p>For example, if we want to calculate the amount of 19.6% VAT applied to the variable <code class="docutils literal notranslate"><span class="pre">price</span></code> above, we can type <code class="docutils literal notranslate"><span class="pre">price</span> <span class="pre">×</span> <span class="pre">vat</span> <span class="pre">÷</span> <span class="pre">100</span></code> (or <code class="docutils literal notranslate"><span class="pre">vat</span> <span class="pre">×</span> <span class="pre">price</span> <span class="pre">÷</span> <span class="pre">100</span></code> as well), as shown here:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Price</span> <span class="o">×</span> <span class="nv">VAT</span> <span class="o">÷</span> <span class="m">100</span>        <span class="c1">⍝ This result would require some rounding</span>
-                         <span class="c1">⍝ but this is not important for now</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">price</span> <span class="o">×</span> <span class="nv">vat</span> <span class="o">÷</span> <span class="m">100</span>
 </pre></div>
 </div>
 </div>
@@ -771,16 +716,17 @@
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1.0192 2.254 0.7056 0.784 1.6562
 </span></div></div>
 </div>
+<p>These prices would then require some rounding, but this is not very important right now.</p>
 </div>
 <div class="section" id="more-symbols">
 <span id="introduction-more-symbols"></span><h2>More Symbols<a class="headerlink" href="#more-symbols" title="Permalink to this headline">¶</a></h2>
 <p>Most programming languages represent only a very small subset of the mathematical functions using symbols (typically <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">/</span></code>). The creator of APL, Kenneth E. Iverson, chose to include many traditional mathematical symbols in his language, and also added some new symbols to the set that we already know so well.</p>
 <p>E.g.: Many functions which in other programming languages are library routines with names like “Maximum” have their own symbols in APL.</p>
-<p>The function “<strong><em>Maximum</em></strong>” (<code class="docutils literal notranslate"><span class="pre">⌈</span></code>) returns the greater of two numbers, or of two arrays of numbers compared item by item.</p>
-<p>There is also, as one might expect, a symbol for “<strong><em>Minimum</em></strong>” (<code class="docutils literal notranslate"><span class="pre">⌊</span></code>).</p>
+<p>The function “<strong><em>Maximum</em></strong>” (<code class="docutils literal notranslate"><span class="pre">⌈</span></code>, typed with <kbd>APL</kbd>+<kbd>s</kbd>) returns the greater of two numbers, or of two arrays of numbers compared item by item.</p>
+<p>There is also, as one might expect, a symbol for “<strong><em>Minimum</em></strong>” (<code class="docutils literal notranslate"><span class="pre">⌊</span></code>, typed with <kbd>APL</kbd>+<kbd>d</kbd>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">75.6</span> <span class="o">⌈</span> <span class="m">87.3</span>                  <span class="c1">⍝ Maximum (APL+S)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">75.6</span> <span class="o">⌈</span> <span class="m">87.3</span>
 </pre></div>
 </div>
 </div>
@@ -788,9 +734,10 @@
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">87.3
 </span></div></div>
 </div>
+<p>If we type more than one item on either side, we get comparison item by item. Later, we will see this is because <em>Maximum</em> is a <em>scalar</em> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">11</span> <span class="m">28</span> <span class="m">52</span> <span class="m">14</span> <span class="o">⌈</span> <span class="m">30</span> <span class="m">10</span> <span class="m">50</span> <span class="m">20</span>    <span class="c1">⍝ Comparison item by item</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">11</span> <span class="m">28</span> <span class="m">52</span> <span class="m">14</span> <span class="o">⌈</span> <span class="m">30</span> <span class="m">10</span> <span class="m">50</span> <span class="m">20</span>
 </pre></div>
 </div>
 </div>
@@ -800,7 +747,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">11</span> <span class="m">28</span> <span class="m">52</span> <span class="m">14</span> <span class="o">⌊</span> <span class="m">20</span>             <span class="c1">⍝ Minimum (APL+D)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">11</span> <span class="m">28</span> <span class="m">52</span> <span class="m">14</span> <span class="o">⌊</span> <span class="m">20</span>
 </pre></div>
 </div>
 </div>
@@ -836,10 +783,10 @@
 The second form is called the “<strong><em>monadic</em></strong>” use of the symbol.</p>
 <p>It is the same in APL, where most of the symbols can have two meanings.</p>
 <p>For example, to find the shape (the dimensions) of an array, one uses the Greek letter Rho (<code class="docutils literal notranslate"><span class="pre">⍴</span></code>), which can be read “<em>shape of …</em>”, in its monadic use. It is produced using <kbd>APL</kbd>+<kbd>r</kbd>.</p>
+<p>For example,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span> <span class="nv">Price</span>        <span class="c1">⍝ Monadic use</span>
-               <span class="c1">⍝ Price has 5 items</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span> <span class="nv">price</span>
 </pre></div>
 </div>
 </div>
@@ -847,19 +794,16 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">5
 </span></div></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">price</span></code> has 5 items, and <code class="docutils literal notranslate"><span class="pre">forecast</span></code> has 4 rows and 6 columns:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span> <span class="nv">Forecast</span>     <span class="c1">⍝ Forecast has 4 rows of 6 items</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span> <span class="nv">forecast</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Forecast
-      ⍴Forecast     ⍝ Forecast has 4 rows of 6 items
-       ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">4 6
+</span></div></div>
 </div>
 <p>Used dyadically, the same symbol will organize items into a specified shape. For example, suppose that we want to create the matrix below:</p>
 <div class="math notranslate nohighlight">
@@ -879,8 +823,8 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>It is the symbol <code class="docutils literal notranslate"><span class="pre">⍴</span></code> (Rho) which makes the connection between shape and the contents:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Tab</span> <span class="kd">←</span> <span class="m">4</span> <span class="m">2</span> <span class="o">⍴</span> <span class="m">25</span> <span class="m">60</span> <span class="m">33</span> <span class="m">47</span> <span class="m">11</span> <span class="m">44</span> <span class="m">53</span> <span class="m">28</span>
-<span class="nv">Tab</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">tab</span> <span class="kd">←</span> <span class="m">4</span> <span class="m">2</span> <span class="o">⍴</span> <span class="m">25</span> <span class="m">60</span> <span class="m">33</span> <span class="m">47</span> <span class="m">11</span> <span class="m">44</span> <span class="m">53</span> <span class="m">28</span>
+<span class="nv">tab</span>
 </pre></div>
 </div>
 </div>
@@ -891,14 +835,14 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 53 28
 </span></div></div>
 </div>
-<p>A new variable <code class="docutils literal notranslate"><span class="pre">Tab</span></code> is thereby created, and this is also how the variables <code class="docutils literal notranslate"><span class="pre">Forecast</span></code> and <code class="docutils literal notranslate"><span class="pre">Actual</span></code> above were made.</p>
+<p>A new variable <code class="docutils literal notranslate"><span class="pre">tab</span></code> is thereby created, and this is also how the variables <code class="docutils literal notranslate"><span class="pre">forecast</span></code> and <code class="docutils literal notranslate"><span class="pre">actual</span></code> above were made.</p>
 <div class="section" id="conventions">
 <span id="introduction-conventions"></span><h3>Conventions<a class="headerlink" href="#conventions" title="Permalink to this headline">¶</a></h3>
 <p>In APL, we give special names to certain shapes of data:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:left head"><p></p></th>
-<th class="text-align:left head"><p></p></th>
+<tr class="row-odd"><th class="text-align:left head"><p>Term</p></th>
+<th class="text-align:left head"><p>Meaning</p></th>
 </tr>
 </thead>
 <tbody>
@@ -906,13 +850,13 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <td class="text-align:left"><p>is used for a single value, a number like <code class="docutils literal notranslate"><span class="pre">456.18</span></code> or a single letter like <code class="docutils literal notranslate"><span class="pre">'Q'</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p><strong><em>Vector</em></strong></p></td>
-<td class="text-align:left"><p>is a plain list of values. It may be composed of numbers like <code class="docutils literal notranslate"><span class="pre">Price</span></code> and <code class="docutils literal notranslate"><span class="pre">Qty</span></code>, or of letters like <code class="docutils literal notranslate"><span class="pre">'Once</span> <span class="pre">upon</span> <span class="pre">a</span> <span class="pre">time'</span></code> within single quotes.</p></td>
+<td class="text-align:left"><p>is a plain list of values. It may be composed of numbers like <code class="docutils literal notranslate"><span class="pre">price</span></code> and <code class="docutils literal notranslate"><span class="pre">qty</span></code>, or of letters like <code class="docutils literal notranslate"><span class="pre">'Once</span> <span class="pre">upon</span> <span class="pre">a</span> <span class="pre">time'</span></code> within single quotes.</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p><strong><em>Array</em></strong></p></td>
 <td class="text-align:left"><p>is a generic word for any set of values, whatever the number of its dimensions (whatever its shape).</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p><strong><em>Matrix</em></strong></p></td>
-<td class="text-align:left"><p>is an array with 2 dimensions, like <code class="docutils literal notranslate"><span class="pre">Forecast</span></code> or <code class="docutils literal notranslate"><span class="pre">Tab</span></code>.</p></td>
+<td class="text-align:left"><p>is an array with 2 dimensions, like <code class="docutils literal notranslate"><span class="pre">forecast</span></code> or <code class="docutils literal notranslate"><span class="pre">tab</span></code>.</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p><strong><em>Table</em></strong></p></td>
 <td class="text-align:left"><p>is another common word used for arrays with 2 dimensions (matrices).</p></td>
@@ -926,10 +870,10 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <div class="section" id="reduction-unifies-traditional-notations">
 <span id="introduction-reduction-unifies-traditional-notations"></span><h2>Reduction Unifies Traditional Notations<a class="headerlink" href="#reduction-unifies-traditional-notations" title="Permalink to this headline">¶</a></h2>
-<p>Perhaps you remember the variable <code class="docutils literal notranslate"><span class="pre">Costs</span></code>:</p>
+<p>Perhaps you remember the variable <code class="docutils literal notranslate"><span class="pre">costs</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Costs</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">costs</span>
 </pre></div>
 </div>
 </div>
@@ -940,12 +884,12 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>So what must we do to work out the total? Mathematicians are creative people who long ago devised the symbol <span class="math notranslate nohighlight">\(\sum\)</span>, always with a pretty collection of indices above and below, which make it complex to understand and to type on a typewriter:</p>
 <div class="math notranslate nohighlight">
 \[
-    \sum_{i = 1}^5 \text{Costs}_i
+    \sum_{i = 1}^5 \text{costs}_i
 \]</div>
 <p>In APL, the operation is written like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">Costs</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">costs</span>
 </pre></div>
 </div>
 </div>
@@ -954,7 +898,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </span></div></div>
 </div>
 <p>Simple, isn’t it? This gives the total of all the items of the array.</p>
-<p>You can read this as “<em>Plus Reduction</em>” of the variable <code class="docutils literal notranslate"><span class="pre">Costs</span></code>.</p>
+<p>You can read this as “<em>Plus Reduction</em>” of the variable <code class="docutils literal notranslate"><span class="pre">costs</span></code>.</p>
 <p>To gain a better understanding of the process:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1006,7 +950,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>The arguments of a function are always data (arrays):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Price</span> <span class="o">×</span> <span class="nv">Qty</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">price</span> <span class="o">×</span> <span class="nv">qty</span>
 </pre></div>
 </div>
 </div>
@@ -1017,7 +961,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Whereas the “arguments” of an operator (which are called <em><strong>operands</strong></em>) can also be functions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">Qty</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">qty</span>
 </pre></div>
 </div>
 </div>
@@ -1033,7 +977,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Imagine that we want to calculate the average of the following numbers:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Val</span> <span class="kd">←</span> <span class="m">22</span> <span class="m">37</span> <span class="m">41</span> <span class="m">19</span> <span class="m">54</span> <span class="m">11</span> <span class="m">34</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span> <span class="kd">←</span> <span class="m">22</span> <span class="m">37</span> <span class="m">41</span> <span class="m">19</span> <span class="m">54</span> <span class="m">11</span> <span class="m">34</span>
 </pre></div>
 </div>
 </div>
@@ -1041,7 +985,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>We must first calculate the sum of the values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">Val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">val</span>
 </pre></div>
 </div>
 </div>
@@ -1052,7 +996,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Next calculate the number of values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span> <span class="nv">Val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span> <span class="nv">val</span>
 </pre></div>
 </div>
 </div>
@@ -1064,7 +1008,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>The calculation can be written as the single formula:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="nv">Val</span><span class="p">)</span> <span class="o">÷</span> <span class="p">(</span><span class="o">⍴</span><span class="nv">Val</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="nv">val</span><span class="p">)</span> <span class="o">÷</span> <span class="p">(</span><span class="o">⍴</span><span class="nv">val</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1092,8 +1036,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Once defined, this function may be invoked in a very simple way:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Average</span> <span class="nv">Val</span>        <span class="c1">⍝ For execution, ⍵ will get the values</span>
-                   <span class="c1">⍝ contained in Val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Average</span> <span class="nv">val</span>
 </pre></div>
 </div>
 </div>
@@ -1101,6 +1044,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">31.1429
 </span></div></div>
 </div>
+<p>During the execution above, <code class="docutils literal notranslate"><span class="pre">⍵</span></code> gets the values in <code class="docutils literal notranslate"><span class="pre">val</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Average</span> <span class="m">12</span> <span class="m">74</span> <span class="m">56</span> <span class="m">23</span>
@@ -1128,7 +1072,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>We said in the preceding section that a user-defined program could be used by the <em>Reduce</em> operator; let us try:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Plus</span><span class="na">/</span> <span class="nv">Val</span>        <span class="c1">⍝ It works!</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Plus</span><span class="na">/</span> <span class="nv">val</span>
 </pre></div>
 </div>
 </div>
@@ -1136,13 +1080,14 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">218
 </span></div></div>
 </div>
+<p>It works!</p>
 </div>
 <div class="section" id="indexing">
 <span id="introduction-indexing"></span><h2>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h2>
-<p>Returning to our vector of numbers <code class="docutils literal notranslate"><span class="pre">Val</span></code>:</p>
+<p>Returning to our vector of numbers <code class="docutils literal notranslate"><span class="pre">val</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span>
 </pre></div>
 </div>
 </div>
@@ -1153,7 +1098,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>In order to extract the 4th item, we just write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Val</span><span class="sr">[</span><span class="m">4</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">4</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
@@ -1164,7 +1109,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>This is similar to most of the most popular programming languages. What is new is that one can extract several items in one instruction:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span>
 </pre></div>
 </div>
 </div>
@@ -1172,9 +1117,10 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">22 37 41 19 54 11 34
 </span></div></div>
 </div>
+<p>What might be new to you is that you can have repeated indices to extract the same item twice or more:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Val</span><span class="sr">[</span><span class="m">2</span> <span class="m">4</span> <span class="m">7</span> <span class="m">1</span> <span class="m">4</span><span class="sr">]</span>        <span class="c1">⍝ One may extract the same item twice or more</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">2</span> <span class="m">4</span> <span class="m">7</span> <span class="m">1</span> <span class="m">4</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
@@ -1182,11 +1128,11 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">37 19 34 22 19
 </span></div></div>
 </div>
-<p>And of course, in the same way, one may modify one or more items of <code class="docutils literal notranslate"><span class="pre">Val</span></code> using their indices. Naturally, one must provide as many values as there are items to modify, or a single value for all:</p>
+<p>And of course, in the same way, one may modify one or more items of <code class="docutils literal notranslate"><span class="pre">val</span></code> using their indices. Naturally, one must provide as many values as there are items to modify, or a single value for all:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Val</span><span class="sr">[</span><span class="m">3</span> <span class="m">5</span> <span class="m">1</span><span class="sr">]</span> <span class="kd">←</span> <span class="m">0</span>
-<span class="nv">Val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">3</span> <span class="m">5</span> <span class="m">1</span><span class="sr">]</span> <span class="kd">←</span> <span class="m">0</span>
+<span class="nv">val</span>
 </pre></div>
 </div>
 </div>
@@ -1196,9 +1142,8 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Val</span><span class="sr">[</span><span class="m">3</span> <span class="m">5</span> <span class="m">1</span><span class="sr">]</span> <span class="kd">←</span> <span class="m">300</span> <span class="m">77</span> <span class="m">111</span>
-<span class="nv">Val</span>                        <span class="c1">⍝ You can check that the 3rd item is now 300,</span>
-                           <span class="c1">⍝ the 5th is 77, etc.</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">3</span> <span class="m">5</span> <span class="m">1</span><span class="sr">]</span> <span class="kd">←</span> <span class="m">300</span> <span class="m">77</span> <span class="m">111</span>
+<span class="nv">val</span>
 </pre></div>
 </div>
 </div>
@@ -1206,10 +1151,11 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">111 37 300 19 77 11 34
 </span></div></div>
 </div>
+<p>You can see that the third item is now 300, the fifth item is now 77 and the first one is 111.</p>
 <p>It is often necessary to extract the first few items from a list of values, for example the first 5. Nothing could be easier:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Val</span><span class="sr">[</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
@@ -1220,7 +1166,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>But if one needs to extract the first 500 items from a long list, typing the integers from 1 to 500 would of course be very inconvenient.</p>
 <p>This is why APL has been given the symbol <code class="docutils literal notranslate"><span class="pre">⍳</span></code> (<em><strong>Iota</strong></em>), which produces the set of the first <span class="math notranslate nohighlight">\(n\)</span> integers (<code class="docutils literal notranslate"><span class="pre">⍳</span></code> can be obtained using <kbd>APL</kbd>+<kbd>i</kbd>).</p>
 <p>Thus, instead of writing <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span> <span class="pre">6</span> <span class="pre">7</span> <span class="pre">8</span></code>, it is sufficient to write <code class="docutils literal notranslate"><span class="pre">⍳8</span></code>.</p>
-<p>And to extract the first 500 terms of a large vector, one may write: <code class="docutils literal notranslate"><span class="pre">Big[⍳500]</span></code>.</p>
+<p>And to extract the first 500 terms of a large vector, one may write: <code class="docutils literal notranslate"><span class="pre">big[⍳500]</span></code>.</p>
 <p>We shall discover later an even simpler method.</p>
 </div>
 <div class="section" id="calculating-without-writing-programs">
@@ -1228,31 +1174,27 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>The employees of a company are divided into three hierarchical categories, denoted simply 1, 2, and 3. One assigns to two variables the salaries and the categories of these employees, as shown here:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Salaries</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="nv">salaries</span> <span class="kd">←</span> <span class="o">?</span><span class="m">20</span><span class="o">⍴</span><span class="m">5000</span>
+<span class="nv">salaries</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Salaries
-      Salaries
-      ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">2121 4778 4914 3139 4561 221 1252 1530 4475 332 3507 1829 1710 4964 3849 669 3653 3415 3867 151
+</span></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Categories</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="nv">categories</span> <span class="kd">←</span> <span class="o">?</span><span class="m">20</span><span class="o">⍴</span><span class="m">3</span>
+<span class="nv">categories</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Categories
-      Categories
-      ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 2 2 3 3 1 1 1 1 2 3 2 3 3 1 3 2 1 1
+</span></div></div>
 </div>
 <p>Do they never want to increase these salaries? (What has our poor world come to!)</p>
 <p>A rumour reaches us about their plans: they want a different percentage increase for each category, according to the following scale:</p>
@@ -1275,12 +1217,11 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </tbody>
 </table>
 <p>How much is this going to cost the company?</p>
-<p>We create a variable containing the above three rates:</p>
+<p>We create a variable containing the above three rates. Notice how APL allows us to divide three numbers by a single one:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Rates</span> <span class="kd">←</span> <span class="m">8</span> <span class="m">5</span> <span class="m">2</span> <span class="o">÷</span> <span class="m">100</span>        <span class="c1">⍝ APL allows us to divide three numbers</span>
-                           <span class="c1">⍝ by a single one</span>
-<span class="nv">Rates</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">rates</span> <span class="kd">←</span> <span class="m">8</span> <span class="m">5</span> <span class="m">2</span> <span class="o">÷</span> <span class="m">100</span>
+<span class="nv">rates</span>
 </pre></div>
 </div>
 </div>
@@ -1288,72 +1229,60 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">0.08 0.05 0.02
 </span></div></div>
 </div>
-<p>The first employee is in category 3, so the rate that applies to him is:</p>
+<p>The first employee is in category 1, so the rate that applies to him is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Rates</span><span class="sr">[</span><span class="m">3</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">rates</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">0.02
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0.08
 </span></div></div>
 </div>
-<p>It follows that the first 5 employees, being in categories <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">1</span> <span class="pre">3</span> <span class="pre">2</span> <span class="pre">2</span></code> respectively, are entitled to the following increases:</p>
+<p>It follows that the first 5 employees, being in categories <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">2</span> <span class="pre">2</span> <span class="pre">3</span></code> respectively, are entitled to the following increases:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Rates</span><span class="sr">[</span><span class="m">3</span> <span class="m">1</span> <span class="m">3</span> <span class="m">2</span> <span class="m">2</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">rates</span><span class="sr">[</span><span class="m">1</span> <span class="m">2</span> <span class="m">2</span> <span class="m">2</span> <span class="m">3</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">0.02 0.08 0.02 0.05 0.05
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0.08 0.05 0.05 0.05 0.02
 </span></div></div>
 </div>
 <p>More generally, the rates applied to all of our employees could be obtained like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Rates</span><span class="sr">[</span><span class="nv">Categories</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">rates</span><span class="sr">[</span><span class="nv">categories</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Categories
-      Rates[Categories]
-            ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0.08 0.05 0.05 0.05 0.02 0.02 0.08 0.08 0.08 0.08 0.05 0.02 0.05 0.02 0.02 0.08 0.02 0.05 0.08 0.08
+</span></div></div>
 </div>
 <p>Having the rates, one just has to multiply by the salaries to obtain the individual increases:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Salaries</span> <span class="o">×</span> <span class="nv">Rates</span><span class="sr">[</span><span class="nv">Categories</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">salaries</span> <span class="o">×</span> <span class="nv">rates</span><span class="sr">[</span><span class="nv">categories</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Categories
-      Salaries×Rates[Categories]
-                     ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">169.68 238.9 245.7 156.95 91.22 4.42 100.16 122.4 358 26.56 175.35 36.58 85.5 99.28 76.98 53.52 73.06 170.75 309.36 12.08
+</span></div></div>
 </div>
 <p>Finally, by adding them all, one will know how much it will cost the company:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">Salaries</span> <span class="o">×</span> <span class="nv">Rates</span><span class="sr">[</span><span class="nv">Categories</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">salaries</span> <span class="o">×</span> <span class="nv">rates</span><span class="sr">[</span><span class="nv">categories</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Categories
-      +/Salaries×Rates[Categories]
-                       ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">2606.45
+</span></div></div>
 </div>
 <p>You may note that:</p>
 <ul class="simple">
@@ -1362,7 +1291,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <li><p>and this expression can be read as the simplest possible English, like this:</p></li>
 </ul>
 <blockquote>
-<div><p>sum the <code class="docutils literal notranslate"><span class="pre">Salaries</span></code> multiplied by <code class="docutils literal notranslate"><span class="pre">Rates</span></code> according to <code class="docutils literal notranslate"><span class="pre">Categories</span></code>.</p>
+<div><p>sum the <code class="docutils literal notranslate"><span class="pre">salaries</span></code> multiplied by <code class="docutils literal notranslate"><span class="pre">rates</span></code> according to <code class="docutils literal notranslate"><span class="pre">categories</span></code>.</p>
 </div></blockquote>
 <p>Clever, no?</p>
 <p>This illustrates how the expression of a solution in APL can be very close to the way that the solution could be phrased in everyday language. This also shows clearly that the ways of reasoning induced by traditional programming languages are not the only possible ones. This difference and originality, introduced by APL, are among the major features of the language.</p>
@@ -1372,31 +1301,27 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>APL makes much use of binary data. It is most often created by means of relational functions like <code class="docutils literal notranslate"><span class="pre">=</span></code> or <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, which give the answer <code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code>, depending on whether the relation is true or not:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Salaries</span> <span class="o">&gt;</span> <span class="m">3000</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">salaries</span> <span class="o">&gt;</span> <span class="m">3000</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Salaries
-      Salaries&gt;3000
-      ∧
-</pre></div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 1 1 1 1 0 0 0 1 0 1 0 0 1 1 0 1 1 1 0
+</span></div></div>
 </div>
-</div>
-</div>
+<p>By the use of the correct relational function, one can immediately compare the <code class="docutils literal notranslate"><span class="pre">actual</span></code> results with the <code class="docutils literal notranslate"><span class="pre">forecast</span></code> and find the favourable results:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Actual</span> <span class="o">&gt;</span> <span class="nv">Forecast</span>        <span class="c1">⍝ One can see the favourable results instantly</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">actual</span> <span class="o">&gt;</span> <span class="nv">forecast</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Forecast
-      Actual&gt;Forecast        ⍝ One can see the favourable results instantly
-             ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 1 0 1 0 0
+1 1 1 0 0 0
+1 1 1 0 1 1
+1 1 0 0 0 1
+</span></div></div>
 </div>
 <p>APL offers the conventional mathematical form of the 6 relational functions:</p>
 <center><code>&lt; ≤ = ≥ &gt; ≠</code></center>
@@ -1408,17 +1333,13 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Thus, if I am looking for people in category 3 whose salary is less than 4000 euros, I can write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">Categories</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span> <span class="o">∧</span> <span class="p">(</span><span class="nv">Salaries</span> <span class="o">&lt;</span> <span class="m">4000</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">categories</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span> <span class="o">∧</span> <span class="p">(</span><span class="nv">salaries</span> <span class="o">&lt;</span> <span class="m">4000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Salaries
-      (Categories=3)∧(Salaries&lt;4000)
-                      ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 0 0 0 1 0 0 0 0 0 1 0 0 1 0 1 0 0 0
+</span></div></div>
 </div>
 <p>In fact, APL offers all the functions of Boolean algebra, including some perhaps less familiar functions like <em><strong>NOR</strong></em> and <em><strong>NAND</strong></em> (Not-OR and Not-AND), but they are very useful in finance and electronic automation.</p>
 <p>There is, however, no special symbol for the function <em><strong>Exclusive OR</strong></em> (often called <em><strong>XOR</strong></em>). This is because it is not needed: the function <em><strong>Not Equal</strong></em> <code class="docutils literal notranslate"><span class="pre">≠</span></code> gives the same result as <em>Exclusive OR</em> when it is used with Boolean values, as you can see below:</p>
@@ -1438,32 +1359,24 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Having found which salaries are less than 2500 euros by means of the following expression:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Salaries</span> <span class="o">&lt;</span> <span class="m">2500</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">salaries</span> <span class="o">&lt;</span> <span class="m">2500</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Salaries
-      Salaries&lt;2500
-      ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 0 0 0 0 1 1 1 0 1 0 1 1 0 0 1 0 0 0 1
+</span></div></div>
 </div>
 <p>It is easy to add all the 1’s and 0’s to calculate how many people earn less than 2500 euros:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">Salaries</span> <span class="o">&lt;</span> <span class="m">2500</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">salaries</span> <span class="o">&lt;</span> <span class="m">2500</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Salaries
-      +/Salaries&lt;2500
-        ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">9
+</span></div></div>
 </div>
 </div>
 <div class="section" id="selection">
@@ -1490,29 +1403,26 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">Duck
 </span></div></div>
 </div>
-<p>This function, called <em><strong>Compress</strong></em>, is particularly useful for extracting items conforming to a given criterion from a variable. For example, to display the salaries of people in Category 2, one writes:</p>
+<p>This function, called <em><strong>Compress</strong></em>, is particularly useful for extracting items conforming to a given criterion from a variable. For example, to display the salaries of people in category 2, one writes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">Categories</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="na">/</span> <span class="nv">Salaries</span>        <span class="c1">⍝ Powerful, isn&#39;t it?</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">categories</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="na">/</span> <span class="nv">salaries</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Salaries
-      (Categories=2)/Salaries        ⍝ Powerful, isn&#39;t it?
-                     ∧
-</pre></div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">4778 4914 3139 3507 1710 3415
+</span></div></div>
 </div>
-</div>
-</div>
+<p>Looks like a powerful primitive function, doesn’t it?</p>
 </div>
 <div class="section" id="discovery">
 <span id="introduction-discovery"></span><h3>Discovery<a class="headerlink" href="#discovery" title="Permalink to this headline">¶</a></h3>
-<p>To practice our skills some more, let us find in our variable <code class="docutils literal notranslate"><span class="pre">Val</span></code> the positions of numbers greater than 35. Here are the necessary steps:</p>
+<p>To practice our skills some more, let us find in our variable <code class="docutils literal notranslate"><span class="pre">val</span></code> the positions of numbers greater than 35. Here are the necessary steps:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Val</span> <span class="kd">←</span> <span class="m">22</span> <span class="m">37</span> <span class="m">41</span> <span class="m">19</span> <span class="m">54</span> <span class="m">11</span> <span class="m">34</span>
-<span class="nv">Val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span> <span class="kd">←</span> <span class="m">22</span> <span class="m">37</span> <span class="m">41</span> <span class="m">19</span> <span class="m">54</span> <span class="m">11</span> <span class="m">34</span>
+<span class="nv">val</span>
 </pre></div>
 </div>
 </div>
@@ -1522,7 +1432,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Val</span><span class="o">&gt;</span><span class="m">35</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="o">&gt;</span><span class="m">35</span>
 </pre></div>
 </div>
 </div>
@@ -1532,7 +1442,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">Val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">val</span>
 </pre></div>
 </div>
 </div>
@@ -1540,9 +1450,10 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">7
 </span></div></div>
 </div>
+<p>With this we can generate all possible positions of items in <code class="docutils literal notranslate"><span class="pre">val</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍳⍴</span><span class="nv">Val</span>        <span class="c1">⍝ All possible positions</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍳⍴</span><span class="nv">val</span>
 </pre></div>
 </div>
 </div>
@@ -1553,7 +1464,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Let us compare two of these results:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Val</span><span class="o">&gt;</span><span class="m">35</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="o">&gt;</span><span class="m">35</span>
 </pre></div>
 </div>
 </div>
@@ -1563,7 +1474,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍳⍴</span><span class="nv">Val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍳⍴</span><span class="nv">val</span>
 </pre></div>
 </div>
 </div>
@@ -1575,7 +1486,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Thus the job may be done as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">Val</span><span class="o">&gt;</span><span class="m">35</span><span class="p">)</span> <span class="na">/</span> <span class="o">⍳⍴</span><span class="nv">Val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">val</span><span class="o">&gt;</span><span class="m">35</span><span class="p">)</span> <span class="na">/</span> <span class="o">⍳⍴</span><span class="nv">val</span>
 </pre></div>
 </div>
 </div>
@@ -1587,8 +1498,8 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Here is a similar use, but applied to character data: to find the positions of “a” within a phrase; the method is the same.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Phrase</span> <span class="kd">←</span> <span class="s1">&#39;Panama is a canal between Atlantic and Pacific&#39;</span>
-<span class="p">(</span><span class="nv">Phrase</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="na">/</span> <span class="o">⍳⍴</span><span class="nv">Phrase</span>        <span class="c1">⍝ You can check it!</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">phrase</span> <span class="kd">←</span> <span class="s1">&#39;Panama is a canal between Atlantic and Pacific&#39;</span>
+<span class="p">(</span><span class="nv">phrase</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="na">/</span> <span class="o">⍳⍴</span><span class="nv">phrase</span>
 </pre></div>
 </div>
 </div>
@@ -1596,20 +1507,21 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">2 4 6 11 14 16 30 36 41
 </span></div></div>
 </div>
+<p>If you want, you can check the result by hand… but I wouldn’t bother!</p>
 </div>
 </div>
 <div class="section" id="a-touch-of-modern-math">
 <span id="introduction-a-touch-of-modern-math"></span><h2>A Touch of Modern Math<a class="headerlink" href="#a-touch-of-modern-math" title="Permalink to this headline">¶</a></h2>
 <p>Proudly having found all the “a”s, we may wish to find all the vowels.</p>
-<p>Alas, although we can write <code class="docutils literal notranslate"><span class="pre">Phrase</span> <span class="pre">=</span> <span class="pre">'a'</span></code>, because a vector can be compared with a single value, one cannot write <code class="docutils literal notranslate"><span class="pre">Phrase</span> <span class="pre">=</span> <span class="pre">'aeiouy'</span></code>⁽¹⁾, because that would require the item by item comparison of a phrase of 46 letters and “aeiouy” which has only 6.</p>
+<p>Alas, although we can write <code class="docutils literal notranslate"><span class="pre">phrase</span> <span class="pre">=</span> <span class="pre">'a'</span></code>, because a vector can be compared with a single value, one cannot write <code class="docutils literal notranslate"><span class="pre">phrase</span> <span class="pre">=</span> <span class="pre">'aeiouy'</span></code>⁽¹⁾, because that would require the item by item comparison of a phrase of 46 letters and “aeiouy” which has only 6.</p>
 <p>In other words: You may compare 46 letters with 46 other letters, or compare them with one letter, but not with 6.</p>
 <p>So we shall use a new function: <em><strong>Membership</strong></em> which is represented by the symbol <code class="docutils literal notranslate"><span class="pre">∊</span></code>, also used in mathematics (<code class="docutils literal notranslate"><span class="pre">∊</span></code> can be obtained by pressing <kbd>APL</kbd>+<kbd>e</kbd>).</p>
-<p>The expression <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">∊</span> <span class="pre">B</span></code> returns a Boolean result which indicates which items of the variable <code class="docutils literal notranslate"><span class="pre">A</span></code> appear in the variable <code class="docutils literal notranslate"><span class="pre">B</span></code>, wherever they may be. And it works no matter what are the shapes, the dimensions or the type (numeric or character) of <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code>, a pure marvel!</p>
+<p>The expression <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">∊</span> <span class="pre">Y</span></code> returns a Boolean result which indicates which items of the variable <code class="docutils literal notranslate"><span class="pre">X</span></code> appear in the variable <code class="docutils literal notranslate"><span class="pre">Y</span></code>, wherever they may be. And it works no matter what are the shapes, the dimensions or the type (numeric or character) of <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Y</span></code>, a pure marvel!</p>
 <p>⁽¹⁾ “Y” is considered to be a vowel in many European languages.</p>
 <p>For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="m">7</span> <span class="m">2</span> <span class="m">8</span> <span class="m">4</span> <span class="m">9</span> <span class="o">∊</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span>    <span class="c1">⍝ Only 5 and 4 are found in 3 4 5 6</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="m">7</span> <span class="m">2</span> <span class="m">8</span> <span class="m">4</span> <span class="m">9</span> <span class="o">∊</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span>
 </pre></div>
 </div>
 </div>
@@ -1617,9 +1529,10 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1 0 0 0 1 0
 </span></div></div>
 </div>
+<p>Only the 5 and the 4 were found in <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span> <span class="pre">6</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;dandelion&#39;</span> <span class="o">∊</span> <span class="s1">&#39;garden&#39;</span>   <span class="c1">⍝ The letters &quot;lio&quot; do not appear in &quot;garden&quot;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;dandelion&#39;</span> <span class="o">∊</span> <span class="s1">&#39;garden&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1627,10 +1540,11 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1 1 1 1 1 0 0 0 1
 </span></div></div>
 </div>
+<p>The letters “lio” are not in the word “garden”.</p>
 <p>So in pursuit of our inquiry we shall write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">Phrase</span> <span class="o">∊</span> <span class="s1">&#39;aeiouy&#39;</span><span class="p">)</span> <span class="na">/</span> <span class="o">⍳⍴</span><span class="nv">Phrase</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">phrase</span> <span class="o">∊</span> <span class="s1">&#39;aeiouy&#39;</span><span class="p">)</span> <span class="na">/</span> <span class="o">⍳⍴</span><span class="nv">phrase</span>
 </pre></div>
 </div>
 </div>
@@ -1638,47 +1552,59 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">2 4 6 8 11 14 16 20 23 24 30 33 36 41 43 45
 </span></div></div>
 </div>
-<p>One can also use membership between a vector and a matrix, as shown below, assuming that the list of towns is a variable created earlier.</p>
-<p>We have represented side by side the variable itself and the result of using <em>Membership</em>:</p>
+<p>One can also use membership between a vector and a matrix, as shown below. We have represented side by side the variable itself and the result of using <em>Membership</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Towns</span><span class="o">,</span> <span class="nv">Towns</span> <span class="o">∊</span> <span class="s1">&#39;aeiouy&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">towns</span> <span class="kd">←</span> <span class="m">6</span> <span class="m">10</span><span class="o">⍴</span><span class="s1">&#39;Canberra  Paris     WashingtonMoscow    Martigues Mexico    &#39;</span>
+<span class="nv">towns</span><span class="o">,</span> <span class="nv">towns</span> <span class="o">∊</span> <span class="s1">&#39;aeiouy&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Towns
-      Towns,Towns∊&#39;aeiouy&#39;
-            ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Canberra   0 1 0 0 1 0 0 1 0 0
+Paris      0 1 0 1 0 0 0 0 0 0
+Washington 0 1 0 0 1 0 0 0 1 0
+Moscow     0 1 0 0 1 0 0 0 0 0
+Martigues  0 1 0 0 1 0 1 1 0 0
+Mexico     0 1 0 1 0 1 0 0 0 0
+</span></div></div>
 </div>
 <p>We can reverse the expression, but the result has always the same shape as the left argument:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;aeiouy&#39;</span> <span class="o">∊</span> <span class="nv">Towns</span>        <span class="c1">⍝ None of the town names contains a &quot;y&quot;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;aeiouy&#39;</span> <span class="o">∊</span> <span class="nv">towns</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Towns
-      &#39;aeiouy&#39;∊Towns        ⍝ None of the town names contains a &quot;y&quot;
-               ∧
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 1 1 1 1 0
+</span></div></div>
+</div>
+<p>The trailing 0 is because none of the towns has a “y” in it.</p>
+</div>
+<div class="section" id="a-powerful-search-function">
+<span id="introduction-a-powerful-search-function"></span><h2>A Powerful Search Function<a class="headerlink" href="#a-powerful-search-function" title="Permalink to this headline">¶</a></h2>
+<p>We have harnessed a very useful method to look for the positions of letters or numbers in a vector, but the answer obtained does not provide a one to one correspondence between the search values and the resultant positions.</p>
+<p>Here’s a vector of values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">list</span> <span class="kd">←</span> <span class="m">15</span> <span class="m">40</span> <span class="m">63</span> <span class="m">18</span> <span class="m">27</span> <span class="m">40</span> <span class="m">33</span> <span class="m">29</span> <span class="m">40</span> <span class="m">88</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="a-powerful-search-function">
-<span id="introduction-a-powerful-search-function"></span><h2>A Powerful Search Function<a class="headerlink" href="#a-powerful-search-function" title="Permalink to this headline">¶</a></h2>
-<p>We have harnessed a very useful method to look for the positions of letters or numbers in a vector, but the answer obtained does not provide a one to one correspondence between the search values and the resultant positions:</p>
+<p>And these are the numbers we want to find:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">List</span> <span class="kd">←</span> <span class="m">15</span> <span class="m">40</span> <span class="m">63</span> <span class="m">18</span> <span class="m">27</span> <span class="m">40</span> <span class="m">33</span> <span class="m">29</span> <span class="m">40</span> <span class="m">88</span>    <span class="c1">⍝ Vector of values</span>
-<span class="nv">Where</span> <span class="kd">←</span> <span class="m">29</span> <span class="m">63</span> <span class="m">40</span> <span class="m">33</span> <span class="m">50</span>                  <span class="c1">⍝ We want to find these</span>
-<span class="p">(</span><span class="nv">List</span> <span class="o">∊</span> <span class="nv">Where</span><span class="p">)</span> <span class="na">/</span> <span class="o">⍳⍴</span><span class="nv">List</span>                 <span class="c1">⍝ Let&#39;s apply our method</span>
-                                        <span class="c1">⍝ Positions found:</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">where</span> <span class="kd">←</span> <span class="m">29</span> <span class="m">63</span> <span class="m">40</span> <span class="m">33</span> <span class="m">50</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we apply our method and these are the positions found:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">list</span> <span class="o">∊</span> <span class="nv">where</span><span class="p">)</span> <span class="na">/</span> <span class="o">⍳⍴</span><span class="nv">list</span>
 </pre></div>
 </div>
 </div>
@@ -1687,15 +1613,12 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </span></div></div>
 </div>
 <p>The positions are correct, but 29 is not in position 2, and 40 is not in position 6.</p>
-<p>The question we have answered using the expression above is: “In which positions in <code class="docutils literal notranslate"><span class="pre">List</span></code> do we find a number that also appears somewhere in <code class="docutils literal notranslate"><span class="pre">Where</span></code>?”</p>
-<p>If we want to answer the slightly different question: “Where in <code class="docutils literal notranslate"><span class="pre">List</span></code> do we find each number in <code class="docutils literal notranslate"><span class="pre">Where</span></code>?” we need to use a different method.</p>
-<p>This new method uses the dyadic form of the symbol <code class="docutils literal notranslate"><span class="pre">⍳</span></code> (<em>Iota</em>).</p>
+<p>The question we have answered using the expression above is: “In which positions in <code class="docutils literal notranslate"><span class="pre">list</span></code> do we find a number that also appears somewhere in <code class="docutils literal notranslate"><span class="pre">where</span></code>?”</p>
+<p>If we want to answer the slightly different question: “Where in <code class="docutils literal notranslate"><span class="pre">list</span></code> do we find each number in <code class="docutils literal notranslate"><span class="pre">where</span></code>?” we need to use a different method.</p>
+<p>This new method uses the dyadic form of the symbol <code class="docutils literal notranslate"><span class="pre">⍳</span></code> (<em>Iota</em>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">List</span> <span class="kd">←</span> <span class="m">15</span> <span class="m">40</span> <span class="m">63</span> <span class="m">18</span> <span class="m">27</span> <span class="m">40</span> <span class="m">33</span> <span class="m">29</span> <span class="m">40</span> <span class="m">88</span>    <span class="c1">⍝ Same vector of values</span>
-<span class="nv">Where</span> <span class="kd">←</span> <span class="m">29</span> <span class="m">63</span> <span class="m">40</span> <span class="m">33</span> <span class="m">50</span>                  <span class="c1">⍝ Where are these?</span>
-<span class="nv">List</span> <span class="o">⍳</span> <span class="nv">Where</span>                            <span class="c1">⍝ New method using dyadic ⍳</span>
-                                        <span class="c1">⍝ Positions found:</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">list</span> <span class="o">⍳</span> <span class="nv">where</span>
 </pre></div>
 </div>
 </div>
@@ -1704,7 +1627,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </span></div></div>
 </div>
 <p>It is true that 29, 63, 40 and 33 occur respectively in positions 8, 3, 2 and 7. It’s much better!</p>
-<p>But, first surprise: The value 40 occurs 3 times in <code class="docutils literal notranslate"><span class="pre">List</span></code>, but only the first one is reported in the result. This is because, by definition, dyadic <em>Iota</em> returns only the first occurrence of a given item. If the response for each value sought has to match a position; how may one, looking for 5 numbers, obtain 7 results?</p>
+<p>But, first surprise: The value 40 occurs 3 times in <code class="docutils literal notranslate"><span class="pre">list</span></code>, but only the first one is reported in the result. This is because, by definition, dyadic <em>Iota</em> returns only the first occurrence of a given item. If the response for each value sought has to match a position; how may one, looking for 5 numbers, obtain 7 results?</p>
 <p>Second surprise: the value 50 is reported as being found in position 11 in a vector comprising only 10 items! This is how the function <em><strong>IndexOf</strong></em> (dyadic <code class="docutils literal notranslate"><span class="pre">⍳</span></code>) reports that a value is absent.</p>
 <p>At first sight this seems a bit surprising, but in fact it is a property which makes this function so generally powerful, as we shall soon see.</p>
 <div class="section" id="an-example">
@@ -1738,10 +1661,10 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </tr>
 </tbody>
 </table>
-<p>The problem is to calculate the discount rate that may be claimed for a potential customer who lives in a given area <code class="docutils literal notranslate"><span class="pre">D</span></code>; for example</p>
+<p>The problem is to calculate the discount rate that may be claimed for a potential customer who lives in a given area <code class="docutils literal notranslate"><span class="pre">d</span></code>; for example</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">D</span> <span class="kd">←</span> <span class="m">84</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">d</span> <span class="kd">←</span> <span class="m">84</span>
 </pre></div>
 </div>
 </div>
@@ -1749,16 +1672,16 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Let us begin by creating two variables:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Area</span> <span class="kd">←</span> <span class="m">17</span> <span class="m">50</span> <span class="m">59</span> <span class="m">84</span> <span class="m">89</span>
-<span class="nv">Discount</span> <span class="kd">←</span> <span class="m">9</span> <span class="m">8</span> <span class="m">6</span> <span class="m">5</span> <span class="m">4</span> <span class="m">2</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">area</span> <span class="kd">←</span> <span class="m">17</span> <span class="m">50</span> <span class="m">59</span> <span class="m">84</span> <span class="m">89</span>
+<span class="nv">discount</span> <span class="kd">←</span> <span class="m">9</span> <span class="m">8</span> <span class="m">6</span> <span class="m">5</span> <span class="m">4</span> <span class="m">2</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let us see if <code class="docutils literal notranslate"><span class="pre">D</span></code> is in the list of favoured areas:</p>
+<p>Let us see if <code class="docutils literal notranslate"><span class="pre">d</span></code> is in the list of favoured areas:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">D</span> <span class="o">∊</span> <span class="nv">Area</span>        <span class="c1">⍝ Yes, it&#39;s there:</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">d</span> <span class="o">∊</span> <span class="nv">area</span>
 </pre></div>
 </div>
 </div>
@@ -1766,9 +1689,10 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1
 </span></div></div>
 </div>
+<p>We can see <code class="docutils literal notranslate"><span class="pre">d</span></code> is a favoured area, and we can even see its position in the list of favoured areas:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Area</span> <span class="o">⍳</span> <span class="nv">D</span>        <span class="c1">⍝ 84 is the 4th item in the list:</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">area</span> <span class="o">⍳</span> <span class="nv">d</span>
 </pre></div>
 </div>
 </div>
@@ -1779,7 +1703,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Let us find the current rate of discount for this index position:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Discount</span><span class="sr">[</span><span class="m">4</span><span class="sr">]</span>     <span class="c1">⍝ This customer can claim a 5% discount; good!</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">discount</span><span class="sr">[</span><span class="m">4</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
@@ -1787,10 +1711,11 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">5
 </span></div></div>
 </div>
+<p>So this customer can get 5% discount.</p>
 <p>One may simply write</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Discount</span><span class="sr">[</span><span class="nv">Area</span><span class="o">⍳</span><span class="nv">D</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">discount</span><span class="sr">[</span><span class="nv">area</span><span class="o">⍳</span><span class="nv">d</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
@@ -1798,12 +1723,12 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">5
 </span></div></div>
 </div>
-<p>If a customer lives in any area such as 75, 45, or 93, the expression <code class="docutils literal notranslate"><span class="pre">Area⍳D</span></code> will in all cases give the result 6, because those values are absent in <code class="docutils literal notranslate"><span class="pre">Area</span></code>. Then <code class="docutils literal notranslate"><span class="pre">Discount[6]</span></code> will always find the rate 2%, as expected.</p>
-<p>The importance of this approach is that it is vector-based. Suppose that publicity attracts crowds and that therefore <code class="docutils literal notranslate"><span class="pre">D</span></code> is no longer a single value but a vector, the solution is still valid:</p>
+<p>If a customer lives in any area such as 75, 45, or 93, the expression <code class="docutils literal notranslate"><span class="pre">area⍳d</span></code> will in all cases give the result 6, because those values are absent in <code class="docutils literal notranslate"><span class="pre">area</span></code>. Then <code class="docutils literal notranslate"><span class="pre">discount[6]</span></code> will always find the rate 2%, as expected.</p>
+<p>The importance of this approach is that it is vector-based. Suppose that publicity attracts crowds and that therefore <code class="docutils literal notranslate"><span class="pre">d</span></code> is no longer a single value but a vector, the solution is still valid:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">D</span> <span class="kd">←</span> <span class="m">24</span> <span class="m">75</span> <span class="m">89</span> <span class="m">60</span> <span class="m">92</span> <span class="m">50</span> <span class="m">51</span> <span class="m">50</span> <span class="m">84</span> <span class="m">66</span> <span class="m">17</span> <span class="m">89</span>
-<span class="nv">Discount</span><span class="sr">[</span><span class="nv">Area</span><span class="o">⍳</span><span class="nv">D</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">d</span> <span class="kd">←</span> <span class="m">24</span> <span class="m">75</span> <span class="m">89</span> <span class="m">60</span> <span class="m">92</span> <span class="m">50</span> <span class="m">51</span> <span class="m">50</span> <span class="m">84</span> <span class="m">66</span> <span class="m">17</span> <span class="m">89</span>
+<span class="nv">discount</span><span class="sr">[</span><span class="nv">area</span><span class="o">⍳</span><span class="nv">d</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
@@ -1819,17 +1744,17 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Let us now imagine the initial set to be an alphabet composed of lower case and upper case letters, and the final set to be composed of only upper case letters (with a blank space in the middle):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">AlphLower</span> <span class="kd">←</span> <span class="s1">&#39;abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
-<span class="nv">AlphUpper</span> <span class="kd">←</span> <span class="s1">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ ABCDEFGHIJKLMNOPQRSTUVWXYZ*&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">alphLower</span> <span class="kd">←</span> <span class="s1">&#39;abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
+<span class="nv">alphUpper</span> <span class="kd">←</span> <span class="s1">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ ABCDEFGHIJKLMNOPQRSTUVWXYZ*&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Notice that <code class="docutils literal notranslate"><span class="pre">AlphUpper</span></code> is one character longer than <code class="docutils literal notranslate"><span class="pre">AlphLower</span></code>. We have added an asterisk at the end, and you will see why we did so:</p>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">alphUpper</span></code> is one character longer than <code class="docutils literal notranslate"><span class="pre">alphLower</span></code>. We have added an asterisk at the end, and you will see why we did so:</p>
 <p>Here is a little French sentence, with one accented letter.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Tale</span> <span class="kd">←</span> <span class="s1">&#39;Le Petit Chaperon-Rouge a bouffé le Loup&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">tale</span> <span class="kd">←</span> <span class="s1">&#39;Le Petit Chaperon-Rouge a bouffé le Loup&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -1837,7 +1762,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>The expression below converts from lower to upper case.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">AlphUpper</span><span class="sr">[</span><span class="nv">AlphLower</span><span class="o">⍳</span><span class="nv">Tale</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">alphUpper</span><span class="sr">[</span><span class="nv">alphLower</span><span class="o">⍳</span><span class="nv">tale</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
@@ -1855,11 +1780,11 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>It is quite the opposite in APL, which offers many tools for working with the shape of the data. We shall only look at a few of them here.</p>
 <div class="section" id="take-and-drop">
 <span id="introduction-take-and-drop"></span><h3>Take and Drop<a class="headerlink" href="#take-and-drop" title="Permalink to this headline">¶</a></h3>
-<p>The functions <em><strong>Take</strong></em> (<code class="docutils literal notranslate"><span class="pre">↑</span></code>) and <em><strong>Drop</strong></em> (<code class="docutils literal notranslate"><span class="pre">↓</span></code>) serve, as their names suggest, to extract part of a set of values. Here we shall show only examples based on vectors, but all the other shapes of data can be treated in a similar way.</p>
+<p>The functions <em><strong>Take</strong></em> (<code class="docutils literal notranslate"><span class="pre">↑</span></code>, typed with <kbd>APL</kbd>+<kbd>y</kbd>) and <em><strong>Drop</strong></em> (<code class="docutils literal notranslate"><span class="pre">↓</span></code>, typed with <kbd>APL</kbd>+<kbd>u</kbd>) serve, as their names suggest, to extract part of a set of values. Here we shall show only examples based on vectors, but all the other shapes of data can be treated in a similar way.</p>
 <p>Recalling that</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">List</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">list</span>
 </pre></div>
 </div>
 </div>
@@ -1867,10 +1792,10 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">15 40 63 18 27 40 33 29 40 88
 </span></div></div>
 </div>
+<p>We can take its first 4 elements:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">4</span> <span class="o">↑</span> <span class="nv">List</span>        <span class="c1">⍝ (APL+Y)</span>
-                <span class="c1">⍝ Take the first 4 items of the vector:</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">4</span> <span class="o">↑</span> <span class="nv">list</span>
 </pre></div>
 </div>
 </div>
@@ -1878,10 +1803,10 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">15 40 63 18
 </span></div></div>
 </div>
+<p>Or we may drop the first 5 elements:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="o">↓</span> <span class="nv">List</span>        <span class="c1">⍝ (APL+U)</span>
-                <span class="c1">⍝ Drop the first 5 items:</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="o">↓</span> <span class="nv">list</span>
 </pre></div>
 </div>
 </div>
@@ -1890,9 +1815,10 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </span></div></div>
 </div>
 <p>If the left argument is negative, these same functions count from the end of the vector.</p>
+<p>For example, we may take the last 3 items of the vector:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯3</span> <span class="o">↑</span> <span class="nv">List</span>       <span class="c1">⍝ Take the last 3 items of the vector:</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯3</span> <span class="o">↑</span> <span class="nv">list</span>
 </pre></div>
 </div>
 </div>
@@ -1900,10 +1826,10 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">29 40 88
 </span></div></div>
 </div>
+<p>Or we may drop the last 7 items, leaving the first 3 ones:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯7</span> <span class="o">↓</span> <span class="nv">List</span>       <span class="c1">⍝ If one drops the last 7 items, it only leaves</span>
-                <span class="c1">⍝ the first three ones:</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯7</span> <span class="o">↓</span> <span class="nv">list</span>
 </pre></div>
 </div>
 </div>
@@ -1914,7 +1840,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>The last result is the same as obtained by</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="o">↑</span> <span class="nv">List</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="o">↑</span> <span class="nv">list</span>
 </pre></div>
 </div>
 </div>
@@ -1922,104 +1848,83 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">15 40 63
 </span></div></div>
 </div>
-<p>Some pages ago, we used <code class="docutils literal notranslate"><span class="pre">Big[⍳500]</span></code> to extract the first 500 items of <code class="docutils literal notranslate"><span class="pre">Big</span></code>. We can now see that we also could have used <code class="docutils literal notranslate"><span class="pre">500↑Big</span></code>.</p>
+<p>Some pages ago, we used <code class="docutils literal notranslate"><span class="pre">big[⍳500]</span></code> to extract the first 500 items of <code class="docutils literal notranslate"><span class="pre">big</span></code>. We can now see that we also could have used <code class="docutils literal notranslate"><span class="pre">500↑big</span></code>.</p>
 <p>Here again, using these new symbols, it is possible to create innovative solutions to classical problems.</p>
 <p>Let us imagine a business with a turnover which has grown over 12 years.</p>
-<p>The variable <code class="docutils literal notranslate"><span class="pre">Tome</span></code> is Turnover in millions of euros.</p>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">tome</span></code> is Turnover in millions of euros.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Tome</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">tome</span> <span class="kd">←</span> <span class="m">56</span> <span class="m">59</span> <span class="m">67</span> <span class="m">64</span> <span class="m">60</span> <span class="m">61</span> <span class="m">68</span> <span class="m">73</span> <span class="m">78</span> <span class="m">75</span> <span class="m">81</span> <span class="m">84</span>
+<span class="nv">tome</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Tome
-      Tome
-      ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">56 59 67 64 60 61 68 73 78 75 81 84
+</span></div></div>
 </div>
 <p>We want to calculate the different between each year and the year before; how can we do it?</p>
+<p>If we drop the first value, we get</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span> <span class="m">1</span> <span class="o">↓</span> <span class="nv">Tome</span>        <span class="c1">⍝ would give</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span> <span class="m">1</span> <span class="o">↓</span> <span class="nv">tome</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Tome
-      1↓Tome        ⍝ would give
-        ∧
-</pre></div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">59 67 64 60 61 68 73 78 75 81 84
+</span></div></div>
 </div>
-</div>
-</div>
+<p>and if we drop the last value, we get</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯1</span> <span class="o">↓</span> <span class="nv">Tome</span>        <span class="c1">⍝ would give</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯1</span> <span class="o">↓</span> <span class="nv">tome</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Tome
-      ¯1↓Tome        ⍝ would give
-         ∧
-</pre></div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">56 59 67 64 60 61 68 73 78 75 81
+</span></div></div>
 </div>
-</div>
-</div>
-<p>In other words, in each position of the first result we have “this year’s turnover” and in the same position in the second result we have “the previous year’s turnover”.</p>
-<p>We see that all that remains is to subtract these results item by item:</p>
+<p>In each position of the first result we have “this year’s turnover” and in the same position in the second result we have “the previous year’s turnover”.</p>
+<p>We see that all that remains is to subtract these results item by item. We do this without a program or loops; all very simple!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span><span class="o">↓</span><span class="nv">Tome</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="m">¯1</span><span class="o">↓</span><span class="nv">Tome</span><span class="p">)</span>        <span class="c1">⍝ Without a program or loops; all very simple!</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span><span class="o">↓</span><span class="nv">tome</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="m">¯1</span><span class="o">↓</span><span class="nv">tome</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Tome
-      (1↓Tome)-(¯1↓Tome)        ⍝ Without a program or loops; all very simple!
-                   ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">3 8 ¯3 ¯4 1 7 5 5 ¯3 6 3
+</span></div></div>
 </div>
 <p>In place of a subtraction, a division would calculate (with some obvious adjustments) the rates of growth instead of the differences:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">100</span> <span class="o">×</span> <span class="p">(</span> <span class="p">(</span><span class="m">1</span><span class="o">↓</span><span class="nv">Tome</span><span class="p">)</span> <span class="o">÷</span> <span class="p">(</span><span class="m">¯1</span><span class="o">↓</span><span class="nv">Tome</span><span class="p">)</span> <span class="p">)</span><span class="o">-</span><span class="m">1</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">100</span> <span class="o">×</span> <span class="p">(</span> <span class="p">(</span><span class="m">1</span><span class="o">↓</span><span class="nv">tome</span><span class="p">)</span> <span class="o">÷</span> <span class="p">(</span><span class="m">¯1</span><span class="o">↓</span><span class="nv">tome</span><span class="p">)</span> <span class="p">)</span><span class="o">-</span><span class="m">1</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Tome
-      100×((1↓Tome)÷(¯1↓Tome))-1
-                        ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5.35714 13.5593 ¯4.47761 ¯6.25 1.66667 11.4754 7.35294 6.84932 ¯3.84615 8 3.7037
+</span></div></div>
 </div>
 <p>Let us put that in a small defined function, and apply it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Growth</span> <span class="kd">←</span> <span class="kt">{</span><span class="m">100</span><span class="o">×</span><span class="p">((</span><span class="m">1</span><span class="o">↓</span><span class="bp">⍵</span><span class="p">)</span><span class="o">÷</span><span class="p">(</span><span class="m">¯1</span><span class="o">↓</span><span class="bp">⍵</span><span class="p">))</span><span class="o">-</span><span class="m">1</span><span class="kt">}</span>
-<span class="nv">Growth</span> <span class="nv">Tome</span>
+<span class="nv">Growth</span> <span class="nv">tome</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Tome
-      Growth Tome
-             ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5.35714 13.5593 ¯4.47761 ¯6.25 1.66667 11.4754 7.35294 6.84932 ¯3.84615 8 3.7037
+</span></div></div>
 </div>
 </div>
 <div class="section" id="mirrors-and-transposition">
 <span id="introduction-mirrors-and-transposition"></span><h3>Mirrors and Transposition<a class="headerlink" href="#mirrors-and-transposition" title="Permalink to this headline">¶</a></h3>
-<p>APL is also well equipped with functions to pivot data about any axis, as suggested by the appearances of the symbols used. They apply to both numeric and character data; as we are going to show by applying these functions to the variable <code class="docutils literal notranslate"><span class="pre">Towns</span></code> that we used earlier.</p>
+<p>APL is also well equipped with functions to pivot data about any axis, as suggested by the appearances of the symbols used. They apply to both numeric and character data; as we are going to show by applying these functions to the variable <code class="docutils literal notranslate"><span class="pre">towns</span></code> that we used earlier.</p>
 <p>The symbols used hereafter are obtained like this:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">⌽</span></code> with <kbd>APL</kbd>+<kbd>Shift</kbd>+<kbd>5</kbd>;</p></li>
@@ -2029,77 +1934,92 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Recall the value of the initial variable:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Towns</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">towns</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Towns
-      Towns
-      ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Canberra  
+Paris     
+Washington
+Moscow    
+Martigues 
+Mexico    
+</span></div></div>
 </div>
 <p>Left-right reversed (Mirror) with <code class="docutils literal notranslate"><span class="pre">⌽</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⌽</span><span class="nv">Towns</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⌽</span><span class="nv">towns</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Towns
-      ⌽Towns
-       ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">  arrebnaC
+     siraP
+notgnihsaW
+    wocsoM
+ seugitraM
+    ocixeM
+</span></div></div>
 </div>
 <p>Top-bottom reversed (Mirror) with <code class="docutils literal notranslate"><span class="pre">⊖</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊖</span><span class="nv">Towns</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊖</span><span class="nv">towns</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Towns
-      ⊖Towns
-       ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Mexico    
+Martigues 
+Moscow    
+Washington
+Paris     
+Canberra  
+</span></div></div>
 </div>
 <p>and rows &amp; columns swapped (Transpose) with <code class="docutils literal notranslate"><span class="pre">⍉</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍉</span><span class="nv">Towns</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍉</span><span class="nv">towns</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Towns
-      ⍉Towns
-       ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">CPWMMM
+aaaoae
+nrssrx
+bihcti
+esioic
+r nwgo
+r g u 
+a t e 
+  o s 
+  n   
+</span></div></div>
 </div>
 <p>And all four of them side by side for comparison:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">Towns</span><span class="p">)</span> <span class="p">(</span><span class="o">⌽</span><span class="nv">Towns</span><span class="p">)</span> <span class="p">(</span><span class="o">⊖</span><span class="nv">Towns</span><span class="p">)</span> <span class="p">(</span><span class="o">⍉</span><span class="nv">Towns</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">towns</span><span class="p">)</span> <span class="p">(</span><span class="o">⌽</span><span class="nv">towns</span><span class="p">)</span> <span class="p">(</span><span class="o">⊖</span><span class="nv">towns</span><span class="p">)</span> <span class="p">(</span><span class="o">⍉</span><span class="nv">towns</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Towns
-      (Towns)(⌽Towns)(⊖Towns)(⍉Towns)
-                               ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌──────────┬──────────┬──────────┬──────┐
+│Canberra  │  arrebnaC│Mexico    │CPWMMM│
+│Paris     │     siraP│Martigues │aaaoae│
+│Washington│notgnihsaW│Moscow    │nrssrx│
+│Moscow    │    wocsoM│Washington│bihcti│
+│Martigues │ seugitraM│Paris     │esioic│
+│Mexico    │    ocixeM│Canberra  │r nwgo│
+│          │          │          │r g u │
+│          │          │          │a t e │
+│          │          │          │  o s │
+│          │          │          │  n   │
+└──────────┴──────────┴──────────┴──────┘
+</span></div></div>
 </div>
 <p>The symbols used (<code class="docutils literal notranslate"><span class="pre">⌽</span></code> <code class="docutils literal notranslate"><span class="pre">⊖</span></code> <code class="docutils literal notranslate"><span class="pre">⍉</span></code>) are self-explanatory, no effort is required to remember any of them. They also have dyadic uses, but we shall not demonstrate them here.</p>
 </div>
@@ -2169,98 +2089,78 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 </div>
 <div class="section" id="a-useful-application">
 <span id="introduction-a-useful-application"></span><h3>A Useful Application<a class="headerlink" href="#a-useful-application" title="Permalink to this headline">¶</a></h3>
-<p>Suppose the vector <code class="docutils literal notranslate"><span class="pre">Ages</span></code> contains the ages of 400 respondents to an opinion poll. We want to establish how many people there are in each of the following categories:</p>
+<p>Suppose the vector <code class="docutils literal notranslate"><span class="pre">ages</span></code> contains the ages of 400 respondents to an opinion poll. We want to establish how many people there are in each of the following categories:</p>
 <p>0 - 25 - 30 - 35 - 45 - 50 - 55 - 65 or above.</p>
 <p>Here is the data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Ages</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="nv">ages</span> <span class="kd">←</span> <span class="o">?</span><span class="m">400</span><span class="o">⍴</span><span class="m">100</span>
+<span class="nv">ages</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Ages
-      Ages
-      ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">73 16 42 50 2 67 11 81 37 93 100 98 83 32 76 51 37 15 46 88 49 28 100 9 29 69 87 27 54 68 23 80 39 22 86 2 58 84 17 18 89 13 38 38 28 19 69 10 53 94 49 16 51 52 18 47 59 67 39 23 41 84 70 40 85 86 20 1 77 100 12 76 79 53 88 20 85 12 19 89 72 48 86 97 54 1 39 62 94 51 50 50 8 99 31 24 87 71 84 98 56 35 6 83 27 65 78 50 59 17 70 51 35 12 48 30 93 43 20 5 79 1 88 25 46 72 81 29 27 84 97 27 94 90 62 28 61 97 78 22 66 89 37 37 26 98 27 19 99 51 36 99 61 1 49 45 79 63 78 8 23 48 29 7 93 3 15 54 14 15 48 39 96 65 27 79 35 16 29 7 43 16 26 48 51 40 82 49 14 3 48 8 25 41 62 73 45 83 80 7 51 9 83 53 18 27 81 20 16 45 7 82 56 18 41 32 3 91 92 24 6 99 6 100 42 88 97 75 77 76 98 32 43 3 28 29 62 9 6 53 34 96 32 49 57 34 78 10 45 76 88 96 48 36 2 53 18 49 18 20 38 47 69 75 60 89 82 16 48 83 13 35 55 40 17 43 73 89 30 49 1 17 53 76 99 44 88 52 78 21 45 58 50 85 55 68 100 73 95 84 52 90 80 35 28 11 77 45 54 77 100 20 52 13 29 58 2 69 41 98 97 51 96 17 10 66 80 16 59 32 94 93 73 30 7 6 55 73 54 55 69 14 99 5 37 91 2 99 47 6 29 84 6 100 52 72 77 68 91 40 4 56 24 40 52 15 2 23 33 99 46 98 63 60 17 51 29 67 67 96 75 61 3 53 5 12 35 97 86 97 92 82 66 85 70 35 3 3 78 26
+</span></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Category</span> <span class="kd">←</span> <span class="m">0</span> <span class="m">25</span> <span class="m">30</span> <span class="m">35</span> <span class="m">45</span> <span class="m">50</span> <span class="m">55</span> <span class="m">65</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">category</span> <span class="kd">←</span> <span class="m">0</span> <span class="m">25</span> <span class="m">30</span> <span class="m">35</span> <span class="m">45</span> <span class="m">50</span> <span class="m">55</span> <span class="m">65</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We are going to use the <em>Outer Product</em> <code class="docutils literal notranslate"><span class="pre">Category</span> <span class="pre">∘.&lt;</span> <span class="pre">Ages</span></code>, and here are the first items of the result:</p>
+<p>We are going to use the <em>Outer Product</em> <code class="docutils literal notranslate"><span class="pre">category</span> <span class="pre">∘.&lt;</span> <span class="pre">ages</span></code>, and here are the first items of the result:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{array}{|l|rrrrrrrrrrrrrrrrrr|}
+\[\begin{split}\begin{array}{|l|rrrrrrrr|}
 \hline
-\color{red}&lt; &amp; 32 &amp; 19 &amp; 50 &amp; 33 &amp; 23 &amp; 65 &amp; 46 &amp; 26 &amp; 31 &amp; 58 &amp; 51 &amp; 23 &amp; 51 &amp; 36 &amp; 28 &amp; 42 &amp; 34 &amp; \text{... etc} \\
+\color{red}&lt; &amp; 73 &amp; 16 &amp; 42 &amp; 50 &amp; 2 &amp; 67 &amp; 11 &amp; \text{... etc} \\
 \hline
-0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; \\
-25 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; \\
-30 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp;  0 &amp; 1 &amp; 1 &amp; \\
-35 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; \\
-45 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \\
-50 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \text{... etc} \\
-\text{etc.} &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp; \\
+0 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 &amp;   \\
+25 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp;  \\
+30 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp;  \\
+35 &amp; 1 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp;  \\
+45 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp;  \\
+50 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp;  \text{... etc} \\
+\text{etc.} &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp; \\
 \hline
 \end{array}\end{split}\]</div>
 <p>If one adds up this Boolean matrix, one obtains for each row the number of people who are older than 0 years, older than 25 years, older than 30 years, etc. This is the expression:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">cum</span> <span class="kd">←</span> <span class="o">+</span><span class="na">/</span> <span class="p">(</span><span class="nv">Category</span> <span class="na">∘.</span><span class="o">&lt;</span> <span class="nv">Ages</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">cum</span> <span class="kd">←</span> <span class="o">+</span><span class="na">/</span> <span class="p">(</span><span class="nv">category</span> <span class="na">∘.</span><span class="o">&lt;</span> <span class="nv">ages</span><span class="p">)</span>
 <span class="nv">cum</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Ages
-      cum←+/(Category∘.&lt;Ages)
-                        ∧
-</pre></div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">400 301 275 259 223 197 166 143
+</span></div></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: cum
-      cum
-      ∧
-</pre></div>
-</div>
-</div>
-</div>
-<p>With the cut-down extract shown above, the value of <code class="docutils literal notranslate"><span class="pre">cum</span></code> would be <code class="docutils literal notranslate"><span class="pre">17</span> <span class="pre">14</span> <span class="pre">12</span> <span class="pre">8</span> <span class="pre">6</span> <span class="pre">4</span></code>.</p>
-<p>In other words, there are 12 people older than 30. But among them, 8 are older than 35. In order to know how many people are between 30 and 35, it is necessary to calculate <code class="docutils literal notranslate"><span class="pre">12</span> <span class="pre">-</span> <span class="pre">8</span></code> to obtain <code class="docutils literal notranslate"><span class="pre">4</span></code>.</p>
+<p>With the cut-down extract shown above, the value of <code class="docutils literal notranslate"><span class="pre">cum</span></code> would be <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">4</span> <span class="pre">4</span> <span class="pre">4</span> <span class="pre">3</span> <span class="pre">2</span></code>.</p>
+<p>In other words, there are 7 people older than 0 (all of them). Among them, 4 are older than 25. In order to know how many people are between 0 and 25, it is necessary to calculate <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">-</span> <span class="pre">4</span></code> to obtain <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p>
 <p>If one wants to reproduce this calculation for all categories, it is necessary to perform a series of subtractions as here:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{lrrrrrr}
-  &amp; 17 &amp; 14 &amp; 12 &amp; 8 &amp; 6 &amp; 4 \\
-- &amp; 14 &amp; 12 &amp;  8 &amp; 6 &amp; 4 &amp; 0 \\
+  &amp; 7 &amp; 4 &amp; 4 &amp; 4 &amp; 3 &amp; 2 \\
+- &amp; 4 &amp; 4 &amp; 4 &amp; 3 &amp; 2 &amp; 0 \\
 \hline
-  &amp;  3 &amp;  2 &amp;  4 &amp; 2 &amp; 2 &amp; 4
+  &amp;  3 &amp;  0 &amp;  0 &amp; 1 &amp; 1 &amp; 2
 \end{array}\end{split}\]</div>
 <p>where the first line is <code class="docutils literal notranslate"><span class="pre">cum</span></code>, the second line is <code class="docutils literal notranslate"><span class="pre">cum</span></code> without its first item and followed by zero and the last line is the result as obtained by the expression <code class="docutils literal notranslate"><span class="pre">cum-(1↓cum,0)</span></code>.</p>
 <p>To append a zero to the right, we used a comma, which joins variables together. This is a function called <em><strong>Catenate</strong></em>.</p>
 <p>If one no longer works with a small extract of data, but with the full list of 400 people, this is what one gets:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">cum</span> <span class="kd">←</span> <span class="o">+</span><span class="na">/</span> <span class="p">(</span><span class="nv">Category</span> <span class="na">∘.</span><span class="o">&lt;</span> <span class="nv">Ages</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">cum</span> <span class="kd">←</span> <span class="o">+</span><span class="na">/</span> <span class="p">(</span><span class="nv">category</span> <span class="na">∘.</span><span class="o">&lt;</span> <span class="nv">ages</span><span class="p">)</span>
 <span class="nv">cum</span> <span class="o">-</span> <span class="p">(</span><span class="m">1</span><span class="o">↓</span><span class="nv">cum</span><span class="o">,</span><span class="m">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: Ages
-      cum←+/(Category∘.&lt;Ages)
-                        ∧
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: cum
-      cum-(1↓cum,0)
-             ∧
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">99 26 16 36 26 31 23 143
+</span></div></div>
 </div>
 <p>All that with little programming, and it works whatever the number of people or categories. What a luck!</p>
 <p>Once again, APL allowed us to find straightforward and original solutions to traditional problems.</p>
