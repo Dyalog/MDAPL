@@ -654,7 +654,7 @@
 <li><p>one can create as many variables as needed: they are automatically deemed to be local variables, which means they only exist while inside the dfn. Note that this is opposite to the default behaviour of tradfns, where all variables are global (cf. <a class="reference internal" href="#user-defined-functions-local-variables"><span class="std std-numref">Section 4.3.3</span></a> and <code class="xref std std-numref docutils literal notranslate"><span class="pre">User-Defined-Functions-Local-Names</span></code>);</p></li>
 <li><p>the arguments <code class="docutils literal notranslate"><span class="pre">⍵</span></code> and <code class="docutils literal notranslate"><span class="pre">⍺</span></code> retain the values passed to them as arguments and may not be changed. Any attempt to modify them causes a <code class="docutils literal notranslate"><span class="pre">SYNTAX</span> <span class="pre">ERROR</span></code> to be reported, except when <em>defaulting the left argument</em> (cf. <a class="reference internal" href="#user-defined-functions-default-left-argument"><span class="std std-numref">Section 4.3.4</span></a>);</p></li>
 <li><p>as soon as an expression generates a result that is not assigned to a name or used in any other way, the function terminates, and the value of that expression is returned as the result of the function. If the function contains more lines they will not be executed (cf. <code class="xref std std-numref docutils literal notranslate"><span class="pre">User-Defined-Functions-Returning-a-Result</span></code>);</p></li>
-<li><p>traditional <em>control structures</em> and <em>branching</em> cannot be used in dfns (cf. <code class="xref std std-numref docutils literal notranslate"><span class="pre">User-Defined-Functions-Guards</span></code>).</p></li>
+<li><p>traditional <em>control structures</em> and <em>branching</em> cannot be used in dfns (cf. <a class="reference internal" href="#user-defined-functions-guards"><span class="std std-numref">Section 4.5.1</span></a>).</p></li>
 </ul>
 <p>We will explore these characteristics in the following sections.</p>
 </div>
@@ -1291,15 +1291,244 @@ Mexico
 </div>
 </div>
 <div class="section" id="dfns-in-depth">
-<h2><span class="section-number">4.5. </span>Dfns in Depth<a class="headerlink" href="#dfns-in-depth" title="Permalink to this headline">¶</a></h2>
+<span id="user-defined-functions-dfns-in-depth"></span><h2><span class="section-number">4.5. </span>Dfns in Depth<a class="headerlink" href="#dfns-in-depth" title="Permalink to this headline">¶</a></h2>
+<p>In this section we will cover a couple of more advanced subtleties about dfns, and then we will move on to learn about tradfns.</p>
 <div class="section" id="guards">
-<h3><span class="section-number">4.5.1. </span>Guards<a class="headerlink" href="#guards" title="Permalink to this headline">¶</a></h3>
+<span id="user-defined-functions-guards"></span><h3><span class="section-number">4.5.1. </span>Guards<a class="headerlink" href="#guards" title="Permalink to this headline">¶</a></h3>
+<p>Previously we said that control structures cannot be used in dfns. However, it is possible to have a dfn conditionally calculate a result, by using a <em><strong>Guard</strong></em>.</p>
+<p>A <em>guard</em> is any expression which generates a one-item Boolean result, followed by a colon.</p>
+<p>The expression placed to the right of a <em>guard</em> is executed only if the <em>guard</em> is true. In a dfn, this looks like <code class="docutils literal notranslate"><span class="pre">guard:</span> <span class="pre">expr</span></code> and is similar to a</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">guard</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">expr</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>of some traditional programming languages.</p>
+<p>For example, this function will give a result equal to <code class="docutils literal notranslate"><span class="pre">'Positive'</span></code>, <code class="docutils literal notranslate"><span class="pre">'Zero'</span></code> or <code class="docutils literal notranslate"><span class="pre">'Negative'</span></code> if the argument <code class="docutils literal notranslate"><span class="pre">⍵</span></code> is respectively greater than, equal to, or smaller than zero:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
+<span class="nv">Sign</span> <span class="kd">←</span> <span class="kt">{</span>
+    <span class="bp">⍵</span><span class="o">&gt;</span><span class="m">0</span><span class="bp">:</span> <span class="s1">&#39;Positive&#39;</span>
+    <span class="bp">⍵</span><span class="o">=</span><span class="m">0</span><span class="bp">:</span> <span class="s1">&#39;Zero&#39;</span>
+    <span class="s1">&#39;Negative&#39;</span>
+<span class="kt">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Sign</span> <span class="m">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Positive
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Sign</span> <span class="m">¯3.6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Negative
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Sign</span> <span class="m">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Zero
+</span></div></div>
+</div>
 </div>
 <div class="section" id="shy-result">
-<h3><span class="section-number">4.5.2. </span>Shy Result<a class="headerlink" href="#shy-result" title="Permalink to this headline">¶</a></h3>
+<span id="user-defined-functions-shy-result"></span><h3><span class="section-number">4.5.2. </span>Shy Result<a class="headerlink" href="#shy-result" title="Permalink to this headline">¶</a></h3>
+<p>Dfns can be written in such a way that they return a <em><strong>Shy result</strong></em>. A <em>shy result</em> is a result which is returned, but not displayed by default.</p>
+<p>Consider a function which deletes a file from disk and returns a result equal to 1 (file deleted) or 0 (file not found). Usually, one doesn’t care if the file did not exist, so the result is not needed. But sometimes it may be important to check whether the file really existed and has been removed. So, sometimes a result is useless and sometimes it is useful… this is the reason why shy results have been invented.</p>
+<p>In a dfn, a shy result happens when the last expression that is evaluated is assigned to a (local) name, as opposed to just leaving the result of the expression unassigned. For this to happen, one has to be careful to leave the closing curly brace <code class="docutils literal notranslate"><span class="pre">}</span></code> next to that final statement, instead of having <code class="docutils literal notranslate"><span class="pre">}</span></code> alone in a new line.</p>
+<p>Here is the function above, written without guards and with a shy result:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Sign</span> <span class="kd">←</span> <span class="kt">{</span> <span class="nv">s</span> <span class="kd">←</span> <span class="p">(</span><span class="m">3</span> <span class="m">8</span><span class="o">⍴</span><span class="s1">&#39;NegativeZero    Positive&#39;</span><span class="p">)</span><span class="sr">[</span><span class="m">2</span><span class="o">+×</span><span class="bp">⍵</span><span class="sr">;]</span> <span class="kt">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Sign</span> <span class="m">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Sign</span> <span class="m">¯3.6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">Sign</span> <span class="m">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Zero    
+</span></div></div>
+</div>
+<p>Notice what happens if we were to format <code class="docutils literal notranslate"><span class="pre">Sign</span></code> as we have formatted previous dfns:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
+<span class="nv">Sign</span> <span class="kd">←</span> <span class="kt">{</span>
+    <span class="nv">s</span> <span class="kd">←</span> <span class="p">(</span><span class="m">3</span> <span class="m">8</span><span class="o">⍴</span><span class="s1">&#39;NegativeZero    Positive&#39;</span><span class="p">)</span><span class="sr">[</span><span class="m">2</span><span class="o">+×</span><span class="bp">⍵</span><span class="sr">;]</span>
+<span class="kt">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Sign</span> <span class="m">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Sign</span> <span class="m">¯3.6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">Sign</span> <span class="m">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: No result was provided when the context expected one
+      ⎕←Sign 0
+        ∧
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">VALUE</span> <span class="pre">ERROR</span></code> we get above is a very subtle error. Because the <code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">←</span> <span class="pre">...</span></code> statement is an assignment, when executing the <code class="docutils literal notranslate"><span class="pre">Sign</span></code> dfn the interpreter goes on to execute the expression on the next line, but the next line has <em>no</em> expression and so the interpreter raises a <code class="docutils literal notranslate"><span class="pre">VALUE</span> <span class="pre">ERROR</span></code>. If we want to have a shy result on a multi-line dfn, we <em>must</em> have the final curly brace on the same line as the final statement.</p>
 </div>
 <div class="section" id="lexical-scoping">
-<h3><span class="section-number">4.5.3. </span>Lexical scoping<a class="headerlink" href="#lexical-scoping" title="Permalink to this headline">¶</a></h3>
+<span id="user-defined-functions-lexical-scoping"></span><h3><span class="section-number">4.5.3. </span>Lexical scoping<a class="headerlink" href="#lexical-scoping" title="Permalink to this headline">¶</a></h3>
+<p><em><strong>Lexical scoping</strong></em> is the mechanism that turns local and global variables into relative notions. Dfns usually have access to global variables, but the variables that are “global” depend on where the dfn was written.</p>
+<p>As a purely illustrative example, consider the function defined below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
+<span class="nv">MultiplyBy10</span><span class="kd">←</span> <span class="kt">{</span>
+    <span class="nv">v</span> <span class="kd">←</span> <span class="m">10</span>            <span class="c1">⍝ define some variable</span>
+    <span class="nv">TimesV</span> <span class="kd">←</span> <span class="kt">{</span><span class="nv">v</span><span class="o">×</span><span class="bp">⍵</span><span class="kt">}</span>    <span class="c1">⍝ multiply something with v</span>
+    <span class="nv">TimesV</span> <span class="bp">⍵</span>
+<span class="kt">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">MultiplyBy10</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">50
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">MultiplyBy10</span> <span class="m">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">100
+</span></div></div>
+</div>
+<p>Notice how the <code class="docutils literal notranslate"><span class="pre">MultiplyBy10</span></code> function takes your input and gives it to the <code class="docutils literal notranslate"><span class="pre">TimesV</span></code> function, which is defined as a function that “<em>takes its input (<code class="docutils literal notranslate"><span class="pre">⍵</span></code>) and multiplies it with <code class="docutils literal notranslate"><span class="pre">v</span></code></em>”. But what is <code class="docutils literal notranslate"><span class="pre">v</span></code>? We do not give a value to <code class="docutils literal notranslate"><span class="pre">v</span></code> inside <code class="docutils literal notranslate"><span class="pre">TimesV</span></code>, so when APL encounters the expression <code class="docutils literal notranslate"><span class="pre">v×⍵</span></code> it looks at its surroundings for the meaning of <code class="docutils literal notranslate"><span class="pre">v</span></code>. Because <code class="docutils literal notranslate"><span class="pre">v</span></code> was defined in the enclosing dfn as <code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">←</span> <span class="pre">10</span></code>, that is the value that is used.</p>
+<p>Consider now a similar example, but with more occurrences of the variable <code class="docutils literal notranslate"><span class="pre">v</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">v</span> <span class="kd">←</span> <span class="m">100</span>          <span class="c1">⍝ (1)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
+<span class="nv">MultiplyBy10</span> <span class="kd">←</span> <span class="kt">{</span>
+    <span class="nv">GiveMeV</span> <span class="kd">←</span> <span class="kt">{</span>
+        <span class="nv">v</span>
+    <span class="kt">}</span>
+    <span class="vg">⎕</span><span class="kd">←</span> <span class="nv">v</span>         <span class="c1">⍝ (3)</span>
+    <span class="vg">⎕</span><span class="kd">←</span> <span class="nv">GiveMeV</span> <span class="m">1</span> <span class="c1">⍝ (4)</span>
+    <span class="nv">v</span> <span class="kd">←</span> <span class="m">10</span>       <span class="c1">⍝ (5)</span>
+    <span class="vg">⎕</span><span class="kd">←</span> <span class="nv">v</span>         <span class="c1">⍝ (6)</span>
+    <span class="vg">⎕</span><span class="kd">←</span> <span class="nv">GiveMeV</span> <span class="m">1</span> <span class="c1">⍝ (7)</span>
+    <span class="nv">v</span> <span class="kd">←</span> <span class="m">10</span><span class="o">×</span><span class="bp">⍵</span>       <span class="c1">⍝ (8)</span>
+    <span class="nv">v</span>
+<span class="kt">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">v</span>             <span class="c1">⍝ (2)</span>
+<span class="nv">MultiplyBy10</span> <span class="m">3</span>
+<span class="vg">⎕</span><span class="kd">←</span> <span class="nv">v</span>             <span class="c1">⍝ (9)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">100
+</span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">100
+100
+10
+10
+30
+</span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">100
+</span></div></div>
+</div>
+<p>Let us go over the assignments and the outputs of the code above:</p>
+<ul class="simple">
+<li><p>we start by defining the variable <code class="docutils literal notranslate"><span class="pre">v</span></code> in our session and we set it to 100 (1);</p></li>
+<li><p>we then define a function named <code class="docutils literal notranslate"><span class="pre">MultiplyBy10</span></code> which happens to contain another dfn inside it;</p></li>
+<li><p>then we print the value of the session variable <code class="docutils literal notranslate"><span class="pre">v</span></code> and we see its value is 100 (2);</p></li>
+<li><p>then we call the dfn <code class="docutils literal notranslate"><span class="pre">MultiplyBy10</span></code> with argument <code class="docutils literal notranslate"><span class="pre">3</span></code> and</p>
+<ul>
+<li><p>we define a new dfn named <code class="docutils literal notranslate"><span class="pre">GiveMeV</span></code>;</p></li>
+<li><p>we print the value of <code class="docutils literal notranslate"><span class="pre">v</span></code> (3). <code class="docutils literal notranslate"><span class="pre">MultiplyBy10</span></code> doesn’t know what <code class="docutils literal notranslate"><span class="pre">v</span></code> is and so it looks for it in the session and finds a <code class="docutils literal notranslate"><span class="pre">v</span></code> whose value is 100, because of (1);</p></li>
+<li><p>we then call the function <code class="docutils literal notranslate"><span class="pre">GiveMeV</span></code> which simply returns <code class="docutils literal notranslate"><span class="pre">v</span></code> and we print it (4). <code class="docutils literal notranslate"><span class="pre">GiveMeV</span></code> doesn’t know what <code class="docutils literal notranslate"><span class="pre">v</span></code> is, so it asks <code class="docutils literal notranslate"><span class="pre">MultiplyBy10</span></code>, which in turns asks the session, which knows of a <code class="docutils literal notranslate"><span class="pre">v</span></code> whose value is 100, because of (1);</p></li>
+<li><p>we then define <code class="docutils literal notranslate"><span class="pre">v</span></code> to be 10 inside of <code class="docutils literal notranslate"><span class="pre">MultiplyBy10</span></code> (5), making <code class="docutils literal notranslate"><span class="pre">MultiplyBy10</span></code> aware of a variable <code class="docutils literal notranslate"><span class="pre">v</span></code>;</p></li>
+<li><p>then we print <code class="docutils literal notranslate"><span class="pre">v</span></code> inside <code class="docutils literal notranslate"><span class="pre">MultiplyBy10</span></code> (6), which is 10 because we just defined it as such;</p></li>
+<li><p>then we call <code class="docutils literal notranslate"><span class="pre">GiveMeV</span></code> again and we print its result (7). <code class="docutils literal notranslate"><span class="pre">GiveMeV</span></code> doesn’t know what <code class="docutils literal notranslate"><span class="pre">v</span></code> is, so it asks <code class="docutils literal notranslate"><span class="pre">MultiplyBy10</span></code>, that <em>now knows</em> what <code class="docutils literal notranslate"><span class="pre">v</span></code> is: it is 10 because of (5);</p></li>
+<li><p>and we finish executing the <code class="docutils literal notranslate"><span class="pre">MultiplyBy10</span></code> dfn by assigning 30 to <code class="docutils literal notranslate"><span class="pre">v</span></code> (8), which we then return from the dfn;</p></li>
+</ul>
+</li>
+<li><p>we leave the <code class="docutils literal notranslate"><span class="pre">MultiplyBy10</span></code> dfn call and 30 gets printed because that was the result of the dfn call;</p></li>
+<li><p>finally we print <code class="docutils literal notranslate"><span class="pre">v</span></code> once more, and the session knows <code class="docutils literal notranslate"><span class="pre">v</span></code> is 100, so that is what we print (9).</p></li>
+</ul>
+<p>That might look confusing, but I assure you it makes a lot of sense. Just go through the code calmly and make sure you understand what each part does separately. Then, simulate the execution of the code with some pen and paper and write down what you think should get printed at each step. Then read the explanation above and compare it to what you thought was supposed to happen. You will get used to lexical scoping in no time.</p>
+<p>Lexical scoping can reveal itself to be extremely useful in languages where functions can return other functions, which is <em>not</em> the case with APL. Even so, lexical scoping will prove to be helpful later down the road: imagine a large(r) function inside which we define a small utility dfn to use with an operator, but we want the dfn to make use of things we have already computed inside the outer function. Lexical scoping kicks in at that point, allowing the inner dfn to access everything the outer function already computed.</p>
 </div>
 </div>
 <div class="section" id="miscellaneous">
@@ -1314,7 +1543,7 @@ Mexico
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">hours   mat     times   totMat  towns   
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">hours   mat     times   totMat  towns   v       
 </span></div></div>
 </div>
 <p>and you can obtain a list of your functions by typing</p>
@@ -1325,8 +1554,8 @@ Mexico
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">AMHM    Average Count   Extract HarmonicMean    Hypo    Ignore  Lengths Magic   Plus    Reverse Root    RootOf10        
-Silly   Switch1 Switch2 Times   To      
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">AMHM    Average Count   Extract HarmonicMean    Hypo    Ignore  Lengths Magic   MultiplyBy10    Plus    Reverse Root    
+RootOf10        Sign    Silly   Switch1 Switch2 Times   To      
 </span></div></div>
 </div>
 </div>
@@ -2063,7 +2292,7 @@ Frame[4] f[1 r;1 c]←2 2⍴⎕UCS 9484 9488 9492 9496
 </span></div></div>
 </div>
 <p>the primitives <code class="docutils literal notranslate"><span class="pre">,</span></code> and <code class="docutils literal notranslate"><span class="pre">⍪</span></code> work the same way. We need to turn input vectors into matrices with 1 row before we proceed with the framing process.</p>
-<p>Let us define <code class="docutils literal notranslate"><span class="pre">shape</span> <span class="pre">←</span> <span class="pre">⍴⍵</span></code> as the shape of the input <code class="docutils literal notranslate"><span class="pre">Frame</span></code> gets. If <code class="docutils literal notranslate"><span class="pre">⍵</span></code> is a matrix, then <code class="docutils literal notranslate"><span class="pre">shape</span></code> is the appropriate shape, otherwise we need <code class="docutils literal notranslate"><span class="pre">⍵</span></code> to be reshaped into <code class="docutils literal notranslate"><span class="pre">1,shape</span></code>. In traditional programming languages we could use an <code class="docutils literal notranslate"><span class="pre">if-else</span></code> statement. However, dfns do not have support for such flow control structures. We need to handle this matter in a different way.</p>
+<p>Let us define <code class="docutils literal notranslate"><span class="pre">shape</span> <span class="pre">←</span> <span class="pre">⍴⍵</span></code> as the shape of the input <code class="docutils literal notranslate"><span class="pre">Frame</span></code> gets. If <code class="docutils literal notranslate"><span class="pre">⍵</span></code> is a matrix, then <code class="docutils literal notranslate"><span class="pre">shape</span></code> is the appropriate shape, otherwise we need <code class="docutils literal notranslate"><span class="pre">⍵</span></code> to be reshaped into <code class="docutils literal notranslate"><span class="pre">1,shape</span></code>. In traditional programming languages we could use an <code class="docutils literal notranslate"><span class="pre">if-else</span></code> statement. However, dfns do not have support for such flow control structures and so we need to handle this matter in a different way.</p>
 <p>A possibility is to create the vector <code class="docutils literal notranslate"><span class="pre">v←1,shape</span></code> and then index into it with care. If <code class="docutils literal notranslate"><span class="pre">⍵</span></code> is a vector, <code class="docutils literal notranslate"><span class="pre">v</span></code> has 2 elements and we want both. If <code class="docutils literal notranslate"><span class="pre">⍵</span></code> is a matrix, <code class="docutils literal notranslate"><span class="pre">v</span></code> has 3 elements and we want the elements in positions <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span></code>. A way of generating the indices <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span></code> if <code class="docutils literal notranslate"><span class="pre">⍵</span></code> is a vector and <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span></code> if <code class="docutils literal notranslate"><span class="pre">⍵</span></code> is a matrix is with the expression <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">1+≢⍴⍵</span></code>:</p>
 <table class="colwidths-auto table">
 <thead>
