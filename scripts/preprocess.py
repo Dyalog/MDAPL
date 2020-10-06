@@ -25,6 +25,7 @@ except FileNotFoundError:
 CUSTOM_ADMONITION_STYLES = {
     "example": "tip",
     "rule": "tip",
+    "rules" : "tip",
     "exercise": "hint",
     "remark": "tip",
 }
