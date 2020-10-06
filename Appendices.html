@@ -199,6 +199,11 @@
    5.3. Dyalog APL Operators
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables">
+   5.4. Variables
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -644,6 +649,38 @@
 </tbody>
 </table>
 <p>(*): Strictly speaking, axis is not an operator, cf. the chapter on “Operators”.</p>
+</div>
+<div class="section" id="variables">
+<span id="appendices-variables"></span><h2><span class="section-number">5.4. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<p>This appendix lists all the variables and utility functions used throughout the book.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="o">⊢</span><span class="nv">forecast</span> <span class="kd">←</span> <span class="m">10</span><span class="o">×?</span><span class="m">4</span> <span class="m">6</span><span class="o">⍴</span><span class="m">55</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace"> 90 160 420 500  20  30
+110 450 170 370 290 360
+340 190 320 120 510 370
+150 460 240 520 490 280
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="o">⊢</span><span class="nv">actual</span> <span class="kd">←</span> <span class="nv">forecast</span> <span class="o">+</span> <span class="m">¯10</span><span class="o">+?</span><span class="m">4</span> <span class="m">6</span><span class="o">⍴</span><span class="m">20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace"> 89 166 420 508  12  23
+111 453 177 365 284 352
+349 192 329 115 515 374
+160 467 234 519 485 283
+</span></div></div>
+</div>
 </div>
 </div>
 
