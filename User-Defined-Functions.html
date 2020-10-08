@@ -566,6 +566,13 @@
        </code>
        )
       </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#jump-destinations">
+         4.7.6.3.1. Jump Destinations
+        </a>
+       </li>
+      </ul>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#quit-this-function-return">
@@ -1000,9 +1007,9 @@
 <ul class="simple">
 <li><p>Generally, the opening and closing braces are placed alone on the first and last lines. This is not mandatory, it is just a convention;</p></li>
 <li><p>dfns might be commented at will;</p></li>
-<li><p>one can create as many variables as needed: they are automatically deemed to be local variables, which means they only exist while inside the dfn. Note that this is opposite to the default behaviour of tradfns, where all variables are global (cf. <a class="reference internal" href="#user-defined-functions-local-variables"><span class="std std-numref">Section 4.3.3</span></a> and <code class="xref std std-numref docutils literal notranslate"><span class="pre">User-Defined-Functions-Local-Names</span></code>);</p></li>
+<li><p>one can create as many variables as needed: they are automatically deemed to be local variables, which means they only exist while inside the dfn. Note that this is opposite to the default behaviour of tradfns, where all variables are global (cf. <a class="reference internal" href="#user-defined-functions-local-variables"><span class="std std-numref">Section 4.3.3</span></a> and <a class="reference internal" href="#user-defined-functions-the-default-isnt-local"><span class="std std-numref">Section 4.6.2</span></a>);</p></li>
 <li><p>the arguments <code class="docutils literal notranslate"><span class="pre">⍵</span></code> and <code class="docutils literal notranslate"><span class="pre">⍺</span></code> retain the values passed to them as arguments and may not be changed. Any attempt to modify them causes a <code class="docutils literal notranslate"><span class="pre">SYNTAX</span> <span class="pre">ERROR</span></code> to be reported, except when <em>defaulting the left argument</em> (cf. <a class="reference internal" href="#user-defined-functions-default-left-argument"><span class="std std-numref">Section 4.3.4</span></a>);</p></li>
-<li><p>as soon as an expression generates a result that is not assigned to a name or used in any other way, the function terminates, and the value of that expression is returned as the result of the function. If the function contains more lines they will not be executed (cf. <code class="xref std std-numref docutils literal notranslate"><span class="pre">User-Defined-Functions-Returning-a-Result</span></code>);</p></li>
+<li><p>as soon as an expression generates a result that is not assigned to a name or used in any other way, the function terminates, and the value of that expression is returned as the result of the function. If the function contains more lines they will not be executed (cf. <a class="reference internal" href="#user-defined-functions-returning-the-result"><span class="std std-numref">Section 4.3.5</span></a>);</p></li>
 <li><p>traditional <em>control structures</em> and <em>branching</em> cannot be used in dfns (cf. <a class="reference internal" href="#user-defined-functions-guards"><span class="std std-numref">Section 4.5.1</span></a>).</p></li>
 </ul>
 <p>We will explore these characteristics in the following sections.</p>
@@ -2669,7 +2676,7 @@ PrintE[1] ⎕←e
 </ul>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">:OrIf</span></code> clause will thus enable what is usually referred to as <em>short-circuiting</em> in other programming languages.</p>
 <p>Note that the optional Block <strong>1</strong> may be useful to prepare the variables to be referenced in <em>Condition</em> <strong>2</strong>, but can also be omitted.</p>
-<p>We have a similar structure with the <code class="docutils literal notranslate"><span class="pre">:AndIf</span></code> clause, as seen in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-Flow_Control_AndIf</span></code>:</p>
+<p>We have a similar structure with the <code class="docutils literal notranslate"><span class="pre">:AndIf</span></code> clause, as seen in <a class="reference internal" href="#fig-control-flow-andif"><span class="std std-numref">Fig. 4.14</span></a>:</p>
 <div class="figure align-default" id="control-flow-andif">
 <span id="fig-control-flow-andif"></span><img alt="_images/Control_Flow_AndIf.png" src="_images/Control_Flow_AndIf.png" />
 <p class="caption"><span class="caption-number">Fig. 4.14 </span><span class="caption-text">A diagram with the usage of <code class="docutils literal notranslate"><span class="pre">:AndIf</span></code></span><a class="headerlink" href="#control-flow-andif" title="Permalink to this image">¶</a></p>
@@ -3417,6 +3424,8 @@ start of the loop
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Next</span></code> is a <em>Label</em>. <code class="docutils literal notranslate"><span class="pre">Next</span></code> is considered by the interpreter to be a variable whose value is the number of the line on which it is placed. It is used as a destination point both by the traditional <em>Branch arrow</em> and by the <code class="docutils literal notranslate"><span class="pre">:GoTo</span></code> clause, like this: <code class="docutils literal notranslate"><span class="pre">:GoTo</span> <span class="pre">Next</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">→Next</span></code> (cf. <a class="reference internal" href="#user-defined-functions-traditional-flow-control"><span class="std std-numref">Section 4.8</span></a>). Be careful not to include the colon after the branch name when referencing to it after a <code class="docutils literal notranslate"><span class="pre">:GoTo</span></code> or after a <code class="docutils literal notranslate"><span class="pre">→</span></code>.</p>
+<div class="section" id="jump-destinations">
+<span id="user-defined-functions-jump-destinations"></span><h5><span class="section-number">4.7.6.3.1. </span>Jump Destinations<a class="headerlink" href="#jump-destinations" title="Permalink to this headline">¶</a></h5>
 <p>The following conventions apply to the <em>Destination</em> of a jump:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -3436,6 +3445,7 @@ start of the loop
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 <div class="section" id="quit-this-function-return">
 <span id="user-defined-functions-quit-this-function-return"></span><h4><span class="section-number">4.7.6.4. </span>Quit This Function (<code class="docutils literal notranslate"><span class="pre">:Return</span></code>)<a class="headerlink" href="#quit-this-function-return" title="Permalink to this headline">¶</a></h4>
@@ -3565,7 +3575,7 @@ start of the loop
 <li><p><code class="docutils literal notranslate"><span class="pre">expensive</span></code> is the label that is defined on line 3, so its value is 3 as if it were a regular variable;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">price≤money</span></code> is <code class="docutils literal notranslate"><span class="pre">1</span></code> because <code class="docutils literal notranslate"><span class="pre">13≤20</span></code> and hence <code class="docutils literal notranslate"><span class="pre">~price≤money</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code>;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">(~price≤money)⍴expensive</span></code> is thus equivalent to <code class="docutils literal notranslate"><span class="pre">0⍴3</span></code> which evaluates to <code class="docutils literal notranslate"><span class="pre">⍬</span></code>;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">→⍬</span></code> does nothing (as explained in <code class="xref std std-numref docutils literal notranslate"><span class="pre">User-Defined-Functions-Jump-to-Another-Statement</span></code>) and the program proceeds to lines 2 and 3.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">→⍬</span></code> does nothing (as explained in <a class="reference internal" href="#user-defined-functions-jump-to-another-statement-goto"><span class="std std-numref">Section 4.7.6.3</span></a>)) and the program proceeds to lines 2 and 3.</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">13</span> <span class="pre">IsItExpensive</span> <span class="pre">10</span></code>:</p>
