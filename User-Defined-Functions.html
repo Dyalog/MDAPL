@@ -620,8 +620,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     4.8.1. Conditional Execution
+    <a class="reference internal nav-link" href="#equivalence-with-modern-flow-control">
+     4.8.1. Equivalence With Modern Flow Control
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -3516,8 +3516,8 @@ start of the loop
 </div>
 <div class="section" id="traditional-flow-control">
 <span id="user-defined-functions-traditional-flow-control"></span><h2><span class="section-number">4.8. </span>Traditional Flow Control<a class="headerlink" href="#traditional-flow-control" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<span id="id2"></span><h3><span class="section-number">4.8.1. </span>Conditional Execution<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="equivalence-with-modern-flow-control">
+<span id="user-defined-functions-equivalence-with-modern-flow-control"></span><h3><span class="section-number">4.8.1. </span>Equivalence With Modern Flow Control<a class="headerlink" href="#equivalence-with-modern-flow-control" title="Permalink to this headline">¶</a></h3>
 <p>In early versions of APL, a unique symbol - the <em><strong>Branch arrow</strong></em> (<code class="docutils literal notranslate"><span class="pre">→</span></code>, typed with <kbd>APL</kbd>+<kbd>]</kbd>) - provided the only means to override the order in which statements were executed. Today you should only use this mechanism when maintaining code which is already written in this style.</p>
 <p>The <em>branch arrow</em> works in exactly the same way as the <code class="docutils literal notranslate"><span class="pre">:GoTo</span></code> clause. <code class="docutils literal notranslate"><span class="pre">→destination</span></code> and <code class="docutils literal notranslate"><span class="pre">:GoTo</span> <span class="pre">destination</span></code> are strictly equivalent.</p>
 <p><code class="docutils literal notranslate"><span class="pre">destination</span></code> should <strong>always</strong> be a <em><strong>Label</strong></em>. Remember: a <em>Label</em> is a word placed at the beginning of a statement and <strong>followed</strong> by a <em><strong>colon</strong></em>. Specifying a statement number (i.e. <code class="docutils literal notranslate"><span class="pre">→47</span></code>) would become invalid as soon as you add or remove lines before that line number.</p>
