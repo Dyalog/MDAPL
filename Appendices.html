@@ -214,11 +214,7 @@
         
               <div>
                 
-  <p><em><strong>Notes &amp; Questions</strong></em>:</p>
-<ul class="simple">
-<li><p>In the <a class="reference internal" href="#appendices-dyalog-apl-operators"><span class="std std-numref">Section 5.3</span></a>, is the outer product really a dyadic operator? I mean, I get that <code class="docutils literal notranslate"><span class="pre">∘.f</span></code> has the function on the right, but it only got one function as “argument”, so shouldn’t it be a monadic operator?</p></li>
-</ul>
-<div class="section" id="appendices">
+  <div class="section" id="appendices">
 <span id="appendices-appendices"></span><h1><span class="section-number">5. </span>Appendices<a class="headerlink" href="#appendices" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="scalar-functions">
 <span id="appendices-scalar-functions"></span><h2><span class="section-number">5.1. </span>Scalar Functions<a class="headerlink" href="#scalar-functions" title="Permalink to this headline">¶</a></h2>
@@ -445,14 +441,26 @@
 <tr class="row-even"><td class="text-align:left"><p>Reduce</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:center"><p>M</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">f/Y</span></code> or <code class="docutils literal notranslate"><span class="pre">f⌿Y</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">f/Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">+/Y</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>Reduce <span class="math notranslate nohighlight">\(n\)</span>-Wise</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:center"><p>D</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f/Y</span></code> or <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f⌿Y</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f/Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">2+/Y</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Reduce First</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">f⌿Y</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">+⌿Y</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Reduce First <span class="math notranslate nohighlight">\(n\)</span>-Wise</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f⌿Y</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">2+⌿Y</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>Axis(*)</p></td>
 <td class="text-align:center"><p>D</p></td>
@@ -469,52 +477,64 @@
 <tr class="row-even"><td class="text-align:left"><p>Scan</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:center"><p>M</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">f\Y</span></code> or <code class="docutils literal notranslate"><span class="pre">y⍀Y</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">f\Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">×\Y</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Outer Product</p></td>
+<tr class="row-odd"><td class="text-align:left"><p>Scan First</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">y⍀Y</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">×⍀Y</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Outer Product</p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">∘.f</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">∘.&lt;</span> <span class="pre">Y</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p>Inner Product</p></td>
+<tr class="row-odd"><td class="text-align:left"><p>Inner Product</p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f.g</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">+.×</span> <span class="pre">Y</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Commute</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Commute</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">f⍨</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">=⍨</span> <span class="pre">Y</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p></p></td>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f⍨</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">X-⍨Y</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Constant</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Constant</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">A⍨</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">3⍨¨Y</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p></p></td>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">A⍨</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">0⍨</span> <span class="pre">Y</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Compose</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Beside</p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">f∘g</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">⍴∘⍴Y</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p></p></td>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f∘g</span> <span class="pre">Y</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">3↑∘⍴¨Y</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Bind</p></td>
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">A∘g</span> <span class="pre">Y</span></code></p></td>
@@ -526,125 +546,143 @@
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(f∘B)</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">,∘'...'¨Y</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p>D</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f∘g</span> <span class="pre">Y</span></code></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">3↑∘⍴¨Y</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>Over</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Over</p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">f⍥g</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code>÷⍥|Y</code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p></p></td>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f⍥g</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code>X⌈⍥|Y</code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Atop</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Atop</p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">f⍤g</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">-⍤÷Y</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p></p></td>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f⍤g</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">X⍴⍤,Y</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Rank</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Rank</p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(f⍤B)</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">(⍋⍤1)Y</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p></p></td>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">(f⍤B)</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">X(+⍤0</span> <span class="pre">1)Y</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>At</p></td>
+<tr class="row-even"><td class="text-align:left"><p>At (indices)</p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(A&#64;B)</span> <span class="pre">Y</span></code> or <code class="docutils literal notranslate"><span class="pre">(f&#64;B)</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">(0&#64;2</span> <span class="pre">4)Y</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p></p></td>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">(f&#64;B)</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">10(×&#64;2</span> <span class="pre">4)Y</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p></p></td>
-<td class="text-align:center"><p></p></td>
+<tr class="row-even"><td class="text-align:left"><p>At (mask)</p></td>
+<td class="text-align:center"><p>D</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">A&#64;g</span> <span class="pre">Y</span></code> or <code class="docutils literal notranslate"><span class="pre">f&#64;g</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code>÷&#64;(2∘|)Y</code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p></p></td>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f&#64;g</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code>X×&#64;(2∘|)Y</code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Spawn</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Spawn</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">f&amp;</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">⌹&amp;Y</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p></p></td>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f&amp;</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">X⍳&amp;Y</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Power</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Power (repeat)</p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:center"><p>M</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(f⍣B)</span> <span class="pre">Y</span></code> or <code class="docutils literal notranslate"><span class="pre">f⍣g</span> <span class="pre">Y</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(f⍣B)</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">(⊃⍣3)Y</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p></p></td>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p>D</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">(f⍣B)</span> <span class="pre">Y</span></code> or <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f⍣g</span> <span class="pre">Y</span></code></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">(f⍣B)</span> <span class="pre">Y</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">1(+⍣5)10</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Power (until)</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">f⍣g</span> <span class="pre">Y</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">(⊃⍣≡)Y</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f⍣g</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">1+∘÷⍣=1</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Key</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Key</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">f⌸</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">,⌸Y</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p></p></td>
+<tr class="row-odd"><td class="text-align:left"><p></p></td>
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f⌸</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">X,⌸Y</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Stencil</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Stencil</p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(f⌺B)</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">({⊂⍵}⌺2</span> <span class="pre">2)Y</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p>I-Beam</p></td>
+<tr class="row-odd"><td class="text-align:left"><p>I-Beam</p></td>
 <td class="text-align:center"><p>M</p></td>
-<td class="text-align:center"><p>-</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">N⌶</span> <span class="pre">Y</span></code> or <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">(N⌶)</span> <span class="pre">Y</span></code></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">819⌶Y</span></code></p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">N⌶</span> <span class="pre">Y</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">8415⌶Y</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">(N⌶)</span> <span class="pre">Y</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">1(219⌶)⍳10</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>Variant</p></td>
 <td class="text-align:center"><p>D</p></td>
-<td class="text-align:center"><p>-</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(f⍠B)</span> <span class="pre">Y</span></code> or <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">(f⍠B)</span> <span class="pre">Y</span></code></p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(f⍠B)</span> <span class="pre">Y</span></code></p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">('a'⎕S</span> <span class="pre">0)⍠1⊢Y</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">(f⍠B)</span> <span class="pre">Y</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">0(⎕JSON⍠'Dialect'</span> <span class="pre">'JSON5')Y</span></code></p></td>
 </tr>
 </tbody>
 </table>
