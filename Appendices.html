@@ -686,11 +686,24 @@
 </tr>
 </tbody>
 </table>
-<p>(*): Strictly speaking, axis is not an operator, cf. the chapter on “Operators”.</p>
+<p>(*): Strictly speaking, axis is not an operator, cf. <span class="xref myst">the chapter on operators</span>.</p>
 </div>
 <div class="section" id="variables">
 <span id="appendices-variables"></span><h2><span class="section-number">5.4. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
 <p>This appendix lists all the variables and utility functions used throughout the book.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="o">⊢</span><span class="nv">salaries</span> <span class="kd">←</span> <span class="o">?</span><span class="m">20</span><span class="o">⍴</span><span class="m">5000</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→──────────────────────────────────────────────────────────────────────────────────────────────┐
+│2121 4778 4914 3139 4561 221 1252 1530 4475 332 3507 1829 1710 4964 3849 669 3653 3415 3867 151│
+└~──────────────────────────────────────────────────────────────────────────────────────────────┘
+</span></div></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
@@ -699,10 +712,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace"> 90 160 420 500  20  30
-110 450 170 370 290 360
-340 190 320 120 510 370
-150 460 240 520 490 280
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→──────────────────────┐
+↓ 90 160 420 500  20  30│
+│110 450 170 370 290 360│
+│340 190 320 120 510 370│
+│150 460 240 520 490 280│
+└~──────────────────────┘
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -713,10 +728,59 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace"> 89 166 420 508  12  23
-111 453 177 365 284 352
-349 192 329 115 515 374
-160 467 234 519 485 283
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→──────────────────────┐
+↓ 89 166 420 508  12  23│
+│111 453 177 365 284 352│
+│349 192 329 115 515 374│
+│160 467 234 519 485 283│
+└~──────────────────────┘
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">chemistry</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">5</span><span class="o">⍴</span><span class="s1">&#39;H2SO4CaCO3Fe2O3&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→────┐
+↓H2SO4│
+│CaCO3│
+│Fe2O3│
+└─────┘
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊢</span><span class="nv">nesMat</span> <span class="kd">←</span> <span class="m">2</span> <span class="m">3</span> <span class="o">⍴</span> <span class="s1">&#39;Dyalog&#39;</span> <span class="m">44</span> <span class="s1">&#39;Hello&#39;</span> <span class="m">27</span> <span class="p">(</span><span class="m">2</span> <span class="m">2</span> <span class="o">⍴</span> <span class="m">8</span> <span class="m">6</span> <span class="m">2</span> <span class="m">4</span><span class="p">)</span> <span class="p">(</span><span class="m">2</span> <span class="m">3</span><span class="o">⍴</span><span class="m">1</span> <span class="m">2</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→───────────────────────┐
+↓ ┌→─────┐       ┌→────┐ │
+│ │Dyalog│ 44    │Hello│ │
+│ └──────┘       └─────┘ │
+│          ┌→──┐ ┌→────┐ │
+│ 27       ↓8 6│ ↓1 2 0│ │
+│          │2 4│ │0 0 5│ │
+│          └~──┘ └~────┘ │
+└∊───────────────────────┘
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="o">⊢</span><span class="nv">nm</span> <span class="kd">←</span> <span class="p">(</span><span class="o">?</span><span class="m">3</span> <span class="m">4</span><span class="o">⍴</span><span class="m">200000</span><span class="p">)</span><span class="o">÷</span><span class="m">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→─────────────────────────────┐
+↓  21.21 1534.88 375.46  704.5 │
+│1125.14 1963.52 464.45 1438.25│
+│ 796.53 1569    157.14  886.59│
+└~─────────────────────────────┘
 </span></div></div>
 </div>
 </div>
@@ -759,7 +823,13 @@
         
           By Bernard Legrand<br/>
         
-            &copy; Copyright 1982-2020 by Dyalog Ltd.<br/>
+          <div class="extra_footer">
+            <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+  <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+</a></p>
+<p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+
+          </div>
       </p>
     </div>
   </footer>
