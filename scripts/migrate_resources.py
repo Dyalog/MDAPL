@@ -30,8 +30,8 @@ for root, _, files in os.walk(FROM):
         fullpath = os.path.join(newroot, filename)
         oldpath = os.path.join(root, filename)
         exists = os.path.exists(fullpath)
-        if (not exists or os.path.getmtime(oldpath) > os.path.getmtime(fullpath)):
-            shutil.copyfile(oldpath, fullpath)
+        if (not exists or os.path.getmtime(oldpath) != os.path.getmtime(fullpath)):
+            shutil.copy2(oldpath, fullpath)
             hits += 1
             if exists:
                 print(UPDATING.format(oldpath))

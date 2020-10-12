@@ -23,11 +23,12 @@ except FileNotFoundError:
     sys.exit()
 
 CUSTOM_ADMONITION_STYLES = {
+    "advice": "tip",
     "example": "tip",
-    "rule": "tip",
-    "rules" : "tip",
     "exercise": "hint",
     "remark": "tip",
+    "rule": "tip",
+    "rules" : "tip",
 }
 
 def safe_hyphenate(string):
