@@ -5,3 +5,4 @@ _config.yml
 _build/*
 book/*
 res/design.pptx
+*.pdf
