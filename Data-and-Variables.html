@@ -358,28 +358,6 @@
     <a class="reference internal nav-link" href="#four-important-remarks">
      2.6.2. Four Important Remarks
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#data-and-variables-621">
-       2.6.2.1. 6.2.1
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#data-and-variables-622">
-       2.6.2.2. 6.2.2
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#data-and-variables-623">
-       2.6.2.3. 6.2.3
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#data-and-variables-624">
-       2.6.2.4. 6.2.4
-      </a>
-     </li>
-    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#nested-arrays">
@@ -779,7 +757,7 @@ Bétise_à_Caimbrai
 </div>
 </div>
 </div>
-<p>In this document, most variable names begin with an upper-case letter, with the remainder in lower-case. This is purely for consistency and ease of use.</p>
+<p>In this document, most variable names will follow the <em><strong>pascalCase</strong></em> casing convention. This means single-word variable names will be lower-case but compound names will then have the subsequent words capitalised. <code class="docutils literal notranslate"><span class="pre">pascalCase</span></code> is an example name of a variable following the <em>pascalCase</em> casing convention.</p>
 <p>The letters that are allowed as part of variable names are:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0123456789
 ABCDEFGHIJKLMNOPQRSTUVWXYZ_
@@ -2374,9 +2352,9 @@ June
 </div>
 <div class="section" id="four-important-remarks">
 <span id="data-and-variables-four-important-remarks"></span><h3><span class="section-number">2.6.2. </span>Four Important Remarks<a class="headerlink" href="#four-important-remarks" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="data-and-variables-621">
-<span id="id1"></span><h4><span class="section-number">2.6.2.1. </span>6.2.1<a class="headerlink" href="#data-and-variables-621" title="Permalink to this headline">¶</a></h4>
-<p>In a vector like <code class="docutils literal notranslate"><span class="pre">mixVec</span></code>, each letter must be entered as a scalar: embedded within quotes, and separated from the next one by at least one blank space.</p>
+<ol class="simple">
+<li><p>In a vector like <code class="docutils literal notranslate"><span class="pre">mixVec</span></code>, each letter must be entered as a scalar: embedded within quotes, and separated from the next one by at least one blank space.</p></li>
+</ol>
 <p>If the space is omitted, for example, if we type</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2410,20 +2388,14 @@ June
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">3
 </span></div></div>
 </div>
-</div>
-<div class="section" id="data-and-variables-622">
-<span id="id2"></span><h4><span class="section-number">2.6.2.2. </span>6.2.2<a class="headerlink" href="#data-and-variables-622" title="Permalink to this headline">¶</a></h4>
-<p>When <code class="docutils literal notranslate"><span class="pre">mixVec</span></code> is displayed (see above), the three letters <code class="docutils literal notranslate"><span class="pre">Bag</span></code> are joined together, like the letters in any vector of characters.</p>
+<ol class="simple">
+<li><p>When <code class="docutils literal notranslate"><span class="pre">mixVec</span></code> is displayed (see above), the three letters <code class="docutils literal notranslate"><span class="pre">Bag</span></code> are joined together, like the letters in any vector of characters.</p></li>
+</ol>
 <p>This presentation might be confused with an array of 7 items, whose 6th item is the vector <code class="docutils literal notranslate"><span class="pre">'Bag'</span></code>. That would be a <em>Nested Array</em>. We will soon learn how to investigate the structure of an array.</p>
-</div>
-<div class="section" id="data-and-variables-623">
-<span id="id3"></span><h4><span class="section-number">2.6.2.3. </span>6.2.3<a class="headerlink" href="#data-and-variables-623" title="Permalink to this headline">¶</a></h4>
-<p>This confusion disappears in <code class="docutils literal notranslate"><span class="pre">mixMat</span></code>. Because the items of the matrix must be aligned in columns, “B” is placed under 44, “a” under 87, and “g’ under “K”. Here you can easily see that the three letters <code class="docutils literal notranslate"><span class="pre">Bag</span></code> are really three independent scalars.</p>
-</div>
-<div class="section" id="data-and-variables-624">
-<span id="id4"></span><h4><span class="section-number">2.6.2.4. </span>6.2.4<a class="headerlink" href="#data-and-variables-624" title="Permalink to this headline">¶</a></h4>
-<p>A <em><strong>Mixed</strong></em> array is made up only of simple scalars (numbers or characters); <strong>it is not</strong> a <em>Nested Array</em>.</p>
-</div>
+<ol class="simple">
+<li><p>This confusion disappears in <code class="docutils literal notranslate"><span class="pre">mixMat</span></code>. Because the items of the matrix must be aligned in columns, “B” is placed under 44, “a” under 87, and “g’ under “K”. Here you can easily see that the three letters <code class="docutils literal notranslate"><span class="pre">Bag</span></code> are really three independent scalars.</p></li>
+<li><p>A <em><strong>Mixed</strong></em> array is made up only of simple scalars (numbers or characters); <strong>it is not</strong> a <em>Nested Array</em>.</p></li>
+</ol>
 </div>
 <div class="section" id="nested-arrays">
 <span id="data-and-variables-nested-arrays"></span><h3><span class="section-number">2.6.3. </span>Nested Arrays<a class="headerlink" href="#nested-arrays" title="Permalink to this headline">¶</a></h3>

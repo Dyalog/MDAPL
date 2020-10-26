@@ -466,8 +466,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     3.11.4. Special Notations
+    <a class="reference internal nav-link" href="#special-cases-and-notations">
+     3.11.4. Special Cases and Notations
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -498,7 +498,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
+    <a class="reference internal nav-link" href="#id3">
      3.12.4. Special Notations
     </a>
    </li>
@@ -730,25 +730,7 @@
         
               <div>
                 
-  <p><strong>References to fix:</strong></p>
-<ul class="simple">
-<li><p>update reference to “operators” chapter (search for “We shall learn more about <em>Axis</em>”) in the sub sub section about Processing Arrays, inside the section on axis;</p></li>
-<li><p>in the same place as above, fix reference to chapter on “User Defined Functions” (search for “these will be covered in detail”);</p></li>
-<li><p>fix reference to “user Defined Functions” chapter (search for “we shall see many other possibilities in the”) right before the <a class="reference internal" href="#some-primitive-functions-concatenate"><span class="std std-numref">Section 3.11</span></a> section;</p></li>
-<li><p>ref to “Nested Arrays” chapter under <a class="reference internal" href="#some-primitive-functions-general-case-replicate"><span class="std std-numref">Section 3.12.2</span></a> (search for “is new and will be discussed in full”);</p></li>
-</ul>
-<hr class="docutils" />
-<ul class="simple">
-<li><p>ref to Discovery right after <a class="reference internal" href="#some-primitive-functions-application-4"><span class="std std-numref">Section 3.14.1</span></a> (search for “occurrence of a value in a vector (cf. the “Discovery” subsection)”);</p></li>
-<li><p>ref to The Index Function in <a class="reference internal" href="#some-primitive-functions-increasing-the-dimension"><span class="std std-numref">Section 3.14.2</span></a> (search for “(cf. the subsection with the same name)”);</p></li>
-<li><p>ref to Basic Approach: Compression in <a class="reference internal" href="#some-primitive-functions-first-question"><span class="std std-numref">Section 3.14.5.2</span></a> (search for “As mentioned previously in the subsection about <em>Compression</em>”);</p></li>
-<li><p>In <a class="reference internal" href="#some-primitive-functions-ravel"><span class="std std-numref">Section 3.16</span></a> we talk about subsection on “Array Indexing” (search for “the result returned is a vector (we already mentioned this in the subsection on “Array Indexing”)”);</p></li>
-<li><p>ref to “Our First Program” in <a class="reference internal" href="#some-primitive-functions-empty-vectors-and-black-holes"><span class="std std-numref">Section 3.17</span></a> (search for “a function to calculate the average of a vector (see the “Our First Program” section)”);</p></li>
-<li><p>ref to “Basic Usage” in exercise <a class="reference internal" href="#some-primitive-functions-solutions"><span class="std std-numref">Section 3.20</span></a> (search for “is equivalent to the algorithm presented in the “Basic Usage” subsection about the Index Generator”);</p></li>
-<li><p>…</p></li>
-</ul>
-<hr class="docutils" />
-<div class="section" id="some-primitive-functions">
+  <div class="section" id="some-primitive-functions">
 <span id="some-primitive-functions-some-primitive-functions"></span><h1><span class="section-number">3. </span>Some Primitive Functions<a class="headerlink" href="#some-primitive-functions" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="definitions">
 <span id="some-primitive-functions-definitions"></span><h2><span class="section-number">3.1. </span>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
@@ -3372,7 +3354,7 @@ June
 <div class="section" id="our-first-program">
 <span id="some-primitive-functions-our-first-program"></span><h2><span class="section-number">3.10. </span>Our First Program<a class="headerlink" href="#our-first-program" title="Permalink to this headline">¶</a></h2>
 <p>The expression we wrote in <a class="reference internal" href="#some-primitive-functions-application-2"><span class="std std-numref">Section 3.8.7</span></a> to calculate the average of a set of values is one that we may want to use time and time again. So let us store it as a program, or, to use the proper APL terminology, as a <em><strong>User Defined Function</strong></em>.</p>
-<p>There are many different ways to define functions, and these will be covered in detail in the “User Defined Functions” chapter. For now we shall use the simplest, which is perfectly suitable for straightforward calculation functions like this one. Let’s type:</p>
+<p>There are many different ways to define functions, and these will be covered in detail in <a class="reference internal" href="User-Defined-Functions.html"><span class="doc std std-doc">the “User Defined Functions” chapter</span></a>. For now we shall use the simplest, which is perfectly suitable for straightforward calculation functions like this one. Let’s type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Average</span> <span class="kd">←</span> <span class="kt">{</span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="bp">⍵</span><span class="p">)</span><span class="o">÷</span><span class="p">(</span><span class="o">≢</span><span class="bp">⍵</span><span class="p">)</span><span class="kt">}</span>
@@ -3409,7 +3391,7 @@ June
 </span></div></div>
 </div>
 <p>The word <code class="docutils literal notranslate"><span class="pre">Average</span></code> can now be used in any APL expression. We have enriched the vocabulary which can be used to process data in this workspace (provided that we save it).</p>
-<p>Be patient: we shall see many other possibilities in the “User Defined Functions” chapter.</p>
+<p>Be patient: we shall see many other possibilities in <a class="reference internal" href="User-Defined-Functions.html"><span class="doc std std-doc">the “User Defined Functions” chapter</span></a>.</p>
 </div>
 <div class="section" id="concatenate">
 <span id="some-primitive-functions-concatenate"></span><h2><span class="section-number">3.11. </span>Concatenate<a class="headerlink" href="#concatenate" title="Permalink to this headline">¶</a></h2>
@@ -3904,8 +3886,8 @@ AAAA*
 </span></div></div>
 </div>
 </div>
-<div class="section" id="id3">
-<span id="id4"></span><h3><span class="section-number">3.11.4. </span>Special Notations<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="special-cases-and-notations">
+<span id="some-primitive-functions-special-cases-and-notations"></span><h3><span class="section-number">3.11.4. </span>Special Cases and Notations<a class="headerlink" href="#special-cases-and-notations" title="Permalink to this headline">¶</a></h3>
 <p>By default, if no axis is specified catenation works along the last dimension of the array(s).</p>
 <p>So</p>
 <div class="cell docutils container">
@@ -4045,7 +4027,7 @@ BBBB
 <p>We can see above that <em>Reduce by Catenate</em> joins all items of a vector together. Using <code class="docutils literal notranslate"><span class="pre">,/</span></code> is so common that you will get used to looking at <code class="docutils literal notranslate"><span class="pre">,/</span></code> and reading it as <em>join</em>, instead of <em>Reduce by Catenate</em>. Like <code class="docutils literal notranslate"><span class="pre">,/</span></code>, there are many expressions which can be understood as an entity at first sight (with some practice!).</p>
 <p>For someone who knows nothing of APL the expression above may take a bit of time to digest (even if they have an extensive knowledge of other programming languages), and they cannot readily appreciate that an APL programmer can understand it immediately, without having to read each of the symbols one by one.</p>
 <p>This is not a paradox. For young children, reading the word “Daddy” is complex. It requires the comprehension of a sequence of letters one-by-one. I presume that you no longer do that, do you? <strong>You do not read the letters</strong>; you understand <strong>the word</strong> as a whole. This is exactly the same for the above idiomatic phrase.</p>
-<p>These common combinations of primitives are usually termed as <em><strong>Idioms</strong></em> or <em><strong>Idiomatic Phrases</strong></em>. We prefer the latter denomination to avoid any confusion with Dyalog APL’s <em>Idiom Recognition</em>. <span class="xref myst">APL Cart</span> is a very comprehensive online collection of such idiomatic phrases, although not all entries in APL Cart are idiomatic phrases. It is also noteworthy that there is no objective criteria to determine if a combination of primitives is an idiomatic phrase or not: it depends on your skill, experience and even the context you are working on.</p>
+<p>These common combinations of primitives are usually termed as <em><strong>Idioms</strong></em> or <em><strong>Idiomatic Phrases</strong></em>. We prefer the latter denomination to avoid any confusion with Dyalog APL’s <em>Idiom Recognition</em>. <a class="reference external" href="https://aplcart.info/">APLcart</a> is a very comprehensive online collection of such idiomatic phrases, although not all entries in APL Cart are idiomatic phrases. It is also noteworthy that there is no objective criteria to determine if a combination of primitives is an idiomatic phrase or not: it depends on your skill, experience and even the context you are working on.</p>
 <p>Some idiomatic phrases are so common and useful that Dyalog APL introduced a special <em>Idiom Recognition</em> feature that speeds up the processing of APL code for many popular phrases. Both RIDE and the Windows IDE even have the capability of colouring these differently. For Dyalog APL, an <em>idiom</em> is like a “shortcut primitive” that replaces a sequence of consecutive primitive. This replacement will allow for a later speed up of the code in which it shows up.</p>
 <p>For example, we have also been using another short idiom fairly often: <code class="docutils literal notranslate"><span class="pre">≢⍴</span></code> (or <code class="docutils literal notranslate"><span class="pre">⍴⍴</span></code> in Ancient times) computes the rank of an array. Because <code class="docutils literal notranslate"><span class="pre">≢⍴</span></code> is recognised by Dyalog APL’s idiom recognition feature, the interpreter doesn’t need to process two instructions:</p>
 <ol class="simple">
@@ -4229,7 +4211,7 @@ FeO
 </tr>
 </tbody>
 </table>
-<p>The concept of a “Fill item” is new and will be discussed in full in the “Nested Arrays” chapter. For now, you only need to know that the fill item for a simple numeric array is 0 and the fill item for a simple character array is a blank space.</p>
+<p>The concept of a “Fill item” is new and will be discussed in full in <span class="xref myst">the “Nested Arrays” chapter</span>. For now, you only need to know that the fill item for a simple numeric array is 0 and the fill item for a simple character array is a blank space.</p>
 <p>Here are some examples, using the same left argument applied to numeric and character vectors:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4322,8 +4304,8 @@ FeO
 </div>
 <p>As you can see above, when we use 0 as the left argument to <em>Replicate</em> we get an empty vector. Because <code class="docutils literal notranslate"><span class="pre">v</span></code> was a simple character vector, we get an empty character vector.</p>
 </div>
-<div class="section" id="id5">
-<span id="id6"></span><h3><span class="section-number">3.12.4. </span>Special Notations<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<span id="id4"></span><h3><span class="section-number">3.12.4. </span>Special Notations<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Like <em>Reduce</em> and <em>Catenate</em>, <em>Replicate</em> works by default along the last dimension of an array. However, it is possible for it to work on any dimension by using the <em>Axis</em>. It is also possible to use <code class="docutils literal notranslate"><span class="pre">⌿</span></code>, which we have already seen, to work on the first dimension by default.</p>
 <p>For example,</p>
 <div class="cell docutils container">
@@ -4806,7 +4788,7 @@ FeO
 <p>They are at positions 3, 5, 6 and 11, referring respectively to the elements 78, 85, 96 and 82.</p>
 <div class="section" id="application-4">
 <span id="some-primitive-functions-application-4"></span><h3><span class="section-number">3.14.1. </span>Application 4<a class="headerlink" href="#application-4" title="Permalink to this headline">¶</a></h3>
-<p>You probably remember that the function <em>Index Of</em> returns only the <em>first</em> occurrence of a value in a vector (cf. the “Discovery” subsection). Using <em>Where</em> we can find <em>all</em> the occurrences.</p>
+<p>You probably remember that the function <em>Index Of</em> returns only the <em>first</em> occurrence of a value in a vector (cf. <a class="reference internal" href="#some-primitive-functions-discovery"><span class="std std-numref">Section 3.13.1</span></a>). Using <em>Where</em> we can find <em>all</em> the occurrences.</p>
 <p>Here is a vector, in which we would like to find the positions of the number 19:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4918,7 +4900,7 @@ June
 └───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘
 </span></div></div>
 </div>
-<p>The last item in the result above is <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">4</span></code>, which means that row 6, column 4 of <code class="docutils literal notranslate"><span class="pre">monMat</span></code> contains a lowercase vowel: the final “e” in “June”. We can verify this with the index function <code class="docutils literal notranslate"><span class="pre">⌷</span></code> you already learned about (cf. the subsection with the same name):</p>
+<p>The last item in the result above is <code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">4</span></code>, which means that row 6, column 4 of <code class="docutils literal notranslate"><span class="pre">monMat</span></code> contains a lowercase vowel: the final “e” in “June”. We can verify this with the index function <code class="docutils literal notranslate"><span class="pre">⌷</span></code> you already learned about (cf. <a class="reference internal" href="Data-and-Variables.html#data-and-variables-the-index-function"><span class="std std-numref">Section 2.5.6</span></a>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">6</span><span class="o">⌷</span><span class="nv">monMat</span>
@@ -5168,7 +5150,7 @@ Egypt         37
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">2471
 </span></div></div>
 </div>
-<p>As mentioned previously in the subsection about <em>Compress</em>, it is a kind of detour to solve this task using indexing, but here it serves to illustrate the different lookup methods.</p>
+<p>As mentioned previously in <a class="reference internal" href="#some-primitive-functions-replicate"><span class="std std-numref">Section 3.12</span></a>), it is a kind of detour to solve this task using indexing, but here it serves to illustrate the different lookup methods.</p>
 <p>Let us take a look at the selected countries and their positions in <code class="docutils literal notranslate"><span class="pre">bhcodes</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5618,7 +5600,7 @@ Fe2O3
 150 520 280
 </span></div></div>
 </div>
-<p>But if <code class="docutils literal notranslate"><span class="pre">cols</span></code> happens to have only a single value, which is a scalar, the result returned is a vector (we already mentioned this in the subsection on “Array Indexing”):</p>
+<p>But if <code class="docutils literal notranslate"><span class="pre">cols</span></code> happens to have only a single value, which is a scalar, the result returned is a vector (we already mentioned this in <a class="reference internal" href="Data-and-Variables.html#data-and-variables-array-indexing"><span class="std std-numref">Section 2.5.3</span></a>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">cols</span> <span class="kd">←</span> <span class="m">4</span>
@@ -5646,7 +5628,7 @@ Fe2O3
 </span></div></div>
 </div>
 <p>With <code class="docutils literal notranslate"><span class="pre">,cols</span></code>, whatever the rank of <code class="docutils literal notranslate"><span class="pre">cols</span></code> is, the result will always be a matrix.</p>
-<p><em>Ravel</em> can be associated with an <em>Axis</em> specifier; this will be discussed in the <em>Specialist’s Section</em>.</p>
+<p><em>Ravel</em> can be associated with an <em>Axis</em> specifier; this will be discussed in <a class="reference internal" href="#some-primitive-functions-ravel-with-axis"><span class="std std-numref">Section 3.19.5</span></a>.</p>
 </div>
 <div class="section" id="empty-vectors-and-black-holes">
 <span id="some-primitive-functions-empty-vectors-and-black-holes"></span><h2><span class="section-number">3.17. </span>Empty Vectors and Black Holes<a class="headerlink" href="#empty-vectors-and-black-holes" title="Permalink to this headline">¶</a></h2>
@@ -8472,7 +8454,7 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">23 34 45 56 67 78 89 100 111 122 133 144 155 166 177 188 199
 </span></div></div>
 </div>
-<p>Notice the final expression is equivalent to the algorithm presented in the “<em>Basic Usage</em>” subsection about the <em>Index Generator</em>, and working our way up to the expression is easier than trying to memorise an algorithm that ends up being longer!</p>
+<p>Notice the final expression is equivalent to the algorithm presented in <a class="reference internal" href="#some-primitive-functions-basic-usage"><span class="std std-numref">Section 3.15.1</span></a>, and working our way up to the expression is easier than trying to memorise an algorithm that ends up being longer!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">23</span><span class="o">+</span><span class="m">11</span><span class="o">×</span><span class="p">(</span><span class="o">⍳</span><span class="m">17</span><span class="p">)</span><span class="o">-</span><span class="m">1</span>
