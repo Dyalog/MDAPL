@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -761,26 +762,7 @@
 <div class="section" id="most-symbols-have-a-double-meaning">
 <span id="introduction-most-symbols-have-a-double-meaning"></span><h2>Most Symbols Have a Double Meaning<a class="headerlink" href="#most-symbols-have-a-double-meaning" title="Permalink to this headline">¶</a></h2>
 <p>This is not a peculiarity of APL; in algebra we are familiar with the use of symbols as common as the minus sign being used in two different ways.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p></p></th>
-<th class="text-align:left head"><p></p></th>
-<th class="text-align:left head"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p>In the expression</p></td>
-<td class="text-align:left"><p><span class="math notranslate nohighlight">\(a = x - y\)</span></p></td>
-<td class="text-align:left"><p>the minus sign means subtract.</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>Whereas in</p></td>
-<td class="text-align:left"><p><span class="math notranslate nohighlight">\(a = -y\)</span></p></td>
-<td class="text-align:left"><p>the minus sign indicates the negation of <span class="math notranslate nohighlight">\(y\)</span>.</p></td>
-</tr>
-</tbody>
-</table>
-<p>The first form is called the “<strong><em>dyadic</em></strong>” use of the symbol.
-The second form is called the “<strong><em>monadic</em></strong>” use of the symbol.</p>
+<p>In the expression <span class="math notranslate nohighlight">\(a = x \color{red}{-} y\)</span> the minus sign means subtract, whereas in <span class="math notranslate nohighlight">\(a = \color{red}{-}y\)</span> the minus sign indicates the negation of <span class="math notranslate nohighlight">\(y\)</span>. The first form is called the “<strong><em>dyadic</em></strong>” use of the symbol. The second form is called the “<strong><em>monadic</em></strong>” use of the symbol.</p>
 <p>It is the same in APL, where most of the symbols can have two meanings.</p>
 <p>For example, to find the shape (the dimensions) of an array, one uses the Greek letter Rho (<code class="docutils literal notranslate"><span class="pre">⍴</span></code>), which can be read “<em>shape of …</em>”, in its monadic use. It is produced using <kbd>APL</kbd>+<kbd>r</kbd>.</p>
 <p>For example,</p>
@@ -900,52 +882,75 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Simple, isn’t it? This gives the total of all the items of the array.</p>
 <p>You can read this as “<em>Plus Reduction</em>” of the variable <code class="docutils literal notranslate"><span class="pre">costs</span></code>.</p>
 <p>To gain a better understanding of the process:</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p></p></th>
-<th class="text-align:left head"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p>When we write an instruction such as</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">+/</span> <span class="pre">21</span> <span class="pre">45</span> <span class="pre">18</span> <span class="pre">27</span> <span class="pre">11</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>it works as if we had written</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">21</span> <span class="pre">+</span> <span class="pre">45</span> <span class="pre">+</span> <span class="pre">18</span> <span class="pre">+</span> <span class="pre">27</span> <span class="pre">+</span> <span class="pre">11</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p>and we obtain the sum</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">122</span></code></p></td>
-</tr>
-</tbody>
-</table>
-<p>In fact, it works as if we had “inserted” the symbol <code class="docutils literal notranslate"><span class="pre">+</span></code> between the values.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p></p></th>
-<th class="text-align:left head"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p>But then, if we write</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">×/</span> <span class="pre">21</span> <span class="pre">45</span> <span class="pre">18</span> <span class="pre">27</span> <span class="pre">11</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>it works as if we had written</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">21</span> <span class="pre">×</span> <span class="pre">45</span> <span class="pre">×</span> <span class="pre">18</span> <span class="pre">×</span> <span class="pre">27</span> <span class="pre">×</span> <span class="pre">11</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p>so, we get the product</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">5051970</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>Similarly, if we write</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">⌈/</span> <span class="pre">21</span> <span class="pre">45</span> <span class="pre">18</span> <span class="pre">27</span> <span class="pre">11</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p>it works as if we had written</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">21</span> <span class="pre">⌈</span> <span class="pre">45</span> <span class="pre">⌈</span> <span class="pre">18</span> <span class="pre">⌈</span> <span class="pre">27</span> <span class="pre">⌈</span> <span class="pre">11</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>so, we obtain the largest term</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">45</span></code></p></td>
-</tr>
-</tbody>
-</table>
+<p>When we write an instruction such as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="m">21</span> <span class="m">45</span> <span class="m">18</span> <span class="m">27</span> <span class="m">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">122
+</span></div></div>
+</div>
+<p>it works as if we had written</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">21</span> <span class="o">+</span> <span class="m">45</span> <span class="o">+</span> <span class="m">18</span> <span class="o">+</span> <span class="m">27</span> <span class="o">+</span> <span class="m">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">122
+</span></div></div>
+</div>
+<p>and we obtain the sum <code class="docutils literal notranslate"><span class="pre">122</span></code>.</p>
+<p>In fact, it works as if we had “inserted” the symbol <code class="docutils literal notranslate"><span class="pre">+</span></code> between the values. But then, if we write</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">×</span><span class="na">/</span> <span class="m">21</span> <span class="m">45</span> <span class="m">18</span> <span class="m">27</span> <span class="m">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5051970
+</span></div></div>
+</div>
+<p>it works as if we had written</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">21</span> <span class="o">×</span> <span class="m">45</span> <span class="o">×</span> <span class="m">18</span> <span class="o">×</span> <span class="m">27</span> <span class="o">×</span> <span class="m">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5051970
+</span></div></div>
+</div>
+<p>so, we get the product <code class="docutils literal notranslate"><span class="pre">5051970</span></code>.</p>
+<p>Similarly, if we write</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⌈</span><span class="na">/</span> <span class="m">21</span> <span class="m">45</span> <span class="m">18</span> <span class="m">27</span> <span class="m">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">45
+</span></div></div>
+</div>
+<p>it works as if we had written</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">21</span> <span class="o">⌈</span> <span class="m">45</span> <span class="o">⌈</span> <span class="m">18</span> <span class="o">⌈</span> <span class="m">27</span> <span class="o">⌈</span> <span class="m">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">45
+</span></div></div>
+</div>
+<p>so, we obtain the largest term <code class="docutils literal notranslate"><span class="pre">45</span></code></p>
 <p>Reduction, represented by the symbol <code class="docutils literal notranslate"><span class="pre">/</span></code>, belongs to a special category of symbols called “<em><strong>Operators</strong></em>”. All the other symbols (<code class="docutils literal notranslate"><span class="pre">+</span></code> <code class="docutils literal notranslate"><span class="pre">-</span></code> <code class="docutils literal notranslate"><span class="pre">×</span></code> <code class="docutils literal notranslate"><span class="pre">⌈</span></code> <code class="docutils literal notranslate"><span class="pre">⍴</span></code> <code class="docutils literal notranslate"><span class="pre">⍉</span></code> …) are called “<em><strong>Functions</strong></em>” (addition, subtraction, multiplication, maximum, shape, etc.).</p>
 <p>The arguments of a function are always data (arrays):</p>
 <div class="cell docutils container">
@@ -2261,7 +2266,7 @@ a t e
 <p>If you still think APL might be the very tool you need, you are ready to read the full text of the following tutorial. You will revisit some of the examples you have seen above, plus many, many others.</p>
 <div class="figure align-default" id="back-to-c">
 <span id="fig-back-to-c"></span><img alt="_images/back_to_C.png" src="_images/back_to_C.png" />
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">A sad man complaining about having to code in C#</span><a class="headerlink" href="#back-to-c" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">A sad man complaining about having to code in C#.</span><a class="headerlink" href="#back-to-c" title="Permalink to this image">¶</a></p>
 </div>
 <div class="toctree-wrapper compound">
 </div>

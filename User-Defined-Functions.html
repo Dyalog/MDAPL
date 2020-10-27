@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -1127,12 +1128,12 @@
 <p>The default configuration is consistent with other software development tools and in it is possible to divide the session window into three parts which can be resized, as shown in <a class="reference internal" href="#fig-ide-window-layout"><span class="std std-numref">Fig. 4.1</span></a>:</p>
 <div class="figure align-default" id="ide-window-layout">
 <span id="fig-ide-window-layout"></span><img alt="_images/IDE_Window_Layout.png" src="_images/IDE_Window_Layout.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1 </span><span class="caption-text">The default window configuration</span><a class="headerlink" href="#ide-window-layout" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.1 </span><span class="caption-text">The default window configuration.</span><a class="headerlink" href="#ide-window-layout" title="Permalink to this image">¶</a></p>
 </div>
 <p>This configuration provides a single Edit window and a single Trace window, each of which is “docked” along one of the Session window borders. You can dock these windows along any of the Session window sides. For example, <a class="reference internal" href="#fig-ide-window-horizontal-layout"><span class="std std-numref">Fig. 4.2</span></a> shows a configuration with three horizontal panes, highly suitable for entering and editing very long statements.</p>
 <div class="figure align-default" id="ide-window-horizontal-layout">
 <span id="fig-ide-window-horizontal-layout"></span><img alt="_images/IDE_Window_Horizontal_Layout.png" src="_images/IDE_Window_Horizontal_Layout.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text">The Edit and Trace windows in a horizontal layout</span><a class="headerlink" href="#ide-window-horizontal-layout" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2 </span><span class="caption-text">The Edit and Trace windows in a horizontal layout.</span><a class="headerlink" href="#ide-window-horizontal-layout" title="Permalink to this image">¶</a></p>
 </div>
 <p>The Edit window supports the <em>Multiple Document Interface</em> (MDI). This means that you can work on more than one function at a time.</p>
 <ul class="simple">
@@ -1142,7 +1143,7 @@
 <p>If you are working on a relatively small screen you may find that you prefer to work with “floating” windows in a layout similar to the one in <a class="reference internal" href="#fig-ide-floating-window-layout"><span class="std std-numref">Fig. 4.3</span></a>:</p>
 <div class="figure align-default" id="ide-floating-window-layout">
 <span id="fig-ide-floating-window-layout"></span><img alt="_images/IDE_Floating_Window_Layout.png" src="_images/IDE_Floating_Window_Layout.png" />
-<p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text">“floating” windows layout</span><a class="headerlink" href="#ide-floating-window-layout" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.3 </span><span class="caption-text">“floating” windows layout.</span><a class="headerlink" href="#ide-floating-window-layout" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p>On the Windows interpreter, you can either</p>
@@ -1154,14 +1155,14 @@
 </ul>
 <div class="figure align-default" id="ide-configure-classic-mode">
 <span id="fig-ide-configure-classic-mode"></span><img alt="_images/IDE_Configure_Classic_Mode.png" src="_images/IDE_Configure_Classic_Mode.png" />
-<p class="caption"><span class="caption-number">Fig. 4.4 </span><span class="caption-text">Option to set “Classic Dyalog mode”</span><a class="headerlink" href="#ide-configure-classic-mode" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.4 </span><span class="caption-text">Option to set “Classic Dyalog mode”.</span><a class="headerlink" href="#ide-configure-classic-mode" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p>If you are using RIDE you can go to “Edit” ⇨ “Preferences” ⇨ “Windows” and enable “Floating windows” as shown in <a class="reference internal" href="#fig-ride-configure-floating-windows"><span class="std std-numref">Fig. 4.5</span></a>:</p></li>
 </ul>
 <div class="figure align-default" id="ride-configure-floating-windows">
 <span id="fig-ride-configure-floating-windows"></span><img alt="_images/RIDE_Configure_Floating_Windows.png" src="_images/RIDE_Configure_Floating_Windows.png" />
-<p class="caption"><span class="caption-number">Fig. 4.5 </span><span class="caption-text">Enable “floating” windows in RIDE</span><a class="headerlink" href="#ride-configure-floating-windows" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.5 </span><span class="caption-text">Enable “floating” windows in RIDE.</span><a class="headerlink" href="#ride-configure-floating-windows" title="Permalink to this image">¶</a></p>
 </div>
 <p>Working with floating windows has the added benefit of allowing you to have a stack of trace windows (as opposed to a single trace window), showing which functions call which other. This will be explored in <code class="xref std std-numref docutils literal notranslate"><span class="pre">First-Aid-Kit-Choose-Your-Configuration</span></code>.</p>
 </div>
@@ -1191,7 +1192,7 @@
 <p>If you are using RIDE and this capability is not ON by default, you can turn it ON by setting the <code class="docutils literal notranslate"><span class="pre">DYALOG_LINEEDITOR_MODE</span></code> environment variable to <code class="docutils literal notranslate"><span class="pre">1</span></code> in the connection menu, like demonstrated in <a class="reference internal" href="#fig-ride-enable-multiline-input"><span class="std std-numref">Fig. 4.6</span></a>.</p>
 <div class="figure align-default" id="ride-enable-multiline-input">
 <span id="fig-ride-enable-multiline-input"></span><img alt="_images/RIDE_Enable_Multiline_Input.png" src="_images/RIDE_Enable_Multiline_Input.png" />
-<p class="caption"><span class="caption-number">Fig. 4.6 </span><span class="caption-text">Configuring RIDE to allow for multi-line input</span><a class="headerlink" href="#ride-enable-multiline-input" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.6 </span><span class="caption-text">Configuring RIDE to allow for multi-line input.</span><a class="headerlink" href="#ride-enable-multiline-input" title="Permalink to this image">¶</a></p>
 </div>
 <p>Secondly, even if multi-line input is enabled, you have to be very careful not to press <kbd>Enter</kbd> and <em><strong>fix</strong></em> the dfn by mistake. This is not a terrible blunder but it does lose some time and breaks your train of thought. In APL, to <em><strong>fix</strong></em> a file means to define the variables (data, functions and operators) in the file and to make them available in the session. Hence, to fix a function means assigning it to a name and making it available for use in the session window.</p>
 <p>For these reasons, it is more appropriate to edit multi-line dfns and tradfns in a suitable text editor. The built-in editors for the Windows interpreter and for RIDE are likely to be suitable for you, but other alternatives exist. You can find an enumeration of most of the available alternatives over at <a class="reference external" href="https://aplwiki.com/wiki/Text_editors">the APL Wiki</a>. We will also cover this in more depth in <span class="xref myst">the chapter about source code management</span>.</p>
@@ -1373,12 +1374,12 @@
 <p>Unless you already redefined the defaults, a mostly empty window should open to the right of the session. We include an example screenshot of such a window from the Windows interpreter in <a class="reference internal" href="#fig-win-editor"><span class="std std-numref">Fig. 4.7</span></a>:</p>
 <div class="figure align-default" id="win-editor">
 <span id="fig-win-editor"></span><img alt="_images/Win_Editor.png" src="_images/Win_Editor.png" />
-<p class="caption"><span class="caption-number">Fig. 4.7 </span><span class="caption-text">The edit window opened by the command <code class="docutils literal notranslate"><span class="pre">)ED</span> <span class="pre">HarmonicMean</span></code></span><a class="headerlink" href="#win-editor" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.7 </span><span class="caption-text">The edit window opened by the command <code class="docutils literal notranslate"><span class="pre">)ED</span> <span class="pre">HarmonicMean</span></code>.</span><a class="headerlink" href="#win-editor" title="Permalink to this image">¶</a></p>
 </div>
 <p>Now that we have a window in which to define our dfn, we can go ahead and implement the harmonic mean. We shall split the process into a series of simple steps, as shown in <a class="reference internal" href="#fig-win-editor-harmonic-mean"><span class="std std-numref">Fig. 4.8</span></a>: calculate the inverses, sum them, invert the sum.</p>
 <div class="figure align-default" id="win-editor-harmonic-mean">
 <span id="fig-win-editor-harmonic-mean"></span><img alt="_images/Win_Editor_Harmonic_Mean.png" src="_images/Win_Editor_Harmonic_Mean.png" />
-<p class="caption"><span class="caption-number">Fig. 4.8 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">HarmonicMean</span></code> function defined in the edit window</span><a class="headerlink" href="#win-editor-harmonic-mean" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.8 </span><span class="caption-text">The <code class="docutils literal notranslate"><span class="pre">HarmonicMean</span></code> function defined in the edit window.</span><a class="headerlink" href="#win-editor-harmonic-mean" title="Permalink to this image">¶</a></p>
 </div>
 <p>We also define it in this notebook:</p>
 <div class="cell docutils container">
@@ -1511,7 +1512,7 @@ HarmonicMean[1] inverses←÷⍵
 <p>Thankfully, both RIDE and the Windows interpreter have an option that can be set to display line numbers (cf. <a class="reference internal" href="#fig-editors-toggle-line-numbers"><span class="std std-numref">Fig. 4.9</span></a>).</p>
 <div class="figure align-default" id="editors-toggle-line-numbers">
 <span id="fig-editors-toggle-line-numbers"></span><img alt="_images/Editors_Toggle_Line_Numbers.png" src="_images/Editors_Toggle_Line_Numbers.png" />
-<p class="caption"><span class="caption-number">Fig. 4.9 </span><span class="caption-text">Option to toggle line numbers in RIDE (to the right) and the Windows interpreter (to the left)</span><a class="headerlink" href="#editors-toggle-line-numbers" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.9 </span><span class="caption-text">Option to toggle line numbers in RIDE (to the right) and the Windows interpreter (to the left).</span><a class="headerlink" href="#editors-toggle-line-numbers" title="Permalink to this image">¶</a></p>
 </div>
 <p>Different people like to comment their code in different ways, and naturally dfns can be commented. For illustrative purposes, consider the dfn that follows, which has comments before any statement, inline with some statements, between the statements and at the end of the dfn:</p>
 <div class="cell docutils container">
@@ -2269,7 +2270,7 @@ Mexico
 <p>The subsequent lines have the statements of the function itself and, in particular, the final line in which we perform the <code class="docutils literal notranslate"><span class="pre">mean</span> <span class="pre">←</span> <span class="pre">...</span></code> assignment is where we establish the result that will be returned by the tradfn.</p>
 <div class="figure align-default" id="editor-tradharmonicmean">
 <span id="fig-editor-tradharmonicmean"></span><img alt="_images/Editor_TradHarmonicMean.png" src="_images/Editor_TradHarmonicMean.png" />
-<p class="caption"><span class="caption-number">Fig. 4.10 </span><span class="caption-text">A tradfn defined in the editor and without delimiting Del characters</span><a class="headerlink" href="#editor-tradharmonicmean" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.10 </span><span class="caption-text">A tradfn defined in the editor and without delimiting Del characters.</span><a class="headerlink" href="#editor-tradharmonicmean" title="Permalink to this image">¶</a></p>
 </div>
 <p>The function is now available for use:</p>
 <div class="cell docutils container">
@@ -2909,7 +2910,7 @@ PrintE[1] ⎕←e
 <p>The clauses <code class="docutils literal notranslate"><span class="pre">:If</span></code> and <code class="docutils literal notranslate"><span class="pre">:EndIf</span></code> delimit a block of statements (Block <strong>1</strong> in <a class="reference internal" href="#fig-control-flow-if-endif"><span class="std std-numref">Fig. 4.11</span></a>), which will be executed only if the condition specified by the <code class="docutils literal notranslate"><span class="pre">:If</span></code> clause is satisfied.</p>
 <div class="figure align-default" id="control-flow-if-endif">
 <span id="fig-control-flow-if-endif"></span><img alt="_images/Control_Flow_If_EndIf.png" src="_images/Control_Flow_If_EndIf.png" />
-<p class="caption"><span class="caption-number">Fig. 4.11 </span><span class="caption-text">A diagram with the usage of <code class="docutils literal notranslate"><span class="pre">:If...</span> <span class="pre">:EndIf</span></code></span><a class="headerlink" href="#control-flow-if-endif" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.11 </span><span class="caption-text">A diagram with the usage of <code class="docutils literal notranslate"><span class="pre">:If...</span> <span class="pre">:EndIf</span></code>.</span><a class="headerlink" href="#control-flow-if-endif" title="Permalink to this image">¶</a></p>
 </div>
 <p>Here is the explanation of what happens inside the function of the diagram <a class="reference internal" href="#fig-control-flow-if-endif"><span class="std std-numref">Fig. 4.11</span></a>:</p>
 <ul class="simple">
@@ -2963,7 +2964,7 @@ PrintE[1] ⎕←e
 <p>For this, we use the additional keyword <code class="docutils literal notranslate"><span class="pre">:Else</span></code> as shown in <a class="reference internal" href="#fig-control-flow-if-else-endif"><span class="std std-numref">Fig. 4.12</span></a>:</p>
 <div class="figure align-default" id="control-flow-if-else-endif">
 <span id="fig-control-flow-if-else-endif"></span><img alt="_images/Control_Flow_If_Else_EndIf.png" src="_images/Control_Flow_If_Else_EndIf.png" />
-<p class="caption"><span class="caption-number">Fig. 4.12 </span><span class="caption-text">A diagram with the usage of <code class="docutils literal notranslate"><span class="pre">:If...</span> <span class="pre">:Else...</span> <span class="pre">:EndIf</span></code></span><a class="headerlink" href="#control-flow-if-else-endif" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.12 </span><span class="caption-text">A diagram with the usage of <code class="docutils literal notranslate"><span class="pre">:If...</span> <span class="pre">:Else...</span> <span class="pre">:EndIf</span></code>.</span><a class="headerlink" href="#control-flow-if-else-endif" title="Permalink to this image">¶</a></p>
 </div>
 <p>Blocks <strong>0</strong> and <strong>3</strong> will always be executed, if present. Block <strong>1</strong> will be executed if <em>Condition</em> <strong>is</strong> satisfied and Block <strong>2</strong> will be executed if <em>Condition</em> is <strong>not</strong> satisfied. Notice this means that exactly <em>one</em> of the two blocks gets executed. Never both, and never none.</p>
 <!--begin example-->
@@ -3016,7 +3017,7 @@ PrintE[1] ⎕←e
 <p>Consider the diagram <a class="reference internal" href="#fig-control-flow-orif"><span class="std std-numref">Fig. 4.13</span></a>:</p>
 <div class="figure align-default" id="control-flow-orif">
 <span id="fig-control-flow-orif"></span><img alt="_images/Control_Flow_OrIf.png" src="_images/Control_Flow_OrIf.png" />
-<p class="caption"><span class="caption-number">Fig. 4.13 </span><span class="caption-text">A diagram with the usage of <code class="docutils literal notranslate"><span class="pre">:OrIf</span></code></span><a class="headerlink" href="#control-flow-orif" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.13 </span><span class="caption-text">A diagram with the usage of <code class="docutils literal notranslate"><span class="pre">:OrIf</span></code>.</span><a class="headerlink" href="#control-flow-orif" title="Permalink to this image">¶</a></p>
 </div>
 <p>If present, Block <strong>0</strong> and Block <strong>3</strong> will always be executed. Block <strong>1</strong> and <em>Condition</em> <strong>2</strong> are only executed if <em>Condition</em> <strong>1</strong> is <strong>not</strong> satisfied. Block <strong>2</strong> is executed if <em>Condition</em> <strong>1</strong> <strong>OR</strong> <em>Condition</em> <strong>2</strong> <strong>is</strong> satisfied.</p>
 <p>In many cases, the same result could be obtained by a more traditional APL approach using <code class="docutils literal notranslate"><span class="pre">∨</span></code>: <code class="docutils literal notranslate"><span class="pre">:If</span> <span class="pre">(Condition</span> <span class="pre">1)</span> <span class="pre">∨</span> <span class="pre">(Condition</span> <span class="pre">2)</span></code>.</p>
@@ -3030,7 +3031,7 @@ PrintE[1] ⎕←e
 <p>We have a similar structure with the <code class="docutils literal notranslate"><span class="pre">:AndIf</span></code> clause, as seen in <a class="reference internal" href="#fig-control-flow-andif"><span class="std std-numref">Fig. 4.14</span></a>:</p>
 <div class="figure align-default" id="control-flow-andif">
 <span id="fig-control-flow-andif"></span><img alt="_images/Control_Flow_AndIf.png" src="_images/Control_Flow_AndIf.png" />
-<p class="caption"><span class="caption-number">Fig. 4.14 </span><span class="caption-text">A diagram with the usage of <code class="docutils literal notranslate"><span class="pre">:AndIf</span></code></span><a class="headerlink" href="#control-flow-andif" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.14 </span><span class="caption-text">A diagram with the usage of <code class="docutils literal notranslate"><span class="pre">:AndIf</span></code>.</span><a class="headerlink" href="#control-flow-andif" title="Permalink to this image">¶</a></p>
 </div>
 <p>Again, Block <strong>0</strong> and Block <strong>3</strong> will always be executed. Block <strong>1</strong> is optional and will only be executed if <em>Condition</em> <strong>1</strong> <strong>is</strong> satisfied. Likewise, <em>Condition</em> <strong>2</strong> will be executed only if <em>Condition</em> <strong>1</strong> is satisfied. Finally, Block <strong>2</strong> is executed if both <em>Condition</em> <strong>1</strong> <strong>AND</strong> <em>Condition</em> <strong>2</strong> are satisfied.</p>
 <!--begin rule-->
@@ -3152,7 +3153,7 @@ BadSyntaxTradfn[2] :If width&lt;20
 <p>Depending on the problem, “<code class="docutils literal notranslate"><span class="pre">:Else</span></code>” may be present or not. If there is no “<code class="docutils literal notranslate"><span class="pre">:Else</span></code>” clause and no condition has been satisfied, nothing will be executed inside the <code class="docutils literal notranslate"><span class="pre">:If</span></code> block.</p>
 <div class="figure align-default" id="control-flow-elseif">
 <span id="fig-control-flow-elseif"></span><img alt="_images/Control_Flow_ElseIf.png" src="_images/Control_Flow_ElseIf.png" />
-<p class="caption"><span class="caption-number">Fig. 4.15 </span><span class="caption-text">A diagram with multiple usages of <code class="docutils literal notranslate"><span class="pre">:ElseIf</span></code> clauses</span><a class="headerlink" href="#control-flow-elseif" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.15 </span><span class="caption-text">A diagram with multiple usages of <code class="docutils literal notranslate"><span class="pre">:ElseIf</span></code> clauses.</span><a class="headerlink" href="#control-flow-elseif" title="Permalink to this image">¶</a></p>
 </div>
 <p>By now, you should be able to tell by yourself that Block <strong>0</strong> and Block <strong>5</strong> in <a class="reference internal" href="#fig-control-flow-elseif"><span class="std std-numref">Fig. 4.15</span></a>, if present, will always be executed.</p>
 <p>For the conditions and the remaining blocks, a simple rule applies:</p>
@@ -3333,7 +3334,7 @@ BadSyntaxTradfn[2] :If width&lt;20
 <p>In <a class="reference internal" href="#fig-control-flow-select"><span class="std std-numref">Fig. 4.16</span></a>, the <em>control expression</em> is simply <code class="docutils literal notranslate"><span class="pre">District</span></code> and the <em>control value</em> is whatever value the variable holds. Then, Block <strong>1</strong> is executed if <code class="docutils literal notranslate"><span class="pre">District</span></code> is equal to 50, Block <strong>2</strong> is executed if <code class="docutils literal notranslate"><span class="pre">District</span></code> is equal to 19 and Block <strong>3</strong> is executed if <code class="docutils literal notranslate"><span class="pre">District</span></code> is equal to 41, 42 or 53, but not if <code class="docutils literal notranslate"><span class="pre">District</span></code> is equal to 50. In that case, Block <strong>1</strong> will already have been executed and the execution won’t reach this <code class="docutils literal notranslate"><span class="pre">:CaseList</span></code>. Therefore, we conclude that including 50 in this <code class="docutils literal notranslate"><span class="pre">:CaseList</span></code> is superfluous and we better remove it to avoid any confusion. Finally, Block <strong>4</strong> is only executed if <code class="docutils literal notranslate"><span class="pre">District</span></code> is not equal to any of the values listed above.</p>
 <div class="figure align-default" id="control-flow-select">
 <span id="fig-control-flow-select"></span><img alt="_images/Control_Flow_Select.png" src="_images/Control_Flow_Select.png" />
-<p class="caption"><span class="caption-number">Fig. 4.16 </span><span class="caption-text">A diagram with the usage of <code class="docutils literal notranslate"><span class="pre">:Select</span></code>, <code class="docutils literal notranslate"><span class="pre">:Case</span></code> and <code class="docutils literal notranslate"><span class="pre">:CaseList</span></code></span><a class="headerlink" href="#control-flow-select" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.16 </span><span class="caption-text">A diagram with the usage of <code class="docutils literal notranslate"><span class="pre">:Select</span></code>, <code class="docutils literal notranslate"><span class="pre">:Case</span></code> and <code class="docutils literal notranslate"><span class="pre">:CaseList</span></code>.</span><a class="headerlink" href="#control-flow-select" title="Permalink to this image">¶</a></p>
 </div>
 <!--begin remark-->
 <p><em><strong>Remark</strong></em>:</p>
@@ -3845,7 +3846,7 @@ start of the loop
 </ul>
 <div class="figure align-default" id="win-strong-interrupt">
 <span id="fig-win-strong-interrupt"></span><img alt="_images/Win_Strong_Interrupt.png" src="_images/Win_Strong_Interrupt.png" />
-<p class="caption"><span class="caption-number">Fig. 4.17 </span><span class="caption-text">Issuing a strong interrupt in the Windows IDE</span><a class="headerlink" href="#win-strong-interrupt" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.17 </span><span class="caption-text">Issuing a strong interrupt in the Windows IDE.</span><a class="headerlink" href="#win-strong-interrupt" title="Permalink to this image">¶</a></p>
 </div>
 <p>The method explained above for the strong interrupts on the Windows IDE also works for weak interrupts. <strong>Be patient!</strong> If Dyalog APL is doing some heavy calculations for you, there may be a few seconds delay from when you click the APL icon until the menu shown above appears.</p>
 <p>After you issue an interrupt (weak or strong) there may be a few more seconds delay before the interrupt actually occurs.</p>
@@ -3858,7 +3859,7 @@ start of the loop
 <p>If we define the tradfn on the Windows IDE, run it and then hit “Action” ⇨ “Interrupt”, what happens is illustrated in <a class="reference internal" href="#fig-win-endless-weak-interrupt"><span class="std std-numref">Fig. 4.18</span></a>.</p>
 <div class="figure align-default" id="win-endless-weak-interrupt">
 <span id="fig-win-endless-weak-interrupt"></span><img alt="_images/Win_Endless_Weak_Interrupt.png" src="_images/Win_Endless_Weak_Interrupt.png" />
-<p class="caption"><span class="caption-number">Fig. 4.18 </span><span class="caption-text">A weak interrupt issued in the Windows IDE</span><a class="headerlink" href="#win-endless-weak-interrupt" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.18 </span><span class="caption-text">A weak interrupt issued in the Windows IDE.</span><a class="headerlink" href="#win-endless-weak-interrupt" title="Permalink to this image">¶</a></p>
 </div>
 <p>Notice the <code class="docutils literal notranslate"><span class="pre">Endless[4]</span></code> message is below the few iteration numbers that were printed, and the stack trace window (that opened at the bottom) has highlighted that same line: line 4. This means that the function has been interrupted just before executing line number 4, and you can be sure that line 3 has finished.</p>
 <p>To back out from the interrupted state of execution, press the <kbd>Esc</kbd> key as many times as needed, or execute the command <code class="docutils literal notranslate"><span class="pre">)Reset</span></code>, which will be explained shortly.</p>
@@ -3869,7 +3870,7 @@ start of the loop
 <p>The result should be slightly different, as you can see in <a class="reference internal" href="#fig-win-endless-strong-interrupt"><span class="std std-numref">Fig. 4.19</span></a>:</p>
 <div class="figure align-default" id="win-endless-strong-interrupt">
 <span id="fig-win-endless-strong-interrupt"></span><img alt="_images/Win_Endless_Strong_Interrupt.png" src="_images/Win_Endless_Strong_Interrupt.png" />
-<p class="caption"><span class="caption-number">Fig. 4.19 </span><span class="caption-text">A strong interrupt issued in the Windows IDE</span><a class="headerlink" href="#win-endless-strong-interrupt" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.19 </span><span class="caption-text">A strong interrupt issued in the Windows IDE.</span><a class="headerlink" href="#win-endless-strong-interrupt" title="Permalink to this image">¶</a></p>
 </div>
 <p>This time, the message <code class="docutils literal notranslate"><span class="pre">Endless[3]</span> <span class="pre">⎕DL</span> <span class="pre">3</span></code> tells you the line it was executing when it got interrupted, and the caret sign tells you which operation was being carried over. In this case, we did not let the 3 second delay finish.</p>
 </div>
@@ -4946,7 +4947,7 @@ Washington,August 28th 1963.
 <p>In the figure <a class="reference internal" href="#fig-example-gui"><span class="std std-numref">Fig. 4.22</span></a> we can see a basic GUI for a calculator. The user can press buttons to type in numbers (give <strong>input</strong> to the application) and to perform arithmetic operations on those numbers. After the results are calculated, they are shown in the white boxes at the top of the application (the application gives <strong>output</strong> to the user).</p>
 <div class="figure align-default" id="example-gui">
 <span id="fig-example-gui"></span><img alt="_images/Example_GUI.png" src="_images/Example_GUI.png" />
-<p class="caption"><span class="caption-number">Fig. 4.22 </span><span class="caption-text">A basic calculator written in APL</span><a class="headerlink" href="#example-gui" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.22 </span><span class="caption-text">A basic calculator written in APL.</span><a class="headerlink" href="#example-gui" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="requesting-values-from-the-keyboard">
@@ -5919,7 +5920,7 @@ NOPQRSTUVWXYZ
 <p>For some items (e.g. numeric matrices, some nested arrays) the editor is only good for viewing them, while for others such as functions, text vectors and text matrices, the editor can also be used to edit them. In <a class="reference internal" href="#fig-win-editor-edit-character-matrix"><span class="std std-numref">Fig. 4.23</span></a> we have invoked the editor, and changed the contents of our <code class="docutils literal notranslate"><span class="pre">charMat</span></code> variable:</p>
 <div class="figure align-default" id="win-editor-edit-character-matrix">
 <span id="fig-win-editor-edit-character-matrix"></span><img alt="_images/Win_Editor_Edit_Character_Matrix.png" src="_images/Win_Editor_Edit_Character_Matrix.png" />
-<p class="caption"><span class="caption-number">Fig. 4.23 </span><span class="caption-text">Editing a character matrix with the built-in editor of the Windows interpreter</span><a class="headerlink" href="#win-editor-edit-character-matrix" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.23 </span><span class="caption-text">Editing a character matrix with the built-in editor of the Windows interpreter.</span><a class="headerlink" href="#win-editor-edit-character-matrix" title="Permalink to this image">¶</a></p>
 </div>
 <p>In <a class="reference internal" href="#fig-win-editor-edit-character-matrix"><span class="std std-numref">Fig. 4.23</span></a> the edit window tells us that we modified the character matrix. We must now fix it, like we did with dfns before, for the variable to reflect its new value. RIDE doesn’t tell you that the character matrix was modified, but you still need to fix it if you want the new changes to come into effect.</p>
 <p>If we now fix the changes to <code class="docutils literal notranslate"><span class="pre">charMat</span></code>, it will become a matrix with 4 rows and 29 columns (the length of its longest row).</p>
@@ -5967,7 +5968,7 @@ NOPQRSTUVWXYZ
 </ul>
 <div class="figure align-default" id="win-toolbar-edit-object">
 <span id="fig-win-toolbar-edit-object"></span><img alt="_images/Win_Toolbar_Edit_Object.png" src="_images/Win_Toolbar_Edit_Object.png" />
-<p class="caption"><span class="caption-number">Fig. 4.24 </span><span class="caption-text">The “Edit Object” button in the toolbar of the Windows interpreter</span><a class="headerlink" href="#win-toolbar-edit-object" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.24 </span><span class="caption-text">The “Edit Object” button in the toolbar of the Windows interpreter.</span><a class="headerlink" href="#win-toolbar-edit-object" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="what-can-you-edit">
@@ -6238,7 +6239,7 @@ Switch2 Times   Times2  TimesTwo        To      ToCharVector    ToHTML  TradHarm
 <p>To take full advantage of this new technique of developing applications, you should first learn about <em>Namespaces</em> and related topics, notations and commands. For this reason, these tools will be studied later in <span class="xref myst">the chapter about source code management</span>.</p>
 <div class="figure align-default" id="drowning">
 <span id="fig-drowning"></span><img alt="_images/Drowning.png" src="_images/Drowning.png" />
-<p class="caption"><span class="caption-number">Fig. 4.25 </span><span class="caption-text">Man drowning in APL glyphs is reassured by another man telling him about the “First Aid Kit” chapter.</span><a class="headerlink" href="#drowning" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.25 </span><span class="caption-text">Person drowning in APL glyphs is reassured by someone else telling him about the “First Aid Kit” chapter.</span><a class="headerlink" href="#drowning" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

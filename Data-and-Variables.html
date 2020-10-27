@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -1184,27 +1185,31 @@ abcdefghijklmnopqrstuvwxyz
 <p>Using that formula, we can see that:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:left head"><p></p></th>
+<tr class="row-odd"><th class="text-align:left head"><p>Variable</p></th>
 <th class="text-align:left head"><p></p></th>
+<th class="text-align:left head"><p>Shape</p></th>
 <th class="text-align:left head"><p></p></th>
-<th class="text-align:left head"><p></p></th>
+<th class="text-align:left head"><p>Rank</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">prod</span></code></p></td>
 <td class="text-align:left"><p>has a shape equal to</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">2</span> <span class="pre">12</span></code></p></td>
-<td class="text-align:left"><p>and its rank is equal to ………… <code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
+<td class="text-align:left"><p>and its rank is equal to …</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">money</span></code></p></td>
 <td class="text-align:left"><p>has a shape equal to</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">2</span></code></p></td>
-<td class="text-align:left"><p>and its rank is equal to ………… <code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
+<td class="text-align:left"><p>and its rank is equal to …</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">2</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">years</span></code></p></td>
 <td class="text-align:left"><p>has a shape equal to</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
-<td class="text-align:left"><p>and its rank is equal to ………… <code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td class="text-align:left"><p>and its rank is equal to …</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
 </tr>
 </tbody>
 </table>
@@ -1258,10 +1263,10 @@ abcdefghijklmnopqrstuvwxyz
 <p>In this book, we shall use the following terms:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:left head"><p></p></th>
-<th class="text-align:left head"><p></p></th>
-<th class="text-align:left head"><p></p></th>
-<th class="text-align:left head"><p></p></th>
+<tr class="row-odd"><th class="text-align:left head"><p>Term</p></th>
+<th class="text-align:left head"><p>Explanation</p></th>
+<th class="text-align:left head"><p>Example variable</p></th>
+<th class="text-align:left head"><p>Rank</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1273,17 +1278,17 @@ abcdefghijklmnopqrstuvwxyz
 <tr class="row-odd"><td class="text-align:left"><p><em><strong>Scalar</strong></em></p></td>
 <td class="text-align:left"><p>is a single item like</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">discount</span></code></p></td>
-<td class="text-align:left"><p>its rank is 0</p></td>
+<td class="text-align:left"><p>0</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p><em><strong>Vector</strong></em></p></td>
 <td class="text-align:left"><p>is a list of items like</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">years</span></code></p></td>
-<td class="text-align:left"><p>its rank is 1</p></td>
+<td class="text-align:left"><p>1</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p><em><strong>Matrix</strong></em></p></td>
 <td class="text-align:left"><p>is an array of rank 2 like</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">money</span></code></p></td>
-<td class="text-align:left"><p>its rank is 2</p></td>
+<td class="text-align:left"><p>2</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p><em><strong>Table</strong></em></p></td>
 <td class="text-align:left"><p>is a common name for a matrix</p></td>
@@ -1293,7 +1298,7 @@ abcdefghijklmnopqrstuvwxyz
 <tr class="row-odd"><td class="text-align:left"><p><em><strong>Cube</strong></em></p></td>
 <td class="text-align:left"><p>is a common name for 3-D arrays like</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">prod</span></code></p></td>
-<td class="text-align:left"><p>its rank is 3</p></td>
+<td class="text-align:left"><p>3</p></td>
 </tr>
 </tbody>
 </table>
@@ -1481,7 +1486,7 @@ abcdefghijklmnopqrstuvwxyz
 <p>If a vector is too long to be displayed in a single line on your screen, the interpreter session will wrap it onto several lines. But to prevent possible confusion with the display of a matrix, the second line and the following lines will not be aligned at the left margin, but will be indented 6 characters to the right. To show you what we mean, the figure below contains a screenshot of the Windows IDE when we display the variable <code class="docutils literal notranslate"><span class="pre">bignum</span></code>; the vector is split in 3 lines and some of the values are only visible if you scroll right.</p>
 <div class="figure align-default" id="bignum-output">
 <span id="fig-bignum-output"></span><img alt="_images/Bignum_Output.png" src="_images/Bignum_Output.png" />
-<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">A long variable being wrapped in the Windows IDE</span><a class="headerlink" href="#bignum-output" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.1 </span><span class="caption-text">A long variable being wrapped in the Windows IDE.</span><a class="headerlink" href="#bignum-output" title="Permalink to this image">¶</a></p>
 </div>
 <p>Depending on the format in which you are reading this book, you may or may not be able to see all the numbers and they may or may not be laid out in several lines. If they are, then the first line will also not be indented, like in the figure above.</p>
 <div class="cell docutils container">
@@ -1966,12 +1971,12 @@ June
 <p>For example, suppose that we would like to extract the production of the 2nd assembly line, for the first 6 months of the last 2 years, from the array <code class="docutils literal notranslate"><span class="pre">prod</span></code>. Let’s express that in order of the 3 dimensions: Years/Lines/Months:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:left head"><p></p></th>
-<th class="text-align:left head"><p></p></th>
+<tr class="row-odd"><th class="text-align:left head"><p>What we want</p></th>
+<th class="text-align:left head"><p>Relevant indices</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p>The last 2 years are in positions</p></td>
+<tr class="row-even"><td class="text-align:left"><p>The last 2 years</p></td>
 <td class="text-align:left"><p>4 5</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>The second assembly line</p></td>
@@ -3069,7 +3074,7 @@ K
 </ul>
 <div class="figure align-default" id="interpreter-toolbar-save">
 <span id="fig-interpreter-toolbar-save"></span><img alt="_images/Interpreter_Toolbar_Save.png" src="_images/Interpreter_Toolbar_Save.png" />
-<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Windows IDE toolbar with the “Save” toolbar shortcut and the “File” menu highlighted</span><a class="headerlink" href="#interpreter-toolbar-save" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Windows IDE toolbar with the “Save” toolbar shortcut and the “File” menu highlighted.</span><a class="headerlink" href="#interpreter-toolbar-save" title="Permalink to this image">¶</a></p>
 </div>
 <p>If you are using RIDE or if you don’t like clicking menu buttons,</p>
 <ul class="simple">
@@ -3162,7 +3167,7 @@ sales   shape   singleton       tests   tests2  text    trailer two     v       
 <p>This is a bit brutal: all of the contents of the WS are deleted, and no warning message is issued to notify the user of the consequence before the execution of the command. You should avoid using this command, and instead use the “Clear” button on the interpreter toolbar (highlighted in red below), which asks for confirmation. It is safer.</p>
 <div class="figure align-default" id="interpreter-toolbar-clear">
 <span id="fig-interpreter-toolbar-clear"></span><img alt="_images/Interpreter_Toolbar_Clear.png" src="_images/Interpreter_Toolbar_Clear.png" />
-<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Windows IDE with the “Clear” toolbar shortcut highlighted</span><a class="headerlink" href="#interpreter-toolbar-clear" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Windows IDE with the “Clear” toolbar shortcut highlighted.</span><a class="headerlink" href="#interpreter-toolbar-clear" title="Permalink to this image">¶</a></p>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Remark</p>
@@ -3227,7 +3232,7 @@ sales   shape   singleton       tests   tests2  text    trailer two     v       
 </ul>
 <div class="figure align-default" id="interpreter-toolbar-load">
 <span id="fig-interpreter-toolbar-load"></span><img alt="_images/Interpreter_Toolbar_Load.png" src="_images/Interpreter_Toolbar_Load.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4 </span><span class="caption-text">Windows IDE with the “Load” toolbar shortcut highlighted</span><a class="headerlink" href="#interpreter-toolbar-load" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4 </span><span class="caption-text">Windows IDE with the “Load” toolbar shortcut highlighted.</span><a class="headerlink" href="#interpreter-toolbar-load" title="Permalink to this image">¶</a></p>
 </div>
 <p>In all these cases, you will see the familiar file search box, in which you can browse to and select the workspace file you would like to open (or load).</p>
 <p>You can also use the <code class="docutils literal notranslate"><span class="pre">)load</span></code> command followed by a WS name:</p>

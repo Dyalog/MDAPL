@@ -14,6 +14,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -752,25 +753,7 @@
 </li>
 </ol>
 <p>APL has a very rich set of primitive functions. In this chapter, we will explore just a few of them; many others will follow in subsequent chapters.</p>
-<p>In the introduction to this book, we mentioned that in traditional mathematics, some symbols can be used with a single argument or two arguments. For example:</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p></p></th>
-<th class="text-align:left head"><p></p></th>
-<th class="text-align:left head"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p>In the expression</p></td>
-<td class="text-align:left"><p><span class="math notranslate nohighlight">\(a = x - y\)</span></p></td>
-<td class="text-align:left"><p>the minus sign means subtract.</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>Whereas in</p></td>
-<td class="text-align:left"><p><span class="math notranslate nohighlight">\(a = -y\)</span></p></td>
-<td class="text-align:left"><p>the minus sign indicates the negation of <span class="math notranslate nohighlight">\(y\)</span>.</p></td>
-</tr>
-</tbody>
-</table>
+<p>In the introduction to this book, we mentioned that in traditional mathematics, some symbols can be used with a single argument or two arguments. For example, in the expression <span class="math notranslate nohighlight">\(a = x \color{red}{-} y\)</span> the minus sign means subtract. Whereas in <span class="math notranslate nohighlight">\(a = \color{red}{-}y\)</span> the minus sign indicates the negation of <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <p>The first form is called the “<strong><em>dyadic</em></strong>” use of the symbol.
 The second form is called the “<strong><em>monadic</em></strong>” use of the symbol.</p>
 <p>It is the same in APL, where most of the symbols (functions) have a <em>monadic</em> and a <em>dyadic</em> meaning. For example, here <code class="docutils literal notranslate"><span class="pre">⍴</span></code> obtains the shape of the <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span></code> vector:</p>
@@ -1697,7 +1680,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Let us take the complex number <code class="docutils literal notranslate"><span class="pre">3J4</span></code> as an example. If we look at the figure below, we see that the 3 is represented by the bottom side of the triangle and the 4 by the right side of the triangle. The little arrow that goes from the lower-left to the upper-right vertex of the triangle represents the direction in which <code class="docutils literal notranslate"><span class="pre">3J4</span></code> points.</p>
 <div class="figure align-default" id="direction-right-triangle">
 <span id="fig-direction-right-triangle"></span><img alt="_images/Direction_Right_Triangle.png" src="_images/Direction_Right_Triangle.png" />
-<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">A right triangle with sides 3, 4 and 5 representing the complex number <code class="docutils literal notranslate"><span class="pre">3J4</span></code></span><a class="headerlink" href="#direction-right-triangle" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1 </span><span class="caption-text">A right triangle with sides 3, 4 and 5 representing the complex number <code class="docutils literal notranslate"><span class="pre">3J4</span></code>.</span><a class="headerlink" href="#direction-right-triangle" title="Permalink to this image">¶</a></p>
 </div>
 <p>We can also see that said arrow has length 5, as the Pythagorean theorem tells us:</p>
 <div class="cell docutils container">
@@ -1713,7 +1696,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Now <code class="docutils literal notranslate"><span class="pre">×3J4</span></code> is the complex number associated with a triangle that is similar to the one above, but with the arrow measuring 1, exactly like the smaller triangle inside the larger triangle in the figure below:</p>
 <div class="figure align-default" id="direction-right-triangle-scaled">
 <span id="fig-direction-right-triangle-scaled"></span><img alt="_images/Direction_Right_Triangle_Scaled.png" src="_images/Direction_Right_Triangle_Scaled.png" />
-<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Scaled down version of the <code class="docutils literal notranslate"><span class="pre">3J4</span></code> triangle</span><a class="headerlink" href="#direction-right-triangle-scaled" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Scaled down version of the <code class="docutils literal notranslate"><span class="pre">3J4</span></code> triangle.</span><a class="headerlink" href="#direction-right-triangle-scaled" title="Permalink to this image">¶</a></p>
 </div>
 <p>We only have to figure out the lengths of the other two sides:</p>
 <div class="cell docutils container">
@@ -1761,7 +1744,7 @@ The second form is called the “<strong><em>monadic</em></strong>” use of the
 <p>Like monadic <code class="docutils literal notranslate"><span class="pre">×</span></code>, monadic <code class="docutils literal notranslate"><span class="pre">|</span></code> generalises nicely for complex numbers. Take the complex number <code class="docutils literal notranslate"><span class="pre">12J5</span></code> and its representation as a right triangle in the figure below.</p>
 <div class="figure align-default" id="magnitude-right-triangle">
 <span id="fig-magnitude-right-triangle"></span><img alt="_images/Magnitude_Right_Triangle.png" src="_images/Magnitude_Right_Triangle.png" />
-<p class="caption"><span class="caption-number">Fig. 3.3 </span><span class="caption-text">The complex number <code class="docutils literal notranslate"><span class="pre">12J5</span></code> represented by a right triangle</span><a class="headerlink" href="#magnitude-right-triangle" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.3 </span><span class="caption-text">The complex number <code class="docutils literal notranslate"><span class="pre">12J5</span></code> represented by a right triangle.</span><a class="headerlink" href="#magnitude-right-triangle" title="Permalink to this image">¶</a></p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">|12J5</span></code> is the length that is missing in the figure. In this case, it is</p>
 <div class="cell docutils container">
@@ -2617,53 +2600,75 @@ June
 </div>
 <p>Simple, isn’t it? This expression gives the total of all the items in the vector. You can read this as “<em><strong>Plus Reduction</strong></em>” of the variable <code class="docutils literal notranslate"><span class="pre">costs</span></code>.</p>
 <p>To gain a better understanding of the process:</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p></p></th>
-<th class="text-align:left head"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p>When we write an expression such as</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">+/</span> <span class="pre">21</span> <span class="pre">45</span> <span class="pre">18</span> <span class="pre">27</span> <span class="pre">11</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>     it works as if we had written</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">21</span> <span class="pre">+</span> <span class="pre">45</span> <span class="pre">+</span> <span class="pre">18</span> <span class="pre">+</span> <span class="pre">27</span> <span class="pre">+</span> <span class="pre">11</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p>     and we obtain the sum</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">122</span></code></p></td>
-</tr>
-</tbody>
-</table>
-<p>In fact, it works as if we had “inserted” the symbol <code class="docutils literal notranslate"><span class="pre">+</span></code> between the values.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p></p></th>
-<th class="text-align:left head"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p>So, when we write</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">×/</span> <span class="pre">21</span> <span class="pre">45</span> <span class="pre">18</span> <span class="pre">27</span> <span class="pre">11</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>     it is as if we had written</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">21</span> <span class="pre">×</span> <span class="pre">45</span> <span class="pre">×</span> <span class="pre">18</span> <span class="pre">×</span> <span class="pre">27</span> <span class="pre">×</span> <span class="pre">11</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p>     so, we get the product</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">5051970</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>Similarly, when we write</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">⌈/</span> <span class="pre">21</span> <span class="pre">45</span> <span class="pre">18</span> <span class="pre">27</span> <span class="pre">11</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p>     it is as if we had written</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">21</span> <span class="pre">⌈</span> <span class="pre">45</span> <span class="pre">⌈</span> <span class="pre">18</span> <span class="pre">⌈</span> <span class="pre">27</span> <span class="pre">⌈</span> <span class="pre">11</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>     so, we obtain the largest item</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">45</span></code></p></td>
-</tr>
-</tbody>
-</table>
-<p>And so on…</p>
+<p>When we write an expression such as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="m">21</span> <span class="m">45</span> <span class="m">18</span> <span class="m">27</span> <span class="m">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">122
+</span></div></div>
+</div>
+<p>it works as if we had written</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">21</span> <span class="o">+</span> <span class="m">45</span> <span class="o">+</span> <span class="m">18</span> <span class="o">+</span> <span class="m">27</span> <span class="o">+</span> <span class="m">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">122
+</span></div></div>
+</div>
+<p>and we obtain the sum <code class="docutils literal notranslate"><span class="pre">122</span></code>.</p>
+<p>In fact, it works as if we had “inserted” the symbol <code class="docutils literal notranslate"><span class="pre">+</span></code> between the values. But then, if we write</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">×</span><span class="na">/</span> <span class="m">21</span> <span class="m">45</span> <span class="m">18</span> <span class="m">27</span> <span class="m">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5051970
+</span></div></div>
+</div>
+<p>it works as if we had written</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">21</span> <span class="o">×</span> <span class="m">45</span> <span class="o">×</span> <span class="m">18</span> <span class="o">×</span> <span class="m">27</span> <span class="o">×</span> <span class="m">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5051970
+</span></div></div>
+</div>
+<p>so, we get the product <code class="docutils literal notranslate"><span class="pre">5051970</span></code>.</p>
+<p>Similarly, if we write</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⌈</span><span class="na">/</span> <span class="m">21</span> <span class="m">45</span> <span class="m">18</span> <span class="m">27</span> <span class="m">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">45
+</span></div></div>
+</div>
+<p>it works as if we had written</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">21</span> <span class="o">⌈</span> <span class="m">45</span> <span class="o">⌈</span> <span class="m">18</span> <span class="o">⌈</span> <span class="m">27</span> <span class="o">⌈</span> <span class="m">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">45
+</span></div></div>
+</div>
+<p>so, we get the maximum <code class="docutils literal notranslate"><span class="pre">45</span></code>. And so on for other functions we put to the left of <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p>
 <div class="hint admonition">
 <p class="admonition-title">Exercise</p>
 <p>Try to evaluate the following expression in your head or with pen and paper: <code class="docutils literal notranslate"><span class="pre">23⌈</span> <span class="pre">⌈</span> <span class="pre">⌈/</span> <span class="pre">17.81</span> <span class="pre">21.41</span> <span class="pre">9.34</span> <span class="pre">16.53</span></code></p>
@@ -3516,14 +3521,14 @@ CCC
 </ul>
 <div class="figure align-default" id="vertical-concatenation-ab">
 <span id="fig-vertical-concatenation-ab"></span><img alt="_images/Vertical_Concatenation_AB.png" src="_images/Vertical_Concatenation_AB.png" />
-<p class="caption"><span class="caption-number">Fig. 3.4 </span><span class="caption-text">Matrices <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> concatenated together vertically</span><a class="headerlink" href="#vertical-concatenation-ab" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.4 </span><span class="caption-text">Matrices <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> concatenated together vertically.</span><a class="headerlink" href="#vertical-concatenation-ab" title="Permalink to this image">¶</a></p>
 </div>
 <ul class="simple">
 <li><p>and the horizontal concatenation of <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code>:</p></li>
 </ul>
 <div class="figure align-default" id="horizontal-concatenation-ac">
 <span id="fig-horizontal-concatenation-ac"></span><img alt="_images/Horizontal_Concatenation_AC.png" src="_images/Horizontal_Concatenation_AC.png" />
-<p class="caption"><span class="caption-number">Fig. 3.5 </span><span class="caption-text">Matrices <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code> concatenated together horizontally</span><a class="headerlink" href="#horizontal-concatenation-ac" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.5 </span><span class="caption-text">Matrices <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code> concatenated together horizontally.</span><a class="headerlink" href="#horizontal-concatenation-ac" title="Permalink to this image">¶</a></p>
 </div>
 <p>It is not possible to concatenate <code class="docutils literal notranslate"><span class="pre">B</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code> because none of their dimensions are compatible.</p>
 <p>To concatenate vertically, we want the two matrices to be stacked on top of each other, creating a matrix with more <em>rows</em>, i.e. we want to create a matrix with a larger 1st dimension:</p>
