@@ -1,12 +1,15 @@
 title: Mastering Dyalog APL
-author: Bernard Legrand
+author: Bernard Legrand, contributions by Kim S. Andreasen, Daniel Baronet, Gitte Christensen, Peter Donnelly, Morten Kromberg, John Scholes, Adrian Smith and Tim JA. Smith. Reworked by Rodrigo Girão Serrão.
 #copyright: "1982-2020 by Dyalog Ltd"
 
 repository:
     url: https://github.com/RojerGS/MDAPL
     
 html:
+    home_page_in_navbar: false
+    use_edit_page_button: true
     use_repository_button: true
+
     extra_footer: |
       <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
         <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />

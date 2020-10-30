@@ -10,11 +10,15 @@ As of now, this preprocessing step:
 """
 
 import json
+import os
 import re
+import shutil
 import sys
 from pathlib import Path
 from ruamel import yaml
 
+
+BOOK_FOLDER = "book"
 
 CUSTOM_ADMONITION_STYLES = {
     "advice": "tip",
@@ -205,35 +209,57 @@ def create_admonition(lines):
 
     return lines
 
+def copy_md(filename):
+    """Tries to copy a Mardown file to the book folder.
+    
+    This function assumes the filename refers to a .md file.
+    Returns False if the file is not found, True otherwise.
+    """
 
-try:
-    with open("book/_toc.yml", "r") as f:
-        data = yaml.safe_load(f)
-except FileNotFoundError:
-    print("Could not open ToC.")
-    sys.exit()
-
-for dic in data:
+    source = f"{filename}.md"
+    destination = os.path.join(BOOK_FOLDER, source)
     try:
-        filename = Path(dic["file"]).name
-    except KeyError:
-        continue
-
-    try:
-        with open(f"{filename}.ipynb", "r", encoding="utf8") as f:
-            contents = json.load(f)
+        shutil.copy2(source, destination)
+        print(f"copied... {destination}")
+        return True
     except FileNotFoundError:
-        continue
+        return False
 
-    for cell in contents["cells"]:
-        lines = cell["source"]
-        lines = generate_header_labels(filename, lines)
-        lines = generate_cross_references(filename, lines)
-        lines = generate_figure_references(lines)
-        lines = image_to_figure(lines)
-        lines = create_admonition(lines)
+if __name__ == "__main__":
 
-        cell["source"] = lines
+    # Ensure the book folder exists.
+    if not os.path.exists(BOOK_FOLDER):
+        os.makedirs(BOOK_FOLDER)
 
-    with open(f"book/{filename}.ipynb", "w", encoding="utf8") as f:
-        json.dump(contents, f, indent=2)
+    try:
+        with open("book/_toc.yml", "r") as f:
+            data = yaml.safe_load(f)
+    except FileNotFoundError:
+        print("Could not open ToC.")
+        sys.exit()
+
+    for dic in data:
+        try:
+            filename = Path(dic["file"]).name
+        except KeyError:
+            continue
+
+        try:
+            with open(f"{filename}.ipynb", "r", encoding="utf8") as f:
+                contents = json.load(f)
+        except FileNotFoundError:
+            copy_md(filename)
+            continue
+
+        for cell in contents["cells"]:
+            lines = cell["source"]
+            lines = generate_header_labels(filename, lines)
+            lines = generate_cross_references(filename, lines)
+            lines = generate_figure_references(lines)
+            lines = image_to_figure(lines)
+            lines = create_admonition(lines)
+
+            cell["source"] = lines
+
+        with open(f"{BOOK_FOLDER}/{filename}.ipynb", "w", encoding="utf8") as f:
+            json.dump(contents, f, indent=2)
