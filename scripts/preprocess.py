@@ -15,12 +15,6 @@ import sys
 from pathlib import Path
 from ruamel import yaml
 
-try:
-    with open("book/_toc.yml", "r") as f:
-        data = yaml.safe_load(f)
-except FileNotFoundError:
-    print("Could not open ToC.")
-    sys.exit()
 
 CUSTOM_ADMONITION_STYLES = {
     "advice": "tip",
@@ -211,17 +205,27 @@ def create_admonition(lines):
 
     return lines
 
+
+try:
+    with open("book/_toc.yml", "r") as f:
+        data = yaml.safe_load(f)
+except FileNotFoundError:
+    print("Could not open ToC.")
+    sys.exit()
+
 for dic in data:
     try:
         filename = Path(dic["file"]).name
     except KeyError:
         continue
 
-    with open(f"{filename}.ipynb", "r", encoding="utf8") as f:
-        #contents = f.read()
-        conts = json.load(f)
+    try:
+        with open(f"{filename}.ipynb", "r", encoding="utf8") as f:
+            contents = json.load(f)
+    except FileNotFoundError:
+        continue
 
-    for cellid, cell in enumerate(conts["cells"]):
+    for cell in contents["cells"]:
         lines = cell["source"]
         lines = generate_header_labels(filename, lines)
         lines = generate_cross_references(filename, lines)
@@ -232,4 +236,4 @@ for dic in data:
         cell["source"] = lines
 
     with open(f"book/{filename}.ipynb", "w", encoding="utf8") as f:
-        json.dump(conts, f, indent=2)
+        json.dump(contents, f, indent=2)
