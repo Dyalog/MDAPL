@@ -17,7 +17,7 @@ build_html:
 build_latex:
 	jb build $(book) --builder latex
 	python scripts/tex_postprocess.py
-	"NOTICE: The tex file needs to be compiled!"
+	echo "NOTICE: The tex file needs to be compiled!"
 
 publish_html:
 	ghp-import -npf $(html_build_folder)
