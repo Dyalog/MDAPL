@@ -1,5 +1,6 @@
-- file: 'Introduction'
+- file: 'README'
   numbered: true
+- file: 'Introduction'
 - file: 'Getting-Started'
 - file: 'Data-and-Variables'
 - file: 'Some-Primitive-Functions'
