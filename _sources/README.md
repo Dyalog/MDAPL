@@ -16,5 +16,7 @@ The first edition dates back to November of 2009 and was written by Bernard Legr
 
 This version you are reading is a rework by Rodrigo Girão Serrão.
 
+Whenever possible, the prose and examples are taken verbatim from the first edition of the book. When needed, the book's explanations and examples are updated and rewritten. Finally, new sections/chapters are being added to cover things that didn't exist back in November of 2009, in Dyalog APL 12.0.
+
 [MDAPL]: https://github.com/RojerGS/MDAPL
 [MDAPL-html]: https://rojergs.github.io/MDAPL
