@@ -1,6 +1,6 @@
 # Mastering Dyalog APL
 
-The “Mastering Dyalog APL” book is the *de facto* standard for people who are looking to learn Dyalog APL from a book. In today's world technology changes rapidly, so a printed book about a programming language is at risk of becoming outdated.
+The "[Mastering Dyalog APL][original]" book is the *de facto* standard for people who are looking to learn Dyalog APL from a book. In today's world technology changes rapidly, so a printed book about a programming language is at risk of becoming outdated.
 
 <!-- begin warning -->
 ***Warning***:
@@ -27,3 +27,4 @@ Whenever possible, the prose and examples are taken verbatim from the first edit
 
 [MDAPL]: https://github.com/RojerGS/MDAPL
 [MDAPL-html]: https://rojergs.github.io/MDAPL
+[original]: https://www.dyalog.com/mastering-dyalog-apl.htm

@@ -30,16 +30,15 @@ def set_APL_font():
     with open(DEST_FILE_PATH, "r", encoding="utf8") as f:
         lines = f.readlines()
 
-    # Look for the class declaration (\documentclass{...}) to use packages.
+    # Look for \begin{document} to set the font right before that.
     i = 0
     while i < len(lines):
-        line = lines[i]
-        if line.startswith("\\begin{document}"):
+        if lines[i].startswith("\\begin{document}"):
             break
         i += 1
     
     if i > len(lines):
-        raise Exception("Could not locate \\documentclass to set APL font after.")
+        raise Exception("Could not locate document beginning to set APL font before.")
 
     with open(DEST_FILE_PATH, "w", encoding="utf8") as f:
         f.write("".join(lines[:i]))
