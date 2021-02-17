@@ -1,14 +1,30 @@
 
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
     <title>6. Appendices &#8212; Mastering Dyalog APL</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
@@ -17,6 +33,9 @@
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -25,8 +44,8 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -40,8 +59,8 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="5. User Defined Functions" href="User-Defined-Functions.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 
@@ -61,15 +80,12 @@
   <h1 class="site-logo" id="site-title">Mastering Dyalog APL</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
+    <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="Introduction.html">
    1. Introduction - Will You Play APL With Me?
@@ -102,9 +118,7 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -133,11 +147,11 @@
             <i class="fas fa-arrow-up"></i>
         </button>
         
-        <div class="dropdown-buttons-trigger">
+        
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -149,8 +163,8 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
+
         <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -171,7 +185,8 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
@@ -180,6 +195,7 @@
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
             <i class="fas fa-list"></i> Contents
         </div>
@@ -208,6 +224,7 @@
 </ul>
 
         </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -249,8 +266,8 @@
 <td class="text-align:left"><p>Divide</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>Magnitude</p></td>
-<td class="text-align:center"><p><code>| B</code></p></td>
-<td class="text-align:center"><p><code>A | B</code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">\|</span> <span class="pre">B</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">\|</span> <span class="pre">B</span></code></p></td>
 <td class="text-align:left"><p>Residue</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>Floor</p></td>
@@ -551,13 +568,13 @@
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">f⍥g</span> <span class="pre">Y</span></code></p></td>
-<td class="text-align:center"><p><code>÷⍥|Y</code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">÷⍥\|Y</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p></p></td>
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f⍥g</span> <span class="pre">Y</span></code></p></td>
-<td class="text-align:center"><p><code>X⌈⍥|Y</code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">X⌈⍥\|Y</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>Atop</p></td>
 <td class="text-align:center"><p>D</p></td>
@@ -599,13 +616,13 @@
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:center"><p>M</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">A&#64;g</span> <span class="pre">Y</span></code> or <code class="docutils literal notranslate"><span class="pre">f&#64;g</span> <span class="pre">Y</span></code></p></td>
-<td class="text-align:center"><p><code>÷&#64;(2∘|)Y</code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">÷&#64;(2∘\|)Y</span></code></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p></p></td>
 <td class="text-align:center"><p></p></td>
 <td class="text-align:center"><p>D</p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">f&#64;g</span> <span class="pre">Y</span></code></p></td>
-<td class="text-align:center"><p><code>X×&#64;(2∘|)Y</code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">X×&#64;(2∘\|)Y</span></code></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>Spawn</p></td>
 <td class="text-align:center"><p>M</p></td>
@@ -700,9 +717,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→──────────────────────────────────────────────────────────────────────────────────────────────┐
-│2121 4778 4914 3139 4561 221 1252 1530 4475 332 3507 1829 1710 4964 3849 669 3653 3415 3867 151│
-└~──────────────────────────────────────────────────────────────────────────────────────────────┘
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">2121 4778 4914 3139 4561 221 1252 1530 4475 332 3507 1829 1710 4964 3849 669 3653 3415 3867 151
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -713,12 +728,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→──────────────────────┐
-↓ 90 160 420 500  20  30│
-│110 450 170 370 290 360│
-│340 190 320 120 510 370│
-│150 460 240 520 490 280│
-└~──────────────────────┘
+<div class="output text_html"><span style="white-space:pre; font-family: monospace"> 90 160 420 500  20  30
+110 450 170 370 290 360
+340 190 320 120 510 370
+150 460 240 520 490 280
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -729,12 +742,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→──────────────────────┐
-↓ 89 166 420 508  12  23│
-│111 453 177 365 284 352│
-│349 192 329 115 515 374│
-│160 467 234 519 485 283│
-└~──────────────────────┘
+<div class="output text_html"><span style="white-space:pre; font-family: monospace"> 89 166 420 508  12  23
+111 453 177 365 284 352
+349 192 329 115 515 374
+160 467 234 519 485 283
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -744,11 +755,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→────┐
-↓H2SO4│
-│CaCO3│
-│Fe2O3│
-└─────┘
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">H2SO4
+CaCO3
+Fe2O3
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -758,15 +767,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→───────────────────────┐
-↓ ┌→─────┐       ┌→────┐ │
-│ │Dyalog│ 44    │Hello│ │
-│ └──────┘       └─────┘ │
-│          ┌→──┐ ┌→────┐ │
-│ 27       ↓8 6│ ↓1 2 0│ │
-│          │2 4│ │0 0 5│ │
-│          └~──┘ └~────┘ │
-└∊───────────────────────┘
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌──────┬───┬─────┐
+│Dyalog│44 │Hello│
+├──────┼───┼─────┤
+│27    │8 6│1 2 0│
+│      │2 4│0 0 5│
+└──────┴───┴─────┘
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -777,11 +783,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→─────────────────────────────┐
-↓  21.21 1534.88 375.46  704.5 │
-│1125.14 1963.52 464.45 1438.25│
-│ 796.53 1569    157.14  886.59│
-└~─────────────────────────────┘
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">  21.21 1534.88 375.46  704.5 
+1125.14 1963.52 464.45 1438.25
+ 796.53 1569    157.14  886.59
 </span></div></div>
 </div>
 </div>
@@ -840,7 +844,10 @@
       </div>
     </div>
 
-    <script src="_static/js/index.js"></script>
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
     
   </body>
 </html>

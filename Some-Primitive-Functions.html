@@ -1,14 +1,30 @@
 
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
     <title>4. Some Primitive Functions &#8212; Mastering Dyalog APL</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
@@ -17,6 +33,9 @@
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -25,8 +44,8 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -41,8 +60,8 @@
     <link rel="next" title="5. User Defined Functions" href="User-Defined-Functions.html" />
     <link rel="prev" title="3. Data and Variables" href="Data-and-Variables.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 
@@ -62,15 +81,12 @@
   <h1 class="site-logo" id="site-title">Mastering Dyalog APL</h1>
   
 </a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
-
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
+    <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="Introduction.html">
    1. Introduction - Will You Play APL With Me?
@@ -103,9 +119,7 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -134,11 +148,11 @@
             <i class="fas fa-arrow-up"></i>
         </button>
         
-        <div class="dropdown-buttons-trigger">
+        
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -150,8 +164,8 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
+
         <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -172,7 +186,8 @@
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
@@ -181,6 +196,7 @@
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        
         <div class="tocsection onthispage pt-5 pb-3">
             <i class="fas fa-list"></i> Contents
         </div>
@@ -724,6 +740,7 @@
 </ul>
 
         </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -2235,7 +2252,7 @@ June
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.0 Unicode\ws\DISPLAY.dws saved Wed Jul 15 20:03:16 2020
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.0 Unicode\ws\DISPLAY.dws saved Tue Dec  1 20:08:12 2020
 </span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→────────────────────────────────────┐
 │ ┌→──┐ ┌→──────────┐ ┌→──┐   ┌→────┐ │
 │ │6 2│ │35 33 26 21│ │7 7│ 3 │19 14│ │
@@ -6280,7 +6297,9 @@ Fe2O3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">¯0.933333 ¯0.866667 ¯0.8 ¯0.733333 ¯0.666667 ¯0.6 ¯0.533333 ¯0.466667 ¯0.4 ¯0.333333 ¯0.266667 ¯0.2 ¯0.133333 ¯0.0666667 0 0.0666667 0.133333 0.2 0.266667 0.333333 0.4 0.466667 0.533333 0.6 0.666667 0.733333 0.8 0.866667 0.933333 1
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">¯0.933333 ¯0.866667 ¯0.8 ¯0.733333 ¯0.666667 ¯0.6 ¯0.533333 ¯0.466667 ¯0.4 ¯0.333333 ¯0.266667 ¯0.2 ¯0.133333 ¯0.0666667 0
+
+       0.0666667 0.133333 0.2 0.266667 0.333333 0.4 0.466667 0.533333 0.6 0.666667 0.733333 0.8 0.866667 0.933333 1
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -6290,7 +6309,9 @@ Fe2O3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">¯4.66667 ¯4.33333 ¯4 ¯3.66667 ¯3.33333 ¯3 ¯2.66667 ¯2.33333 ¯2 ¯1.66667 ¯1.33333 ¯1 ¯0.666667 ¯0.333333 0 0.333333 0.666667 1 1.33333 1.66667 2 2.33333 2.66667 3 3.33333 3.66667 4 4.33333 4.66667 5
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">¯4.66667 ¯4.33333 ¯4 ¯3.66667 ¯3.33333 ¯3 ¯2.66667 ¯2.33333 ¯2 ¯1.66667 ¯1.33333 ¯1 ¯0.666667 ¯0.333333 0 0.333333 0.66666
+
+      7 1 1.33333 1.66667 2 2.33333 2.66667 3 3.33333 3.66667 4 4.33333 4.66667 5
 </span></div></div>
 </div>
 <p>And now let us study the ratio <span class="math notranslate nohighlight">\(f(x)/x\)</span> for those several values of <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
@@ -6555,8 +6576,8 @@ Fe2O3
 <span id="some-primitive-functions-nor-nand"></span><h3><span class="section-number">4.19.3. </span>Nor &amp; Nand<a class="headerlink" href="#nor-nand" title="Permalink to this headline">¶</a></h3>
 <p>APL boolean algebra also includes two useful functions:</p>
 <ul class="simple">
-<li><p><em><strong>Nor</strong></em> (stands for Not-Or), represented in aPL by <code class="docutils literal notranslate"><span class="pre">⍱</span></code>. You can type it with <kbd>aPL</kbd>+<kbd>Shift</kbd>+<kbd>9</kbd>, which is “above” <code class="docutils literal notranslate"><span class="pre">∨</span></code>;</p></li>
-<li><p><em><strong>Nand</strong></em> (stands for Not-and), represented in aPL by <code class="docutils literal notranslate"><span class="pre">⍲</span></code>. You can type it with <kbd>aPL</kbd>+<kbd>Shift</kbd>+<kbd>0</kbd>, which is “above” <code class="docutils literal notranslate"><span class="pre">∧</span></code>.</p></li>
+<li><p><em><strong>Nor</strong></em> (stands for Not-Or), represented in APL by <code class="docutils literal notranslate"><span class="pre">⍱</span></code>. You can type it with <kbd>APL</kbd>+<kbd>Shift</kbd>+<kbd>9</kbd>, which is “above” <code class="docutils literal notranslate"><span class="pre">∨</span></code>;</p></li>
+<li><p><em><strong>Nand</strong></em> (stands for Not-and), represented in APL by <code class="docutils literal notranslate"><span class="pre">⍲</span></code>. You can type it with <kbd>APL</kbd>+<kbd>Shift</kbd>+<kbd>0</kbd>, which is “above” <code class="docutils literal notranslate"><span class="pre">∧</span></code>.</p></li>
 </ul>
 <p>The <em><strong>Nor</strong></em> and <em><strong>Nand</strong></em> functions give the negation of <em><strong>Or</strong></em> and <em><strong>And</strong></em> respectively, and that is why their symbols are respectively <code class="docutils literal notranslate"><span class="pre">∨</span></code> and <code class="docutils literal notranslate"><span class="pre">∧</span></code> with a <code class="docutils literal notranslate"><span class="pre">~</span></code> on top.</p>
 <p>This means that</p>
@@ -8539,7 +8560,23 @@ Fe2O3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">636802 512379 327584 742744 867694 518416 837522 756393 875860 650618 734820 850511 269877 919436 540758 983293 504930 693521 242886 704993 445662 713406 614389 483967 897435 610802 578109 768129 383069 395407 7478 420111 30447 132341 519031 539593 295049 52849 187875 820478 641186 686560 450428 313323 281393 935843 861713 601571 508158 96073 233311 487348 757868 57876 971533 996215 816637 140520 378089 292169 178757 246775 246429 316212 309252 962321 73397 326613 863219 442574 838820 560717 872464 544884 211478 421320 670853 933120 929562 29943 872039 24194 313244 525545 974249 391069 229590 164488 988529 891749 309984 384385 896675 903217 891047 255077 547699 378376 611404 156401 663154 101448 312591 50864 568638 231875 952662 701228 797311 212429 248189 521779 858987 325307 775909 781609 91337 354366 30996 628490 407462 6628 93348 815928 61755 195544 16935 236409 889935 629654 86574 345820 734765 996468 387036 865286 822609 253808 263675 816052 567659 493785 574772
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">636802 512379 327584 742744 867694 518416 837522 756393 875860 650618 734820 850511 269877 919436 540758 983293 504930 693
+
+      521 242886 704993 445662 713406 614389 483967 897435 610802 578109 768129 383069 395407 7478 420111 30447 132341 519
+
+      031 539593 295049 52849 187875 820478 641186 686560 450428 313323 281393 935843 861713 601571 508158 96073 233311 48
+
+      7348 757868 57876 971533 996215 816637 140520 378089 292169 178757 246775 246429 316212 309252 962321 73397 326613 8
+
+      63219 442574 838820 560717 872464 544884 211478 421320 670853 933120 929562 29943 872039 24194 313244 525545 974249 
+
+      391069 229590 164488 988529 891749 309984 384385 896675 903217 891047 255077 547699 378376 611404 156401 663154 1014
+
+      48 312591 50864 568638 231875 952662 701228 797311 212429 248189 521779 858987 325307 775909 781609 91337 354366 309
+
+      96 628490 407462 6628 93348 815928 61755 195544 16935 236409 889935 629654 86574 345820 734765 996468 387036 865286 
+
+      822609 253808 263675 816052 567659 493785 574772
 </span></div></div>
 </div>
 <p>Similarly, we can find the <code class="docutils literal notranslate"><span class="pre">winners</span></code>’s tickets <em>Without</em> the ones that have been <code class="docutils literal notranslate"><span class="pre">sold</span></code>:</p>
@@ -8704,7 +8741,10 @@ Fe2O3
       </div>
     </div>
 
-    <script src="_static/js/index.js"></script>
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
     
   </body>
 </html>
