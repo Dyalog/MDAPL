@@ -150,7 +150,7 @@ def generate_figure_references(lines):
 
     return lines
 
-def create_admonition(lines):
+def create_admonitions(lines):
     """Convert an admonition section into a MyST admonition.
 
     This function looks for sections that have been marked-up with HTML comments
@@ -209,21 +209,35 @@ def create_admonition(lines):
 
     return lines
 
-def copy_md(filename):
-    """Tries to copy a Mardown file to the book folder.
+def parse_md(filename):
+    """Tries to copy a Markdown file to the book folder and parse its lines.
     
     This function assumes the filename refers to a .md file.
     Returns False if the file is not found, True otherwise.
     """
 
     source = f"{filename}.md"
-    destination = os.path.join(BOOK_FOLDER, source)
     try:
-        shutil.copy2(source, destination)
-        print(f"copied... {destination}")
-        return True
+        with open(source, "r", encoding="utf8") as f:
+            contents = f.readlines()
     except FileNotFoundError:
         return False
+    
+    lines = parse_lines(filename, list(contents))
+    destination = os.path.join(BOOK_FOLDER, source)
+    with open(destination, "w", encoding="utf8") as f:
+        f.writelines(lines)
+    return True
+        
+def parse_lines(filename, lines):
+    """Apply all parsing functions to the list of lines."""
+    
+    lines = generate_header_labels(filename, lines)
+    lines = generate_cross_references(filename, lines)
+    lines = generate_figure_references(lines)
+    lines = image_to_figure(lines)
+    lines = create_admonitions(lines)
+    return lines
 
 if __name__ == "__main__":
 
@@ -248,18 +262,12 @@ if __name__ == "__main__":
             with open(f"{filename}.ipynb", "r", encoding="utf8") as f:
                 contents = json.load(f)
         except FileNotFoundError:
-            copy_md(filename)
+            parse_md(filename)
             continue
 
         for cell in contents["cells"]:
             lines = cell["source"]
-            lines = generate_header_labels(filename, lines)
-            lines = generate_cross_references(filename, lines)
-            lines = generate_figure_references(lines)
-            lines = image_to_figure(lines)
-            lines = create_admonition(lines)
-
-            cell["source"] = lines
+            cell["source"] = parse_lines(filename, lines)
 
         with open(f"{BOOK_FOLDER}/{filename}.ipynb", "w", encoding="utf8") as f:
             json.dump(contents, f, indent=2)
