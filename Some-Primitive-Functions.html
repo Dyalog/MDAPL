@@ -57,7 +57,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5. User Defined Functions" href="User-Defined-Functions.html" />
+    <link rel="next" title="5. User-Defined Functions" href="User-Defined-Functions.html" />
     <link rel="prev" title="3. Data and Variables" href="Data-and-Variables.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -109,7 +109,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="User-Defined-Functions.html">
-   5. User Defined Functions
+   5. User-Defined Functions
   </a>
  </li>
  <li class="toctree-l1">
@@ -3295,7 +3295,7 @@ June
 <p>This rule will help you predict the dimensions of the result of a reduction.</p>
 <div class="tip admonition">
 <p class="admonition-title">Rule</p>
-<p>When <em><strong>Reduce</strong></em> is applied along the Nth dimension of an array, the shape of the result is the same shape of the array, but without its Nth item.</p>
+<p>When <em><strong>Reduce</strong></em> is applied along the nth dimension of an array, the shape of the result is the same shape of the array, but without its nth item.</p>
 <p>The <em><strong>Rank</strong></em> of the result is 1 less than the rank of the original array.</p>
 </div>
 <p>Whenever you want to calculate the sum along a particular dimension of an array, think of the dimensions in terms of concrete things: years, lines, months, etc. This should help you.</p>
@@ -3377,8 +3377,8 @@ June
 </div>
 <div class="section" id="our-first-program">
 <span id="some-primitive-functions-our-first-program"></span><h2><span class="section-number">4.10. </span>Our First Program<a class="headerlink" href="#our-first-program" title="Permalink to this headline">¶</a></h2>
-<p>The expression we wrote in <a class="reference internal" href="#some-primitive-functions-application-2"><span class="std std-numref">Section 4.8.7</span></a> to calculate the average of a set of values is one that we may want to use time and time again. So let us store it as a program, or, to use the proper APL terminology, as a <em><strong>User Defined Function</strong></em>.</p>
-<p>There are many different ways to define functions, and these will be covered in detail in <a class="reference internal" href="User-Defined-Functions.html"><span class="doc std std-doc">the “User Defined Functions” chapter</span></a>. For now we shall use the simplest, which is perfectly suitable for straightforward calculation functions like this one. Let’s type:</p>
+<p>The expression we wrote in <a class="reference internal" href="#some-primitive-functions-application-2"><span class="std std-numref">Section 4.8.7</span></a> to calculate the average of a set of values is one that we may want to use time and time again. So let us store it as a program, or, to use the proper APL terminology, as a <em><strong>User-Defined Function</strong></em>.</p>
+<p>There are many different ways to define functions, and these will be covered in detail in <a class="reference internal" href="User-Defined-Functions.html"><span class="doc std std-doc">the “User-Defined Functions” chapter</span></a>. For now we shall use the simplest, which is perfectly suitable for straightforward calculation functions like this one. Let’s type:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Average</span> <span class="kd">←</span> <span class="kt">{</span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="bp">⍵</span><span class="p">)</span><span class="o">÷</span><span class="p">(</span><span class="o">≢</span><span class="bp">⍵</span><span class="p">)</span><span class="kt">}</span>
@@ -3415,7 +3415,7 @@ June
 </span></div></div>
 </div>
 <p>The word <code class="docutils literal notranslate"><span class="pre">Average</span></code> can now be used in any APL expression. We have enriched the vocabulary which can be used to process data in this workspace (provided that we save it).</p>
-<p>Be patient: we shall see many other possibilities in <a class="reference internal" href="User-Defined-Functions.html"><span class="doc std std-doc">the “User Defined Functions” chapter</span></a>.</p>
+<p>Be patient: we shall see many other possibilities in <a class="reference internal" href="User-Defined-Functions.html"><span class="doc std std-doc">the “User-Defined Functions” chapter</span></a>.</p>
 </div>
 <div class="section" id="concatenate">
 <span id="some-primitive-functions-concatenate"></span><h2><span class="section-number">4.11. </span>Concatenate<a class="headerlink" href="#concatenate" title="Permalink to this headline">¶</a></h2>
@@ -8792,7 +8792,7 @@ However, we can easily see which of our tickets are winning tickets by checking 
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="Data-and-Variables.html" title="previous page"><span class="section-number">3. </span>Data and Variables</a>
-    <a class='right-next' id="next-link" href="User-Defined-Functions.html" title="next page"><span class="section-number">5. </span>User Defined Functions</a>
+    <a class='right-next' id="next-link" href="User-Defined-Functions.html" title="next page"><span class="section-number">5. </span>User-Defined Functions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
