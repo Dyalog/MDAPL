@@ -3,7 +3,7 @@ author: Bernard Legrand, contributions by Kim S. Andreasen, Daniel Baronet, Gitt
 #copyright: "1982-2020 by Dyalog Ltd"
 
 repository:
-    url: https://github.com/RojerGS/MDAPL
+    url: https://github.com/Dyalog/MDAPL
     
 html:
     home_page_in_navbar: false
