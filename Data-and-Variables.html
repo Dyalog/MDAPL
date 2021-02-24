@@ -173,11 +173,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/RojerGS/MDAPL"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/Dyalog/MDAPL"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         
-        <a class="edit-button" href="https://github.com/RojerGS/MDAPL/edit/master/Data-and-Variables.ipynb"><button
+        <a class="edit-button" href="https://github.com/Dyalog/MDAPL/edit/master/Data-and-Variables.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -3206,7 +3206,7 @@ weird   years   ∆x
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">Not saved, this ws is CLEAR WS. Use -force to overwrite
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">MyPreciousWS.dws saved Wed Feb 24 09:07:30 2021
 </span></div></div>
 </div>
 <p>A confirmation message appears, specifying where it has been saved, and the date and time of the operation.</p>
@@ -3250,7 +3250,7 @@ weird   years   ∆x
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">.\MyPreciousWS.dws saved Sat Oct  3 20:10:58 2020
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">.\MyPreciousWS.dws saved Wed Feb 24 09:07:30 2021
 </span></div></div>
 </div>
 <p>In this case APL will search for your workspace in the folders specified in your “<em>Workspace Search Path</em>” as explained above, unless you specify a full path name. If the path name includes blank characters, you <strong>must</strong> place the whole expression between double quotes, as in the first example below:</p>
@@ -3329,7 +3329,7 @@ weird   years   ∆x
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">.\MyPreciousWS.dws saved Sat Oct  3 20:10:58 2020
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">.\MyPreciousWS.dws saved Wed Feb 24 09:07:30 2021
 not copied text
 </span></div></div>
 </div>
@@ -3346,7 +3346,7 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">.\MyPreciousWS.dws saved Sat Oct  3 20:10:58 2020
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">.\MyPreciousWS.dws saved Wed Feb 24 09:07:30 2021
 </span></div></div>
 </div>
 <p>Then you spend some hours adding new functions and variables, changing things here and there, and suddenly, you discover that you made inappropriate changes to <code class="docutils literal notranslate"><span class="pre">text</span></code>.</p>
@@ -3358,7 +3358,7 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">.\MyPreciousWS.dws saved Sat Oct  3 20:10:58 2020
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">.\MyPreciousWS.dws saved Wed Feb 24 09:07:30 2021
 </span></div></div>
 </div>
 <p>When imported, the original version of <code class="docutils literal notranslate"><span class="pre">text</span></code> will override the version you mistakenly altered. Your active workspace will be correct again, and you will be able to go on with your work (but don’t forget to save it!).</p>
@@ -3554,11 +3554,25 @@ not copied text
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INDEX ERROR
+      set←3 3⍴source[2 4 8 5 12 13 7 4]
+                    ∧
+</pre></div>
+</div>
+</div>
 </div>
 <p>Then one uses it to index the original vector:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">result</span> <span class="kd">←</span> <span class="nv">source</span><span class="sr">[</span><span class="nv">set</span><span class="sr">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: set
+      result←source[set]
+                    ∧
 </pre></div>
 </div>
 </div>
@@ -3760,15 +3774,12 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">46 20 18 25
-29  5 27  4
-
-41  1 17 42
-38 31 23  7
-
-39 23  6 40
-37 19 30 49
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INDEX ERROR
+      prod[2 5 3;2 1;1 2 5 6]
+          ∧
+</pre></div>
+</div>
+</div>
 </div>
 <p>gives a result of shape <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">2</span> <span class="pre">4</span></code>. Similarly,</p>
 <div class="cell docutils container">
@@ -3778,12 +3789,12 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">34 19 32 12 37 15
-46 20 47 17 18 25
-39 23 41 20  6 40
- 8 48 22 37 33  1
-41  1 14 50 17 42
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INDEX ERROR
+      prod[;2;⍳6]
+          ∧
+</pre></div>
+</div>
+</div>
 </div>
 <p>gives a result of shape <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">6</span></code>.</p>
 <p>In the last example, the omitted index refers to the first dimension of <code class="docutils literal notranslate"><span class="pre">prod</span></code> which is of length 5.</p>
@@ -3803,8 +3814,8 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">42 3
-45 4
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">16 12
+19 20
 </span></div></div>
 </div>
 <p>Generally, <code class="docutils literal notranslate"><span class="pre">rows</span></code> may contain several row numbers, and <code class="docutils literal notranslate"><span class="pre">cols</span></code> may contain several column numbers. Applying the preceding rule, it is easy to see that we’ll obtain a sub-matrix <code class="docutils literal notranslate"><span class="pre">mini</span></code>.</p>
@@ -3818,7 +3829,7 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">42 3
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">16 12
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -3842,7 +3853,7 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">3
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">12
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -3864,7 +3875,7 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">3
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">12
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -3887,8 +3898,12 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">9 29 38
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INDEX ERROR
+      mat[1 2 5;1]
+         ∧
+</pre></div>
+</div>
+</div>
 </div>
 <p>And we were surprised to see the values of a column were displayed horizontally. We can now understand why: the shape of the result is equal to <code class="docutils literal notranslate"><span class="pre">(⍴1</span> <span class="pre">2</span> <span class="pre">5),(⍴1)</span></code>. As the shape of a scalar is empty, this expression is equivalent to <code class="docutils literal notranslate"><span class="pre">(⍴1</span> <span class="pre">2</span> <span class="pre">5)</span></code>, i.e. <code class="docutils literal notranslate"><span class="pre">3</span></code>. The indexing operation therefore produces a vector, which is displayed on a single line of the screen.</p>
 <p>To obtain a matrix, we must transform the column index (scalar <code class="docutils literal notranslate"><span class="pre">1</span></code>) into a vector: we shall again use <em><strong>Ravel</strong></em>, like this:</p>
@@ -3899,10 +3914,12 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace"> 9
-29
-38
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INDEX ERROR
+      mat[1 2 5;,1]
+         ∧
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -3917,7 +3934,7 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">72 73 72 74 72
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">73 74 73 75 73
 </span></div></div>
 </div>
 <p>If a repeated index is used to update the variable, only the last replacement value is retained:</p>
@@ -3929,7 +3946,7 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">71 50 19 33 75 76
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">71 72 50 19 33 76
 </span></div></div>
 </div>
 <p>In the assignment above, the second item was set to 45, then 67 and finally 50.</p>
@@ -4036,8 +4053,8 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 3
-4 5 6
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 1 2
+3 4 5
 </span></div></div>
 </div>
 <p>The <em>Materialise</em> function may also be used with Objects (See Chapter Q, Object Oriented Programming). Applied to an <em>Enumerable Property of an Object</em>, or an <em>Instance of an Object</em> which has such a Property as its <em>default</em> Property, the same syntax returns all the items in this collection.</p>
@@ -4163,8 +4180,12 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">THE CAT
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INDEX ERROR
+      &#39;LE CHAT&#39;[7 5 2 3 4 6 7]
+               ∧
+</pre></div>
+</div>
+</div>
 </div>
 <p><strong>Exercise 4</strong>:</p>
 <p>The first thing to do would be to understand how to access the values we want to modify, and then use the appropriate assignment. Notice that <code class="docutils literal notranslate"><span class="pre">tab</span></code> is a matrix with 2 rows and 5 columns and we are after the values in the corners, or in the first and last columns:</p>
@@ -4188,7 +4209,7 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LENGTH ERROR
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INDEX ERROR
       tab[1 2;1 5]←21 45 78 11
          ∧
 </pre></div>
@@ -4204,14 +4225,26 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">21 1 4 3 45
-78 4 3 8 11
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INDEX ERROR
+      tab[1 2;1 5]←2 2⍴21 45 78 11
+         ∧
+</pre></div>
+</div>
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">9 1 4 3 6
+7 4 3 8 2
 </span></div></div>
 </div>
 <p>Because we are replacing entire columns, we can also omit the row indices like such:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">tab</span><span class="sr">[;</span><span class="m">1</span> <span class="m">5</span><span class="sr">]</span> <span class="kd">←</span> <span class="m">2</span> <span class="m">2</span><span class="o">⍴</span><span class="m">21</span> <span class="m">45</span> <span class="m">78</span> <span class="m">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INDEX ERROR
+      tab[;1 5]←2 2⍴21 45 78 11
+         ∧
 </pre></div>
 </div>
 </div>
@@ -4234,7 +4267,7 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 11 11 1 7 8
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 9 3 3 2 8
 </span></div></div>
 </div>
 <p>If we then run</p>
@@ -4253,7 +4286,7 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 11 7 1 11 8
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 9 3 8 2 3
 </span></div></div>
 </div>
 <p><strong>Exercise 6</strong>:</p>
@@ -4266,8 +4299,12 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">8 11 3 9 2 15
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INDEX ERROR
+      mystery[3 1 6 5 2 4]
+             ∧
+</pre></div>
+</div>
+</div>
 </div>
 <p><strong>Exercise 7</strong>:</p>
 <p>This exercise is similar to the one above. We start with the vector</p>
@@ -4287,8 +4324,12 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">47 27 19 14 50 74
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INDEX ERROR
+      vec[findMe]
+         ∧
+</pre></div>
+</div>
+</div>
 </div>
 <p><strong>Exercise 8</strong>:</p>
 <p>The result of indexing a vector is always equal to the shape of the index. Hence the shape of <code class="docutils literal notranslate"><span class="pre">result</span></code> is equal to the shape of <code class="docutils literal notranslate"><span class="pre">set</span></code>, which is <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">3</span></code>:</p>
@@ -4301,8 +4342,17 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">3 3
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INDEX ERROR
+      set←3 3⍴source[2 4 8 5 12 13 7 4]
+                    ∧
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: set
+      ⍴set
+       ∧
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4312,8 +4362,17 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">3 3
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: set
+      result←source[set]
+                    ∧
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: result
+      ⍴result
+       ∧
+</pre></div>
+</div>
+</div>
 </div>
 <p>In order to find out the values in <code class="docutils literal notranslate"><span class="pre">result</span></code> we first need to figure out the values in <code class="docutils literal notranslate"><span class="pre">set</span></code> and how they are laid out in the 3 by 3 matrix,</p>
 <div class="cell docutils container">
@@ -4323,10 +4382,12 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">4 3 6
-9 1 5
-7 3 4
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: set
+      set
+      ∧
+</pre></div>
+</div>
+</div>
 </div>
 <p>and then use those to index into the <code class="docutils literal notranslate"><span class="pre">source</span></code> vector; for example, in the top-left and bottom-right corners of <code class="docutils literal notranslate"><span class="pre">result</span></code> you will find the 4th element of <code class="docutils literal notranslate"><span class="pre">source</span></code>, which is 3:</p>
 <div class="cell docutils container">
@@ -4336,10 +4397,12 @@ not copied text
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">3 13 0
-2 10 9
-7 13 3
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: result
+      result
+      ∧
+</pre></div>
+</div>
+</div>
 </div>
 <p><strong>Exercise 9</strong>:</p>
 <p>There is <em>no</em> difference between the two vectors. Both are 3-item simple character vectors.</p>
