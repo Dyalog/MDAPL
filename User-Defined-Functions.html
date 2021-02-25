@@ -329,13 +329,20 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#defining-sub-functions">
-     5.6.3. Defining Sub-functions
+     5.6.3. Defining Sub-Functions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#a-second-example">
      5.6.4. A Second Example
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#another-possible-syntax">
+       5.6.4.1. Another Possible Syntax
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dynamic-scoping">
@@ -1003,57 +1010,74 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scoping-in-nested-function-calls">
+     5.16.2. Scoping in Nested Function Calls
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reading-the-caller-s-names">
+       5.16.2.1. Reading the Caller’s Names
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#modifying-the-caller-s-names">
+       5.16.2.2. Modifying the Caller’s Names
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#loop-control">
-     5.16.2. Loop Control
+     5.16.3. Loop Control
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#labels-and-the-branch-arrow">
-     5.16.3. Labels and the Branch Arrow
+     5.16.4. Labels and the Branch Arrow
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#niladic-arrow">
-       5.16.3.1. Niladic Arrow
+       5.16.4.1. Niladic Arrow
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#branch-to-a-wrong-label">
-       5.16.3.2. Branch to a Wrong Label
+       5.16.4.2. Branch to a Wrong Label
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#other-conditional-execution">
-     5.16.4. Other Conditional Execution
+     5.16.5. Other Conditional Execution
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#conditional-execution-using-execute">
-       5.16.4.1. Conditional Execution Using Execute
+       5.16.5.1. Conditional Execution Using Execute
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#conditional-execution-using-the-power-operator">
-       5.16.4.2. Conditional Execution Using the Power Operator
+       5.16.5.2. Conditional Execution Using the Power Operator
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#name-category">
-     5.16.5. Name Category
+     5.16.6. Name Category
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bare-output">
-     5.16.6. Bare Output
+     5.16.7. Bare Output
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ineach">
-     5.16.7.
+     5.16.8.
      <code class="docutils literal notranslate">
       <span class="pre">
        :InEach
@@ -1063,7 +1087,7 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#tail-recursion">
-     5.16.8. Tail Recursion
+     5.16.9. Tail Recursion
     </a>
    </li>
   </ul>
@@ -2429,7 +2453,7 @@ Mexico
 </div></blockquote>
 <!--end--></div>
 <div class="section" id="defining-sub-functions">
-<span id="user-defined-functions-defining-sub-functions"></span><h3><span class="section-number">5.6.3. </span>Defining Sub-functions<a class="headerlink" href="#defining-sub-functions" title="Permalink to this headline">¶</a></h3>
+<span id="user-defined-functions-defining-sub-functions"></span><h3><span class="section-number">5.6.3. </span>Defining Sub-Functions<a class="headerlink" href="#defining-sub-functions" title="Permalink to this headline">¶</a></h3>
 <p>As we have seen, dfns can be defined inside other dfns. Similarly, dfns can be defined inside tradfns and used right away. The precautions mentioned above, that need to be taken with respect to <em>global</em> versus <em>local</em> variables, still apply. In short, do not forget to localise the name of a temporary dfn unless you really mean for it to become global.</p>
 </div>
 <div class="section" id="a-second-example">
@@ -2601,7 +2625,8 @@ Mexico
 4 ¯2 5 ¯8 6 ¯9
 </span></div></div>
 </div>
-<p><strong>Another possible syntax</strong></p>
+<div class="section" id="another-possible-syntax">
+<span id="user-defined-functions-another-possible-syntax"></span><h4><span class="section-number">5.6.4.1. </span>Another Possible Syntax<a class="headerlink" href="#another-possible-syntax" title="Permalink to this headline">¶</a></h4>
 <p>If you had decided instead to make the function monadic, it could look very similar to the one above. We just changed the header a bit and added a new statement at the beginning:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2631,9 +2656,10 @@ Mexico
 </span></div></div>
 </div>
 </div>
+</div>
 <div class="section" id="dynamic-scoping">
 <span id="user-defined-functions-dynamic-scoping"></span><h3><span class="section-number">5.6.5. </span>Dynamic Scoping<a class="headerlink" href="#dynamic-scoping" title="Permalink to this headline">¶</a></h3>
-<p><em><strong>Dynamic scoping</strong></em> (as opposed to <em>static</em> scoping, as seen in <a class="reference internal" href="#user-defined-functions-lexical-scoping"><span class="std std-numref">Section 5.5.3</span></a>) is the mechanism that turns local and global variables into relative notions that depend on the chain of function calls that are currently being interpreted: when a tradfn calls another function, variables local to the calling function are global for the called function.</p>
+<p><em><strong>Dynamic scoping</strong></em> (as opposed to <em>static</em> scoping, as seen in <a class="reference internal" href="#user-defined-functions-lexical-scoping"><span class="std std-numref">Section 5.5.3</span></a>) is the scoping mechanism that tradfns use: when a tradfn calls another tradfn, the callee can see the caller’s local variables, even if the callee was defined <em>outside</em> of the caller.</p>
 <p>To explore what this means, consider the following tradfns. Do not worry about their arguments and return values as they are not meaningful. What matters are the assignments to <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> and the prints.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2675,7 +2701,7 @@ Mexico
 </div>
 </div>
 </div>
-<p>Now let us call <code class="docutils literal notranslate"><span class="pre">SetAThenPrint</span></code>. What do you expect to be printed?</p>
+<p>Now let us call <code class="docutils literal notranslate"><span class="pre">SetAThenPrint</span></code>. Before looking at the code that follows, what do you expect to be printed?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">SetAThenPrint</span> <span class="m">0</span>
@@ -2758,7 +2784,7 @@ d
 0
 </span></div></div>
 </div>
-<p>Even though <code class="docutils literal notranslate"><span class="pre">SetCThenPrint</span></code> modified the value of <code class="docutils literal notranslate"><span class="pre">c</span></code> to be 3, the <code class="docutils literal notranslate"><span class="pre">PrintCD</span></code> function was defined in the workspace, and hence its lexical scoping tells it to look for <code class="docutils literal notranslate"><span class="pre">c</span></code> among its own variables, and among the global variables in the workspace. <code class="docutils literal notranslate"><span class="pre">PrintCD</span></code> does not have access to the local variables of the function that called it.</p>
+<p>Even though <code class="docutils literal notranslate"><span class="pre">SetCThenPrint</span></code> modified the value of <code class="docutils literal notranslate"><span class="pre">c</span></code> to be 3, the <code class="docutils literal notranslate"><span class="pre">PrintCD</span></code> function was defined in the workspace, and hence its lexical scoping tells it to look for <code class="docutils literal notranslate"><span class="pre">c</span></code> among its own variables, and among the global variables in the workspace. <code class="docutils literal notranslate"><span class="pre">PrintCD</span></code> does not have access to the local variables of the dfn that called it.</p>
 <p>That is why, if we call <code class="docutils literal notranslate"><span class="pre">SetDThenPrint</span></code>, we get the exact same output:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2850,16 +2876,9 @@ PrintE[1] ⎕←e
 </div>
 </div>
 </div>
-<p>We now summarise the scoping rules used when a function <code class="docutils literal notranslate"><span class="pre">F</span></code> calls another function <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p>
-<!--begin scoping rules style=tip-->
-<p><em><strong>Scoping rules</strong></em>:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>If <code class="docutils literal notranslate"><span class="pre">F</span></code> is a tradfn, then all of <code class="docutils literal notranslate"><span class="pre">F</span></code>’s local variables will be visible to <code class="docutils literal notranslate"><span class="pre">G</span></code>.</p></li>
-<li><p>If <code class="docutils literal notranslate"><span class="pre">F</span></code> is a dfn and you want its local variables to be visible to <code class="docutils literal notranslate"><span class="pre">G</span></code>, then either define <code class="docutils literal notranslate"><span class="pre">G</span></code> as a tradfn or define <code class="docutils literal notranslate"><span class="pre">G</span></code> as a dfn <em>inside</em> <code class="docutils literal notranslate"><span class="pre">F</span></code>.</p></li>
-</ul>
-</div></blockquote>
-<!--end--></div>
+<p>Scoping can become messy quickly, and that is why it is recommended that you always provide the information your functions need as arguments, and return the results explicitly instead of relying on modifying some global variable(s).
+In <a class="reference internal" href="#user-defined-functions-scoping-in-nested-function-calls"><span class="std std-numref">Section 5.16.2</span></a> we will see this can become even more confusing when you start having dfns calling tradfns and tradfns calling dfns.</p>
+</div>
 </div>
 <div class="section" id="flow-control-in-tradfns">
 <span id="user-defined-functions-flow-control-in-tradfns"></span><h2><span class="section-number">5.7. </span>Flow Control in Tradfns<a class="headerlink" href="#flow-control-in-tradfns" title="Permalink to this headline">¶</a></h2>
@@ -3523,7 +3542,7 @@ PARIS
 <li><p>finally with <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">←</span> <span class="pre">7</span></code> and <code class="docutils literal notranslate"><span class="pre">qty</span> <span class="pre">←</span> <span class="pre">4</span></code>.</p></li>
 </ul>
 <p>In most cases, this kind of iterative process is executed to completion. However, it is possible to take an early exit when some condition or other is met. This can be done using the <code class="docutils literal notranslate"><span class="pre">:Leave</span></code> clause or using an explicit branch, like will be explained later.</p>
-<p>A special variant of <code class="docutils literal notranslate"><span class="pre">:In</span></code> named <code class="docutils literal notranslate"><span class="pre">:InEach</span></code> is explained in <a class="reference internal" href="#user-defined-functions-ineach"><span class="std std-numref">Section 5.16.7</span></a> at the end of this chapter.</p>
+<p>A special variant of <code class="docutils literal notranslate"><span class="pre">:In</span></code> named <code class="docutils literal notranslate"><span class="pre">:InEach</span></code> is explained in <a class="reference internal" href="#user-defined-functions-ineach"><span class="std std-numref">Section 5.16.8</span></a> at the end of this chapter.</p>
 <!--begin example-->
 <p><em><strong>Example</strong></em>:</p>
 <blockquote>
@@ -3588,9 +3607,9 @@ PARIS
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">                                                                                
-  Divisors 3219        → 1.3E¯3 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
-  DivisorsNoLoops 3219 → 1.4E¯5 | -99%                                          
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">                                                                                 
+  Divisors 3219        → 1.7E¯3 |    0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
+  DivisorsNoLoops 3219 → 1.6E¯5 | -100%                                          
 </span></div></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">]runtime</span> <span class="pre">-c</span></code> is a user command that can be used to compare two or more pieces of code. It uses the first expression as the baseline and then compares the run time of the subsequent pieces of code against the first one. Here, the <code class="docutils literal notranslate"><span class="pre">-99%</span></code> on the second line means <code class="docutils literal notranslate"><span class="pre">DivisorsNoLoops</span></code> is 100 times faster, which can also be understood by comparing the run times (in seconds) of each expression, the <code class="docutils literal notranslate"><span class="pre">1.1E¯3</span></code> and <code class="docutils literal notranslate"><span class="pre">1.1E¯5</span></code> above (the exact numbers might fluctuate, depending on factors like how the CPU is feeling, the machine the code gets ran on, etc.)</p>
@@ -4136,7 +4155,7 @@ start of the loop
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>Reassigning the arguments</p></td>
 <td class="text-align:left"><p>Disallowed, except to define default left argument.</p></td>
-<td class="text-align:left"><p>Allowed</p></td>
+<td class="text-align:left"><p>Allowed.</p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>Return value</p></td>
 <td class="text-align:left"><p>The value of the first statement whose value is not assigned to a variable.</p></td>
@@ -4151,8 +4170,8 @@ start of the loop
 <td class="text-align:left"><p>Complex flow control with control structures such as <code class="docutils literal notranslate"><span class="pre">:If</span></code>, <code class="docutils literal notranslate"><span class="pre">:For</span></code>, and <code class="docutils literal notranslate"><span class="pre">:While</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p>Scoping</p></td>
-<td class="text-align:left"><p>Lexical (a dfn can only see the global variables and those that were in scope when the dfn was defined).</p></td>
-<td class="text-align:left"><p>Dynamic (when a tradfn calls another function, the sub-function can see all the tradfn’s variables).</p></td>
+<td class="text-align:left"><p>Lexical.</p></td>
+<td class="text-align:left"><p>Dynamic.</p></td>
 </tr>
 </tbody>
 </table>
@@ -5284,7 +5303,7 @@ Washington,August 28th 1963.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">[rc: 0 | msg: "" | HTTP Status: 200 "OK" | ⍴Data: 20877]
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">[rc: 0 | msg: "" | HTTP Status: 200 "OK" | ⍴Data: 20880]
 </span></div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">data</span></code> is an object that contains all the information that we received when we requested the URL above. Usually, one is interested in the <code class="docutils literal notranslate"><span class="pre">data.Data</span></code>. For example, with a couple of lines of APL we can find links to all problem statements of the previous <a class="reference external" href="https://www.dyalog.com/student-competition.htm">APL Problem Solving competitions</a>:</p>
@@ -5946,7 +5965,7 @@ the <em><strong>900 I-Beam</strong></em>, or <code class="docutils literal notra
 </ul>
 </div></blockquote>
 <!--end-->
-<p>A possible way to overcome some of these limitations is introduced in <a class="reference internal" href="#user-defined-functions-tail-recursion"><span class="std std-numref">Section 5.16.8</span></a>.</p>
+<p>A possible way to overcome some of these limitations is introduced in <a class="reference internal" href="#user-defined-functions-tail-recursion"><span class="std std-numref">Section 5.16.9</span></a>.</p>
 <p>Beware that recursion is never mandatory. A recursive function can always be rewritten using looping or array-oriented techniques instead of recursion.</p>
 <p>For example, one could write the dfn that follows:</p>
 <div class="cell docutils container">
@@ -6622,8 +6641,7 @@ Switch2 Times   Times2  TimesTwo        To      ToCharVector    ToHTML  TradHarm
 \end{matrix}
 \end{split}\]</div>
 <p><strong>Exercise 16</strong>:</p>
-<p>This is a very classic problem: we want to partition a text vector each time a given separator is found and make a matrix from these pieces. Please bear in mind that is exercise is very manageable if you let yourself use a couple of control flow structures. However, solving this exercise with a dfn requires you to, either know some APL primitives we haven’t covered yet, or make an ingenious use a primitive we have covered previously.</p>
-<p>For a seasoned APLer, finding this dfn solution that only makes use of the tools you possess so far may not be that difficult. But if this is your first time dwelling on APL, I will be very impressed if you manage to do this.</p>
+<p>This is a very classic problem: we want to partition a text vector each time a given separator is found and make a matrix from these pieces. Please bear in mind that is exercise is very manageable if you let yourself use a couple of control flow structures. However, solving this exercise with a dfn requires you to make an ingenious use of a primitive we have covered previously.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="bp">∇</span> <span class="nv">mat</span> <span class="kd">←</span> <span class="nv">sep</span> <span class="nv">Sorry</span> <span class="nv">string</span>
@@ -6647,11 +6665,11 @@ Switch2 Times   Times2  TimesTwo        To      ToCharVector    ToHTML  TradHarm
 </div>
 </div>
 <p><strong>Exercise 17</strong>:</p>
-<p>Remember when we talked about the <a class="reference external" href="https://en.wikipedia.org/wiki/Collatz_conjecture">“Collatz Conjecture”</a> earlier on? Don’t worry if you don’t. Now, you will implement a function that takes a positive integer <code class="docutils literal notranslate"><span class="pre">n</span></code> and creates a vector of numbers by successively taking the most recent number and then:</p>
+<p>Remember when we talked about the <a class="reference external" href="https://en.wikipedia.org/wiki/Collatz_conjecture">“Collatz Conjecture”</a> earlier on? Don’t worry if you don’t. Now, you will implement a function that takes a positive integer <code class="docutils literal notranslate"><span class="pre">n</span></code> and creates a vector of numbers by successively taking the most recent number and then creating the next value according to a couple of rules:</p>
 <ul class="simple">
 <li><p>if the most recent number is <strong>even</strong>, the next value will be half of it;</p></li>
-<li><p>if the most recent number is <strong>odd</strong>, the next value will be 1 more than the triple of it;</p></li>
-<li><p>stop when you reach 1.</p></li>
+<li><p>if the most recent number is <strong>odd</strong>, the next value will be 1 more than the triple of it; and</p></li>
+<li><p>you stop when you reach 1.</p></li>
 </ul>
 <p>For example, starting with <code class="docutils literal notranslate"><span class="pre">5</span></code> you get <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">16</span> <span class="pre">8</span> <span class="pre">4</span> <span class="pre">2</span> <span class="pre">1</span></code>.</p>
 <p>It is believed that no matter what initial positive integer <code class="docutils literal notranslate"><span class="pre">n</span></code> you give it, this process always stops at 1.</p>
@@ -6780,8 +6798,355 @@ a demo function
 </div>
 </div>
 </div>
+<div class="section" id="scoping-in-nested-function-calls">
+<span id="user-defined-functions-scoping-in-nested-function-calls"></span><h3><span class="section-number">5.16.2. </span>Scoping in Nested Function Calls<a class="headerlink" href="#scoping-in-nested-function-calls" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="reading-the-caller-s-names">
+<span id="user-defined-functions-reading-the-callers-names"></span><h4><span class="section-number">5.16.2.1. </span>Reading the Caller’s Names<a class="headerlink" href="#reading-the-caller-s-names" title="Permalink to this headline">¶</a></h4>
+<p>We have seen that dfns have lexical scoping and that tradfns have dynamic scoping, but this can become complicated when we have dfns calling tradfns and tradfns calling dfns.</p>
+<p>We will now try to answer the following question: when a function calls another independent function, can the callee read a name from the caller?
+We already know that if both the caller and callee are dfns, then the answer is <em>no</em>; on the other hand, if both the caller and the callee are tradfns, the answer is <em>yes</em>.
+In this exploration we will also show that the answer is <em>yes</em> for the cases when a dfn calls a tradfn and when a tradfn calls a dfn:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Can a callee ↓ read a name from the caller → ?</p></th>
+<th class="text-align:left head"><p>dfn</p></th>
+<th class="text-align:left head"><p>tradfn</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>dfn</p></td>
+<td class="text-align:left"><p>No</p></td>
+<td class="text-align:left"><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>tradfn</p></td>
+<td class="text-align:left"><p>Yes</p></td>
+<td class="text-align:left"><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
+<p>For our investigation we will define two “inner” functions (a dfn and a tradfn) that will act as the callee.
+Then we just need to write “outer” functions that act as the callers.
+To make our lives easier, all these functions will be dealing with a single variable named <code class="docutils literal notranslate"><span class="pre">t</span></code>, that we also set in the global scope:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">t</span> <span class="kd">←</span> <span class="s1">&#39;global var&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
+<span class="nv">InnerDfn</span> <span class="kd">←</span> <span class="kt">{</span>
+    <span class="vg">⎕</span><span class="kd">←</span> <span class="nv">t</span>
+    <span class="no">⍬</span>
+<span class="kt">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">InnerDfn</span><span class="no">⍬</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">global var
+
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="bp">∇</span> <span class="nv">x</span> <span class="kd">←</span> <span class="nv">InnerTradfn</span> <span class="nv">x</span>
+    <span class="vg">⎕</span><span class="kd">←</span> <span class="nv">t</span>
+<span class="bp">∇</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">InnerTradfn</span><span class="no">⍬</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">global var
+
+</span></div></div>
+</div>
+<p>Now we create dfns and tradfns that assign locally to <code class="docutils literal notranslate"><span class="pre">t</span></code>, and then call the “inner” functions to see what value of <code class="docutils literal notranslate"><span class="pre">t</span></code> they actually print.
+We start by confirming the answers we already have, first by showing that if a dfn calls an independent dfn, then the callee cannot see the caller’s names:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
+<span class="nv">DfnCallsDfn</span> <span class="kd">←</span> <span class="kt">{</span>
+    <span class="nv">t</span> <span class="kd">←</span> <span class="s1">&#39;DfnCallsDfn&#39;</span>
+    <span class="nv">InnerDfn</span><span class="no">⍬</span>
+<span class="kt">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">DfnCallsDfn</span><span class="no">⍬</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">global var
+
+</span></div></div>
+</div>
+<p>Now we show that if the callee and the caller are tradfns, then the callee can read the caller’s names, <em>even if</em> the caller localises its names:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="bp">∇</span> <span class="nv">x</span> <span class="kd">←</span> <span class="nv">TradfnCallsTradfn</span> <span class="nv">x</span><span class="sr">;</span> <span class="nv">t</span>
+    <span class="nv">t</span> <span class="kd">←</span> <span class="s1">&#39;TradfnCallsTradfn&#39;</span>
+    <span class="nv">InnerTradfn</span> <span class="no">⍬</span>
+<span class="bp">∇</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">TradfnCallsTradfn</span><span class="no">⍬</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">TradfnCallsTradfn
+
+
+</span></div></div>
+</div>
+<p>Now we are left with the dfn-tradfn and tradfn-dfn cases:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
+<span class="nv">DfnCallsTradfn</span> <span class="kd">←</span> <span class="kt">{</span>
+    <span class="nv">t</span> <span class="kd">←</span> <span class="s1">&#39;DfnCallsTradfn&#39;</span>
+    <span class="nv">InnerTradfn</span><span class="no">⍬</span>
+<span class="kt">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">DfnCallsTradfn</span><span class="no">⍬</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">DfnCallsTradfn
+
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="bp">∇</span> <span class="nv">x</span> <span class="kd">←</span> <span class="nv">TradfnCallsDfn</span> <span class="nv">x</span><span class="sr">;</span> <span class="nv">t</span>
+    <span class="nv">t</span> <span class="kd">←</span> <span class="s1">&#39;TradfnCallsDfn&#39;</span>
+    <span class="nv">InnerDfn</span><span class="no">⍬</span>
+<span class="bp">∇</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">TradfnCallsDfn</span><span class="no">⍬</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">TradfnCallsDfn
+
+
+</span></div></div>
+</div>
+<p>As we can see, with respect to accessing the caller’s variables, a dfn calling a tradfn and a tradfn calling a dfn behave in the same way as a tradfn that calls a tradfn, which confirms the table in the beginning of this sub-subsection.</p>
+<p>It is worthwhile mentioning that the global value of <code class="docutils literal notranslate"><span class="pre">t</span></code> remains intact:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">t</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">global var
+</span></div></div>
+</div>
+</div>
+<div class="section" id="modifying-the-caller-s-names">
+<span id="user-defined-functions-modifying-the-callers-names"></span><h4><span class="section-number">5.16.2.2. </span>Modifying the Caller’s Names<a class="headerlink" href="#modifying-the-caller-s-names" title="Permalink to this headline">¶</a></h4>
+<p>It was shown before that a called function may read the value of the caller, but can it change its value?
+If the callee is a tradfn, you can change the value of the caller’s name with a plain assignment, because names in tradfns
+are not localised by default:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">t</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">global var
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="bp">∇</span> <span class="nv">x</span> <span class="kd">←</span> <span class="nv">InnerTradfn</span> <span class="nv">x</span>
+    <span class="vg">⎕</span><span class="kd">←</span> <span class="s1">&#39;inner t: &#39;</span><span class="o">,</span><span class="nv">t</span>
+    <span class="nv">t</span> <span class="kd">←</span> <span class="s1">&#39;InnerTradfn&#39;</span>
+    <span class="vg">⎕</span><span class="kd">←</span> <span class="s1">&#39;inner t: &#39;</span><span class="o">,</span><span class="nv">t</span>
+<span class="bp">∇</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>∇ x ← OuterTradfn x; t
+    t ← &#39;OuterTradfn&#39;
+    ⎕← &#39;outer t: &#39;,t
+    _← InnerTradfn⍬
+    ⎕← &#39;outer t: &#39;,t
+∇
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">OuterTradfn</span><span class="no">⍬</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">outer t: OuterTradfn
+inner t: OuterTradfn
+inner t: InnerTradfn
+outer t: InnerTradfn
+
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>]dinput
+OuterDfn ← {
+    t ← &#39;OuterDfn&#39;
+    ⎕← &#39;outer t: &#39;,t
+    _← InnerTradfn⍬
+    ⎕← &#39;outer t: &#39;,t
+    ⍬
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">OuterDfn</span><span class="no">⍬</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">outer t: OuterDfn
+inner t: OuterDfn
+inner t: InnerTradfn
+outer t: InnerTradfn
+
+</span></div></div>
+</div>
+<p>However, if the callee is a dfn, plain assignment will create a new, local variable, with the same name as the one in the caller’s scope.
+That happens because names in dfns are local by default:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
+<span class="nv">InnerDfn</span> <span class="kd">←</span> <span class="kt">{</span>
+    <span class="vg">⎕</span><span class="kd">←</span> <span class="s1">&#39;inner t: &#39;</span><span class="o">,</span><span class="nv">t</span>
+    <span class="nv">t</span> <span class="kd">←</span> <span class="s1">&#39;InnerDfn&#39;</span>
+    <span class="vg">⎕</span><span class="kd">←</span> <span class="s1">&#39;inner t: &#39;</span><span class="o">,</span><span class="nv">t</span>
+    <span class="no">⍬</span>
+<span class="kt">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>∇ x ← OuterTradfn x; t
+    t ← &#39;OuterTradfn&#39;
+    ⎕← &#39;outer t: &#39;,t
+    _← InnerDfn⍬
+    ⎕← &#39;outer t: &#39;,t
+∇
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">OuterTradfn</span><span class="no">⍬</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">outer t: OuterTradfn
+inner t: OuterTradfn
+inner t: InnerDfn
+outer t: OuterTradfn
+
+</span></div></div>
+</div>
+<p>In this case, if you want to modify the name of the caller you have to trick APL into thinking you are <em>reading</em> from the name and <em>writing</em> to it at the same time, for example with a redundant modified assignment:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
+<span class="nv">InnerDfn</span> <span class="kd">←</span> <span class="kt">{</span>
+    <span class="vg">⎕</span><span class="kd">←</span> <span class="s1">&#39;inner t: &#39;</span><span class="o">,</span><span class="nv">t</span>
+    <span class="nv">t</span> <span class="o">⊢</span><span class="kd">←</span> <span class="s1">&#39;InnerDfn&#39;</span>    <span class="c1">⍝ Notice the modified assignment with ⊢</span>
+    <span class="vg">⎕</span><span class="kd">←</span> <span class="s1">&#39;inner t: &#39;</span><span class="o">,</span><span class="nv">t</span>
+    <span class="no">⍬</span>
+<span class="kt">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">OuterTradfn</span><span class="no">⍬</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">outer t: OuterTradfn
+inner t: OuterTradfn
+inner t: InnerDfn
+outer t: InnerDfn
+
+</span></div></div>
+</div>
+<p>Once again, notice that the global <code class="docutils literal notranslate"><span class="pre">t</span></code> is still intact:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">t</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">global var
+</span></div></div>
+</div>
+<p>These short explorations show that the scoping rules can become quite intricate, so it really is best to pass information in and out of functions as arguments/return values and not rely on scoping for that.
+This is, of course, just a suggestion and not a rule to follow blindly: a quintessential example of using scoping rules to your advantage is when defining a small inline dfn inside a larger function, e.g. to define a helper function that needs to be given as an operand to some operator, but that also needs access to the existing local variables.</p>
+</div>
+</div>
 <div class="section" id="loop-control">
-<span id="user-defined-functions-loop-control"></span><h3><span class="section-number">5.16.2. </span>Loop Control<a class="headerlink" href="#loop-control" title="Permalink to this headline">¶</a></h3>
+<span id="user-defined-functions-loop-control"></span><h3><span class="section-number">5.16.3. </span>Loop Control<a class="headerlink" href="#loop-control" title="Permalink to this headline">¶</a></h3>
 <p>Loops programmed with traditional branch arrows are controlled by the APL statements. Loops using <em>Control structures</em> are controlled by the interpreter. For that reason, if you trace loops programmed with <code class="docutils literal notranslate"><span class="pre">:Repeat</span></code> or <code class="docutils literal notranslate"><span class="pre">:For</span></code>, you will see that the first statement of the loop is executed only once, the following iterations execute only the “useful” statements. it is different for a <code class="docutils literal notranslate"><span class="pre">:While</span></code> loop because the test is placed in the first statement.</p>
 <p>This has a surprising consequence. Imagine a <code class="docutils literal notranslate"><span class="pre">:For</span></code> loop using a control variable named <code class="docutils literal notranslate"><span class="pre">again</span></code> which is supposed to take three successive values: <code class="docutils literal notranslate"><span class="pre">12</span> <span class="pre">54</span> <span class="pre">86</span></code>.</p>
 <p>But the programmer erroneously alters the value of <code class="docutils literal notranslate"><span class="pre">again</span></code> during execution:</p>
@@ -6816,9 +7181,9 @@ Who modified me?
 <p>Notice that, at each iteration, <code class="docutils literal notranslate"><span class="pre">again</span></code> is modified and is then automatically reset to the correct value in the subsequent iteration.</p>
 </div>
 <div class="section" id="labels-and-the-branch-arrow">
-<span id="user-defined-functions-labels-and-the-branch-arrow"></span><h3><span class="section-number">5.16.3. </span>Labels and the Branch Arrow<a class="headerlink" href="#labels-and-the-branch-arrow" title="Permalink to this headline">¶</a></h3>
+<span id="user-defined-functions-labels-and-the-branch-arrow"></span><h3><span class="section-number">5.16.4. </span>Labels and the Branch Arrow<a class="headerlink" href="#labels-and-the-branch-arrow" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="niladic-arrow">
-<span id="user-defined-functions-niladic-arrow"></span><h4><span class="section-number">5.16.3.1. </span>Niladic Arrow<a class="headerlink" href="#niladic-arrow" title="Permalink to this headline">¶</a></h4>
+<span id="user-defined-functions-niladic-arrow"></span><h4><span class="section-number">5.16.4.1. </span>Niladic Arrow<a class="headerlink" href="#niladic-arrow" title="Permalink to this headline">¶</a></h4>
 <p>A niladic <em>Branch arrow</em> <code class="docutils literal notranslate"><span class="pre">→</span></code> means: quit the current execution, i.e. quit the current function and all the calling functions, whatever the depth of the execution stack.</p>
 <p>This is different from branching to zero <code class="docutils literal notranslate"><span class="pre">→0</span></code> which means “<em>quit the current function and resume execution in the calling environment</em>”.</p>
 <p>When an execution is interrupted, a niladic <em>Branch arrow</em> clears its execution stack.</p>
@@ -6896,7 +7261,7 @@ Foo[1] ... ⍝ Intentional error.
 <p>As you can see, several stacks were active and using <code class="docutils literal notranslate"><span class="pre">→</span></code> only cleared the most recent one. Using <code class="docutils literal notranslate"><span class="pre">)reset</span></code> cleared all the execution stacks in one go.</p>
 </div>
 <div class="section" id="branch-to-a-wrong-label">
-<span id="user-defined-functions-branch-to-a-wrong-label"></span><h4><span class="section-number">5.16.3.2. </span>Branch to a Wrong Label<a class="headerlink" href="#branch-to-a-wrong-label" title="Permalink to this headline">¶</a></h4>
+<span id="user-defined-functions-branch-to-a-wrong-label"></span><h4><span class="section-number">5.16.4.2. </span>Branch to a Wrong Label<a class="headerlink" href="#branch-to-a-wrong-label" title="Permalink to this headline">¶</a></h4>
 <p>We said that a <em>Label</em> is processed as a numeric <em>local variable</em> which takes its value from the line number on which it appears. For example, if a function contains the statement <code class="docutils literal notranslate"><span class="pre">next:</span> <span class="pre">newPrice</span> <span class="pre">←</span> <span class="pre">oldPrice×(1-discount)</span></code> on line <code class="docutils literal notranslate"><span class="pre">[23]</span></code>, then <code class="docutils literal notranslate"><span class="pre">next</span></code> is a numeric value equal to 23. It is like a “read-only variable”, since you cannot modify it: any assignment to <code class="docutils literal notranslate"><span class="pre">next</span></code> would cause a <code class="docutils literal notranslate"><span class="pre">SYNTAX</span> <span class="pre">ERROR</span></code>. However, the value of <code class="docutils literal notranslate"><span class="pre">next</span></code> will change if some lines are deleted or inserted before line 23.</p>
 <p>For this reason, the statements <code class="docutils literal notranslate"><span class="pre">→next</span></code> and <code class="docutils literal notranslate"><span class="pre">:GoTo</span> <span class="pre">next</span></code> are equivalent to <code class="docutils literal notranslate"><span class="pre">→23</span></code> - but only as long as the label <code class="docutils literal notranslate"><span class="pre">next</span></code> is defined in line number 23!</p>
 <p>We also said that a branch to zero causes an exit from the current function. This is also the case for any jump to a line number which is outside the number of lines in the function. For example, <code class="docutils literal notranslate"><span class="pre">→50</span></code> would terminate any function which has less than 50 lines.</p>
@@ -6946,11 +7311,11 @@ Label line.
 </div>
 </div>
 <div class="section" id="other-conditional-execution">
-<span id="user-defined-functions-other-conditional-execution"></span><h3><span class="section-number">5.16.4. </span>Other Conditional Execution<a class="headerlink" href="#other-conditional-execution" title="Permalink to this headline">¶</a></h3>
+<span id="user-defined-functions-other-conditional-execution"></span><h3><span class="section-number">5.16.5. </span>Other Conditional Execution<a class="headerlink" href="#other-conditional-execution" title="Permalink to this headline">¶</a></h3>
 <p>In the course of this chapter, you have learned how to program conditional execution using control structures or traditional branching techniques.</p>
 <p>APL provides two other methods: the <em>Execute</em> function and the <em>Power</em> operator.</p>
 <div class="section" id="conditional-execution-using-execute">
-<span id="user-defined-functions-conditional-execution-using-execute"></span><h4><span class="section-number">5.16.4.1. </span>Conditional Execution Using Execute<a class="headerlink" href="#conditional-execution-using-execute" title="Permalink to this headline">¶</a></h4>
+<span id="user-defined-functions-conditional-execution-using-execute"></span><h4><span class="section-number">5.16.5.1. </span>Conditional Execution Using Execute<a class="headerlink" href="#conditional-execution-using-execute" title="Permalink to this headline">¶</a></h4>
 <p>The function <em>Execute</em> (<code class="docutils literal notranslate"><span class="pre">⍎</span></code>) will be studied in more detail in <span class="xref myst">a later chapter</span>. It executes any character vector given as a right argument, as if it were an expression that had been typed into the APL session window. But if the vector is empty, nothing will be executed. This feature can be used to conditionally execute a statement. Let us consider the following expression:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7005,7 +7370,7 @@ Label line.
 </div></blockquote>
 <!--end--></div>
 <div class="section" id="conditional-execution-using-the-power-operator">
-<span id="user-defined-functions-conditional-execution-using-the-power-operator"></span><h4><span class="section-number">5.16.4.2. </span>Conditional Execution Using the Power Operator<a class="headerlink" href="#conditional-execution-using-the-power-operator" title="Permalink to this headline">¶</a></h4>
+<span id="user-defined-functions-conditional-execution-using-the-power-operator"></span><h4><span class="section-number">5.16.5.2. </span>Conditional Execution Using the Power Operator<a class="headerlink" href="#conditional-execution-using-the-power-operator" title="Permalink to this headline">¶</a></h4>
 <p>The <em>Power operator</em> (<code class="docutils literal notranslate"><span class="pre">⍣</span></code>, typed with <kbd>APL</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>) will be studied in more detail in <span class="xref myst">a later chapter as well</span>. It must not be confused with the <em>Power function</em> (<code class="docutils literal notranslate"><span class="pre">*</span></code>).</p>
 <p><em>Power</em> can be used to execute a given function a set number of times. Of course, if we set that number to 1 then the function is executed once and if we set that number to 0, then the function is not executed at all. For example, in <a class="reference internal" href="#user-defined-functions-example-ambivalent-function"><span class="std std-numref">Section 5.10.3.4</span></a> we wrote a function which rounds a vector of values:</p>
 <div class="cell docutils container">
@@ -7052,7 +7417,7 @@ Label line.
 <!--end--></div>
 </div>
 <div class="section" id="name-category">
-<span id="user-defined-functions-name-category"></span><h3><span class="section-number">5.16.5. </span>Name Category<a class="headerlink" href="#name-category" title="Permalink to this headline">¶</a></h3>
+<span id="user-defined-functions-name-category"></span><h3><span class="section-number">5.16.6. </span>Name Category<a class="headerlink" href="#name-category" title="Permalink to this headline">¶</a></h3>
 <p>The system function <em>Name Category</em> (<code class="docutils literal notranslate"><span class="pre">⎕NC</span></code>) indicates if a name currently represents a variable, a function, an operator and so on.</p>
 <p>When applied to a nested vector of names, it returns an extended result, which gives more information. For example:</p>
 <div class="cell docutils container">
@@ -7097,7 +7462,7 @@ Label line.
 </ul>
 </div>
 <div class="section" id="bare-output">
-<span id="user-defined-functions-bare-output"></span><h3><span class="section-number">5.16.6. </span>Bare Output<a class="headerlink" href="#bare-output" title="Permalink to this headline">¶</a></h3>
+<span id="user-defined-functions-bare-output"></span><h3><span class="section-number">5.16.7. </span>Bare Output<a class="headerlink" href="#bare-output" title="Permalink to this headline">¶</a></h3>
 <p>When using <em>Quad</em> (<code class="docutils literal notranslate"><span class="pre">⎕</span></code>) to input data, the prompt and the user’s answer appear on different lines on the screen.</p>
 <p>When using a <em>Quote-Quad</em> (<code class="docutils literal notranslate"><span class="pre">⍞</span></code>) to input data, it is possible to force the system to issue the user with a prompt and collect their input on the same line of the screen. This is done by first assigning the prompt (a character vector) to <code class="docutils literal notranslate"><span class="pre">⍞</span></code> and then referencing <code class="docutils literal notranslate"><span class="pre">⍞</span></code>. When the assignment and reference are performed like this, as successive operations, the system does not throw a newline after the prompt and the user input is collected on the same line as the prompt. This is called “<em>Bare Output</em>”.</p>
 <p>Here is an example you can try in your interpreter: <code class="docutils literal notranslate"><span class="pre">⍞←</span> <span class="pre">'This</span> <span class="pre">is</span> <span class="pre">my</span> <span class="pre">question:</span> <span class="pre">'</span> <span class="pre">⋄</span> <span class="pre">z</span> <span class="pre">←</span> <span class="pre">⍞</span></code>.</p>
@@ -7129,7 +7494,7 @@ Label line.
 <p>We get all the prompts aligned and the return value only has the user’s inputs.</p>
 </div>
 <div class="section" id="ineach">
-<span id="user-defined-functions-ineach"></span><h3><span class="section-number">5.16.7. </span><code class="docutils literal notranslate"><span class="pre">:InEach</span></code><a class="headerlink" href="#ineach" title="Permalink to this headline">¶</a></h3>
+<span id="user-defined-functions-ineach"></span><h3><span class="section-number">5.16.8. </span><code class="docutils literal notranslate"><span class="pre">:InEach</span></code><a class="headerlink" href="#ineach" title="Permalink to this headline">¶</a></h3>
 <p>The control phrase <code class="docutils literal notranslate"><span class="pre">:For...</span> <span class="pre">:In</span></code> can be used to assign values to several control variables. One can also use <code class="docutils literal notranslate"><span class="pre">:InEach</span></code> which assigns one item from each of a set of nested values to the corresponding control variable. Sometimes <code class="docutils literal notranslate"><span class="pre">:In</span></code> is more convenient than <code class="docutils literal notranslate"><span class="pre">:InEach</span></code> and sometimes the reverse is true, as we will now show:</p>
 <p>Let us assume that data for an invoice is represented as a number of lines, each with a quantity and a price:</p>
 <div class="cell docutils container">
@@ -7202,7 +7567,7 @@ Label line.
 </div></blockquote>
 <!--end--></div>
 <div class="section" id="tail-recursion">
-<span id="user-defined-functions-tail-recursion"></span><h3><span class="section-number">5.16.8. </span>Tail Recursion<a class="headerlink" href="#tail-recursion" title="Permalink to this headline">¶</a></h3>
+<span id="user-defined-functions-tail-recursion"></span><h3><span class="section-number">5.16.9. </span>Tail Recursion<a class="headerlink" href="#tail-recursion" title="Permalink to this headline">¶</a></h3>
 <p>As was outlined in <a class="reference internal" href="#user-defined-functions-recursion"><span class="std std-numref">Section 5.11</span></a>, recursive solutions can be very elegant but may consume a lot of memory as successive calls accumulate local variables in their respective scopes.</p>
 <p>For example, consider the following recursive definition of the factorial function:</p>
 <div class="cell docutils container">
@@ -8418,7 +8783,7 @@ exercise
 </span></div></div>
 </div>
 <p>Another variation to the tradfn above would be to have a very long vector of spaces, for example <code class="docutils literal notranslate"><span class="pre">tail←(≢string)⍴'</span> <span class="pre">'</span></code>, and whenever we get a slice from the original string, we could do <code class="docutils literal notranslate"><span class="pre">mat</span> <span class="pre">←</span> <span class="pre">mat⍪(slice,tail)[⍳width]</span></code>.</p>
-<p>Yet another variation of the above would be possible if you read about the <code class="docutils literal notranslate"><span class="pre">:For...</span> <span class="pre">:InEach...</span> <span class="pre">:EndFor</span></code> control structure in <a class="reference internal" href="#user-defined-functions-ineach"><span class="std std-numref">Section 5.16.7</span></a>. With that, we can iterate directly over the limits of each slice. A reference tradfn implementing that method is shown below, also incorporating the alternative way to pad the remainder spaces mentioned above:</p>
+<p>Yet another variation of the above would be possible if you read about the <code class="docutils literal notranslate"><span class="pre">:For...</span> <span class="pre">:InEach...</span> <span class="pre">:EndFor</span></code> control structure in <a class="reference internal" href="#user-defined-functions-ineach"><span class="std std-numref">Section 5.16.8</span></a>. With that, we can iterate directly over the limits of each slice. A reference tradfn implementing that method is shown below, also incorporating the alternative way to pad the remainder spaces mentioned above:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="bp">∇</span> <span class="nv">mat</span> <span class="kd">←</span> <span class="nv">sep</span> <span class="nv">Separate</span> <span class="nv">string</span><span class="sr">;</span> <span class="nv">tai</span><span class="sr">;</span> <span class="nv">pos</span><span class="sr">;</span> <span class="nv">width</span><span class="sr">;</span> <span class="nv">idx</span><span class="sr">;</span> <span class="nv">starts</span><span class="sr">;</span> <span class="nv">ends</span><span class="sr">;</span> <span class="nv">s</span><span class="sr">;</span> <span class="nv">e</span><span class="sr">;</span> <span class="nv">l</span>
@@ -8650,7 +9015,7 @@ exercise
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">37 112 56 28 14 7 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1
 </span></div></div>
 </div>
-<p>Finally, a small rework can make this recursive version be <em>tail recursive</em>, as described in <a class="reference internal" href="#user-defined-functions-tail-recursion"><span class="std std-numref">Section 5.16.8</span></a>. If you skipped that, do not worry. In a nutshell, a tail recursive function is a recursive function that is less resource intensive. Such a possible implementation could be</p>
+<p>Finally, a small rework can make this recursive version be <em>tail recursive</em>, as described in <a class="reference internal" href="#user-defined-functions-tail-recursion"><span class="std std-numref">Section 5.16.9</span></a>. If you skipped that, do not worry. In a nutshell, a tail recursive function is a recursive function that is less resource intensive. Such a possible implementation could be</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
