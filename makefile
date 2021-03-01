@@ -4,7 +4,7 @@ html_build_folder = $(build_folder)/html
 latex_build_folder = $(build_folder)/latex
 cname_url = mastering.dyalog.com
 
-html: preprocess build_html publish_html
+html: preprocess build_html
 
 latex: preprocess build_latex
 
