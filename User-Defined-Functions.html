@@ -4194,11 +4194,14 @@ start of the loop
 <span id="user-defined-functions-use-cases"></span><h3><span class="section-number">5.8.2. </span>Use Cases<a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h3>
 <p>Based on the characteristics of both dfns and tradfns, there a few <em>rules of thumb</em> that help determine the situations in which dfns are more suitable and the situations in which tradfns are more suitable.
 Please, bear in mind that these are just guidelines to help you pick the right tool for the job, but ultimately the choice is yours and will boil down to your experience, personal preference, the context you are programming in, etc.</p>
-<p>As already mentioned before, dfns shine when one wants to create a user-defined function that takes some input and calculates something new with it.
-Tradfns are very helpful when you need to create a more complex function, or something that resembles a script in other languages, and you simply need the type of flow control that tradfns offer.
-In those cases, it makes sense to have a tradfn that represents the program you want to create, and then the tradfn itself calls several other functions (that could very well be dfns) that process the arguments and do useful things with them.</p>
+<p>As already mentioned before, dfns shine when one wants to create a user-defined function with a clean and well-defined data flow, taking some arguments in and processing them to produce a result.
+Functions of this sort are usually such that they always return the same value when given the same arguments, which means you can have a high degree of confidence that the function works as expected provided you test it thoroughly.</p>
+<p>Tradfns are very helpful when you need to create a more complex function, or something that resembles a script in other languages, and you simply need the type of flow control that tradfns offer.
+In those cases, it makes sense to have a tradfn that represents the program you want to create, and then the tradfn itself calls several other functions (that could very well be dfns) that process the arguments and do useful things with them.
+On top of that, if you have a complex function that is not working as it should, you may find it easier to debug if it contains control structures rather than if the flow control of the program were controlled by recursion or operators: with control structures you get more fine-grained control over where in the code you want to start debugging and how to do it.
+We will explore these ideas in more detail in <span class="xref myst">the “First Aid Kit” chapter</span>.</p>
 <p>From the characteristics of both types of user-defined functions, it also follows that if you want to create a relatively short function, a dfn is probably the best option:
-dfns are very simple to define and the definitions themselves take up little space (as opposed to tradfns whose headers take up more space, especially if you then localise all the variables you use - which you generally should).
+dfns are very simple to define and the definitions themselves take up little space (as opposed to tradfns whose headers take up more space, especially if you then localise all the variables you use – which you generally should).
 As an example, in <a class="reference external" href="https://www.dyalogaplcompetition.com/">Dyalog’s annual APL problem solving competition</a>, the first ten problems usually have a one-line solution, and those have to be submitted as dfns.</p>
 </div>
 </div>
