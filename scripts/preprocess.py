@@ -139,8 +139,10 @@ def generate_figure_references(lines):
         ))
         if len(names) == 1:
             return names[0]
+        elif len(names) == 2:
+            return " and ".join(names)
         else:
-            return ", ".join(names[:-1]) + " and " + names[-1]
+            return ", ".join(names[:-1]) + ", and " + names[-1]
     for i, line in enumerate(lines):
         lines[i] = re.sub(
             figure_ref_pattern,
