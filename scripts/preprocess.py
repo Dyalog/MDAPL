@@ -104,9 +104,7 @@ def image_to_figure(lines):
         # Does this line have a ![caption](path.ext) figure?
         m = re.match(r"!\[(.*)\]\((res/(.*?)\.(.*?))\)", lines[i])
         if m:
-            caption = m.group(1)
-            path = f"../{m.group(2)}"
-            name = m.group(3)
+            caption, path, name = m.group(1), m.group(2), m.group(3)
             new_lines = [
                 f"(fig-{name})=\n",
                 f"```{{figure}} {path}\n",
