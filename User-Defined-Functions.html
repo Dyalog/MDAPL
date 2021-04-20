@@ -57,7 +57,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6. Appendices" href="Appendices.html" />
+    <link rel="next" title="6. First-Aid Kit" href="First-Aid-Kit.html" />
     <link rel="prev" title="4. Some Primitive Functions" href="Some-Primitive-Functions.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,8 +113,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="First-Aid-Kit.html">
+   6. First-Aid Kit
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Appendices.html">
-   6. Appendices
+   7. Appendices
   </a>
  </li>
 </ul>
@@ -1174,7 +1179,7 @@
 <li><p>one or more windows in which to create/modify user-defined functions (grey Edit windows); and</p></li>
 <li><p>one or more windows to debug execution errors (black Trace window).</p></li>
 </ul>
-<p>The colours above refer to the positions of the windows in <a class="reference internal" href="#fig-ide-window-layout"><span class="std std-numref">Fig. 5.1</span></a>, <a class="reference internal" href="#fig-ide-window-horizontal-layout"><span class="std std-numref">Fig. 5.2</span></a> and <a class="reference internal" href="#fig-ide-floating-window-layout"><span class="std std-numref">Fig. 5.3</span></a>.</p>
+<p>The colours above refer to the positions of the windows in <a class="reference internal" href="#fig-ide-window-layout"><span class="std std-numref">Fig. 5.1</span></a>, <a class="reference internal" href="#fig-ide-window-horizontal-layout"><span class="std std-numref">Fig. 5.2</span></a>, and <a class="reference internal" href="#fig-ide-floating-window-layout"><span class="std std-numref">Fig. 5.3</span></a>.</p>
 <p>The default configuration is consistent with other software development tools and in it is possible to divide the session window into three parts which can be resized, as shown in <a class="reference internal" href="#fig-ide-window-layout"><span class="std std-numref">Fig. 5.1</span></a>:</p>
 <div class="figure align-default" id="ide-window-layout">
 <span id="fig-ide-window-layout"></span><img alt="_images/IDE_Window_Layout.png" src="_images/IDE_Window_Layout.png" />
@@ -1214,7 +1219,7 @@
 <span id="fig-ride-configure-floating-windows"></span><img alt="_images/RIDE_Configure_Floating_Windows.png" src="_images/RIDE_Configure_Floating_Windows.png" />
 <p class="caption"><span class="caption-number">Fig. 5.5 </span><span class="caption-text">Enable “floating” windows in RIDE.</span><a class="headerlink" href="#ride-configure-floating-windows" title="Permalink to this image">¶</a></p>
 </div>
-<p>Working with floating windows has the added benefit of allowing you to have a stack of trace windows (as opposed to a single trace window), showing which functions call which other. This will be explored in <code class="xref std std-numref docutils literal notranslate"><span class="pre">First-Aid-Kit-Choose-Your-Configuration</span></code>.</p>
+<p>Working with floating windows has the added benefit of allowing you to have a stack of trace windows (as opposed to a single trace window), showing which functions call which other. This will be explored in <a class="reference internal" href="First-Aid-Kit.html#first-aid-kit-choose-your-configuration"><span class="std std-numref">Section 6.3.2</span></a>.</p>
 </div>
 <div class="section" id="a-text-editor-what-for">
 <span id="user-defined-functions-a-text-editor-what-for"></span><h4><span class="section-number">5.1.2.2. </span>A Text Editor; What For?<a class="headerlink" href="#a-text-editor-what-for" title="Permalink to this headline">¶</a></h4>
@@ -3880,7 +3885,7 @@ start of the loop
 </div>
 <div class="section" id="weak-and-strong-interrupts">
 <span id="user-defined-functions-weak-and-strong-interrupts"></span><h4><span class="section-number">5.7.7.2. </span>Weak and Strong Interrupts<a class="headerlink" href="#weak-and-strong-interrupts" title="Permalink to this headline">¶</a></h4>
-<p>If you issue a <em><strong>Weak interrupt</strong></em>, the computer will complete the execution of the statement that it is currently processing. Then it will halt the function before executing the next statement. We recommend using a weak interrupt whenever possible because it allows the user to restart the function at the point it was interrupted (cf. <span class="xref myst">the chapter with the first aid kit</span>).</p>
+<p>If you issue a <em><strong>Weak interrupt</strong></em>, the computer will complete the execution of the statement that it is currently processing. Then it will halt the function before executing the next statement. We recommend using a weak interrupt whenever possible because it allows the user to restart the function at the point it was interrupted (cf. <a class="reference internal" href="First-Aid-Kit.html"><span class="doc std std-doc">the chapter with the first aid kit</span></a>).</p>
 <p>If you issue a <em><strong>Strong interrupt</strong></em>, the computer will complete the execution of the APL primitive that it is currently processing. Then it will interrupt the function before executing the next primitive.</p>
 <p>For example, in the <code class="docutils literal notranslate"><span class="pre">Endless</span></code> function above, it could calculate <code class="docutils literal notranslate"><span class="pre">i+1</span></code> and stop before executing the assignment <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">←</span> <span class="pre">i+1</span></code>. Of course, if the user restarts the statement, it will be executed again in its entirety (it is impossible to resume execution in the middle of a statement).</p>
 <p>Note that it is impossible to interrupt the execution of a primitive like <code class="docutils literal notranslate"><span class="pre">i+1</span></code> itself, and sometimes the execution of some primitives may take a long time.</p>
@@ -4199,7 +4204,7 @@ Functions of this sort are usually such that they always return the same value w
 <p>Tradfns are very helpful when you need to create a more complex function, or something that resembles a script in other languages, and you simply need the type of flow control that tradfns offer.
 In those cases, it makes sense to have a tradfn that represents the program you want to create, and then the tradfn itself calls several other functions (that could very well be dfns) that process the arguments and do useful things with them.
 On top of that, if you have a complex function that is not working as it should, you may find it easier to debug if it contains control structures rather than if the flow control of the program were controlled by recursion or operators: with control structures you get more fine-grained control over where in the code you want to start debugging and how to do it.
-We will explore these ideas in more detail in <span class="xref myst">the “First Aid Kit” chapter</span>.</p>
+We will explore these ideas in more detail in <a class="reference internal" href="First-Aid-Kit.html"><span class="doc std std-doc">the “First Aid Kit” chapter</span></a>.</p>
 <p>From the characteristics of both types of user-defined functions, it also follows that if you want to create a relatively short function, a dfn is probably the best option:
 dfns are very simple to define and the definitions themselves take up little space (as opposed to tradfns whose headers take up more space, especially if you then localise all the variables you use – which you generally should).
 As an example, in <a class="reference external" href="https://www.dyalogaplcompetition.com/">Dyalog’s annual APL problem solving competition</a>, the first ten problems usually have a one-line solution, and those have to be submitted as dfns.</p>
@@ -6069,7 +6074,7 @@ NOPQRSTUVWXYZ
 </tr>
 </tbody>
 </table>
-<p>See also <a class="reference internal" href="Appendices.html#appendices-invoking-the-editor"><span class="std std-numref">Section 6.2</span></a> for additional prefixes.</p>
+<p>See also <a class="reference internal" href="Appendices.html#appendices-invoking-the-editor"><span class="std std-numref">Section 7.2</span></a> for additional prefixes.</p>
 <p>It is possible to open several edit windows using a single command. For example, <code class="docutils literal notranslate"><span class="pre">)ed</span> <span class="pre">Tyrex</span> <span class="pre">-moose</span></code> will open two edit windows. The first to create or edit a function named <code class="docutils literal notranslate"><span class="pre">Tyrex</span></code> and the second to create a character matrix named <code class="docutils literal notranslate"><span class="pre">moose</span></code>.</p>
 <p>If a prefix is specified for the name of an already existing object, the prefix is ignored and the editor is invoked according to the type of the existing object.</p>
 <p>There are some other ways to invoke the editor:</p>
@@ -8915,7 +8920,7 @@ exercise
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="Some-Primitive-Functions.html" title="previous page"><span class="section-number">4. </span>Some Primitive Functions</a>
-    <a class='right-next' id="next-link" href="Appendices.html" title="next page"><span class="section-number">6. </span>Appendices</a>
+    <a class='right-next' id="next-link" href="First-Aid-Kit.html" title="next page"><span class="section-number">6. </span>First-Aid Kit</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
