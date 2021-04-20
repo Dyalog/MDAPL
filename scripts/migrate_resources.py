@@ -8,6 +8,9 @@ import shutil
 
 MIGRATE_EXTS = (
     ".dws",
+    ".png",
+    ".jpg",
+    ".jpeg",
 )
 
 UPDATING = "updating... {}"

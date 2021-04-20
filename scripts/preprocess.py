@@ -104,9 +104,7 @@ def image_to_figure(lines):
         # Does this line have a ![caption](path.ext) figure?
         m = re.match(r"!\[(.*)\]\((res/(.*?)\.(.*?))\)", lines[i])
         if m:
-            caption = m.group(1)
-            path = f"../{m.group(2)}"
-            name = m.group(3)
+            caption, path, name = m.group(1), m.group(2), m.group(3)
             new_lines = [
                 f"(fig-{name})=\n",
                 f"```{{figure}} {path}\n",
@@ -139,8 +137,10 @@ def generate_figure_references(lines):
         ))
         if len(names) == 1:
             return names[0]
+        elif len(names) == 2:
+            return " and ".join(names)
         else:
-            return ", ".join(names[:-1]) + " and " + names[-1]
+            return ", ".join(names[:-1]) + ", and " + names[-1]
     for i, line in enumerate(lines):
         lines[i] = re.sub(
             figure_ref_pattern,
