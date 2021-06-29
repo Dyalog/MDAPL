@@ -2,9 +2,11 @@
 
 For the latest release of “Mastering Dyalog APL”, visit [https://github.com/Dyalog/MDAPL/releases](https://github.com/Dyalog/MDAPL/releases).
 
-## v0.1
+Changes marked with [n] indicate new book content.
 
-Version 0.1 includes a significant number of changes because
+## v0.1.0
+
+Version 0.1.0 includes a significant number of changes because
 substantial work on the first chapters had already been done
 when versioning of the MDAPL rework started.
 
@@ -18,3 +20,37 @@ when versioning of the MDAPL rework started.
    - [n] remark that common `FORMAT ERROR` is the mixture of incompatible qualifiers/specifications;
    - [n] suggest not using `⍎` for weird programming tricks, instead use functions that receive arguments and return values;
    - [n] add section on controlling session output with user commands and the dfns namespace;
+   
+ - Add chapter “First-Aid Kit”
+   - update debugging instructions for Windows;
+   - [n] add debugging instructions for RIDE;
+   - (possibly other changes);
+   
+ - Add chapter “User-Defined Functions”
+   - reorder sections on tradfns and dfns to give more emphasis on dfns;
+   - [n] add sections on dfns;
+   - [n] add exercises on dfns;
+   - [n] comparative table between dfns and tradfns;
+   - (possibly other changes);
+   
+ - Add chapter “Some Primitive Functions”
+   - introduce match and depth (≡) and not-match and tally (≢);
+   - [n] mention unique that renders the `((⍳≢vector) = vector ⍳ vector) / vector` example as obsolete;
+   - (possibly other changes);
+   
+ - Add chapter “Data and Variables”
+   - (possibly other changes);
+   
+ - Add chaper “Getting Started”
+   - [n] add instructions for Linux and MacOS users;
+   - [n] add instructions for RIDE;
+   - [n] add instructions for Jupyter notebooks;
+   - [n] add more information on typing APL glyphs;
+   - (possibly other changes);
+   
+ - Add chapter “Will You Play APL With Me?”
+   - (possibly other changes);
+   
+ - Add chapter “Appendices”
+   - [n] add appendix with all event numbers;
+   - [n] add appendix with all the variables that are commonly used in the book and too long to type;
