@@ -118,8 +118,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Execute-and-Format-Control.html">
+   7. Execute &amp; Format Control
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Appendices.html">
-   7. Appendices
+   8. Appendices
   </a>
  </li>
 </ul>
@@ -4296,7 +4301,7 @@ As an example, in <a class="reference external" href="https://www.dyalogaplcompe
 <span id="user-defined-functions-format"></span><h3><span class="section-number">5.9.2. </span>Format<a class="headerlink" href="#format" title="Permalink to this headline">¶</a></h3>
 <p>In the preceding pages we found that we can display, on the screen, any kind of results: numbers, text or a mixture of numbers and characters in nested arrays. Now we shall try to output data to external media, like graphic interfaces, disk files or printers. Most of those media only accept text. For example, it is impossible to send numbers to a printer: we must first convert them to printable characters.</p>
 <p>The APL language includes two such conversion tools: a function named <em><strong>Format</strong></em>, represented by the symbol <code class="docutils literal notranslate"><span class="pre">⍕</span></code> and typed with <kbd>APL</kbd>+<kbd>’</kbd>, and a <em>System function</em> named <code class="docutils literal notranslate"><span class="pre">⎕FMT</span></code>. You can remember <code class="docutils literal notranslate"><span class="pre">⍕</span></code>’s position on the keyboard because <code class="docutils literal notranslate"><span class="pre">⍕</span></code> transforms its argument into a character array, and you input characters with a quote <code class="docutils literal notranslate"><span class="pre">'</span></code>, hence <code class="docutils literal notranslate"><span class="pre">⍕</span></code> is <kbd>APL</kbd>+<kbd>’</kbd>.</p>
-<p>These facilities will be studied in detail in <span class="xref myst">a subsequent chapter</span> but we will introduce here the basic use of <em>Format</em>.</p>
+<p>These facilities will be studied in detail in <a class="reference internal" href="Execute-and-Format-Control.html"><span class="doc std std-doc">a subsequent chapter</span></a> but we will introduce here the basic use of <em>Format</em>.</p>
 <div class="section" id="monadic-format">
 <span id="user-defined-functions-monadic-format"></span><h4><span class="section-number">5.9.2.1. </span>Monadic Format<a class="headerlink" href="#monadic-format" title="Permalink to this headline">¶</a></h4>
 <p>Monadic <em>Format</em> converts any array (numbers, characters and nested arrays) into its character representation. The result is exactly the same as what you see when you display the array in the APL session, because in fact, APL internally uses monadic <em>Format</em> to display arrays:</p>
@@ -4522,7 +4527,7 @@ Fe2O3
 <div><p>Any attempt to apply dyadic <code class="docutils literal notranslate"><span class="pre">⍕</span></code> to characters will cause a <code class="docutils literal notranslate"><span class="pre">DOMAIN</span> <span class="pre">ERROR</span></code>.</p>
 </div></blockquote>
 <!--end-->
-<p><em>Format</em> will be studied in detail in <span class="xref myst">a later chapter</span>.</p>
+<p><em>Format</em> will be studied in detail in <a class="reference internal" href="Execute-and-Format-Control.html"><span class="doc std std-doc">a later chapter</span></a>.</p>
 </div>
 </div>
 <div class="section" id="displaying-intermediate-results">
@@ -6074,7 +6079,7 @@ NOPQRSTUVWXYZ
 </tr>
 </tbody>
 </table>
-<p>See also <a class="reference internal" href="Appendices.html#appendices-invoking-the-editor"><span class="std std-numref">Section 7.2</span></a> for additional prefixes.</p>
+<p>See also <a class="reference internal" href="Appendices.html#appendices-invoking-the-editor"><span class="std std-numref">Section 8.2</span></a> for additional prefixes.</p>
 <p>It is possible to open several edit windows using a single command. For example, <code class="docutils literal notranslate"><span class="pre">)ed</span> <span class="pre">Tyrex</span> <span class="pre">-moose</span></code> will open two edit windows. The first to create or edit a function named <code class="docutils literal notranslate"><span class="pre">Tyrex</span></code> and the second to create a character matrix named <code class="docutils literal notranslate"><span class="pre">moose</span></code>.</p>
 <p>If a prefix is specified for the name of an already existing object, the prefix is ignored and the editor is invoked according to the type of the existing object.</p>
 <p>There are some other ways to invoke the editor:</p>
@@ -7165,7 +7170,7 @@ Label line.
 <p>APL provides two other methods: the <em>Execute</em> function and the <em>Power</em> operator.</p>
 <div class="section" id="conditional-execution-using-execute">
 <span id="user-defined-functions-conditional-execution-using-execute"></span><h4><span class="section-number">5.16.5.1. </span>Conditional Execution Using Execute<a class="headerlink" href="#conditional-execution-using-execute" title="Permalink to this headline">¶</a></h4>
-<p>The function <em>Execute</em> (<code class="docutils literal notranslate"><span class="pre">⍎</span></code>) will be studied in more detail in <span class="xref myst">a later chapter</span>. It executes any character vector given as a right argument, as if it were an expression that had been typed into the APL session window. But if the vector is empty, nothing will be executed. This feature can be used to conditionally execute a statement. Let us consider the following expression:</p>
+<p>The function <em>Execute</em> (<code class="docutils literal notranslate"><span class="pre">⍎</span></code>) will be studied in more detail in <a class="reference internal" href="Execute-and-Format-Control.html"><span class="doc std std-doc">a later chapter</span></a>. It executes any character vector given as a right argument, as if it were an expression that had been typed into the APL session window. But if the vector is empty, nothing will be executed. This feature can be used to conditionally execute a statement. Let us consider the following expression:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">diff</span> <span class="kd">←</span> <span class="m">10</span> <span class="p">⋄</span> <span class="nv">limit</span> <span class="kd">←</span> <span class="m">5</span>
