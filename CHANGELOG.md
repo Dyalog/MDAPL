@@ -2,7 +2,17 @@
 
 For the latest release of “Mastering Dyalog APL”, visit [https://github.com/Dyalog/MDAPL/releases](https://github.com/Dyalog/MDAPL/releases).
 
-Changes marked with [n] indicate new book content.
+This changelog keeps track of two types of changes.
+In the first instance, it lists the changes between consecutive releases of this book.
+However, because this book is a rework of the first edition by Bernard Legrand,
+this changelog also marks with [n] content that is new in this rework.
+
+## v0.1.1
+
+ - Fix issues #1, #3, and #4.
+ - Fix other minor issues and typos.
+ - [n] Add a row about shy results on the comparative table between dfns and tradfns.
+ - Acknowledge contributions to this rework in the README file.
 
 ## v0.1.0
 
