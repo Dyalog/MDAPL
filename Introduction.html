@@ -721,17 +721,14 @@
 </span></div></div>
 </div>
 <p>Note that to distinguish the sign attached to negative values from subtraction, negative values are shown with a high minus sign. The high minus sign can be obtained by pressing <kbd>APL</kbd>+<kbd>2</kbd>.</p>
-<p>In most traditional programming languages, an operation like the one above requires two nested loops. See what is needed in Python:</p>
-<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">actual</span><span class="p">)):</span>
-    <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">actual</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
-        <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">actual</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">forecast</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
-    <span class="n">diff</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+<p>In traditional procedural languages, the operation would probably require two nested loops or a similar construct, like the following pseudocode tries to illustrate:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">rows</span><span class="p">(</span><span class="n">actual</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">cols</span><span class="p">(</span><span class="n">actual</span><span class="p">)):</span>
+        <span class="n">diff</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">actual</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">forecast</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Even if this may seem obvious to a programmer, it is worth noting that most of the code has nothing to do with the user requirement. The only important thing (subtract forecasts from actual values) is hidden behind the detailed working of the computer program.</p>
-<p>To have a calculation done by a machine, one must translate our human wording into something that the computer can understand. With traditional languages, most of the effort is made by the man, to produce a program like the Python example above. The great advantage of APL is that the man has generally much less effort to make, and the machine does the rest.</p>
+<p>To have a calculation done by a machine, one must translate our human wording into something that the computer can understand. With traditional languages, most of the effort is made by the human, to produce a program like the pseudocode example above. The great advantage of APL is that the human has generally much less effort to make, and the machine does the rest.</p>
 <p>We have seen that APL will work on two variables of the same shape; it also works if one of the variables is a single item, which is called a <strong><em>scalar</em></strong>. If so, the other variable may be of any shape.</p>
 <p>For example, if we want to calculate the amount of 19.6% VAT applied to the variable <code class="docutils literal notranslate"><span class="pre">price</span></code> above, we can type <code class="docutils literal notranslate"><span class="pre">price</span> <span class="pre">×</span> <span class="pre">vat</span> <span class="pre">÷</span> <span class="pre">100</span></code> (or <code class="docutils literal notranslate"><span class="pre">vat</span> <span class="pre">×</span> <span class="pre">price</span> <span class="pre">÷</span> <span class="pre">100</span></code> as well), as shown here:</p>
 <div class="cell docutils container">
@@ -2229,7 +2226,7 @@ a t e
 </div>
 <div class="section" id="access-your-data">
 <span id="introduction-access-your-data"></span><h3><span class="section-number">1.15.4. </span>Access Your Data<a class="headerlink" href="#access-your-data" title="Permalink to this headline">¶</a></h3>
-<p>Of course, Dyalog APL has built-in instructions to access data files, and SQL databases like Oracle, SQL Server, or other popular databases. These interfaces allow you to visualise and process part or all of a data base as if it were an array, to which you can apply all the array processing functions available in APL. That saves you a lot of heavy programming tasks.</p>
+<p>Of course, Dyalog APL has facilities to access data files, and SQL databases like Oracle, SQL Server, or other popular databases. These interfaces allow you to visualise and process part or all of a database as if it were an array, to which you can apply all the array processing functions available in APL. That saves you a lot of heavy programming tasks.</p>
 <p>Dyalog APL has also its own powerful file system. These files are collections of arrays of any shapes or sizes, which can be processed with the full power of the language. Databases built with this special feature are extremely compact (2 to 3 times smaller than an equivalent relational database). They can be shared, and they offer much greater flexibility and superior performance compared to traditional database management systems.</p>
 </div>
 <div class="section" id="build-an-efficient-partnership-with-microsoft-excel">
@@ -2330,7 +2327,7 @@ a t e
     <div class="container">
       <p>
         
-          By Bernard Legrand, contributions by Kim S. Andreasen, Daniel Baronet, Gitte Christensen, Peter Donnelly, Morten Kromberg, John Scholes, Adrian Smith and Tim JA. Smith. Reworked by Rodrigo Girão Serrão.<br/>
+          By Bernard Legrand, reworked by Rodrigo Girão Serrão.<br/>
         
           <div class="extra_footer">
             <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">

@@ -4185,15 +4185,19 @@ start of the loop
 <td class="text-align:left"><p>The value of the first statement whose value is not assigned to a variable.</p></td>
 <td class="text-align:left"><p>The value of the variable specified in the header.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Variable scope</p></td>
+<tr class="row-odd"><td class="text-align:left"><p>Shy result</p></td>
+<td class="text-align:left"><p>Last expression needs to be an assignment and must be followed by the closing <code class="docutils literal notranslate"><span class="pre">}</span></code>.</p></td>
+<td class="text-align:left"><p>Enclose the header variable in <code class="docutils literal notranslate"><span class="pre">{}</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Variable scope</p></td>
 <td class="text-align:left"><p>Local by default.</p></td>
 <td class="text-align:left"><p>Global by default.</p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p>Flow control</p></td>
+<tr class="row-odd"><td class="text-align:left"><p>Traditional flow control</p></td>
 <td class="text-align:left"><p>Limited to usage of guards, in the form of <code class="docutils literal notranslate"><span class="pre">condition:</span> <span class="pre">statement</span></code>.</p></td>
 <td class="text-align:left"><p>Complex flow control with control structures such as <code class="docutils literal notranslate"><span class="pre">:If</span></code>, <code class="docutils literal notranslate"><span class="pre">:For</span></code>, and <code class="docutils literal notranslate"><span class="pre">:While</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Scoping</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Scoping</p></td>
 <td class="text-align:left"><p>Lexical.</p></td>
 <td class="text-align:left"><p>Dynamic.</p></td>
 </tr>
@@ -8932,7 +8936,7 @@ exercise
     <div class="container">
       <p>
         
-          By Bernard Legrand, contributions by Kim S. Andreasen, Daniel Baronet, Gitte Christensen, Peter Donnelly, Morten Kromberg, John Scholes, Adrian Smith and Tim JA. Smith. Reworked by Rodrigo Girão Serrão.<br/>
+          By Bernard Legrand, reworked by Rodrigo Girão Serrão.<br/>
         
           <div class="extra_footer">
             <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">

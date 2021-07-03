@@ -1290,7 +1290,7 @@ Despite <code class="docutils literal notranslate"><span class="pre">Palindrome<
 <span id="first-aid-kit-information-and-actions"></span><h3><span class="section-number">6.1.3. </span>Information and Actions<a class="headerlink" href="#information-and-actions" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="indicators">
 <span id="first-aid-kit-indicators"></span><h4><span class="section-number">6.1.3.1. </span>Indicators<a class="headerlink" href="#indicators" title="Permalink to this headline">¶</a></h4>
-<p>When an error occurs, a number of program status indicators are available fro the developer’s use.
+<p>When an error occurs, a number of program status indicators are available for the developer’s use.
 Not all of them will be described here; we shall just explore the most useful ones.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -2862,13 +2862,18 @@ In the status field that displays the depth of the <em>state indicator</em>, you
 <p>When diagnosing a problem, you generally use <code class="docutils literal notranslate"><span class="pre">)si</span></code>.
 However, you can obtain additional information with <code class="docutils literal notranslate"><span class="pre">)sinl</span></code>, which also gives all the <strong>local</strong> names used by the suspended functions, whether or not they have already been calculated.
 The <code class="docutils literal notranslate"><span class="pre">nl</span></code> stands for “name list”.</p>
-<p>For example, when <code class="docutils literal notranslate"><span class="pre">Palindrome</span></code> crashes because of our <code class="docutils literal notranslate"><span class="pre">ReverBug</span></code>:</p>
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>      <span class="p">)</span><span class="nv">sinl</span>
-<span class="c1">#.ReverBug[6]*  vec     rev     from    to</span>
-<span class="c1">#.Palindrome[2] vector</span>
+<p>For example, when <code class="docutils literal notranslate"><span class="pre">Palindrome</span></code> crashed because our <code class="docutils literal notranslate"><span class="pre">ReverBug</span></code> implementation had a typo in the expression <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">←</span> <span class="pre">frm+1</span></code>, we could have used <code class="docutils literal notranslate"><span class="pre">)sinl</span></code>:</p>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>      <span class="nv">Palindrome</span> <span class="s1">&#39;Was it a car or a cat I saw?&#39;</span>
+<span class="nv">VALUE</span> <span class="nv">ERROR</span><span class="bp">:</span> <span class="nv">Undefined</span> <span class="nv">name</span><span class="bp">:</span> <span class="nv">frm</span>
+<span class="nv">ReverBug</span><span class="sr">[</span><span class="m">4</span><span class="sr">]</span> <span class="nv">from</span><span class="kd">←</span><span class="nv">frm</span><span class="o">+</span><span class="m">1</span>
+                 <span class="o">∧</span>
+      <span class="p">)</span><span class="nv">sinl</span>
+<span class="c1">#.ReverBug[4]*  vec     rev     from    to</span>
+<span class="c1">#.Palindrome[2] vec</span>
 </pre></div>
 </div>
-<p>When the crash occurred, <code class="docutils literal notranslate"><span class="pre">to</span></code> and <code class="docutils literal notranslate"><span class="pre">torvec</span></code> did not exist, but their names are nevertheless reported by <code class="docutils literal notranslate"><span class="pre">)sinl</span></code>.</p>
+<p>Notice that, when the crash occurred, <code class="docutils literal notranslate"><span class="pre">to</span></code> hadn’t been assigned to yet, but its name is nevertheless reported by <code class="docutils literal notranslate"><span class="pre">)sinl</span></code>.
+This happens because the header of the <code class="docutils literal notranslate"><span class="pre">ReverBug</span></code> tradfn contains a list of all the local names to <code class="docutils literal notranslate"><span class="pre">ReverBug</span></code>, where <code class="docutils literal notranslate"><span class="pre">to</span></code> shows up.</p>
 </div>
 <div class="section" id="namespaces-and-indicators">
 <span id="first-aid-kit-namespaces-and-indicators"></span><h4><span class="section-number">6.5.1.4. </span>Namespaces and Indicators<a class="headerlink" href="#namespaces-and-indicators" title="Permalink to this headline">¶</a></h4>
@@ -3087,7 +3092,7 @@ This is also visible in the <em>state indicator</em>:</p>
     <div class="container">
       <p>
         
-          By Bernard Legrand, contributions by Kim S. Andreasen, Daniel Baronet, Gitte Christensen, Peter Donnelly, Morten Kromberg, John Scholes, Adrian Smith and Tim JA. Smith. Reworked by Rodrigo Girão Serrão.<br/>
+          By Bernard Legrand, reworked by Rodrigo Girão Serrão.<br/>
         
           <div class="extra_footer">
             <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
