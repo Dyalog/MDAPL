@@ -10,6 +10,12 @@ this changelog also marks with [n] content that is new in this rework.
 ## v0.2.0
 
  - Add chapter “Working on Data Shape”
+   - [n] replace the "type" primitive (`∊` with `⎕ML ← 0`) with a reference to `⎕DR`;
+   - [n] updated spec of take `↑` and drop `↓` because they now conform to leading axis theory (the length of the left argument now can be smaller than the rank of the right argument);
+   - [n] include exercises to write expressions that determine `⍴ns↑array` and `⍴ns↓array` from `ns`, `≢ns`, and `⍴array`;
+   - [n] include more natural example of when _laminate_ is useful to "show vectors";
+   - don't call _mirror_ to reverse `⌽` and reverse first `⊖`;
+   - [n] include remark about `⊖` not being a no-op for vectors, although visually one might expect that;
 
 ## v0.1.1
 
