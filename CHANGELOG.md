@@ -7,6 +7,22 @@ In the first instance, it lists the changes between consecutive releases of this
 However, because this book is a rework of the first edition by Bernard Legrand,
 this changelog also marks with [n] content that is new in this rework.
 
+## v0.2.0
+
+ - Add chapter “Working on Data Shape”
+   - [n] replace the "type" primitive (`∊` with `⎕ML ← 0`) with a reference to `⎕DR`;
+   - [n] updated spec of take `↑` and drop `↓` because they now conform to leading axis theory (the length of the left argument now can be smaller than the rank of the right argument);
+   - [n] include exercises to write expressions that determine `⍴ns↑array` and `⍴ns↓array` from `ns`, `≢ns`, and `⍴array`;
+   - [n] include exercises to transform the left argument to take `↑` into a left argument for drop `↓` and vice-versa, given a fixed right argument;
+   - [n] include more natural example of when _laminate_ is useful to "show vectors";
+   - don't call _mirror_ to reverse `⌽` and reverse first `⊖`;
+   - [n] include remark about `⊖` not being a no-op for vectors, although visually one might expect that;
+   - regarding the solutions for the problems:
+     - move them to the end of the chapter;
+	 - [n] write them as dfns;
+	 - [n] modernise some of the solutions;
+	 - [n] include explanations of how to arrive at the solutions;
+
 ## v0.1.1
 
  - Fix issues #1, #3, and #4.
