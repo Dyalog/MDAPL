@@ -7,6 +7,16 @@ In the first instance, it lists the changes between consecutive releases of this
 However, because this book is a rework of the first edition by Bernard Legrand,
 this changelog also marks with [n] content that is new in this rework.
 
+## v0.2.1
+
+ - [n] Add example in “Data and Variables” that explains why multiple assignment without parenthesis can be ambiguous to read.
+ - Do not call "mirror" to the primitives `⌽` and `⊖`.
+ - Make text a bit less Windows-centric.
+ - Format APL terms consistently throughout the book (with italics only).
+ - Prefer "catenate" over "concatenate" for the primitive `,`.
+ - Prefer the construct "the function <name>" over "the <name> function" – the "function" qualifier before the function name makes it clearer, earlier, that we are talking about a specific function
+ - Fix reference issues with images that had empty captions.
+
 ## v0.2.0
 
  - Add chapter “Working on Data Shape”
