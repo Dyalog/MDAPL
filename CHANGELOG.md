@@ -15,6 +15,7 @@ this changelog also marks with [n] content that is new in this rework.
  - Format APL terms consistently throughout the book (with italics only).
  - Prefer "catenate" over "concatenate" for the primitive `,`.
  - Prefer the construct "the function <name>" over "the <name> function" – the "function" qualifier before the function name makes it clearer, earlier, that we are talking about a specific function
+ - Fix reference issues with images that had empty captions.
 
 ## v0.2.0
 
