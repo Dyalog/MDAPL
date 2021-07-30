@@ -485,7 +485,7 @@ This is why this chapter presents a number of new tools that will help you perfo
 <tr class="row-odd"><td class="text-align:left"><p>Catenate</p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">x,y</span></code></p></td>
 <td class="text-align:left"><p>Creates a new array by gluing <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> together.</p></td>
-<td class="text-align:left"><p><a class="reference internal" href="Some-Primitive-Functions.html#some-primitive-functions-concatenate"><span class="std std-numref">Section 4.11</span></a></p></td>
+<td class="text-align:left"><p><a class="reference internal" href="Some-Primitive-Functions.html#some-primitive-functions-catenate"><span class="std std-numref">Section 4.11</span></a></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:left"><p>Ravel</p></td>
 <td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">,y</span></code></p></td>
@@ -1092,7 +1092,7 @@ In short, the functions <em>take</em> and <em>drop</em> return a result with the
 </div>
 <div class="section" id="short-left-argument">
 <span id="working-on-data-shape-short-left-argument"></span><h4><span class="section-number">8.1.3.2. </span>Short Left Argument<a class="headerlink" href="#short-left-argument" title="Permalink to this headline">¶</a></h4>
-<!-- (TODO) Write about Leading Axis Theory -->
+<!-- (TODO) Write about Leading Axis Theory somewhere and talk about this example -->
 <p>If one or more of the trailing dimensions of the array are to remain unchanged, then one need only specify the parameters for the leading dimensions.</p>
 <p>For example, suppose that we want to extract the first 2 rows of <code class="docutils literal notranslate"><span class="pre">mat</span></code>.
 We know its shape is <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">4</span></code>, so we can easily write</p>
@@ -1301,7 +1301,7 @@ Nair
 Tyte
 </span></div></div>
 </div>
-<p>The <em>catenation</em> of those two matrices will not change the <em>rank</em> of the arrays, and thus give another matrix, as we saw in <a class="reference internal" href="Some-Primitive-Functions.html#some-primitive-functions-concatenate"><span class="std std-numref">Section 4.11</span></a>:</p>
+<p>The <em>catenation</em> of those two matrices will not change the <em>rank</em> of the arrays, and thus give another matrix, as we saw in <a class="reference internal" href="Some-Primitive-Functions.html#some-primitive-functions-catenate"><span class="std std-numref">Section 4.11</span></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">names</span><span class="o">,</span><span class="nv">surnames</span>

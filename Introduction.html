@@ -353,8 +353,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mirrors-and-transposition">
-     1.13.2. Mirrors and Transposition
+    <a class="reference internal nav-link" href="#reverses-and-transposition">
+     1.13.2. Reverses and Transposition
     </a>
    </li>
   </ul>
@@ -471,7 +471,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.0 Unicode\ws\dfns.dws saved Tue Dec  1 20:08:40 2020
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.0 Unicode\ws\dfns.dws saved Fri Jun 18 19:45:54 2021
 </span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">Dyalog APL/en-US keyboard                                                               
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯                                                               
 ┌────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬─────────┐            
@@ -558,7 +558,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">86</span> <span class="o">÷</span> <span class="m">4</span>        <span class="c1">⍝ The Divide sign is obtained using APL+=</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">86</span> <span class="o">÷</span> <span class="m">4</span>        <span class="c1">⍝ The &quot;divide&quot; sign is obtained using APL+=</span>
 </pre></div>
 </div>
 </div>
@@ -568,7 +568,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">59</span> <span class="o">×</span> <span class="m">8</span>        <span class="c1">⍝ The Multiply sign is obtained using APL+-</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">59</span> <span class="o">×</span> <span class="m">8</span>        <span class="c1">⍝ The &quot;multiply&quot; sign is obtained using APL+-</span>
 </pre></div>
 </div>
 </div>
@@ -578,11 +578,11 @@
 </div>
 <p>You will notice that in the examples given in the book we very often put a blank space between a symbol and the surrounding names or values. This is unnecessary in most cases and we only do so in order to improve readability. Later on, we will gradually cease to insert the blank spaces in expressions that you should become familiar with along the way.</p>
 <p>You can see that APL behaves like any hand-held calculator with, however, a small difference: multiplication is represented by the multiplication symbol (<code class="docutils literal notranslate"><span class="pre">×</span></code>) which is used in schools in many countries; likewise for division (<code class="docutils literal notranslate"><span class="pre">÷</span></code>).</p>
-<p>In most other computer languages, a star <code class="docutils literal notranslate"><span class="pre">*</span></code> is used for Multiply and <code class="docutils literal notranslate"><span class="pre">/</span></code> for Divide. This is a legacy of the early days of computers, when the character set was limited to the one available on a typewriter. At the time it was decided to use <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">/</span></code> in place of <code class="docutils literal notranslate"><span class="pre">×</span></code> and <code class="docutils literal notranslate"><span class="pre">÷</span></code>. But it is now possible to display any type of symbol on a screen and on a printer, and this transposition is no longer justifiable. The use of common symbols, which are taught all over the world, aids the understanding of APL by non programmers.</p>
+<p>In most other computer languages, a star <code class="docutils literal notranslate"><span class="pre">*</span></code> is used for multiplication and <code class="docutils literal notranslate"><span class="pre">/</span></code> for division. This is a legacy of the early days of computers, when the character set was limited to the one available on a typewriter. At the time it was decided to use <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">/</span></code> in place of <code class="docutils literal notranslate"><span class="pre">×</span></code> and <code class="docutils literal notranslate"><span class="pre">÷</span></code>. But it is now possible to display any type of symbol on a screen and on a printer, and this transposition is no longer justifiable. The use of common symbols, which are taught all over the world, aids the understanding of APL by non programmers.</p>
 <p>If you are familiar with other programming languages, you may occasionally and erroneously use <code class="docutils literal notranslate"><span class="pre">*</span></code> instead of <code class="docutils literal notranslate"><span class="pre">×</span></code>. Let’s see what might happen then:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">7</span> <span class="o">*</span> <span class="m">3</span>        <span class="c1">⍝ In APL the star means &quot;Power&quot;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">7</span> <span class="o">*</span> <span class="m">3</span>        <span class="c1">⍝ In APL the star means &quot;power&quot;</span>
              <span class="c1">⍝ so that 7*3 is equivalent to 7×7×7</span>
 </pre></div>
 </div>
@@ -734,7 +734,7 @@
 </div>
 <p>Even if this may seem obvious to a programmer, it is worth noting that most of the code has nothing to do with the user requirement. The only important thing (subtract forecasts from actual values) is hidden behind the detailed working of the computer program.</p>
 <p>To have a calculation done by a machine, one must translate our human wording into something that the computer can understand. With traditional languages, most of the effort is made by the human, to produce a program like the pseudocode example above. The great advantage of APL is that the human has generally much less effort to make, and the machine does the rest.</p>
-<p>We have seen that APL will work on two variables of the same shape; it also works if one of the variables is a single item, which is called a <strong><em>scalar</em></strong>. If so, the other variable may be of any shape.</p>
+<p>We have seen that APL will work on two variables of the same shape; it also works if one of the variables is a single item, which is called a <em>scalar</em>. If so, the other variable may be of any shape.</p>
 <p>For example, if we want to calculate the amount of 19.6% VAT applied to the variable <code class="docutils literal notranslate"><span class="pre">price</span></code> above, we can type <code class="docutils literal notranslate"><span class="pre">price</span> <span class="pre">×</span> <span class="pre">vat</span> <span class="pre">÷</span> <span class="pre">100</span></code> (or <code class="docutils literal notranslate"><span class="pre">vat</span> <span class="pre">×</span> <span class="pre">price</span> <span class="pre">÷</span> <span class="pre">100</span></code> as well), as shown here:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -751,9 +751,9 @@
 <div class="section" id="more-symbols">
 <span id="introduction-more-symbols"></span><h2><span class="section-number">1.4. </span>More Symbols<a class="headerlink" href="#more-symbols" title="Permalink to this headline">¶</a></h2>
 <p>Most programming languages represent only a very small subset of the mathematical functions using symbols (typically <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">/</span></code>). The creator of APL, Kenneth E. Iverson, chose to include many traditional mathematical symbols in his language, and also added some new symbols to the set that we already know so well.</p>
-<p>For example, many functions which in other programming languages are library routines with names like “Maximum” have their own symbols in APL.</p>
-<p>The function “<strong><em>Maximum</em></strong>” (represented by <code class="docutils literal notranslate"><span class="pre">⌈</span></code>, typed with <kbd>APL</kbd>+<kbd>s</kbd>) returns the greater of two numbers, or of two arrays of numbers compared item by item.</p>
-<p>There is also, as one might expect, a symbol for “<strong><em>Minimum</em></strong>” (<code class="docutils literal notranslate"><span class="pre">⌊</span></code>, typed with <kbd>APL</kbd>+<kbd>d</kbd>).</p>
+<p>For example, many functions which in other programming languages are library routines with names like “maximum” have their own symbols in APL.</p>
+<p>The function <em>maximum</em> (represented by <code class="docutils literal notranslate"><span class="pre">⌈</span></code>, typed with <kbd>APL</kbd>+<kbd>s</kbd>) returns the greater of two numbers, or of two arrays of numbers compared item by item.</p>
+<p>There is also, as one might expect, a symbol for <em>minimum</em> (<code class="docutils literal notranslate"><span class="pre">⌊</span></code>, typed with <kbd>APL</kbd>+<kbd>d</kbd>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">75.6</span> <span class="o">⌈</span> <span class="m">87.3</span>
@@ -764,7 +764,7 @@
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">87.3
 </span></div></div>
 </div>
-<p>If we type more than one item on either side, we get comparison item by item. Later, we will see this is because <em>Maximum</em> is a <em>scalar</em> function.</p>
+<p>If we type more than one item on either side, we get comparison item by item. Later, we will see this is because <em>maximum</em> is a <em>scalar</em> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">11</span> <span class="m">28</span> <span class="m">52</span> <span class="m">14</span> <span class="o">⌈</span> <span class="m">30</span> <span class="m">10</span> <span class="m">50</span> <span class="m">20</span>
@@ -791,7 +791,7 @@
 <div class="section" id="most-symbols-have-a-double-meaning">
 <span id="introduction-most-symbols-have-a-double-meaning"></span><h2><span class="section-number">1.5. </span>Most Symbols Have a Double Meaning<a class="headerlink" href="#most-symbols-have-a-double-meaning" title="Permalink to this headline">¶</a></h2>
 <p>This is not a peculiarity of APL; in algebra we are familiar with the use of symbols as common as the minus sign being used in two different ways.</p>
-<p>In the expression <span class="math notranslate nohighlight">\(a = x \color{red}{-} y\)</span> the minus sign means subtract, whereas in <span class="math notranslate nohighlight">\(a = \color{red}{-}y\)</span> the minus sign indicates the negation of <span class="math notranslate nohighlight">\(y\)</span>. The first form is called the “<strong><em>dyadic</em></strong>” use of the symbol. The second form is called the “<strong><em>monadic</em></strong>” use of the symbol.</p>
+<p>In the expression <span class="math notranslate nohighlight">\(a = x \color{red}{-} y\)</span> the minus sign means subtract, whereas in <span class="math notranslate nohighlight">\(a = \color{red}{-}y\)</span> the minus sign indicates the negation of <span class="math notranslate nohighlight">\(y\)</span>. The first form is called the <em>dyadic</em> use of the symbol. The second form is called the <em>monadic</em> use of the symbol.</p>
 <p>It is the same in APL, where most of the symbols can have two meanings.</p>
 <p>For example, to find the shape (the dimensions) of an array, one uses the Greek letter Rho (<code class="docutils literal notranslate"><span class="pre">⍴</span></code>), which can be read “<em>shape of …</em>”, in its monadic use. It is produced using <kbd>APL</kbd>+<kbd>r</kbd>.</p>
 <p>For example,</p>
@@ -908,7 +908,7 @@
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">73.6
 </span></div></div>
 </div>
-<p>Simple, isn’t it? This gives the total of all the items of the array. You can read this as “<em>Plus Reduction</em>” of the variable <code class="docutils literal notranslate"><span class="pre">costs</span></code>.</p>
+<p>Simple, isn’t it? This gives the total of all the items of the array. You can read this as “<em>plus reduction</em>” of the variable <code class="docutils literal notranslate"><span class="pre">costs</span></code>.</p>
 <p>To gain a better understanding of the process: when we write an instruction such as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -978,7 +978,7 @@
 </span></div></div>
 </div>
 <p>so, we obtain the largest term <code class="docutils literal notranslate"><span class="pre">45</span></code></p>
-<p>Reduction, represented by the symbol <code class="docutils literal notranslate"><span class="pre">/</span></code>, belongs to a special category of symbols called “<em><strong>Operators</strong></em>”. All the other symbols (<code class="docutils literal notranslate"><span class="pre">+</span></code> <code class="docutils literal notranslate"><span class="pre">-</span></code> <code class="docutils literal notranslate"><span class="pre">×</span></code> <code class="docutils literal notranslate"><span class="pre">⌈</span></code> <code class="docutils literal notranslate"><span class="pre">⍴</span></code> …) are called “<em><strong>Functions</strong></em>” (addition, subtraction, multiplication, maximum, shape, etc.).</p>
+<p>Reduction, represented by the symbol <code class="docutils literal notranslate"><span class="pre">/</span></code>, belongs to a special category of symbols called <em>operators</em>. All the other symbols (<code class="docutils literal notranslate"><span class="pre">+</span></code> <code class="docutils literal notranslate"><span class="pre">-</span></code> <code class="docutils literal notranslate"><span class="pre">×</span></code> <code class="docutils literal notranslate"><span class="pre">⌈</span></code> <code class="docutils literal notranslate"><span class="pre">⍴</span></code> …) are called <em>functions</em> (addition, subtraction, multiplication, maximum, shape, etc.).</p>
 <p>The arguments of a function are always data (arrays):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -990,7 +990,7 @@
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">10.4 11.5 10.8 24 16.9
 </span></div></div>
 </div>
-<p>Whereas the “arguments” of an operator (which are called <em><strong>operands</strong></em>) can also be functions:</p>
+<p>Whereas the “arguments” of an operator (which are called <em>operands</em>) can also be functions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">qty</span>
@@ -1001,7 +1001,7 @@
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">14
 </span></div></div>
 </div>
-<p>The left argument of <em>Reduction</em> can be one of many of the APL symbols, and it can also be the name of a user-defined function. This may give you an idea of the generality and power of the concept.</p>
+<p>The left operand of <em>reduction</em> can be one of many of the APL symbols, and it can also be the name of a user-defined function. This may give you an idea of the generality and power of the concept.</p>
 <p>Dyalog APL contains around 20 such powerful operators. If that is not enough, you can even write your own operators, just like you can write your own functions!</p>
 </div>
 <div class="section" id="let-s-write-our-first-functions">
@@ -1048,7 +1048,7 @@
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">31.1429
 </span></div></div>
 </div>
-<p>As it is quite likely that we shall often want to make this sort of calculation, it is preferable to store this expression in the form of a <em><strong>user-defined</strong></em> function. User-defined functions may be used in the same way as the built-in functions represented by special symbols like <code class="docutils literal notranslate"><span class="pre">+</span></code> <code class="docutils literal notranslate"><span class="pre">-</span></code> <code class="docutils literal notranslate"><span class="pre">×</span></code> <code class="docutils literal notranslate"><span class="pre">÷</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">⍴</span></code> …, which are called <em><strong>primitive functions</strong></em>, the major distinction is that the former are introduced by the user, whereas the latter already come with APL.</p>
+<p>As it is quite likely that we shall often want to make this sort of calculation, it is preferable to store this expression in the form of a <em>user-defined</em> function. User-defined functions may be used in the same way as the built-in functions represented by special symbols like <code class="docutils literal notranslate"><span class="pre">+</span></code> <code class="docutils literal notranslate"><span class="pre">-</span></code> <code class="docutils literal notranslate"><span class="pre">×</span></code> <code class="docutils literal notranslate"><span class="pre">÷</span></code> <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">⍴</span></code> …, which are called <em>primitive functions</em>, the major distinction is that the former are introduced by the user, whereas the latter already come with APL.</p>
 <p>To define a simple function like this one, here is the easiest way:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1099,7 +1099,7 @@
 </span></div></div>
 </div>
 <p>As you can see, these functions behave exactly as if we had written <code class="docutils literal notranslate"><span class="pre">(3+6)</span> <span class="pre">×</span> <span class="pre">(5+2)</span></code>.</p>
-<p>We said in the preceding section that a user-defined function could be used by the <em>Reduce</em> operator; let us try:</p>
+<p>We said in the preceding section that a user-defined function could be used by the <em>reduce</em> operator; let us try:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Plus</span><span class="na">/</span> <span class="nv">val</span>
@@ -1194,7 +1194,7 @@
 </span></div></div>
 </div>
 <p>But if one needs to extract the first 500 items from a long list, typing the integers from 1 to 500 would of course be very inconvenient.</p>
-<p>This is why APL has been given the symbol <code class="docutils literal notranslate"><span class="pre">⍳</span></code> (<em><strong>Iota</strong></em>), which produces the set of the first <span class="math notranslate nohighlight">\(n\)</span> integers (<code class="docutils literal notranslate"><span class="pre">⍳</span></code> can be obtained using <kbd>APL</kbd>+<kbd>i</kbd>).</p>
+<p>This is why APL has been given the symbol <code class="docutils literal notranslate"><span class="pre">⍳</span></code> (<em>iota</em>), which produces the set of the first <span class="math notranslate nohighlight">\(n\)</span> integers (<code class="docutils literal notranslate"><span class="pre">⍳</span></code> can be obtained using <kbd>APL</kbd>+<kbd>i</kbd>).</p>
 <p>Thus, instead of writing <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span> <span class="pre">6</span> <span class="pre">7</span> <span class="pre">8</span></code>, it is sufficient to write <code class="docutils literal notranslate"><span class="pre">⍳8</span></code>.</p>
 <p>And to extract the first 500 terms of a large vector, one may write: <code class="docutils literal notranslate"><span class="pre">big[⍳500]</span></code>.</p>
 <p>We shall discover later an even simpler method.</p>
@@ -1357,8 +1357,8 @@
 <center><code>&lt; ≤ = ≥ &gt; ≠</code></center>
 <p>Naturally, one can operate on this binary data using all the functions of Boolean algebra, and moreover, the symbols used are those familiar to mathematicians of all nationalities around the world:</p>
 <ul class="simple">
-<li><p>Function <em><strong>AND</strong></em> is represented by the symbol <code class="docutils literal notranslate"><span class="pre">∧</span></code> (represented by the word AND or the symbol <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> in many programming languages).</p></li>
-<li><p>Function <em><strong>OR</strong></em> is represented by the symbol <code class="docutils literal notranslate"><span class="pre">∨</span></code> (represented by the word OR or the symbol <code class="docutils literal notranslate"><span class="pre">||</span></code> in the same languages).</p></li>
+<li><p>the function <em>and</em> is represented by the symbol <code class="docutils literal notranslate"><span class="pre">∧</span></code> (represented by the word “and” or the symbol <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> in many programming languages); and</p></li>
+<li><p>the function <em>or</em> is represented by the symbol <code class="docutils literal notranslate"><span class="pre">∨</span></code> (represented by the word “or” or the symbol <code class="docutils literal notranslate"><span class="pre">||</span></code> in the same languages).</p></li>
 </ul>
 <p>Thus, if I am looking for people in category 3 whose salary is less than 4000 euros, I can write:</p>
 <div class="cell docutils container">
@@ -1371,8 +1371,8 @@
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 0 0 0 1 0 0 0 0 0 1 0 0 1 0 1 0 0 0
 </span></div></div>
 </div>
-<p>In fact, APL offers all the functions of Boolean algebra, including some perhaps less familiar functions like <em><strong>NOR</strong></em> and <em><strong>NAND</strong></em> (Not-OR and Not-AND), but they are very useful in finance and electronic automation.</p>
-<p>There is, however, no special symbol for the function <em><strong>Exclusive OR</strong></em> (often called <em><strong>XOR</strong></em>). This is because it is not needed: the function <em><strong>Not Equal</strong></em> <code class="docutils literal notranslate"><span class="pre">≠</span></code> gives the same result as <em>Exclusive OR</em> when it is used with Boolean values, as you can see below:</p>
+<p>In fact, APL offers all the functions of Boolean algebra, including some perhaps less familiar functions like <em>nor</em> and <em>nand</em> (not-or and not-and), but they are very useful in finance and electronic automation.</p>
+<p>There is, however, no special symbol for the function <em>exclusive or</em> (often called <em>xor</em>). This is because it is not needed: the function <em>not equal</em> <code class="docutils literal notranslate"><span class="pre">≠</span></code> gives the same result as <em>exclusive or</em> when it is used with Boolean values, as you can see below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="o">≠</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span>
@@ -1433,7 +1433,7 @@
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">Duck
 </span></div></div>
 </div>
-<p>This function, called <em><strong>Compress</strong></em>, is particularly useful for extracting items conforming to a given criterion from a variable. For example, to display the salaries of people in category 2, one writes:</p>
+<p>This function, called <em>compress</em>, is particularly useful for extracting items conforming to a given criterion from a variable. For example, to display the salaries of people in category 2, one writes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">categories</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="na">/</span> <span class="nv">salaries</span>
@@ -1512,7 +1512,7 @@
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 3 4 5 6 7
 </span></div></div>
 </div>
-<p>You can see that if you eliminate (using <em>Compress</em>) the items which correspond to zeros in order to retain only those corresponding to 1, you easily get the positions required: <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">5</span></code>.</p>
+<p>You can see that if you eliminate (using <em>compress</em>) the items which correspond to zeros in order to retain only those corresponding to 1, you easily get the positions required: <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">5</span></code>.</p>
 <p>Thus the job may be done as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1545,7 +1545,7 @@
 <p>Proudly having found all the “a”s, we may wish to find all the vowels.</p>
 <p>Alas, although we can write <code class="docutils literal notranslate"><span class="pre">phrase</span> <span class="pre">=</span> <span class="pre">'a'</span></code>, because a vector can be compared with a single value, one cannot write <code class="docutils literal notranslate"><span class="pre">phrase</span> <span class="pre">=</span> <span class="pre">'aeiouy'</span></code>⁽¹⁾, because that would require the item by item comparison of a phrase of 46 letters and “aeiouy” which has only 6.</p>
 <p>In other words: You may compare 46 letters with 46 other letters, or compare them with one letter, but not with 6.</p>
-<p>So we shall use a new function: <em><strong>Membership</strong></em>, which is represented by the symbol <code class="docutils literal notranslate"><span class="pre">∊</span></code>, also used in mathematics (<code class="docutils literal notranslate"><span class="pre">∊</span></code> can be obtained by pressing <kbd>APL</kbd>+<kbd>e</kbd>).</p>
+<p>So we shall use a new function: <em>membership</em>, which is represented by the symbol <code class="docutils literal notranslate"><span class="pre">∊</span></code>, also used in mathematics (<code class="docutils literal notranslate"><span class="pre">∊</span></code> can be obtained by pressing <kbd>APL</kbd>+<kbd>e</kbd>).</p>
 <p>The expression <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">∊</span> <span class="pre">Y</span></code> returns a Boolean result which indicates which items of the variable <code class="docutils literal notranslate"><span class="pre">X</span></code> appear in the variable <code class="docutils literal notranslate"><span class="pre">Y</span></code>, wherever they may be. And it works no matter what are the shapes, the dimensions or the type (numeric or character) of <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Y</span></code>, a pure marvel!</p>
 <p>⁽¹⁾ “Y” is considered to be a vowel in many European languages.</p>
 <p>For example:</p>
@@ -1582,7 +1582,7 @@
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">2 4 6 8 11 14 16 20 23 24 30 33 36 41 43 45
 </span></div></div>
 </div>
-<p>One can also use membership between a vector and a matrix, as shown below. We have represented side by side the variable itself and the result of using <em>Membership</em>:</p>
+<p>One can also use membership between a vector and a matrix, as shown below. We have represented side by side the variable itself and the result of using <em>membership</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">towns</span> <span class="kd">←</span> <span class="m">6</span> <span class="m">10</span><span class="o">⍴</span><span class="s1">&#39;Canberra  Paris     WashingtonMoscow    Martigues Mexico    &#39;</span>
@@ -1645,7 +1645,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>The positions are correct, but 29 is not in position 2, and 40 is not in position 6.</p>
 <p>The question we have answered using the expression above is: “in which positions in <code class="docutils literal notranslate"><span class="pre">list</span></code> do we find a number that also appears somewhere in <code class="docutils literal notranslate"><span class="pre">where</span></code>?”.</p>
 <p>If we want to answer the slightly different question “where in <code class="docutils literal notranslate"><span class="pre">list</span></code> do we find each number in <code class="docutils literal notranslate"><span class="pre">where</span></code>?”, we need to use a different method.</p>
-<p>This new method uses the dyadic form of the symbol <code class="docutils literal notranslate"><span class="pre">⍳</span></code> (<em>Iota</em>):</p>
+<p>This new method uses the dyadic form of the symbol <code class="docutils literal notranslate"><span class="pre">⍳</span></code> (<em>iota</em>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">list</span> <span class="o">⍳</span> <span class="nv">where</span>
@@ -1657,8 +1657,8 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 </span></div></div>
 </div>
 <p>It is true that 29, 63, 40 and 33 occur respectively in positions 8, 3, 2 and 7. It’s much better!</p>
-<p>But, first surprise: the value 40 occurs 3 times in <code class="docutils literal notranslate"><span class="pre">list</span></code>, but only the first one is reported in the result. This is because, by definition, dyadic <em>Iota</em> returns only the first occurrence of a given item. If the response for each value sought has to match a position, how may one, looking for 5 numbers, obtain 7 results?</p>
-<p>Second surprise: the value 50 is reported as being found in position 11 in a vector comprising only 10 items! This is how the function <em><strong>IndexOf</strong></em> (dyadic <code class="docutils literal notranslate"><span class="pre">⍳</span></code>) reports that a value is absent.</p>
+<p>But, first surprise: the value 40 occurs 3 times in <code class="docutils literal notranslate"><span class="pre">list</span></code>, but only the first one is reported in the result. This is because, by definition, dyadic <em>iota</em> returns only the first occurrence of a given item. If the response for each value sought has to match a position, how may one, looking for 5 numbers, obtain 7 results?</p>
+<p>Second surprise: the value 50 is reported as being found in position 11 in a vector comprising only 10 items! This is how the function <em>index of</em> (dyadic <code class="docutils literal notranslate"><span class="pre">⍳</span></code>) reports that a value is absent.</p>
 <p>At first sight this seems a bit surprising, but in fact it is a property which makes this function so generally powerful, as we shall soon see.</p>
 <div class="section" id="an-example">
 <span id="introduction-an-example"></span><h3><span class="section-number">1.12.1. </span>An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h3>
@@ -1810,7 +1810,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>It is quite the opposite in APL, which offers many tools for working with the shape of the data. We shall only look at a few of them here.</p>
 <div class="section" id="take-and-drop">
 <span id="introduction-take-and-drop"></span><h3><span class="section-number">1.13.1. </span>Take and Drop<a class="headerlink" href="#take-and-drop" title="Permalink to this headline">¶</a></h3>
-<p>The functions <em><strong>Take</strong></em> (<code class="docutils literal notranslate"><span class="pre">↑</span></code>, typed with <kbd>APL</kbd>+<kbd>y</kbd>) and <em><strong>Drop</strong></em> (<code class="docutils literal notranslate"><span class="pre">↓</span></code>, typed with <kbd>APL</kbd>+<kbd>u</kbd>) serve, as their names suggest, to extract part of a set of values. Here we shall show only examples based on vectors, but all the other shapes of data can be treated in a similar way.</p>
+<p>The functions <em>take</em> (<code class="docutils literal notranslate"><span class="pre">↑</span></code>, typed with <kbd>APL</kbd>+<kbd>y</kbd>) and <em>drop</em> (<code class="docutils literal notranslate"><span class="pre">↓</span></code>, typed with <kbd>APL</kbd>+<kbd>u</kbd>) serve, as their names suggest, to extract part of a set of values. Here we shall show only examples based on vectors, but all the other shapes of data can be treated in a similar way.</p>
 <p>Recall that</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1952,8 +1952,8 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 </span></div></div>
 </div>
 </div>
-<div class="section" id="mirrors-and-transposition">
-<span id="introduction-mirrors-and-transposition"></span><h3><span class="section-number">1.13.2. </span>Mirrors and Transposition<a class="headerlink" href="#mirrors-and-transposition" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="reverses-and-transposition">
+<span id="introduction-reverses-and-transposition"></span><h3><span class="section-number">1.13.2. </span>Reverses and Transposition<a class="headerlink" href="#reverses-and-transposition" title="Permalink to this headline">¶</a></h3>
 <p>APL is also well equipped with functions to pivot data about any axis, as suggested by the appearances of the symbols used. They apply to both numeric and character data, as we are going to show by applying these functions to the variable <code class="docutils literal notranslate"><span class="pre">towns</span></code> that we used earlier.</p>
 <p>The symbols used hereafter are obtained like this:</p>
 <ul class="simple">
@@ -1977,7 +1977,7 @@ Martigues
 Mexico    
 </span></div></div>
 </div>
-<p>Left-right reversed (Mirror) with <code class="docutils literal notranslate"><span class="pre">⌽</span></code>:</p>
+<p>We can reverse around a vertical axis with <code class="docutils literal notranslate"><span class="pre">⌽</span></code> (notice the vertical bar in the glyph):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⌽</span><span class="nv">towns</span>
@@ -1993,7 +1993,7 @@ notgnihsaW
     ocixeM
 </span></div></div>
 </div>
-<p>Top-bottom reversed (Mirror) with <code class="docutils literal notranslate"><span class="pre">⊖</span></code>:</p>
+<p>We can reverse around a horizontal axis with <code class="docutils literal notranslate"><span class="pre">⊖</span></code> (notice the vertical bar in the glyph):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊖</span><span class="nv">towns</span>
@@ -2009,7 +2009,7 @@ Paris
 Canberra  
 </span></div></div>
 </div>
-<p>and rows &amp; columns swapped (Transpose) with <code class="docutils literal notranslate"><span class="pre">⍉</span></code>:</p>
+<p>And we can swap rows and columns (what we call <em>tranpose</em>) with <code class="docutils literal notranslate"><span class="pre">⍉</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍉</span><span class="nv">towns</span>
@@ -2070,7 +2070,7 @@ a t e
 \hline
 \end{array}\end{split}\]</div>
 <p>You see, I haven’t forgotten!</p>
-<p>Probably you have done all this just like me. And then we quickly forgot that very powerful tool, one which APL provides under the name <em><strong>Outer Product</strong></em>.</p>
+<p>Probably you have done all this just like me. And then we quickly forgot that very powerful tool, one which APL provides under the name <em>outer product</em>.</p>
 <p>The task consists of taking all possible pairs of items of two vectors, (the column and row headings) and making them the left and right arguments of the function at the top left. For example, 3 times 7 gives 21 (in red here above).</p>
 <p>Next, we shall go on to see what we get if we change the values a little:</p>
 <div class="math notranslate nohighlight">
@@ -2098,8 +2098,8 @@ a t e
 24 15  45 27  33 120
 </span></div></div>
 </div>
-<p>The <em>Outer Product</em> symbol is made of a small circle (<kbd>APL</kbd>+<kbd>j</kbd>), a dot, and the function to be applied. It is an <em>operator</em>, as it takes a function (<code class="docutils literal notranslate"><span class="pre">×</span></code> in this case) as an <em>operand</em>.</p>
-<p>Despite of its name “<em>Outer Product</em>”, this operator by no means is restricted to working with multiplication. We can replace the symbol for <em>Multiplication</em> by any other dyadic function (like <code class="docutils literal notranslate"><span class="pre">=</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">≥</span></code> or <code class="docutils literal notranslate"><span class="pre">⌈</span></code>), or even functions which you have defined yourself (like <code class="docutils literal notranslate"><span class="pre">Plus</span></code>), and you will understand, as for <em>Reduce</em> which we saw earlier, that <em>Outer Product</em> is an operator of amazing power.</p>
+<p>The <em>outer product</em> symbol is made of a small circle (<kbd>APL</kbd>+<kbd>j</kbd>), a dot, and the function to be applied. It is an <em>operator</em>, as it takes a function (<code class="docutils literal notranslate"><span class="pre">×</span></code> in this case) as an <em>operand</em>.</p>
+<p>Despite of its name “<em>outer <strong>product</strong></em>”, this operator by no means is restricted to working with multiplication. We can replace the symbol for <em>multiplication</em> by any other dyadic function (like <code class="docutils literal notranslate"><span class="pre">=</span></code> <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> <code class="docutils literal notranslate"><span class="pre">≥</span></code> or <code class="docutils literal notranslate"><span class="pre">⌈</span></code>), or even functions which you have defined yourself (like <code class="docutils literal notranslate"><span class="pre">Plus</span></code>), and you will understand, as for <em>reduce</em> which we saw earlier, that <em>outer product</em> is an operator of amazing power.</p>
 <p>Let’s have some fun with it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2130,7 +2130,25 @@ a t e
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">73 16 42 50 2 67 11 81 37 93 100 98 83 32 76 51 37 15 46 88 49 28 100 9 29 69 87 27 54 68 23 80 39 22 86 2 58 84 17 18 89 13 38 38 28 19 69 10 53 94 49 16 51 52 18 47 59 67 39 23 41 84 70 40 85 86 20 1 77 100 12 76 79 53 88 20 85 12 19 89 72 48 86 97 54 1 39 62 94 51 50 50 8 99 31 24 87 71 84 98 56 35 6 83 27 65 78 50 59 17 70 51 35 12 48 30 93 43 20 5 79 1 88 25 46 72 81 29 27 84 97 27 94 90 62 28 61 97 78 22 66 89 37 37 26 98 27 19 99 51 36 99 61 1 49 45 79 63 78 8 23 48 29 7 93 3 15 54 14 15 48 39 96 65 27 79 35 16 29 7 43 16 26 48 51 40 82 49 14 3 48 8 25 41 62 73 45 83 80 7 51 9 83 53 18 27 81 20 16 45 7 82 56 18 41 32 3 91 92 24 6 99 6 100 42 88 97 75 77 76 98 32 43 3 28 29 62 9 6 53 34 96 32 49 57 34 78 10 45 76 88 96 48 36 2 53 18 49 18 20 38 47 69 75 60 89 82 16 48 83 13 35 55 40 17 43 73 89 30 49 1 17 53 76 99 44 88 52 78 21 45 58 50 85 55 68 100 73 95 84 52 90 80 35 28 11 77 45 54 77 100 20 52 13 29 58 2 69 41 98 97 51 96 17 10 66 80 16 59 32 94 93 73 30 7 6 55 73 54 55 69 14 99 5 37 91 2 99 47 6 29 84 6 100 52 72 77 68 91 40 4 56 24 40 52 15 2 23 33 99 46 98 63 60 17 51 29 67 67 96 75 61 3 53 5 12 35 97 86 97 92 82 66 85 70 35 3 3 78 26
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">73 16 42 50 2 67 11 81 37 93 100 98 83 32 76 51 37 15 46 88 49 28 100 9 29 69 87 27 54 68 23 80 39 22 86 2 58 84 17 18 89 
+
+      13 38 38 28 19 69 10 53 94 49 16 51 52 18 47 59 67 39 23 41 84 70 40 85 86 20 1 77 100 12 76 79 53 88 20 85 12 19 89
+
+       72 48 86 97 54 1 39 62 94 51 50 50 8 99 31 24 87 71 84 98 56 35 6 83 27 65 78 50 59 17 70 51 35 12 48 30 93 43 20 5
+
+       79 1 88 25 46 72 81 29 27 84 97 27 94 90 62 28 61 97 78 22 66 89 37 37 26 98 27 19 99 51 36 99 61 1 49 45 79 63 78 
+
+      8 23 48 29 7 93 3 15 54 14 15 48 39 96 65 27 79 35 16 29 7 43 16 26 48 51 40 82 49 14 3 48 8 25 41 62 73 45 83 80 7 
+
+      51 9 83 53 18 27 81 20 16 45 7 82 56 18 41 32 3 91 92 24 6 99 6 100 42 88 97 75 77 76 98 32 43 3 28 29 62 9 6 53 34 
+
+      96 32 49 57 34 78 10 45 76 88 96 48 36 2 53 18 49 18 20 38 47 69 75 60 89 82 16 48 83 13 35 55 40 17 43 73 89 30 49 
+
+      1 17 53 76 99 44 88 52 78 21 45 58 50 85 55 68 100 73 95 84 52 90 80 35 28 11 77 45 54 77 100 20 52 13 29 58 2 69 41
+
+       98 97 51 96 17 10 66 80 16 59 32 94 93 73 30 7 6 55 73 54 55 69 14 99 5 37 91 2 99 47 6 29 84 6 100 52 72 77 68 91 
+
+      40 4 56 24 40 52 15 2 23 33 99 46 98 63 60 17 51 29 67 67 96 75 61 3 53 5 12 35 97 86 97 92 82 66 85 70 35 3 3 78 26
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -2140,7 +2158,7 @@ a t e
 </div>
 </div>
 </div>
-<p>We are going to use the <em>Outer Product</em> <code class="docutils literal notranslate"><span class="pre">category</span> <span class="pre">∘.&lt;</span> <span class="pre">ages</span></code>, and here are the first items of the result:</p>
+<p>We are going to use the <em>outer product</em> <code class="docutils literal notranslate"><span class="pre">category</span> <span class="pre">∘.&lt;</span> <span class="pre">ages</span></code>, and here are the first items of the result:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{|l|rrrrrrrr|}
 \hline
@@ -2178,7 +2196,7 @@ a t e
   &amp;  3 &amp;  0 &amp;  0 &amp; 1 &amp; 1 &amp; 2
 \end{array}\end{split}\]</div>
 <p>where the first line is <code class="docutils literal notranslate"><span class="pre">counts</span></code>, the second line is <code class="docutils literal notranslate"><span class="pre">counts</span></code> without its first item and followed by zero and the last line is the result as obtained by the expression <code class="docutils literal notranslate"><span class="pre">counts-(1↓counts,0)</span></code>.</p>
-<p>To append a zero to the right, we used a comma, which joins variables together. This is a function called <em><strong>Catenate</strong></em>.</p>
+<p>To append a zero to the right, we used a comma, which joins variables together. This is a function called <em>catenate</em>.</p>
 <p>If one no longer works with a small extract of data, but with the full list of 400 people, this is what one gets:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2221,8 +2239,8 @@ a t e
 </div>
 <div class="section" id="use-many-other-calculating-tools">
 <span id="introduction-use-many-other-calculating-tools"></span><h3><span class="section-number">1.15.2. </span>Use Many Other Calculating Tools<a class="headerlink" href="#use-many-other-calculating-tools" title="Permalink to this headline">¶</a></h3>
-<p>We have discovered some original functions, which are completely absent from most other programming languages, like <code class="docutils literal notranslate"><span class="pre">⍴</span></code>, <code class="docutils literal notranslate"><span class="pre">↑</span></code>, <code class="docutils literal notranslate"><span class="pre">⍉</span></code>, <code class="docutils literal notranslate"><span class="pre">∊</span></code> and <em>Outer Product</em>. Those features lead to new methods and new algorithms to process data; this is one of the main advantages of APL.</p>
-<p>Not only do you have a lot more functions, like <em>Inner Product</em> (generalised matrix product) and many built-in mathematical tools (trigonometry, matrix inverse, conversions to and from any numerical base, etc.), but you can also handle generalised (nested) arrays: arrays which contain arrays, which themselves contain arrays, and so on.</p>
+<p>We have discovered some original functions, which are completely absent from most other programming languages, like <code class="docutils literal notranslate"><span class="pre">⍴</span></code>, <code class="docutils literal notranslate"><span class="pre">↑</span></code>, <code class="docutils literal notranslate"><span class="pre">⍉</span></code>, <code class="docutils literal notranslate"><span class="pre">∊</span></code> and <em>outer product</em>. Those features lead to new methods and new algorithms to process data; this is one of the main advantages of APL.</p>
+<p>Not only do you have a lot more functions, like <em>inner product</em> (generalised matrix product) and many built-in mathematical tools (trigonometry, matrix inverse, conversions to and from any numerical base, etc.), but you can also handle generalised (nested) arrays: arrays which contain arrays, which themselves contain arrays, and so on.</p>
 <p>The scope of the possible solutions to a single problem is often so wide that it is probably the reason why people never get tired of using APL: they always have something new to discover and to invent.</p>
 </div>
 <div class="section" id="create-user-friendly-applications-with-the-gui">
@@ -2242,7 +2260,7 @@ a t e
 </div>
 <div class="section" id="and-also">
 <span id="introduction-and-also"></span><h3><span class="section-number">1.15.6. </span>And Also…<a class="headerlink" href="#and-also" title="Permalink to this headline">¶</a></h3>
-<p>You can interface APL with the Internet, write your own web server, use multithreading to process simultaneous tasks, use all the advantages of true <em>Object Oriented Programming</em>, and use many attractive features, which are beyond the scope of this quick survey.</p>
+<p>You can interface APL with the Internet, write your own web server, use multithreading to process simultaneous tasks, use all the advantages of true <em>object oriented programming</em>, and use many attractive features, which are beyond the scope of this quick survey.</p>
 </div>
 </div>
 <div class="section" id="faq">
@@ -2272,7 +2290,7 @@ a t e
 <li><p>due to its array-processing capability, APL dramatically reduces the needs for programming loops. Because all such intricacies are removed, the code is much lighter, and the programmer can concentrate all his attention and skill on the true core of computing requirements;</p></li>
 <li><p>in many programming languages, a programmer would have to declare that each variable will be an array of such and such dimensions, containing values with a specific data type. There is nothing similar in APL. The size and the data type of a variable arise from the way in which the variable has been produced. If one extracts 2 rows and 5 columns from a matrix, the result will of course be a 2 by 5 matrix. And if we divide 486 into 7, the result will of course be a fractional value, there is no need to specify it in advance;</p></li>
 <li><p>the extensive set of direct operations on data offered by APL leads to new approaches. For traditional problems, which have been solved in the same way in most programming languages for years, APL suddenly offers new solutions, which appear to be light, straightforward, very general, and easy to maintain because they are easy to read; and</p></li>
-<li><p>the readability of APL often surprises people who practise other programming languages; they probably forget that the languages they use are totally obscure for most non specialists. APL is learned and used efficiently by people who are not data processing professionals, but are instead specialists in their professional fields, such as accountancy, chemistry, insurance, logistics, finance, and biology. They have less difficulty with APL than with the problems they have to solve, and most often, they solve them with APL. They could not achieve this alone with any other programming languages, but would require the help of programming specialists… who of course know nothing of the problem domain in question.</p></li>
+<li><p>the readability of APL often surprises people who practise other programming languages; they probably forget that the languages they use are totally obscure for most non-specialists. APL is learned and used efficiently by people who are not data processing professionals, but are instead specialists in their professional fields, such as accountancy, chemistry, insurance, logistics, finance, and biology. They have less difficulty with APL than with the problems they have to solve, and most often, they solve them with APL. They could not achieve this alone with any other programming languages, but would require the help of programming specialists… who generally know nothing of the problem domain in question.</p></li>
 </ul>
 </div>
 <div class="section" id="where-is-apl-typically-used">

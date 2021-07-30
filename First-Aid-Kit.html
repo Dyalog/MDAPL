@@ -2450,20 +2450,22 @@ In any case, this can be changed dynamically, without restarting APL.</p>
 <span id="first-aid-kit-set-breakpoints"></span><h4><span class="section-number">6.3.3.1. </span>Set Breakpoints<a class="headerlink" href="#set-breakpoints" title="Permalink to this headline">¶</a></h4>
 <p>When one wants to investigate the behaviour of a set of statements nested in a very deep sub-function, the best option is to run the main function but tell the system to interrupt the execution just before a particular statement is executed.
 To achieve this, one can place <em>breakpoints</em> (sometimes named <em>stops</em>) on one or more statements.</p>
-<p>When you edit or trace a function, you normally have a blank column to the left of the function body, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-IDE_Set_Breakpoints</span></code>.
+<p>When you edit or trace a function, you normally have a blank column to the left of the function body, as shown in <a class="reference internal" href="#fig-ide-set-breakpoints"><span class="std std-numref">Fig. 6.13</span></a>.
 If this is not the case, activate the menu option “View” ⇨ “Stop” (or “Stops”, depending on the IDE).
 If you are using the Windows IDE, go ahead and deselect the two other options “Trace” and “Monitor” for now.</p>
 <div class="figure align-default" id="ide-set-breakpoints">
 <span id="fig-ide-set-breakpoints"></span><img alt="_images/IDE_Set_Breakpoints.png" src="_images/IDE_Set_Breakpoints.png" />
+<p class="caption"><span class="caption-number">Fig. 6.13 </span><span class="caption-text">Where to set breakpoints in the two main IDEs.</span><a class="headerlink" href="#ide-set-breakpoints" title="Permalink to this image">¶</a></p>
 </div>
 <p>You can set or remove breakpoints by clicking in this column, on the line on which you wish to toggle the breakpoint.
 A red dot shows that the breakpoint is set.
 You can set and clear breakpoints in edit windows as well as in trace windows, and they can be changed at any time.</p>
-<p>When one of the marked functions is executed, it stops before each breakpoint, like it is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-Win_Stop_At_Breakpoint</span></code>.</p>
+<p>When one of the marked functions is executed, it stops before each breakpoint, like it is shown in <a class="reference internal" href="#fig-win-stop-at-breakpoint"><span class="std std-numref">Fig. 6.14</span></a>.</p>
 <div class="figure align-default" id="win-stop-at-breakpoint">
 <span id="fig-win-stop-at-breakpoint"></span><img alt="_images/Win_Stop_At_Breakpoint.png" src="_images/Win_Stop_At_Breakpoint.png" />
+<p class="caption"><span class="caption-number">Fig. 6.14 </span><span class="caption-text">Windows interpreter stops execution right before the first breakpoint.</span><a class="headerlink" href="#win-stop-at-breakpoint" title="Permalink to this image">¶</a></p>
 </div>
-<p>Looking at <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-Win_Stop_At_Breakpoint</span></code>, we also see that <code class="docutils literal notranslate"><span class="pre">⎕DM</span></code> reports no error, only the statement at which we stopped.</p>
+<p>Looking at <a class="reference internal" href="#fig-win-stop-at-breakpoint"><span class="std std-numref">Fig. 6.14</span></a>, we also see that <code class="docutils literal notranslate"><span class="pre">⎕DM</span></code> reports no error, only the statement at which we stopped.</p>
 <p>After stopping at a breakpoint you can make all the experiments you need to do, and restart the function at will, in continuous or trace mode.</p>
 </div>
 <div class="section" id="remove-breakpoints">
@@ -2654,15 +2656,16 @@ If you are using the Windows IDE, you can do this with the GUI or programmatical
 However, if you are using RIDE, you have to do it programmatically.
 We cover the two cases here:</p>
 <ol class="simple">
-<li><p>Using the Windows IDE GUI, start by opening the edit window of the <code class="docutils literal notranslate"><span class="pre">ReverLoop</span></code> function and make sure the focus is in the edit window. Go to “View” ⇨ “Trace” and make sure that option is selected. When that option is selected, you get a new blank column in the edit window where you can set yellow markers like <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-Win_Set_Trace_Controls</span></code> shows.</p></li>
+<li><p>Using the Windows IDE GUI, start by opening the edit window of the <code class="docutils literal notranslate"><span class="pre">ReverLoop</span></code> function and make sure the focus is in the edit window. Go to “View” ⇨ “Trace” and make sure that option is selected. When that option is selected, you get a new blank column in the edit window where you can set yellow markers like <a class="reference internal" href="#fig-win-set-trace-controls"><span class="std std-numref">Fig. 6.15</span></a> shows.</p></li>
 </ol>
 <div class="figure align-default" id="win-set-trace-controls">
 <span id="fig-win-set-trace-controls"></span><img alt="_images/Win_Set_Trace_Controls.png" src="_images/Win_Set_Trace_Controls.png" />
+<p class="caption"><span class="caption-number">Fig. 6.15 </span><span class="caption-text">Setting trace controls in the Windows IDE.</span><a class="headerlink" href="#win-set-trace-controls" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="simple">
 <li><p>For RIDE, or to set trace-controls programmatically on any platform, you can resort to <code class="docutils literal notranslate"><span class="pre">⎕TRACE</span></code> which works like <code class="docutils literal notranslate"><span class="pre">⎕STOP</span></code> does: <code class="docutils literal notranslate"><span class="pre">lines</span> <span class="pre">⎕TRACE</span> <span class="pre">'function'</span></code>, where <code class="docutils literal notranslate"><span class="pre">lines</span></code> is a numeric vector containing the lines where you want to set the trace-controls.</p></li>
 </ol>
-<p>If we wanted to programmatically set a trace-control for line 3 of the <code class="docutils literal notranslate"><span class="pre">ReverLoop</span></code> function, like the yellow marker in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-Win_Set_Trace_Controls</span></code> shows, we would write the following:</p>
+<p>If we wanted to programmatically set a trace-control for line 3 of the <code class="docutils literal notranslate"><span class="pre">ReverLoop</span></code> function, like the yellow marker in <a class="reference internal" href="#fig-win-set-trace-controls"><span class="std std-numref">Fig. 6.15</span></a> shows, we would write the following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span><span class="nf">⎕TRACE</span> <span class="s1">&#39;ReverLoop&#39;</span>
@@ -2746,7 +2749,7 @@ This can be done using “Exception processing”, which will be covered in <spa
 <p>There are no exercises in this chapter. Enjoy the break!</p>
 <div class="figure align-default" id="apler-beginner-new">
 <span id="fig-apler-beginner-new"></span><img alt="_images/APLer-Beginner_New.png" src="_images/APLer-Beginner_New.png" />
-<p class="caption"><span class="caption-number">Fig. 6.13 </span><span class="caption-text">“Beginner APLer struggling with a nail.”</span><a class="headerlink" href="#apler-beginner-new" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6.16 </span><span class="caption-text">“Beginner APLer struggling with a nail.”</span><a class="headerlink" href="#apler-beginner-new" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="the-specialist-s-section">
