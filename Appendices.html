@@ -232,18 +232,23 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selective-assignment">
+   10.3. Selective Assignment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dyalog-apl-operators">
-   10.3. Dyalog APL Operators
+   10.4. Dyalog APL Operators
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#event-numbers">
-   10.4. Event Numbers
+   10.5. Event Numbers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variables">
-   10.5. Variables
+   10.6. Variables
   </a>
  </li>
 </ul>
@@ -449,8 +454,77 @@
 <p>If a prefix is specified for the name of an already existing object, the prefix is ignored and the editor is invoked according to the type of the existing object.</p>
 <p>More information is available at <a class="reference external" href="https://help.dyalog.com/latest/#Language/System%20Commands/ed.htm?Highlight=ed">Dyalog’s help page for the “Edit Object”</a>.</p>
 </div>
+<div class="section" id="selective-assignment">
+<span id="appendices-selective-assignment"></span><h2><span class="section-number">10.3. </span>Selective Assignment<a class="headerlink" href="#selective-assignment" title="Permalink to this headline">¶</a></h2>
+<p><em>Selective assignment</em> cannot be used with every single primitive function; only the following selection functions are allowed. When appropriate, these functions can also be used with an <em>axis</em> specification:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p>Function</p></th>
+<th class="text-align:left head"><p>Name</p></th>
+<th class="text-align:left head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">⍴</span></code></p></td>
+<td class="text-align:left"><p>Reshape</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(6⍴mat)</span> <span class="pre">←</span> <span class="pre">vec</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">/</span></code> and <code class="docutils literal notranslate"><span class="pre">⌿</span></code></p></td>
+<td class="text-align:left"><p>Compress/replicate</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(bin/vec1)</span> <span class="pre">←</span> <span class="pre">vec2</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">↑</span></code></p></td>
+<td class="text-align:left"><p>Take</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(2</span> <span class="pre">2↑mat)</span> <span class="pre">←</span> <span class="pre">2</span> <span class="pre">2⍴⍳4</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">↓</span></code></p></td>
+<td class="text-align:left"><p>Drop</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(5↓vec1)</span> <span class="pre">←</span> <span class="pre">vec2</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">,</span></code></p></td>
+<td class="text-align:left"><p>Ravel</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(,mat)</span> <span class="pre">←</span> <span class="pre">vec</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">∊</span></code></p></td>
+<td class="text-align:left"><p>Enlist</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(∊vec1)</span> <span class="pre">←</span> <span class="pre">vec2</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">⍪</span></code></p></td>
+<td class="text-align:left"><p>Table</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(⍪cuboid)</span> <span class="pre">←</span> <span class="pre">mat</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">⌽</span></code> and <code class="docutils literal notranslate"><span class="pre">⊖</span></code></p></td>
+<td class="text-align:left"><p>Reverse/rotate (monadic &amp; dyadic)</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(⌽vec1)</span> <span class="pre">←</span> <span class="pre">20↑vec2</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">⍉</span></code></p></td>
+<td class="text-align:left"><p>Transpose (monadic &amp; dyadic)</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(⍉mat1)</span> <span class="pre">←</span> <span class="pre">mat2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">⊃</span></code></p></td>
+<td class="text-align:left"><p>Disclose/pick</p></td>
+<td class="text-align:left"><p>`(((2 3)(4 1))⊃nest) ← ‘APL’</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">\</span></code> and <code class="docutils literal notranslate"><span class="pre">⍀</span></code></p></td>
+<td class="text-align:left"><p>Expand</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(bin\vec1)</span> <span class="pre">←</span> <span class="pre">vec2</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">⌷</span></code></p></td>
+<td class="text-align:left"><p>Index</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">(3</span> <span class="pre">2⌷mat)</span></code> ← 0</p></td>
+</tr>
+</tbody>
+</table>
+<p>In the examples above:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vec</span></code>, <code class="docutils literal notranslate"><span class="pre">vec1</span></code>, <code class="docutils literal notranslate"><span class="pre">vec2</span></code> represent vectors;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mat</span></code>, <code class="docutils literal notranslate"><span class="pre">mat1</span></code>, <code class="docutils literal notranslate"><span class="pre">mat2</span></code> represent matrices;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cuboid</span></code> represents a 3D array; and</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bin</span></code> represents a Boolean vector.</p></li>
+</ul>
+</div>
 <div class="section" id="dyalog-apl-operators">
-<span id="appendices-dyalog-apl-operators"></span><h2><span class="section-number">10.3. </span>Dyalog APL Operators<a class="headerlink" href="#dyalog-apl-operators" title="Permalink to this headline">¶</a></h2>
+<span id="appendices-dyalog-apl-operators"></span><h2><span class="section-number">10.4. </span>Dyalog APL Operators<a class="headerlink" href="#dyalog-apl-operators" title="Permalink to this headline">¶</a></h2>
 <p>The following table of primitive operators in Dyalog APL uses the following conventions:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> and <code class="docutils literal notranslate"><span class="pre">g</span></code> represent functions: primitive, user defined or derived from another operator;</p></li>
@@ -732,7 +806,7 @@
 <p>(*): Strictly speaking, axis is not an operator, cf. <span class="xref myst">the chapter on operators</span>.</p>
 </div>
 <div class="section" id="event-numbers">
-<span id="appendices-event-numbers"></span><h2><span class="section-number">10.4. </span>Event Numbers<a class="headerlink" href="#event-numbers" title="Permalink to this headline">¶</a></h2>
+<span id="appendices-event-numbers"></span><h2><span class="section-number">10.5. </span>Event Numbers<a class="headerlink" href="#event-numbers" title="Permalink to this headline">¶</a></h2>
 <p>This page provides a reference table with all the event numbers and their assigned meanings.
 We build the table by making use of the <code class="docutils literal notranslate"><span class="pre">⎕EM</span></code> <em>system function</em>, and then we filter event numbers that do not have an assigned meaning.</p>
 <div class="cell docutils container">
@@ -850,7 +924,7 @@ We build the table by making use of the <code class="docutils literal notranslat
 </div>
 </div>
 <div class="section" id="variables">
-<span id="appendices-variables"></span><h2><span class="section-number">10.5. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<span id="appendices-variables"></span><h2><span class="section-number">10.6. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
 <p>This appendix lists variables and utility functions that are used repeatedly throughout the book.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
