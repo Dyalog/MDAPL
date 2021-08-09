@@ -128,8 +128,13 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Special-Syntax.html">
+   9. Special Syntax
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Appendices.html">
-   9. Appendices
+   10. Appendices
   </a>
  </li>
 </ul>
@@ -875,105 +880,9 @@ abcdefghijklmnopqrstuvwxyz
 </div>
 </div>
 </div>
-<p>However this is highly discouraged. Using parentheses indicates much more clearly the intent of performing multiple assignment and helps prevent some erroneous behaviour. For example, notice how the expression below raises an error because we are trying to assign <code class="docutils literal notranslate"><span class="pre">5</span></code> to <code class="docutils literal notranslate"><span class="pre">3</span></code>, and yet, <code class="docutils literal notranslate"><span class="pre">var</span></code> gets assigned <code class="docutils literal notranslate"><span class="pre">5</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">var</span> <span class="m">3</span> <span class="kd">←</span> <span class="m">5</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SYNTAX ERROR
-      var 3←5
-           ∧
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">var</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">5
-</span></div></div>
-</div>
-<p>However, if we use parentheses the assignment is not performed at all:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">var</span> <span class="m">3</span><span class="p">)</span> <span class="kd">←</span> <span class="m">50</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SYNTAX ERROR
-      (var 3)←50
-             ∧
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">var</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">5
-</span></div></div>
-</div>
-<p>Another argument against using multiple assignment without parentheses is that some other APL systems require them, so if compatibility across APL implementations is an issue for you, we recommend that you use parentheses in Dyalog APL as well.</p>
-<p>If you still aren’t convinced that unparenthesised multiple assignment is evil, another argument against it is that multiple assignments can be ambiguous to read.
-For example, what does</p>
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="kd">←</span> <span class="m">42</span>
-</pre></div>
-</div>
-<p>do?</p>
-<p>The ambiguity arises from the fact that the lack of parenthesising means we need to know what <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">c</span></code>, are in order to understand the expression above.
-For example, if all three variables are arrays, then we reassign them:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="kd">←</span> <span class="nv">b</span> <span class="kd">←</span> <span class="nv">c</span> <span class="kd">←</span> <span class="m">0</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="kd">←</span> <span class="m">42</span>
-<span class="vg">⎕</span><span class="kd">←</span> <span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">42 42 42
-</span></div></div>
-</div>
-<p>However, if <code class="docutils literal notranslate"><span class="pre">c</span></code> were a function, for example <code class="docutils literal notranslate"><span class="pre">-</span></code>, this is what we get:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">)</span><span class="nv">erase</span> <span class="nv">c</span>
-<span class="nv">c</span> <span class="kd">←</span> <span class="o">-</span>
-<span class="nv">a</span> <span class="kd">←</span> <span class="nv">b</span> <span class="kd">←</span> <span class="m">0</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="kd">←</span> <span class="m">42</span>
-<span class="vg">⎕</span><span class="kd">←</span> <span class="nv">a</span> <span class="nv">b</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">¯42 ¯42
-</span></div></div>
-</div>
-<p>Unfortunately, at the time of writing, there is no way to use parenthesis to disambiguate the two situations above.</p>
+<p>However, this is highly discouraged.
+Using parentheses indicates much more clearly the intent of performing <em>multiple assignment</em>, helps prevent some erroneous behaviour, and improves the compatibility with other APL systems.
+The benefits to parenthesising <em>multiple assignment</em>/disadvantages of not parenthesising it will be discussed in more detail in <a class="reference internal" href="Special-Syntax.html#special-syntax-using-parentheses"><span class="std std-numref">Section 9.2.2</span></a>.</p>
 </div>
 </div>
 <div class="section" id="arrays-of-items">
@@ -989,7 +898,7 @@ For example, if all three variables are arrays, then we reassign them:</p>
 </div>
 </div>
 </div>
-<p>If you need to enter a very long list of items, which will not easily fit on a single line, please refer to the <code class="xref std std-numref docutils literal notranslate"><span class="pre">Special-Syntax-Modified-Assignment</span></code>, where a simple method is explained.</p>
+<p>If you need to enter a very long list of items, which will not easily fit on a single line, please refer to the <a class="reference internal" href="Special-Syntax.html#special-syntax-modified-assignment"><span class="std std-numref">Section 9.1</span></a>, where a simple method is explained.</p>
 <p>Imagine now that somebody has noted their income and expenses during the first six months of this year:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -1573,11 +1482,7 @@ For example, if all three variables are arrays, then we reassign them:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">446.19 231.12 253.59 115.56 262.15 271.78 1.07 180.83 166.92 318.86 240.75 44.94 240.75 90.95 317.79 285.69 4.28 368.08 29
-
-      5.32 379.85 324.21 77.04 77.04 415.16 447.26 33.17 415.16 285.69 202.23 126.26 180.83 81.32 134.82 261.08 343.47 157
-
-      .29 335.98
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">446.19 231.12 253.59 115.56 262.15 271.78 1.07 180.83 166.92 318.86 240.75 44.94 240.75 90.95 317.79 285.69 4.28 368.08 295.32 379.85 324.21 77.04 77.04 415.16 447.26 33.17 415.16 285.69 202.23 126.26 180.83 81.32 134.82 261.08 343.47 157.29 335.98
 </span></div></div>
 </div>
 </div>
@@ -3169,11 +3074,10 @@ Because this symbol is made of a zero with a tilde on top of it, it is called <e
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">Bétise_à_Caimbrai       Fly⍙Airlines    Hote273 My_car_is_green a       amount  b       bernard bignum  children        
-colette contents        damned  discount        emptiness       g       h       hundred j       length  line    m       
-mixMat  mixVec  monMat  monVec  money   myIndex nesMat  nesVec  now     one     planning        presence        prod    
-purchased       res     sales   shape   singleton       tests   tests2  text    trailer two     v       var     vec     
-weird   years   ∆x      
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Bétise_à_Caimbrai       Fly⍙Airlines    Hote273 My_car_is_green amount  bernard bignum  children        colette contents
+damned  discount        emptiness       g       h       hundred j       length  line    m       mixMat  mixVec  monMat  
+monVec  money   myIndex nesMat  nesVec  now     one     planning        presence        prod    purchased       res     
+sales   shape   singleton       tests   tests2  text    trailer two     v       vec     weird   years   ∆x      
 </span></div></div>
 </div>
 <p>The variables are listed in alphabetic order, but beware, the lower-case alphabet is ordered after the upper-case one.</p>
@@ -3205,7 +3109,7 @@ weird   years   ∆x
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">DISP    DISPLAY c       
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">DISP    DISPLAY 
 </span></div></div>
 </div>
 <p>Because we developed no functions we only see the functions we loaded earlier on.</p>

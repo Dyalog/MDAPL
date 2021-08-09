@@ -1,0 +1,972 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9. Special Syntax &#8212; Mastering Dyalog APL</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="10. Appendices" href="Appendices.html" />
+    <link rel="prev" title="8. Working on Data Shape" href="Working-on-Data-Shape.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Mastering Dyalog APL</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Introduction.html">
+   1. Introduction - Will You Play APL With Me?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Getting-Started.html">
+   2. Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Data-and-Variables.html">
+   3. Data and Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Some-Primitive-Functions.html">
+   4. Some Primitive Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="User-Defined-Functions.html">
+   5. User-Defined Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="First-Aid-Kit.html">
+   6. First-Aid Kit
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Execute-and-Format-Control.html">
+   7. Execute &amp; Format Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Working-on-Data-Shape.html">
+   8. Working on Data Shape
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   9. Special Syntax
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Appendices.html">
+   10. Appendices
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Special-Syntax.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/Dyalog/MDAPL"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        <a class="edit-button" href="https://github.com/Dyalog/MDAPL/edit/master/Special-Syntax.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modified-assignment">
+   9.1. Modified Assignment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#application">
+     9.1.1. Application
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-assignment">
+   9.2. Multiple Assignment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction">
+     9.2.1. Introduction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-parentheses">
+     9.2.2. Using Parentheses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selective-assignment">
+   9.3. Selective Assignment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quick-overview">
+     9.3.1. Quick Overview
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#available-primitives">
+     9.3.2. Available Primitives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     9.3.3. Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="special-syntax">
+<span id="special-syntax-special-syntax"></span><h1><span class="section-number">9. </span>Special Syntax<a class="headerlink" href="#special-syntax" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="modified-assignment">
+<span id="special-syntax-modified-assignment"></span><h2><span class="section-number">9.1. </span>Modified Assignment<a class="headerlink" href="#modified-assignment" title="Permalink to this headline">¶</a></h2>
+<p>Changes to a variable, like</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="kd">←</span> <span class="m">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>or</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">languages</span> <span class="kd">←</span> <span class="s1">&#39;APLL&#39;</span> <span class="s1">&#39;Pithon&#39;</span> <span class="s1">&#39;Jaba&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>frequently involve modifying its current value, and such expressions naturally contain two references to its name:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">a</span> <span class="kd">←</span> <span class="nv">a</span> <span class="o">+</span> <span class="m">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5
+</span></div></div>
+</div>
+<p>or</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">languages</span> <span class="kd">←</span> <span class="nv">languages</span><span class="o">,</span><span class="s1">&#39;Cee&#39;</span> <span class="s1">&#39;Paskal&#39;</span> <span class="s1">&#39;Russt&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌────┬──────┬────┬───┬──────┬─────┐
+│APLL│Pithon│Jaba│Cee│Paskal│Russt│
+└────┴──────┴────┴───┴──────┴─────┘
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">languageThousandsUsersByYear</span> <span class="kd">←</span> <span class="m">4</span> <span class="m">6</span><span class="o">⍴</span><span class="m">2562</span> <span class="m">2435</span> <span class="m">3254</span> <span class="m">9843</span> <span class="m">6234</span> <span class="m">2634</span> <span class="m">2345</span> <span class="m">6543</span> <span class="m">9875</span> <span class="m">2452</span> <span class="m">5645</span> <span class="m">2345</span> <span class="m">3411</span> <span class="m">5462</span> <span class="m">8787</span> <span class="m">2435</span> <span class="m">2435</span> <span class="m">7634</span> <span class="m">5632</span> <span class="m">6543</span> <span class="m">2345</span> <span class="m">2345</span> <span class="m">6486</span> <span class="m">3452</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">2562 2435 3254 9843 6234 2634
+2345 6543 9875 2452 5645 2345
+3411 5462 8787 2435 2435 7634
+5632 6543 2345 2345 6486 3452
+</span></div></div>
+</div>
+<p>If the variable has a long name, its repetetition causes the expression to be rather lengthy too.</p>
+<p>If you want to change just part of the variable using indexing, there is even more repetition:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">languageThousandsUsersByYear</span><span class="sr">[</span><span class="m">2</span> <span class="m">3</span><span class="sr">;</span><span class="m">1</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span><span class="sr">]</span> <span class="kd">←</span> <span class="nv">languageThousandsUsersByYear</span><span class="sr">[</span><span class="m">2</span> <span class="m">3</span><span class="sr">;</span><span class="m">1</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span><span class="sr">]</span> <span class="o">-</span> <span class="m">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">2245 2352 5545 2245
+3311 2335 2335 7534
+</span></div></div>
+</div>
+<p>Dyalog APL has a feature that allows you to avoid this type of repetition; it is called <em>modified assignment</em>.</p>
+<p>In an expression that uses <em>modified assignment</em>, the name of the variable to be modified appears just once, at the beginning of the expression.
+This is followed by the function to be used to change its value, then the assignment arrow, and then the array that specifies the amount by which the original value of the variable is to be changed.
+This array would otherwise appear as the right argument of the function:</p>
+<p>Instead of <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">←</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">1</span></code>, one can write</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="o">+</span><span class="kd">←</span> <span class="m">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And instead of <code class="docutils literal notranslate"><span class="pre">languages</span> <span class="pre">←</span> <span class="pre">languages,'Cee'</span> <span class="pre">'Paskal'</span> <span class="pre">'Russt'</span></code> one can write</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">languages</span> <span class="o">,</span><span class="kd">←</span> <span class="s1">&#39;Cee&#39;</span> <span class="s1">&#39;Paskal&#39;</span> <span class="s1">&#39;Russt&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using <em>modified assignment</em>, the other expression can be rewritten as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">languageThousandsUsersByYear</span><span class="sr">[</span><span class="m">2</span> <span class="m">3</span><span class="sr">;</span><span class="m">1</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span><span class="sr">]</span> <span class="o">-</span><span class="kd">←</span> <span class="m">100</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Modified assignment</em> is concise and can reduce errors (such as misspelling the variable name in the second part of the expression).</p>
+<p>However, there is a disadvantage to <em>modified assignment</em>: when reading a statement it is very easy to miss the function to the left of the assignment arrow and assume that the statement contains a plain assignment.</p>
+<div class="section" id="application">
+<span id="special-syntax-application"></span><h3><span class="section-number">9.1.1. </span>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h3>
+<p><em>Modified assignment</em> can be used to enter a very long list of values, which would otherwise exceed the screen width, as illustrated in the following example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">vec</span>  <span class="kd">←</span> <span class="m">52</span> <span class="m">17</span> <span class="m">39</span> <span class="m">77</span> <span class="m">40</span> <span class="m">17</span> <span class="m">29</span> <span class="m">0</span> <span class="m">0</span> <span class="m">14</span>
+<span class="nv">vec</span> <span class="o">,</span><span class="kd">←</span> <span class="m">80</span> <span class="m">12</span> <span class="m">31</span> <span class="m">46</span> <span class="m">100</span> <span class="m">51</span> <span class="m">49</span> <span class="m">43</span> <span class="m">21</span>
+<span class="nv">vec</span> <span class="o">,</span><span class="kd">←</span> <span class="m">17</span> <span class="m">18</span> <span class="m">19</span> <span class="m">63</span> <span class="m">61</span> <span class="m">70</span> <span class="m">44</span> <span class="m">0</span> <span class="m">20</span> <span class="m">11</span>
+<span class="nv">vec</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">52 17 39 77 40 17 29 0 0 14 80 12 31 46 100 51 49 43 21 17 18 19 63 61 70 44 0 20 11
+</span></div></div>
+</div>
+<p>This type of <em>modified assignment</em> might be superseded by the introduction of an <em>array notation</em> which would make it more convenient to write out explicit arrays.</p>
+</div>
+</div>
+<div class="section" id="multiple-assignment">
+<span id="special-syntax-multiple-assignment"></span><h2><span class="section-number">9.2. </span>Multiple Assignment<a class="headerlink" href="#multiple-assignment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="introduction">
+<span id="special-syntax-introduction"></span><h3><span class="section-number">9.2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<p>It is possible to assign several values to several variables at the same time.
+This is as true for nested arrays as it is for simple arrays:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">)</span> <span class="kd">←</span> <span class="m">23</span> <span class="m">41</span> <span class="m">56</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">23
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">41
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">56
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">d</span> <span class="nv">e</span> <span class="nv">f</span><span class="p">)</span> <span class="kd">←</span> <span class="p">(</span><span class="m">20</span> <span class="m">61</span><span class="p">)</span> <span class="p">(</span><span class="m">2</span> <span class="m">2</span><span class="o">⍴⍳</span><span class="m">4</span><span class="p">)</span> <span class="s1">&#39;Africa&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">d</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">20 61
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">e</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2
+3 4
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">f</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Africa
+</span></div></div>
+</div>
+<p>These two instructions are equivalent to the individual assignments <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">←</span> <span class="pre">23</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">←</span> <span class="pre">41</span></code>, …</p>
+<p>The variables <code class="docutils literal notranslate"><span class="pre">d</span></code> and <code class="docutils literal notranslate"><span class="pre">f</span></code> are vectors, and <code class="docutils literal notranslate"><span class="pre">e</span></code> is a matrix: they are not nested.
+This technique, called <em>multiple assignment</em>, is a simple way to split the contents of a simple or nested vector into several variables.</p>
+<p>This technique can be combined with the <em>modified assignment</em> seen previously.
+For example, we can update <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">c</span></code> (which we have just set to <code class="docutils literal notranslate"><span class="pre">23</span></code>, <code class="docutils literal notranslate"><span class="pre">41</span></code>, and <code class="docutils literal notranslate"><span class="pre">56</span></code>, respectively), as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">)</span> <span class="o">+</span><span class="kd">←</span> <span class="m">57</span> <span class="p">(</span><span class="m">19</span> <span class="m">¯16</span><span class="p">)</span> <span class="p">(</span><span class="m">2</span> <span class="m">3</span><span class="o">⍴⍳</span><span class="m">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌──┬─────┬────────┐
+│80│60 25│57 58 59│
+│  │     │60 61 62│
+└──┴─────┴────────┘
+</span></div></div>
+</div>
+<p>Of course, the number of variable names must be equal to the length of the vector to the right of the assignment arrow, otherwise a <code class="docutils literal notranslate"><span class="pre">LENGTH</span> <span class="pre">ERROR</span></code> is issued:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">a</span> <span class="nv">b</span><span class="p">)</span> <span class="kd">←</span> <span class="m">23</span> <span class="m">41</span> <span class="m">56</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LENGTH ERROR
+      (a b)←23 41 56
+           ∧
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="using-parentheses">
+<span id="special-syntax-using-parentheses"></span><h3><span class="section-number">9.2.2. </span>Using Parentheses<a class="headerlink" href="#using-parentheses" title="Permalink to this headline">¶</a></h3>
+<p>As we have already mentioned in <a class="reference internal" href="Data-and-Variables.html"><span class="doc std std-doc">the “Data and Variables” chapter</span></a>, for clarity and also for compatibility with other APL systems, we recommend that you parenthesise the names of the variables to the left of the arrow.
+However, this is not mandatory in Dyalog APL and you may come across the following syntax, especially in environments where compatibility with other APL systems is not an issue:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="kd">←</span> <span class="m">23</span> <span class="m">41</span> <span class="m">56</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>However this is highly discouraged. Using parentheses indicates much more clearly the intent of performing multiple assignment and helps prevent some erroneous behaviour. For example, notice how the expression below raises an error because we are trying to assign <code class="docutils literal notranslate"><span class="pre">5</span></code> to <code class="docutils literal notranslate"><span class="pre">3</span></code>, and yet, <code class="docutils literal notranslate"><span class="pre">var</span></code> gets assigned <code class="docutils literal notranslate"><span class="pre">5</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">var</span> <span class="m">3</span> <span class="kd">←</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SYNTAX ERROR
+      var 3←5
+           ∧
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">var</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5
+</span></div></div>
+</div>
+<p>However, if we use parentheses the assignment is not performed at all:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">var</span> <span class="m">3</span><span class="p">)</span> <span class="kd">←</span> <span class="m">50</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SYNTAX ERROR
+      (var 3)←50
+             ∧
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">var</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5
+</span></div></div>
+</div>
+<p>If you still aren’t convinced that unparenthesised multiple assignment is evil, another argument against it is that multiple assignments can be ambiguous to read.
+For example, what does</p>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="kd">←</span> <span class="m">42</span>
+</pre></div>
+</div>
+<p>do?</p>
+<p>The ambiguity arises from the fact that the lack of parenthesising means we need to know what <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">c</span></code>, are, in order to understand the expression above.
+For example, if all three variables are arrays, then we reassign them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="kd">←</span> <span class="nv">b</span> <span class="kd">←</span> <span class="nv">c</span> <span class="kd">←</span> <span class="m">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="kd">←</span> <span class="m">42</span>
+<span class="vg">⎕</span><span class="kd">←</span> <span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">42 42 42
+</span></div></div>
+</div>
+<p>However, if <code class="docutils literal notranslate"><span class="pre">c</span></code> were a function, for example <code class="docutils literal notranslate"><span class="pre">-</span></code>, this is what we get:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">)</span><span class="nv">erase</span> <span class="nv">c</span>
+<span class="nv">c</span> <span class="kd">←</span> <span class="o">-</span>
+<span class="nv">a</span> <span class="kd">←</span> <span class="nv">b</span> <span class="kd">←</span> <span class="m">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="kd">←</span> <span class="m">42</span>
+<span class="vg">⎕</span><span class="kd">←</span> <span class="nv">a</span> <span class="nv">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">¯42 ¯42
+</span></div></div>
+</div>
+<p>Unfortunately, at the time of writing, there is no way to use parenthesis to disambiguate the two situations above.</p>
+</div>
+</div>
+<div class="section" id="selective-assignment">
+<span id="special-syntax-selective-assignment"></span><h2><span class="section-number">9.3. </span>Selective Assignment<a class="headerlink" href="#selective-assignment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="quick-overview">
+<span id="special-syntax-quick-overview"></span><h3><span class="section-number">9.3.1. </span>Quick Overview<a class="headerlink" href="#quick-overview" title="Permalink to this headline">¶</a></h3>
+<p>Let us consider the following matrix:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">mat</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">4</span><span class="o">⍴</span><span class="m">13</span> <span class="m">52</span> <span class="m">33</span> <span class="m">81</span> <span class="m">42</span> <span class="m">62</span> <span class="m">70</span> <span class="m">47</span> <span class="m">51</span> <span class="m">73</span> <span class="m">28</span> <span class="m">19</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">13 52 33 81
+42 62 70 47
+51 73 28 19
+</span></div></div>
+</div>
+<p>It is easy to select (extract) the first row and a half of that matrix:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">6</span><span class="o">⍴</span><span class="nv">mat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">13 52 33 81 42 62
+</span></div></div>
+</div>
+<p>But, until now, it would have been much more complex to modify these items.
+Previously, we would have had to use two steps:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">mat</span><span class="sr">[</span><span class="m">1</span><span class="sr">;]</span> <span class="kd">←</span> <span class="m">37</span> <span class="m">38</span> <span class="m">11</span> <span class="m">12</span>
+<span class="nv">mat</span><span class="sr">[</span><span class="m">2</span><span class="sr">;</span><span class="m">1</span> <span class="m">2</span><span class="sr">]</span> <span class="kd">←</span> <span class="m">20</span> <span class="m">88</span>
+<span class="nv">mat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">37 38 11 12
+20 88 70 47
+51 73 28 19
+</span></div></div>
+</div>
+<p>Now, we will introduce <em>selective assignment</em>.
+The purpose of <em>selective assignment</em> is to provide a concise way to specify that a selected part (and only that selected part) of an array is to be assigned a new value.
+In <em>selective assignment</em>, the expression that specifies (selects) the part of the array to be changed, appears in parentheses to the left of the assignment arrow.
+The replacement array appears on the right.</p>
+<p>Let us restore <code class="docutils literal notranslate"><span class="pre">mat</span></code> to its original state, and try out this new technique:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">mat</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">4</span><span class="o">⍴</span><span class="m">13</span> <span class="m">52</span> <span class="m">33</span> <span class="m">81</span> <span class="m">42</span> <span class="m">62</span> <span class="m">70</span> <span class="m">47</span> <span class="m">51</span> <span class="m">73</span> <span class="m">28</span> <span class="m">19</span>
+<span class="p">(</span><span class="m">6</span><span class="o">⍴</span><span class="nv">mat</span><span class="p">)</span> <span class="kd">←</span> <span class="m">37</span> <span class="m">38</span> <span class="m">11</span> <span class="m">12</span> <span class="m">20</span> <span class="m">88</span>
+<span class="nv">mat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">13 52 33 81
+42 62 70 47
+51 73 28 19
+</span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">37 38 11 12
+20 88 70 47
+51 73 28 19
+</span></div></div>
+</div>
+<p>It is important to realise that the replacement array does not necessarily have the same shape as the indices of the replaced portion of <code class="docutils literal notranslate"><span class="pre">mat</span></code>, which in any case are not necessarily rectangular.
+Instead, the replacement array must have the same shape as the result of the selection expression.
+In this case, <code class="docutils literal notranslate"><span class="pre">6⍴mat</span></code> would have produced a 6-item vector, so the replacement array must be a 6-item vector, too.</p>
+<p>This is also true if we select/replace a sub-matrix of <code class="docutils literal notranslate"><span class="pre">mat</span></code> using <em>take</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯2</span> <span class="m">3</span><span class="o">↑</span><span class="nv">mat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">20 88 70
+51 73 28
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">¯2</span> <span class="m">3</span><span class="o">↑</span><span class="nv">mat</span><span class="p">)</span> <span class="kd">←</span> <span class="m">2</span> <span class="m">3</span><span class="o">⍴</span><span class="m">10</span><span class="o">×⍳</span><span class="m">6</span>
+<span class="nv">mat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">37 38 11 12
+10 20 30 47
+40 50 60 19
+</span></div></div>
+</div>
+<p>We can even try using a nested replacement array, here using <em>drop</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span> <span class="m">1</span><span class="o">↓</span><span class="nv">mat</span><span class="p">)</span> <span class="kd">←</span> <span class="m">2</span> <span class="m">3</span><span class="o">⍴</span><span class="s1">&#39;To&#39;</span> <span class="s1">&#39;be&#39;</span> <span class="s1">&#39;or&#39;</span> <span class="s1">&#39;not&#39;</span> <span class="s1">&#39;to&#39;</span> <span class="s1">&#39;be&#39;</span>
+<span class="nv">mat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌──┬───┬──┬──┐
+│37│38 │11│12│
+├──┼───┼──┼──┤
+│10│To │be│or│
+├──┼───┼──┼──┤
+│40│not│to│be│
+└──┴───┴──┴──┘
+</span></div></div>
+</div>
+<p>Notice that, unlike <em>multiple assignment</em>, the usage of parentheses is mandatory in <em>selective assignment</em>.
+If the parentheses are omitted, the selection expression will just act like an expression that is evaluated after the inline assignment.</p>
+<p>Compare the value of <code class="docutils literal notranslate"><span class="pre">mat</span></code> here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span><span class="o">⍴</span><span class="nv">mat</span><span class="p">)</span> <span class="kd">←</span> <span class="m">999</span>
+<span class="nv">mat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌───┬───┬──┬──┐
+│999│38 │11│12│
+├───┼───┼──┼──┤
+│10 │To │be│or│
+├───┼───┼──┼──┤
+│40 │not│to│be│
+└───┴───┴──┴──┘
+</span></div></div>
+</div>
+<p>with the value of <code class="docutils literal notranslate"><span class="pre">mat</span></code> here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="o">⍴</span><span class="nv">mat</span> <span class="kd">←</span> <span class="m">888</span>
+<span class="nv">mat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">888
+</span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">888
+</span></div></div>
+</div>
+</div>
+<div class="section" id="available-primitives">
+<span id="special-syntax-available-primitives"></span><h3><span class="section-number">9.3.2. </span>Available Primitives<a class="headerlink" href="#available-primitives" title="Permalink to this headline">¶</a></h3>
+<p>This technique cannot be used with every single primitive function; only the following selection functions are allowed.
+When appropriate, these functions can also be used with an <em>axis</em> specification:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">⍴</span></code>: reshape</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> and <code class="docutils literal notranslate"><span class="pre">⌿</span></code>: compress/replicate</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">↑</span></code>: take</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">↓</span></code>: drop</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">,</span></code>: ravel</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">∊</span></code>: enlist</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">⌽</span></code> and <code class="docutils literal notranslate"><span class="pre">⊖</span></code>: reverse, rotate</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">⍉</span></code>: monadic and dyadic transpose</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">⊃</span></code>: disclose, pick</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\</span></code> and <code class="docutils literal notranslate"><span class="pre">⍀</span></code>: expand</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">⌷</span></code>: index</p></li>
+</ul>
+<p>Some of the functions listed here haven’t been introduced yet, but will be soon.</p>
+</div>
+<div class="section" id="examples">
+<span id="special-syntax-examples"></span><h3><span class="section-number">9.3.3. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<p>One of the most interesting selection tools is <em>compress</em>.
+Let us restore <code class="docutils literal notranslate"><span class="pre">mat</span></code> again:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">mat</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">4</span><span class="o">⍴</span><span class="m">13</span> <span class="m">52</span> <span class="m">33</span> <span class="m">81</span> <span class="m">42</span> <span class="m">62</span> <span class="m">70</span> <span class="m">47</span> <span class="m">51</span> <span class="m">73</span> <span class="m">28</span> <span class="m">19</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">13 52 33 81
+42 62 70 47
+51 73 28 19
+</span></div></div>
+</div>
+<p>How can we negate all the values which are smaller than 40?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="o">,</span><span class="nv">mat</span><span class="o">&lt;</span><span class="m">40</span><span class="p">)</span><span class="na">/</span><span class="o">,</span><span class="nv">mat</span><span class="p">)</span> <span class="o">×</span><span class="kd">←</span> <span class="m">¯1</span>
+<span class="nv">mat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">¯13 52 ¯33  81
+ 42 62  70  47
+ 51 73 ¯28 ¯19
+</span></div></div>
+</div>
+<p>We can also use <em>compress</em> to replace vowels scattered throughout a matrix:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">monMat</span> <span class="kd">←</span> <span class="m">6</span> <span class="m">8</span><span class="o">⍴</span><span class="s1">&#39;January FebruaryMarch   April   May     June    &#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">January 
+February
+March   
+April   
+May     
+June    
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="o">,</span><span class="nv">monMat</span><span class="o">∊</span><span class="s1">&#39;aeiouy&#39;</span><span class="p">)</span><span class="na">/</span><span class="o">,</span><span class="nv">monMat</span><span class="p">)</span> <span class="kd">←</span> <span class="s1">&#39;_&#39;</span>
+<span class="nv">monMat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">J_n__r_ 
+F_br__r_
+M_rch   
+Apr_l   
+M__     
+J_n_    
+</span></div></div>
+</div>
+<p>Later on, in <span class="xref myst">the chapter about operators</span>, we will learn about another tool that is suitable for this kind of job.</p>
+<p>Using <em>dyadic transpose</em>, it is possible to select and modify a diagonal in a matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span> <span class="m">1</span><span class="o">⍉</span><span class="nv">mat</span><span class="p">)</span> <span class="kd">←</span> <span class="m">0</span>
+<span class="nv">mat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace"> 0 52 ¯33  81
+42  0  70  47
+51 73   0 ¯19
+</span></div></div>
+</div>
+<p>To replace all the items in a matrix with the values contained in a vector, we now have two methods:</p>
+<p>The obvious:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">mat</span> <span class="kd">←</span> <span class="p">(</span><span class="o">⍴</span><span class="nv">mat</span><span class="p">)</span><span class="o">⍴⍳</span><span class="m">12</span>
+<span class="nv">mat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1  2  3  4
+5  6  7  8
+9 10 11 12
+</span></div></div>
+</div>
+<p>And the one with <em>selective assignment</em>, using <em>ravel</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">,</span><span class="nv">mat</span><span class="p">)</span> <span class="kd">←</span> <span class="m">12</span><span class="o">+⍳</span><span class="m">12</span>
+<span class="nv">mat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">13 14 15 16
+17 18 19 20
+21 22 23 24
+</span></div></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "dyalog-kernel"
+        },
+        kernelOptions: {
+            kernelName: "dyalog-kernel",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'dyalog-kernel'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="Working-on-Data-Shape.html" title="previous page"><span class="section-number">8. </span>Working on Data Shape</a>
+    <a class='right-next' id="next-link" href="Appendices.html" title="next page"><span class="section-number">10. </span>Appendices</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Bernard Legrand, reworked by Rodrigo Girão Serrão.<br/>
+        
+          <div class="extra_footer">
+            <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+  <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+</a></p>
+<p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
