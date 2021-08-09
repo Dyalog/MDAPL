@@ -7,6 +7,14 @@ In the first instance, it lists the changes between consecutive releases of this
 However, because this book is a rework of the first edition by Bernard Legrand,
 this changelog also marks with [n] content that is new in this rework.
 
+## v0.3
+
+ - Add chapter “Special Syntax”
+	- change modified assignment variable names to "make more sense" out of context, and include example values;
+	- [n] include a note saying that array notation could supersede the usage of `,←` to define long vectors;
+	- [n] move the in-depth discussion about the disadvantages of not using parentheses in multiple assignment to this chapter, from the chapter “Data and Variables”;
+	- [n] add enlist `∊` to the list of primitives that work with selective assignment;
+
 ## v0.2.1
 
  - [n] Add example in “Data and Variables” that explains why multiple assignment without parenthesis can be ambiguous to read.
