@@ -14,6 +14,7 @@ this changelog also marks with [n] content that is new in this rework.
 	- [n] include a note saying that array notation could supersede the usage of `,←` to define long vectors;
 	- [n] move the in-depth discussion about the disadvantages of not using parentheses in multiple assignment to this chapter, from the chapter “Data and Variables”;
 	- [n] add enlist `∊` and table `⍪` to the list of primitives that work with selective assignment;
+ - Add the selective assignment appendix to the appendices.
 
 ## v0.2.1
 
