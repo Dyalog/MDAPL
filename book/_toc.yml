@@ -1,12 +1,16 @@
-- file: 'README'
+format: jb-article
+root: README
+options:
   numbered: true
-- file: 'Introduction'
-- file: 'Getting-Started'
-- file: 'Data-and-Variables'
-- file: 'Some-Primitive-Functions'
-- file: 'User-Defined-Functions'
-- file: 'First-Aid-Kit'
-- file: 'Execute-and-Format-Control'
-- file: 'Working-on-Data-Shape'
-- file: 'Special-Syntax'
-- file: 'Appendices'
+sections:
+- file: Introduction
+- file: Getting-Started
+- file: Data-and-Variables
+- file: Some-Primitive-Functions
+- file: User-Defined-Functions
+- file: First-Aid-Kit
+- file: Execute-and-Format-Control
+- file: Working-on-Data-Shape
+- file: Special-Syntax
+- file: Nested-Arrays-(Continued)
+- file: Appendices

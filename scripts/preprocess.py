@@ -252,7 +252,7 @@ if __name__ == "__main__":
         print("Could not open ToC.")
         sys.exit()
 
-    for dic in data:
+    for dic in data.get("sections", []):
         try:
             filename = Path(dic["file"]).name
         except KeyError:
