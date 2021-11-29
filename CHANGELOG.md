@@ -9,14 +9,44 @@ this changelog also marks with [n] content that is new in this rework.
 
 ## v0.4
 
-  - Add chapter “Nested Arrays (Continued)”
-    - remove section about dyadic `≡` and `≢` because that's already covered;
-    - establish the connection between mix with axis `↑[k]` and mix followed by dyadic transpose;
-  - Include email address to where feedback/errata can be sent
+  - Add chapter “Nested Arrays (Continued)”:
+    - refactor “First Contact” > “More About DISPLAY” (see #13);
+    - remove subsection “Depth” > “Match & Natch” (dyadic `≡` and `≢` are already covered earlier in the book);
+    - [n] add subsection “Depth” > “The Depth of an Array, Take 2” (introduce default vector values technique; try fixing the issue with `Process` by giving default values to the missing positions of the argument vector);
+    - [n] add section “Nest” (the function `Process` was used to introduce the concept of depth; we can use the same example to motivate monadic `⊆` as a way to do some "argument validation"):
+        - [n] introduce `⊆` that encloses if the argument is simple;
+        - [n] add subsection “Argument Homogenisation” (fixes the issue with `Process` by using `⊆`);
+        - [n] add subsection “Nesting a Scalar” (explains why it may look like `⊆` "doesn't work" on simple scalars).
+    - [n] establish the connection between mix with axis `↑[k]` and mix followed by dyadic transpose;
+    - remove section “First & Type” (The “First” portion was moved to the section “Pick” and the “Type” portion was split into “Prototype, Fill Item” and the “Specialist's Section”);
+    - refactor section “Prototype, Fill Item”:
+        - rename it to “Type, Prototype, Fill Item” (before we introduce the notions of prototype and fill item, we define the type of an array); and
+        - [n] define the type of an array in a descriptive manner (we can't just say that the type of `array` is `∊array` because `∊` is the enlist function).
+    - refactor section “Pick”:
+        - rename subsection “Beware!” to “Left Argument Length” (more descriptive name);
+        - rename subsection “Important” to “Disclosed Result” (ditto);
+        - take `]box` effects into consideration in subsections “Left Argument Length” and “Disclosed Result”; and
+        - add subsection “Pick First”, containing the “First” portion of the old “First & Type” section.
+    - refactor section “Partition & Partitioned Enclose”:
+        - swap title order to match order of contents;
+        - [n] introduce partitioned enclose `pattern ⊂ array` as a series of sub-subsections covering the several nuances of its behaviour; and
+        - use the old subsection “The IBM Definition” as the introduction to partition `⊆`.
+    - refactor section “Enlist” (remove references to `⎕ML`, as those were moved to the Specialist's Section);
+    - refactor exercises:
+        - [n] added exercise 7 to implement enclose `⊂Y` as a function of partitioned enclose `X⊂Y`;
+        - [n] added exercise 8 to find the result of an empty partition, like `0⊆'Partition'`;
+        - [n] added exercise 9 using nest `⊆Y` for argument homogenisation (see past Phase 1 problems from the APL competition);
+        
+    - [n] add subsection "Computing the Type and Prototype" under the Specialist's Section, after talking about `⎕ML`:
+        - use `⊃1⍴0⍴⊂` / `∊` with `⎕ML ← 0` to figure out the type of an array; and
+        - use `1⍴0⍴` / `∊⊃` with `⎕ML ← 0` to figure out the prototype of an array.
+
+  - Include email address to where feedback/errata can be sent.
+  - Update TOC format to comply with Jupyter Book's upgrade.
 
 ## v0.3
 
- - Add chapter “Special Syntax”
+ - Add chapter “Special Syntax”:
    - change modified assignment variable names to "make more sense" out of context, and include example values;
    - [n] include a note saying that array notation could supersede the usage of `,←` to define long vectors;
    - [n] move the in-depth discussion about the disadvantages of not using parentheses in multiple assignment to this chapter, from the chapter “Data and Variables”;
@@ -30,12 +60,12 @@ this changelog also marks with [n] content that is new in this rework.
  - Make text a bit less Windows-centric.
  - Format APL terms consistently throughout the book (with italics only).
  - Prefer "catenate" over "concatenate" for the primitive `,`.
- - Prefer the construct "the function <name>" over "the <name> function" – the "function" qualifier before the function name makes it clearer, earlier, that we are talking about a specific function
+ - Prefer the construct "the function <name>" over "the <name> function" – the "function" qualifier before the function name makes it clearer, earlier, that we are talking about a specific function.
  - Fix reference issues with images that had empty captions.
 
 ## v0.2.0
 
- - Add chapter “Working on Data Shape”
+ - Add chapter “Working on Data Shape”:
    - [n] replace the "type" primitive (`∊` with `⎕ML ← 0`) with a reference to `⎕DR`;
    - [n] updated spec of take `↑` and drop `↓` because they now conform to leading axis theory (the length of the left argument now can be smaller than the rank of the right argument);
    - [n] include exercises to write expressions that determine `⍴ns↑array` and `⍴ns↓array` from `ns`, `≢ns`, and `⍴array`;
@@ -62,7 +92,7 @@ Version 0.1.0 includes a significant number of changes because
 substantial work on the first chapters had already been done
 when versioning of the MDAPL rework started.
 
- - Add chapter “Execute and Format Control”
+ - Add chapter “Execute and Format Control”:
    - make original Spe 2.2 a subsection on dyadic `⍕`;
    - specification `'E'` is next to _all other_ specifications (was Spe 2.3);
    - [n] Specialist's Section "Dyadic Execute" now mentions the left argument to `⍎` can be a reference to a namespace;
@@ -73,36 +103,36 @@ when versioning of the MDAPL rework started.
    - [n] suggest not using `⍎` for weird programming tricks, instead use functions that receive arguments and return values;
    - [n] add section on controlling session output with user commands and the dfns namespace;
    
- - Add chapter “First-Aid Kit”
+ - Add chapter “First-Aid Kit”:
    - update debugging instructions for Windows;
    - [n] add debugging instructions for RIDE;
    - (possibly other changes);
    
- - Add chapter “User-Defined Functions”
+ - Add chapter “User-Defined Functions”:
    - reorder sections on tradfns and dfns to give more emphasis on dfns;
    - [n] add sections on dfns;
    - [n] add exercises on dfns;
    - [n] comparative table between dfns and tradfns;
    - (possibly other changes);
    
- - Add chapter “Some Primitive Functions”
+ - Add chapter “Some Primitive Functions”:
    - introduce match and depth (≡) and not-match and tally (≢);
    - [n] mention unique that renders the `((⍳≢vector) = vector ⍳ vector) / vector` example as obsolete;
    - (possibly other changes);
    
- - Add chapter “Data and Variables”
+ - Add chapter “Data and Variables”:
    - (possibly other changes);
    
- - Add chaper “Getting Started”
+ - Add chaper “Getting Started”:
    - [n] add instructions for Linux and MacOS users;
    - [n] add instructions for RIDE;
    - [n] add instructions for Jupyter notebooks;
    - [n] add more information on typing APL glyphs;
    - (possibly other changes);
    
- - Add chapter “Will You Play APL With Me?”
+ - Add chapter “Will You Play APL With Me?”:
    - (possibly other changes);
    
- - Add chapter “Appendices”
+ - Add chapter “Appendices”:
    - [n] add appendix with all event numbers;
    - [n] add appendix with all the variables that are commonly used in the book and too long to type;
