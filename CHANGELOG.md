@@ -36,13 +36,21 @@ this changelog also marks with [n] content that is new in this rework.
         - [n] added exercise 7 to implement enclose `⊂Y` as a function of partitioned enclose `X⊂Y`;
         - [n] added exercise 8 to find the result of an empty partition, like `0⊆'Partition'`;
         - [n] added exercise 9 using nest `⊆Y` for argument homogenisation (see past Phase 1 problems from the APL competition);
+    - refactor “The Specialist's Section”:
+        - [n] add subsection "Computing the Type and Prototype" (after talking about `⎕ML`):
+            - use `⊃0⍴⊂` / `∊` with `⎕ML ← 0` to figure out the type of an array;
+            - use `⊃0⍴` / `∊⊃` with `⎕ML ← 0` to figure out the prototype of an array; and
+            - [n] include recursive dfn to compute type when `⎕ML ≥ 0`.
+        - refactor “The IBM Partition on Matrices”:
+            - rename it to “High-rank Partition”;
+            - [n] add remark about result similarity if `]box` is OFF;
+            - point out main difference between `⊂` and `⊆` (`⊂` creates a vector of sub-arrays, while `⊆` creates a sub-array of vectors);
+            - [n] add rules to characterise the result of a partition operation;
         
-    - [n] add subsection "Computing the Type and Prototype" under the Specialist's Section, after talking about `⎕ML`:
-        - use `⊃1⍴0⍴⊂` / `∊` with `⎕ML ← 0` to figure out the type of an array; and
-        - use `1⍴0⍴` / `∊⊃` with `⎕ML ← 0` to figure out the prototype of an array.
 
   - Include email address to where feedback/errata can be sent.
   - Update TOC format to comply with Jupyter Book's upgrade.
+  - Fix styling issues with “Working on Data Shape” (a “rules” admonition and listing some matrices on the solutions for the exercises).
 
 ## v0.3
 
