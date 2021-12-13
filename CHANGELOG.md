@@ -18,6 +18,7 @@ this changelog also marks with [n] content that is new in this rework.
         - [n] add subsection “Argument Homogenisation” (fixes the issue with `Process` by using `⊆`);
         - [n] add subsection “Nesting a Scalar” (explains why it may look like `⊆` "doesn't work" on simple scalars).
     - [n] establish the connection between mix with axis `↑[k]` and mix followed by dyadic transpose;
+    - make a section out of the intermission exercises (so that they are easier to find in the table of contents of the chapter);
     - remove section “First & Type” (The “First” portion was moved to the section “Pick” and the “Type” portion was split into “Prototype, Fill Item” and the “Specialist's Section”);
     - refactor section “Prototype, Fill Item”:
         - rename it to “Type, Prototype, Fill Item” (before we introduce the notions of prototype and fill item, we define the type of an array); and
@@ -33,9 +34,8 @@ this changelog also marks with [n] content that is new in this rework.
         - use the old subsection “The IBM Definition” as the introduction to partition `⊆`.
     - refactor section “Enlist” (remove references to `⎕ML`, as those were moved to the Specialist's Section);
     - refactor exercises:
-        - [n] added exercise 7 to implement enclose `⊂Y` as a function of partitioned enclose `X⊂Y`;
-        - [n] added exercise 8 to find the result of an empty partition, like `0⊆'Partition'`;
-        - [n] added exercise 9 using nest `⊆Y` for argument homogenisation (see past Phase 1 problems from the APL competition);
+        - [n] added exercise 7 to find the result of an empty partitioned enclose, like `0⊂'Partition'`;
+        - [n] added exercise 8 using nest `⊆Y` for argument homogenisation;
     - refactor “The Specialist's Section”:
         - [n] add subsection "Computing the Type and Prototype" (after talking about `⎕ML`):
             - use `⊃0⍴⊂` / `∊` with `⎕ML ← 0` to figure out the type of an array;
@@ -46,8 +46,6 @@ this changelog also marks with [n] content that is new in this rework.
             - [n] add remark about result similarity if `]box` is OFF;
             - point out main difference between `⊂` and `⊆` (`⊂` creates a vector of sub-arrays, while `⊆` creates a sub-array of vectors);
             - [n] add rules to characterise the result of a partition operation;
-        
-
   - Include email address to where feedback/errata can be sent.
   - Update TOC format to comply with Jupyter Book's upgrade.
   - Fix styling issues with “Working on Data Shape” (a “rules” admonition and listing some matrices on the solutions for the exercises).
