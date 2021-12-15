@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>8. Working on Data Shape &#8212; Mastering Dyalog APL</title>
     
-  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -35,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -45,8 +42,8 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -57,14 +54,14 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="9. Special Syntax" href="Special-Syntax.html" />
     <link rel="prev" title="7. Execute &amp; Format Control" href="Execute-and-Format-Control.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -73,18 +70,19 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  
-  <h1 class="site-logo" id="site-title">Mastering Dyalog APL</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Mastering Dyalog APL</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="current nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Introduction.html">
    1. Introduction - Will You Play APL With Me?
@@ -131,12 +129,18 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Nested-Arrays-Continued.html">
+   10. Nested Arrays (Continued)
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Appendices.html">
-   10. Appendices
+   11. Appendices
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -152,21 +156,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -184,7 +188,7 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -201,25 +205,25 @@
     </div>
 </div>
 
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#take-and-drop">
    8.1. Take and Drop
@@ -458,8 +462,8 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -467,7 +471,7 @@
         
               <div>
                 
-  <div class="section" id="working-on-data-shape">
+  <div class="tex2jax_ignore mathjax_ignore section" id="working-on-data-shape">
 <span id="working-on-data-shape-working-on-data-shape"></span><h1><span class="section-number">8. </span>Working on Data Shape<a class="headerlink" href="#working-on-data-shape" title="Permalink to this headline">¶</a></h1>
 <p>In many programming languages, the programmer has to declare the dimensions of an array statically, and it is often possible to operate on the individual items using programmer-written loops.</p>
 <p>In contrast to this, because APL processes arrays in their entirety, it is important to be able to manage the dimensions of an array dynamically.
@@ -2955,17 +2959,15 @@ The result is a section of the “cube”.</p>
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1
 </span></div></div>
 </div>
-<!--begin rules style=remark-->
-<p><em><strong>Rules</strong></em>:</p>
-<blockquote>
-<div><p>This special use of <code class="docutils literal notranslate"><span class="pre">a⍉b</span></code> must also follow some rules:</p>
+<div class="remark admonition">
+<p class="admonition-title">Rules</p>
+<p>This special use of <code class="docutils literal notranslate"><span class="pre">a⍉b</span></code> must also follow some rules:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">(≢a)≡(≢⍴b)</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">∧/a∊⍳≢⍴b</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">∧/(⍳⌈/a)∊a</span></code></p></li>
 </ul>
-</div></blockquote>
-<!--end-->
+</div>
 <p>The first two rules are not unique to this special usage of <em>dyadic transpose</em>, and the third rule means that the items of <code class="docutils literal notranslate"><span class="pre">a</span></code> must be consecutive integers, starting from <code class="docutils literal notranslate"><span class="pre">⎕IO</span></code>.</p>
 <p>So, for the array <code class="docutils literal notranslate"><span class="pre">y</span></code> shown above, the only possible sections are:</p>
 <div class="cell docutils container">
@@ -3087,18 +3089,12 @@ This is one of the reasons why APL is so pleasant to teach and to learn!</p>
 Because we are dealing with a matrix – a rank 2 array – the left argument must be a 2-element vector.
 The first element determines how many rows we take (or drop) and from where (top or bottom), while the second element determines how many columns we take (or drop) and from where (left or right).</p>
 <p>Let us go through the three matrices, one by one:</p>
-<ul>
-<li><div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>
+<p><strong>1</strong>.</p>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="m">3</span> <span class="m">6</span>
+<span class="m">8</span> <span class="m">2</span> <span class="m">3</span>
 </pre></div>
 </div>
-</li>
-</ul>
-<p>5 3 6
-8 2 3</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-This matrix has elements from the _first_ two rows and from the _last_ three columns of `xg1`, so we can build it with
-</pre></div>
-</div>
+<p>This matrix has elements from the <em>first</em> two rows and from the <em>last</em> three columns of <code class="docutils literal notranslate"><span class="pre">xg1</span></code>, so we can build it with</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="m">¯3</span><span class="o">↑</span><span class="nv">xg1</span>
@@ -3122,18 +3118,12 @@ This matrix has elements from the _first_ two rows and from the _last_ three col
 8 2 3
 </span></div></div>
 </div>
-<ul>
-<li><div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>
+<p><strong>2</strong>.</p>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span> <span class="m">5</span> <span class="m">4</span> <span class="m">8</span> <span class="m">2</span>
+<span class="m">7</span> <span class="m">7</span> <span class="m">6</span> <span class="m">2</span>
 </pre></div>
 </div>
-</li>
-</ul>
-<p>5 4 8 2
-7 7 6 2</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-<span class="n">This</span> <span class="n">matrix</span> <span class="n">has</span> <span class="n">elements</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">_last_</span> <span class="n">two</span> <span class="n">rows</span> <span class="ow">and</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">_first_</span> <span class="n">four</span> <span class="n">columns</span><span class="p">,</span> <span class="n">so</span> <span class="n">we</span> <span class="n">build</span> <span class="n">it</span> <span class="k">with</span>
-</pre></div>
-</div>
+<p>This matrix has elements from the <em>last</em> two rows and from the <em>first</em> four columns, so we build it with</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯2</span> <span class="m">4</span><span class="o">↑</span><span class="nv">xg1</span>
@@ -3157,20 +3147,14 @@ This matrix has elements from the _first_ two rows and from the _last_ three col
 7 7 6 2
 </span></div></div>
 </div>
-<ul>
-<li><div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>
+<p><strong>3</strong>.</p>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">9</span> <span class="m">5</span> <span class="m">3</span>
+<span class="m">4</span> <span class="m">8</span> <span class="m">2</span>
+<span class="m">7</span> <span class="m">6</span> <span class="m">2</span>
 </pre></div>
 </div>
-</li>
-</ul>
-<p>9 5 3
-4 8 2
-7 6 2</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-Finally, this matrix contains all three rows but the 3 columns that make it up are from the _middle_ of `xg1`, so there is no single number that we can use to build this matrix in a single _take_.
-Instead, what we can do is two successive _takes_: first we take the _first_ 4 columns and then the _last_ 3 columns of that, or first we take the _last_ 4 columns and then the _first_ 3 of that:
-</pre></div>
-</div>
+<p>Finally, this matrix contains all three rows but the 3 columns that make it up are from the <em>middle</em> of <code class="docutils literal notranslate"><span class="pre">xg1</span></code>, so there is no single number that we can use to build this matrix in a single <em>take</em>.
+Instead, what we can do is two successive <em>takes</em>: first we take the <em>first</em> 4 columns and then the <em>last</em> 3 columns of that, or first we take the <em>last</em> 4 columns and then the <em>first</em> 3 of that:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="m">3</span><span class="o">↑</span><span class="m">3</span> <span class="m">¯4</span><span class="o">↑</span><span class="nv">xg1</span>
@@ -4385,17 +4369,37 @@ That is why we need to add the <em>iota</em> of the <em>tally</em> of <code clas
 
               </div>
               
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Execute-and-Format-Control.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">7. </span>Execute &amp; Format Control</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Special-Syntax.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">9. </span>Special Syntax</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
         </div>
     </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="Execute-and-Format-Control.html" title="previous page"><span class="section-number">7. </span>Execute &amp; Format Control</a>
-    <a class='right-next' id="next-link" href="Special-Syntax.html" title="next page"><span class="section-number">9. </span>Special Syntax</a>
-
-    </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -4416,11 +4420,9 @@ That is why we need to add the <em>iota</em> of the <em>tally</em> of <code clas
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>

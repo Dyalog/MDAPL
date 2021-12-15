@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4. Some Primitive Functions &#8212; Mastering Dyalog APL</title>
     
-  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -35,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -45,28 +42,28 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="5. User-Defined Functions" href="User-Defined-Functions.html" />
     <link rel="prev" title="3. Data and Variables" href="Data-and-Variables.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -75,18 +72,19 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  
-  <h1 class="site-logo" id="site-title">Mastering Dyalog APL</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Mastering Dyalog APL</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="current nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Introduction.html">
    1. Introduction - Will You Play APL With Me?
@@ -133,12 +131,18 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Nested-Arrays-Continued.html">
+   10. Nested Arrays (Continued)
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Appendices.html">
-   10. Appendices
+   11. Appendices
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -154,21 +158,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -186,7 +190,7 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -203,25 +207,25 @@
     </div>
 </div>
 
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#definitions">
    4.1. Definitions
@@ -759,8 +763,8 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -768,7 +772,7 @@
         
               <div>
                 
-  <div class="section" id="some-primitive-functions">
+  <div class="tex2jax_ignore mathjax_ignore section" id="some-primitive-functions">
 <span id="some-primitive-functions-some-primitive-functions"></span><h1><span class="section-number">4. </span>Some Primitive Functions<a class="headerlink" href="#some-primitive-functions" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="definitions">
 <span id="some-primitive-functions-definitions"></span><h2><span class="section-number">4.1. </span>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h2>
@@ -956,7 +960,7 @@ The second form is called the “<em>monadic</em>” use of the symbol.</p>
 300 920 480 1040  980 560
 </span></div></div>
 </div>
-<p>A complete list of <em>scalar dyadic functions</em> is given in <a class="reference internal" href="Appendices.html#appendices-scalar-functions"><span class="std std-numref">Section 10.1</span></a>.</p>
+<p>A complete list of <em>scalar dyadic functions</em> is given in <a class="reference internal" href="Appendices.html#appendices-scalar-functions"><span class="std std-numref">Section 11.1</span></a>.</p>
 </div>
 <div class="section" id="division-by-zero">
 <span id="some-primitive-functions-division-by-zero"></span><h3><span class="section-number">4.2.2. </span>Division By Zero<a class="headerlink" href="#division-by-zero" title="Permalink to this headline">¶</a></h3>
@@ -2759,7 +2763,7 @@ We may then use this derived function with an array in order to get a result:</p
 <p>In the expression above, the symbol <code class="docutils literal notranslate"><span class="pre">/</span></code> is the operator. It takes the function <code class="docutils literal notranslate"><span class="pre">+</span></code> as its single operand (similar to how we give arguments to functions) and produces the derived function <code class="docutils literal notranslate"><span class="pre">+/</span></code>. This derived function is then applied to <code class="docutils literal notranslate"><span class="pre">qty</span></code>, giving a result which is assigned to <code class="docutils literal notranslate"><span class="pre">stock</span></code> and displayed with <code class="docutils literal notranslate"><span class="pre">⊢</span></code>.</p>
 <p>Please note that the argument to a monadic function is always to the right of the function, whereas the function applied to a monadic operator (its operand) is always to the left of the operator.</p>
 <p>All of the APL primitive dyadic functions may be used as the operand to <em>reduce</em>; you can even apply a dyadic user-defined function. This generality makes <em>reduce</em>, and other operators, extremely powerful.</p>
-<p>Dyalog APL provides a total of around 20 such powerful operators, listed in <a class="reference internal" href="Appendices.html#appendices-dyalog-apl-operators"><span class="std std-numref">Section 10.4</span></a>. It is also possible to write your own operators, just as it is possible to write your own functions.</p>
+<p>Dyalog APL provides a total of around 20 such powerful operators, listed in <a class="reference internal" href="Appendices.html#appendices-dyalog-apl-operators"><span class="std std-numref">Section 11.4</span></a>. It is also possible to write your own operators, just as it is possible to write your own functions.</p>
 </div>
 <div class="section" id="reduction-of-binary-data">
 <span id="some-primitive-functions-reduction-of-binary-data"></span><h3><span class="section-number">4.8.3. </span>Reduction of Binary Data<a class="headerlink" href="#reduction-of-binary-data" title="Permalink to this headline">¶</a></h3>
@@ -4256,7 +4260,7 @@ FeO
 </tr>
 </tbody>
 </table>
-<p>The concept of a <em>fill item</em> is new and will be discussed in full in <span class="xref myst">the “Nested Arrays” chapter</span>. For now, you only need to know that the <em>fill item</em> for a simple numeric array is 0 and the <em>fill item</em> for a simple character array is a blank space.</p>
+<p>The concept of a <em>fill item</em> is new and will be discussed in full in <a class="reference internal" href="Nested-Arrays-Continued.html"><span class="doc std std-doc">the “Nested Arrays” chapter</span></a>. For now, you only need to know that the <em>fill item</em> for a simple numeric array is 0 and the <em>fill item</em> for a simple character array is a blank space.</p>
 <p>Here are some examples, using the same left argument applied to numeric and character vectors:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4612,7 +4616,7 @@ FeO
 <p>Now, what if a customer lives in any other area, such as 75, 45 or 93?</p>
 <p>The expression <code class="docutils literal notranslate"><span class="pre">area⍳d</span></code> will return the result <code class="docutils literal notranslate"><span class="pre">6</span></code> for all these area codes, because these values are absent from <code class="docutils literal notranslate"><span class="pre">area</span></code>. Then, <code class="docutils literal notranslate"><span class="pre">discount[6]</span></code> will always find the rate 2%, as specified. Here we can see that it is an advantage that <em>index of</em> returns 1 + the number of items in the vector to be searched.</p>
 <div class="note admonition">
-<p class="admonition-title">A Vector Solution</p>
+<p class="admonition-title">A Vector Solution </p>
 <p>The importance of this approach to finding the discount rates is that it is vector-based. If publicity attracts crowds and therefore <code class="docutils literal notranslate"><span class="pre">d</span></code> is no longer a scalar but a vector, the solution is still valid.</p>
 </div>
 <p>As an example, consider the following vector of area codes and the respective discount rates:</p>
@@ -5427,7 +5431,7 @@ Sweden        66
 <p><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">←</span> <span class="pre">origin</span> <span class="pre">+</span> <span class="pre">step</span> <span class="pre">×</span> <span class="pre">(⍳length)</span> <span class="pre">-</span> <span class="pre">1</span></code></p>
 </div>
 <div class="note admonition">
-<p class="admonition-title">Special Case</p>
+<p class="admonition-title">Special Case </p>
 <p>If <code class="docutils literal notranslate"><span class="pre">⍳n</span></code> gives a vector of length <code class="docutils literal notranslate"><span class="pre">n</span></code>, then <code class="docutils literal notranslate"><span class="pre">⍳0</span></code> should give a vector of length <code class="docutils literal notranslate"><span class="pre">0</span></code>, right? A vector having length 0 is an empty vector. In particular, this will be a <em>numeric</em> empty vector.</p>
 </div>
 <p>Let us check:</p>
@@ -8784,17 +8788,37 @@ However, we can easily see which of our tickets are winning tickets by checking 
 
               </div>
               
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Data-and-Variables.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">3. </span>Data and Variables</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="User-Defined-Functions.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">5. </span>User-Defined Functions</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
         </div>
     </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="Data-and-Variables.html" title="previous page"><span class="section-number">3. </span>Data and Variables</a>
-    <a class='right-next' id="next-link" href="User-Defined-Functions.html" title="next page"><span class="section-number">5. </span>User-Defined Functions</a>
-
-    </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
@@ -8815,11 +8839,9 @@ However, we can easily see which of our tickets are winning tickets by checking 
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>
