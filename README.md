@@ -6,6 +6,10 @@ The "[Mastering Dyalog APL][original]" book is the *de facto* standard for peopl
 ***Attention***:
 
  > This online version is a **work in progress**. It is missing chapters and sections and the content here may undergo heavy revision.
+ >
+ > Feel free to [open a new issue](https://github.com/Dyalog/MDAPL/issues/new) on GitHub if you would like to give feedback or
+ > to suggest corrections to any eventual mistakes/typos you encounter.
+ > Alternatively, you can send an email to mdapl@dyalog.com.
 <!-- end -->
 
 The first edition of "Mastering Dyalog APL" is an excellent resource but is becoming more and more outdated as the years go by and Dyalog APL evolves. For that matter, an updated and more modern version of the book is being created out of Jupyter Notebooks (available in [this GitHub repository][MDAPL]) to provide for a more interactive learning experience for those who like to read and experiment. A [static online version][MDAPL-html] also exists, and a printed version will be made available for those of you who prefer to hold a paper book in their hands.
