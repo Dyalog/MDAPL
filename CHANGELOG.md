@@ -7,6 +7,13 @@ In the first instance, it lists the changes between consecutive releases of this
 However, because this book is a rework of the first edition by Bernard Legrand,
 this changelog also marks with [n] content that is new in this rework.
 
+## 0.4.1
+
+  - Fix typos.
+  - Fix duplicate headers in “Some Primitive Functions”:
+    - Under “Axis Specification”, there were 2 almost-consecutive duplicate level 4 headers under the _same_ level 3 header, and it made sense to join them together;
+    - Rename “Special Notations” to “Replicate with Axis” under the section on replicate, to make the header more explicit;
+
 ## v0.4
 
   - Add chapter “Nested Arrays (Continued)”:
