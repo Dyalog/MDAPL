@@ -1,0 +1,2686 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11. Definitions &#8212; Mastering Dyalog APL</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="16. Appendices" href="Appendices.html" />
+    <link rel="prev" title="10. Nested Arrays (Continued)" href="Nested-Arrays-Continued.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Mastering Dyalog APL</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Introduction.html">
+   1. Introduction - Will You Play APL With Me?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Getting-Started.html">
+   2. Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Data-and-Variables.html">
+   3. Data and Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Some-Primitive-Functions.html">
+   4. Some Primitive Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="User-Defined-Functions.html">
+   5. User-Defined Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="First-Aid-Kit.html">
+   6. First-Aid Kit
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Execute-and-Format-Control.html">
+   7. Execute &amp; Format Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Working-on-Data-Shape.html">
+   8. Working on Data Shape
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Special-Syntax.html">
+   9. Special Syntax
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Nested-Arrays-Continued.html">
+   10. Nested Arrays (Continued)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   11. Definitions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Appendices.html">
+   16. Appendices
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Operators.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/Dyalog/MDAPL"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        <a class="edit-button" href="https://github.com/Dyalog/MDAPL/edit/master/Operators.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   11. Definitions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#operators-derived-functions">
+     11.1. Operators &amp; Derived Functions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sequences-of-operators">
+     11.2. Sequences of Operators
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#list-of-built-in-operators">
+     11.3. List of Built-in Operators
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-about-some-operators-you-already-know">
+   12. More About Some Operators You Already Know
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reduce">
+     12.1. Reduce
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#n-wise-reduce">
+     12.2.
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     -Wise Reduce
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#n-wise-reduce-on-vectors">
+       12.2.1.
+       <span class="math notranslate nohighlight">
+        \(n\)
+       </span>
+       -Wise Reduce on Vectors
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#n-wise-reduce-on-arbitrary-arrays">
+       12.2.2.
+       <span class="math notranslate nohighlight">
+        \(n\)
+       </span>
+       -Wise Reduce on Arbitrary Arrays
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#axis">
+     12.3. Axis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scan">
+   13. Scan
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definition-of-scan">
+     13.1. Definition of Scan
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scan-with-binary-values">
+     13.2. Scan with Binary Values
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applications-of-scan">
+     13.3. Applications of Scan
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#inflate-values">
+       13.3.1. Inflate Values
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#remove-leading-trailing-blanks">
+       13.3.2. Remove Leading/Trailing Blanks
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outer-product">
+   14. Outer Product
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definition-of-outer-product">
+     14.1. Definition of Outer Product
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extensions">
+     14.2. Extensions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#other-functions">
+       14.2.1. Other Functions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#other-shapes-and-types-of-data">
+       14.2.2. Other Shapes and Types of Data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applications-of-outer-product">
+     14.3. Applications of Outer Product
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exhaustive-search">
+       14.3.1. Exhaustive Search
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#draw-a-bar-chart">
+       14.3.2. Draw a Bar Chart
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#decreasing-refunding">
+       14.3.3. Decreasing Refunding
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-on-outer-product">
+     14.4. Exercise on Outer Product
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inner-product">
+   15. Inner Product
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-concrete-situation">
+     15.1. A Concrete Situation
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#definition-of-inner-product">
+     15.2. Definition of Inner Product
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#typical-uses-of-inner-products">
+     15.3. Typical Uses of Inner Products
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#two-simple-problems">
+       15.3.1. Two Simple Problems
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-useful-family">
+       15.3.2. A Useful Family
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#a-special-case-of-a-comparison-inner-product">
+       15.3.3. A Special Case of a Comparison Inner Product
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="definitions">
+<h1><span class="section-number">11. </span>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="operators-derived-functions">
+<span id="operators-operators-derived-functions"></span><h2><span class="section-number">11.1. </span>Operators &amp; Derived Functions<a class="headerlink" href="#operators-derived-functions" title="Permalink to this headline">¶</a></h2>
+<p>We have already seen some operators: <em>reduce</em> (described in <a class="reference external" href="Some-Primitive-Functions.ipynb#Reduce">this section</a>), <em>axis</em> (which you first learned about in <a class="reference external" href="Some-Primitive-Functions.ipynb#Axis">this section</a>), and <em>each</em> (seen in <a class="reference external" href="Nested-Arrays-Continued.ipynb#Each">this section</a>).
+Let us characterise them precisely:</p>
+<ul class="simple">
+<li><p>There are built-in (<em>primitive</em>) operators and user-defined operators.</p></li>
+<li><p>An <em>operator</em> is similar to a function, but rather than working on arrays to produce a result, which is also an array, an operator works on functions (and sometimes an array) to produce a new function.</p></li>
+<li><p>The new function generated by the operator and its argument(s) is called a <em>derived function</em>.
+The <em>derived function</em> can be applied to arrays, in the same way as any other function.</p></li>
+<li><p>The arguments passed to the operator are commonly referred to as <em>operands</em>, to distinguish them from the arguments to the derived function.</p></li>
+<li><p>Monadic operators take a single operand on their <strong>left</strong>.
+This is in contrast to monadic <em>functions</em>, which take their single argument to the <em>right</em>.</p></li>
+<li><p>Dyadyc operators have two operands, one on each side.
+The operands to an operator are usually functions, but it is not uncommon for <em>user-defined operators</em> to take one function and one array operand.</p></li>
+<li><p>The <em>derived function</em>, in turn, can be monadic, dyadic, or ambivalent.</p></li>
+<li><p>Neither of the functions supplied as arguments to an operator nor the resultant <em>derived function</em> can be niladic.</p></li>
+</ul>
+<p>For example, in the expression</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span><span class="m">3</span> <span class="m">5</span> <span class="m">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">14
+</span></div></div>
+</div>
+<p>the <em>reduce</em> operator (<code class="docutils literal notranslate"><span class="pre">/</span></code>) operates on the function <em>plus</em> to produce the derived function <em>plus reduce</em>.
+This derived function is then applied to <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">5</span> <span class="pre">6</span></code> to produce a result.</p>
+<div class="attention admonition">
+<p class="admonition-title">Attention</p>
+<p>You must not be confused by the fact that some symbols are used to represent both a function and an operator.
+This is the case for <code class="docutils literal notranslate"><span class="pre">/</span></code> and <code class="docutils literal notranslate"><span class="pre">\</span></code>.</p>
+</div>
+<p>In the expression</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="na">/</span> <span class="m">6</span> <span class="m">2</span> <span class="m">9</span> <span class="m">4</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">6 2 4
+</span></div></div>
+</div>
+<p>the slash (<code class="docutils literal notranslate"><span class="pre">/</span></code>) represents the dyadic <em>function compress</em> because both arguments to the <code class="docutils literal notranslate"><span class="pre">/</span></code> are arrays.</p>
+<p>In the expression</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="m">6</span> <span class="m">2</span> <span class="m">9</span> <span class="m">4</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">26
+</span></div></div>
+</div>
+<p>the same symbol represents <em>reduce</em>, which is an <em>operator</em>, because the left argument to <code class="docutils literal notranslate"><span class="pre">/</span></code> is a function.</p>
+<p>The association of <code class="docutils literal notranslate"><span class="pre">+</span></code> with <code class="docutils literal notranslate"><span class="pre">/</span></code> creates a <em>derived function</em>, which could be parenthesised as <code class="docutils literal notranslate"><span class="pre">(+/)</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="p">)</span> <span class="m">6</span> <span class="m">2</span> <span class="m">9</span> <span class="m">4</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">26
+</span></div></div>
+</div>
+<p>Even though it is not necessary to do so.</p>
+<p>For clarification, we can define a synonym for the derived function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Sum</span> <span class="kd">←</span> <span class="o">+</span><span class="na">/</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Until now, we have only considered it as a <em>monadic</em> derived function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="m">6</span> <span class="m">2</span> <span class="m">9</span> <span class="m">4</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">26
+</span></div></div>
+</div>
+<p>This can be made more evident by using the synonym:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Sum</span> <span class="m">6</span> <span class="m">2</span> <span class="m">9</span> <span class="m">4</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">26
+</span></div></div>
+</div>
+<p>But, we shall soon see that it may also be used as a <em>dyadic</em> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="o">+</span><span class="na">/</span> <span class="m">6</span> <span class="m">2</span> <span class="m">9</span> <span class="m">4</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">8 11 13 9
+</span></div></div>
+</div>
+<p>Or, using the synonym:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="nv">Sum</span> <span class="m">6</span> <span class="m">2</span> <span class="m">9</span> <span class="m">4</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">8 11 13 9
+</span></div></div>
+</div>
+<p>So, we can say that this <em>derived function</em> is <em>ambivalent</em>.</p>
+</div>
+<div class="section" id="sequences-of-operators">
+<span id="operators-sequences-of-operators"></span><h2><span class="section-number">11.2. </span>Sequences of Operators<a class="headerlink" href="#sequences-of-operators" title="Permalink to this headline">¶</a></h2>
+<p><em>Derived functions</em> behave exactly like plain primitive functions.
+So, they can be the argument of a second (and a third …) operator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/¨</span> <span class="p">(</span><span class="m">3</span> <span class="m">4</span> <span class="m">6</span><span class="p">)(</span><span class="m">4</span> <span class="m">9</span> <span class="m">7</span> <span class="m">1</span><span class="p">)(</span><span class="m">3</span> <span class="m">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">13 21 4
+</span></div></div>
+</div>
+<p>The left operand of <em>each</em> is the derived function <code class="docutils literal notranslate"><span class="pre">(+/)</span></code>, so we could have written:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="p">)</span><span class="na">¨</span> <span class="p">(</span><span class="m">3</span> <span class="m">4</span> <span class="m">6</span><span class="p">)(</span><span class="m">4</span> <span class="m">9</span> <span class="m">7</span> <span class="m">1</span><span class="p">)(</span><span class="m">3</span> <span class="m">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">13 21 4
+</span></div></div>
+</div>
+<p>which may make it clearer that the operator <em>each</em> is operating on the <em>derived function</em> <code class="docutils literal notranslate"><span class="pre">+/</span></code>, and not just on <code class="docutils literal notranslate"><span class="pre">/</span></code>.
+Another way of verifying this is by using the synonym <code class="docutils literal notranslate"><span class="pre">Sum</span></code> we defined above:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Sum</span><span class="na">¨</span> <span class="p">(</span><span class="m">3</span> <span class="m">4</span> <span class="m">6</span><span class="p">)(</span><span class="m">4</span> <span class="m">9</span> <span class="m">7</span> <span class="m">1</span><span class="p">)(</span><span class="m">3</span> <span class="m">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">13 21 4
+</span></div></div>
+</div>
+<p>Now, suppose that we no longer want to add up vectors, but three small matrices instead:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">a</span> <span class="kd">←</span> <span class="m">2</span> <span class="m">3</span><span class="o">⍴⍳</span><span class="m">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 3
+4 5 6
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">b</span> <span class="kd">←</span> <span class="m">4</span> <span class="m">2</span><span class="o">⍴</span><span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 0
+0 1
+0 1
+1 0
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">c</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">5</span><span class="o">⍴</span><span class="m">8</span> <span class="m">3</span> <span class="m">4</span> <span class="m">2</span> <span class="m">0</span> <span class="m">0</span> <span class="m">3</span> <span class="m">5</span> <span class="m">1</span> <span class="m">7</span> <span class="m">3</span> <span class="m">6</span> <span class="m">2</span> <span class="m">1</span> <span class="m">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">8 3 4 2 0
+0 3 5 1 7
+3 6 2 1 7
+</span></div></div>
+</div>
+<p>Because they are matrices, we must choose the axis along which we add them up.
+Of course, we could use the two operators <code class="docutils literal notranslate"><span class="pre">/</span></code> and <code class="docutils literal notranslate"><span class="pre">⌿</span></code>, but if the arrays had been of a higher rank, an explicit axis specification might have been necessary.
+It could also be that we just prefer an explicit axis specification.
+If so, a third level of operator* can be added:</p>
+<div class="note admonition">
+<p class="admonition-title">Footnote</p>
+<p>Although the <em>axis specification</em> shares some properties with operators, it is a special syntactical element and not <strong>really</strong> an operator; cf. <a class="reference internal" href="#operators-axis"><span class="std std-numref">Section 12.3</span></a> below.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="na">¨</span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span>  <span class="c1">⍝ (((+/)[2])¨)a b c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌────┬───────┬────────┐
+│6 15│1 1 1 1│17 16 19│
+└────┴───────┴────────┘
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="na">¨</span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span>  <span class="c1">⍝ (((+/)[1])¨)a b c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────┬───┬─────────────┐
+│5 7 9│2 2│11 12 11 4 14│
+└─────┴───┴─────────────┘
+</span></div></div>
+</div>
+<ul class="simple">
+<li><p>The first operator is <code class="docutils literal notranslate"><span class="pre">/</span></code>, with left operand the function <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p></li>
+<li><p>The second “operator” is <code class="docutils literal notranslate"><span class="pre">[]</span></code>, with left operand the (derived) function <code class="docutils literal notranslate"><span class="pre">+/</span></code> and “right” operand the array <code class="docutils literal notranslate"><span class="pre">2</span></code> (or <code class="docutils literal notranslate"><span class="pre">1</span></code>), specifying the axis.</p></li>
+<li><p>The third operator is <code class="docutils literal notranslate"><span class="pre">¨</span></code>, with left operand the (derived) function <code class="docutils literal notranslate"><span class="pre">+/[n]</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="list-of-built-in-operators">
+<span id="operators-list-of-built-in-operators"></span><h2><span class="section-number">11.3. </span>List of Built-in Operators<a class="headerlink" href="#list-of-built-in-operators" title="Permalink to this headline">¶</a></h2>
+<p>Dyalog APL has a rich set of built-in operators.
+You will find a full list with detailed syntax and examples in <a class="reference internal" href="Appendices.html#appendices-dyalog-apl-operators"><span class="std std-numref">Section 16.4</span></a>.</p>
+</div>
+</div>
+<div class="section" id="more-about-some-operators-you-already-know">
+<h1><span class="section-number">12. </span>More About Some Operators You Already Know<a class="headerlink" href="#more-about-some-operators-you-already-know" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="reduce">
+<span id="operators-reduce"></span><h2><span class="section-number">12.1. </span>Reduce<a class="headerlink" href="#reduce" title="Permalink to this headline">¶</a></h2>
+<p>Up to now, we have used <em>reduce</em> with rather basic functions (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">×</span></code>, <code class="docutils literal notranslate"><span class="pre">⌈</span></code>, <code class="docutils literal notranslate"><span class="pre">,</span></code>), but it can also be used, less obviously, with functions like <em>reshape</em>, <em>compress</em>, and <em>replicate</em>.
+In these cases, the derived function typically takes a 2-item nested vector as its argument, and the effect is to insert the function (the operand to the operator) between the two items of this vector.</p>
+<p>Just remember this:</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">+/</span> <span class="pre">(2</span> <span class="pre">4</span> <span class="pre">3)(7</span> <span class="pre">1</span> <span class="pre">5)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">⊂(2</span> <span class="pre">4</span> <span class="pre">3)</span> <span class="pre">+</span> <span class="pre">(7</span> <span class="pre">1</span> <span class="pre">5)</span></code>, then, <code class="docutils literal notranslate"><span class="pre">⍴/</span> <span class="pre">(2</span> <span class="pre">4</span> <span class="pre">3)(7</span> <span class="pre">1</span> <span class="pre">5)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">⊂(2</span> <span class="pre">4</span> <span class="pre">3)</span> <span class="pre">⍴</span> <span class="pre">(7</span> <span class="pre">1</span> <span class="pre">5)</span></code>.</p>
+<p>Here is an example of <em>reduction by reshape</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="na">/</span> <span class="p">(</span><span class="m">2</span> <span class="m">5</span><span class="p">)(</span><span class="m">3</span> <span class="m">1</span> <span class="m">9</span> <span class="m">4</span> <span class="m">1</span> <span class="m">0</span> <span class="m">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────────┐
+│3 1 9 4 1│
+│0 7 3 1 9│
+└─────────┘
+</span></div></div>
+</div>
+<p>This <em>looks</em> very much like <code class="docutils literal notranslate"><span class="pre">(2</span> <span class="pre">5)</span> <span class="pre">⍴</span> <span class="pre">(3</span> <span class="pre">1</span> <span class="pre">9</span> <span class="pre">4</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">7)</span></code>, but the result is not a matrix.
+It is a scalar containing a <em>nested</em> matrix, for the reason already seen in <code class="xref std std-numref docutils literal notranslate"><span class="pre">Nested-Arrays-Continued-Reduction</span></code>: the reduction of a vector always gives a scalar.</p>
+<p>Now, here is a <em>reduction by compression</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="na">//</span> <span class="p">(</span><span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span><span class="p">)</span> <span class="s1">&#39;Strange&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────┐
+│Stage│
+└─────┘
+</span></div></div>
+</div>
+<p>Another <em>by replication</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="na">//</span> <span class="p">(</span><span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">4</span> <span class="m">0</span> <span class="m">1</span> <span class="m">2</span><span class="p">)</span> <span class="s1">&#39;Strange&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────────┐
+│Staaaagee│
+└─────────┘
+</span></div></div>
+</div>
+<p>And another <em>by index of</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍳</span><span class="na">/</span> <span class="p">(</span><span class="m">2</span> <span class="m">6</span> <span class="m">1</span> <span class="m">7</span><span class="p">)</span> <span class="p">(</span><span class="m">2</span> <span class="m">4</span><span class="o">⍴</span><span class="m">3</span> <span class="m">7</span> <span class="m">8</span> <span class="m">4</span> <span class="m">2</span> <span class="m">5</span> <span class="m">6</span> <span class="m">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌───────┐
+│5 4 5 5│
+│1 5 2 5│
+└───────┘
+</span></div></div>
+</div>
+</div>
+<div class="section" id="n-wise-reduce">
+<span id="operators-n-wise-reduce"></span><h2><span class="section-number">12.2. </span><span class="math notranslate nohighlight">\(n\)</span>-Wise Reduce<a class="headerlink" href="#n-wise-reduce" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="n-wise-reduce-on-vectors">
+<span id="operators-n-wise-reduce-on-vectors"></span><h3><span class="section-number">12.2.1. </span><span class="math notranslate nohighlight">\(n\)</span>-Wise Reduce on Vectors<a class="headerlink" href="#n-wise-reduce-on-vectors" title="Permalink to this headline">¶</a></h3>
+<p>The derived functions of <em>reduce</em> can be used with two arguments.
+This form is called <em>n-wise reduce</em>.</p>
+<p>When applied to vectors, <em>n-wise reduce</em> has the syntax <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">←</span> <span class="pre">scope</span> <span class="pre">f/</span> <span class="pre">vector</span></code>, where <code class="docutils literal notranslate"><span class="pre">f</span></code> is a dyadic function.</p>
+<p>This special kind of <em>reduce</em> splits the vector into (overlapping) slices of length equal to <code class="docutils literal notranslate"><span class="pre">scope</span></code>, and reduces each slice using the specified function.</p>
+<p>For example,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="o">×</span><span class="na">/</span> <span class="m">8</span> <span class="m">10</span> <span class="m">7</span> <span class="m">2</span> <span class="m">6</span> <span class="m">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">80 70 14 12 66
+</span></div></div>
+</div>
+<p>means</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">×</span><span class="na">/</span><span class="m">8</span> <span class="m">10</span><span class="p">)</span> <span class="p">(</span><span class="o">×</span><span class="na">/</span><span class="m">10</span> <span class="m">7</span><span class="p">)</span> <span class="p">(</span><span class="o">×</span><span class="na">/</span><span class="m">7</span> <span class="m">2</span><span class="p">)</span> <span class="p">(</span><span class="o">×</span><span class="na">/</span><span class="m">2</span> <span class="m">6</span><span class="p">)</span> <span class="p">(</span><span class="o">×</span><span class="na">/</span><span class="m">6</span> <span class="m">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">80 70 14 12 66
+</span></div></div>
+</div>
+<p>i.e.,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">8</span><span class="o">×</span><span class="m">10</span><span class="p">)</span>   <span class="p">(</span><span class="m">10</span><span class="o">×</span><span class="m">7</span><span class="p">)</span>   <span class="p">(</span><span class="m">7</span><span class="o">×</span><span class="m">2</span><span class="p">)</span>   <span class="p">(</span><span class="m">2</span><span class="o">×</span><span class="m">6</span><span class="p">)</span>   <span class="p">(</span><span class="m">6</span><span class="o">×</span><span class="m">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">80 70 14 12 66
+</span></div></div>
+</div>
+<p>Similarly,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="o">+</span><span class="na">/</span> <span class="m">8</span> <span class="m">10</span> <span class="m">7</span> <span class="m">2</span> <span class="m">6</span> <span class="m">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">25 19 15 19
+</span></div></div>
+</div>
+<p>means</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="m">8</span> <span class="m">10</span> <span class="m">7</span><span class="p">)</span> <span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="m">10</span> <span class="m">7</span> <span class="m">2</span><span class="p">)</span> <span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="m">7</span> <span class="m">2</span> <span class="m">6</span><span class="p">)</span> <span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="m">2</span> <span class="m">6</span> <span class="m">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">25 19 15 19
+</span></div></div>
+</div>
+<p>i.e.,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">8</span><span class="o">+</span><span class="m">10</span><span class="o">+</span><span class="m">7</span><span class="p">)</span>   <span class="p">(</span><span class="m">10</span><span class="o">+</span><span class="m">7</span><span class="o">+</span><span class="m">2</span><span class="p">)</span>   <span class="p">(</span><span class="m">7</span><span class="o">+</span><span class="m">2</span><span class="o">+</span><span class="m">6</span><span class="p">)</span>   <span class="p">(</span><span class="m">2</span><span class="o">+</span><span class="m">6</span><span class="o">+</span><span class="m">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">25 19 15 19
+</span></div></div>
+</div>
+<p>The size of the result is always <code class="docutils literal notranslate"><span class="pre">(1+≢vector)-scope</span></code>.</p>
+<p>We can try this with other functions that give nested results:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="o">,</span><span class="na">/</span> <span class="m">8</span> <span class="m">10</span> <span class="m">7</span> <span class="m">2</span> <span class="m">6</span> <span class="m">11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌────┬────┬───┬───┬────┐
+│8 10│10 7│7 2│2 6│6 11│
+└────┴────┴───┴───┴────┘
+</span></div></div>
+</div>
+<p>However, we need to be careful to disclose the results when we write out the several explicit reductions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">⊃,</span><span class="na">/</span><span class="m">8</span> <span class="m">10</span><span class="p">)</span> <span class="p">(</span><span class="o">⊃,</span><span class="na">/</span><span class="m">10</span> <span class="m">7</span><span class="p">)</span> <span class="p">(</span><span class="o">⊃,</span><span class="na">/</span><span class="m">7</span> <span class="m">2</span><span class="p">)</span> <span class="p">(</span><span class="o">⊃,</span><span class="na">/</span><span class="m">2</span> <span class="m">6</span><span class="p">)</span> <span class="p">(</span><span class="o">⊃,</span><span class="na">/</span><span class="m">6</span> <span class="m">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌────┬────┬───┬───┬────┐
+│8 10│10 7│7 2│2 6│6 11│
+└────┴────┴───┴───┴────┘
+</span></div></div>
+</div>
+<p>i.e.,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">8</span><span class="o">,</span><span class="m">10</span><span class="p">)</span>    <span class="p">(</span><span class="m">10</span><span class="o">,</span><span class="m">7</span><span class="p">)</span>    <span class="p">(</span><span class="m">7</span><span class="o">,</span><span class="m">2</span><span class="p">)</span>    <span class="p">(</span><span class="m">2</span><span class="o">,</span><span class="m">6</span><span class="p">)</span>   <span class="p">(</span><span class="m">6</span><span class="o">,</span><span class="m">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌────┬────┬───┬───┬────┐
+│8 10│10 7│7 2│2 6│6 11│
+└────┴────┴───┴───┴────┘
+</span></div></div>
+</div>
+<p>If we hadn’t included the <em>disclose</em> function next to each <em>reduction</em>, we would introduce an extra level of depth by mistake:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">,</span><span class="na">/</span><span class="m">8</span> <span class="m">10</span><span class="p">)</span> <span class="p">(</span><span class="o">,</span><span class="na">/</span><span class="m">10</span> <span class="m">7</span><span class="p">)</span> <span class="p">(</span><span class="o">,</span><span class="na">/</span><span class="m">7</span> <span class="m">2</span><span class="p">)</span> <span class="p">(</span><span class="o">,</span><span class="na">/</span><span class="m">2</span> <span class="m">6</span><span class="p">)</span> <span class="p">(</span><span class="o">,</span><span class="na">/</span><span class="m">6</span> <span class="m">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌──────┬──────┬─────┬─────┬──────┐
+│┌────┐│┌────┐│┌───┐│┌───┐│┌────┐│
+││8 10│││10 7│││7 2│││2 6│││6 11││
+│└────┘│└────┘│└───┘│└───┘│└────┘│
+└──────┴──────┴─────┴─────┴──────┘
+</span></div></div>
+</div>
+<p>Another example, using <code class="docutils literal notranslate"><span class="pre">⍴/</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="o">⍴</span><span class="na">/</span> <span class="m">2</span> <span class="m">4</span> <span class="m">1</span> <span class="m">3</span> <span class="m">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌───┬───────┬─┬─────┐
+│4 4│1 1 1 1│3│7 7 7│
+└───┴───────┴─┴─────┘
+</span></div></div>
+</div>
+<p>means</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">⊃⍴</span><span class="na">/</span><span class="m">2</span> <span class="m">4</span><span class="p">)</span> <span class="p">(</span><span class="o">⊃⍴</span><span class="na">/</span><span class="m">4</span> <span class="m">1</span><span class="p">)</span> <span class="p">(</span><span class="o">⊃⍴</span><span class="na">/</span><span class="m">1</span> <span class="m">3</span><span class="p">)</span> <span class="p">(</span><span class="o">⊃⍴</span><span class="na">/</span><span class="m">3</span> <span class="m">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌───┬───────┬─┬─────┐
+│4 4│1 1 1 1│3│7 7 7│
+└───┴───────┴─┴─────┘
+</span></div></div>
+</div>
+<p>i.e.,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">2</span><span class="o">⍴</span><span class="m">4</span><span class="p">)</span> <span class="p">(</span><span class="m">4</span><span class="o">⍴</span><span class="m">1</span><span class="p">)</span> <span class="p">(</span><span class="m">1</span><span class="o">⍴</span><span class="m">3</span><span class="p">)</span> <span class="p">(</span><span class="m">3</span><span class="o">⍴</span><span class="m">7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌───┬───────┬─┬─────┐
+│4 4│1 1 1 1│3│7 7 7│
+└───┴───────┴─┴─────┘
+</span></div></div>
+</div>
+<p>The same result would have been obtained using <em>replicate</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="na">//</span> <span class="m">2</span> <span class="m">4</span> <span class="m">1</span> <span class="m">3</span> <span class="m">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌───┬───────┬─┬─────┐
+│4 4│1 1 1 1│3│7 7 7│
+└───┴───────┴─┴─────┘
+</span></div></div>
+</div>
+</div>
+<div class="section" id="n-wise-reduce-on-arbitrary-arrays">
+<span id="operators-n-wise-reduce-on-arbitrary-arrays"></span><h3><span class="section-number">12.2.2. </span><span class="math notranslate nohighlight">\(n\)</span>-Wise Reduce on Arbitrary Arrays<a class="headerlink" href="#n-wise-reduce-on-arbitrary-arrays" title="Permalink to this headline">¶</a></h3>
+<p>The general syntax is <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">←</span> <span class="pre">scope</span> <span class="pre">f/[axis]</span> <span class="pre">array</span></code>, where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> stands for any dyadic function;</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">array</span></code> is split into slices along the specified <code class="docutils literal notranslate"><span class="pre">axis</span></code>; and</p></li>
+<li><p>the left argument <code class="docutils literal notranslate"><span class="pre">scope</span></code> can be positive (as in the examples above), zero, or negative:</p>
+<ul>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">scope</span></code> is positive, <code class="docutils literal notranslate"><span class="pre">reduce</span></code> is applied to (overlapping) slices of length equal to <code class="docutils literal notranslate"><span class="pre">scope</span></code>;</p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">scope</span></code> is zero, <code class="docutils literal notranslate"><span class="pre">r</span></code> has the same shape as <code class="docutils literal notranslate"><span class="pre">array</span></code>, except that its length along the axis selected by <code class="docutils literal notranslate"><span class="pre">axis</span></code> is incremented by <code class="docutils literal notranslate"><span class="pre">1</span></code>, and it is filled with the <em>identity item</em> for the function <code class="docutils literal notranslate"><span class="pre">f</span></code>. This is explained in <code class="xref std std-numref docutils literal notranslate"><span class="pre">Operators-Non-commutative-Functions</span></code>;</p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">scope</span></code> is negative, each slice is reversed before <code class="docutils literal notranslate"><span class="pre">reduce</span></code> is applied.</p></li>
+</ul>
+</li>
+</ul>
+<p>Here are some examples which use this matrix:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">tam</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">5</span><span class="o">⍴</span><span class="m">2</span> <span class="m">3</span> <span class="m">5</span> <span class="m">8</span> <span class="m">8</span> <span class="m">4</span> <span class="m">6</span> <span class="m">2</span> <span class="m">5</span> <span class="m">9</span> <span class="m">1</span> <span class="m">4</span> <span class="m">9</span> <span class="m">7</span> <span class="m">8</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">2 3 5 8 8
+4 6 2 5 9
+1 4 9 7 8
+</span></div></div>
+</div>
+<ul class="simple">
+<li><p>Obtain the largest items of 2 adjacent columns:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="o">⌈</span><span class="na">/</span> <span class="nv">tam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">3 5 8 8
+6 6 5 9
+4 9 9 8
+</span></div></div>
+</div>
+<ul class="simple">
+<li><p>Add up pairs of adjacent rows:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="o">+</span><span class="na">⌿</span> <span class="nv">tam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">6  9  7 13 17
+5 10 11 12 17
+</span></div></div>
+</div>
+<ul class="simple">
+<li><p>Return a matrix with one more column, filled with zeroes (identity item of addiction):</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="o">+</span><span class="na">/</span> <span class="nv">tam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+</span></div></div>
+</div>
+<ul class="simple">
+<li><p>Return a matrix with one more row, filled with ones (identity item of multiplication):</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="o">×</span><span class="na">/</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span> <span class="nv">tam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 1 1 1 1
+1 1 1 1 1
+1 1 1 1 1
+1 1 1 1 1
+</span></div></div>
+</div>
+<ul class="simple">
+<li><p>Obtain the difference between adjacent values (<code class="docutils literal notranslate"><span class="pre">14-11</span></code>, <code class="docutils literal notranslate"><span class="pre">15-14</span></code>, …):</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯2</span> <span class="o">-</span><span class="na">/</span> <span class="m">11</span> <span class="m">14</span> <span class="m">15</span> <span class="m">21</span> <span class="m">23</span> <span class="m">30</span> <span class="m">28</span> <span class="m">34</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">3 1 6 2 7 ¯2 6
+</span></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="axis">
+<span id="operators-axis"></span><h2><span class="section-number">12.3. </span>Axis<a class="headerlink" href="#axis" title="Permalink to this headline">¶</a></h2>
+<p>Strictly speaking, axis is not an operator.
+It has different syntax (consisting of <strong>two</strong> brackets enclosing a numeric value to the right of a function) and applies in different ways depending on the function that it modifies.
+However, applying a function “with axis” does apply a transformation and produces a derived function, and it is common to think of axis as an operator.</p>
+<p>It is possible to use <em>axis</em> with any of the <em>scalar dyadic functions</em>.
+This can be useful for example to add the items of a vector to each of the rows of a matrix, or multiply the columns of a matrix by different values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">tam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">2 3 5 8 8
+4 6 2 5 9
+1 4 9 7 8
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">tam</span> <span class="o">+</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span> <span class="m">8</span> <span class="m">6</span> <span class="m">9</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">10 11 13 16 16
+10 12  8 11 15
+10 13 18 16 17
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">tam</span> <span class="o">×</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span> <span class="m">2</span> <span class="m">5</span> <span class="m">0</span> <span class="m">2</span> <span class="m">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">4 15 0 16 8
+8 30 0 10 9
+2 20 0 14 8
+</span></div></div>
+</div>
+<p>The following functions can use the <em>axis</em> operator:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Function(s)</p></th>
+<th class="text-align:left head"><p>Valence</p></th>
+<th class="text-align:left head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">+</span></code> <code class="docutils literal notranslate"><span class="pre">×</span></code> <code class="docutils literal notranslate"><span class="pre">⌈</span></code> <code class="docutils literal notranslate"><span class="pre">∧</span></code> <code class="docutils literal notranslate"><span class="pre">≤</span></code> etc…</p></td>
+<td class="text-align:left"><p>Dyadic</p></td>
+<td class="text-align:left"><p>All <em>scalar dyadic functions</em> (see <code class="xref std std-numref docutils literal notranslate"><span class="pre">Appendices-Scalar-Dyadic-Functions</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">↑</span></code> and <code class="docutils literal notranslate"><span class="pre">↓</span></code></p></td>
+<td class="text-align:left"><p>Monadic and dyadic.</p></td>
+<td class="text-align:left"><p>n/a</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">⌽</span></code> and <code class="docutils literal notranslate"><span class="pre">⊖</span></code></p></td>
+<td class="text-align:left"><p>Monadic and dyadic.</p></td>
+<td class="text-align:left"><p>n/a</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">,</span></code></p></td>
+<td class="text-align:left"><p>Monadic and dyadic</p></td>
+<td class="text-align:left"><p>n/a</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">⍪</span></code></p></td>
+<td class="text-align:left"><p>Dyadic</p></td>
+<td class="text-align:left"><p>n/a</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">⊂</span></code></p></td>
+<td class="text-align:left"><p>Monadic and dyadic</p></td>
+<td class="text-align:left"><p>n/a</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">⊂</span></code> and <code class="docutils literal notranslate"><span class="pre">⊃</span></code></p></td>
+<td class="text-align:left"><p>Monadic</p></td>
+<td class="text-align:left"><p>APL2-like split and mix (<code class="docutils literal notranslate"><span class="pre">⎕ML</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>, cf. <a class="reference internal" href="Nested-Arrays-Continued.html#nested-arrays-continued-compatibility-and-migration-level"><span class="std std-numref">Section 10.14.1</span></a>)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">⌿</span></code>, <code class="docutils literal notranslate"><span class="pre">\</span></code>, and <code class="docutils literal notranslate"><span class="pre">⍀</span></code></p></td>
+<td class="text-align:left"><p>Dyadic</p></td>
+<td class="text-align:left"><p>Beware to avoid confusion between the functions and the operators with the same symbol (see the next section)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="scan">
+<h1><span class="section-number">13. </span>Scan<a class="headerlink" href="#scan" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="definition-of-scan">
+<span id="operators-definition-of-scan"></span><h2><span class="section-number">13.1. </span>Definition of Scan<a class="headerlink" href="#definition-of-scan" title="Permalink to this headline">¶</a></h2>
+<p><em>Scan</em> is represented by the symbol <code class="docutils literal notranslate"><span class="pre">\</span></code> or <code class="docutils literal notranslate"><span class="pre">⍀</span></code>.
+Its most general syntax is <code class="docutils literal notranslate"><span class="pre">R</span> <span class="pre">←</span> <span class="pre">f\[axis]array</span></code>, where <code class="docutils literal notranslate"><span class="pre">f</span></code> stands for any appropriate dyadic function.</p>
+<p>To understand how it works, let us apply it to a vector.</p>
+<p>The <span class="math notranslate nohighlight">\(n\)</span>th item of <code class="docutils literal notranslate"><span class="pre">f\vector</span></code> is equal to the <em>reduction</em> of the first <span class="math notranslate nohighlight">\(n\)</span> items of <code class="docutils literal notranslate"><span class="pre">vector</span></code>.</p>
+<p>More generally, the <span class="math notranslate nohighlight">\(n\)</span>th item of <code class="docutils literal notranslate"><span class="pre">f\vector</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">f/n↑vector</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">\</span> <span class="m">3</span> <span class="m">6</span> <span class="m">1</span> <span class="m">8</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">3 9 10 18 23
+</span></div></div>
+</div>
+<p>As you can see:</p>
+<ul class="simple">
+<li><p>the 1st item is equal to <code class="docutils literal notranslate"><span class="pre">+/3</span></code>, giving <code class="docutils literal notranslate"><span class="pre">3</span></code>;</p></li>
+<li><p>the 2nd item is equal to <code class="docutils literal notranslate"><span class="pre">+/3</span> <span class="pre">6</span></code>, giving <code class="docutils literal notranslate"><span class="pre">9</span></code>;</p></li>
+<li><p>the 3rd item is equal to <code class="docutils literal notranslate"><span class="pre">+/3</span> <span class="pre">6</span> <span class="pre">1</span></code>, giving <code class="docutils literal notranslate"><span class="pre">10</span></code>;</p></li>
+<li><p>the 4th item is equal to <code class="docutils literal notranslate"><span class="pre">+/3</span> <span class="pre">6</span> <span class="pre">1</span> <span class="pre">8</span></code>, giving <code class="docutils literal notranslate"><span class="pre">18</span></code>; and</p></li>
+<li><p>the 5th item is equal to <code class="docutils literal notranslate"><span class="pre">+/3</span> <span class="pre">6</span> <span class="pre">1</span> <span class="pre">8</span> <span class="pre">5</span></code>, giving <code class="docutils literal notranslate"><span class="pre">23</span></code>.</p></li>
+</ul>
+<p>Notice how the last item of the result of the scan is the same as the result of the corresponding reduction:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">/</span> <span class="m">3</span> <span class="m">6</span> <span class="m">1</span> <span class="m">8</span> <span class="m">5</span><span class="p">)</span> <span class="o">≡</span> <span class="o">⊃⌽</span> <span class="o">+</span><span class="na">\</span> <span class="m">3</span> <span class="m">6</span> <span class="m">1</span> <span class="m">8</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<p>The method is, of course, the same for a multiplication:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">×</span><span class="na">\</span> <span class="m">3</span> <span class="m">6</span> <span class="m">1</span> <span class="m">8</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">3 18 18 144 720
+</span></div></div>
+</div>
+<p>Warning! It would be a mistake to always try to deduce the value of each item in the result from its immediate left neighbour.
+While it is possible to do this for commutative functions like addition and multiplication, it is not appropriate for non-commutative functions like subtraction:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="na">\</span> <span class="m">3</span> <span class="m">6</span> <span class="m">1</span> <span class="m">8</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">3 ¯3 ¯2 ¯10 ¯5
+</span></div></div>
+</div>
+<p>The result is <strong>not</strong> <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">¯3</span> <span class="pre">¯4</span> <span class="pre">¯12</span> <span class="pre">¯17</span></code> as one might first imagine:</p>
+<ul class="simple">
+<li><p>the 1st item is equal to <code class="docutils literal notranslate"><span class="pre">-/3</span></code>, giving <code class="docutils literal notranslate"><span class="pre">3</span></code>;</p></li>
+<li><p>the 2nd item is equal to <code class="docutils literal notranslate"><span class="pre">-/3</span> <span class="pre">6</span></code>, giving <code class="docutils literal notranslate"><span class="pre">¯3</span></code>;</p></li>
+<li><p>the 3rd item is equal to <code class="docutils literal notranslate"><span class="pre">-/3</span> <span class="pre">6</span> <span class="pre">1</span></code>, giving <code class="docutils literal notranslate"><span class="pre">¯2</span></code>  (<code class="docutils literal notranslate"><span class="pre">3-(6-1)</span></code>);</p></li>
+<li><p>the 4th item is equal to <code class="docutils literal notranslate"><span class="pre">-/3</span> <span class="pre">6</span> <span class="pre">1</span> <span class="pre">8</span></code>, giving <code class="docutils literal notranslate"><span class="pre">¯10</span></code>; and</p></li>
+<li><p>the 5th item is equal to <code class="docutils literal notranslate"><span class="pre">-/3</span> <span class="pre">6</span> <span class="pre">1</span> <span class="pre">8</span> <span class="pre">5</span></code>, giving <code class="docutils literal notranslate"><span class="pre">¯5</span></code>.</p></li>
+</ul>
+<p>So, be careful when using <em>scan</em> with non-commutative functions.</p>
+<p>When applied to matrices or higher rank arrays, <em>scan</em> works along the specified axis.
+If the axis specification is omitted, <code class="docutils literal notranslate"><span class="pre">\</span></code> works along the <em>last</em> axis and <code class="docutils literal notranslate"><span class="pre">⍀</span></code> works along the <em>first</em> axis, just like their counterparts <code class="docutils literal notranslate"><span class="pre">/</span></code> and <code class="docutils literal notranslate"><span class="pre">⌿</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">\</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span> <span class="nv">tam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">2  5 10 18 26
+4 10 12 17 26
+1  5 14 21 29
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">\</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="nv">tam</span><span class="p">)</span> <span class="o">≡</span> <span class="o">+</span><span class="na">\</span><span class="nv">tam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">\</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span> <span class="nv">tam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">2  3  5  8  8
+6  9  7 13 17
+7 13 16 20 25
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">\</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="nv">tam</span><span class="p">)</span> <span class="o">≡</span> <span class="o">+</span><span class="na">⍀</span><span class="nv">tam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+</div>
+<div class="section" id="scan-with-binary-values">
+<span id="operators-scan-with-binary-values"></span><h2><span class="section-number">13.2. </span>Scan with Binary Values<a class="headerlink" href="#scan-with-binary-values" title="Permalink to this headline">¶</a></h2>
+<p><em>Scan</em> is very useful when applied to binary values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">∨</span><span class="na">\</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 0 0 1 1 1 1 1 1 1 1
+</span></div></div>
+</div>
+<p>Because the function <em>or</em> gives the result 1 as soon as one of its arguments is 1, <em>or scan</em> repeats (or “spreads”) the first 1 up to the end of the vector.</p>
+<p>If we use the function <em>and</em>, we see that <em>and scan</em> reverts the whole vector to zero on the first zero:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">∧</span><span class="na">\</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 1 1 1 0 0 0 0 0 0 0 0
+</span></div></div>
+</div>
+<p>By using <em>less than</em>, we can mark the position of the first 1:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="na">\</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 0 0 1 0 0 0 0 0 0 0
+</span></div></div>
+</div>
+<p>And by using <em>less than or equal to</em> we mark the position of the first 0:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≤</span><span class="na">\</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 1 1 1 0 1 1 1 1 1 1 1
+</span></div></div>
+</div>
+</div>
+<div class="section" id="applications-of-scan">
+<span id="operators-applications-of-scan"></span><h2><span class="section-number">13.3. </span>Applications of Scan<a class="headerlink" href="#applications-of-scan" title="Permalink to this headline">¶</a></h2>
+<p><em>Scan</em> can be used to solve common problems in a very simple way:</p>
+<div class="section" id="inflate-values">
+<span id="operators-inflate-values"></span><h3><span class="section-number">13.3.1. </span>Inflate Values<a class="headerlink" href="#inflate-values" title="Permalink to this headline">¶</a></h3>
+<p>Someone forecasts investments in a foreign country for the next 5 years:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">inv</span> <span class="kd">←</span> <span class="m">2000</span> <span class="m">5000</span> <span class="m">6000</span> <span class="m">4000</span> <span class="m">2000</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>But the country in question suffers from inflation, and the inflation rates are forecasted as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">inf</span> <span class="kd">←</span> <span class="m">2.6</span> <span class="m">2.9</span> <span class="m">3.4</span> <span class="m">3.1</span> <span class="m">2.7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The cumulative consequence of these inflation rates can be calculated by multiplying them all with a <em>times scan</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">7</span> <span class="m">3</span><span class="o">⍕</span> <span class="o">×</span><span class="na">\</span> <span class="m">1</span><span class="o">+</span><span class="nv">inf</span><span class="o">÷</span><span class="m">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">  1.026  1.056  1.092  1.125  1.156
+</span></div></div>
+</div>
+<p>Now, the investments expressed in “future values” would be:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">9</span> <span class="m">2</span><span class="o">⍕</span> <span class="nv">inv</span> <span class="o">×</span> <span class="o">×</span><span class="na">\</span><span class="m">1</span><span class="o">+</span><span class="nv">inf</span><span class="o">÷</span><span class="m">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">  2052.00  5278.77  6549.90  4501.96  2311.76
+</span></div></div>
+</div>
+<p>Finally, the year after year cumulative investment may be obtained by a <em>plus scan</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">9</span> <span class="m">2</span><span class="o">⍕</span> <span class="o">+</span><span class="na">\</span> <span class="nv">inv</span> <span class="o">×</span> <span class="o">×</span><span class="na">\</span><span class="m">1</span><span class="o">+</span><span class="nv">inf</span><span class="o">÷</span><span class="m">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">  2052.00  7330.77 13880.67 18382.63 20694.39
+</span></div></div>
+</div>
+<p>As you can see, we employed two <em>scans</em> in the same expression.</p>
+</div>
+<div class="section" id="remove-leading-trailing-blanks">
+<span id="operators-remove-leadingtrailing-blanks"></span><h3><span class="section-number">13.3.2. </span>Remove Leading/Trailing Blanks<a class="headerlink" href="#remove-leading-trailing-blanks" title="Permalink to this headline">¶</a></h3>
+<p>One often has to remove leading (or trailing) blanks from a character vector.
+We can use the <em>or scan</em> to do it.
+The details of the method are shown here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">lb</span> <span class="kd">←</span> <span class="s1">&#39;    Remove my 4 leading blanks.&#39;</span>
+<span class="nv">lb</span><span class="o">≠</span><span class="s1">&#39; &#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 0 0 1 1 1 1 1 1 0 1 1 0 1 0 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">∨</span><span class="na">\</span> <span class="nv">lb</span><span class="o">≠</span><span class="s1">&#39; &#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">∨</span><span class="na">\</span><span class="nv">lb</span><span class="o">≠</span><span class="s1">&#39; &#39;</span><span class="p">)</span><span class="na">/</span><span class="nv">lb</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Remove my 4 leading blanks.
+</span></div></div>
+</div>
+<p>This can be coded in a small utility dfn:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">CutBlanks</span> <span class="kd">←</span> <span class="kt">{</span><span class="p">(</span><span class="o">∨</span><span class="na">\</span><span class="s1">&#39; &#39;</span><span class="o">≠</span><span class="bp">⍵</span><span class="p">)</span><span class="na">/</span><span class="bp">⍵</span><span class="kt">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This expression is recognised by Dyalog APL as an <em>idiom</em>, and processed very quickly.</p>
+<p>To remove trailing blanks, it would suffice to reverse the vector, remove leading blanks as above, and then reverse it back again.</p>
+</div>
+</div>
+</div>
+<div class="section" id="outer-product">
+<h1><span class="section-number">14. </span>Outer Product<a class="headerlink" href="#outer-product" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="definition-of-outer-product">
+<span id="operators-definition-of-outer-product"></span><h2><span class="section-number">14.1. </span>Definition of Outer Product<a class="headerlink" href="#definition-of-outer-product" title="Permalink to this headline">¶</a></h2>
+<p>Imagine that you have calculated the multiplication table for the integers 1 to 9; you could present it like this:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{|c|rrrrrrrrr|}
+\hline
+\color{red}\times &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; \color{red} 7 &amp; 8 &amp; 9 \\
+\hline
+1 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 \\
+2 &amp; 2 &amp; 4 &amp; 6 &amp; 8 &amp; 10 &amp; 12 &amp; 14 &amp; 16 &amp; 18 \\
+\color{red} 3 &amp; 3 &amp; 6 &amp; 9 &amp; 12 &amp; 15 &amp; 18 &amp; \color{red} {21} &amp; 24 &amp; 27 \\
+4 &amp; 4 &amp; 8 &amp; 12 &amp; 16 &amp; 20 &amp; 24 &amp; 28 &amp; 32 &amp; 36 \\
+\text{etc.} &amp; \text{etc.} &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+\end{array}\end{split}\]</div>
+<p>The task of calculating this table consists of taking pairs of items from two vectors (the column and row headings), and combining them with the function at the top left.
+For example, <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">×</span> <span class="pre">7</span></code> gives <code class="docutils literal notranslate"><span class="pre">21</span></code> (shown above in red).
+Once the operation has been repeated for all the possible pairs, one obtains what is called, in APL, the <em>outer product</em>.</p>
+<p>We can change the values and replace the multiplications by additions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{|c|rrrrrrrrr|}
+\hline
+\color{red}+ &amp; 8 &amp; 5 &amp; 15 &amp; \color{red} 9 &amp; 11 &amp; 40 \\
+\hline
+5 &amp; 13 &amp; 10 &amp; 20 &amp; 14 &amp; 16 &amp; 45 \\
+\color{red} 4 &amp; 12 &amp; 9 &amp; 19 &amp; \color{red} {13} &amp; 15 &amp; 44 \\
+10 &amp; 18 &amp; 15 &amp; 25 &amp; 19 &amp; 22 &amp; 50 \\
+3 &amp; 11 &amp; 8 &amp; 18 &amp; 12 &amp; 14 &amp; 43 \\
+\hline
+\end{array}\end{split}\]</div>
+<p><em>Outer product</em> is a dyadic operator represented by a dot (<code class="docutils literal notranslate"><span class="pre">.</span></code>).
+Its operands are:</p>
+<ul class="simple">
+<li><p>on its right, the dyadic function involved (multiplication or addition in the examples above);</p></li>
+<li><p>on its left, a small circle named <em>jot</em> (<code class="docutils literal notranslate"><span class="pre">∘</span></code>).
+This character is typed with <kbd>Ctrl</kbd>+<kbd>j</kbd>.
+In this specific case, it acts as a “no-op” (no operation) which just takes the place of the left argument.</p></li>
+</ul>
+<p>So, the two tables above can be written like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">⍳</span><span class="m">9</span><span class="p">)</span> <span class="na">∘.</span><span class="o">×</span> <span class="p">(</span><span class="o">⍳</span><span class="m">9</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1  2  3  4  5  6  7  8  9
+2  4  6  8 10 12 14 16 18
+3  6  9 12 15 18 21 24 27
+4  8 12 16 20 24 28 32 36
+5 10 15 20 25 30 35 40 45
+6 12 18 24 30 36 42 48 54
+7 14 21 28 35 42 49 56 63
+8 16 24 32 40 48 56 64 72
+9 18 27 36 45 54 63 72 81
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="m">4</span> <span class="m">10</span> <span class="m">3</span> <span class="na">∘.</span><span class="o">+</span> <span class="m">8</span> <span class="m">5</span> <span class="m">15</span> <span class="m">9</span> <span class="m">11</span> <span class="m">40</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">13 10 20 14 16 45
+12  9 19 13 15 44
+18 15 25 19 21 50
+11  8 18 12 14 43
+</span></div></div>
+</div>
+</div>
+<div class="section" id="extensions">
+<span id="operators-extensions"></span><h2><span class="section-number">14.2. </span>Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="other-functions">
+<span id="operators-other-functions"></span><h3><span class="section-number">14.2.1. </span>Other Functions<a class="headerlink" href="#other-functions" title="Permalink to this headline">¶</a></h3>
+<p>The function used in an outer product can be any primitive or user-defined dyadic function, so <em>outer product</em> is an operator of amazing power.</p>
+<p>Imagine you have written a little function to calculate the length of the hypotenuse of a right-angled triangle from the lengths of the other 2 sides given as the left and right argument:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Hypo</span> <span class="kd">←</span> <span class="kt">{</span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="bp">⍺</span> <span class="bp">⍵</span><span class="o">*</span><span class="m">2</span><span class="p">)</span><span class="o">*</span><span class="m">0.5</span><span class="kt">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="nv">Hypo</span> <span class="m">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5
+</span></div></div>
+</div>
+<p>You can test it on a number of combinations of lengths in one expression like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">8</span> <span class="m">3</span><span class="o">⍕</span> <span class="m">3</span> <span class="m">6</span> <span class="m">12</span> <span class="na">∘.</span><span class="nv">Hypo</span> <span class="m">4</span> <span class="m">1</span> <span class="m">8</span> <span class="m">7</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">   5.000   3.162   8.544   7.616   5.831
+   7.211   6.083  10.000   9.220   7.810
+  12.649  12.042  14.422  13.892  13.000
+</span></div></div>
+</div>
+<p>Now, let’s have some fun with relational functions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span> <span class="na">∘.</span><span class="o">=</span> <span class="p">(</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 0 0 0 0
+0 1 0 0 0
+0 0 1 0 0
+0 0 0 1 0
+0 0 0 0 1
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span> <span class="na">∘.</span><span class="o">&lt;</span> <span class="p">(</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 1 1 1 1
+0 0 1 1 1
+0 0 0 1 1
+0 0 0 0 1
+0 0 0 0 0
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span> <span class="na">∘.</span><span class="o">≥</span> <span class="p">(</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 0 0 0 0
+1 1 0 0 0
+1 1 1 0 0
+1 1 1 1 0
+1 1 1 1 1
+</span></div></div>
+</div>
+<p>We shall study some applications of <em>outer product</em> like <code class="docutils literal notranslate"><span class="pre">∘.&lt;</span></code> or <code class="docutils literal notranslate"><span class="pre">∘.⌊</span></code> in <a class="reference internal" href="#operators-applications-of-outer-product"><span class="std std-numref">Section 14.3</span></a>.</p>
+<p>Some other <em>outer products</em> like <code class="docutils literal notranslate"><span class="pre">∘.⍴</span></code>, <code class="docutils literal notranslate"><span class="pre">∘.,</span></code>, or <code class="docutils literal notranslate"><span class="pre">∘./</span></code>, produce nested arrays:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="m">4</span> <span class="m">2</span> <span class="na">∘.</span><span class="o">⍴</span> <span class="m">6</span> <span class="m">3</span> <span class="m">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌───────┬───────┬───────┐
+│6 6 6  │3 3 3  │7 7 7  │
+├───────┼───────┼───────┤
+│6 6 6 6│3 3 3 3│7 7 7 7│
+├───────┼───────┼───────┤
+│6 6    │3 3    │7 7    │
+└───────┴───────┴───────┘
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="m">0</span> <span class="m">2</span> <span class="na">∘./</span> <span class="m">5</span> <span class="m">1</span> <span class="m">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────┬─────┬─────┐
+│5 5 5│1 1 1│7 7 7│
+├─────┼─────┼─────┤
+│     │     │     │
+├─────┼─────┼─────┤
+│5 5  │1 1  │7 7  │
+└─────┴─────┴─────┘
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="m">1</span> <span class="m">2</span> <span class="na">∘.</span><span class="o">,</span> <span class="m">6</span> <span class="m">3</span> <span class="m">0</span> <span class="m">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌───┬───┬───┬───┐
+│3 6│3 3│3 0│3 7│
+├───┼───┼───┼───┤
+│1 6│1 3│1 0│1 7│
+├───┼───┼───┼───┤
+│2 6│2 3│2 0│2 7│
+└───┴───┴───┴───┘
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="m">2</span> <span class="m">4</span> <span class="na">∘.</span><span class="o">↑</span> <span class="m">5</span> <span class="m">8</span> <span class="m">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌───────┬───────┬───────┐
+│5 0 0  │8 0 0  │4 0 0  │
+├───────┼───────┼───────┤
+│5 0    │8 0    │4 0    │
+├───────┼───────┼───────┤
+│5 0 0 0│8 0 0 0│4 0 0 0│
+└───────┴───────┴───────┘
+</span></div></div>
+</div>
+</div>
+<div class="section" id="other-shapes-and-types-of-data">
+<span id="operators-other-shapes-and-types-of-data"></span><h3><span class="section-number">14.2.2. </span>Other Shapes and Types of Data<a class="headerlink" href="#other-shapes-and-types-of-data" title="Permalink to this headline">¶</a></h3>
+<p>We have, so far, applied <em>outer product</em> to numeric vectors.
+Of course, it can also be used with character data and/or higher rank arrays.
+When applied to higher rank arrays, the result becomes very big quickly, because each item of the left array has to be combined with each item of the right one.</p>
+<p>In an operation like <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">←</span> <span class="pre">a</span> <span class="pre">∘.f</span> <span class="pre">b</span></code>, the shape of <code class="docutils literal notranslate"><span class="pre">r</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">(⍴a),⍴b</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">left</span> <span class="kd">←</span> <span class="o">↑</span><span class="s1">&#39;DIMITRI&#39;</span> <span class="s1">&#39;GUNTHER&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">DIMITRI
+GUNTHER
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">right</span> <span class="kd">←</span> <span class="s1">&#39;VERONICA&#39;</span>
+<span class="vg">⎕</span><span class="kd">←</span> <span class="nv">result</span> <span class="kd">←</span> <span class="nv">left</span> <span class="na">∘.</span><span class="o">=</span> <span class="nv">right</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 0 0 0 0 0 0
+0 0 0 0 0 1 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 1 0 0
+0 0 0 0 0 0 0 0
+0 0 1 0 0 0 0 0
+0 0 0 0 0 1 0 0
+
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 1 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0
+0 1 0 0 0 0 0 0
+0 0 1 0 0 0 0 0
+</span></div></div>
+</div>
+<p>With a bit of APL code, we can show the arguments next to the result, to help you understand how the result has been calculated:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">↑</span><span class="p">(</span><span class="o">⊂</span><span class="s1">&#39; &#39;</span><span class="o">,</span><span class="nv">right</span><span class="p">)</span><span class="o">⍪</span><span class="na">¨</span><span class="o">⊂</span><span class="sr">[</span><span class="m">2</span> <span class="m">3</span><span class="sr">]</span><span class="nv">left</span><span class="o">,</span><span class="nv">result</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">  V E R O N I C A
+D 0 0 0 0 0 0 0 0
+I 0 0 0 0 0 1 0 0
+M 0 0 0 0 0 0 0 0
+I 0 0 0 0 0 1 0 0
+T 0 0 0 0 0 0 0 0
+R 0 0 1 0 0 0 0 0
+I 0 0 0 0 0 1 0 0
+
+  V E R O N I C A
+G 0 0 0 0 0 0 0 0
+U 0 0 0 0 0 0 0 0
+N 0 0 0 0 1 0 0 0
+T 0 0 0 0 0 0 0 0
+H 0 0 0 0 0 0 0 0
+E 0 1 0 0 0 0 0 0
+R 0 0 1 0 0 0 0 0
+</span></div></div>
+</div>
+<p>In and of itself, this code is worth studying a bit, so make sure you understand what is happening before moving on.</p>
+</div>
+</div>
+<div class="section" id="applications-of-outer-product">
+<span id="operators-applications-of-outer-product"></span><h2><span class="section-number">14.3. </span>Applications of Outer Product<a class="headerlink" href="#applications-of-outer-product" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exhaustive-search">
+<span id="operators-exhaustive-search"></span><h3><span class="section-number">14.3.1. </span>Exhaustive Search<a class="headerlink" href="#exhaustive-search" title="Permalink to this headline">¶</a></h3>
+<p>Because <em>outer product</em> uses a dyadic function to combine <strong>all</strong> items of the left argument with <strong>all</strong> items of the right argument, <em>outer product</em> is often used when some kind of exhaustive computation needs to be done.
+One such example is that of exhaustive search.</p>
+<p>As an example, suppose you want to figure out if there is a way to add one number from the vector <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">1</span> <span class="pre">16</span> <span class="pre">42</span> <span class="pre">63</span> <span class="pre">7</span> <span class="pre">10</span></code> to another number from the vector <code class="docutils literal notranslate"><span class="pre">24</span> <span class="pre">45</span> <span class="pre">18</span> <span class="pre">31</span> <span class="pre">29</span> <span class="pre">43</span> <span class="pre">67</span></code> to get <code class="docutils literal notranslate"><span class="pre">73</span></code>.</p>
+<p>With <em>outer product</em>, this is quite an easy question to answer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="m">1</span> <span class="m">16</span> <span class="m">42</span> <span class="m">63</span> <span class="m">7</span> <span class="m">10</span><span class="na">∘.</span><span class="o">+</span><span class="m">24</span> <span class="m">45</span> <span class="m">18</span> <span class="m">31</span> <span class="m">29</span> <span class="m">43</span> <span class="m">67</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">29  50 23 36 34  48  72
+25  46 19 32 30  44  68
+40  61 34 47 45  59  83
+66  87 60 73 71  85 109
+87 108 81 94 92 106 130
+31  52 25 38 36  50  74
+34  55 28 41 39  53  77
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">73</span><span class="o">∊</span><span class="m">5</span> <span class="m">1</span> <span class="m">16</span> <span class="m">42</span> <span class="m">63</span> <span class="m">7</span> <span class="m">10</span><span class="na">∘.</span><span class="o">+</span><span class="m">24</span> <span class="m">45</span> <span class="m">18</span> <span class="m">31</span> <span class="m">29</span> <span class="m">43</span> <span class="m">67</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<p>If you flip the arguments to <em>membership</em> and use <em>where</em>, you can find the position(s) where <code class="docutils literal notranslate"><span class="pre">73</span></code> is:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍸</span><span class="p">(</span><span class="m">5</span> <span class="m">1</span> <span class="m">16</span> <span class="m">42</span> <span class="m">63</span> <span class="m">7</span> <span class="m">10</span><span class="na">∘.</span><span class="o">+</span><span class="m">24</span> <span class="m">45</span> <span class="m">18</span> <span class="m">31</span> <span class="m">29</span> <span class="m">43</span> <span class="m">67</span><span class="p">)</span><span class="o">∊</span><span class="m">73</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌───┐
+│4 4│
+└───┘
+</span></div></div>
+</div>
+<p>This pattern of exhaustive computations is fairly common, and although it generally is not the most computationally efficient way of solving a problem, it is generally fast enough to prototype as a first approach.</p>
+</div>
+<div class="section" id="draw-a-bar-chart">
+<span id="operators-draw-a-bar-chart"></span><h3><span class="section-number">14.3.2. </span>Draw a Bar Chart<a class="headerlink" href="#draw-a-bar-chart" title="Permalink to this headline">¶</a></h3>
+<p>Imagine that you have to represent a list of values with a bar chart.
+Perhaps you will use dedicated graphical software, and you’d be right, but just have a look at this elegant solution, which again uses an <em>outer product</em>.</p>
+<p>Here is the list of values that we want to chart:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">nums</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">3</span> <span class="m">0</span> <span class="m">7</span> <span class="m">9</span> <span class="m">8</span> <span class="m">5</span> <span class="m">4</span> <span class="m">2</span> <span class="m">3</span> <span class="m">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let us first calculate the vertical scale.
+It is made of the integers from 9 to 1 in reverse order and can be obtained by:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⌽⍳⌈</span><span class="na">/</span><span class="nv">nums</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">9 8 7 6 5 4 3 2 1
+</span></div></div>
+</div>
+<p>Then, let us compare this scale to the values; an <em>outer product</em> will build columns of 1s up to the correct height:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">⌽⍳⌈</span><span class="na">/</span><span class="nv">nums</span><span class="p">)</span> <span class="na">∘.</span><span class="o">≤</span> <span class="nv">nums</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 0 0 1 0 0 0 0 0 0
+0 0 0 0 1 1 0 0 0 0 0
+0 0 0 1 1 1 0 0 0 0 0
+0 0 0 1 1 1 0 0 0 0 0
+0 0 0 1 1 1 1 0 0 0 0
+0 0 0 1 1 1 1 1 0 0 0
+0 1 0 1 1 1 1 1 0 1 0
+0 1 0 1 1 1 1 1 1 1 0
+1 1 0 1 1 1 1 1 1 1 1
+</span></div></div>
+</div>
+<p>And to draw the graph, we can index a 2-character vector, exactly as we did in <a class="reference internal" href="Data-and-Variables.html#data-and-variables-the-shape-of-the-result"><span class="std std-numref">Section 3.5.2</span></a>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39; ⎕&#39;</span><span class="sr">[</span><span class="m">1</span><span class="o">+</span><span class="p">(</span><span class="o">⌽⍳⌈</span><span class="na">/</span><span class="nv">nums</span><span class="p">)</span><span class="na">∘.</span><span class="o">≤</span><span class="nv">nums</span><span class="sr">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">    ⎕      
+    ⎕⎕     
+   ⎕⎕⎕     
+   ⎕⎕⎕     
+   ⎕⎕⎕⎕    
+   ⎕⎕⎕⎕⎕   
+ ⎕ ⎕⎕⎕⎕⎕ ⎕ 
+ ⎕ ⎕⎕⎕⎕⎕⎕⎕ 
+⎕⎕ ⎕⎕⎕⎕⎕⎕⎕⎕
+</span></div></div>
+</div>
+</div>
+<div class="section" id="decreasing-refunding">
+<span id="operators-decreasing-refunding"></span><h3><span class="section-number">14.3.3. </span>Decreasing Refunding<a class="headerlink" href="#decreasing-refunding" title="Permalink to this headline">¶</a></h3>
+<p>Some students have spent money to buy expensive books for their studies:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">exp</span> <span class="kd">←</span> <span class="m">740</span> <span class="m">310</span> <span class="m">1240</span> <span class="m">620</span> <span class="m">800</span> <span class="m">460</span> <span class="m">1060</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Their university agrees to refund them, but places the following limits on refunding rates:</p>
+<ul class="simple">
+<li><p>for expenses from 0 to 500, the rate is 80%;</p></li>
+<li><p>for expenses from 500 to 900, the rate is 50%; and</p></li>
+<li><p>for higher expenses, nothing is paid.</p></li>
+</ul>
+<p>We could say exactly the same thing in a somewhat different way:</p>
+<ul class="simple">
+<li><p>for expenses from 0 to 900, we get 50%; and</p></li>
+<li><p>starting again from <strong>0</strong> to 500, we get an <strong>additional</strong> 30%.</p></li>
+</ul>
+<p>Even if this rule may seem strange, both methods give the same result.
+For example, a student who spent 740€ would get:</p>
+<ul class="simple">
+<li><p>with the “traditional” rule, 80% of 500 plus 50% of 240:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">0.8</span><span class="o">×</span><span class="m">500</span><span class="p">)</span><span class="o">+</span><span class="m">0.5</span><span class="o">×</span><span class="m">240</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">520
+</span></div></div>
+</div>
+<ul class="simple">
+<li><p>with our “foolish” rule, 50% of 740 plus 30% of 500:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">0.5</span><span class="o">×</span><span class="m">740</span><span class="p">)</span><span class="o">+</span><span class="m">0.3</span><span class="o">×</span><span class="m">500</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">520
+</span></div></div>
+</div>
+<p>Now, let us limit the expenses to the given maxima:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">exp</span> <span class="na">∘.</span><span class="o">⌊</span> <span class="m">900</span> <span class="m">500</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">740 500
+310 310
+900 500
+620 500
+800 500
+460 460
+900 500
+</span></div></div>
+</div>
+<p>The first column contains the expenses limited to 900, and the second contains the expenses limited to 500.</p>
+<p>According to our rewritten rules, we must pay 50% of the first column plus 30% of the second.
+For that, we can multiply the columns by <code class="docutils literal notranslate"><span class="pre">0.5</span> <span class="pre">0.3</span></code> (using <em>axis</em>) and add them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="p">(</span><span class="nv">exp</span><span class="na">∘.</span><span class="o">⌊</span><span class="m">900</span> <span class="m">500</span><span class="p">)</span> <span class="o">×</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span> <span class="m">0.5</span> <span class="m">0.3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">520 248 600 460 550 368 600
+</span></div></div>
+</div>
+<p>And the total refund is, of course:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="o">+</span><span class="na">/</span> <span class="p">(</span><span class="nv">exp</span><span class="na">∘.</span><span class="o">⌊</span><span class="m">900</span> <span class="m">500</span><span class="p">)</span> <span class="o">×</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span> <span class="m">0.5</span> <span class="m">0.3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">3346
+</span></div></div>
+</div>
+<p>If we laminate the original vector, we can see the expenses and the refunding:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">exp</span><span class="o">,</span><span class="sr">[</span><span class="m">0.5</span><span class="sr">]</span> <span class="o">+</span><span class="na">/</span><span class="p">(</span><span class="nv">exp</span><span class="na">∘.</span><span class="o">⌊</span><span class="m">900</span> <span class="m">500</span><span class="p">)</span><span class="o">×</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="m">0.5</span> <span class="m">0.3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">740 310 1240 620 800 460 1060
+520 248  600 460 550 368  600
+</span></div></div>
+</div>
+<div class="figure align-default" id="id1">
+<span id="fig-outer-product"></span><img alt="_images/Outer_Product.png" src="_images/Outer_Product.png" />
+<p class="caption"><span class="caption-number">Fig. 14.1 </span><span class="caption-text">Outer product.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-on-outer-product">
+<span id="operators-exercise-on-outer-product"></span><h2><span class="section-number">14.4. </span>Exercise on Outer Product<a class="headerlink" href="#exercise-on-outer-product" title="Permalink to this headline">¶</a></h2>
+<p><strong>Exercise 1</strong>:</p>
+<p>Let us try to generalise the method used here above.</p>
+<p>In our example, we had chosen a very simple case, because we had only two slices, and all the students used the same scale.
+Let us now imagine a slightly more complex case:</p>
+<ul class="simple">
+<li><p>the students are classified in three categories, which have different refunding rates; and</p></li>
+<li><p>we now have four different expense ranges.</p></li>
+</ul>
+<p>The new conditions are expressed with the traditional notation, in a table:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Category \ Range</p></th>
+<th class="text-align:center head"><p>0 to 600</p></th>
+<th class="text-align:center head"><p>600 to 1.100</p></th>
+<th class="text-align:center head"><p>1.100 to 1.500</p></th>
+<th class="text-align:center head"><p>1.500 to 2.000</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Category 1</p></td>
+<td class="text-align:center"><p>100%</p></td>
+<td class="text-align:center"><p>100%</p></td>
+<td class="text-align:center"><p>80%</p></td>
+<td class="text-align:center"><p>50%</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Category 2</p></td>
+<td class="text-align:center"><p>100%</p></td>
+<td class="text-align:center"><p>70%</p></td>
+<td class="text-align:center"><p>30%</p></td>
+<td class="text-align:center"><p>10%</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Category 3</p></td>
+<td class="text-align:center"><p>80%</p></td>
+<td class="text-align:center"><p>60%</p></td>
+<td class="text-align:center"><p>20%</p></td>
+<td class="text-align:center"><p>5%</p></td>
+</tr>
+</tbody>
+</table>
+<p>Try to write a function <code class="docutils literal notranslate"><span class="pre">Refund</span></code> to solve this problem.
+Using loops is strictly prohibited, and could be punished with high severity!</p>
+<p>You can test your solution with these variables:</p>
+<ul class="simple">
+<li><p>The table of rates, topped by the expense limits:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">studRates</span> <span class="kd">←</span> <span class="m">4</span> <span class="m">4</span><span class="o">⍴</span><span class="m">600</span> <span class="m">1100</span> <span class="m">1500</span> <span class="m">2000</span> <span class="m">100</span> <span class="m">100</span> <span class="m">80</span> <span class="m">50</span> <span class="m">100</span> <span class="m">70</span> <span class="m">30</span> <span class="m">10</span> <span class="m">80</span> <span class="m">60</span> <span class="m">20</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">600 1100 1500 2000
+100  100   80   50
+100   70   30   10
+ 80   60   20    5
+</span></div></div>
+</div>
+<ul class="simple">
+<li><p>Vector of student expenses:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">studExp</span> <span class="kd">←</span> <span class="m">1500</span> <span class="m">2300</span> <span class="m">1030</span> <span class="m">460</span> <span class="m">380</span> <span class="m">340</span> <span class="m">1150</span> <span class="m">3000</span>
+<span class="nv">studExp</span> <span class="o">,</span><span class="kd">←</span> <span class="m">1700</span> <span class="m">1900</span> <span class="m">440</span> <span class="m">1050</span> <span class="m">2380</span> <span class="m">1980</span> <span class="m">1600</span> <span class="m">1000</span> <span class="m">1270</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Vector of the category of each student.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">studCat</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">3</span> <span class="m">2</span> <span class="m">3</span> <span class="m">3</span> <span class="m">2</span> <span class="m">2</span> <span class="m">2</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">3</span> <span class="m">2</span> <span class="m">3</span> <span class="m">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To help you check your solution, here are the results you should obtain:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Refund</span> <span class="kd">←</span> <span class="kt">{}</span>
+<span class="nv">studRates</span> <span class="nv">Refund</span> <span class="nv">studExp</span> <span class="nv">studCat</span>
+<span class="c1">⍝ 1420 885 901 368 304 340 965 1120 1520 1620 440 1050 1670 884 1080 720 814</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="inner-product">
+<h1><span class="section-number">15. </span>Inner Product<a class="headerlink" href="#inner-product" title="Permalink to this headline">¶</a></h1>
+<p><em>Inner product</em> is a generalisation of what mathematicians call <em>matrix product</em>, a tool considered by most students as extremely abstract, full of bizarre notations, like <span class="math notranslate nohighlight">\(\sum a_{ij}b_{jk}\)</span>, and obviously far removed from everyday problems.
+You will discover that:</p>
+<ul class="simple">
+<li><p>the concept is really simple, nearly obvious; and</p></li>
+<li><p>it can be applied to many real life problems.</p></li>
+</ul>
+<p>A simple example will help us.</p>
+<div class="section" id="a-concrete-situation">
+<span id="operators-a-concrete-situation"></span><h2><span class="section-number">15.1. </span>A Concrete Situation<a class="headerlink" href="#a-concrete-situation" title="Permalink to this headline">¶</a></h2>
+<p>A company intends to open a series of hotels and resorts in four countries.
+This requires serious investments over a period of five years.
+The following table shows these investments (in millions of dollars, of course!):</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Country vs Year</p></th>
+<th class="text-align:right head"><p>Year 1</p></th>
+<th class="text-align:right head"><p>Year 2</p></th>
+<th class="text-align:right head"><p>Year 3</p></th>
+<th class="text-align:right head"><p>Year 4</p></th>
+<th class="text-align:right head"><p>Year 5</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Greece</p></td>
+<td class="text-align:right"><p>120</p></td>
+<td class="text-align:right"><p>100</p></td>
+<td class="text-align:right"><p>40</p></td>
+<td class="text-align:right"><p>20</p></td>
+<td class="text-align:right"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Brazil</p></td>
+<td class="text-align:right"><p>200</p></td>
+<td class="text-align:right"><p>150</p></td>
+<td class="text-align:right"><p>100</p></td>
+<td class="text-align:right"><p>120</p></td>
+<td class="text-align:right"><p>200</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Egypt</p></td>
+<td class="text-align:right"><p>50</p></td>
+<td class="text-align:right"><p>120</p></td>
+<td class="text-align:right"><p>220</p></td>
+<td class="text-align:right"><p>350</p></td>
+<td class="text-align:right"><p>600</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Argentina</p></td>
+<td class="text-align:right"><p>0</p></td>
+<td class="text-align:right"><p>80</p></td>
+<td class="text-align:right"><p>100</p></td>
+<td class="text-align:right"><p>110</p></td>
+<td class="text-align:right"><p>120</p></td>
+</tr>
+</tbody>
+</table>
+<p>These figures are contained in a matrix called <code class="docutils literal notranslate"><span class="pre">invest</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">invest</span> <span class="kd">←</span> <span class="m">120</span> <span class="m">100</span> <span class="m">40</span> <span class="m">20</span> <span class="m">0</span> <span class="m">200</span> <span class="m">150</span> <span class="m">100</span> <span class="m">120</span> <span class="m">200</span> <span class="m">50</span> <span class="m">120</span>
+<span class="vg">⎕</span><span class="kd">←</span> <span class="nv">invest</span> <span class="kd">←</span> <span class="m">4</span> <span class="m">5</span><span class="o">⍴</span><span class="nv">invest</span><span class="o">,</span><span class="m">220</span> <span class="m">350</span> <span class="m">600</span> <span class="m">0</span> <span class="m">80</span> <span class="m">100</span> <span class="m">110</span> <span class="m">120</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">120 100  40  20   0
+200 150 100 120 200
+ 50 120 220 350 600
+  0  80 100 110 120
+</span></div></div>
+</div>
+<p>These investments will be supported by the company itself plus two banks, each taking a certain percentage of the total, depending on the evaluation of each project.
+The following table shows how the risks are shared:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Stakeholder vs Country</p></th>
+<th class="text-align:right head"><p>Greece</p></th>
+<th class="text-align:right head"><p>Brazil</p></th>
+<th class="text-align:right head"><p>Egypt</p></th>
+<th class="text-align:right head"><p>Argentina</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Bank 1</p></td>
+<td class="text-align:right"><p>50</p></td>
+<td class="text-align:right"><p>10</p></td>
+<td class="text-align:right"><p>20</p></td>
+<td class="text-align:right"><p>30</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Bank 2</p></td>
+<td class="text-align:right"><p>20</p></td>
+<td class="text-align:right"><p>60</p></td>
+<td class="text-align:right"><p>40</p></td>
+<td class="text-align:right"><p>30</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Company</p></td>
+<td class="text-align:right"><p>30</p></td>
+<td class="text-align:right"><p>30</p></td>
+<td class="text-align:right"><p>40</p></td>
+<td class="text-align:right"><p>40</p></td>
+</tr>
+</tbody>
+</table>
+<p>Those percentages are contained in a matrix named <code class="docutils literal notranslate"><span class="pre">percent</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">percent</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">4</span><span class="o">⍴</span><span class="m">50</span> <span class="m">10</span> <span class="m">20</span> <span class="m">30</span> <span class="m">20</span> <span class="m">60</span> <span class="m">40</span> <span class="m">30</span> <span class="m">30</span> <span class="m">30</span> <span class="m">40</span> <span class="m">40</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">50 10 20 30
+20 60 40 30
+30 30 40 40
+</span></div></div>
+</div>
+<p>We would like to calculate, year by year, how much each of the 3 partners is engaged in this project.
+For example, let us try to evaluate the contribution of Bank 2 during Year 3:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Country</p></th>
+<th class="text-align:right head"><p>Project valuation</p></th>
+<th class="text-align:right head"><p>Stake</p></th>
+<th class="text-align:right head"><p>Total invested</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Greece</p></td>
+<td class="text-align:right"><p>40</p></td>
+<td class="text-align:right"><p>20%</p></td>
+<td class="text-align:right"><p>8</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Brazil</p></td>
+<td class="text-align:right"><p>100</p></td>
+<td class="text-align:right"><p>60%</p></td>
+<td class="text-align:right"><p>60</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Egypt</p></td>
+<td class="text-align:right"><p>220</p></td>
+<td class="text-align:right"><p>40%</p></td>
+<td class="text-align:right"><p>88</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Argentina</p></td>
+<td class="text-align:right"><p>100</p></td>
+<td class="text-align:right"><p>30%</p></td>
+<td class="text-align:right"><p>30</p></td>
+</tr>
+</tbody>
+</table>
+<p>The total invested is, thus, 186.</p>
+<p>This could have been obtained by the sum of four products:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">percent</span><span class="sr">[</span><span class="m">2</span><span class="sr">;]</span> <span class="o">×</span> <span class="nv">invest</span><span class="sr">[;</span><span class="m">3</span><span class="sr">]</span><span class="o">÷</span><span class="m">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">186
+</span></div></div>
+</div>
+<p>In order to calculate the total invested for each partner and each year, we should repeat that algorithm for all the rows of <code class="docutils literal notranslate"><span class="pre">percent</span></code>, and all the columns of <code class="docutils literal notranslate"><span class="pre">invest</span></code>: this is precisely what an <em>inner product</em> does.</p>
+<p>And because it <em>adds</em> a series of <em>products</em>, it will be expresseed by a dot (the operator) between a plus and a multiply sign, like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">percent</span> <span class="o">+</span><span class="na">.</span><span class="o">×</span> <span class="nv">invest</span><span class="o">÷</span><span class="m">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace"> 90 113 104 125 176
+164 182 186 249 396
+116 155 170 226 348
+</span></div></div>
+</div>
+<p>In <a class="reference internal" href="#fig-inner-product-diagram"><span class="std std-numref">Fig. 15.1</span></a>, we have detailed the elementary products which lead to the calculation for bank 2 in year 3:</p>
+<div class="figure align-default" id="inner-product-diagram">
+<span id="fig-inner-product-diagram"></span><img alt="_images/Inner_Product_Diagram.png" src="_images/Inner_Product_Diagram.png" />
+<p class="caption"><span class="caption-number">Fig. 15.1 </span><span class="caption-text">Diagram representing the <em>inner product</em> operation.</span><a class="headerlink" href="#inner-product-diagram" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference internal" href="#fig-inner-product-diagram"><span class="std std-numref">Fig. 15.1</span></a> has a great advantage: it clearly shows the relations that exist between the 3 matrices:</p>
+<ul class="simple">
+<li><p>the left argument has as many columns as the right one has rows; and</p></li>
+<li><p>the result has as many rows as the left argument and as many columns as the right one.</p></li>
+</ul>
+<p>As you can see, the item <code class="docutils literal notranslate"><span class="pre">result[x;y]</span></code> is calculated from row <code class="docutils literal notranslate"><span class="pre">x</span></code> of the left argument (<code class="docutils literal notranslate"><span class="pre">⍺[x;]</span></code> in dfn notation) and column <code class="docutils literal notranslate"><span class="pre">y</span></code> of the right argument (<code class="docutils literal notranslate"><span class="pre">⍵[;y]</span></code> in dfn notation).</p>
+<p>These rules will be generalised in the next section.</p>
+</div>
+<div class="section" id="definition-of-inner-product">
+<span id="operators-definition-of-inner-product"></span><h2><span class="section-number">15.2. </span>Definition of Inner Product<a class="headerlink" href="#definition-of-inner-product" title="Permalink to this headline">¶</a></h2>
+<p>The syntax of <em>inner product</em> is <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">←</span> <span class="pre">x</span> <span class="pre">f.g</span> <span class="pre">y</span></code>, where the <em>inner product</em> is represented by a dot (<code class="docutils literal notranslate"><span class="pre">.</span></code>) and <code class="docutils literal notranslate"><span class="pre">f</span></code> and <code class="docutils literal notranslate"><span class="pre">g</span></code> represent two appropriate dyadic functions (either primitive or user-defined).</p>
+<p>The arguments may be arrays of any rank: scalars, vectors, matrices, or higher-rank arrays.
+The shape of the arguments and the shape of the result follow very simple rules:</p>
+<ul class="simple">
+<li><p>the length of the last dimension of the left argument must be equal to the length of the first dimension of the right argument (in other words, <code class="docutils literal notranslate"><span class="pre">(¯1↑⍴x)≡1↑⍴y</span></code>); and</p></li>
+<li><p>the shape of the result is the catenation of the argugments’ shapes, in which the common dimension has disappeared (in other words, <code class="docutils literal notranslate"><span class="pre">(⍴r)≡(¯1↓⍴x),1↓⍴y</span></code>).</p></li>
+</ul>
+<p>Of course, as usual, scalars are repeated to fit the appropriate size.</p>
+<p>Let us represent scalars by <code class="docutils literal notranslate"><span class="pre">s</span></code>, vectors by <code class="docutils literal notranslate"><span class="pre">v</span></code>, matrices by <code class="docutils literal notranslate"><span class="pre">m</span></code>, and higher-rank arrays by <code class="docutils literal notranslate"><span class="pre">a</span></code>.
+The table below shows the same of the result of some <em>inner products</em>:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">←</span> <span class="pre">x</span> <span class="pre">f.g</span> <span class="pre">y</span></code></p></th>
+<th class="text-align:right head"><p><code class="docutils literal notranslate"><span class="pre">⍴x</span></code></p></th>
+<th class="text-align:right head"><p><code class="docutils literal notranslate"><span class="pre">⍴y</span></code></p></th>
+<th class="text-align:right head"><p><code class="docutils literal notranslate"><span class="pre">⍴r</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">←</span> <span class="pre">a</span> <span class="pre">f.g</span> <span class="pre">a</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">8</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">5</span> <span class="pre">4</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">5</span> <span class="pre">4</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">←</span> <span class="pre">a</span> <span class="pre">f.g</span> <span class="pre">a</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">8</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">3</span> <span class="pre">2</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">3</span> <span class="pre">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">←</span> <span class="pre">m</span> <span class="pre">f.g</span> <span class="pre">m</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">5</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">8</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">8</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">←</span> <span class="pre">m</span> <span class="pre">f.g</span> <span class="pre">v</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">7</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">7</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">v</span> <span class="pre">←</span> <span class="pre">v</span> <span class="pre">f.g</span> <span class="pre">m</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">4</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">7</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">7</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">←</span> <span class="pre">v</span> <span class="pre">f.g</span> <span class="pre">v</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">10</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">10</span></code></p></td>
+<td class="text-align:right"><p><code class="docutils literal notranslate"><span class="pre">⍬</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="typical-uses-of-inner-products">
+<span id="operators-typical-uses-of-inner-products"></span><h2><span class="section-number">15.3. </span>Typical Uses of Inner Products<a class="headerlink" href="#typical-uses-of-inner-products" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="two-simple-problems">
+<span id="operators-two-simple-problems"></span><h3><span class="section-number">15.3.1. </span>Two Simple Problems<a class="headerlink" href="#two-simple-problems" title="Permalink to this headline">¶</a></h3>
+<p>Many students imagine that matrix products are complex things, reserved for mathematicians, and far removed from everyday life.
+This opinion should be reconsidered: very simple problems can be solved using inner product.</p>
+<p><code class="docutils literal notranslate"><span class="pre">hms</span></code> is a variable which contains a time interval in hours, minutes, and seconds:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">hms</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">44</span> <span class="m">29</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We would like to convert it into seconds.
+We shall see three methods just now, and a fourth method will be given in another chapter.</p>
+<p>A horrible solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">3600</span><span class="o">×</span><span class="nv">hms</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="m">60</span><span class="o">×</span><span class="nv">hms</span><span class="sr">[</span><span class="m">2</span><span class="sr">]</span><span class="p">)</span> <span class="o">+</span> <span class="nv">hms</span><span class="sr">[</span><span class="m">3</span><span class="sr">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">13469
+</span></div></div>
+</div>
+<p>A good APL solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="m">3600</span> <span class="m">60</span> <span class="m">1</span> <span class="o">×</span> <span class="nv">hms</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">13469
+</span></div></div>
+</div>
+<p>An excellent solution with inner product:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3600</span> <span class="m">60</span> <span class="m">1</span> <span class="o">+</span><span class="na">.</span><span class="o">×</span> <span class="nv">hms</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">13469
+</span></div></div>
+</div>
+<p>The second and third solutions are equivalent in terms of number of characters typed and similar in performance.
+However, <strong>it is recommended</strong> that you use the third one: it will help you become familiar with <em>inner product</em> so that after a certain period, it will become part of your toolkit as an APL programmer.</p>
+<p>Here is a very similar example.
+Two vectors represent the prices of a certain number of goods and the quantities we bought:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">price</span> <span class="kd">←</span> <span class="m">6</span> <span class="m">4.2</span> <span class="m">1.5</span> <span class="m">8.9</span> <span class="m">31</span> <span class="m">18</span>
+<span class="nv">qty</span>   <span class="kd">←</span> <span class="m">2</span> <span class="m">6</span>   <span class="m">3</span>   <span class="m">5</span>   <span class="m">1</span>  <span class="m">0.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>To calculate how much we paid, we can use the beginner’s solution, or a solution with a simple <em>inner product</em>; they give the same result, of course:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">price</span> <span class="o">×</span> <span class="nv">qty</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">126.2
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">price</span> <span class="o">+</span><span class="na">.</span><span class="o">×</span> <span class="nv">qty</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">126.2
+</span></div></div>
+</div>
+<p>Just to show how it works, <a class="reference internal" href="#fig-inner-product-diagram-2"><span class="std std-numref">Fig. 15.2</span></a> contains an explanatory diagram similar to the one we used for our Banks/Investments example.</p>
+<div class="figure align-default" id="inner-product-diagram-2">
+<span id="fig-inner-product-diagram-2"></span><img alt="_images/Inner_Product_Diagram_2.png" src="_images/Inner_Product_Diagram_2.png" />
+<p class="caption"><span class="caption-number">Fig. 15.2 </span><span class="caption-text">Diagram explaining the behaviour of an <em>inner product</em> between two vectors</span><a class="headerlink" href="#inner-product-diagram-2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="a-useful-family">
+<span id="operators-a-useful-family"></span><h3><span class="section-number">15.3.2. </span>A Useful Family<a class="headerlink" href="#a-useful-family" title="Permalink to this headline">¶</a></h3>
+<p>Used with comparison functions, <em>inner product</em> offers 18 extremely useful derived functions.</p>
+<p>Here is a vector <code class="docutils literal notranslate"><span class="pre">ages</span></code> containing the ages of 400 persons:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
+<span class="vg">⎕</span><span class="kd">←</span> <span class="m">20</span><span class="o">↑</span><span class="nv">ages</span> <span class="kd">←</span> <span class="o">?</span><span class="m">400</span><span class="o">⍴</span><span class="m">100</span>  <span class="c1">⍝ We display the first 20 ages only.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">73 16 42 50 2 67 11 81 37 93 100 98 83 32 76 51 37 15 46 88
+</span></div></div>
+</div>
+<p>In the same way as we did in <a class="reference internal" href="Some-Primitive-Functions.html#some-primitive-functions-reduction-of-binary-data"><span class="std std-numref">Section 4.8.3</span></a>, we can answer some elementary questions:</p>
+<p>Are all these people younger than 65?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">∧</span><span class="na">/</span> <span class="nv">ages</span> <span class="o">&lt;</span> <span class="m">65</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0
+</span></div></div>
+</div>
+<p>Is there at least one person younger than 20?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">∨</span><span class="na">/</span> <span class="nv">ages</span> <span class="o">&lt;</span> <span class="m">20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<p>How many people are younger than 20?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">ages</span> <span class="o">&lt;</span> <span class="m">20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">81
+</span></div></div>
+</div>
+<p>We can now replace <em>reduce</em> in the previous examples by <em>inner product</em>, like this:</p>
+<p>Are all these people younger than 65?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">ages</span> <span class="o">∧</span><span class="na">.</span><span class="o">&lt;</span> <span class="m">65</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0
+</span></div></div>
+</div>
+<p>Is there at least one person younger than 20?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">ages</span> <span class="o">∨</span><span class="na">.</span><span class="o">&lt;</span> <span class="m">20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<p>How many people are younger than 20?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">ages</span> <span class="o">+</span><span class="na">.</span><span class="o">&lt;</span> <span class="m">20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">81
+</span></div></div>
+</div>
+<p>Clever, isn’t it?</p>
+<p>These expressions can be read as:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">∧.&lt;</span></code> means “all smaller” – are the ages <strong>all smaller</strong> than 65?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">∨.&lt;</span></code> means “at least one is smaller” – is there <strong>at least</strong> one age <strong>smaller</strong> than 20?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+.&lt;</span></code> means “how many are smaller” – <strong>how many</strong> ages are <strong>smaller</strong> than 20?</p></li>
+</ul>
+<p>In those three expressions, we have combined <code class="docutils literal notranslate"><span class="pre">∧</span></code>, <code class="docutils literal notranslate"><span class="pre">∨</span></code>, and <code class="docutils literal notranslate"><span class="pre">+</span></code> with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>.
+We could just as well combine them with all the comparison symbols, giving 18 different <em>inner products</em>, as shown in this table:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;∧∨+&#39;</span> <span class="na">∘.</span><span class="kt">{</span><span class="bp">⍺</span><span class="o">,</span><span class="s1">&#39;.&#39;</span><span class="o">,</span><span class="bp">⍵</span><span class="kt">}</span> <span class="s1">&#39;&lt;≤=≥&gt;≠&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌───┬───┬───┬───┬───┬───┐
+│∧.&lt;│∧.≤│∧.=│∧.≥│∧.&gt;│∧.≠│
+├───┼───┼───┼───┼───┼───┤
+│∨.&lt;│∨.≤│∨.=│∨.≥│∨.&gt;│∨.≠│
+├───┼───┼───┼───┼───┼───┤
+│+.&lt;│+.≤│+.=│+.≥│+.&gt;│+.≠│
+└───┴───┴───┴───┴───┴───┘
+</span></div></div>
+</div>
+</div>
+<div class="section" id="a-special-case-of-a-comparison-inner-product">
+<span id="operators-a-special-case-of-a-comparison-inner-product"></span><h3><span class="section-number">15.3.3. </span>A Special Case of a Comparison Inner Product<a class="headerlink" href="#a-special-case-of-a-comparison-inner-product" title="Permalink to this headline">¶</a></h3>
+<p>In this family of <em>inner products</em>, <code class="docutils literal notranslate"><span class="pre">∧.=</span></code> is particularly interesting, because it answers the question “are all those values equal?”.
+For example, applied to vectors of the same length:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;customer&#39;</span> <span class="o">∧</span><span class="na">.</span><span class="o">=</span> <span class="s1">&#39;customer&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;customer&#39;</span> <span class="o">∧</span><span class="na">.</span><span class="o">=</span> <span class="s1">&#39;cucumber&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0
+</span></div></div>
+</div>
+<p>Let us use this property to search for a word in a matrix of words:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">words</span> <span class="kd">←</span> <span class="m">8</span> <span class="m">7</span><span class="o">⍴</span><span class="s1">&#39;CONTACTCOLUMNSFORTUNEPRODUCTCOLONELPROVIDEMACHINETYPICAL&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">CONTACT
+COLUMNS
+FORTUNE
+PRODUCT
+COLONEL
+PROVIDE
+MACHINE
+TYPICAL
+</span></div></div>
+</div>
+<p>If we combine this 8 by 7 matrix with a 7-item vector, compatibility rules are obeyed, and the result will be a 8-item vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">words</span> <span class="o">∧</span><span class="na">.</span><span class="o">=</span> <span class="s1">&#39;PRODUCT&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 0 1 0 0 0 0
+</span></div></div>
+</div>
+<p>The shape of <code class="docutils literal notranslate"><span class="pre">words</span></code> is <code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">7</span></code> and the shape of <code class="docutils literal notranslate"><span class="pre">'PRODUCT'</span></code> is <code class="docutils literal notranslate"><span class="pre">7</span></code>, so the common dimension disappears, and the result has shape <code class="docutils literal notranslate"><span class="pre">8</span></code>.</p>
+<p>Now, let us search for three words:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">three</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">7</span><span class="o">⍴</span><span class="s1">&#39;MACHINECOMFORTPRODUCT&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">MACHINE
+COMFORT
+PRODUCT
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">words</span> <span class="o">∧</span><span class="na">.</span><span class="o">=</span> <span class="o">⍉</span><span class="nv">three</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 0
+0 0 0
+0 0 0
+0 0 1
+0 0 0
+0 0 0
+1 0 0
+0 0 0
+</span></div></div>
+</div>
+<p>We must transpose the matrix to be compliant with the compatibility rules, and the result shows what word was found in what row of <code class="docutils literal notranslate"><span class="pre">words</span></code>.</p>
+<p>If we wanted to know which words were found, we could add an <em>or-reduction</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">∨</span><span class="na">⌿</span> <span class="nv">words</span><span class="o">∧</span><span class="na">.</span><span class="o">=⍉</span><span class="nv">three</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 0 1
+</span></div></div>
+</div>
+<p>If we wanted to know which of the rows in <code class="docutils literal notranslate"><span class="pre">words</span></code> contain words in <code class="docutils literal notranslate"><span class="pre">three</span></code>, we could have used another <em>or-reduction</em>, but along the other axis:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">∨</span><span class="na">/</span> <span class="nv">words</span><span class="o">∧</span><span class="na">.</span><span class="o">=⍉</span><span class="nv">three</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 0 1 0 0 1 0
+</span></div></div>
+</div>
+<p>It may also be useful to search for the positions of said matches, but we can use <em>index of</em> for that:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">words</span> <span class="o">⍳</span> <span class="nv">three</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">7 9 4
+</span></div></div>
+</div>
+<p>The converse to the expression <code class="docutils literal notranslate"><span class="pre">∧.=</span></code> is <code class="docutils literal notranslate"><span class="pre">∨.≠</span></code>.
+(That means that <code class="docutils literal notranslate"><span class="pre">∧.=</span></code> and <code class="docutils literal notranslate"><span class="pre">∨.≠</span></code> always return opposite Boolean values.)
+It looks for <em>different</em> values instead of looking for <em>equal</em> values.
+Let us look at one simple example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">words</span> <span class="o">∨</span><span class="na">.</span><span class="o">≠</span> <span class="o">⍉</span><span class="nv">three</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 1 1
+1 1 1
+1 1 1
+1 1 0
+1 1 1
+1 1 1
+0 1 1
+1 1 1
+</span></div></div>
+</div>
+<p>A <code class="docutils literal notranslate"><span class="pre">1</span></code> means that this word in <code class="docutils literal notranslate"><span class="pre">three</span></code> does not match the word in this row of <code class="docutils literal notranslate"><span class="pre">words</span></code>.
+So, if a row contains all <code class="docutils literal notranslate"><span class="pre">1</span></code>s, the word in that row does not match any of the words in <code class="docutils literal notranslate"><span class="pre">three</span></code>.
+Using <em>and-reduce</em> along the second axis pinpoints the rows of <code class="docutils literal notranslate"><span class="pre">words</span></code> for which this is true:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">∧</span><span class="na">/</span> <span class="nv">words</span><span class="o">∨</span><span class="na">.</span><span class="o">≠⍉</span><span class="nv">three</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 1 1 0 1 1 0 1
+</span></div></div>
+</div>
+<p>With a compression, we can see the words that are not found in <code class="docutils literal notranslate"><span class="pre">three</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">∧</span><span class="na">/</span><span class="nv">words</span><span class="o">∨</span><span class="na">.</span><span class="o">≠⍉</span><span class="nv">three</span><span class="p">)</span> <span class="na">⌿</span> <span class="nv">words</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">CONTACT
+COLUMNS
+FORTUNE
+COLONEL
+PROVIDE
+TYPICAL
+</span></div></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "dyalog-kernel"
+        },
+        kernelOptions: {
+            kernelName: "dyalog-kernel",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'dyalog-kernel'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Nested-Arrays-Continued.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">10. </span>Nested Arrays (Continued)</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Appendices.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">16. </span>Appendices</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Bernard Legrand, reworked by Rodrigo Girão Serrão.<br/>
+        
+          <div class="extra_footer">
+            <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+  <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+</a></p>
+<p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
+
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

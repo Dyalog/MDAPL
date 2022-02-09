@@ -629,9 +629,7 @@ Otherwise, an error will be reported.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">
-</span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">5×6+2
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">5×6+2
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -642,7 +640,6 @@ Otherwise, an error will be reported.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">40
-
 </span></div></div>
 </div>
 <p>The argument can contain any valid expression:</p>
@@ -678,7 +675,6 @@ Otherwise, an error will be reported.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">12
-
 </span></div></div>
 </div>
 <p>If the expression returns a result, it will be used as the result of <em>execute</em>:</p>
@@ -697,7 +693,6 @@ Otherwise, an error will be reported.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">13
-
 </span></div></div>
 </div>
 <p>We could just as well have written</p>
@@ -716,7 +711,6 @@ Otherwise, an error will be reported.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">13
-
 </span></div></div>
 </div>
 <!--begin beware style=warning-->
@@ -815,7 +809,6 @@ You can just read in a string such as <code class="docutils literal notranslate"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">123 456 789
-
 </span></div></div>
 </div>
 <p>We saw in <a class="reference internal" href="User-Defined-Functions.html"><span class="doc std std-doc">the chapter about user-defined functions</span></a> that <em>format</em> can be used to convert numbers to characters; the reverse can be done using <em>execute</em>.
@@ -834,9 +827,7 @@ This explains why those two functions are represented by “reversed” symbols,
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">14 1952
-
 1966
-
 </span></div></div>
 </div>
 <p>Notice that the <code class="docutils literal notranslate"><span class="pre">'14</span> <span class="pre">1952'</span></code> above is a character <em>vector</em> of length 7, and not a vector of 2 character vectors.
@@ -849,7 +840,6 @@ In fact, compare</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">14 1952
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -860,7 +850,6 @@ In fact, compare</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">7
-
 </span></div></div>
 </div>
 <p>with</p>
@@ -874,7 +863,6 @@ In fact, compare</p>
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">┌──┬────┐
 │14│1952│
 └──┴────┘
-
 </span></div></div>
 </div>
 <p>to which <code class="docutils literal notranslate"><span class="pre">⍎</span></code> <em>cannot</em> be applied:</p>
@@ -906,7 +894,6 @@ But to avoid characters of one row being attached to those of the previous row, 
 1237
  933
 2607
-
 </span></div></div>
 </div>
 <p>If we ravel it and execute it, we get</p>
@@ -918,7 +905,6 @@ But to avoid characters of one row being attached to those of the previous row, 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">8451237 9332607
-
 </span></div></div>
 </div>
 <p>which is not what we want.
@@ -931,7 +917,6 @@ The correction conversion will be obtained by first catenating a blank space:</p
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">845 1237 933 2607
-
 </span></div></div>
 </div>
 </div>
@@ -974,9 +959,9 @@ For example, here is a statement involving <em>execute</em>:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⍎SYNTAX ERROR
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⍎SYNTAX ERROR: Unpaired parenthesis
       tab43←(4 43⍴&#39;) &#39;
-                 ∧
+            ∧
 </pre></div>
 </div>
 </div>
@@ -991,9 +976,9 @@ If any problem occurs, it can be difficult to spot the cause.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⍎SYNTAX ERROR
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⍎SYNTAX ERROR: Unpaired parenthesis
       tab43←(4 43⍴&#39;) &#39;
-                 ∧
+            ∧
 </pre></div>
 </div>
 </div>
@@ -1007,7 +992,6 @@ If any problem occurs, it can be difficult to spot the cause.</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">tab43←(4 43⍴') '
-
 </span></div></div>
 </div>
 <p>Obviously, this is not a correct statement, so it failed when we tried to execute it.</p>
@@ -1031,7 +1015,6 @@ The previous statement assumes that you have no options modifying your output; f
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1  2 3 
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -1042,7 +1025,6 @@ The previous statement assumes that you have no options modifying your output; f
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">Is ON
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -1055,7 +1037,6 @@ The previous statement assumes that you have no options modifying your output; f
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─┬───┐
 │1│2 3│
 └─┴───┘
-
 </span></div></div>
 </div>
 <p>Ignoring the effects of such session modifiers like <code class="docutils literal notranslate"><span class="pre">]box</span></code>, which will be covered with some more detail later in this chapter (see <a class="reference internal" href="#execute-and-format-control-modifying-session-output-with-user-commands"><span class="std std-numref">Section 7.4.2</span></a>), monadic <em>format</em> is such that:</p>
@@ -1073,7 +1054,6 @@ The previous statement assumes that you have no options modifying your output; f
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">H2SO4
 CaCO3
 Fe2O3
-
 </span></div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">chemistry</span></code> is a character matrix with shape <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">5</span></code>, and it is not modified by <code class="docutils literal notranslate"><span class="pre">⍕</span></code>:</p>
@@ -1087,9 +1067,7 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">H2SO4
 CaCO3
 Fe2O3
-
 3 5
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -1100,7 +1078,6 @@ Fe2O3
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1
-
 </span></div></div>
 </div>
 <p>On the other hand, a numeric vector with, say, 3 items, becomes a (longer) character vector once converted:</p>
@@ -1112,7 +1089,6 @@ Fe2O3
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">3
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -1123,9 +1099,7 @@ Fe2O3
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">52 69 76
-
 8
-
 </span></div></div>
 </div>
 <p>A nested matrix like <code class="docutils literal notranslate"><span class="pre">nesMat</span></code>,</p>
@@ -1142,9 +1116,7 @@ Fe2O3
 │27    │8 6│1 2 0│
 │      │2 4│0 0 5│
 └──────┴───┴─────┘
-
 2 3
-
 </span></div></div>
 </div>
 <p>which we have already used before, becomes a character matrix that is 20 characters wide and with 3 rows, because <code class="docutils literal notranslate"><span class="pre">nesMat</span></code> contained two small matrices:</p>
@@ -1158,9 +1130,7 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace"> Dyalog   44  Hello 
      27  8 6  1 2 0 
          2 4  0 0 5 
-
 3 20
-
 </span></div></div>
 </div>
 </div>
@@ -1185,10 +1155,9 @@ Dyadic <em>format</em> converts numbers into text in a format that is described 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">  21.21 1534.88 375.46  704.5 
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">  21.21 1534.88 375.46  704.5
 1125.14 1963.52 464.45 1438.25
  796.53 1569    157.14  886.59
-
 </span></div></div>
 </div>
 <p>The representation above is the normal display of the <code class="docutils literal notranslate"><span class="pre">nm</span></code> matrix, and it is also how monadic <em>format</em> would present the matrix.</p>
@@ -1203,7 +1172,6 @@ Dyadic <em>format</em> converts numbers into text in a format that is described 
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">   21.21 1534.88  375.46  704.50
  1125.14 1963.52  464.45 1438.25
   796.53 1569.00  157.14  886.59
-
 </span></div></div>
 </div>
 <p>The result has, of course, 3 rows and 32 columns (8 characters for each of the 4 columns):</p>
@@ -1215,7 +1183,6 @@ Dyadic <em>format</em> converts numbers into text in a format that is described 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">3 32
-
 </span></div></div>
 </div>
 <p>We can also draw a basic ruler (with the help of a short dfn) below the formatted matrix to help you count the width of each field:</p>
@@ -1241,7 +1208,6 @@ Dyadic <em>format</em> converts numbers into text in a format that is described 
  1125.14 1963.52  464.45 1438.25
   796.53 1569.00  157.14  886.59
 ¯¯¯¯'¯¯¯¯|¯¯¯¯'¯¯¯¯|¯¯¯¯'¯¯¯¯|¯¯
-
 </span></div></div>
 </div>
 <p>In the next example we represent each number in a field that is 6 characters wide, right-aligned, and with no decimal digits.</p>
@@ -1256,7 +1222,6 @@ Dyadic <em>format</em> converts numbers into text in a format that is described 
   1125  1964   464  1438
    797  1569   157   887
 ¯¯¯¯'¯¯¯¯|¯¯¯¯'¯¯¯¯|¯¯¯¯
-
 </span></div></div>
 </div>
 <p>The result has now 3 rows and 24 columns:</p>
@@ -1268,7 +1233,6 @@ Dyadic <em>format</em> converts numbers into text in a format that is described 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">3 24
-
 </span></div></div>
 </div>
 <!--begin remark-->
@@ -1288,10 +1252,9 @@ Dyadic <em>format</em> converts numbers into text in a format that is described 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">  21.21 1534.88 375.46  704.5 
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">  21.21 1534.88 375.46  704.5
 1125.14 1963.52 464.45 1438.25
  796.53 1569    157.14  886.59
-
 </span></div></div>
 </div>
 <p>We have seen above that <code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">2⍕nm</span></code> looked good:</p>
@@ -1305,7 +1268,6 @@ Dyadic <em>format</em> converts numbers into text in a format that is described 
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">   21.21 1534.88  375.46  704.50
  1125.14 1963.52  464.45 1438.25
   796.53 1569.00  157.14  886.59
-
 </span></div></div>
 </div>
 <p>If we reduce the width of the columns by 1, some values will now be adjacent to the values immediately to their left, making them difficult to read. For example, the second column will be adjacent to the left column:</p>
@@ -1319,7 +1281,6 @@ Dyadic <em>format</em> converts numbers into text in a format that is described 
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">  21.211534.88 375.46 704.50
 1125.141963.52 464.451438.25
  796.531569.00 157.14 886.59
-
 </span></div></div>
 </div>
 <p>If we further reduce the width of the columns, the largest values will no longer fit in their allotted space and will be replaced by asterisks. Most of the other numbers are now adjacent to their neighbours.</p>
@@ -1333,7 +1294,6 @@ Dyadic <em>format</em> converts numbers into text in a format that is described 
 <div class="output text_html"><span style="white-space:pre; font-family: monospace"> 21.21******375.46704.50
 ************464.45******
 796.53******157.14886.59
-
 </span></div></div>
 </div>
 <!--begin remark-->
@@ -1357,7 +1317,6 @@ Each format definition is made of 2 numbers, so if the matrix has <code class="d
  1125.14      1964 464.4500 1438.25
   796.53      1569 157.1400  886.59
 ¯¯¯¯'¯¯¯¯|¯¯¯¯'¯¯¯¯|¯¯¯¯'¯¯¯¯|¯¯¯¯'
-
 </span></div></div>
 </div>
 <p>In this case, we formatted the first column with <code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">2</span></code>, the second column with <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">0</span></code>, the third column with <code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">4</span></code>, and the fourth column with <code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">2</span></code> again.</p>
@@ -1375,7 +1334,6 @@ For example,</p>
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">   21.21      1535  375.46       705
  1125.14      1964  464.45      1438
   796.53      1569  157.14       887
-
 </span></div></div>
 </div>
 <p>In the above, columns 3 and 4 reused the <em>descriptors</em> of columns 1 and 2, respectively <code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">10</span> <span class="pre">0</span></code>.
@@ -1390,7 +1348,6 @@ This is equivalent to writing the repeated pairs by hand:</p>
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">   21.21      1535  375.46       705
  1125.14      1964  464.45      1438
   796.53      1569  157.14       887
-
 </span></div></div>
 </div>
 <p>We can also compare <code class="docutils literal notranslate"><span class="pre">desc⍕nm</span></code> with the statement above about the residue:</p>
@@ -1402,7 +1359,6 @@ This is equivalent to writing the repeated pairs by hand:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">0
-
 </span></div></div>
 </div>
 </div>
@@ -1419,7 +1375,6 @@ This is equivalent to writing the repeated pairs by hand:</p>
 <div class="output text_html"><span style="white-space:pre; font-family: monospace"> 2.1E1   1.5E3   3.8E2   7.0E2  
  1.1E3   2.0E3   4.6E2   1.4E3  
  8.0E2   1.6E3   1.6E2   8.9E2  
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -1432,7 +1387,6 @@ This is equivalent to writing the repeated pairs by hand:</p>
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">2.121E1 1.535E3 3.755E2 7.045E2 
 1.125E3 1.964E3 4.645E2 1.438E3 
 7.965E2 1.569E3 1.571E2 8.866E2 
-
 </span></div></div>
 </div>
 <p>You can refer to <a class="reference external" href="https://en.wikipedia.org/wiki/Scientific_notation#E_notation">Wikipedia’s article on “Scientific Notation”</a> for more information on how scientific notation works.</p>
@@ -1452,7 +1406,6 @@ The scalar descriptor is then used to specify the number of decimal places to us
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">   21.21 1534.88 375.46  704.50
  1125.14 1963.52 464.45 1438.25
   796.53 1569.00 157.14  886.59
-
 </span></div></div>
 </div>
 <p>tells <code class="docutils literal notranslate"><span class="pre">⍕</span></code> to use 2 decimal places for all numbers, whereas</p>
@@ -1466,7 +1419,6 @@ The scalar descriptor is then used to specify the number of decimal places to us
 <div class="output text_html"><span style="white-space:pre; font-family: monospace"> 2.12E1 1.53E3 3.75E2 7.05E2
  1.13E3 1.96E3 4.64E2 1.44E3
  7.97E2 1.57E3 1.57E2 8.87E2
-
 </span></div></div>
 </div>
 <p>tells <code class="docutils literal notranslate"><span class="pre">⍕</span></code> to use 3 digits in the mantissa of all numbers.</p>
@@ -1498,7 +1450,6 @@ This is different from <code class="docutils literal notranslate"><span class="p
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">10
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -1509,7 +1460,6 @@ This is different from <code class="docutils literal notranslate"><span class="p
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1 10
-
 </span></div></div>
 </div>
 <p>The general presentation is the same, except for some very special cases.</p>
@@ -1537,7 +1487,6 @@ In other words, an item of <code class="docutils literal notranslate"><span clas
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">    12 A B C D   21.21 1534.88  375.46  704.50
      3 E F G H 1125.14 1963.52  464.45 1438.25
      4          796.53 1569.00  157.14  886.59
-
 </span></div></div>
 </div>
 <p>Each elementary descriptor is made up of:</p>
@@ -1590,10 +1539,9 @@ In other words, an item of <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">  21.21 1534.88 375.46  704.5 
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">  21.21 1534.88 375.46  704.5
 1125.14 1963.52 464.45 1438.25
  796.53 1569    157.14  886.59
-
 </span></div></div>
 </div>
 <p>and on the following <code class="docutils literal notranslate"><span class="pre">price</span></code> vector:</p>
@@ -1617,7 +1565,6 @@ In other words, an item of <code class="docutils literal notranslate"><span clas
                                  4.0
                                  8.5
 ¯¯¯¯'¯¯¯¯|¯¯¯¯'¯¯¯¯|¯¯¯¯'¯¯¯¯|¯¯¯¯'¯
-
 </span></div></div>
 </div>
 <p>Here is an explanation of the descriptors used above:</p>
@@ -1656,7 +1603,6 @@ March
 April   
 May     
 June    
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -1669,7 +1615,6 @@ June
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">H2SO4
 CaCO3
 Fe2O3
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -1686,7 +1631,6 @@ April
 May             
 June            
 ¯¯¯¯'¯¯¯¯|¯¯¯¯'¯
-
 </span></div></div>
 </div>
 <p>Here is a breakdown of what is happening:</p>
@@ -1718,7 +1662,6 @@ March   Fe   2O3
 April           
 May             
 June            
-
 </span></div></div>
 </div>
 <p>The first descriptor in the example above, <code class="docutils literal notranslate"><span class="pre">'10A1'</span></code>, has a repetition factor of 10, meaning it will apply to 10 columns: the 8 columns from <code class="docutils literal notranslate"><span class="pre">monMat</span></code> plus the first 2 columns from <code class="docutils literal notranslate"><span class="pre">chemistry</span></code>.
@@ -1735,7 +1678,6 @@ The next column of <code class="docutils literal notranslate"><span class="pre">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">  H  2  S  O  4
   C  a  C  O  3
   F  e  2  O  3
-
 </span></div></div>
 </div>
 <p>In the result above, each character is formatted in a column that is 3 characters wide and is right-justified.</p>
@@ -1754,7 +1696,6 @@ The following method would produce a poor presentation:</p>
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1H2SO4
 2CaCO3
 3Fe2O3
-
 </span></div></div>
 </div>
 <p>Using <code class="docutils literal notranslate"><span class="pre">'6A1'</span></code> instead of <code class="docutils literal notranslate"><span class="pre">'A1,5A1'</span></code> would produce the same result.</p>
@@ -1769,7 +1710,6 @@ The following method would produce a poor presentation:</p>
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1  H2SO4
 2  CaCO3
 3  Fe2O3
-
 </span></div></div>
 </div>
 <p>However, it is simpler to include a specific descriptor for the separation; this is the role of the <code class="docutils literal notranslate"><span class="pre">'X'</span></code> specification.</p>
@@ -1792,7 +1732,6 @@ The following method would produce a poor presentation:</p>
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1   H2SO4
 2   CaCO3
 3   Fe2O3
-
 </span></div></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">'X3'</span></code> and <code class="docutils literal notranslate"><span class="pre">'3X1</span></code> are synonymous, but the first description is simpler.</p>
@@ -1822,7 +1761,6 @@ For that matter, for the remainder of this chapter we shall prefer <code class="
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">0.08 0.05 0.02
-
 </span></div></div>
 </div>
 <p>to calculate a result and display it:</p>
@@ -1838,7 +1776,6 @@ For that matter, for the remainder of this chapter we shall prefer <code class="
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">| H2SO4 |    21.21 1534.88  375.46  704.50 × 8% =  56.36€
 | CaCO3 |  1125.14 1963.52  464.45 1438.25 × 5% =  71.91€
 | Fe2O3 |   796.53 1569.00  157.14  886.59 × 2% =  17.73€
-
 </span></div></div>
 </div>
 <!-- (TODO) use something like `format⊆⍨≠\∨⌿'⊂⊃'∘.=format` to parse the `format` variable and extract the texts that will be included, with the caveat that it only works if there's no extra ⊂⊃ in there. -->
@@ -1871,7 +1808,6 @@ Another traditional language, COBOL, uses a different approach in its “PICTURE
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">75 14 86
 20 31 16
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -1883,7 +1819,6 @@ Another traditional language, COBOL, uses a different approach in its “PICTURE
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">(0075) + (0014) + (0086) + 
 (0020) + (0031) + (0016) + 
-
 </span></div></div>
 </div>
 <p>Each descriptor <code class="docutils literal notranslate"><span class="pre">'9'</span></code> has been replaced by a digit of <code class="docutils literal notranslate"><span class="pre">mat</span></code>, or by a zero, and all the other characters have been reproduced from the model.</p>
@@ -1895,10 +1830,9 @@ Another traditional language, COBOL, uses a different approach in its “PICTURE
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">  21.21 1534.88 375.46  704.5 
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">  21.21 1534.88 375.46  704.5
 1125.14 1963.52 464.45 1438.25
  796.53 1569    157.14  886.59
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -1911,7 +1845,6 @@ Another traditional language, COBOL, uses a different approach in its “PICTURE
 <div class="output text_html"><span style="white-space:pre; font-family: monospace"> 0021 1535 0375 0705
  1125 1964 0464 1438
  0797 1569 0157 0887
-
 </span></div></div>
 </div>
 <p>Here, each value is padded by leading zeroes and the decimal digits are lost (the values were <em>rounded</em>).</p>
@@ -1925,7 +1858,6 @@ Another traditional language, COBOL, uses a different approach in its “PICTURE
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">   21 1535  375  705
  1125 1964  464 1438
   797 1569  157  887
-
 </span></div></div>
 </div>
 <p>In this new example small values are not padded by zeroes, but by blanks.
@@ -1938,7 +1870,6 @@ It is also worth noting that we use <code class="docutils literal notranslate"><
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace"> 
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -1949,7 +1880,6 @@ It is also worth noting that we use <code class="docutils literal notranslate"><
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">0
-
 </span></div></div>
 </div>
 <p>Decimal digits can be displayed only if we convert the values into integers and insert “artificial” decimal points between the <code class="docutils literal notranslate"><span class="pre">'Z'</span></code>’s or <code class="docutils literal notranslate"><span class="pre">'9'</span></code>’s:</p>
@@ -1963,7 +1893,6 @@ It is also worth noting that we use <code class="docutils literal notranslate"><
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">   21.21 1534.88  375.46  704.50
  1125.14 1963.52  464.45 1438.25
   796.53 1569.00  157.14  886.59
-
 </span></div></div>
 </div>
 <p>Finally, we illustrate what we said earlier about the fact that symbols placed between descriptors <code class="docutils literal notranslate"><span class="pre">'Z'</span></code> and <code class="docutils literal notranslate"><span class="pre">'9'</span></code> are displayed only if they are surrounded by digits:</p>
@@ -1980,7 +1909,6 @@ Value     6/54
 Value    38/52
 Value  1-93/46
 Value 62-11/84
-
 </span></div></div>
 </div>
 <p>This characteristic is useful when displaying numbers according to national conventions:</p>
@@ -1995,7 +1923,6 @@ Value 62-11/84
          84.52
         957.32
     649,524.65
-
 </span></div></div>
 </div>
 <p>The above is the Anglo-American presentation and the example below is the French presentation:</p>
@@ -2010,7 +1937,6 @@ Value 62-11/84
          84,52
         957,32
     649 524,65
-
 </span></div></div>
 </div>
 <p>Here is a surprising example:</p>
@@ -2023,7 +1949,6 @@ Value 62-11/84
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">Simon 45 Garfunkel 62
 Simon 87             
-
 </span></div></div>
 </div>
 <p>Here is the explanation of this surprising example:</p>
@@ -2051,7 +1976,6 @@ This makes it easy to position data in a sheet.</p>
 91            CaCO3            1125  1964   464  1438
 34            Fe2O3             797  1569   157   887
 ¯¯¯¯'¯¯¯¯|¯¯¯¯'¯¯¯¯|¯¯¯¯'¯¯¯¯|¯¯¯¯'¯¯¯¯|¯¯¯¯'¯¯¯¯|¯¯¯
-
 </span></div></div>
 </div>
 <p>As you can see, <code class="docutils literal notranslate"><span class="pre">chemistry</span></code> starts at the 15th position, and the first column of <code class="docutils literal notranslate"><span class="pre">nm</span></code> starts at the 30th position but, because it occupies 6 characters per column, it is right-aligned at the 35th character.</p>
@@ -2080,7 +2004,6 @@ This makes it easy to position data in a sheet.</p>
    4.870E¯2 
   ¯6.213E1  
 ¯¯¯¯'¯¯¯¯|¯¯
-
 </span></div></div>
 </div>
 <p>You can see that each number is represented by 12 characters, with exactly 4 significant digits.
@@ -2188,7 +2111,6 @@ Furthermore, note that the specification <code class="docutils literal notransla
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">   123450.00
-
 </span></div></div>
 </div>
 <p>Now divide a number by 10 (and round it) before displaying it:</p>
@@ -2200,7 +2122,6 @@ Furthermore, note that the specification <code class="docutils literal notransla
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">       12.35
-
 </span></div></div>
 </div>
 <p>Because specification <code class="docutils literal notranslate"><span class="pre">'G'</span></code> only displays integer values, it is often convenient to use the qualifier <code class="docutils literal notranslate"><span class="pre">'K'</span></code> to multiply decimal values by a power of 10 to obtain the correct display, as exemplified here below.
@@ -2216,7 +2137,6 @@ First, look at the following <code class="docutils literal notranslate"><span cl
   0.54
   0.07
   6.73
-
 </span></div></div>
 </div>
 <p>Notice how the presentation above gives the wrong idea about the values.
@@ -2232,7 +2152,6 @@ However, if we were to use <code class="docutils literal notranslate"><span clas
  54.17
   7.20
 673.08
-
 </span></div></div>
 </div>
 <!--begin tip-->
@@ -2251,7 +2170,6 @@ Notice, also, how a repetition factor may be applied to a list of specifications
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">09/07/98
-
 </span></div></div>
 </div>
 <p>We can reproduce the Anglo-American and French representations for large numbers (that we produced with specification <code class="docutils literal notranslate"><span class="pre">'G'</span></code>) with the <code class="docutils literal notranslate"><span class="pre">'C'</span></code> and <code class="docutils literal notranslate"><span class="pre">'S'</span></code> qualifiers:</p>
@@ -2263,7 +2181,6 @@ Notice, also, how a repetition factor may be applied to a list of specifications
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">74,815,926.03
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -2274,7 +2191,6 @@ Notice, also, how a repetition factor may be applied to a list of specifications
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">74 815 926,03
-
 </span></div></div>
 </div>
 <p>In this last example, commas have been replaced by blanks and the decimal point has been substituted by a comma, using the <code class="docutils literal notranslate"><span class="pre">'S'</span></code> qualifier, to obtain a French presentation.</p>
@@ -2287,8 +2203,7 @@ Notice, also, how a repetition factor may be applied to a list of specifications
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">178.23    0    ¯87.64
-  0    ¯681.19  42   
-
+  0    ¯681.19  42
 </span></div></div>
 </div>
 <p>Using <code class="docutils literal notranslate"><span class="pre">'B'</span></code> we can replace zeroes with blanks:</p>
@@ -2301,7 +2216,6 @@ Notice, also, how a repetition factor may be applied to a list of specifications
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">   178.23            ¯87.64
            ¯681.19    42.00
-
 </span></div></div>
 </div>
 <p>This is the same thing as using <code class="docutils literal notranslate"><span class="pre">'O'</span></code> to only replace zeroes with blanks:</p>
@@ -2314,7 +2228,6 @@ Notice, also, how a repetition factor may be applied to a list of specifications
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">   178.23            ¯87.64
            ¯681.19    42.00
-
 </span></div></div>
 </div>
 <p>Recall that <code class="docutils literal notranslate"><span class="pre">'O'</span></code> assumes, by default, that we want to replace zeroes with the text within <code class="docutils literal notranslate"><span class="pre">⊂</span> <span class="pre">⊃</span></code>.
@@ -2328,7 +2241,6 @@ If we wanted, we could replace <code class="docutils literal notranslate"><span 
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">   178.23     0.00   ¯87.64
      0.00  ¯681.19         
-
 </span></div></div>
 </div>
 <p>We can also replace the value(s) by something other than blanks.
@@ -2342,7 +2254,6 @@ For that, we just specify the replacement text inside the text delimiters:</p>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">   178.23     none   ¯87.64
      none  ¯681.19    42.00
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -2354,7 +2265,6 @@ For that, we just specify the replacement text inside the text delimiters:</p>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">   178.23     0.00   ¯87.64
      0.00  ¯681.19   2+4×10
-
 </span></div></div>
 </div>
 <p>Using <code class="docutils literal notranslate"><span class="pre">'L'</span></code> we can align all the values on the left instead:</p>
@@ -2367,7 +2277,6 @@ For that, we just specify the replacement text inside the text delimiters:</p>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">178.23   0.00     ¯87.64   
 0.00     ¯681.19  2+4×10   
-
 </span></div></div>
 </div>
 <p>If we use <code class="docutils literal notranslate"><span class="pre">'Z'</span></code>, then we can fill the whole field with zeroes:</p>
@@ -2379,7 +2288,6 @@ For that, we just specify the replacement text inside the text delimiters:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">  42
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -2390,7 +2298,6 @@ For that, we just specify the replacement text inside the text delimiters:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">0042
-
 </span></div></div>
 </div>
 </div>
@@ -2418,7 +2325,6 @@ We can easily format numbers to abide by this practice using <code class="docuti
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">    178.23      0.00   (87.64)
       0.00  (681.19)     42.00
-
 </span></div></div>
 </div>
 <p>However, we can see that the negative values are no longer aligned with the positive ones.
@@ -2432,7 +2338,6 @@ We can fix this by using the affixture <code class="docutils literal notranslate
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">   178.23      0.00    (87.64)
      0.00   (681.19)    42.00 
-
 </span></div></div>
 </div>
 <p>Now, instead of surrounding negative numbers with parentheses, suppose we want to represent them with a <code class="docutils literal notranslate"><span class="pre">'-'</span></code> instead of a <code class="docutils literal notranslate"><span class="pre">'¯'</span></code>, and also add a <code class="docutils literal notranslate"><span class="pre">'+'</span></code> to the left of the positive numbers.
@@ -2446,7 +2351,6 @@ For that, we just reuse <code class="docutils literal notranslate"><span class="
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">   +178.23     +0.00    -87.64
      +0.00   -681.19    +42.00
-
 </span></div></div>
 </div>
 <p>Finally, to illustrate how the affixture <code class="docutils literal notranslate"><span class="pre">'R'</span></code> works, we will draw the representation of <code class="docutils literal notranslate"><span class="pre">yop</span></code> in a matrix of <code class="docutils literal notranslate"><span class="pre">'⎕'</span></code>’s:</p>
@@ -2459,7 +2363,6 @@ For that, we just reuse <code class="docutils literal notranslate"><span class="
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">⎕⎕⎕⎕178.23⎕⎕⎕⎕⎕⎕0.00⎕⎕⎕⎕¯87.64
 ⎕⎕⎕⎕⎕⎕0.00⎕⎕⎕¯681.19⎕⎕⎕⎕⎕42.00
-
 </span></div></div>
 </div>
 <p>Notice that this is just an overlay of</p>
@@ -2472,7 +2375,6 @@ For that, we just reuse <code class="docutils literal notranslate"><span class="
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">    178.23      0.00    ¯87.64
       0.00   ¯681.19     42.00
-
 </span></div></div>
 </div>
 <p>on top of</p>
@@ -2485,7 +2387,6 @@ For that, we just reuse <code class="docutils literal notranslate"><span class="
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
 ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕
-
 </span></div></div>
 </div>
 </div>
@@ -2505,7 +2406,6 @@ For that, we just reuse <code class="docutils literal notranslate"><span class="
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">     21,21  1 534,88    375,46    704,50
   1 125,14  1 963,52    464,45  1 438,25
     796,53  1 569,00    157,14    886,59
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -2518,7 +2418,6 @@ For that, we just reuse <code class="docutils literal notranslate"><span class="
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">     21,21  1 534,88    375,46    704,50
   1 125,14  1 963,52    464,45  1 438,25
     796,53  1 569,00    157,14    886,59
-
 </span></div></div>
 </div>
 <ul class="simple">
@@ -2535,7 +2434,6 @@ For that, we just reuse <code class="docutils literal notranslate"><span class="
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">     21,21  1 534,88    375,46    704,50
   1 125,14  1 963,52    464,45  1 438,25
     796,53  1 569,00    157,14    886,59
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -2548,7 +2446,6 @@ For that, we just reuse <code class="docutils literal notranslate"><span class="
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">     21,21  1 534,88    375,46    704,50
   1 125,14  1 963,52    464,45  1 438,25
     796,53  1 569,00    157,14    886,59
-
 </span></div></div>
 </div>
 <ul class="simple">
@@ -2563,7 +2460,6 @@ For that, we just reuse <code class="docutils literal notranslate"><span class="
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">05/03/98
-
 </span></div></div>
 </div>
 <ul class="simple">
@@ -2607,7 +2503,7 @@ This is the recommended practice, because the <code class="docutils literal notr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.0 Unicode\ws\dfns.dws saved Tue Dec  1 20:08:40 2020
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.2 Unicode\ws\dfns.dws saved Wed Jan 26 20:52:26 2022
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -2623,7 +2519,6 @@ UVWXYZABCD
 EFGHIJKLMN
 OPQRSTUVWX
 YZABCDEFGH
-
 </span></div></div>
 </div>
 <p>With no left argument, <code class="docutils literal notranslate"><span class="pre">box</span></code> simply displays a box around the character matrix:</p>
@@ -2642,7 +2537,6 @@ YZABCDEFGH
 │OPQRSTUVWX│
 │YZABCDEFGH│
 └──────────┘
-
 </span></div></div>
 </div>
 <p>However, the left argument can be used to specify horizontal divider indices, vertical divider indices, and even the styling associated with the boxing and the dividers.</p>
@@ -2664,7 +2558,6 @@ YZABCDEFGH
 │OPQRSTUVWX│
 │YZABCDEFGH│
 └──────────┘
-
 </span></div></div>
 </div>
 <p>We can ask for no horizontal dividers and vertical dividers after the 3rd, 6th, and 7th columns:</p>
@@ -2683,7 +2576,6 @@ YZABCDEFGH
 │OPQ│RST│U│VWX│
 │YZA│BCD│E│FGH│
 └───┴───┴─┴───┘
-
 </span></div></div>
 </div>
 <p>We can mix the two:</p>
@@ -2704,7 +2596,6 @@ YZABCDEFGH
 │OPQ│RST│U│VWX│
 │YZA│BCD│E│FGH│
 └───┴───┴─┴───┘
-
 </span></div></div>
 </div>
 <p>And we can even use ASCII characters instead of line-drawing characters:</p>
@@ -2725,7 +2616,6 @@ YZABCDEFGH
 |OPQ|RST|U|VWX|
 |YZA|BCD|E|FGH|
 +---+---+-+---+
-
 </span></div></div>
 </div>
 <p>You can find more usage examples of <code class="docutils literal notranslate"><span class="pre">box</span></code> and a more thorough explanation of how the left argument works <a class="reference external" href="https://dfns.dyalog.com/n_box.htm">here</a>.</p>
@@ -2741,7 +2631,7 @@ To use <code class="docutils literal notranslate"><span class="pre">cols</span><
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.0 Unicode\ws\dfns.dws saved Tue Dec  1 20:08:40 2020
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.2 Unicode\ws\dfns.dws saved Wed Jan 26 20:52:26 2022
 </span></div></div>
 </div>
 <p>Notice how the first element of the left argument controls the spacing between columns:</p>
@@ -2754,7 +2644,6 @@ To use <code class="docutils literal notranslate"><span class="pre">cols</span><
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">A C E G I K M O Q S U W Y
 B D F H J L N P R T V X Z
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -2767,7 +2656,6 @@ B D F H J L N P R T V X Z
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">A  D  G  J  M  P  S  V  Y
 B  E  H  K  N  Q  T  W  Z
 C  F  I  L  O  R  U  X   
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -2781,7 +2669,6 @@ C  F  I  L  O  R  U  X
 B   F   J   N   R   V   Z
 C   G   K   O   S   W    
 D   H   L   P   T   X    
-
 </span></div></div>
 </div>
 <p>Also, notice how the second element of the left argument controls the maximum width of the table, in number of characters.</p>
@@ -2795,7 +2682,6 @@ D   H   L   P   T   X
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">A   D   G   J   M   P   S   V   Y
 B   E   H   K   N   Q   T   W   Z
 C   F   I   L   O   R   U   X    
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -2807,7 +2693,6 @@ C   F   I   L   O   R   U   X
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">A   C   E   G   I   K   M   O   Q   S   U   W   Y
 B   D   F   H   J   L   N   P   R   T   V   X   Z
-
 </span></div></div>
 </div>
 <p>Finally, it is worth noting that the items are laid out along the columns, and not along the rows.</p>
@@ -2825,7 +2710,7 @@ You can refer back to <a class="reference internal" href="Data-and-Variables.htm
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.0 Unicode\ws\dfns.dws saved Tue Dec  1 20:08:40 2020
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.2 Unicode\ws\dfns.dws saved Wed Jan 26 20:52:26 2022
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -2841,7 +2726,6 @@ You can refer back to <a class="reference internal" href="Data-and-Variables.htm
 │   - └───┘ │4 5 6│ │
 │           └~────┘ │
 └∊──────────────────┘
-
 </span></div></div>
 </div>
 <p>Notice how <code class="docutils literal notranslate"><span class="pre">display</span></code> provides information about the number of axes of each subarray, as well as giving an indication of what is the type of each subarray: whether it is all numeric, all character, mixed, or nested.
@@ -2859,7 +2743,6 @@ You can refer back to <a class="reference internal" href="Data-and-Variables.htm
 │   - └───┘ │4 5 6│ │
 │           └~────┘ │
 └∊──────────────────┘
-
 </span></div></div>
 </div>
 <p>Finally, <code class="docutils literal notranslate"><span class="pre">displayr</span></code> provides even more information, by including the depth of each subarray.
@@ -2877,7 +2760,6 @@ Furthermore, notice that <code class="docutils literal notranslate"><span class=
 │   - └────┘ │ 4 5 6│ │
 │            └~─────┘ │
 └¯2───────────────────┘
-
 </span></div></div>
 </div>
 <p>You can learn more about these three functions by visiting <a class="reference external" href="https://dfns.dyalog.com/n_display.htm">this</a> page.</p>
@@ -2898,7 +2780,6 @@ Using <code class="docutils literal notranslate"><span class="pre">disp</span></
 ├───┼───┤
 │2 1│2 2│
 └───┴───┘
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -2908,7 +2789,7 @@ Using <code class="docutils literal notranslate"><span class="pre">disp</span></
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.0 Unicode\ws\dfns.dws saved Tue Dec  1 20:08:40 2020
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.2 Unicode\ws\dfns.dws saved Wed Jan 26 20:52:26 2022
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -2923,7 +2804,6 @@ Using <code class="docutils literal notranslate"><span class="pre">disp</span></
 ├───┼───┤
 │2 1│2 2│
 └───┴───┘
-
 </span></div></div>
 </div>
 <p>In order to be able to see that <code class="docutils literal notranslate"><span class="pre">disp</span></code> actually does something, let us first turn <code class="docutils literal notranslate"><span class="pre">]box</span> <span class="pre">off</span></code>:</p>
@@ -2935,7 +2815,6 @@ Using <code class="docutils literal notranslate"><span class="pre">disp</span></
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">Was ON
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -2947,7 +2826,6 @@ Using <code class="docutils literal notranslate"><span class="pre">disp</span></
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace"> 1 1  1 2 
  2 1  2 2 
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -2962,7 +2840,6 @@ Using <code class="docutils literal notranslate"><span class="pre">disp</span></
 ├───┼───┤
 │2 1│2 2│
 └───┴───┘
-
 </span></div></div>
 </div>
 <p>The left argument to <code class="docutils literal notranslate"><span class="pre">disp</span></code> (a 1- or 2-element vector) can further customise the output:</p>
@@ -2982,7 +2859,6 @@ Using <code class="docutils literal notranslate"><span class="pre">disp</span></
 ├───┼────┤
 │&amp;  │2 40│
 └───┴────┘
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -2998,7 +2874,6 @@ Using <code class="docutils literal notranslate"><span class="pre">disp</span></
 ├──→┼~──→┤
 │&amp;  │2 40│
 └───┴~──→┘
-
 </span></div></div>
 </div>
 <ul class="simple">
@@ -3017,7 +2892,6 @@ Using <code class="docutils literal notranslate"><span class="pre">disp</span></
 ├───┼────┤
 │&amp;  │2 40│
 └───┴────┘
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -3033,7 +2907,6 @@ Using <code class="docutils literal notranslate"><span class="pre">disp</span></
 ├───┼────┤
 │ &amp; │2 40│
 └───┴────┘
-
 </span></div></div>
 </div>
 <p>You can learn more about <code class="docutils literal notranslate"><span class="pre">disp</span></code> if you follow <a class="reference external" href="https://dfns.dyalog.com/n_disp.htm">this</a> link.
@@ -3050,7 +2923,6 @@ Tea│4
    │2   
 ───┼────
 &amp;  │2 40
-
 </span></div></div>
 </div>
 <p>The left argument (that defaults to 1) is a Boolean that indicates whether or not the top bar should be displayed:</p>
@@ -3065,7 +2937,6 @@ Tea│4
    │2   
 ───┼────
 &amp;  │2 40
-
 </span></div></div>
 </div>
 <p>To learn more about this utility function, you can visit <a class="reference external" href="https://dfns.dyalog.com/n_dsp.htm">this</a> page.</p>
@@ -3086,7 +2957,6 @@ For example, <code class="docutils literal notranslate"><span class="pre">]box</
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">Was OFF
-
 </span></div></div>
 </div>
 <p>You can type <code class="docutils literal notranslate"><span class="pre">]</span> <span class="pre">-?</span></code> to get a list of all the available user commands, which should show list all of them with their group on the leftmost column.
@@ -3098,34 +2968,32 @@ Your exact output may not match the output here because you might be running a m
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">───────────────────────────────────────────────────────────────────────────────                                                                                                                                            
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">───────────────────────────────────────────────────────────────────────────────                                                                                                                                                                                     
 
-120 commands:                                                                                                                                                                                                              
+123 commands:                                                                                                                                                                                                                                                       
 
- ARRAY         Compare  Edit                                                                                                                                                                                               
- CALC          Factors  FromHex  PivotTable  ToHex                                                                                                                                                                         
- DEVOPS        DBuild  DTest                                                                                                                                                                                               
- EXPERIMENTAL  Config                                                                                                                                                                                                      
- FILE          CD  Collect  Compare  Edit  Find  Open  Replace  Split  ToLarge  ToQuadTS  Touch                                                                                                                            
- FN            Align  Calls  Compare  Defs  DInput  Latest  ReorderLocals                                                                                                                                                  
- LINK          Add  Break  Create  Export  Expunge  GetFileName  GetItemName  Import  Refresh  Resync  Status                                                                                                              
- MSWIN         Assemblies  Caption  CopyReg  FileAssociations  GUIProps  KeyPress                                                                                                                                          
- MYCMDS        Zen                                                                                                                                                                                                         
- NS            ScriptUpdate  Summary  Xref                                                                                                                                                                                 
- OUTPUT        Box  Boxing  Disp  Display  Find  Format  HTML  Layout  Plot  Rows  VPad                                                                                                                                    
- PERFORMANCE   Profile  RunTime  SpaceNeeded                                                                                                                                                                               
- SALT          Boot  Clean  Compare  List  Load  Refresh  RemoveVersions  Save  Set  Settings  Snap                                                                                                                        
- TATIN         CheckForLaterVersion  Documentation  Init  InstallPackage  ListPackages  ListRegistries  ListTags  ListVersions  LoadDependencies  LoadPackage  LoadTatin  Pack  PackageConfig  PackageDependencies  Publish
-               UninstallPackage  UserSettings  Version                                                                                                                                                                     
- TOOLS         ADoc  Calendar  Chart  Demo  Help  Version  WEd                                                                                                                                                             
- TRANSFER      In  Out                                                                                                                                                                                                     
- UCMD          UDebug  ULoad  UMonitor  UNew  UReset  USetup  UVersion                                                                                                                                                     
- WS            Check  Compare  Document  FindRefs  FnsLike  Locate  Map  NamesLike  Nms  ObsLike  Peek  SizeOf  VarsLike                                                                                                   
+ ARRAY         Compare  Edit                                                                                                                                                                                                                                        
+ CALC          Factors  FromHex  PivotTable  ToHex                                                                                                                                                                                                                  
+ DEVOPS        DBuild  DTest                                                                                                                                                                                                                                        
+ EXPERIMENTAL  Get                                                                                                                                                                                                                                                  
+ FILE          CD  Collect  Compare  Edit  Find  Open  Replace  Split  ToLarge  ToQuadTS  Touch                                                                                                                                                                     
+ FN            Align  Calls  Compare  Defs  DInput  Latest  ReorderLocals                                                                                                                                                                                           
+ LINK          Add  Break  Create  Export  Expunge  GetFileName  GetItemName  Import  Refresh  Resync  Status                                                                                                                                                       
+ MSWIN         Assemblies  Caption  CopyReg  fileassociations  GUIProps  KeyPress                                                                                                                                                                                   
+ NS            ScriptUpdate  Summary  Xref                                                                                                                                                                                                                          
+ OUTPUT        Box  Boxing  Disp  Display  Find  Format  HTML  Layout  Plot  Repr  Rows  View                                                                                                                                                                       
+ PERFORMANCE   Profile  RunTime  SpaceNeeded                                                                                                                                                                                                                        
+ SALT          Boot  Clean  Compare  List  Load  Refresh  RemoveVersions  Save  Set  Settings  Snap                                                                                                                                                                 
+ TATIN         CheckForLaterVersion  Documentation  Init  InstallPackage  ListPackages  ListRegistries  ListTags  ListVersions  LoadDependencies  LoadPackage  LoadTatin  Pack  PackageConfig  PackageDependencies  Publish  UninstallPackage  UserSettings  Version
+ TOOLS         ADoc  APLCart  Calendar  Chart  Config  Demo  Help  Version  WEd                                                                                                                                                                                     
+ TRANSFER      In  Out                                                                                                                                                                                                                                              
+ UCMD          UDebug  ULoad  UMonitor  UNew  UReset  USetup  UVersion                                                                                                                                                                                              
+ WS            Check  Compare  Document  FindRefs  FnsLike  Locate  Map  Names  NamesLike  Nms  ObsLike  Peek  SizeOf  VarsLike                                                                                                                                     
 
-]        ⍝ for general user command help                                                                                                                                                                                   
-] -??    ⍝ for brief info on each command                                                                                                                                                                                  
-]cmd -?  ⍝ for info on the "Cmd" command or group                                                                                                                                                                          
-
+]            ⍝ for general user command help                                                                                                                                                                                                                        
+] -??        ⍝ for brief info on each command                                                                                                                                                                                                                       
+]grp -?      ⍝ for info on the "GRP" group                                                                                                                                                                                                                          
+]grp.cmd -?  ⍝ for info on the "Cmd" command of the "GRP" group                                                                                                                                                                                                     
 </span></div></div>
 </div>
 <p>You can get more information about a specific user command, or about a specific group, by typing <code class="docutils literal notranslate"><span class="pre">]name</span> <span class="pre">-?</span></code>.
@@ -3148,12 +3016,13 @@ For example, if we want more help on the <code class="docutils literal notransla
   HTML     Render HTML or SVG using an appropriate method                                                                            
   Layout   Format text into vector of text vectors (or matrix if called from Session) to fit ⎕PW using margins inferred from the text
   Plot     Plot data using an appropriate method                                                                                     
+  Repr     Represent given value as APL/APLAN/JS/JSON/XML/CSV/SSV/PSV/TSV                                                            
   Rows     Cut, wrap, fold or extend the display of output lines to fit the Session window                                           
-  VPad     Add vertical padding to output                                                                                            
+  View     Evaluate and view in a read-only Editor window                                                                            
 
-]        ⍝ for general user command help                                                                                             
-]cmd -?  ⍝ for info on the "Cmd" command or group                                                                                    
-
+]            ⍝ for general user command help                                                                                         
+]grp -?      ⍝ for info on the "GRP" group                                                                                           
+]grp.cmd -?  ⍝ for info on the "Cmd" command of the "GRP" group                                                                      
 </span></div></div>
 </div>
 <p>This is the group of user commands that we will focus on.
@@ -3182,7 +3051,6 @@ Display specified array with borders indicating sub-array shape and type
     ]Disp &lt;array&gt;                                                              
 
 ]Disp -?? ⍝ for more information and examples                                  
-
 
 </span></div></div>
 </div>
@@ -3218,14 +3086,13 @@ If any axis is length-0 then the content is prototypical
 
 Example:                                                                                          
     ]Disp 1 1 4⍴(42'ab')⎕SE(⍪'ab',42)⍬                                                            
-┌→──────┬───┬──┬─┐                                                                                
-⍒┌→─┬──┐│   │ a│ │                                                                                
-││42│ab││⎕SE│ b│0│                                                                                
-│└~─┴─→┘│   │42↓ │                                                                                
-└──────→┴#──┴+→┴⊖┘                                                                                
+┌→──────┬─────┬──┬─┐                                                                              
+↓┌→─┬──┐│ ⎕SE │ a│0│                                                                              
+││42│ab││     │ b│ │                                                                              
+│└~─┴─→┘│     │42↓ │                                                                              
+└──────→┴#────┴+→┴⊖┘                                                                              
 
 NOTE:  This is similar to displaying array with ]Boxing on -style=mid                             
-
 
 </span></div></div>
 </div>
@@ -3242,7 +3109,6 @@ NOTE:  This is similar to displaying array with ]Boxing on -style=mid
 ││42│ab││   │ b│ │
 │└~─┴─→┘│   │42↓ │
 └──────→┴#──┴+→┴⊖┘
-
 </span></div></div>
 </div>
 <p>Similarly, we can get more detailed help for the <code class="docutils literal notranslate"><span class="pre">display</span></code> user command with <code class="docutils literal notranslate"><span class="pre">]display</span> <span class="pre">-??</span></code>, which shows a help message fairly similar to that of <code class="docutils literal notranslate"><span class="pre">]disp</span> <span class="pre">-??</span></code>.
@@ -3261,7 +3127,6 @@ The main difference between <code class="docutils literal notranslate"><span cla
 ││ │    └──┘ │     │42│     │
 ││ └∊────────┘     └+─┘     │
 └└∊─────────────────────────┘
-
 </span></div></div>
 </div>
 <p>The output produced by <code class="docutils literal notranslate"><span class="pre">]display</span></code> is fairly similar to the output of <code class="docutils literal notranslate"><span class="pre">dfns.display</span></code>:</p>
@@ -3279,7 +3144,6 @@ The main difference between <code class="docutils literal notranslate"><span cla
 ││ │    └──┘ │     │42│     │
 ││ └∊────────┘     └+─┘     │
 └└∊─────────────────────────┘
-
 </span></div></div>
 </div>
 <!--begin remark-->
@@ -3301,15 +3165,14 @@ Let us start by inspecting its help text:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">───────────────────────────────────────────────────────────────────────────────                 
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">───────────────────────────────────────────────────────────────────────────────                                               
 
-]OUTPUT.Box                                                                                     
+]OUTPUT.Box                                                                                                                   
 
-Display output with borders indicating shape, type and structure                                
-    ]Box [on|off|reset|?] [-style={min|mid|max}] [-trains={box|tree|parens|def}] [-fns={off|on}]
+Display output with borders indicating shape, type and structure                                                              
+    ]Box [on|off|reset|?] [-style={non|min|mid|max}] [-view={non|min|mid|max}] [-trains={box|tree|parens|def}] [-fns[=off|on]]
 
-]Box -?? ⍝ for more information and examples                                                    
-
+]Box -?? ⍝ for more information and examples                                                                                  
 
 </span></div></div>
 </div>
@@ -3328,75 +3191,81 @@ Take a look at the detailed help description below, and try to focus solely on f
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">───────────────────────────────────────────────────────────────────────────────                 
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">───────────────────────────────────────────────────────────────────────────────                                               
 
-]OUTPUT.Box                                                                                     
+]OUTPUT.Box                                                                                                                   
 
-Display output with borders indicating shape, type and structure                                
-    ]Box [on|off|reset|?] [-style={min|mid|max}] [-trains={box|tree|parens|def}] [-fns={off|on}]
+Display output with borders indicating shape, type and structure                                                              
+    ]Box [on|off|reset|?] [-style={non|min|mid|max}] [-view={non|min|mid|max}] [-trains={box|tree|parens|def}] [-fns[=off|on]]
 
-Argument is one of:                                                                             
-    ""        query on/off state only                                                           
-    "on"      activate boxing                                                                   
-    "off"     disable boxing                                                                    
-    "reset"   restore factory settings: -style=min -trains=box -fns=off                         
-    "?"       query current state including modifiers                                           
+Argument is one of:                                                                                                           
+    ""       query on/off state only                                                                                          
+    "on"     activate boxing                                                                                                  
+    "off"    disable boxing                                                                                                   
+    "reset"  restore factory settings: -style=min -view=min -trains=box -fns=off                                              
+    "?"      query current state including modifiers                                                                          
 
--style={min|mid|max}  amount of diagram detail                                                  
-    ┌───┬──────┐    ┌→──┬──────┐    ┌→───────────────┐                                          
-    │min│boxing│    │mid│boxing│    │ ┌→──┐ ┌→─────┐ │                                          
-    └───┴──────┘    └──→┴─────→┘    │ │max│ │boxing│ │                                          
-                                    │ └───┘ └──────┘ │                                          
-    min:  no border decoration      └∊───────────────┘                                          
-    mid:  axes are indicated as follows:                                                        
-            ↓  leading axis   (length&gt;0)                                                        
-            →  trailing axis  (length&gt;0)                                                        
-            ⌽  leading axis   (length=0)                                                        
-            ⊖  trailing axis  (length=0)                                                        
-            ⍒  multiple leading axes                                                            
-          content types are indicated as follows:                                               
-            ~  numeric                                                                          
-            ─  character                                                                        
-            #  namespace                                                                        
-            ∇  ⎕OR                                                                              
-            +  mixed                                                                            
-    max:  axes are indicated as follows:                                                        
-            ↓  leading axes   (length&gt;0)                                                        
-            →  trailing axis  (length&gt;0)                                                        
-            ⌽  leading axes   (length=0)                                                        
-            ⊖  trailing axis  (length=0)                                                        
-          content types are indicated as follows:                                               
-            ∊  nested                                                                           
-            ~  numeric                                                                          
-            ─  character                                                                        
-            #  namespace                                                                        
-            ∇  ⎕OR                                                                              
-            +  mixed                                                                            
-NOTES:                                                                                          
-    ∘  For mid and max, content is prototypical if any axis has length=0.                       
-    ∘  -style=mid is similar to always using ]Disp                                              
-    ∘  -style=max is similar to always using ]Display                                           
+-style={non|min|mid|max}  amount of diagram detail in Session                                                                 
+-view={non|min|mid|max}   amount of diagram detail when using ]View                                                           
+     non  boxing     ┌───┬──────┐    ┌→──┬──────┐    ┌→───────────────┐                                                       
+                     │min│boxing│    │mid│boxing│    │ ┌→──┐ ┌→─────┐ │                                                       
+                     └───┴──────┘    └──→┴─────→┘    │ │max│ │boxing│ │                                                       
+                                                     │ └───┘ └──────┘ │                                                       
+    non:  no borders                                 └∊───────────────┘                                                       
+    min:  no border decoration                                                                                                
+    mid:  axes are indicated as follows:                                                                                      
+            ↓  leading axis   (length&gt;0)                                                                                      
+            →  trailing axis  (length&gt;0)                                                                                      
+            ⌽  leading axis   (length=0)                                                                                      
+            ⊖  trailing axis  (length=0)                                                                                      
+            ⍒  multiple leading axes                                                                                          
+          content types are indicated as follows:                                                                             
+            ~  numeric                                                                                                        
+            ─  character                                                                                                      
+            #  namespace                                                                                                      
+            ∇  ⎕OR                                                                                                            
+            +  mixed                                                                                                          
+    max:  axes are indicated as follows:                                                                                      
+            ↓  leading axes   (length&gt;0)                                                                                      
+            →  trailing axis  (length&gt;0)                                                                                      
+            ⌽  leading axes   (length=0)                                                                                      
+            ⊖  trailing axis  (length=0)                                                                                      
+          content types are indicated as follows:                                                                             
+            ∊  nested                                                                                                         
+            ~  numeric                                                                                                        
+            ─  character                                                                                                      
+            #  namespace                                                                                                      
+            ∇  ⎕OR                                                                                                            
+            +  mixed                                                                                                          
+    NOTES:                                                                                                                    
+        ∘  For mid and max, content is prototypical if any axis has length=0.                                                 
+        ∘  -style=non is similar to non-boxed output, but fixes newline issues                                                
+        ∘  -style=mid is similar to always using ]Disp                                                                        
+        ∘  -style=max is similar to always using ]Display                                                                     
 
--trains={box|tree|parens|def}  display style of trains and derived functions                    
-    Display of +⌿÷≢ with -trains=...                                                            
-        box          tree     parens    def                                                     
-    ┌─────┬─┬─┐      ┌─┼─┐    (+⌿)÷≢   +⌿÷≢                                                     
-    │┌─┬─┐│÷│≢│      ⌿ ÷ ≢                                                                      
-    ││+│⌿││ │ │    ┌─┘                                                                          
-    │└─┴─┘│ │ │    +                                                                            
-    └─────┴─┴─┘                                                                                 
-    NOTE:  -trains=parens uses default form if any component needs multiple lines to display.   
+-trains={box|tree|parens|def}  display style of trains and derived functions                                                  
+    Display of +⌿÷≢ with -trains=...                                                                                          
+        box          tree     parens    def                                                                                   
+    ┌─────┬─┬─┐      ┌─┼─┐    (+⌿)÷≢   +⌿÷≢                                                                                   
+    │┌─┬─┐│÷│≢│      ⌿ ÷ ≢                                                                                                    
+    ││+│⌿││ │ │    ┌─┘                                                                                                        
+    │└─┴─┘│ │ │    +                                                                                                          
+    └─────┴─┴─┘                                                                                                               
+    NOTE:  -trains=parens uses default form if any component needs multiple lines to display.                                 
 
--fns={off|on}  diagram output from running functions                                            
-    Display of {⌽⎕←⍵}'hello' 'world' with -fns=...                                              
-         off               on                                                                   
-     hello  world    ┌─────┬─────┐                                                              
-    ┌─────┬─────┐    │hello│world│                                                              
-    │world│hello│    └─────┴─────┘                                                              
-    └─────┴─────┘    ┌─────┬─────┐                                                              
-                     │world│hello│                                                              
-                     └─────┴─────┘                                                              
+-fns={off|on}  diagram output from running functions                                                                          
+    Display of {⌽⎕←⍵}'hello' 'world' with -fns=...                                                                            
+         off               on                                                                                                 
+     hello  world    ┌─────┬─────┐                                                                                            
+    ┌─────┬─────┐    │hello│world│                                                                                            
+    │world│hello│    └─────┴─────┘                                                                                            
+    └─────┴─────┘    ┌─────┬─────┐                                                                                            
+                     │world│hello│                                                                                            
+                     └─────┴─────┘                                                                                            
 
+NOTE:  Make settings persist for future Dyalog instances by saving the session:                                               
+    Session&gt;Save or                                                                                                           
+    2⎕NQ⎕SE'FileWrite'                                                                                                        
 
 </span></div></div>
 </div>
@@ -3415,13 +3284,11 @@ These modifiers let you customise the behaviour of <code class="docutils literal
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">Was ON -style=min
-
-</span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">┌───────┬───┬──┬┐
-│┌──┬──┐│⎕SE│ a││
-││42│ab││   │ b││
-│└──┴──┘│   │42││
-└───────┴───┴──┴┘
-
+</span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">┌───────┬─────┬──┬┐
+│┌──┬──┐│ ⎕SE │ a││
+││42│ab││     │ b││
+│└──┴──┘│     │42││
+└───────┴─────┴──┴┘
 </span></div></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">-style=min</span></code> modifier displays arrays much like the <code class="docutils literal notranslate"><span class="pre">box</span></code> function from the <code class="docutils literal notranslate"><span class="pre">dfns</span></code> workspace, or even the <code class="docutils literal notranslate"><span class="pre">disp</span></code> function from the same workspace.</p>
@@ -3434,14 +3301,12 @@ These modifiers let you customise the behaviour of <code class="docutils literal
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">Was -style=min
-
-</span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→──────┬───┬──┬─┐
-↓┌→─┬──┐│⎕SE│ a│0│
-││42│ab││   │ b│ │
-│└~─┴─→┘│   │42↓ │
-└──────→┴#──┴+→┴⊖┘
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Was -style=mid
+</span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→──────┬─────┬──┬─┐
+↓┌→─┬──┐│ ⎕SE │ a│0│
+││42│ab││     │ b│ │
+│└~─┴─→┘│     │42↓ │
+└──────→┴#────┴+→┴⊖┘
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -3451,12 +3316,11 @@ These modifiers let you customise the behaviour of <code class="docutils literal
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→──────┬───┬──┬─┐
-⍒┌→─┬──┐│⎕SE│ a│0│
-││42│ab││   │ b│ │
-│└~─┴─→┘│   │42↓ │
-└──────→┴#──┴+→┴⊖┘
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→──────┬─────┬──┬─┐
+↓┌→─┬──┐│ ⎕SE │ a│0│
+││42│ab││     │ b│ │
+│└~─┴─→┘│     │42↓ │
+└──────→┴#────┴+→┴⊖┘
 </span></div></div>
 </div>
 <p>Finally, using the <code class="docutils literal notranslate"><span class="pre">-style=max</span></code> modifier, we get decorations on the boxes that are similar to those placed by the <code class="docutils literal notranslate"><span class="pre">]display</span></code> user command:</p>
@@ -3469,9 +3333,8 @@ These modifiers let you customise the behaviour of <code class="docutils literal
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→─────────────┐
-│Was -style=mid│
+│Was -style=max│
 └──────────────┘
-
 </span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">┌┌→─────────────────────────┐
 ↓↓ ┌→────────┐     ┌→─┐ ┌⊖┐ │
 ││ │    ┌→─┐ │ ⎕SE ↓ a│ │0│ │
@@ -3479,7 +3342,6 @@ These modifiers let you customise the behaviour of <code class="docutils literal
 ││ │    └──┘ │     │42│     │
 ││ └∊────────┘     └+─┘     │
 └└∊─────────────────────────┘
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -3491,7 +3353,6 @@ These modifiers let you customise the behaviour of <code class="docutils literal
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">Was ON
-
 </span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">┌┌→─────────────────────────┐
 ↓↓ ┌→────────┐     ┌→─┐ ┌⊖┐ │
 ││ │    ┌→─┐ │ ⎕SE ↓ a│ │0│ │
@@ -3499,7 +3360,6 @@ These modifiers let you customise the behaviour of <code class="docutils literal
 ││ │    └──┘ │     │42│     │
 ││ └∊────────┘     └+─┘     │
 └└∊─────────────────────────┘
-
 </span></div></div>
 </div>
 <p>Notice that we had to turn <code class="docutils literal notranslate"><span class="pre">]box</span></code> off, otherwise the implicit styling that <code class="docutils literal notranslate"><span class="pre">]box</span></code> creates around each array would be applied to the styling that <code class="docutils literal notranslate"><span class="pre">]display</span> <span class="pre">nestedArray</span></code> already creates, producing the following output:</p>
@@ -3514,7 +3374,6 @@ These modifiers let you customise the behaviour of <code class="docutils literal
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→──────┐
 │Was OFF│
 └───────┘
-
 </span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→────────────────────────────┐
 ↓┌┌→─────────────────────────┐│
 │↓↓ ┌→────────┐     ┌→─┐ ┌⊖┐ ││
@@ -3524,7 +3383,6 @@ These modifiers let you customise the behaviour of <code class="docutils literal
 │││ └∊────────┘     └+─┘     ││
 │└└∊─────────────────────────┘│
 └─────────────────────────────┘
-
 </span></div></div>
 </div>
 <p>Notice the extra outer box that is around a text matrix.
@@ -3545,7 +3403,6 @@ That extra outer box is the result of using <code class="docutils literal notran
 ││ │    └──┘ │     │42│     │
 ││ └∊────────┘     └+─┘     │
 └└∊─────────────────────────┘
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -3574,9 +3431,7 @@ That extra outer box is the result of using <code class="docutils literal notran
 ││ └∊────────┘     └+─┘     │
 └└∊─────────────────────────┘
 
-
 0
-
 
 </span></div></div>
 </div>
@@ -3591,7 +3446,6 @@ That extra outer box is the result of using <code class="docutils literal notran
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→──────────┐
 │Was -fns=on│
 └───────────┘
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -3609,9 +3463,7 @@ That extra outer box is the result of using <code class="docutils literal notran
 ││ └∊────────┘     └+─┘     │
 └└∊─────────────────────────┘
 
-
 0
-
 
 </span></div></div>
 </div>
@@ -3629,7 +3481,6 @@ For example, we know that <code class="docutils literal notranslate"><span class
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">  
 55
 
-
 </span></div></div>
 </div>
 <p>But what happens if we just type the derived function in the session?</p>
@@ -3642,8 +3493,7 @@ For example, we know that <code class="docutils literal notranslate"><span class
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">  /
 ┌─┘
-+  
-
++
 </span></div></div>
 </div>
 <p>We see that we get a box around each of the primitives, and that is because <code class="docutils literal notranslate"><span class="pre">]box</span></code> is on.
@@ -3661,11 +3511,9 @@ We can also try the <code class="docutils literal notranslate"><span class="pre"
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→───────────────┐
 │Was -trains=tree│
 └────────────────┘
-
 </span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">  /
 ┌─┘
-+  
-
++
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -3676,12 +3524,10 @@ We can also try the <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→───────────────┐
-│Was -trains=tree│
-└────────────────┘
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→─────────────────┐
+│Was -trains=parens│
+└──────────────────┘
 </span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">+/
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -3692,12 +3538,10 @@ We can also try the <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→─────────────────┐
-│Was -trains=parens│
-└──────────────────┘
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→──────────────┐
+│Was -trains=def│
+└───────────────┘
 </span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">+/
-
 </span></div></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">parens</span></code> and <code class="docutils literal notranslate"><span class="pre">def</span></code> options look the same because <code class="docutils literal notranslate"><span class="pre">+/</span></code> is too simple of a function.
@@ -3711,8 +3555,7 @@ Notice how we set some modifiers with the <code class="docutils literal notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">Was ON -style=max -trains=def -fns=on
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Was ON -style=mid -trains=tree -fns=on
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -3722,8 +3565,7 @@ Notice how we set some modifiers with the <code class="docutils literal notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">]boxing ON -style=mid -trains=tree -fns=on
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">]Boxing ON -style=mid -view=min -trains=tree -fns=on
 </span></div></div>
 </div>
 <p>Similarly, we can use <code class="docutils literal notranslate"><span class="pre">]boxing</span> <span class="pre">reset</span></code> to set everything back to the default values, and verify that <code class="docutils literal notranslate"><span class="pre">]box</span> <span class="pre">?</span></code> reflects those changes as well:</p>
@@ -3734,8 +3576,7 @@ Notice how we set some modifiers with the <code class="docutils literal notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">]boxing ON -style=min -trains=box -fns=off
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">]Boxing ON -style=min -view=min -trains=box -fns=off
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -3745,8 +3586,7 @@ Notice how we set some modifiers with the <code class="docutils literal notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">]boxing ON -style=min -trains=box -fns=off
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">]Box ON -style=min -view=min -trains=box -fns=off
 </span></div></div>
 </div>
 </div>
@@ -3767,10 +3607,9 @@ Here is the help description of the <code class="docutils literal notranslate"><
 ]OUTPUT.Rows                                                                   
 
 Cut, wrap, fold or extend the display of output lines to fit the Session window
-    ]Rows [on|off|?] [-style=&lt;s&gt;] [-fold=&lt;f&gt;] [-fns={on|off}] [-dots=&lt;c&gt;]      
+    ]Rows [on|off|reset|?] [-style=&lt;s&gt;] [-fold=&lt;f&gt;] [-fns[=on|off]] [-dots=&lt;c&gt;]
 
 ]Rows -??   ⍝ for more information and examples                                
-
 
 </span></div></div>
 </div>
@@ -3812,7 +3651,6 @@ You can assign an integer in the range 42 to 32767 to the variable <code class="
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">----'----|----'----|----'----|----'----|----'----|
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -3823,9 +3661,7 @@ You can assign an integer in the range 42 to 32767 to the variable <code class="
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">----'----|----'----|----'----|----'----|----'----|
-
       -
-
 </span></div></div>
 </div>
 <p>We can see that lines that are longer than <code class="docutils literal notranslate"><span class="pre">⎕PW</span></code> characters get wrapped and indented.</p>
@@ -3839,7 +3675,6 @@ You can assign an integer in the range 42 to 32767 to the variable <code class="
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">----'----|----'----|----'----|----'----|----'----|-
-
 </span></div></div>
 </div>
 <p>Now we don’t have to scroll vertically to get past the output of this single expression.
@@ -3853,7 +3688,6 @@ With <code class="docutils literal notranslate"><span class="pre">]rows</span></
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">Was OFF
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -3864,7 +3698,6 @@ With <code class="docutils literal notranslate"><span class="pre">]rows</span></
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">----'----|----'----|----'----|----'----|----'----|----'----|----'----|----'----|
-
 </span></div></div>
 </div>
 <p>In fact, with <code class="docutils literal notranslate"><span class="pre">]rows</span> <span class="pre">on</span></code>, the <em>print width</em> variable is no longer relevant, and the user command calculates the current screen width when needed.</p>
@@ -3883,14 +3716,16 @@ Let us ask for a more detailed help description with <code class="docutils liter
 
 Cut, wrap, fold or extend the display of output lines to fit
 the Session window                                          
-    ]Rows [on|off|?] [-style=&lt;s&gt;] [-fold=&lt;f&gt;]               
-    [-fns={on|off}] [-dots=&lt;c&gt;]                             
+    ]Rows [on|off|reset|?] [-style=&lt;s&gt;] [-fold=&lt;f&gt;]         
+    [-fns[=on|off]] [-dots=&lt;c&gt;]                             
 
 Argument:                                                   
-    ""      query main state (on/off)                       
-    "on"    enable row-processing                           
-    "off"   restore native ⎕PW block-wrapping               
-    "?"     query full state, including modifiers           
+    ""       query main state (on/off)                      
+    "on"     enable row-processing                          
+    "off"    restore native ⎕PW block-wrapping              
+    "reset"  restore factory settings: -style=long -fold=off
+             -fns=off -dots=·                               
+    "?"      query full state, including modifiers          
 
 Modifiers:                                                  
 
@@ -3899,52 +3734,50 @@ Modifiers:
     "cut"   rows truncated at screen width                  
     "wrap"  each row wrapped at screen width                
 
--fold=&lt;f&gt;                                                   
+-fold[=&lt;f&gt;]                                                 
     &lt;n&gt;     number of trailing rows after fold (must be 0   
-            through 9). Ignored when -style=wrap            
+            through 9; default: 3). Ignored with -style=wrap
     "off"   no folding; all rows displayed (default)        
+    NOTE:  -fold=&lt;n&gt; replaces rows towards the end of       
+           multi-row  output with a line of &lt;c&gt; characters  
+           so that the expression that generated the output,
+           together with some leading and trailing rows of  
+           its output, remain visible in the session window.
+           -fold=&lt;n&gt; may be appropriate for session-based   
+           demonstrations.                                  
 
 -fns={on|off}                                               
     "on"    also format output from running functions       
     "off"   only format session results (default)           
+    NOTE:  By default, only output from expressions typed   
+           into the session is processed. To include output 
+           from running functions, set -fns=on.             
+
+    Example:                                                
+          ]Rows -fold=3                                     
+    was -fold=off                                           
+          ⍳10 4   ⍝ this assumes that the session window is 
+                  13 lines high                             
+    ┌→───┬────┬────┬────┐                                   
+    ↓1 1 │1 2 │1 3 │1 4 │                                   
+    ├~──→┼~──→┼~──→┼~──→┤                                   
+    │2 1 │2 2 │2 3 │2 4 │                                   
+    ├~──→┼~──→┼~──→┼~──→┤                                   
+    │3 1 │3 2 │3 3 │3 4 │                                   
+    ├~──→┼~──→┼~──→┼~──→┤                                   
+    ·····················                                   
+    ├~──→┼~──→┼~──→┼~──→┤                                   
+    │10 1│10 2│10 3│10 4│                                   
+    └~──→┴~──→┴~──→┴~──→┘                                   
 
 -dots=&lt;c&gt;                                                   
     &lt;c&gt;     character to use for ellipses (default is "·",  
             shown as "···")                                 
 
-NOTES:                                                      
-    ∘  -fold=&lt;n&gt; replaces rows towards the end of multi-row 
-       output with a line of &lt;c&gt; characters so that the     
-       expression that generated the output, together with  
-       some leading and trailing rows of its output, remain 
-       visible in the session window. -fold=&lt;n&gt; may be      
-       appropriate for session-based demonstrations.        
-    ∘  -fold=&lt;n&gt; is incompatible with -style=wrap. If both  
-       are specified, -style=wrap prevails and -fold=&lt;n&gt; is 
-       ignored.                                             
-    ∘  -fold implies enabling row-processing, even if ]Rows 
-       "on" was not specified.                              
-    ∘  By default, only output from expressions typed into  
-       the session is processed. To include output from     
-       running functions, set -fns=on.                      
-
-Example:                                                    
-      ]Rows -fold=3                                         
-was -fold=off                                               
-      ⍳10 4   ⍝ this assumes that the session window is 13  
-              lines high                                    
-┌→───┬────┬────┬────┐                                       
-↓1 1 │1 2 │1 3 │1 4 │                                       
-├~──→┼~──→┼~──→┼~──→┤                                       
-│2 1 │2 2 │2 3 │2 4 │                                       
-├~──→┼~──→┼~──→┼~──→┤                                       
-│3 1 │3 2 │3 3 │3 4 │                                       
-├~──→┼~──→┼~──→┼~──→┤                                       
-·····················                                       
-├~──→┼~──→┼~──→┼~──→┤                                       
-│10 1│10 2│10 3│10 4│                                       
-└~──→┴~──→┴~──→┴~──→┘                                       
-
+NOTE:  Make settings persist for future Dyalog instances by 
+       saving the session:                                  
+    Session&gt;Save or                                         
+    2⎕NQ⎕SE'FileWrite'                                      
 
 </span></div></div>
 </div>
@@ -3979,10 +3812,8 @@ Notice how in the example below we have <code class="docutils literal notranslat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">Was ON -style=cut
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Was ON -style=wrap
 </span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">----'----|----'----|----'----|----'----|----'----|----'----|
-
 </span></div></div>
 </div>
 <p>Another difference between having <code class="docutils literal notranslate"><span class="pre">]rows</span> <span class="pre">off</span></code> and <code class="docutils literal notranslate"><span class="pre">]rows</span> <span class="pre">on</span> <span class="pre">-style=wrap</span></code> is that <code class="docutils literal notranslate"><span class="pre">]rows</span> <span class="pre">off</span></code> will wrap the lines of output as a block, whereas <code class="docutils literal notranslate"><span class="pre">-style=wrap</span></code> will wrap each line individually, like <a class="reference internal" href="#fig-session-rows-off-vs-wrapping"><span class="std std-numref">Fig. 7.5</span></a> shows.</p>
@@ -4000,8 +3831,7 @@ This can be changed by setting the <code class="docutils literal notranslate"><s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">Was ON -style=wrap -fns=off
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Was ON -style=cut -fns=off
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -4011,16 +3841,20 @@ This can be changed by setting the <code class="docutils literal notranslate"><s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">##########################################################################################################################################################################################################################################
-
-      ####################################################################################################################################################################################################################################
-
-      ######################################
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">##################################################
+      ############################################
+      ############################################
+      ############################################
+      ############################################
+      ############################################
+      ############################################
+      ############################################
+      ############################################
+      ############################################
+      ############################################
+      ##########
 ---
-
-#######################################################################################################################################################################################################################################···
-
+######################################################################################################################···
 </span></div></div>
 </div>
 <p>As you can see above, the first output – that was produced by the <code class="docutils literal notranslate"><span class="pre">⎕←</span> <span class="pre">v</span></code> statement inside the dfn – wrapped around because it was too long, effectively disregarding the modifier <code class="docutils literal notranslate"><span class="pre">-style=cut</span></code> from the user command <code class="docutils literal notranslate"><span class="pre">]rows</span></code>.
@@ -4036,8 +3870,7 @@ If you set the modifier <code class="docutils literal notranslate"><span class="
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">Was ON -fold=off
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Was ON -fold=0
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -4047,59 +3880,32 @@ If you set the modifier <code class="docutils literal notranslate"><span class="
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────┐                                                                                                                                                                                                                                   
-│1 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│2 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│3 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│4 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│5 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│6 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│7 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│8 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│9 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│10 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│11 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│12 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│13 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│14 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│15 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│16 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│17 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│18 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│19 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│20 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│21 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│22 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│23 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│24 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│25 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-··········································································································································································································································
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────┐
+│1 1  │
+├─────┤
+│2 1  │
+├─────┤
+│3 1  │
+├─────┤
+│4 1  │
+├─────┤
+│5 1  │
+├─────┤
+│6 1  │
+├─────┤
+│7 1  │
+├─────┤
+│8 1  │
+├─────┤
+│9 1  │
+├─────┤
+│10 1 │
+├─────┤
+│11 1 │
+├─────┤
+│12 1 │
+├─────┤
+·······
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -4109,8 +3915,7 @@ If you set the modifier <code class="docutils literal notranslate"><span class="
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">was -fold=0
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Was -fold=3
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -4120,59 +3925,32 @@ If you set the modifier <code class="docutils literal notranslate"><span class="
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────┐                                                                                                                                                                                                                                   
-│1 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│2 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│3 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│4 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│5 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│6 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│7 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│8 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│9 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│10 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│11 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│12 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│13 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│14 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│15 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│16 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│17 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│18 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│19 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│20 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│21 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│22 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│23 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│24 1 │                                                                                                                                                                                                                                   
-··········································································································································································································································
-├─────┤                                                                                                                                                                                                                                   
-│100 1│                                                                                                                                                                                                                                   
-└─────┘                                                                                                                                                                                                                                   
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────┐
+│1 1  │
+├─────┤
+│2 1  │
+├─────┤
+│3 1  │
+├─────┤
+│4 1  │
+├─────┤
+│5 1  │
+├─────┤
+│6 1  │
+├─────┤
+│7 1  │
+├─────┤
+│8 1  │
+├─────┤
+│9 1  │
+├─────┤
+│10 1 │
+├─────┤
+│11 1 │
+·······
+├─────┤
+│100 1│
+└─────┘
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -4182,8 +3960,7 @@ If you set the modifier <code class="docutils literal notranslate"><span class="
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">was -fold=3
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Was -fold=9
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -4193,59 +3970,32 @@ If you set the modifier <code class="docutils literal notranslate"><span class="
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────┐                                                                                                                                                                                                                                   
-│1 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│2 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│3 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│4 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│5 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│6 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│7 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│8 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│9 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│10 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│11 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│12 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│13 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│14 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│15 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│16 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│17 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│18 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│19 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│20 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│21 1 │                                                                                                                                                                                                                                   
-··········································································································································································································································
-├─────┤                                                                                                                                                                                                                                   
-│97 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│98 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│99 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│100 1│                                                                                                                                                                                                                                   
-└─────┘                                                                                                                                                                                                                                   
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────┐
+│1 1  │
+├─────┤
+│2 1  │
+├─────┤
+│3 1  │
+├─────┤
+│4 1  │
+├─────┤
+│5 1  │
+├─────┤
+│6 1  │
+├─────┤
+│7 1  │
+├─────┤
+│8 1  │
+·······
+├─────┤
+│97 1 │
+├─────┤
+│98 1 │
+├─────┤
+│99 1 │
+├─────┤
+│100 1│
+└─────┘
 </span></div></div>
 </div>
 <p>The final modifier that we have to discuss is <code class="docutils literal notranslate"><span class="pre">-dots=</span></code>, that allows to customise the character that is used to represent that output is truncated.
@@ -4258,8 +4008,7 @@ Changing the value is simple:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">was -dots=·
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Was -dots=#
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -4269,59 +4018,32 @@ Changing the value is simple:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────┐                                                                                                                                                                                                                                   
-│1 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│2 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│3 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│4 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│5 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│6 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│7 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│8 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│9 1  │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│10 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│11 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│12 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│13 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│14 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│15 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│16 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│17 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│18 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│19 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│20 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│21 1 │                                                                                                                                                                                                                                   
-##########################################################################################################################################################################################################################################
-├─────┤                                                                                                                                                                                                                                   
-│97 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│98 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│99 1 │                                                                                                                                                                                                                                   
-├─────┤                                                                                                                                                                                                                                   
-│100 1│                                                                                                                                                                                                                                   
-└─────┘                                                                                                                                                                                                                                   
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────┐
+│1 1  │
+├─────┤
+│2 1  │
+├─────┤
+│3 1  │
+├─────┤
+│4 1  │
+├─────┤
+│5 1  │
+├─────┤
+│6 1  │
+├─────┤
+│7 1  │
+├─────┤
+│8 1  │
+#######
+├─────┤
+│97 1 │
+├─────┤
+│98 1 │
+├─────┤
+│99 1 │
+├─────┤
+│100 1│
+└─────┘
 </span></div></div>
 </div>
 <p>It is advisable that you leave the modifier <code class="docutils literal notranslate"><span class="pre">-dots=</span></code> unchanged, or set it to a character that has the same properties that “∙” has: it is a character that doesn’t add much visual noise and it isn’t an ASCII character, meaning it is unlikely that the truncation marks from <code class="docutils literal notranslate"><span class="pre">]rows</span></code> will be mistaken by actual output or vice-versa.
@@ -4333,8 +4055,7 @@ That is why we reset <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">was -dots=#
-
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Was -dots=∙
 </span></div></div>
 </div>
 <div class="figure align-default" id="programming-art">
@@ -4380,7 +4101,6 @@ Let us write a function which accepts the index of the letters to switch as its 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">molar
-
 </span></div></div>
 </div>
 <p>In our example, <code class="docutils literal notranslate"><span class="pre">⍵</span></code> was equal to <code class="docutils literal notranslate"><span class="pre">'word'</span></code>, so the statement that assigns to <code class="docutils literal notranslate"><span class="pre">text</span></code> was equivalent to <code class="docutils literal notranslate"><span class="pre">text</span> <span class="pre">←</span> <span class="pre">'word[⍺]←word[v]'</span></code>.</p>
@@ -4396,7 +4116,6 @@ But now, let us try again on another variable:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">rats
-
 </span></div></div>
 </div>
 <p>The result now is <strong>wrong</strong>, it should have been <code class="docutils literal notranslate"><span class="pre">'arts'</span></code>.
@@ -4439,7 +4158,6 @@ On the other hand, if the condition is not satisfied, <em>compress</em> returns 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">Final discount is 7
-
 </span></div></div>
 </div>
 <p>This form is now considered obsolete and should be replaced by an <code class="docutils literal notranslate"><span class="pre">:If</span> <span class="pre">...</span> <span class="pre">:EndIf</span></code> control structure.
@@ -4455,7 +4173,6 @@ Going back to the previous example, one can use basic arithmetic operations to a
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">Final discount is 7
-
 </span></div></div>
 </div>
 </div>
@@ -4517,7 +4234,6 @@ This may seem a bit artificial, but imagine that we have three variables:</p>
 price   
 discount
 orders  
-
 </span></div></div>
 </div>
 <ul class="simple">
@@ -4531,7 +4247,6 @@ orders
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">USA
-
 </span></div></div>
 </div>
 <ul class="simple">
@@ -4568,13 +4283,9 @@ A simple loop should do that:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">prodUSA←val[row;]
-
 priceUSA←val[row;]
-
 discountUSA←val[row;]
-
 ordersUSA←val[row;]
-
 </span></div></div>
 </div>
 <p>This technique is prone to introduce errors that are hard to debug due to the dynamic nature of the variables being created.
@@ -4590,7 +4301,6 @@ For example, we could store the names of the rows as a nested character vector:<
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">┌────┬─────┬────────┬──────┐
 │prod│price│discount│orders│
 └────┴─────┴────────┴──────┘
-
 </span></div></div>
 </div>
 <p>And then use that variable to determine what is the row of numbers we need to access:</p>
@@ -4602,7 +4312,6 @@ For example, we could store the names of the rows as a nested character vector:<
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">623 486 739 648
-
 </span></div></div>
 </div>
 <p>This approach is also easy to extend if, instead of a single country in the variable <code class="docutils literal notranslate"><span class="pre">suffix</span></code>, we had a series of countries:</p>
@@ -4623,9 +4332,7 @@ For example, we could store the names of the rows as a nested character vector:<
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">623 486 739 648
 108 103 112  98
-  7   6   7   5
-890 942 637 806
-
+∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙
 646 502 778 670
 114 105 122 102
   8   7   8   6
@@ -4635,7 +4342,6 @@ For example, we could store the names of the rows as a nested character vector:<
 114 110 117 108
   8   7   8   6
 906 993 689 824
-
 </span></div></div>
 </div>
 <p>Then, we could use a similar technique to access the production of a single country, instead of dynamically creating 12 different variables:</p>
@@ -4647,7 +4353,6 @@ For example, we could store the names of the rows as a nested character vector:<
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">675 531 767 667
-
 </span></div></div>
 </div>
 </div>
@@ -4671,7 +4376,6 @@ The statement provided as the right argument will then be executed in the <em>na
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">42
-
 </span></div></div>
 </div>
 <p>Instead of <code class="docutils literal notranslate"><span class="pre">'#'</span></code> we can use the actual namespace reference:</p>
@@ -4690,7 +4394,6 @@ The statement provided as the right argument will then be executed in the <em>na
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">73
-
 </span></div></div>
 </div>
 <p>With the left argument being a namespace reference, you can also do “zero footprint” execution with <code class="docutils literal notranslate"><span class="pre">(⎕NS⍬)⍎expr</span></code>, where <code class="docutils literal notranslate"><span class="pre">expr</span></code> is what you want to execute.
@@ -4712,7 +4415,6 @@ For example:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">3333333333333333__._
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -4723,7 +4425,6 @@ For example:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">3333333333333333??.?
-
 </span></div></div>
 </div>
 </div>
@@ -4748,7 +4449,6 @@ The .NET framework includes a vast collection of utility programs, including fun
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1000000000000000000
-
 </span></div></div>
 </div>
 <p>Now we illustrate some of the capabilities of the <code class="docutils literal notranslate"><span class="pre">String.Format</span></code> method.</p>
@@ -4763,7 +4463,6 @@ An appropriate <code class="docutils literal notranslate"><span class="pre">Numb
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">en-US
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -4774,7 +4473,6 @@ An appropriate <code class="docutils literal notranslate"><span class="pre">Numb
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">English (United States)
-
 </span></div></div>
 </div>
 <p>Now we can call the <code class="docutils literal notranslate"><span class="pre">String.Format</span></code> method, that returns a string, which appears in APL as a character vector:</p>
@@ -4793,7 +4491,6 @@ An appropriate <code class="docutils literal notranslate"><span class="pre">Numb
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">3.14
-
 </span></div></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">0</span></code> in <code class="docutils literal notranslate"><span class="pre">{0:F}</span></code> is an index (selecting the first item in the data array), and <code class="docutils literal notranslate"><span class="pre">F</span></code> specifies fixed-point formatting.
@@ -4808,7 +4505,6 @@ The default number of digits and the decimal separator to use are specified in t
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─┬─┐
 │.│2│
 └─┴─┘
-
 </span></div></div>
 </div>
 <p>Of course, we don’t have to use the default format; we can also specify the number of decimal digits that we want.
@@ -4822,7 +4518,6 @@ In the following string we format the first number as a fixed-point number with 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">Pi is 3.14159 and I have $6.28
-
 </span></div></div>
 </div>
 <p>We also don’t have to use the current culture, we can select any of the cultures known to the .NET framework:</p>
@@ -4835,7 +4530,6 @@ In the following string we format the first number as a fixed-point number with 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">Pi is 3,14159 and I have 6,28 €
-
 </span></div></div>
 </div>
 <p>We can format dates:</p>
@@ -4847,7 +4541,6 @@ In the following string we format the first number as a fixed-point number with 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">29-Jun-21 5:40:00 PM
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -4858,7 +4551,6 @@ In the following string we format the first number as a fixed-point number with 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">Tuesday, 29 June, 2021
-
 </span></div></div>
 </div>
 <p>There is also a wide variety of options and parameters for formatting dates, for example:</p>
@@ -4871,7 +4563,6 @@ In the following string we format the first number as a fixed-point number with 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">Short date: 29-Jun-21, custom date: 29 June 21 05:40
-
 </span></div></div>
 </div>
 <p>In the case of dates (and many other classes), the <code class="docutils literal notranslate"><span class="pre">System.DateTime</span></code> class itself has a <code class="docutils literal notranslate"><span class="pre">toString</span></code> method which hooks up to the same underlying functionality:</p>
@@ -4883,7 +4574,6 @@ In the following string we format the first number as a fixed-point number with 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">{2021, 29 juin}
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -4894,7 +4584,6 @@ In the following string we format the first number as a fixed-point number with 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">{29 June 21}
-
 </span></div></div>
 </div>
 <p>The .NET base classes generally also contain a function called <code class="docutils literal notranslate"><span class="pre">Parse</span></code>, which performs the inverse operation:</p>
@@ -4906,7 +4595,6 @@ In the following string we format the first number as a fixed-point number with 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">3.14
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -4917,7 +4605,6 @@ In the following string we format the first number as a fixed-point number with 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">3.14
-
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -4928,7 +4615,6 @@ In the following string we format the first number as a fixed-point number with 
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">29-Jun-21 5:40:00 PM
-
 </span></div></div>
 </div>
 <p>The examples above have only scratched the surface of the wide variety of formatting options which are available.
