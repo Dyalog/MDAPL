@@ -7,6 +7,13 @@ In the first instance, it lists the changes between consecutive releases of this
 However, because this book is a rework of the first edition by Bernard Legrand,
 this changelog also marks with [n] content that is new in this rework.
 
+## 0.4.2
+
+  - Fix #24 by improving preprocessing script.
+  - Improve formatting and wording in the chapter (fix #23 and #26).
+  - Fix typos (fix #23).
+  - Fix #21.
+
 ## 0.4.1
 
   - Fix typos.

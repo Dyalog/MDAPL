@@ -161,6 +161,9 @@ def create_admonitions(lines):
     and end with <!-- end -->. The sections can optionally be completely offset
     with " > " to produce a blockquote that gives a visual cue for readers of
     the plain notebooks.
+    
+    Inside those sections, we look for code blocks or other formatting done with
+    backticks (`), to ensure that the outer admonition is nested correctly.
 
     Here, `name` is the name of the admonition and an optional `style=stylename`
     can be used to style the admonition as described in
@@ -195,11 +198,14 @@ def create_admonitions(lines):
                 content_lines = [match.group(2) + "\n" for match in bq_matches]
             else:
                 content_lines = intermediate_lines
+            # How deep must the admonition nesting be?
+            backtick_nesting = max(map(len, re.findall(r"`+", "\n".join(content_lines))), default=0)
+            backticks = "`" * max(3, 1 + backtick_nesting)
             lines = (
                 lines[:i] +
-                [f"```{{admonition}} {text} \n", f":class: {style}\n"] +
+                [f"{backticks}{{admonition}} {text} \n", f":class: {style}\n"] +
                 content_lines +
-                ["```\n"] +
+                [f"{backticks}\n"] +
                 lines[matching_line+1:]
             )
             # after doing the maths, this is exactly where we want to resume processing:
