@@ -26,8 +26,8 @@ this changelog also marks with [n] content that is new in this rework.
 
   - Fix typos.
   - Fix duplicate headers in “Some Primitive Functions”:
-    - under “Axis Specification”, there were 2 almost-consecutive duplicate level 4 headers under the _same_ level 3 header, and it made sense to join them together;
-    - rename “Special Notations” to “Replicate with Axis” under the section on replicate, to make the header more explicit;
+    - Under “Axis Specification”, there were 2 almost-consecutive duplicate level 4 headers under the _same_ level 3 header, and it made sense to join them together;
+    - Rename “Special Notations” to “Replicate with Axis” under the section on replicate, to make the header more explicit;
 
 ## v0.4
 
