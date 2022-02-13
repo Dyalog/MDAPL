@@ -713,12 +713,10 @@ Otherwise, an error will be reported.</p>
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">13
 </span></div></div>
 </div>
-<!--begin beware style=warning-->
-<p><em><strong>Beware</strong></em>:</p>
-<blockquote>
-<div><p>Note that if the argument does not return a result, it can still be executed, but <em>execute</em> will not return a result, and any attempt to assign it to a variable or to use it in any other way will cause a <code class="docutils literal notranslate"><span class="pre">VALUE</span> <span class="pre">ERROR</span></code>.</p>
-</div></blockquote>
-<!--end-->
+<div class="warning admonition">
+<p class="admonition-title">Beware</p>
+<p>Note that if the argument does not return a result, it can still be executed, but <em>execute</em> will not return a result, and any attempt to assign it to a variable or to use it in any other way will cause a <code class="docutils literal notranslate"><span class="pre">VALUE</span> <span class="pre">ERROR</span></code>.</p>
+</div>
 <p>Take a modification of our <code class="docutils literal notranslate"><span class="pre">Plus</span></code> function that returns no result:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1235,12 +1233,11 @@ Dyadic <em>format</em> converts numbers into text in a format that is described 
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">3 24
 </span></div></div>
 </div>
-<!--begin remark-->
-<p><em><strong>Remark</strong></em>:</p>
-<blockquote>
-<div><p>You can see that the numbers to be formatted are <strong>rounded</strong> rather than truncated when the specified format does not allow the full precision of the numbers to be shown.</p>
-</div></blockquote>
-<!--end--></div>
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
+<p>You can see that the numbers to be formatted are <strong>rounded</strong> rather than truncated when the specified format does not allow the full precision of the numbers to be shown.</p>
+</div>
+</div>
 <div class="section" id="overflow">
 <span id="execute-and-format-control-overflow"></span><h4><span class="section-number">7.2.2.2. </span>Overflow<a class="headerlink" href="#overflow" title="Permalink to this headline">¶</a></h4>
 <p>If a column is not wide enough to represent some of the numbers, these numbers will be replaced by asterisks.</p>
@@ -1296,11 +1293,10 @@ Dyadic <em>format</em> converts numbers into text in a format that is described 
 796.53******157.14886.59
 </span></div></div>
 </div>
-<!--begin remark-->
-<p><em><strong>Remark</strong></em>:</p>
-<blockquote>
-<div><p>To calculate the width required to represent a number you must account for the minus sign, the integer digits, the decimal point, and as many decimal digits as specified in the <em>descriptor</em>.</p>
-</div></blockquote>
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
+<p>To calculate the width required to represent a number you must account for the minus sign, the integer digits, the decimal point, and as many decimal digits as specified in the <em>descriptor</em>.</p>
+</div>
 </div>
 <div class="section" id="multiple-specifications">
 <span id="execute-and-format-control-multiple-specifications"></span><h4><span class="section-number">7.2.2.3. </span>Multiple Specifications<a class="headerlink" href="#multiple-specifications" title="Permalink to this headline">¶</a></h4>
@@ -1639,15 +1635,13 @@ June
 <li><p><code class="docutils literal notranslate"><span class="pre">'A4'</span></code>: the first column of <code class="docutils literal notranslate"><span class="pre">chemistry</span></code>, displayed in a column that is 4 characters wide, produces a separation of 3 blanks; and</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'9A1'</span></code>: the subsequent columns of <code class="docutils literal notranslate"><span class="pre">chemistry</span></code> are displayed in (up to) 9 columns, each of which is 1 character wide.</p></li>
 </ul>
-<!--begin remarks-->
-<p><em><strong>Remarks</strong></em>:</p>
-<blockquote>
-<div><ul class="simple">
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
+<ul class="simple">
 <li><p>Specifications (<code class="docutils literal notranslate"><span class="pre">'I'</span></code>, <code class="docutils literal notranslate"><span class="pre">'F'</span></code>, <code class="docutils literal notranslate"><span class="pre">'A'</span></code>, …) must be uppercase letters (lowercase specifications cause errors); and</p></li>
 <li><p>We specified <code class="docutils literal notranslate"><span class="pre">'9A1'</span></code>, though we had only 4 remaining columns to format, with no problems; <code class="docutils literal notranslate"><span class="pre">⎕FMT</span></code> ignores excess repetition factors.</p></li>
 </ul>
-</div></blockquote>
-<!--end-->
+</div>
 <p>But what would happen if the first descriptor was larger than necessary?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2154,12 +2148,10 @@ However, if we were to use <code class="docutils literal notranslate"><span clas
 673.08
 </span></div></div>
 </div>
-<!--begin tip-->
-<p><em><strong>Tip</strong></em>:</p>
-<blockquote>
-<div><p>In the use-case above, the number of decimal places you use in the text descriptor of the specification <code class="docutils literal notranslate"><span class="pre">'G'</span></code> is the number <code class="docutils literal notranslate"><span class="pre">n</span></code> you should use with the qualifier <code class="docutils literal notranslate"><span class="pre">'Kn'</span></code>.</p>
-</div></blockquote>
-<!--end-->
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>In the use-case above, the number of decimal places you use in the text descriptor of the specification <code class="docutils literal notranslate"><span class="pre">'G'</span></code> is the number <code class="docutils literal notranslate"><span class="pre">n</span></code> you should use with the qualifier <code class="docutils literal notranslate"><span class="pre">'Kn'</span></code>.</p>
+</div>
 <p>Now we use the qualifier <code class="docutils literal notranslate"><span class="pre">'Z'</span></code> to pad values with zeroes on the left.
 Notice, also, how a repetition factor may be applied to a list of specifications enclosed by parentheses:</p>
 <div class="cell docutils container">
@@ -3146,12 +3138,10 @@ The main difference between <code class="docutils literal notranslate"><span cla
 └└∊─────────────────────────┘
 </span></div></div>
 </div>
-<!--begin remark-->
-<p><em><strong>Remark</strong></em>:</p>
-<blockquote>
-<div><p>We can see that <code class="docutils literal notranslate"><span class="pre">]display</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">dfns.display</span></code> and that <code class="docutils literal notranslate"><span class="pre">]disp</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">dfns.disp</span></code>, but there is one fundamental difference: only the <code class="docutils literal notranslate"><span class="pre">dfns</span></code> functions can be called from within other functions; the user commands can only be used from within the interpreter session.</p>
-</div></blockquote>
-<!--end-->
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
+<p>We can see that <code class="docutils literal notranslate"><span class="pre">]display</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">dfns.display</span></code> and that <code class="docutils literal notranslate"><span class="pre">]disp</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">dfns.disp</span></code>, but there is one fundamental difference: only the <code class="docutils literal notranslate"><span class="pre">dfns</span></code> functions can be called from within other functions; the user commands can only be used from within the interpreter session.</p>
+</div>
 <p>The previous remark justifies the existence of these pairs of functions/user commands that are so similar: the user commands are extremely handy for use in the session, but the functions are necessary if we want to use that functionality from within other functions.</p>
 </div>
 <div class="section" id="box-and-boxing">
@@ -3615,13 +3605,11 @@ Cut, wrap, fold or extend the display of output lines to fit the Session window
 </div>
 <p>From the help description we can see that the <code class="docutils literal notranslate"><span class="pre">]rows</span></code> command exists to handle output that is too tall and/or too wide to fit the session window.
 What does “too tall” or “too wide” mean?</p>
-<!--begin remark-->
-<p><em><strong>Remark</strong></em>:</p>
-<blockquote>
-<div><p>In the Jupyter interface, the screen width that <code class="docutils literal notranslate"><span class="pre">]rows</span></code> uses internally might not match the actual width you have available to display results.
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
+<p>In the Jupyter interface, the screen width that <code class="docutils literal notranslate"><span class="pre">]rows</span></code> uses internally might not match the actual width you have available to display results.
 It is advisable that you use RIDE or the Windows interpreter to test the user command <code class="docutils literal notranslate"><span class="pre">]rows</span></code>.</p>
-</div></blockquote>
-<!--end-->
+</div>
 <p>Let us start by talking about wide output.
 When using the interpreter, the output is “too wide” if it would extend beyond the session window width.
 The <a class="reference internal" href="#fig-session-wrap"><span class="std std-numref">Fig. 7.2</span></a> shows that when the output is “too wide”, it wraps to the next line(s).</p>

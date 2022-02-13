@@ -1520,17 +1520,16 @@ So, you decide to go back and play a bit more with the expression you had before
 </div>
 <p>So, having a “dirty” state indicator can easily lead to a lot of confusion.</p>
 <p>You should also be aware that because APL preserves the full context in which a function stopped or crashed, all the local variables are retained too; this may require a lot of memory space!</p>
-<!--begin tip-->
-<p><em><strong>Recommendation</strong></em>:</p>
-<blockquote>
-<div><p>When a function crashes, always try to clear the stack if you can:</p>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>When a function crashes, always try to clear the stack if you can:</p>
 <ul class="simple">
 <li><p>try to correct the problem and resume function execution; or</p></li>
 <li><p>if that is impossible, abort it and reset the execution context by executing <code class="docutils literal notranslate"><span class="pre">)reset</span></code>.</p></li>
 </ul>
 <p>If you can’t fix it <em>right now</em>, Dyalog will allow you to <code class="docutils literal notranslate"><span class="pre">)save</span></code> the workspace and come back to it later.</p>
-</div></blockquote>
-<!--end--></div>
+</div>
+</div>
 </div>
 <div class="section" id="most-frequent-error-messages">
 <span id="first-aid-kit-most-frequent-error-messages"></span><h2><span class="section-number">6.2. </span>Most Frequent Error Messages<a class="headerlink" href="#most-frequent-error-messages" title="Permalink to this headline">¶</a></h2>
@@ -1613,12 +1612,10 @@ For example:</p>
 </div>
 </div>
 </div>
-<!--begin tip-->
-<p><em><strong>Suggestion</strong></em>:</p>
-<blockquote>
-<div><p>If an operation like <code class="docutils literal notranslate"><span class="pre">X+Y</span></code> causes a <code class="docutils literal notranslate"><span class="pre">LENGTH</span> <span class="pre">ERROR</span></code>, look at the shapes of both arguments <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Y</span></code>, and see if they are compatible with one another.</p>
-</div></blockquote>
-<!--end-->
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>If an operation like <code class="docutils literal notranslate"><span class="pre">X+Y</span></code> causes a <code class="docutils literal notranslate"><span class="pre">LENGTH</span> <span class="pre">ERROR</span></code>, look at the shapes of both arguments <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Y</span></code>, and see if they are compatible with one another.</p>
+</div>
 <p>Also remember that:</p>
 <ul class="simple">
 <li><p>a matrix with only one row looks like (but is not) a vector and a matrix/vector with only one element looks like (but is not) a scalar (see <a class="reference internal" href="Data-and-Variables.html#data-and-variables-beware"><span class="std std-numref">Section 3.3.4</span></a>); and</p></li>
@@ -1815,12 +1812,11 @@ For example, to concatenate the two matrices shown above, the correct syntax is 
 </div>
 </div>
 <p>Notice the misplaced comma, which leads APL to try and calculate <code class="docutils literal notranslate"><span class="pre">MatA[1]</span></code>, which fails because <code class="docutils literal notranslate"><span class="pre">MatA</span></code> is a matrix and not a vector.</p>
-<!--begin tip-->
-<p><em><strong>Suggestion</strong></em>:</p>
-<blockquote>
-<div><p>If a statement causes a <code class="docutils literal notranslate"><span class="pre">RANK</span> <span class="pre">ERROR</span></code>, look at the shapes of all the arrays involved in the expression.</p>
-</div></blockquote>
-<!--end--></div>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>If a statement causes a <code class="docutils literal notranslate"><span class="pre">RANK</span> <span class="pre">ERROR</span></code>, look at the shapes of all the arrays involved in the expression.</p>
+</div>
+</div>
 <div class="section" id="index-error-en-3">
 <span id="first-aid-kit-index-error-en3"></span><h4><span class="section-number">6.2.1.4. </span><code class="docutils literal notranslate"><span class="pre">INDEX</span> <span class="pre">ERROR</span></code> (<code class="docutils literal notranslate"><span class="pre">⎕EN=3</span></code>)<a class="headerlink" href="#index-error-en-3" title="Permalink to this headline">¶</a></h4>
 <p>You tried to index a variable, but your index was wrong.
@@ -1846,12 +1842,11 @@ For example, you tried to get the 20th element of a vector which only has 17 ele
 </div>
 </div>
 <p>This doesn’t work because <code class="docutils literal notranslate"><span class="pre">forecast</span></code> has 6 columns but only 4 rows: the second index is good but the first one is not.</p>
-<!--begin tip-->
-<p><em><strong>Suggestion</strong></em>:</p>
-<blockquote>
-<div><p>If the error occurs in an indexing operation like <code class="docutils literal notranslate"><span class="pre">var[indexA;indexB;...]</span></code>, look at the shape of <code class="docutils literal notranslate"><span class="pre">var</span></code> and check if <code class="docutils literal notranslate"><span class="pre">indexA</span></code>, <code class="docutils literal notranslate"><span class="pre">indexB</span></code>, etc., contain values which are compatible with the size of <code class="docutils literal notranslate"><span class="pre">var</span></code>.</p>
-</div></blockquote>
-<!--end--></div>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>If the error occurs in an indexing operation like <code class="docutils literal notranslate"><span class="pre">var[indexA;indexB;...]</span></code>, look at the shape of <code class="docutils literal notranslate"><span class="pre">var</span></code> and check if <code class="docutils literal notranslate"><span class="pre">indexA</span></code>, <code class="docutils literal notranslate"><span class="pre">indexB</span></code>, etc., contain values which are compatible with the size of <code class="docutils literal notranslate"><span class="pre">var</span></code>.</p>
+</div>
+</div>
 <div class="section" id="domain-error-en-11">
 <span id="first-aid-kit-domain-error-en11"></span><h4><span class="section-number">6.2.1.5. </span><code class="docutils literal notranslate"><span class="pre">DOMAIN</span> <span class="pre">ERROR</span></code> (<code class="docutils literal notranslate"><span class="pre">⎕EN=11</span></code>)<a class="headerlink" href="#domain-error-en-11" title="Permalink to this headline">¶</a></h4>
 <p>This error is much more complex to diagnose.</p>
@@ -1996,13 +1991,12 @@ Hint: for a simple array <code class="docutils literal notranslate"><span class=
 </div>
 <p>More generally, all these statements are in themselves perfectly correct when applied to appropriate data.
 However, they may fail when applied to other, inappropriate data.</p>
-<!--begin tip-->
-<p><em><strong>Suggestion</strong></em>:</p>
-<blockquote>
-<div><p>Do not worry too much about the syntax of your statement: it is probably good.
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>Do not worry too much about the syntax of your statement: it is probably good.
 You should instead try to determine which values are appropriate to the operation, and check whether the actual values are within the operation’s domain.</p>
-</div></blockquote>
-<!--end--></div>
+</div>
+</div>
 <div class="section" id="syntax-error-en-2">
 <span id="first-aid-kit-syntax-error-en2"></span><h4><span class="section-number">6.2.1.6. </span><code class="docutils literal notranslate"><span class="pre">SYNTAX</span> <span class="pre">ERROR</span></code> (<code class="docutils literal notranslate"><span class="pre">⎕EN=2</span></code>)<a class="headerlink" href="#syntax-error-en-2" title="Permalink to this headline">¶</a></h4>
 <p>This error may also be a difficult one.
@@ -2421,12 +2415,11 @@ On the Windows IDE, you just have to enable or disable the “Single trace windo
 <p>When the IDE is set to only have a single trace window, the contents of the trace window are replaced by the new current function, both when the execution enters a sub function and when it returns to its calling function.</p>
 <p>It is up to you to decide which configuration is most convenient for you.
 In any case, this can be changed dynamically, without restarting APL.</p>
-<!--begin note-->
-<p><em><strong>Note</strong></em>:</p>
-<blockquote>
-<div><p>Notice that some of these settings might also affect how <em>edit</em> windows are displayed, so be sure to have that in mind when picking your preferred configuration.</p>
-</div></blockquote>
-<!--end--></div>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p>Notice that some of these settings might also affect how <em>edit</em> windows are displayed, so be sure to have that in mind when picking your preferred configuration.</p>
+</div>
+</div>
 <div class="section" id="breakpoints-and-trace-controls">
 <span id="first-aid-kit-breakpoints-and-trace-controls"></span><h3><span class="section-number">6.3.3. </span>Breakpoints and Trace-Controls<a class="headerlink" href="#breakpoints-and-trace-controls" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="set-breakpoints">
@@ -2599,12 +2592,10 @@ There is another debugging technique in which functions are executed normally; n
 To set this up, <strong>before</strong> execution, the developer sets trace-controls on selected statements in one or more functions.
 Whenever a line marked by a trace-control is executed, the last value calculated on that line will be displayed in the session, without interrupting execution.
 Let us explore this technique.</p>
-<!--begin remark-->
-<p><em><strong>Remark</strong></em>:</p>
-<blockquote>
-<div><p>Bear in mind that this technique only works with tradfns, which is one of the reasons we said tradfns can be easier to debug in <a class="reference internal" href="User-Defined-Functions.html#user-defined-functions-use-cases"><span class="std std-numref">Section 5.8.2</span></a>.</p>
-</div></blockquote>
-<!--end-->
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
+<p>Bear in mind that this technique only works with tradfns, which is one of the reasons we said tradfns can be easier to debug in <a class="reference internal" href="User-Defined-Functions.html#user-defined-functions-use-cases"><span class="std std-numref">Section 5.8.2</span></a>.</p>
+</div>
 <p>First, in <code class="docutils literal notranslate"><span class="pre">Palindrome</span></code>, let us replace <code class="docutils literal notranslate"><span class="pre">ReverBug</span></code> by another looping function, <code class="docutils literal notranslate"><span class="pre">ReverLoop</span></code>, that is more appropriate for this test:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

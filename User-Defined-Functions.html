@@ -2479,17 +2479,16 @@ Mexico
 </span></div></div>
 </div>
 <p>As we can see, <code class="docutils literal notranslate"><span class="pre">inverses</span></code> is now treated as a local variable.</p>
-<!--begin rules-->
-<p><em><strong>Rules</strong></em>:</p>
-<blockquote>
-<div><ul class="simple">
+<div class="tip admonition">
+<p class="admonition-title">Rules</p>
+<ul class="simple">
 <li><p>All the names referenced in the header of a function (including its result and arguments) are <em>local</em> to the function. They will exist only during the execution of the function.</p></li>
 <li><p>Operations made on local variables do not affect <em>global</em> variables having the same names.</p></li>
 <li><p><em>Global</em> and <em>local</em> are relative notions: when a tradfn calls another sub function, variables local to the calling function are global for the called function. This will be further explored in <a class="reference internal" href="#user-defined-functions-dynamic-scoping"><span class="std std-numref">Section 5.6.5</span></a>.</p></li>
 <li><p>All the variables used in a tradfn should preferably be declared local, unless you specifically intend otherwise.</p></li>
 </ul>
-</div></blockquote>
-<!--end--></div>
+</div>
+</div>
 <div class="section" id="defining-sub-functions">
 <span id="user-defined-functions-defining-sub-functions"></span><h3><span class="section-number">5.6.3. </span>Defining Sub-Functions<a class="headerlink" href="#defining-sub-functions" title="Permalink to this headline">¶</a></h3>
 <p>As we have seen, dfns can be defined inside other dfns. Similarly, dfns can be defined inside tradfns and used right away. The precautions mentioned above, that need to be taken with respect to <em>global</em> versus <em>local</em> variables, still apply. In short, do not forget to localise the name of a temporary dfn unless you really mean for it to become global.</p>
@@ -3001,12 +3000,10 @@ In <a class="reference internal" href="#user-defined-functions-scoping-in-nested
 <li><p><em>Condition</em> is any expression whose result is a Boolean scalar or one-item array; for example, <code class="docutils literal notranslate"><span class="pre">code∊list</span></code>, <code class="docutils literal notranslate"><span class="pre">price&gt;100</span></code> or <code class="docutils literal notranslate"><span class="pre">values∧.=0</span></code>; and</p></li>
 <li><p>Block <strong>1</strong> will be executed if <em>Condition</em> is satisfied.</p></li>
 </ul>
-<!--begin example-->
-<p><em><strong>Example</strong></em>:</p>
-<blockquote>
-<div><p>Our keyboard has been damaged: we can no longer use the <em>absolute value</em> key. Perhaps a tradfn could replace it? Try writing a tradfn using an <code class="docutils literal notranslate"><span class="pre">:If</span></code> clause.</p>
-</div></blockquote>
-<!--end-->
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Our keyboard has been damaged: we can no longer use the <em>absolute value</em> key. Perhaps a tradfn could replace it? Try writing a tradfn using an <code class="docutils literal notranslate"><span class="pre">:If</span></code> clause.</p>
+</div>
 <p>Here is a possible solution:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3050,12 +3047,10 @@ In <a class="reference internal" href="#user-defined-functions-scoping-in-nested
 <p class="caption"><span class="caption-number">Fig. 5.13 </span><span class="caption-text">A diagram with the usage of <code class="docutils literal notranslate"><span class="pre">:If...</span> <span class="pre">:Else...</span> <span class="pre">:EndIf</span></code>.</span><a class="headerlink" href="#control-flow-if-else-endif" title="Permalink to this image">¶</a></p>
 </div>
 <p>Blocks <strong>0</strong> and <strong>3</strong> will always be executed, if present. Block <strong>1</strong> will be executed if <em>Condition</em> <strong>is</strong> satisfied and Block <strong>2</strong> will be executed if <em>Condition</em> is <strong>not</strong> satisfied. Notice this means that exactly <em>one</em> of the two blocks gets executed. Never both, and never none.</p>
-<!--begin example-->
-<p><em><strong>Example</strong></em>:</p>
-<blockquote>
-<div><p>Let us try to find the real roots of the quadratic equation <span class="math notranslate nohighlight">\(ax^2 + bx + c = 0\)</span>, given the values of <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>. If the quantity <span class="math notranslate nohighlight">\(\Delta = b^2 - 4ac\)</span> is negative, it is known that the two solutions of this equation are complex numbers. <span class="math notranslate nohighlight">\(\Delta\)</span> is commonly referred to as the <a class="reference external" href="https://en.wikipedia.org/wiki/Quadratic_equation#Discriminant">discriminant</a> of the equation.</p>
-</div></blockquote>
-<!--end-->
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Let us try to find the real roots of the quadratic equation <span class="math notranslate nohighlight">\(ax^2 + bx + c = 0\)</span>, given the values of <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> and <span class="math notranslate nohighlight">\(c\)</span>. If the quantity <span class="math notranslate nohighlight">\(\Delta = b^2 - 4ac\)</span> is negative, it is known that the two solutions of this equation are complex numbers. <span class="math notranslate nohighlight">\(\Delta\)</span> is commonly referred to as the <a class="reference external" href="https://en.wikipedia.org/wiki/Quadratic_equation#Discriminant">discriminant</a> of the equation.</p>
+</div>
 <p>We can write a tradfn that computes the two roots by means of the <a class="reference external" href="https://en.wikipedia.org/wiki/Quadratic_equation#Quadratic_formula_and_its_derivation">quadratic formula</a>, except that it issues an error message if there are no real roots. We will use an <code class="docutils literal notranslate"><span class="pre">:If...</span> <span class="pre">:Else...</span> <span class="pre">:EndIf</span></code> clause for this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3117,12 +3112,10 @@ In <a class="reference internal" href="#user-defined-functions-scoping-in-nested
 <p class="caption"><span class="caption-number">Fig. 5.15 </span><span class="caption-text">A diagram with the usage of <code class="docutils literal notranslate"><span class="pre">:AndIf</span></code>.</span><a class="headerlink" href="#control-flow-andif" title="Permalink to this image">¶</a></p>
 </div>
 <p>Again, Block <strong>0</strong> and Block <strong>3</strong> will always be executed. Block <strong>1</strong> is optional and will only be executed if <em>Condition</em> <strong>1</strong> <strong>is</strong> satisfied. Likewise, <em>Condition</em> <strong>2</strong> will be executed only if <em>Condition</em> <strong>1</strong> is satisfied. Finally, Block <strong>2</strong> is executed if both <em>Condition</em> <strong>1</strong> <strong>AND</strong> <em>Condition</em> <strong>2</strong> are satisfied.</p>
-<!--begin rule-->
-<p><em><strong>Rule</strong></em>:</p>
-<blockquote>
-<div><p>For <code class="docutils literal notranslate"><span class="pre">:OrIf</span></code> and <code class="docutils literal notranslate"><span class="pre">:AndIf</span></code>, Block <strong>1</strong> and <em>Condition</em> <strong>2</strong> are only executed if the result of <em>Condition</em> <strong>1</strong> is <strong>not</strong> enough to determine the result of the Boolean operation combining conditions <strong>1</strong> and <strong>2</strong>.</p>
-</div></blockquote>
-<!--end-->
+<div class="tip admonition">
+<p class="admonition-title">Rule</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">:OrIf</span></code> and <code class="docutils literal notranslate"><span class="pre">:AndIf</span></code>, Block <strong>1</strong> and <em>Condition</em> <strong>2</strong> are only executed if the result of <em>Condition</em> <strong>1</strong> is <strong>not</strong> enough to determine the result of the Boolean operation combining conditions <strong>1</strong> and <strong>2</strong>.</p>
+</div>
 <p>In many cases, the same result could be obtained by a more traditional APL approach using <code class="docutils literal notranslate"><span class="pre">∧</span></code>: <code class="docutils literal notranslate"><span class="pre">:If</span> <span class="pre">(Condition</span> <span class="pre">1)</span> <span class="pre">∧</span> <span class="pre">(Condition</span> <span class="pre">2)</span></code>.</p>
 <p>However, it may be that <em>Condition</em> <strong>2</strong> cannot be evaluated if <em>Condition</em> <strong>1</strong> is not satisfied. For example, we want to execute Block <strong>2</strong> if the variable <code class="docutils literal notranslate"><span class="pre">var</span></code> exists and is smaller than the argument <code class="docutils literal notranslate"><span class="pre">arg</span></code>. It is obvious that <code class="docutils literal notranslate"><span class="pre">var&lt;arg</span></code> cannot be evaluated if the variable <code class="docutils literal notranslate"><span class="pre">var</span></code> does not even exist. The two conditions must be evaluated separately:</p>
 <div class="cell docutils container">
@@ -3240,8 +3233,8 @@ BadSyntaxTradfn[2] :If width&lt;20
 </div>
 <p>By now, you should be able to tell by yourself that Block <strong>0</strong> and Block <strong>5</strong> in <a class="reference internal" href="#fig-control-flow-elseif"><span class="std std-numref">Fig. 5.16</span></a>, if present, will always be executed.</p>
 <p>For the conditions and the remaining blocks, a simple rule applies:</p>
-<!--begin rule-->
-<p><em><strong>Rule</strong></em>:</p>
+<div class="tip admonition">
+<p class="admonition-title">Rule</p>
 <p>Using <a class="reference internal" href="#fig-control-flow-elseif"><span class="std std-numref">Fig. 5.16</span></a> as reference for the rule examples:</p>
 <blockquote>
 <div><ul class="simple">
@@ -3251,7 +3244,7 @@ BadSyntaxTradfn[2] :If width&lt;20
 </ul>
 <p>Hence, all conditional blocks (blocks <strong>1</strong> to <strong>4</strong>) are mutually exclusive.</p>
 </div></blockquote>
-<!--end-->
+</div>
 <p>For example, suppose that the first condition is <code class="docutils literal notranslate"><span class="pre">var&lt;100</span></code> and the second is <code class="docutils literal notranslate"><span class="pre">var&lt;200</span></code>.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">var</span></code> happens to be equal to 33, it is both smaller than 100 and 200, but only the block of statements attached to <code class="docutils literal notranslate"><span class="pre">var&lt;100</span></code> will be executed:</p>
 <div class="cell docutils container">
@@ -3419,12 +3412,10 @@ BadSyntaxTradfn[2] :If width&lt;20
 <span id="fig-control-flow-select"></span><img alt="_images/Control_Flow_Select.png" src="_images/Control_Flow_Select.png" />
 <p class="caption"><span class="caption-number">Fig. 5.17 </span><span class="caption-text">A diagram with the usage of <code class="docutils literal notranslate"><span class="pre">:Select</span></code>, <code class="docutils literal notranslate"><span class="pre">:Case</span></code> and <code class="docutils literal notranslate"><span class="pre">:CaseList</span></code>.</span><a class="headerlink" href="#control-flow-select" title="Permalink to this image">¶</a></p>
 </div>
-<!--begin remark-->
-<p><em><strong>Remark</strong></em>:</p>
-<blockquote>
-<div><p>Values specified in <code class="docutils literal notranslate"><span class="pre">:Case</span></code> or <code class="docutils literal notranslate"><span class="pre">:CaseList</span></code> clauses can be numbers, characters or even nested arrays.</p>
-</div></blockquote>
-<!--end-->
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
+<p>Values specified in <code class="docutils literal notranslate"><span class="pre">:Case</span></code> or <code class="docutils literal notranslate"><span class="pre">:CaseList</span></code> clauses can be numbers, characters or even nested arrays.</p>
+</div>
 <p>Here is an example using all of those:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3506,12 +3497,10 @@ PARIS
 <li><p>if the keyword is <code class="docutils literal notranslate"><span class="pre">:Case</span></code>, the control value must match the entire character vector “<code class="docutils literal notranslate"><span class="pre">'BERLIN'</span></code>”; and</p></li>
 <li><p>if the keyword is <code class="docutils literal notranslate"><span class="pre">:CaseList</span></code>, the control value may be any one letter out of the five letters in “<code class="docutils literal notranslate"><span class="pre">'PARIS'</span></code>”. Any subset, like “<code class="docutils literal notranslate"><span class="pre">'PAR'</span></code>” will not be recognised as matching.</p></li>
 </ul>
-<!--begin warning-->
-<p><em><strong>Warning</strong></em>:</p>
-<blockquote>
-<div><p>The control value must be <strong>strictly</strong> identical to the value(s) specified in the <code class="docutils literal notranslate"><span class="pre">:Case</span></code> clause(s), i.e. the result of using <code class="docutils literal notranslate"><span class="pre">≡</span></code> with the control value and the matching value in the clause should be 1.</p>
-</div></blockquote>
-<!--end-->
+<div class="warning admonition">
+<p class="admonition-title">Warning</p>
+<p>The control value must be <strong>strictly</strong> identical to the value(s) specified in the <code class="docutils literal notranslate"><span class="pre">:Case</span></code> clause(s), i.e. the result of using <code class="docutils literal notranslate"><span class="pre">≡</span></code> with the control value and the matching value in the clause should be 1.</p>
+</div>
 <p>For example, in the preceding diagram, there is a clause <code class="docutils literal notranslate"><span class="pre">:Case</span> <span class="pre">50</span></code> (scalar). If the control value is equal to <code class="docutils literal notranslate"><span class="pre">1⍴50</span></code> (a one-item vector), it is not strictly identical to the specified array (the scalar <code class="docutils literal notranslate"><span class="pre">50</span></code>) and the corresponding set of statements will <strong>not</strong> be executed. In fact,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3581,12 +3570,10 @@ PARIS
 </ul>
 <p>In most cases, this kind of iterative process is executed to completion. However, it is possible to take an early exit when some condition or other is met. This can be done using the <code class="docutils literal notranslate"><span class="pre">:Leave</span></code> clause or using an explicit branch, like will be explained later.</p>
 <p>A special variant of <code class="docutils literal notranslate"><span class="pre">:In</span></code> named <code class="docutils literal notranslate"><span class="pre">:InEach</span></code> is explained in <a class="reference internal" href="#user-defined-functions-ineach"><span class="std std-numref">Section 5.16.8</span></a> at the end of this chapter.</p>
-<!--begin example-->
-<p><em><strong>Example</strong></em>:</p>
-<blockquote>
-<div><p>Let us try to find all the possible divisors of a given integer.</p>
-</div></blockquote>
-<!--end-->
+<div class="tip admonition">
+<p class="admonition-title">Example</p>
+<p>Let us try to find all the possible divisors of a given integer.</p>
+</div>
 <p>A possible solution is to check the remainder of that value against all integers starting from 1, up to the number itself. If the remainder is 0, the integer can be appended to the vector of results, which has been initialised as an empty vector:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3724,12 +3711,11 @@ PARIS
 <p>This means that if you invested 10.000 in an investment that grew 2% every year, then your investment’s value would surpass 25.000 after 47 years. If the growth rate is 3% instead, you would need 31 years instead.</p>
 <p>The test is made on the bottom line of the loop, immediately after <code class="docutils literal notranslate"><span class="pre">:Until</span></code>, so the loop is executed at least once.</p>
 <p>The “Loop or Stop” control is made at the bottom of each loop, but it is also possible to add one or more intermediate conditions which cause an exit from the loop using a <code class="docutils literal notranslate"><span class="pre">:Leave</span></code> clause or a <em>branch arrow</em> (this will be explained in <a class="reference internal" href="#user-defined-functions-modern-and-traditional-controls-cooperate"><span class="std std-numref">Section 5.7.9</span></a>).</p>
-<!--begin special case style=remark-->
-<p><em><strong>Special case</strong></em>:</p>
-<blockquote>
-<div><p>It is possible to replace <code class="docutils literal notranslate"><span class="pre">:Until</span></code> with <code class="docutils literal notranslate"><span class="pre">:EndRepeat</span></code>. However, because there is no longer a loop control expression, the program would loop endlessly. For this reason it is necessary to employ intermediate tests to exit the loop when using this technique.</p>
-</div></blockquote>
-<!--end--></div>
+<div class="remark admonition">
+<p class="admonition-title">special case </p>
+<p>It is possible to replace <code class="docutils literal notranslate"><span class="pre">:Until</span></code> with <code class="docutils literal notranslate"><span class="pre">:EndRepeat</span></code>. However, because there is no longer a loop control expression, the program would loop endlessly. For this reason it is necessary to employ intermediate tests to exit the loop when using this technique.</p>
+</div>
+</div>
 <div class="section" id="top-controlled-loop-while-endwhile">
 <span id="user-defined-functions-top-controlled-loop-whileendwhile"></span><h4><span class="section-number">5.7.5.2. </span>Top-Controlled Loop (<code class="docutils literal notranslate"><span class="pre">:While</span></code>/<code class="docutils literal notranslate"><span class="pre">:EndWhile</span></code>)<a class="headerlink" href="#top-controlled-loop-while-endwhile" title="Permalink to this headline">¶</a></h4>
 <p>Because the test is now placed at the top of the loop, control variables involved in the test must be initialised before the loop begins.</p>
@@ -4159,18 +4145,15 @@ start of the loop
 <span class="na">...</span>
 </pre></div>
 </div>
-<!--begin remark-->
-<p><em><strong>Remark</strong></em>:</p>
-<blockquote>
-<div><p>Branching using <code class="docutils literal notranslate"><span class="pre">→</span></code> or <code class="docutils literal notranslate"><span class="pre">:GoTo</span></code> is not recommended as a general tool for programming flow control. It is briefly explained here mainly in order to help you understand existing code and to show that the technique may be useful and feasible in special situations. You should, in general, either use control structures or avoid them altogether with alternative formulations of your algorithm(s).</p>
-</div></blockquote>
-<!--end-->
-<!--begin warning-->
-<p><em><strong>Warning</strong></em>:</p>
-<blockquote>
-<div><p>Colons are placed <strong>before</strong> a keyword (e.g. <code class="docutils literal notranslate"><span class="pre">:For</span></code>) but <strong>after</strong> a label (e.g. <code class="docutils literal notranslate"><span class="pre">hell:</span></code> above).</p>
-</div></blockquote>
-<!--end--></div>
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
+<p>Branching using <code class="docutils literal notranslate"><span class="pre">→</span></code> or <code class="docutils literal notranslate"><span class="pre">:GoTo</span></code> is not recommended as a general tool for programming flow control. It is briefly explained here mainly in order to help you understand existing code and to show that the technique may be useful and feasible in special situations. You should, in general, either use control structures or avoid them altogether with alternative formulations of your algorithm(s).</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Warning</p>
+<p>Colons are placed <strong>before</strong> a keyword (e.g. <code class="docutils literal notranslate"><span class="pre">:For</span></code>) but <strong>after</strong> a label (e.g. <code class="docutils literal notranslate"><span class="pre">hell:</span></code> above).</p>
+</div>
+</div>
 </div>
 <div class="section" id="dfns-versus-tradfns">
 <span id="user-defined-functions-dfns-versus-tradfns"></span><h2><span class="section-number">5.8. </span>Dfns Versus Tradfns<a class="headerlink" href="#dfns-versus-tradfns" title="Permalink to this headline">¶</a></h2>
@@ -4512,12 +4495,10 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">3 24
 </span></div></div>
 </div>
-<!--begin remark-->
-<p><em><strong>Remark</strong></em>:</p>
-<blockquote>
-<div><p>Values are not truncated, but <strong>rounded</strong>.</p>
-</div></blockquote>
-<!--end-->
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
+<p>Values are not truncated, but <strong>rounded</strong>.</p>
+</div>
 <p>As an example, consider the second value of the first row:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4539,12 +4520,10 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace"> 1535
 </span></div></div>
 </div>
-<!--begin remark-->
-<p><em><strong>Remark</strong></em>:</p>
-<blockquote>
-<div><p>Any attempt to apply dyadic <code class="docutils literal notranslate"><span class="pre">⍕</span></code> to characters will cause a <code class="docutils literal notranslate"><span class="pre">DOMAIN</span> <span class="pre">ERROR</span></code>.</p>
-</div></blockquote>
-<!--end-->
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
+<p>Any attempt to apply dyadic <code class="docutils literal notranslate"><span class="pre">⍕</span></code> to characters will cause a <code class="docutils literal notranslate"><span class="pre">DOMAIN</span> <span class="pre">ERROR</span></code>.</p>
+</div>
 <p><em>Format</em> will be studied in detail in <a class="reference internal" href="Execute-and-Format-Control.html"><span class="doc std std-doc">a later chapter</span></a>.</p>
 </div>
 </div>
@@ -4633,12 +4612,11 @@ Following a similar reasoning, the use of implicit output by adding <code class=
 </ul>
 <p>Such a technique should be restricted to a limited number of variables, clearly identified and documented by any convenient method: a common name prefix, an automated system of references, etc.</p>
 <p>Sometimes when starting an application it is necessary to read a lot of settings from a file and make the settings available to all the programs that constitute the application. In such a situation it would make sense to write a program to read the settings from the file and store them in global variables in the workspace.</p>
-<!--begin advice style=hint-->
-<p><em><strong>Advice</strong></em>:</p>
-<blockquote>
-<div><p>Whenever possible, favour explicit exchange of values through arguments and results.</p>
-</div></blockquote>
-<!--end--><div class="section" id="global-constants">
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>Whenever possible, favour explicit exchange of values through arguments and results.</p>
+</div>
+<div class="section" id="global-constants">
 <span id="user-defined-functions-global-constants"></span><h4><span class="section-number">5.9.4.1. </span>Global Constants<a class="headerlink" href="#global-constants" title="Permalink to this headline">¶</a></h4>
 <p>Because of the reasons explained above, programmers are discouraged from writing new values to global variables, but from the text above it is also clear that global variables can be very useful.</p>
 <p>In particular, it is often very useful to use global variables to store important pieces of information that are <em>constant</em> throughout the whole execution of your application. This way, these important pieces of information can be accessed from within your functions with ease. It is a common convention (and a convention that is not specific to APL) to name these global constants in all uppercase letters and to <strong>not</strong> update their values after the variable is initialised.</p>
@@ -5159,12 +5137,11 @@ Finally, we wrap that character vector in a little bit of HTML code, so that the
 </div>
 <p>Notice that we tried to answer with a variable name but that variable does not exist. An error message is issued, which is not very user-friendly! Then the user is automatically requested again to provide a value.</p>
 <p>Then we provide a valid value with an expression that makes use of a variable, a defined function and some primitives. The expression evaluates to <code class="docutils literal notranslate"><span class="pre">2472</span> <span class="pre">3022</span></code> and those are the limits used.</p>
-<!--begin hint-->
-<p><em><strong>Hint</strong></em>:</p>
-<blockquote>
-<div><p>If you accidentally start evaluated input in the session, type a <code class="docutils literal notranslate"><span class="pre">→</span></code> and then press enter, or type <kbd>Space</kbd> and then hit <kbd>Enter</kbd> to interrupt the input loop.</p>
-</div></blockquote>
-<!--end--></div>
+<div class="hint admonition">
+<p class="admonition-title">Hint</p>
+<p>If you accidentally start evaluated input in the session, type a <code class="docutils literal notranslate"><span class="pre">→</span></code> and then press enter, or type <kbd>Space</kbd> and then hit <kbd>Enter</kbd> to interrupt the input loop.</p>
+</div>
+</div>
 <div class="section" id="quote-quad-character-input">
 <span id="user-defined-functions-quote-quad-character-input"></span><h4><span class="section-number">5.9.9.2. </span>Quote-Quad Character Input<a class="headerlink" href="#quote-quad-character-input" title="Permalink to this headline">¶</a></h4>
 <p><em>Quote-quad</em> allows the user to enter a string of characters. That string is returned as the result of the <em>quote-quad</em> function.</p>
@@ -5187,13 +5164,12 @@ Finally, we wrap that character vector in a little bit of HTML code, so that the
 </pre></div>
 </div>
 <p>You can see that the <em>quote-quad</em> does not display any prompt sign.</p>
-<!--begin advice-->
-<p><em><strong>Advice</strong></em>:</p>
-<blockquote>
-<div><p>Avoid using <em>Quad</em> evaluated input, as users can inadvertently (or intentionally) interfere with your own function variables.</p>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>Avoid using <em>Quad</em> evaluated input, as users can inadvertently (or intentionally) interfere with your own function variables.</p>
 <p><em>Quote-Quad</em> remains useful for quick tests, the development of light interactive functions or scripting applications which work with redirected I/O.</p>
-</div></blockquote>
-<!--end--></div>
+</div>
+</div>
 </div>
 <div class="section" id="fetching-data-from-the-web">
 <span id="user-defined-functions-fetching-data-from-the-web"></span><h3><span class="section-number">5.9.10. </span>Fetching Data From the Web<a class="headerlink" href="#fetching-data-from-the-web" title="Permalink to this headline">¶</a></h3>
@@ -5265,12 +5241,11 @@ Finally, we wrap that character vector in a little bit of HTML code, so that the
 <p>It is possible to write comments in a function to make it easier to read, explain how it should be used and help future maintenance or improvements.</p>
 <p>Comments begin with the symbol <em>lamp</em> <code class="docutils literal notranslate"><span class="pre">⍝</span></code> (because it “illuminates” the code). <em>Lamp</em> can be typed with <kbd>APL</kbd>+<kbd>,</kbd>.</p>
 <p>They can be placed alone on a dedicated line or to the right of any statement, including the function header. All the characters placed to the right of the <em>lamp</em> are ignored by the interpreter.</p>
-<!--begin advice-->
-<p><em><strong>Advice</strong></em>:</p>
-<blockquote>
-<div><p>Determining when and where to comment your code is subjective but a good piece of advice is to try and <strong>not</strong> use comments to spell out <em>what</em> the code is doing; instead, consider using comments to explain <em>why</em> the code is doing what it is doing.</p>
-</div></blockquote>
-<!--end--></div>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>Determining when and where to comment your code is subjective but a good piece of advice is to try and <strong>not</strong> use comments to spell out <em>what</em> the code is doing; instead, consider using comments to explain <em>why</em> the code is doing what it is doing.</p>
+</div>
+</div>
 <div class="section" id="statement-separators">
 <span id="user-defined-functions-statement-separators"></span><h4><span class="section-number">5.10.1.2. </span>Statement Separators<a class="headerlink" href="#statement-separators" title="Permalink to this headline">¶</a></h4>
 <p>Several statements can be placed on the same line of a function, using the statement separator <em>diamond</em> <code class="docutils literal notranslate"><span class="pre">⋄</span></code>, which can be typed with <kbd>APL</kbd>+<kbd>`</kbd>. Statements are executed <strong>starting from the leftmost one</strong>.</p>
@@ -5371,12 +5346,10 @@ VALUE ERROR: No result was provided when the context expected one
 <li><p>the leftmost function returns a result. The result is available to the calling expression, in this case as the right argument to the multiply function, so that we obtained the answer we wanted; but</p></li>
 <li><p>the rightmost function returns no result. The value calculated in the first statement is just displayed (though we did not need it); it is <strong>not</strong> returned as a result. So, the multiply function has an argument on its left (the 10) but nothing on its right, hence the error message.</p></li>
 </ul>
-<!--begin advice-->
-<p><em><strong>Advice</strong></em>:</p>
-<blockquote>
-<div><p>Whenever you can, write functions which produce an explicit result. You can always throw the result away if you don’t need it.</p>
-</div></blockquote>
-<!--end-->
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>Whenever you can, write functions which produce an explicit result. You can always throw the result away if you don’t need it.</p>
+</div>
 <p>This is not even a problem in dfns, because dfns <em>always</em> return an explicit result, or they don’t return at all.
 Because dfns are the more modern way of writing user-defined functions, and because we encourage you to write your functions that process data as dfns whenever possible, this is likely not to be a common problem for you.</p>
 </div>
@@ -5712,12 +5685,11 @@ the <em>900 I-beam</em>, or <code class="docutils literal notranslate"><span cla
 </span></div></div>
 </div>
 <p>Using this syntax, the items of the right argument are automatically allocated into local variables, as you could see above.</p>
-<!--begin remark-->
-<p><em><strong>Remark</strong></em>:</p>
-<blockquote>
-<div><p>This special syntax applies <strong>only</strong> to the right argument, not to the left one. If a nested vector is passed on the left it can be split (dispatched) by multiple assignment, as suggested earlier.</p>
-</div></blockquote>
-<!--end--></div>
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
+<p>This special syntax applies <strong>only</strong> to the right argument, not to the left one. If a nested vector is passed on the left it can be split (dispatched) by multiple assignment, as suggested earlier.</p>
+</div>
+</div>
 <div class="section" id="choice-of-syntax">
 <span id="user-defined-functions-choice-of-syntax"></span><h4><span class="section-number">5.10.4.2. </span>Choice of Syntax<a class="headerlink" href="#choice-of-syntax" title="Permalink to this headline">¶</a></h4>
 <p>When a function <code class="docutils literal notranslate"><span class="pre">Fun</span></code> is to receive two values <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>, you now have the choice between two syntaxes:</p>
@@ -5834,16 +5806,14 @@ the <em>900 I-beam</em>, or <code class="docutils literal notranslate"><span cla
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">40320
 </span></div></div>
 </div>
-<!--begin warning-->
-<p><em><strong>Be careful</strong></em>:</p>
-<blockquote>
-<div><p><em>Recursive</em> solutions are generally very elegant, however:</p>
+<div class="warning admonition">
+<p class="admonition-title">Warning</p>
+<p><em>Recursive</em> solutions are generally very elegant, however:</p>
 <ul class="simple">
 <li><p>because a function may call itself a great number of times before it reaches the exit condition, this technique may need a lot of memory if the function works on huge arrays;</p></li>
 <li><p>when the function calls itself, the variables calculated during one step must not interfere with the calling context. You must carefully localise all your variables if you are using a tradfn – otherwise this is already done for you. Either way, this is the reason for possible large memory consumption, as the local variables in all recursions may exist at the same time.</p></li>
 </ul>
-</div></blockquote>
-<!--end-->
+</div>
 <p>A possible way to overcome some of these limitations is introduced in <a class="reference internal" href="#user-defined-functions-tail-recursion"><span class="std std-numref">Section 5.16.9</span></a>.</p>
 <p>Beware that recursion is never mandatory. A recursive function can always be rewritten using looping or array-oriented techniques instead of recursion.</p>
 <p>For example, one could write the dfn that follows:</p>
@@ -5940,12 +5910,10 @@ the <em>900 I-beam</em>, or <code class="docutils literal notranslate"><span cla
 </span></div></div>
 </div>
 <p>Later on, in <span class="xref myst">the chapter about Tacit Programming</span> you will see that you can even assign more primitives to a name, and those will behave in a very specific way.</p>
-<!--begin remark-->
-<p><em><strong>Remark</strong></em>:</p>
-<blockquote>
-<div><p>When assigning a new name to an existing tradfn, the contents of the original function are not duplicated.</p>
-</div></blockquote>
-<!--end-->
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
+<p>When assigning a new name to an existing tradfn, the contents of the original function are not duplicated.</p>
+</div>
 <p>For example, here is a basic tradfn:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5997,12 +5965,10 @@ the <em>900 I-beam</em>, or <code class="docutils literal notranslate"><span cla
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">40
 </span></div></div>
 </div>
-<!--begin tip-->
-<p><em><strong>Tip</strong></em>:</p>
-<blockquote>
-<div><p>If you accidentally assign a function to a new name when you wanted to use that name for a value, you can use <code class="docutils literal notranslate"><span class="pre">)erase</span></code> to fix that.</p>
-</div></blockquote>
-<!--end-->
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>If you accidentally assign a function to a new name when you wanted to use that name for a value, you can use <code class="docutils literal notranslate"><span class="pre">)erase</span></code> to fix that.</p>
+</div>
 <p>For example, say you typed this in your interpreter and accidentally pressed <kbd>Enter</kbd>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7238,19 +7204,16 @@ Label line.
 </div>
 <p>If <code class="docutils literal notranslate"><span class="pre">(diff&lt;limit)</span></code> is satisfied, <code class="docutils literal notranslate"><span class="pre">1/'range</span> <span class="pre">←</span> <span class="pre">¯5</span> <span class="pre">5'</span></code> gives <code class="docutils literal notranslate"><span class="pre">'range</span> <span class="pre">←</span> <span class="pre">¯5</span> <span class="pre">5'</span></code> and <code class="docutils literal notranslate"><span class="pre">⍎'range</span> <span class="pre">←</span> <span class="pre">¯5</span> <span class="pre">5'</span></code> will execute the expression, setting <code class="docutils literal notranslate"><span class="pre">range</span></code> to <code class="docutils literal notranslate"><span class="pre">¯5</span> <span class="pre">5</span></code>.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">(diff&lt;limit)</span></code> is <strong>not</strong> satisfied, then <code class="docutils literal notranslate"><span class="pre">0/'range</span> <span class="pre">←</span> <span class="pre">¯5</span> <span class="pre">5'</span></code> gives <code class="docutils literal notranslate"><span class="pre">''</span></code> (an empty character vector) and <code class="docutils literal notranslate"><span class="pre">⍎''</span></code> does nothing, so <code class="docutils literal notranslate"><span class="pre">range</span></code> is not assigned.</p>
-<!--begin rule-->
-<p><em><strong>Rule</strong></em>:</p>
-<blockquote>
-<div><p>More generally, one can write <code class="docutils literal notranslate"><span class="pre">⍎(condition)/text</span></code>, where <code class="docutils literal notranslate"><span class="pre">text</span></code> is the quoted expression you want to evaluate conditionally.</p>
-</div></blockquote>
-<!--end-->
+<div class="tip admonition">
+<p class="admonition-title">Rule</p>
+<p>More generally, one can write <code class="docutils literal notranslate"><span class="pre">⍎(condition)/text</span></code>, where <code class="docutils literal notranslate"><span class="pre">text</span></code> is the quoted expression you want to evaluate conditionally.</p>
+</div>
 <p>When the expression on the right contains quotes, they must be doubled, and the expression may become more complex to read. Using <em>execute</em> will, in general, compromise the ability to analyse the code in order to, for example, search for references to a given function or global variable. For these reasons, and also because executed expressions run slightly slower than ordinary statements, this technique should be avoided. It is mentioned only because it has been used for years by many programmers, before better tools became available in APL.</p>
-<!--begin advice-->
-<p><em><strong>Advice</strong></em>:</p>
-<blockquote>
-<div><p>Prefer control structures.</p>
-</div></blockquote>
-<!--end--></div>
+<div class="tip admonition">
+<p class="admonition-title">Tip</p>
+<p>Prefer control structures.</p>
+</div>
+</div>
 <div class="section" id="conditional-execution-using-the-power-operator">
 <span id="user-defined-functions-conditional-execution-using-the-power-operator"></span><h4><span class="section-number">5.16.5.2. </span>Conditional Execution Using the Power Operator<a class="headerlink" href="#conditional-execution-using-the-power-operator" title="Permalink to this headline">¶</a></h4>
 <p>The operator <em>power</em> (<code class="docutils literal notranslate"><span class="pre">⍣</span></code>, typed with <kbd>APL</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>) will be studied in more detail in <span class="xref myst">a later chapter as well</span>. It must not be confused with the function <em>power</em> (<code class="docutils literal notranslate"><span class="pre">*</span></code>).</p>
@@ -7291,12 +7254,11 @@ Label line.
 </div>
 <p>We must separate the operator’s right operand from the resulting derived function’s argument.</p>
 <p>We can use a “no-op” function like <code class="docutils literal notranslate"><span class="pre">⊢</span></code> as separator or use parentheses.</p>
-<!--begin rule-->
-<p><em><strong>Rule</strong></em>:</p>
-<blockquote>
-<div><p>More generally, one can write <code class="docutils literal notranslate"><span class="pre">{x}</span> <span class="pre">(Function⍣(condition))</span> <span class="pre">y</span></code></p>
-</div></blockquote>
-<!--end--></div>
+<div class="tip admonition">
+<p class="admonition-title">Rule</p>
+<p>More generally, one can write <code class="docutils literal notranslate"><span class="pre">{x}</span> <span class="pre">(Function⍣(condition))</span> <span class="pre">y</span></code></p>
+</div>
+</div>
 </div>
 <div class="section" id="name-category">
 <span id="user-defined-functions-name-category"></span><h3><span class="section-number">5.16.6. </span>Name Category<a class="headerlink" href="#name-category" title="Permalink to this headline">¶</a></h3>
@@ -7442,12 +7404,11 @@ Label line.
 9000
 </span></div></div>
 </div>
-<!--begin rule-->
-<p><em><strong>Rule</strong></em>:</p>
-<blockquote>
-<div><p>In <code class="docutils literal notranslate"><span class="pre">:For</span> <span class="pre">vars</span> <span class="pre">:InEach</span> <span class="pre">nesVec</span></code>, <code class="docutils literal notranslate"><span class="pre">⍴vars</span></code> is equal to the shape of <code class="docutils literal notranslate"><span class="pre">nesVec</span></code>, whereas in <code class="docutils literal notranslate"><span class="pre">:For</span> <span class="pre">vars</span> <span class="pre">:In</span> <span class="pre">nesVec</span></code>, <code class="docutils literal notranslate"><span class="pre">⍴vars</span></code> is equal to the shape of each <strong>item</strong> in <code class="docutils literal notranslate"><span class="pre">nesVec</span></code>.</p>
-</div></blockquote>
-<!--end--></div>
+<div class="tip admonition">
+<p class="admonition-title">Rule</p>
+<p>In <code class="docutils literal notranslate"><span class="pre">:For</span> <span class="pre">vars</span> <span class="pre">:InEach</span> <span class="pre">nesVec</span></code>, <code class="docutils literal notranslate"><span class="pre">⍴vars</span></code> is equal to the shape of <code class="docutils literal notranslate"><span class="pre">nesVec</span></code>, whereas in <code class="docutils literal notranslate"><span class="pre">:For</span> <span class="pre">vars</span> <span class="pre">:In</span> <span class="pre">nesVec</span></code>, <code class="docutils literal notranslate"><span class="pre">⍴vars</span></code> is equal to the shape of each <strong>item</strong> in <code class="docutils literal notranslate"><span class="pre">nesVec</span></code>.</p>
+</div>
+</div>
 <div class="section" id="tail-recursion">
 <span id="user-defined-functions-tail-recursion"></span><h3><span class="section-number">5.16.9. </span>Tail Recursion<a class="headerlink" href="#tail-recursion" title="Permalink to this headline">¶</a></h3>
 <p>As was outlined in <a class="reference internal" href="#user-defined-functions-recursion"><span class="std std-numref">Section 5.11</span></a>, recursive solutions can be very elegant but may consume a lot of memory as successive calls accumulate local variables in their respective scopes.</p>
@@ -7488,12 +7449,10 @@ Label line.
 <p>A moment of reflection shows that, to compute the factorial of <code class="docutils literal notranslate"><span class="pre">n</span></code> with this function, the execution stack grows to size <code class="docutils literal notranslate"><span class="pre">n</span></code>. If our <code class="docutils literal notranslate"><span class="pre">Factorial</span></code> function were more complex, we would also have <code class="docutils literal notranslate"><span class="pre">n</span></code> copies of all the local variables the function would define. This duplication is what makes recursive functions potentially memory heavy. It is, however, something that the interpreter knows how to optimise in certain cases.</p>
 <p>If we write a recursive function in such a way that the recursive call is <strong>the very last thing</strong> to be executed inside your function, then the interpreter knows it can discard everything from the current scope when it makes the recursive call. In fact, when we leave the recursive call we won’t have to do anything with the return value, as the recursive call was <em>the very last thing</em> we did in our function.</p>
 <p>If we do this, then we are using a technique called <em>tail recursion</em>, because we are only recursing at the “tail” of the function.</p>
-<!--begin remark-->
-<p><em><strong>Remark</strong></em>:</p>
-<blockquote>
-<div><p>Tail recursion is a feature of dfns and does not have an immediate equivalent in tradfns.</p>
-</div></blockquote>
-<!--end-->
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
+<p>Tail recursion is a feature of dfns and does not have an immediate equivalent in tradfns.</p>
+</div>
 <p>In the <code class="docutils literal notranslate"><span class="pre">Factorial</span></code> function above, the recursive call was <em>in</em> the last expression executed but it is not the last thing that is done in the function, as we have to multiply <code class="docutils literal notranslate"><span class="pre">⍵</span></code> with the return value of the recursive call. We can, however, refactor the function to carry temporary calculations in the left argument <code class="docutils literal notranslate"><span class="pre">⍺</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
