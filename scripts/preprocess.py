@@ -150,7 +150,7 @@ def generate_figure_references(lines):
 
     return lines
 
-def create_admonitions(lines):
+def create_admonitions(filename, lines):
     """Convert an admonition section into a MyST admonition.
 
     This function looks for sections that have been marked-up with HTML comments
@@ -189,7 +189,7 @@ def create_admonitions(lines):
                 if lines[-1] == end_match[:-1]:
                     matching_line = len(lines) - 1
                 else:
-                    print(f"{text} has no closing 'end' in cell {cellid} in file {filename}")
+                    print(f"{text!r} has no closing 'end' in file {filename}.")
                     sys.exit(1)
             # check if the lines are in a blockquote
             intermediate_lines = lines[i+3:matching_line]
@@ -242,7 +242,7 @@ def parse_lines(filename, lines):
     lines = generate_cross_references(filename, lines)
     lines = generate_figure_references(lines)
     lines = image_to_figure(lines)
-    lines = create_admonitions(lines)
+    lines = create_admonitions(filename, lines)
     return lines
 
 if __name__ == "__main__":

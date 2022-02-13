@@ -11,8 +11,9 @@ this changelog also marks with [n] content that is new in this rework.
 
   - Stylistic improvements to online book:
     - now uses the APL385 Unicode font;
-    - fixed improperly styled admonitions;
+    - fixed improperly styled admonitions.
   - Unify “tip”/“advice”/“suggestion”/“recommendation”/etc admonitions as “tip”.
+  - Fix `NameError` in preprocessing script.
 
 ## 0.4.2
 
