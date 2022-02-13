@@ -1,7 +1,16 @@
+@font-face {
+    font-family: "codefont";
+    src: url(APL385.ttf) format("truetype");
+}
+
+/* Use the code font where relevant. */
+ t, code, kbd, samp, pre, .output.text_html span {
+    font-family: codefont!important
+}
+
 /* Reduce excessive line height in code outputs */
 .output.text_html {
-    font-family: 'APL385';
-    line-height: 0.95em;
+    line-height: 1.1em;
 }
 
 /* Reduce excessive whitespace in tables */

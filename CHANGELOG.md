@@ -7,6 +7,13 @@ In the first instance, it lists the changes between consecutive releases of this
 However, because this book is a rework of the first edition by Bernard Legrand,
 this changelog also marks with [n] content that is new in this rework.
 
+## 0.4.3
+
+  - Stylistic improvements to online book:
+    - now uses the APL385 Unicode font;
+    - fixed improperly styled admonitions;
+  - Unify “tip”/“advice”/“suggestion”/“recommendation”/etc admonitions as “tip”.
+
 ## 0.4.2
 
   - Fix #24 by improving preprocessing script.
@@ -18,8 +25,8 @@ this changelog also marks with [n] content that is new in this rework.
 
   - Fix typos.
   - Fix duplicate headers in “Some Primitive Functions”:
-    - Under “Axis Specification”, there were 2 almost-consecutive duplicate level 4 headers under the _same_ level 3 header, and it made sense to join them together;
-    - Rename “Special Notations” to “Replicate with Axis” under the section on replicate, to make the header more explicit;
+    - under “Axis Specification”, there were 2 almost-consecutive duplicate level 4 headers under the _same_ level 3 header, and it made sense to join them together;
+    - rename “Special Notations” to “Replicate with Axis” under the section on replicate, to make the header more explicit;
 
 ## v0.4
 
