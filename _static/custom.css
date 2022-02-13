@@ -1,6 +1,7 @@
 @font-face {
     font-family: "codefont";
-    src: url(APL385.ttf) format("truetype");
+    src: local("APL385 Unicode"),
+         url(APL385.ttf) format("truetype");
 }
 
 /* Use the code font where relevant. */
