@@ -167,15 +167,7 @@ def create_exercises(filename, lines):
                 else:
                     print(f"Exercise has no closing 'end' in file {filename}, line {i}.")
                     sys.exit(1)
-            # check if the lines are in a blockquote
-            intermediate_lines = lines[i+3:matching_line]
-            bq_matches = [
-                re.match(r"^ >( |\n)(.*)$", line) for line in intermediate_lines
-            ]
-            if all(bq_matches):
-                content_lines = [match.group(2) + "\n" for match in bq_matches]
-            else:
-                content_lines = intermediate_lines
+            content_lines = lines[i+3:matching_line]
             # How deep must the admonition nesting be?
             backtick_nesting = max(
                 map(len, re.findall(r"`+", "\n".join(content_lines))),
