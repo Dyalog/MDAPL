@@ -12,7 +12,6 @@ As of now, this preprocessing step:
 import json
 import os
 import re
-import shutil
 import sys
 from pathlib import Path
 from ruamel import yaml
@@ -26,7 +25,7 @@ CUSTOM_ADMONITION_STYLES = {
     "exercise": "hint",
     "remark": "tip",
     "rule": "tip",
-    "rules" : "tip",
+    "rules": "tip",
 }
 
 def safe_hyphenate(string):
@@ -150,6 +149,68 @@ def generate_figure_references(lines):
 
     return lines
 
+
+def create_exercises(filename, lines):
+    """Convert an exercise section to the sphinx-exercise syntax."""
+
+    i = 0
+    while i < len(lines):
+        m = re.match(r"<!-- ?exercise (.+?) ?-->", lines[i])
+        if m:
+            label = m.group(1)
+            end_match = "<!-- end -->\n"
+            try:
+                matching_line = lines.index(end_match)
+            except ValueError:
+                if lines[-1] == end_match[:-1]:
+                    matching_line = len(lines) - 1
+                else:
+                    print(f"Exercise has no closing 'end' in file {filename}, line {i}.")
+                    sys.exit(1)
+            # check if the lines are in a blockquote
+            intermediate_lines = lines[i+3:matching_line]
+            bq_matches = [
+                re.match(r"^ >( |\n)(.*)$", line) for line in intermediate_lines
+            ]
+            if all(bq_matches):
+                content_lines = [match.group(2) + "\n" for match in bq_matches]
+            else:
+                content_lines = intermediate_lines
+            # How deep must the admonition nesting be?
+            backtick_nesting = max(
+                map(len, re.findall(r"`+", "\n".join(content_lines))),
+                default=0,
+            )
+            backticks = "`" * max(3, 1 + backtick_nesting)
+            lines[i:matching_line + 1] = (
+                [f"{backticks}{{exercise}}\n", f":label: {label}\n"] +
+                content_lines +
+                [f"{backticks}\n"]
+            )
+            # after doing the maths, this is exactly where we want to resume processing:
+            i = matching_line
+        else:
+            i += 1
+
+    return lines
+
+
+def create_solutions(lines):
+    """ Convert a solution section to the sphinx-exercise syntax."""
+
+    i = 0
+    while i < len(lines):
+        m = re.match(r"<!-- ?solution (.+) ?-->", lines[i])
+        if m:
+            label = m.group(1)
+            lines[i:i+2] = [f"```{{solution}} {label}\n", "```\n"]
+            i += 2
+        else:
+            i += 1
+
+    return lines
+
+
 def create_admonitions(filename, lines):
     """Convert an admonition section into a MyST admonition.
 
@@ -161,7 +222,7 @@ def create_admonitions(filename, lines):
     and end with <!-- end -->. The sections can optionally be completely offset
     with " > " to produce a blockquote that gives a visual cue for readers of
     the plain notebooks.
-    
+
     Inside those sections, we look for code blocks or other formatting done with
     backticks (`), to ensure that the outer admonition is nested correctly.
 
@@ -243,6 +304,8 @@ def parse_lines(filename, lines):
     lines = generate_figure_references(lines)
     lines = image_to_figure(lines)
     lines = create_admonitions(filename, lines)
+    lines = create_exercises(filename, lines)
+    lines = create_solutions(lines)
     return lines
 
 if __name__ == "__main__":
