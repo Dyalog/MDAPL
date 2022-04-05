@@ -7,6 +7,14 @@ In the first instance, it lists the changes between consecutive releases of this
 However, because this book is a rework of the first edition by Bernard Legrand,
 this changelog also marks with [n] content that is new in this rework.
 
+## 0.4.4
+
+  - Improve exercise presentation:
+    - provide an admonition for exercises with auto-numbering;
+    - provide an admonition for solutions;
+    - link solutions to corresponding exercises;
+  - Improve phrasing of several exercises and provide more concrete instructions.
+
 ## 0.4.3.1
 
   - Use local APL385 font when possible.
