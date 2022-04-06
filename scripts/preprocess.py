@@ -18,6 +18,7 @@ from ruamel import yaml
 
 
 BOOK_FOLDER = "book"
+SOURCE_FOLDER = "docs"
 
 CUSTOM_ADMONITION_STYLES = {
     "advice": "tip",
@@ -307,7 +308,7 @@ if __name__ == "__main__":
         os.makedirs(BOOK_FOLDER)
 
     try:
-        with open("book/_toc.yml", "r") as f:
+        with open(f"{BOOK_FOLDER}/_toc.yml", "r") as f:
             data = yaml.safe_load(f)
     except FileNotFoundError:
         print("Could not open ToC.")
@@ -320,7 +321,7 @@ if __name__ == "__main__":
             continue
 
         try:
-            with open(f"{filename}.ipynb", "r", encoding="utf8") as f:
+            with open(f"{SOURCE_FOLDER}/{filename}.ipynb", "r", encoding="utf8") as f:
                 contents = json.load(f)
         except FileNotFoundError:
             parse_md(filename)
