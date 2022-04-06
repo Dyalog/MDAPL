@@ -9,7 +9,6 @@ html: preprocess build_html
 latex: preprocess build_latex
 
 preprocess:
-	python scripts/migrate_resources.py
 	python scripts/preprocess.py
 
 build_html:
