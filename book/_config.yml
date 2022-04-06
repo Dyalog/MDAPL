@@ -26,3 +26,5 @@ launch_buttons:
 sphinx:
     config:
         html_show_copyright: false
+    extra_extensions:
+        - sphinx_exercise
