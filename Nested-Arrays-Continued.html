@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
@@ -2219,7 +2220,7 @@ Luciano  796.53 1569    157.14  886.59
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">-------       -       -      -       -
-Francis   21.21 1534.88 375.46  704.5
+Francis   21.21 1534.88 375.46  704.5 
 Carmen  1125.14 1963.52 464.45 1438.25
 Luciano  796.53 1569    157.14  886.59
 </span></div></div>
@@ -2248,11 +2249,17 @@ Luciano   796.53  1569.00   157.14   886.59
 </span></div></div>
 </div>
 <p>Now, the line is exactly where we want it and the numbers are nicely formatted.</p>
-<p><strong>Exercise 1</strong>: try to deduce the results of the following 3 expressions (depth, rank, shape), and then verify your solutions on the computer:</p>
+<div class="exercise admonition" id="ex-depth-rank-shape">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10.1 </span></p>
+<div class="section" id="exercise-content">
+<p>Deduce the results of the following 3 expressions (depth, rank, shape), and then verify your solutions on the computer:</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">⊂</span><span class="nv">cm</span><span class="p">)</span> <span class="p">(</span><span class="o">⊂</span><span class="nv">nm</span><span class="p">)</span>
 <span class="p">(</span><span class="o">⊂</span><span class="nv">cm</span><span class="p">)</span><span class="o">,</span><span class="p">(</span><span class="o">⊂</span><span class="nv">nm</span><span class="p">)</span>
 <span class="nv">cm</span><span class="o">,⊂</span><span class="nv">nm</span>
 </pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2544,7 +2551,6 @@ For example, to index items scattered throughout a matrix, the array that specif
 </div>
 <div class="section" id="intermission-exercises">
 <span id="nested-arrays-continued-intermission-exercises"></span><h2><span class="section-number">10.6. </span>Intermission Exercises<a class="headerlink" href="#intermission-exercises" title="Permalink to this headline">¶</a></h2>
-<p><strong>Exercise 2</strong>:</p>
 <p>You are given three numeric vectors:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2555,6 +2561,10 @@ For example, to index items scattered throughout a matrix, the array that specif
 </div>
 </div>
 </div>
+<div class="exercise admonition" id="ex-depth-rank-shape2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10.2 </span></p>
+<div class="section" id="exercise-content">
 <p>Try to predict the results given by the following expressions in terms of depth, rank, and shape.
 Then check your results using <code class="docutils literal notranslate"><span class="pre">]display</span></code>, or the appropriate primitives.</p>
 <ol class="simple">
@@ -2564,7 +2574,12 @@ Then check your results using <code class="docutils literal notranslate"><span c
 <li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">b</span> <span class="pre">2</span> <span class="pre">×</span> <span class="pre">c[2]</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">10×a</span> <span class="pre">20×b</span></code></p></li>
 </ol>
-<p><strong>Exercise 3</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="ex-depth-rank-shape3">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10.3 </span></p>
+<div class="section" id="exercise-content">
 <p>Same question for the following expressions:</p>
 <ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">+/a</span> <span class="pre">b</span> <span class="pre">c</span></code></p></li>
@@ -2575,8 +2590,15 @@ Then check your results using <code class="docutils literal notranslate"><span c
 <li><p><code class="docutils literal notranslate"><span class="pre">(⊂1</span> <span class="pre">0</span> <span class="pre">1)/¨a</span> <span class="pre">b</span> <span class="pre">c</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">10</span> <span class="pre">3</span> <span class="pre">∊</span> <span class="pre">a</span> <span class="pre">b</span> <span class="pre">c</span></code></p></li>
 </ol>
-<p><strong>Exercise 4</strong>:</p>
-<p>Consider the following nested array:</p>
+</div>
+</div>
+<div class="exercise admonition" id="ex-reductions">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10.4 </span></p>
+<div class="section" id="exercise-content">
+<p>What are the results of <code class="docutils literal notranslate"><span class="pre">+/na</span></code> and <code class="docutils literal notranslate"><span class="pre">,/na</span></code> for the vector <code class="docutils literal notranslate"><span class="pre">na</span></code> shown below?</p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">na</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">2</span> <span class="p">(</span><span class="m">2</span> <span class="m">2</span><span class="o">⍴</span><span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span><span class="p">)</span><span class="m">7</span> <span class="m">8</span>
@@ -2590,7 +2612,6 @@ Then check your results using <code class="docutils literal notranslate"><span c
 └─┴─┴───┴─┴─┘
 </span></div></div>
 </div>
-<p>What are the results of <code class="docutils literal notranslate"><span class="pre">+/na</span></code> and <code class="docutils literal notranslate"><span class="pre">,/na</span></code>?</p>
 </div>
 <div class="section" id="split-and-mix">
 <span id="nested-arrays-continued-split-and-mix"></span><h2><span class="section-number">10.7. </span>Split and Mix<a class="headerlink" href="#split-and-mix" title="Permalink to this headline">¶</a></h2>
@@ -4303,12 +4324,17 @@ Let us compare the two functions:</p>
 </div>
 <div class="section" id="exercises">
 <span id="nested-arrays-continued-exercises"></span><h2><span class="section-number">10.13. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<p><strong>Exercise 5</strong>:</p>
+<div class="exercise admonition" id="ex-quantitiessold">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10.5 </span></p>
+<div class="section" id="exercise-content">
 <p>You are given two vectors.
 The first contains the reference codes for some items in a warehouse.
 Identical codes are grouped, but not necessarily in ascending order.
-The second vector contains the quantities of each item sold during the day or the week.
-For example:</p>
+The second vector contains the quantities of each item sold during the day or the week.</p>
+<p>Write a dyadic function <code class="docutils literal notranslate"><span class="pre">QuantitiesSold</span></code> that accepts these two vectors as arguments and calculates how many items of each reference code have been sold. Preferably, use a partitioning function.</p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">ref</span> <span class="kd">←</span> <span class="m">47</span> <span class="m">47</span> <span class="m">83</span> <span class="m">83</span> <span class="m">83</span> <span class="m">83</span> <span class="m">83</span> <span class="m">29</span> <span class="m">36</span> <span class="m">36</span> <span class="m">36</span> <span class="m">50</span> <span class="m">50</span>
@@ -4317,18 +4343,30 @@ For example:</p>
 </div>
 </div>
 </div>
-<p>Can you calculate how many items of each reference code have been sold?
-Preferably, use a partitioning function.</p>
-<div class="cell docutils container">
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">QuantitiesSold</span> <span class="kd">←</span> <span class="kt">{}</span>
-<span class="nv">ref</span> <span class="nv">QuantitiesSold</span> <span class="nv">qty</span>
-<span class="c1">⍝ 13 39 10 152 19</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">ref</span> <span class="nv">QuantitiesSold</span> <span class="nv">qty</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">13 39 10 152 19
+</span></div></div>
 </div>
-<p><strong>Exercise 6</strong>:</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">13</span> <span class="m">39</span> <span class="m">10</span> <span class="m">152</span> <span class="m">19</span> <span class="o">≡</span> <span class="nv">ref</span> <span class="nv">QuantitiesSold</span> <span class="nv">qty</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<div class="exercise admonition" id="ex-high-dim-index-of">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10.6 </span></p>
+<div class="section" id="exercise-content">
 <p>You are given two character matrices with the same number of columns.
 Let us call them <code class="docutils literal notranslate"><span class="pre">big</span></code> and <code class="docutils literal notranslate"><span class="pre">small</span></code>.</p>
 <p>You are asked to find where the rows of <code class="docutils literal notranslate"><span class="pre">small</span></code> appear in <code class="docutils literal notranslate"><span class="pre">big</span></code>. i.e., for each row in <code class="docutils literal notranslate"><span class="pre">small</span></code> find the index of the same row in <code class="docutils literal notranslate"><span class="pre">big</span></code>.
@@ -4336,7 +4374,8 @@ For those rows of <code class="docutils literal notranslate"><span class="pre">s
 <p>Currently, <em>index of</em> <code class="docutils literal notranslate"><span class="pre">⍳</span></code> works on matrices, but this hasn’t always been the case.
 Thus, can you solve this exercise without using <em>index of</em> on matrices?
 (Using <em>index of</em> on vectors is still allowed!)</p>
-<p>You can use these two matrices to test your solution:</p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">big</span> <span class="kd">←</span> <span class="m">5</span> <span class="m">2</span><span class="o">⍴⍳</span><span class="m">10</span>
@@ -4375,21 +4414,12 @@ Thus, can you solve this exercise without using <em>index of</em> on matrices?
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 5 6
 </span></div></div>
 </div>
-<p><strong>Exercise 7</strong>:</p>
-<p>A <em>partitioned enclose</em> with a single zero as the left argument returns an empty vector:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span><span class="o">⊂</span><span class="s1">&#39;Partition&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">
+<div class="exercise admonition" id="ex-empty-vectors">
 
-
-</span></div></div>
-</div>
-<p>As you know already, not all empty vectors are the same.
+<p class="admonition-title"><span class="caption-number">Exercise 10.7 </span></p>
+<div class="section" id="exercise-content">
+<p>A <em>partitioned enclose</em> with a single zero as the left argument returns an empty vector.
+However, as you know already, not all empty vectors are the same.
 When working with empty vectors, we also work with prototypes, because an empty vector knows what it would contain if it were not empty.</p>
 <p>Go over the expressions that follow and build the empty vector that <em>matches</em> the result of the empty <em>partitioned enclose</em>:</p>
 <ul class="simple">
@@ -4402,6 +4432,8 @@ When working with empty vectors, we also work with prototypes, because an empty 
 <li><p><code class="docutils literal notranslate"><span class="pre">0⊂('cat')('dog')(7</span> <span class="pre">8</span> <span class="pre">9)</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">0⊂(14</span> <span class="pre">'cat'</span> <span class="pre">8)('a'</span> <span class="pre">2</span> <span class="pre">'c'</span> <span class="pre">4)(1</span> <span class="pre">2</span> <span class="pre">3)</span></code></p></li>
 </ul>
+</div>
+</div>
 <p>The first one is already solved:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4414,58 +4446,102 @@ When working with empty vectors, we also work with prototypes, because an empty 
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1
 </span></div></div>
 </div>
-<p><strong>Exercise 8</strong>:</p>
-<p>Given a word or a list of words, return a Boolean vector where 1 indicates a word that starts and ends with the same letter. Each word will have at least one letter and will consist entirely of either uppercase (A–Z) or lowercase (a–z) letters. Words consisting of a single letter can be scalars and <strong>are</strong> considered to start and end with the same letter.</p>
-<div class="cell docutils container">
+<div class="exercise admonition" id="ex-startandend">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10.8 </span></p>
+<div class="section" id="exercise-content">
+<p>Write a monadic function <code class="docutils literal notranslate"><span class="pre">StartAndEnd</span></code> that, given a word or a list of words, returns a Boolean vector where 1 indicates a word that starts and ends with the same letter. Each word will have at least one letter and will consist entirely of either uppercase (A–Z) or lowercase (a–z) letters. Words consisting of a single letter can be scalars and <strong>are</strong> considered to start and end with the same letter.</p>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">StartAndEnd</span> <span class="kd">←</span> <span class="kt">{}</span>
-<span class="nv">StartAndEnd</span> <span class="s1">&#39;area&#39;</span> <span class="s1">&#39;banana&#39;</span> <span class="s1">&#39;shoes&#39;</span>    <span class="c1">⍝ 1 0 1</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">StartAndEnd</span> <span class="s1">&#39;area&#39;</span> <span class="s1">&#39;banana&#39;</span> <span class="s1">&#39;shoes&#39;</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 0 1
+</span></div></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">StartAndEnd</span> <span class="s1">&#39;cape&#39;</span>                     <span class="c1">⍝ 0</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">StartAndEnd</span> <span class="s1">&#39;cape&#39;</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0
+</span></div></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">StartAndEnd</span> <span class="s1">&#39;z&#39;</span>                        <span class="c1">⍝ 1</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">StartAndEnd</span> <span class="s1">&#39;z&#39;</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
 </div>
-<p><strong>Exercise 9</strong>:</p>
-<p>You are given a long character vector, called <code class="docutils literal notranslate"><span class="pre">text</span></code>.
-We would like to extract a part of it as a <em>simple</em> character vector.
-The extract is defined as a number of sub-vectors, each being five characters long, and starting at the positions given by the vector <code class="docutils literal notranslate"><span class="pre">start</span></code>.</p>
-<p>For example:</p>
-<div class="cell docutils container">
+<div class="exercise admonition" id="ex-extract-subvectors">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10.9 </span></p>
+<div class="section" id="exercise-content">
+<p>Write a dyadic function <code class="docutils literal notranslate"><span class="pre">Extract</span></code> that accepts a character vector left argument (let us call it <code class="docutils literal notranslate"><span class="pre">text</span></code>) and an integer vector right argument (let us call it <code class="docutils literal notranslate"><span class="pre">start</span></code>).
+We would like to extract a part of <code class="docutils literal notranslate"><span class="pre">text</span></code> as a <em>simple</em> character vector.
+The extract is defined as a number of sub-vectors, each being five characters long, and starting at the positions given by <code class="docutils literal notranslate"><span class="pre">start</span></code>.</p>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">text</span> <span class="kd">←</span> <span class="s1">&#39;This boring text has been typed just for a little experiment.&#39;</span>
 <span class="nv">start</span> <span class="kd">←</span> <span class="m">6</span> <span class="m">27</span> <span class="m">52</span>
-<span class="nv">Extract</span> <span class="kd">←</span> <span class="kt">{}</span>
 <span class="nv">text</span> <span class="nv">Extract</span> <span class="nv">start</span>
-<span class="c1">⍝ &#39;borintypedxperi&#39;</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">borintypedxperi
+</span></div></div>
 </div>
-<p><strong>Exercise 10</strong>:</p>
-<p>This exercise is the same as the previous one, but instead of extracting five characters each time, you are asked to extract a variable number of characters specified by the variable <code class="docutils literal notranslate"><span class="pre">long</span></code>.
-You can use the same example as above, plus this additional variable:</p>
-<div class="cell docutils container">
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;borintypedxperi&#39;</span> <span class="o">≡</span> <span class="nv">text</span> <span class="nv">Extract</span> <span class="nv">start</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<div class="exercise admonition" id="ex-extractl">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10.10 </span></p>
+<div class="section" id="exercise-content">
+<p>This exercise is the same as the previous one, but instead of extracting five characters each time, you are asked to extract a variable number of characters specified by the variable <code class="docutils literal notranslate"><span class="pre">long</span></code>.</p>
+</div>
+</div>
+<p>You can use the same example as above plus the additional variable <code class="docutils literal notranslate"><span class="pre">length</span></code>:</p>
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">length</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">8</span> <span class="m">4</span>
-<span class="nv">ExtractL</span> <span class="kd">←</span> <span class="kt">{}</span>
 <span class="nv">text</span> <span class="nv">ExtractL</span> <span class="nv">start</span> <span class="nv">length</span>
-<span class="c1">⍝ &#39;bortyped juxper&#39;</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">bortyped juxper
+</span></div></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;bortyped juxper&#39;</span> <span class="o">≡</span> <span class="nv">text</span> <span class="nv">ExtractL</span> <span class="nv">start</span> <span class="nv">length</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
 </div>
 </div>
 <div class="section" id="the-specialist-s-section">
@@ -5054,7 +5130,12 @@ APL is a very rich language, and due to the general nature of its primitive func
 Which one is “the best” depends on many things, for example the level of experience of the programmer, the importance of system performance, the required behaviour in border cases, the requirement to meet certain programming standards and also personal preferences.
 This is one of the reasons why APL is so pleasant to teach and to learn!</p>
 <p>We advise you to try and solve the exercises before reading the solutions!</p>
-<p><strong>Exercise 1</strong>:</p>
+<div class="solution admonition" id="Nested-Arrays-Continued-solution-10">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-depth-rank-shape"> Exercise 10.1</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>A very reasonable thing to do first is figure out the depth, rank, and shape, of the two arrays we are working with:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5197,7 +5278,12 @@ Thus, the result will have some elements of depth <code class="docutils literal 
 └─┴─┴─┴─┴─┴─┴─┴──────────────────────────────┘
 </span></div></div>
 </div>
-<p><strong>Exercise 2</strong>:</p>
+<div class="solution admonition" id="Nested-Arrays-Continued-solution-11">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-depth-rank-shape2"> Exercise 10.2</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>Let’s take the three vectors we need and work with them:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5321,7 +5407,12 @@ Now, <code class="docutils literal notranslate"><span class="pre">a</span> <span
 </div>
 </div>
 </div>
-<p><strong>Exercise 3</strong>:</p>
+<div class="solution admonition" id="Nested-Arrays-Continued-solution-12">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-depth-rank-shape3"> Exercise 10.3</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>We continue our work:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">+/a</span> <span class="pre">b</span> <span class="pre">c</span></code></p></li>
@@ -5484,7 +5575,12 @@ Therefore, the final result will be a nested vector of depth <code class="docuti
 └─┴─┴─┘
 </span></div></div>
 </div>
-<p><strong>Exercise 4</strong>:</p>
+<div class="solution admonition" id="Nested-Arrays-Continued-solution-13">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-reductions"> Exercise 10.4</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>We want to know what <code class="docutils literal notranslate"><span class="pre">+/na</span></code> and <code class="docutils literal notranslate"><span class="pre">,/na</span></code> evaluate to, given <code class="docutils literal notranslate"><span class="pre">na</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5553,7 +5649,12 @@ Then, we <em>catenate</em> two scalars (separately) to the left of the matrix, s
 └─────────┘
 </span></div></div>
 </div>
-<p><strong>Exercise 5</strong>:</p>
+<div class="solution admonition" id="Nested-Arrays-Continued-solution-14">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-quantitiessold"> Exercise 10.5</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>We have the two vectors here:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5684,7 +5785,12 @@ The <em>partitioned enclose</em> is likely to return sub-vectors that do not hav
 13 39 10 152 19
 </span></div></div>
 </div>
-<p><strong>Exercise 6</strong>:</p>
+<div class="solution admonition" id="Nested-Arrays-Continued-solution-15">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-high-dim-index-of"> Exercise 10.6</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>In order to be able to look the rows of a matrix up on the rows of another matrix, we just need to use <em>split</em> to turn both matrices into vectors of rows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5723,7 +5829,12 @@ The <em>partitioned enclose</em> is likely to return sub-vectors that do not hav
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 5 6
 </span></div></div>
 </div>
-<p><strong>Exercise 7</strong>:</p>
+<div class="solution admonition" id="Nested-Arrays-Continued-solution-16">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-empty-vectors"> Exercise 10.7</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>In order to understand the results of the empty <em>partitioned encloses</em>, it is helpful to think about what the result would be if it were a “normal” <em>partitioned enclose</em>.</p>
 <p>For example, for the solved case, here is a “normal” <em>partitioned enclose</em> of <code class="docutils literal notranslate"><span class="pre">'Partition'</span></code>, using an arbitrary left argument with a couple of <code class="docutils literal notranslate"><span class="pre">1</span></code>s and a couple of <code class="docutils literal notranslate"><span class="pre">0</span></code>s:</p>
 <div class="cell docutils container">
@@ -5946,7 +6057,12 @@ The first item is a 5-item vector with an integer, three characters, and another
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1
 </span></div></div>
 </div>
-<p><strong>Exercise 8</strong>:</p>
+<div class="solution admonition" id="Nested-Arrays-Continued-solution-17">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-startandend"> Exercise 10.8</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>To check if a word starts and ends with the same character, we can take a character from the front, one from the back, and compare those:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -6035,7 +6151,12 @@ The fix for this is using the primitive function <em>nest</em> to preprocess the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1
 </span></div></div>
 </div>
-<p><strong>Exercise 9</strong>:</p>
+<div class="solution admonition" id="Nested-Arrays-Continued-solution-18">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-extract-subvectors"> Exercise 10.9</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>In order to extract the sub-vectors from the big character vector, we need to take the starting indices and count five indices starting from there:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -6081,7 +6202,12 @@ The fix for this is using the primitive function <em>nest</em> to preprocess the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">borintypedxperi
 </span></div></div>
 </div>
-<p><strong>Exercise 10</strong>:</p>
+<div class="solution admonition" id="Nested-Arrays-Continued-solution-19">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-extractl"> Exercise 10.10</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>This exercise is very similar to the previous one, except that now we don’t extract sub-vectors of fixed length, the lengths depend on the right argument.
 Fixing this can be done by using <em>iota each</em>:</p>
 <div class="cell docutils container">

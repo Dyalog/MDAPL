@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
@@ -2274,7 +2275,7 @@ June
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.2 Unicode\ws\DISPLAY.dws saved Wed Jan 26 20:51:48 2022
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.2 Unicode\ws\DISPLAY.dws saved Fri Mar 18 14:04:14 2022
 </span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→────────────────────────────────────┐
 │ ┌→──┐ ┌→──────────┐ ┌→──┐   ┌→────┐ │
 │ │6 2│ │35 33 26 21│ │7 7│ 3 │19 14│ │
@@ -2708,10 +2709,10 @@ June
 </span></div></div>
 </div>
 <p>so, we get the maximum <code class="docutils literal notranslate"><span class="pre">45</span></code>. And so on for other functions we put to the left of <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p>
-<div class="hint admonition">
-<p class="admonition-title">Exercise</p>
+<!-- exercise -->
+<p><em><strong>Exercise</strong></em>:</p>
 <p>Try to evaluate the following expression in your head or with pen and paper: <code class="docutils literal notranslate"><span class="pre">23⌈</span> <span class="pre">⌈</span> <span class="pre">⌈/</span> <span class="pre">17.81</span> <span class="pre">21.41</span> <span class="pre">9.34</span> <span class="pre">16.53</span></code></p>
-</div>
+<!-- end -->
 <p>Don’t panic! Remember to evaluate it symbol by symbol, from right to left.</p>
 </div>
 <div class="section" id="definition">
@@ -5991,7 +5992,10 @@ Fe2O3
 <p><em>The following exercises are designed to train <strong>you</strong>, not the computer.</em></p>
 <p><em>For this reason, we suggest that you try to answer them on a sheet of paper, not on your computer. When you are sure of your answer, you can test it on the computer.</em></p>
 </div>
-<p><strong>Exercise 1</strong>:</p>
+<div class="exercise admonition" id="expr-eval">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.1 </span></p>
+<div class="section" id="exercise-content">
 <p>Can you evaluate the following expressions?</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="o">×</span> <span class="m">2</span> <span class="o">+</span> <span class="m">6</span> <span class="o">≠</span> <span class="m">3</span> <span class="o">×</span> <span class="m">2</span>
 <span class="m">12</span> <span class="m">6</span> <span class="m">27</span> <span class="o">⌊</span> <span class="m">11</span> <span class="o">+</span> <span class="o">⍳</span><span class="m">3</span>
@@ -6004,7 +6008,12 @@ Fe2O3
 <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="o">⊢</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span>
 </pre></div>
 </div>
-<p><strong>Exercise 2</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="expr-eval2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.2 </span></p>
+<div class="section" id="exercise-content">
 <p>Try to evaluate the following expressions. <em>Be careful</em>: they are not as simple as might first appear!</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="m">2</span><span class="o">+</span><span class="m">2</span> <span class="m">2</span>
 <span class="m">2</span><span class="o">+</span><span class="m">2</span> <span class="m">2</span><span class="o">+</span><span class="m">2</span>
@@ -6012,7 +6021,12 @@ Fe2O3
 <span class="m">2</span><span class="o">,</span><span class="m">2</span><span class="o">+</span><span class="m">2</span><span class="o">,</span><span class="m">2</span>
 </pre></div>
 </div>
-<p><strong>Exercise 3</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="a-expr-eval">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.3 </span></p>
+<div class="section" id="exercise-content">
 <p>Given the vector <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">←</span> <span class="pre">8</span> <span class="pre">2</span> <span class="pre">7</span> <span class="pre">5</span></code>, compare the results obtained from the following sets of expressions:</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="o">+⍴</span><span class="nv">a</span>
 <span class="o">⍴</span><span class="nv">a</span><span class="o">+</span><span class="m">1</span>
@@ -6024,45 +6038,67 @@ Fe2O3
 <span class="o">⍳⍴</span><span class="nv">a</span><span class="o">-</span><span class="m">1</span>
 </pre></div>
 </div>
-<p><strong>Exercise 4</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="remove-parens">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.4 </span></p>
+<div class="section" id="exercise-content">
 <p>Using your knowledge of the order of evaluation in APL, re-write the following expressions without using parentheses.</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="o">⍳</span><span class="m">4</span><span class="p">)</span><span class="o">-</span><span class="m">1</span><span class="p">)</span><span class="o">⌈</span><span class="m">3</span>
 <span class="m">7</span><span class="o">⌊</span><span class="p">(</span><span class="o">⍳</span><span class="m">9</span><span class="p">)</span><span class="o">⌈</span><span class="m">3</span>
 <span class="m">1</span><span class="o">+</span><span class="p">((</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span><span class="o">=</span><span class="m">1</span> <span class="m">4</span> <span class="m">3</span> <span class="m">2</span> <span class="m">5</span><span class="p">)</span><span class="o">×</span><span class="m">5</span>
 </pre></div>
 </div>
-<p><strong>Exercise 5</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="is-scalar">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.5 </span></p>
+<div class="section" id="exercise-content">
 <p>Given a variable <code class="docutils literal notranslate"><span class="pre">a</span></code>, find an expression which returns the answer 1 if <code class="docutils literal notranslate"><span class="pre">a</span></code> is a scalar, and 0 if it is not.</p>
-<p><strong>Exercise 6</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="a-b">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.6 </span></p>
+<div class="section" id="exercise-content">
 <p>Given two scalars <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>, write an expressions which gives 7 if <code class="docutils literal notranslate"><span class="pre">a</span></code> is greater than or equal to <code class="docutils literal notranslate"><span class="pre">b</span></code> and 3 if <code class="docutils literal notranslate"><span class="pre">a</span></code> is smaller than <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
-<p><strong>Exercise 7</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="a-b-else">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.7 </span></p>
+<div class="section" id="exercise-content">
 <p>Given two scalars <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>, find an expression which returns:</p>
 <ul class="simple">
 <li><p>an empty vector, if <code class="docutils literal notranslate"><span class="pre">a</span></code> is zero, whatever the value of <code class="docutils literal notranslate"><span class="pre">b</span></code>;</p></li>
 <li><p>0, if <code class="docutils literal notranslate"><span class="pre">b</span></code> is zero, but <code class="docutils literal notranslate"><span class="pre">a</span></code> is not;</p></li>
 <li><p>3, if neither <code class="docutils literal notranslate"><span class="pre">a</span></code> nor <code class="docutils literal notranslate"><span class="pre">b</span></code> are zero.</p></li>
 </ul>
-<p><strong>Exercise 8</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="and-or-maths">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.8 </span></p>
+<div class="section" id="exercise-content">
 <p>Unfortunately, your keyboard has been damaged and your <code class="docutils literal notranslate"><span class="pre">∧</span></code> and <code class="docutils literal notranslate"><span class="pre">∨</span></code> keys no longer work. Which other symbols could you use to replace them?</p>
-<p>You can test your solutions on these vectors:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<p>You can test your solutions on the vectors <code class="docutils literal notranslate"><span class="pre">l</span></code> and <code class="docutils literal notranslate"><span class="pre">r</span></code>:</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">l</span> <span class="kd">←</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span>
 <span class="nv">r</span> <span class="kd">←</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Exercise 9</strong>:</p>
+<div class="exercise admonition" id="gmd-eval">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.9 </span></p>
+<div class="section" id="exercise-content">
 <p>Given these three vectors:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">g</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span>
 <span class="nv">m</span> <span class="kd">←</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span>
 <span class="nv">d</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>Evaluate the following expressions:</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">g</span><span class="o">∨</span><span class="nv">d</span>
@@ -6075,7 +6111,12 @@ Fe2O3
 <span class="p">(</span><span class="nv">m</span><span class="o">⌊</span><span class="nv">g</span><span class="p">)</span><span class="o">≠</span><span class="p">(</span><span class="nv">m</span><span class="o">⌈</span><span class="nv">d</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Exercise 10</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="eval-expr-comps">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.10 </span></p>
+<div class="section" id="exercise-content">
 <p>Evaluate the following expressions:</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="o">&lt;</span> <span class="m">0</span> <span class="o">≤</span> <span class="m">0</span> <span class="o">=</span> <span class="m">0</span> <span class="o">≥</span> <span class="m">0</span> <span class="o">&gt;</span> <span class="m">0</span>
 <span class="s1">&#39;sugar&#39;</span> <span class="o">∊</span> <span class="s1">&#39;salt&#39;</span>
@@ -6083,20 +6124,24 @@ Fe2O3
 <span class="s1">&#39;14&#39;</span> <span class="o">⍳</span> <span class="s1">&#39;41&#39;</span>
 </pre></div>
 </div>
-<p><strong>Exercise 11</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="count-e">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.11 </span></p>
+<div class="section" id="exercise-content">
 <p>Write an expression to compute the number of times the letter “e” appears in a character vector. You can test it with this vector:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">text</span> <span class="kd">←</span> <span class="s1">&#39;The silence of the sea&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Exercise 12</strong>:</p>
+<div class="exercise admonition" id="get-last">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.12 </span></p>
+<div class="section" id="exercise-content">
 <p>How many expressions can you write to retrieve the last element of a vector? Can you write one that uses the operator <em>reduce</em> <code class="docutils literal notranslate"><span class="pre">/</span></code>?</p>
 <p>You can test your expressions on these vectors:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">vec</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span>
 <span class="nv">vec</span> <span class="kd">←</span> <span class="p">(</span><span class="m">1</span> <span class="m">2</span><span class="p">)</span> <span class="m">3</span> <span class="p">(</span><span class="m">4</span> <span class="m">5</span><span class="p">)</span> <span class="m">6</span>
 <span class="nv">vec</span> <span class="kd">←</span> <span class="m">0</span> <span class="p">(</span><span class="m">5</span><span class="o">⍴</span><span class="m">0</span><span class="p">)</span> <span class="p">(</span><span class="m">3</span> <span class="m">4</span><span class="o">⍴</span><span class="m">0</span><span class="p">)</span> <span class="p">(</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span><span class="o">⍴</span><span class="m">0</span><span class="p">)</span>
@@ -6104,7 +6149,10 @@ Fe2O3
 </div>
 </div>
 </div>
-<p><strong>Exercise 13</strong>:</p>
+<div class="exercise admonition" id="find-z">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.13 </span></p>
+<div class="section" id="exercise-content">
 <p>We have conducted some experiments on a variable <code class="docutils literal notranslate"><span class="pre">z</span></code>:</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>      <span class="m">2</span> <span class="o">⍴</span> <span class="nv">z</span>
 <span class="m">1</span> <span class="m">7</span>
@@ -6118,7 +6166,12 @@ Fe2O3
 </pre></div>
 </div>
 <p>What is the value of <code class="docutils literal notranslate"><span class="pre">z</span></code>?</p>
-<p><strong>Exercise 14</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="find-z-matrix">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.14 </span></p>
+<div class="section" id="exercise-content">
 <p>We have conducted some experiments on a variable <code class="docutils literal notranslate"><span class="pre">z</span></code>:</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>      <span class="nv">z</span> <span class="o">=</span> <span class="m">0</span>
 <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span>
@@ -6130,13 +6183,21 @@ Fe2O3
 </pre></div>
 </div>
 <p>What is the value of <code class="docutils literal notranslate"><span class="pre">z</span></code>?</p>
-<p><strong>Exercise 15</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="ex-where">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.15 </span></p>
+<div class="section" id="exercise-content">
 <p>What are all the <strong>positions</strong> of the letter “e” in the character vector specified in exercise 11?</p>
-<p><strong>Exercise 16</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="get-odd">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.16 </span></p>
+<div class="section" id="exercise-content">
 <p>Given a vector <code class="docutils literal notranslate"><span class="pre">vec</span></code> of any size and type (numeric or character or even nested), try to extract the items of <code class="docutils literal notranslate"><span class="pre">vec</span></code> which are in the odd positions (the 1st, the 3rd, the 5th, …).</p>
 <p>You can test your solution on these vectors:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">vec</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span>
 <span class="nv">vec</span> <span class="kd">←</span> <span class="s1">&#39;CROANGGARYANTLULLBAPTWIZOSNSSB&#39;</span>
 <span class="nv">vec</span> <span class="kd">←</span> <span class="p">(</span><span class="m">1</span> <span class="m">2</span><span class="p">)</span> <span class="p">(</span><span class="m">2</span> <span class="m">3</span><span class="p">)</span> <span class="p">(</span><span class="m">4</span> <span class="m">5</span> <span class="m">6</span><span class="p">)</span> <span class="p">(</span><span class="m">6</span> <span class="m">9</span> <span class="m">42</span> <span class="m">1024</span><span class="p">)</span>
@@ -6144,34 +6205,38 @@ Fe2O3
 </div>
 </div>
 </div>
-<p><strong>Exercise 17</strong>:</p>
+<div class="exercise admonition" id="count-scalars">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.17 </span></p>
+<div class="section" id="exercise-content">
 <p>How many numbers are there in the variable <code class="docutils literal notranslate"><span class="pre">prod</span></code> used in this chapter? Try to answer with and without using <em>ravel</em> (monadic <code class="docutils literal notranslate"><span class="pre">,</span></code>).</p>
-<p><strong>Exercise 18</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="remove-20-30">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.18 </span></p>
+<div class="section" id="exercise-content">
 <p>How is it possible to remove all the values which do not fall between 20 (inclusive) and 30 (exclusive) from a given vector?</p>
-<p><strong>Exercise 19</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="tally-shape">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.19 </span></p>
+<div class="section" id="exercise-content">
 <p>Notice how these two expressions look the same:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≢</span><span class="nv">vec</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>      <span class="o">≢</span><span class="nv">vec</span>
+<span class="m">4</span>
+      <span class="o">⍴</span><span class="nv">vec</span>
+<span class="m">4</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">4
-</span></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">vec</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">4
-</span></div></div>
 </div>
 <p>Can you tell if/how they are different?</p>
-<p><strong>Exercise 20</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="ex-depth">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.20 </span></p>
+<div class="section" id="exercise-content">
 <p>Compute the <em>depth</em> (<code class="docutils literal notranslate"><span class="pre">≡</span></code>) of these arrays:</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">42</span>
 <span class="m">42</span> <span class="m">41</span> <span class="m">40</span> <span class="m">39</span>
@@ -6182,9 +6247,19 @@ Fe2O3
 <span class="p">(</span><span class="m">2</span> <span class="m">2</span><span class="o">⍴</span><span class="m">4</span><span class="p">)</span> <span class="p">(</span><span class="m">2</span> <span class="m">2</span><span class="o">⍴⍳</span><span class="m">47</span><span class="p">)</span> <span class="p">(</span><span class="m">3</span> <span class="m">6</span><span class="o">⍴⍳</span><span class="m">18</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Exercise 21</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="clip-values">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.21 </span></p>
+<div class="section" id="exercise-content">
 <p>In a vector, we would like to replace all the values that are smaller than 20 by 20, and replace all the values that are greater than 30 by 30. How can we do that? (In other words, how might we clip the values of a vector so that they are between 20 and 30, inclusive?)</p>
-<p><strong>Exercise 22</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="find-errors">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.22 </span></p>
+<div class="section" id="exercise-content">
 <p>The following 6 expressions cannot be executed, but instead generate error messages; can you say why?</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span><span class="o">+</span><span class="p">(</span><span class="m">5</span><span class="o">-</span><span class="p">(</span><span class="m">6</span><span class="o">+</span><span class="m">2</span><span class="p">)</span><span class="o">×</span><span class="m">4</span>
 <span class="m">121</span><span class="o">÷</span><span class="p">(</span><span class="o">⍳</span><span class="m">4</span><span class="p">)</span><span class="o">-</span><span class="m">3</span>
@@ -6194,33 +6269,38 @@ Fe2O3
 <span class="o">⍸</span><span class="m">1</span> <span class="m">0</span> <span class="m">2</span> <span class="m">¯1</span>
 </pre></div>
 </div>
-<p><strong>Exercise 23</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="arithmetic-sequence">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.23 </span></p>
+<div class="section" id="exercise-content">
 <p>Write an APL expression which produces a vector of 17 numbers, the first being 23, with each subsequent number being equal to the preceding one plus 11.</p>
-<p><strong>Exercise 24</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="bill">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.24 </span></p>
+<div class="section" id="exercise-content">
 <p>In a shop, each product is identified by a code. You are given a list of the codes and the corresponding prices:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">pcodes</span> <span class="kd">←</span> <span class="m">56</span> <span class="m">66</span> <span class="m">19</span> <span class="m">37</span> <span class="m">44</span> <span class="m">20</span> <span class="m">18</span> <span class="m">23</span> <span class="m">68</span> <span class="m">70</span> <span class="m">82</span>
 <span class="nv">prices</span> <span class="kd">←</span>  <span class="m">9</span> <span class="m">27</span> <span class="m">10</span> <span class="m">15</span> <span class="m">12</span>  <span class="m">5</span>  <span class="m">8</span>  <span class="m">9</span> <span class="m">98</span>  <span class="m">7</span> <span class="m">22</span>
 </pre></div>
 </div>
-</div>
-</div>
 <p>A customer gives you a list of items they intend to buy as vector of code/quantity pairs: code, quantity, code, quantity, and so on.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">wannaBuy</span> <span class="kd">←</span> <span class="m">37</span> <span class="m">1</span> <span class="m">70</span> <span class="m">20</span> <span class="m">19</span> <span class="m">2</span> <span class="m">82</span> <span class="m">5</span> <span class="m">23</span> <span class="m">10</span>
 </pre></div>
-</div>
-</div>
 </div>
 <p>Can you evaluate their bill?</p>
 <p>Note that this cannot be done easily in a single (and readable) APL expression, and you will therefore need to write several expressions.</p>
 <p>The correct total should be 375.</p>
-<p><strong>Exercise 25</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="lottery">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.25 </span></p>
+<div class="section" id="exercise-content">
 <p>We have organised a lottery, and we have created five vectors:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
 <span class="nv">tickets</span> <span class="kd">←</span> <span class="o">?</span><span class="m">1000</span><span class="o">⍴</span><span class="m">999999</span>
 <span class="nv">sold</span> <span class="kd">←</span> <span class="nv">tickets</span><span class="sr">[</span><span class="p">(</span><span class="m">800</span><span class="o">+?</span><span class="m">200</span><span class="p">)</span><span class="o">?</span><span class="m">1000</span><span class="sr">]</span>
@@ -6229,8 +6309,7 @@ Fe2O3
 <span class="nv">prizes</span> <span class="kd">←</span> <span class="o">?</span><span class="m">100</span><span class="o">⍴</span><span class="m">1000</span>
 </pre></div>
 </div>
-</div>
-</div>
+<p>These are the meanings of these vectors:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">tickets</span></code> has the numbers of all the existing tickets;</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sold</span></code> has the numbers of the tickets which have been sold;</p></li>
@@ -6238,14 +6317,19 @@ Fe2O3
 <li><p><code class="docutils literal notranslate"><span class="pre">winners</span></code> has the numbers of the winning tickets, and</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">prizes</span></code> has the prize amount associated with each respective number in <code class="docutils literal notranslate"><span class="pre">winners</span></code> vector.</p></li>
 </ul>
-<p>And now, try to answer the following 4 questions:</p>
+<p>Now, try to answer the following 4 questions:</p>
 <ol class="simple">
 <li><p>What are the numbers of the unsold tickets?</p></li>
 <li><p>Are there some winning tickets which have not been sold?</p></li>
 <li><p>How many winning tickets do <strong>we</strong> have?</p></li>
 <li><p>How much did we win?</p></li>
 </ol>
-<p><strong>Exercise 26</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="divisors">
+
+<p class="admonition-title"><span class="caption-number">Exercise 4.26 </span></p>
+<div class="section" id="exercise-content">
 <p>Can you calculate all the divisors of a positive integer number <code class="docutils literal notranslate"><span class="pre">n</span></code>?</p>
 <p>Here are some results to check your answer:</p>
 <table class="colwidths-auto table">
@@ -6275,6 +6359,8 @@ Fe2O3
 </tr>
 </tbody>
 </table>
+</div>
+</div>
 <p><strong>Solutions</strong>: the solutions can be found at the end of this chapter.</p>
 </div>
 <div class="section" id="the-specialist-s-section">
@@ -6346,8 +6432,7 @@ Fe2O3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">¯0.933333 ¯0.866667 ¯0.8 ¯0.733333 ¯0.666667 ¯0.6 ¯0.533333 ¯0.466667 ¯0.4 ¯0.333333 ¯0.266667 ¯0.2 ¯0.133333 ¯0.0666667 0
-       0.0666667 0.133333 0.2 0.266667 0.333333 0.4 0.466667 0.533333 0.6 0.666667 0.733333 0.8 0.866667 0.933333 1
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">¯0.933333 ¯0.866667 ¯0.8 ¯0.733333 ¯0.666667 ¯0.6 ¯0.533333 ¯0.466667 ¯0.4 ¯0.333333 ¯0.266667 ¯0.2 ¯0.133333 ¯0.0666667 0 0.0666667 0.133333 0.2 0.266667 0.333333 0.4 0.466667 0.533333 0.6 0.666667 0.733333 0.8 0.866667 0.933333 1
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -6357,8 +6442,7 @@ Fe2O3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">¯4.66667 ¯4.33333 ¯4 ¯3.66667 ¯3.33333 ¯3 ¯2.66667 ¯2.33333 ¯2 ¯1.66667 ¯1.33333 ¯1 ¯0.666667 ¯0.333333 0 0.333333 0.66666
-      7 1 1.33333 1.66667 2 2.33333 2.66667 3 3.33333 3.66667 4 4.33333 4.66667 5
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">¯4.66667 ¯4.33333 ¯4 ¯3.66667 ¯3.33333 ¯3 ¯2.66667 ¯2.33333 ¯2 ¯1.66667 ¯1.33333 ¯1 ¯0.666667 ¯0.333333 0 0.333333 0.666667 1 1.33333 1.66667 2 2.33333 2.66667 3 3.33333 3.66667 4 4.33333 4.66667 5
 </span></div></div>
 </div>
 <p>And now let us study the ratio <span class="math notranslate nohighlight">\(f(x)/x\)</span> for those several values of <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
@@ -7309,7 +7393,12 @@ Fe2O3
 <span id="some-primitive-functions-solutions"></span><h2><span class="section-number">4.20. </span>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
 <p>The solutions we propose in the following pages are not necessarily the “best” ones; perhaps you will find other solutions that we have never considered. APL is a very rich language, and due to the general nature of its primitive functions and operators there are always plenty of different ways to express different solutions to a given problem. Which one is “the best” depends on many things, for example the level of experience of the programmer, the importance of system performance, the required behaviour in border cases, the requirement to meet certain programming standards and also personal preferences. This is one of the reasons why APL is so pleasant to teach and to learn!</p>
 <p>We advise you to try and solve the exercises before reading the solutions!</p>
-<p><strong>Exercise 1</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-26">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#expr-eval"> Exercise 4.1</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>Copy each expression to the APL session and execute them. If you are surprised by an answer, analyse the expression step by step, starting from the right. For example, for the first expression:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7442,7 +7531,12 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">4 5 6
 </span></div></div>
 </div>
-<p><strong>Exercise 2</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-27">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#expr-eval2"> Exercise 4.2</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">2+2</span> <span class="pre">2</span></code> is the addition of two vectors of size 2:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7486,7 +7580,12 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">2 4 4
 </span></div></div>
 </div>
-<p><strong>Exercise 3</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-28">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#a-expr-eval"> Exercise 4.3</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="kd">←</span> <span class="m">8</span> <span class="m">2</span> <span class="m">7</span> <span class="m">5</span>
@@ -7546,7 +7645,12 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 3 4
 </span></div></div>
 </div>
-<p><strong>Exercise 4</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-29">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#remove-parens"> Exercise 4.4</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">((⍳4)-1)⌈3</span></code></p></li>
 </ul>
@@ -7690,19 +7794,39 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">6 1 6 1 6
 </span></div></div>
 </div>
-<p><strong>Exercise 5</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-30">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#is-scalar"> Exercise 4.5</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>There are a couple of ways to determine if <code class="docutils literal notranslate"><span class="pre">a</span></code> is a scalar or not. For example, we might check if its rank is 0 with <code class="docutils literal notranslate"><span class="pre">0=≢⍴a</span></code>. We might also check if its shape matches the empty numeric vector with <code class="docutils literal notranslate"><span class="pre">⍬≡⍴a</span></code>.</p>
-<p><strong>Exercise 6</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-31">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#a-b"> Exercise 4.6</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>A possible way to look at this is by realising that the expression we are about to create is supposed to give two different values depending on the value of <code class="docutils literal notranslate"><span class="pre">a≥b</span></code>. If <code class="docutils literal notranslate"><span class="pre">a≥b</span></code> is 1 the expression needs to evaluate to 7 and if not, it needs to evaluate to 3.</p>
 <p>What we can do is write an expression that “returns at least 3, with a bonus 4 whenever <code class="docutils literal notranslate"><span class="pre">a≥b</span></code>”. From that perspective, we can do <code class="docutils literal notranslate"><span class="pre">3+(4×a≥b)</span></code> which is the same as <code class="docutils literal notranslate"><span class="pre">3+4×a≥b</span></code>.</p>
-<p><strong>Exercise 7</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-32">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#a-b-else"> Exercise 4.7</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>An example expression could be <code class="docutils literal notranslate"><span class="pre">(a≠0)⍴3×b≠0</span></code>. Here’s how to get there:</p>
 <p>We have 3 restrictions, the first one being about the shape of the result and the other two about the value itself. Reading the first restriction and factoring it with the other two, we see that we should return an empty vector whenever <code class="docutils literal notranslate"><span class="pre">a</span></code> is zero and a numerical vector otherwise.</p>
 <p>This means our expression will be of the form <code class="docutils literal notranslate"><span class="pre">(a≠0)⍴(...)</span></code>. If <code class="docutils literal notranslate"><span class="pre">a</span></code> is zero, then <code class="docutils literal notranslate"><span class="pre">a≠0</span></code> returns 0 and the right expression won’t matter, because we get an empty vector. If <code class="docutils literal notranslate"><span class="pre">a</span></code> is not zero, then <code class="docutils literal notranslate"><span class="pre">a≠0</span></code> returns 1, and we leave the <em>value</em> of the right expression as is.</p>
 <p>Now we only have to figure out what goes into <code class="docutils literal notranslate"><span class="pre">(...)</span></code>, which should be an expression that evaluates to 0 if <code class="docutils literal notranslate"><span class="pre">b</span></code> is zero and 3 if <code class="docutils literal notranslate"><span class="pre">b</span></code> is not zero. We don’t need to care about enforcing <code class="docutils literal notranslate"><span class="pre">a</span></code> to be different from zero because if <code class="docutils literal notranslate"><span class="pre">a</span></code> is zero we will get an empty vector either way…</p>
 <p>Thus this sub expression can be something like <code class="docutils literal notranslate"><span class="pre">3×b≠0</span></code>, which evaluates to <code class="docutils literal notranslate"><span class="pre">3</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code> depending on the value of <code class="docutils literal notranslate"><span class="pre">b</span></code> being zero or not.</p>
 <p>Putting everything together we get <code class="docutils literal notranslate"><span class="pre">(a≠0)⍴3×b≠0</span></code>.</p>
-<p><strong>Exercise 8</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-33">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#and-or-maths"> Exercise 4.8</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <ul class="simple">
 <li><p>replace <code class="docutils literal notranslate"><span class="pre">∧</span></code> with <code class="docutils literal notranslate"><span class="pre">×</span></code> or <code class="docutils literal notranslate"><span class="pre">⌊</span></code>;</p></li>
 <li><p>replace <code class="docutils literal notranslate"><span class="pre">∨</span></code> with <code class="docutils literal notranslate"><span class="pre">⌈</span></code>.</p></li>
@@ -7767,7 +7891,12 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">0 1 1 1
 </span></div></div>
 </div>
-<p><strong>Exercise 9</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-34">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#gmd-eval"> Exercise 4.9</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">g</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span>
@@ -7857,7 +7986,12 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1 0 0 1 1 0
 </span></div></div>
 </div>
-<p><strong>Exercise 10</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-35">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#eval-expr-comps"> Exercise 4.10</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="o">&lt;</span> <span class="m">0</span> <span class="o">≤</span> <span class="m">0</span> <span class="o">=</span> <span class="m">0</span> <span class="o">≥</span> <span class="m">0</span> <span class="o">&gt;</span> <span class="m">0</span>
@@ -7901,7 +8035,12 @@ Fe2O3
 </span></div></div>
 </div>
 <p>And here we find the position of each character of <code class="docutils literal notranslate"><span class="pre">'41'</span></code> in <code class="docutils literal notranslate"><span class="pre">'14'</span></code>.</p>
-<p><strong>Exercise 11</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-36">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#count-e"> Exercise 4.11</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>A sensible way to approach this problem is to first compare the string with the character <code class="docutils literal notranslate"><span class="pre">'e'</span></code> and then sum the 1s that show up:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7914,7 +8053,12 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">5
 </span></div></div>
 </div>
-<p><strong>Exercise 12</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-37">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#get-last"> Exercise 4.12</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>You may have come up with expressions that are similar to these ones or maybe completely different! We show <em>some</em> possibilities below.</p>
 <p>We included different types of vectors so that you could be sure your solutions also work for all sorts of different vectors.</p>
 <div class="cell docutils container">
@@ -7966,7 +8110,12 @@ Fe2O3
 └─────┘
 </span></div></div>
 </div>
-<p><strong>Exercise 13</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-38">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#find-z"> Exercise 4.13</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>Notice how <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">⍴</span> <span class="pre">7</span></code> gives the first 2 elements of <code class="docutils literal notranslate"><span class="pre">z</span></code>, which are 1 and 7.</p>
 <p>Then</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>      <span class="nv">z</span> <span class="o">=</span> <span class="m">9</span>
@@ -8023,7 +8172,12 @@ Fe2O3
 0
 </span></div></div>
 </div>
-<p><strong>Exercise 14</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-39">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#find-z-matrix"> Exercise 4.14</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>      <span class="nv">z</span> <span class="o">=</span> <span class="m">0</span>
 <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span>
 <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span>
@@ -8086,7 +8240,12 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">8 7 6 5
 </span></div></div>
 </div>
-<p><strong>Exercise 15</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-40">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-where"> Exercise 4.15</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p><strong>Positions</strong> can be retrieved with <em>where</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8099,7 +8258,12 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">3 8 11 18 21
 </span></div></div>
 </div>
-<p><strong>Exercise 16</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-41">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#get-odd"> Exercise 4.16</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>There are a couple of different ways to solve this problem. From an indexing perspective, we might want to generate all the odd numbers up to, and including, the length of the vector:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8160,7 +8324,12 @@ Fe2O3
 └───┴─────┘
 </span></div></div>
 </div>
-<p><strong>Exercise 17</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-42">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#count-scalars"> Exercise 4.17</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p><em>Ravel</em> will take a 3D array and create a long vector with all its items, so we just have to count them:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8193,7 +8362,12 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">120
 </span></div></div>
 </div>
-<p><strong>Exercise 18</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-43">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#remove-20-30"> Exercise 4.18</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>This is a simple exercise in compressing with a Boolean mask. We just create a mask with all the numbers we want to keep:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8226,7 +8400,12 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40
 </span></div></div>
 </div>
-<p><strong>Exercise 19</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-44">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#tally-shape"> Exercise 4.19</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">≢</span><span class="nv">vec</span>
@@ -8269,7 +8448,12 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1
 </span></div></div>
 </div>
-<p><strong>Exercise 20</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-45">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-depth"> Exercise 4.20</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>For this exercise we just have to revisit the rule for how <em>depth</em> works and work our way inside out.</p>
 <p>A scalar has depth 0</p>
 <div class="cell docutils container">
@@ -8348,7 +8532,12 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">2
 </span></div></div>
 </div>
-<p><strong>Exercise 21</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-46">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#clip-values"> Exercise 4.21</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>This task of ensuring all numbers in an array are above a minimum threshold and below a maximum threshold is sometimes called <em>clipping</em> and is easy to achieve in APL with the scalar <code class="docutils literal notranslate"><span class="pre">⌈</span></code> and <code class="docutils literal notranslate"><span class="pre">⌊</span></code> functions. We create a dummy matrix to demonstrate:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8389,7 +8578,12 @@ Fe2O3
 26 28 30
 </span></div></div>
 </div>
-<p><strong>Exercise 22</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-47">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#find-errors"> Exercise 4.22</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>The challenge of this exercise was to spot the error <em>before</em> trying to run the expression on the interpreter and reading its error message.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">3+(5-(6+2)×4</span></code></p></li>
@@ -8512,7 +8706,12 @@ Fe2O3
 </div>
 </div>
 </div>
-<p><strong>Exercise 23</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-48">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#arithmetic-sequence"> Exercise 4.23</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>This “vector of 17 numbers, the first being 23, with each subsequent number being equal to the preceding one plus 11” is called an arithmetic progression in mathematics. Generating them is really easy if you use the algorithm we showed earlier.</p>
 <p>We start by generating a vector of consecutive numbers with the appropriate length:</p>
 <div class="cell docutils container">
@@ -8558,7 +8757,12 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">23 34 45 56 67 78 89 100 111 122 133 144 155 166 177 188 199
 </span></div></div>
 </div>
-<p><strong>Exercise 24</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-49">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#bill"> Exercise 4.24</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>The first sensible thing to do is separate the products from the quantities. We can do this by creating a matrix with 2 columns:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -8606,7 +8810,12 @@ Fe2O3
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">375
 </span></div></div>
 </div>
-<p><strong>Exercise 25</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-50">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#lottery"> Exercise 4.25</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
@@ -8627,15 +8836,7 @@ Fe2O3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">636802 512379 327584 742744 867694 518416 837522 756393 875860 650618 734820 850511 269877 919436 540758 983293 504930 693
-      521 242886 704993 445662 713406 614389 483967 897435 610802 578109 768129 383069 395407 7478 420111 30447 132341 519
-      031 539593 295049 52849 187875 820478 641186 686560 450428 313323 281393 935843 861713 601571 508158 96073 233311 48
-      7348 757868 57876 971533 996215 816637 140520 378089 292169 178757 246775 246429 316212 309252 962321 73397 326613 8
-      63219 442574 838820 560717 872464 544884 211478 421320 670853 933120 929562 29943 872039 24194 313244 525545 974249 
-      391069 229590 164488 988529 891749 309984 384385 896675 903217 891047 255077 547699 378376 611404 156401 663154 1014
-      48 312591 50864 568638 231875 952662 701228 797311 212429 248189 521779 858987 325307 775909 781609 91337 354366 309
-      96 628490 407462 6628 93348 815928 61755 195544 16935 236409 889935 629654 86574 345820 734765 996468 387036 865286 
-      822609 253808 263675 816052 567659 493785 574772
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">636802 512379 327584 742744 867694 518416 837522 756393 875860 650618 734820 850511 269877 919436 540758 983293 504930 693521 242886 704993 445662 713406 614389 483967 897435 610802 578109 768129 383069 395407 7478 420111 30447 132341 519031 539593 295049 52849 187875 820478 641186 686560 450428 313323 281393 935843 861713 601571 508158 96073 233311 487348 757868 57876 971533 996215 816637 140520 378089 292169 178757 246775 246429 316212 309252 962321 73397 326613 863219 442574 838820 560717 872464 544884 211478 421320 670853 933120 929562 29943 872039 24194 313244 525545 974249 391069 229590 164488 988529 891749 309984 384385 896675 903217 891047 255077 547699 378376 611404 156401 663154 101448 312591 50864 568638 231875 952662 701228 797311 212429 248189 521779 858987 325307 775909 781609 91337 354366 30996 628490 407462 6628 93348 815928 61755 195544 16935 236409 889935 629654 86574 345820 734765 996468 387036 865286 822609 253808 263675 816052 567659 493785 574772
 </span></div></div>
 </div>
 <p>Similarly, we can find the <code class="docutils literal notranslate"><span class="pre">winners</span></code>’s tickets <em>without</em> the ones that have been <code class="docutils literal notranslate"><span class="pre">sold</span></code>:</p>
@@ -8670,9 +8871,7 @@ However, we can easily see which of our tickets are winning tickets by checking 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 
-      1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 
-      0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 1 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 </span></div></div>
 </div>
 <p>If we want to know how many tickets are winning tickets, all we have to do is sum up the 1s in the vector above.</p>
@@ -8732,7 +8931,12 @@ However, we can easily see which of our tickets are winning tickets by checking 
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">7043
 </span></div></div>
 </div>
-<p><strong>Exercise 26</strong>:</p>
+<div class="solution admonition" id="Some-Primitive-Functions-solution-51">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#divisors"> Exercise 4.26</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>Computing divisors of a number <code class="docutils literal notranslate"><span class="pre">n</span></code> amounts to finding the numbers <code class="docutils literal notranslate"><span class="pre">m</span></code> for which <code class="docutils literal notranslate"><span class="pre">m|n</span></code> is 0. First we compute the vector of all candidates:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

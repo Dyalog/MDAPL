@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
@@ -607,7 +608,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">81
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">
+Rebuilding user command cache... done
+</span></div><div class="output text_html"><span style="white-space:pre; font-family: monospace">81
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -1486,9 +1489,7 @@ The benefits to parenthesising <em>multiple assignment</em>/disadvantages of not
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">446.19 231.12 253.59 115.56 262.15 271.78 1.07 180.83 166.92 318.86 240.75 44.94 240.75 90.95 317.79 285.69 4.28 368.08 29
-      5.32 379.85 324.21 77.04 77.04 415.16 447.26 33.17 415.16 285.69 202.23 126.26 180.83 81.32 134.82 261.08 343.47 157
-      .29 335.98
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">446.19 231.12 253.59 115.56 262.15 271.78 1.07 180.83 166.92 318.86 240.75 44.94 240.75 90.95 317.79 285.69 4.28 368.08 295.32 379.85 324.21 77.04 77.04 415.16 447.26 33.17 415.16 285.69 202.23 126.26 180.83 81.32 134.82 261.08 343.47 157.29 335.98
 </span></div></div>
 </div>
 </div>
@@ -2485,7 +2486,7 @@ June
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.2 Unicode\ws\Util.dws saved Wed Jan 26 20:52:06 2022
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.2 Unicode\ws\Util.dws saved Fri Mar 18 14:04:24 2022
 </span></div></div>
 </div>
 <p>Then execute:</p>
@@ -2604,7 +2605,7 @@ June
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.2 Unicode\ws\DISPLAY.dws saved Wed Jan 26 20:51:48 2022
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.2 Unicode\ws\DISPLAY.dws saved Fri Mar 18 14:04:14 2022
 </span></div></div>
 </div>
 <p>This command copies the entire <code class="docutils literal notranslate"><span class="pre">DISPLAY</span></code> workspace into your current session, but it contains only one single function: <code class="docutils literal notranslate"><span class="pre">DISPLAY</span></code>.</p>
@@ -3184,7 +3185,7 @@ sales   shape   singleton       tests   tests2  text    trailer two     v       
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">MyPreciousWS.dws saved Wed Feb  9 11:44:32 2022
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Not saved, this ws is CLEAR WS. Use -force to overwrite
 </span></div></div>
 </div>
 <p>A confirmation message appears, specifying where it has been saved, and the date and time of the operation.</p>
@@ -3468,9 +3469,17 @@ not copied text
 <p><em>The following exercises are designed to train <strong>you</strong>, not the computer.</em></p>
 <p><em>For this reason, we suggest that you try to answer them on a sheet of paper, not on your computer. When you are sure of your answer, you can test it on the computer.</em></p>
 </div>
-<p><strong>Exercise 1</strong>:</p>
-<p>Given a scalar <code class="docutils literal notranslate"><span class="pre">s</span></code>, can you transform it into a vector containing one single item? Or the opposite: can you transform a one-item vector <code class="docutils literal notranslate"><span class="pre">v</span></code> into a scalar?</p>
-<p><strong>Exercise 2</strong>:</p>
+<div class="exercise admonition" id="scalar-vector-scalar">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.1 </span></p>
+<div class="section" id="exercise-content">
+<p>Given a scalar <code class="docutils literal notranslate"><span class="pre">s</span></code>, can you transform it into a vector containing one single item? What about the opposite: can you transform a one-item vector <code class="docutils literal notranslate"><span class="pre">v</span></code> into a scalar?</p>
+</div>
+</div>
+<div class="exercise admonition" id="character-vector">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.2 </span></p>
+<div class="section" id="exercise-content">
 <p>Define <code class="docutils literal notranslate"><span class="pre">x</span></code> so that this interactive session becomes possible:</p>
 <div class="highlight-apl notranslate"><div class="highlight"><pre><span></span>      <span class="nv">x</span>
 <span class="m">2</span> <span class="m">15</span> <span class="m">8</span> <span class="m">3</span>
@@ -3478,43 +3487,57 @@ not copied text
 <span class="m">8</span>
 </pre></div>
 </div>
-<p><strong>Exercise 3</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="le-chat-permutation">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.3 </span></p>
+<div class="section" id="exercise-content">
 <p>Find the result of this expression: <code class="docutils literal notranslate"><span class="pre">'LE</span> <span class="pre">CHAT'[7</span> <span class="pre">5</span> <span class="pre">2</span> <span class="pre">3</span> <span class="pre">4</span> <span class="pre">6</span> <span class="pre">7]</span></code>. This amusing example was first given in “<em>Informatique par telephone</em>” of Philip S. Abrams and Gérard Lacourly, Editions Herman, Paris 1972.</p>
-<p><strong>Exercise 4</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="tab-replace">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.4 </span></p>
+<div class="section" id="exercise-content">
 <p>The variable <code class="docutils literal notranslate"><span class="pre">tab</span></code> is created like this:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">tab</span> <span class="kd">←</span> <span class="m">2</span> <span class="m">5</span> <span class="o">⍴</span> <span class="m">9</span> <span class="m">1</span> <span class="m">4</span> <span class="m">3</span> <span class="m">6</span> <span class="m">7</span> <span class="m">4</span> <span class="m">3</span> <span class="m">8</span> <span class="m">2</span>
 </pre></div>
 </div>
-</div>
-</div>
 <p>How could you replace the values <code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">6</span> <span class="pre">7</span> <span class="pre">2</span></code> in this variable by <code class="docutils literal notranslate"><span class="pre">21</span> <span class="pre">45</span> <span class="pre">78</span> <span class="pre">11</span></code> respectively?</p>
-<p><strong>Exercise 5</strong>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+</div>
+</div>
+<div class="exercise admonition" id="x-index-assignment">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.5 </span></p>
+<div class="section" id="exercise-content">
+<p>Consider the following assignments:</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">x</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">2</span> <span class="m">9</span> <span class="m">11</span> <span class="m">3</span> <span class="m">7</span> <span class="m">8</span>
 <span class="nv">x</span><span class="sr">[</span><span class="m">3</span> <span class="m">5</span><span class="sr">]</span> <span class="kd">←</span> <span class="nv">x</span><span class="sr">[</span><span class="m">4</span> <span class="m">1</span><span class="sr">]</span>
 </pre></div>
 </div>
-</div>
-</div>
-<p>What do you think is the new value of <code class="docutils literal notranslate"><span class="pre">x</span></code>? And what happens if you now execute:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
+<p>What do you think is the new value of <code class="docutils literal notranslate"><span class="pre">x</span></code>? And what happens if you now execute</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">x</span><span class="sr">[</span><span class="m">4</span> <span class="m">6</span><span class="sr">]</span> <span class="kd">←</span> <span class="nv">x</span><span class="sr">[</span><span class="m">6</span> <span class="m">4</span><span class="sr">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Exercise 6</strong>:</p>
+<div class="exercise admonition" id="mystery-vector">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.6 </span></p>
+<div class="section" id="exercise-content">
 <p>A vector of six items named <code class="docutils literal notranslate"><span class="pre">mystery</span></code> is indexed like this:</p>
 <div class="highlight-apl notranslate"><div class="highlight"><pre><span></span>      <span class="nv">mystery</span><span class="sr">[</span><span class="m">3</span> <span class="m">1</span> <span class="m">6</span> <span class="m">5</span> <span class="m">2</span> <span class="m">4</span><span class="sr">]</span>
 <span class="m">8</span> <span class="m">11</span> <span class="m">3</span> <span class="m">9</span> <span class="m">2</span> <span class="m">15</span>
 </pre></div>
 </div>
 <p>What is the value of <code class="docutils literal notranslate"><span class="pre">mystery</span></code>?</p>
-<p><strong>Exercise 7</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="vec-findme">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.7 </span></p>
+<div class="section" id="exercise-content">
 <p>One creates a vector, and selects some items from it, as shown:</p>
 <div class="highlight-apl notranslate"><div class="highlight"><pre><span></span>      <span class="nv">vec</span> <span class="kd">←</span> <span class="m">33</span> <span class="m">19</span> <span class="m">27</span> <span class="m">11</span> <span class="m">74</span> <span class="m">47</span> <span class="m">10</span> <span class="m">50</span> <span class="m">66</span> <span class="m">14</span>
       <span class="nv">vec</span><span class="sr">[</span><span class="nv">findMe</span><span class="sr">]</span>
@@ -3522,64 +3545,62 @@ not copied text
 </pre></div>
 </div>
 <p>Could you guess the value of <code class="docutils literal notranslate"><span class="pre">findMe</span></code>?</p>
-<p><strong>Exercise 8</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="source-set">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.8 </span></p>
+<div class="section" id="exercise-content">
 <p>One creates a vector, and a set of indices:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">source</span> <span class="kd">←</span> <span class="m">10</span> <span class="m">4</span> <span class="m">13</span> <span class="m">3</span> <span class="m">9</span> <span class="m">0</span> <span class="m">7</span> <span class="m">6</span> <span class="m">2</span> <span class="m">13</span> <span class="m">8</span> <span class="m">1</span> <span class="m">5</span>
 <span class="nv">set</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">3</span> <span class="o">⍴</span> <span class="nv">source</span><span class="sr">[</span><span class="m">2</span> <span class="m">4</span> <span class="m">8</span> <span class="m">5</span> <span class="m">12</span> <span class="m">13</span> <span class="m">7</span> <span class="m">4</span><span class="sr">]</span>
 </pre></div>
 </div>
-</div>
-</div>
 <p>Then one uses it to index the original vector:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">result</span> <span class="kd">←</span> <span class="nv">source</span><span class="sr">[</span><span class="nv">set</span><span class="sr">]</span>
 </pre></div>
 </div>
-</div>
-</div>
 <p>What is the shape of <code class="docutils literal notranslate"><span class="pre">result</span></code>? Can you find its value?</p>
-<p><strong>Exercise 9</strong>:</p>
+</div>
+</div>
+<div class="exercise admonition" id="v1-v2">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.9 </span></p>
+<div class="section" id="exercise-content">
 <p>Is there a difference between the following two vectors?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">v1</span> <span class="kd">←</span> <span class="s1">&#39;p&#39;</span> <span class="s1">&#39;o&#39;</span> <span class="s1">&#39;t&#39;</span>
 <span class="nv">v2</span> <span class="kd">←</span> <span class="s1">&#39;pot&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Exercise 10</strong>:</p>
+<div class="exercise admonition" id="v3-v4">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.10 </span></p>
+<div class="section" id="exercise-content">
 <p>Is there a difference between the following two vectors?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">v3</span> <span class="kd">←</span> <span class="m">15</span> <span class="m">48</span> <span class="s1">&#39;Y&#39;</span> <span class="s1">&#39;e&#39;</span> <span class="s1">&#39;s&#39;</span> <span class="m">52</span>
 <span class="nv">v4</span> <span class="kd">←</span> <span class="m">15</span> <span class="m">48</span> <span class="s1">&#39;Yes&#39;</span> <span class="m">52</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Exercise 11</strong>:</p>
+<div class="exercise admonition" id="two-foolish">
+
+<p class="admonition-title"><span class="caption-number">Exercise 3.11 </span></p>
+<div class="section" id="exercise-content">
 <p>Here is a very simple variable:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">two</span> <span class="kd">←</span> <span class="m">2</span>
 </pre></div>
 </div>
-</div>
-</div>
 <p>We use it in the following expression:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">foolish</span> <span class="kd">←</span> <span class="nv">two</span> <span class="nv">two</span> <span class="o">⍴</span> <span class="m">2</span> <span class="nv">two</span> <span class="s1">&#39;⍴&#39;</span> <span class="s1">&#39;two&#39;</span>
 </pre></div>
 </div>
-</div>
-</div>
 <p>What is the shape of <code class="docutils literal notranslate"><span class="pre">foolish</span></code>? Can you find its value?</p>
-<p>Proposed solutions to the exercises can be found at the <a class="reference internal" href="#data-and-variables-solutions"><span class="std std-numref">Section 3.11</span></a>.</p>
+</div>
+</div>
+<p>Proposed solutions to the exercises can be found in <a class="reference internal" href="#data-and-variables-solutions"><span class="std std-numref">Section 3.11</span></a>.</p>
 </div>
 <div class="section" id="the-specialist-s-section">
 <span id="data-and-variables-the-specialists-section"></span><h2><span class="section-number">3.10. </span>The Specialist’s Section<a class="headerlink" href="#the-specialist-s-section" title="Permalink to this headline">¶</a></h2>
@@ -4030,7 +4051,12 @@ Beware that, strictly speaking, <em>scientific notation</em> requires the <em>ma
 <span id="data-and-variables-solutions"></span><h2><span class="section-number">3.11. </span>Solutions<a class="headerlink" href="#solutions" title="Permalink to this headline">¶</a></h2>
 <p>The following solutions we propose are not necessarily the “best” ones; perhaps you will find other solutions that we have never considered. APL is a very rich language, and due to the general nature of its primitive functions and operators there are always plenty of different ways to express different solutions to a given problem. Which one is “the best” depends on many things, for example the level of experience of the programmer, the importance of system performance, the required behaviour in border cases, the requirement to meet certain programming standards and also personal preferences. This is one of the reasons why APL is so pleasant to teach and to learn!</p>
 <p>We advise you to try and solve the exercises before reading the solutions!</p>
-<p><strong>Exercise 1</strong>:</p>
+<div class="solution admonition" id="Data-and-Variables-solution-11">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#scalar-vector-scalar"> Exercise 3.1</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>The dyadic use of <code class="docutils literal notranslate"><span class="pre">⍴</span></code> is <em>reshape</em>, so that is what we are going to do to turn a scalar</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4085,7 +4111,12 @@ Beware that, strictly speaking, <em>scientific notation</em> requires the <em>ma
 </span></div></div>
 </div>
 <p>Having obtained 0 as an answer, we can see that <code class="docutils literal notranslate"><span class="pre">⍬⍴v</span></code> really is a scalar.</p>
-<p><strong>Exercise 2</strong>:</p>
+<div class="solution admonition" id="Data-and-Variables-solution-12">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#character-vector"> Exercise 3.2</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>If we define <code class="docutils literal notranslate"><span class="pre">x</span></code> by just copying the numerical values, then we are defining a vector with 4 elements:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4132,7 +4163,12 @@ Beware that, strictly speaking, <em>scientific notation</em> requires the <em>ma
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">8
 </span></div></div>
 </div>
-<p><strong>Exercise 3</strong>:</p>
+<div class="solution admonition" id="Data-and-Variables-solution-13">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#le-chat-permutation"> Exercise 3.3</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>There is no easier way to confirm your answer than to actually run the code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4144,7 +4180,12 @@ Beware that, strictly speaking, <em>scientific notation</em> requires the <em>ma
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">THE CAT
 </span></div></div>
 </div>
-<p><strong>Exercise 4</strong>:</p>
+<div class="solution admonition" id="Data-and-Variables-solution-14">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#tab-replace"> Exercise 3.4</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>The first thing to do would be to understand how to access the values we want to modify, and then use the appropriate assignment. Notice that <code class="docutils literal notranslate"><span class="pre">tab</span></code> is a matrix with 2 rows and 5 columns and we are after the values in the corners, or in the first and last columns:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4194,7 +4235,12 @@ Beware that, strictly speaking, <em>scientific notation</em> requires the <em>ma
 </div>
 </div>
 </div>
-<p><strong>Exercise 5</strong>:</p>
+<div class="solution admonition" id="Data-and-Variables-solution-15">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#x-index-assignment"> Exercise 3.5</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>When we write</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4234,7 +4280,12 @@ Beware that, strictly speaking, <em>scientific notation</em> requires the <em>ma
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">1 2 11 7 1 11 8
 </span></div></div>
 </div>
-<p><strong>Exercise 6</strong>:</p>
+<div class="solution admonition" id="Data-and-Variables-solution-16">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#mystery-vector"> Exercise 3.6</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>To solve this, just notice that if <code class="docutils literal notranslate"><span class="pre">mystery[3</span> <span class="pre">1</span> <span class="pre">6</span> <span class="pre">5</span> <span class="pre">2</span> <span class="pre">4]</span></code> gives <code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">11</span> <span class="pre">3</span> <span class="pre">9</span> <span class="pre">2</span> <span class="pre">15</span></code> then the 3rd item of <code class="docutils literal notranslate"><span class="pre">mystery</span></code> is 8, the 1st is 11, and so on. So <code class="docutils literal notranslate"><span class="pre">mystery</span></code> is actually:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4247,7 +4298,12 @@ Beware that, strictly speaking, <em>scientific notation</em> requires the <em>ma
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">8 11 3 9 2 15
 </span></div></div>
 </div>
-<p><strong>Exercise 7</strong>:</p>
+<div class="solution admonition" id="Data-and-Variables-solution-17">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#vec-findme"> Exercise 3.7</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>This exercise is similar to the one above. We start with the vector</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4268,7 +4324,12 @@ Beware that, strictly speaking, <em>scientific notation</em> requires the <em>ma
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">47 27 19 14 50 74
 </span></div></div>
 </div>
-<p><strong>Exercise 8</strong>:</p>
+<div class="solution admonition" id="Data-and-Variables-solution-18">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#source-set"> Exercise 3.8</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>The result of indexing a vector is always equal to the shape of the index. Hence the shape of <code class="docutils literal notranslate"><span class="pre">result</span></code> is equal to the shape of <code class="docutils literal notranslate"><span class="pre">set</span></code>, which is <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">3</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4319,9 +4380,19 @@ Beware that, strictly speaking, <em>scientific notation</em> requires the <em>ma
 7 13 3
 </span></div></div>
 </div>
-<p><strong>Exercise 9</strong>:</p>
+<div class="solution admonition" id="Data-and-Variables-solution-19">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#v1-v2"> Exercise 3.9</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>There is <em>no</em> difference between the two vectors. Both are 3-item simple character vectors.</p>
-<p><strong>Exercise 10</strong>:</p>
+<div class="solution admonition" id="Data-and-Variables-solution-20">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#v3-v4"> Exercise 3.10</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">v3</span></code> is a 6-item vector. Some items are numeric, some are characters; it is a <em>mixed</em> vector.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4371,7 +4442,12 @@ Beware that, strictly speaking, <em>scientific notation</em> requires the <em>ma
 └──┴──┴───┴──┘
 </span></div></div>
 </div>
-<p><strong>Exercise 11</strong>:</p>
+<div class="solution admonition" id="Data-and-Variables-solution-21">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#two-foolish"> Exercise 3.11</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>Replacing <code class="docutils literal notranslate"><span class="pre">two</span></code> (not <code class="docutils literal notranslate"><span class="pre">'two'</span></code>) by <code class="docutils literal notranslate"><span class="pre">2</span></code> (the value of the variable), one obtains <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">2</span> <span class="pre">⍴</span> <span class="pre">2</span> <span class="pre">2</span> <span class="pre">'⍴'</span> <span class="pre">'two'</span></code>. This gives away that <code class="docutils literal notranslate"><span class="pre">foolish</span></code> is a 2 by 2 matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

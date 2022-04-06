@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
@@ -2472,21 +2473,11 @@ The years should become the 2nd dimension, the assembly lines should become the 
 </div>
 <div class="section" id="exercises">
 <span id="working-on-data-shape-exercises"></span><h2><span class="section-number">8.7. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
-<p><strong>Exercise 1</strong>:</p>
-<p>You are given this matrix:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">xg1</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">5</span><span class="o">⍴</span><span class="m">1</span> <span class="m">9</span> <span class="m">5</span> <span class="m">3</span> <span class="m">6</span> <span class="m">5</span> <span class="m">4</span> <span class="m">8</span> <span class="m">2</span> <span class="m">3</span> <span class="m">7</span> <span class="m">7</span> <span class="m">6</span> <span class="m">2</span> <span class="m">6</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 9 5 3 6
-5 4 8 2 3
-7 7 6 2 6
-</span></div></div>
-</div>
-<p>Try to produce each of the three following matrices, using first only <em>take</em>, and then only <em>drop</em>:</p>
+<div class="exercise admonition" id="ex-take-drop">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8.1 </span></p>
+<div class="section" id="exercise-content">
+<p>Given the matrix <code class="docutils literal notranslate"><span class="pre">xg1</span></code> below, try to produce each of the three following matrices; first using only <em>take</em>, and then only <em>drop</em>.</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="m">3</span> <span class="m">6</span>
 <span class="m">8</span> <span class="m">2</span> <span class="m">3</span>
 </pre></div>
@@ -2500,7 +2491,24 @@ The years should become the 2nd dimension, the assembly lines should become the 
 <span class="m">7</span> <span class="m">6</span> <span class="m">2</span>
 </pre></div>
 </div>
-<p><strong>Exercise 2</strong>:</p>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">xg1</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">5</span><span class="o">⍴</span><span class="m">1</span> <span class="m">9</span> <span class="m">5</span> <span class="m">3</span> <span class="m">6</span> <span class="m">5</span> <span class="m">4</span> <span class="m">8</span> <span class="m">2</span> <span class="m">3</span> <span class="m">7</span> <span class="m">7</span> <span class="m">6</span> <span class="m">2</span> <span class="m">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 9 5 3 6
+5 4 8 2 3
+7 7 6 2 6
+</span></div></div>
+</div>
+<div class="exercise admonition" id="ex-overtake">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8.2 </span></p>
+<div class="section" id="exercise-content">
 <p>With <code class="docutils literal notranslate"><span class="pre">xg1</span></code> again, how could you produce this:</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">9</span> <span class="m">5</span> <span class="m">3</span> <span class="m">6</span> <span class="m">0</span>
 <span class="m">5</span> <span class="m">4</span> <span class="m">8</span> <span class="m">2</span> <span class="m">3</span> <span class="m">0</span>
@@ -2508,65 +2516,77 @@ The years should become the 2nd dimension, the assembly lines should become the 
 <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span>
 </pre></div>
 </div>
-<p><strong>Exercise 3</strong>:</p>
-<p>Write a dyadic function <code class="docutils literal notranslate"><span class="pre">TakeShape</span></code> that computes the <em>shape</em> of the result of doing <code class="docutils literal notranslate"><span class="pre">ns↑array</span></code>.
-The left argument to <code class="docutils literal notranslate"><span class="pre">TakeShape</span></code> will be <code class="docutils literal notranslate"><span class="pre">ns</span></code> and the right argument will be <code class="docutils literal notranslate"><span class="pre">⍴array</span></code>.
+</div>
+</div>
+<div class="exercise admonition" id="ex-takedropshape">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8.3 </span></p>
+<div class="section" id="exercise-content">
+<p>Write two dyadic functions <code class="docutils literal notranslate"><span class="pre">TakeShape</span></code> and <code class="docutils literal notranslate"><span class="pre">DropShape</span></code>.
+<code class="docutils literal notranslate"><span class="pre">TakeShape</span></code> computes <code class="docutils literal notranslate"><span class="pre">⍴ns↑array</span></code> and <code class="docutils literal notranslate"><span class="pre">DropShape</span></code> computes <code class="docutils literal notranslate"><span class="pre">⍴ns↓array</span></code>.
+The left argument to both functions will be <code class="docutils literal notranslate"><span class="pre">ns</span></code> and the right argument will be <code class="docutils literal notranslate"><span class="pre">⍴array</span></code>.
 You can assume that the left argument and right arguments are valid and make sense together.</p>
-<p>Also implement <code class="docutils literal notranslate"><span class="pre">DropShape</span></code>, that does the same thing as <code class="docutils literal notranslate"><span class="pre">TakeShape</span></code>, but for <em>drop</em> instead of for <em>take</em>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">TakeShape</span> <span class="kd">←</span> <span class="kt">{}</span>
-</pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="m">¯3</span> <span class="nv">TakeShape</span> <span class="m">1</span> <span class="m">5</span> <span class="m">10</span>
-<span class="c1">⍝ 2 3 10</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">2 3 10
+</span></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">DropShape</span> <span class="kd">←</span> <span class="kt">{}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">15</span> <span class="m">4</span> <span class="m">¯3</span> <span class="nv">DropShape</span> <span class="m">10</span> <span class="m">10</span> <span class="m">10</span>
-<span class="c1">⍝ 0 6 7</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0 6 7
+</span></div></div>
 </div>
-<p><strong>Exercise 4</strong>:</p>
+<div class="exercise admonition" id="ex-takeasdrop">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8.4 </span></p>
+<div class="section" id="exercise-content">
 <p>Write two dyadic functions, <code class="docutils literal notranslate"><span class="pre">TakeAsDrop</span></code> and <code class="docutils literal notranslate"><span class="pre">DropAsTake</span></code>, that take an array on the right and a vector on the left.
-<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">←</span> <span class="pre">v</span> <span class="pre">TakeAsDrop</span> <span class="pre">a</span></code> is such that <code class="docutils literal notranslate"><span class="pre">(r↓a)≡v↑a</span></code> whenever possible, and conversely for <code class="docutils literal notranslate"><span class="pre">DropAsTake</span></code>: <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">←</span> <span class="pre">v</span> <span class="pre">DropAsTake</span></code> is such that <code class="docutils literal notranslate"><span class="pre">(r↑a)≡v↓a</span></code> whenever possible.
-Test your functions with your solutions to exercise 1.</p>
-<p><strong>Exercise 5</strong>:</p>
-<p>Write a function which “highlights” all the vowels of a given character vector by placing an arrow under them:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">ShowVowels</span> <span class="kd">←</span> <span class="kt">{}</span>
-</pre></div>
+<code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">←</span> <span class="pre">v</span> <span class="pre">TakeAsDrop</span> <span class="pre">a</span></code> is such that <code class="docutils literal notranslate"><span class="pre">(r↓a)≡v↑a</span></code> whenever possible, and conversely for <code class="docutils literal notranslate"><span class="pre">DropAsTake</span></code>: <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">←</span> <span class="pre">v</span> <span class="pre">DropAsTake</span></code> is such that <code class="docutils literal notranslate"><span class="pre">(r↑a)≡v↓a</span></code> whenever possible.</p>
 </div>
 </div>
+<p>Test your functions with your solutions to the first exercise.</p>
+<div class="exercise admonition" id="ex-showvowels">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8.5 </span></p>
+<div class="section" id="exercise-content">
+<p>Write a function which “highlights” all the vowels of a given character vector by placing an arrow under them.</p>
 </div>
-<div class="cell docutils container">
+</div>
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">ShowVowels</span> <span class="s1">&#39;This function works properly&#39;</span>
-<span class="c1">⍝ This function works properly</span>
-<span class="c1">⍝   ↑   ↑   ↑↑   ↑      ↑ ↑  ↑</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">This function works properly
+  ↑   ↑   ↑↑   ↑      ↑ ↑  ↑
+</span></div></div>
 </div>
-<p><strong>Exercise 6</strong>:</p>
-<p>Some matrices are mainly filled with zeroes, like the matrix <code class="docutils literal notranslate"><span class="pre">xg4</span></code> shown below:</p>
+<div class="exercise admonition" id="ex-sparse-matrices">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8.6 </span></p>
+<div class="section" id="exercise-content">
+<p>Write two monadic functions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Contract</span></code> takes a sparse matrix and returns a more compact representation of the same matrix; and</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Restore</span></code> takes a compact representation of a sparse matrix and builds the full matrix.</p></li>
+</ul>
+</div>
+</div>
+<p>For reference, a sparse matrix is a matrix that contains mostly zeroes, like the matrix <code class="docutils literal notranslate"><span class="pre">xg6</span></code> shown below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">xg6</span> <span class="kd">←</span> <span class="m">4</span> <span class="m">7</span><span class="o">⍴</span><span class="m">0</span>
@@ -2582,9 +2602,9 @@ Test your functions with your solutions to exercise 1.</p>
 0 0 0 0 4 0 0
 </span></div></div>
 </div>
-<p>These are called <em>sparse matrices</em>.</p>
 <p>A large sparse matrix may occupy a lot of memory.
-To reduce the memory consumption, we can ravel the matrix,</p>
+To reduce the memory consumption, we can consider an alternative, more compact representation.
+For example, we can start by ravelling the matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">,</span><span class="nv">xg6</span>
@@ -2595,71 +2615,98 @@ To reduce the memory consumption, we can ravel the matrix,</p>
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">0 0 8 0 0 3 0 0 7 0 0 0 0 0 6 0 2 0 0 0 1 0 0 0 0 4 0 0
 </span></div></div>
 </div>
-<p>retaining only the positive values together with their position in the ravel:</p>
+<p>Then, we retain only the non-zero values together with their position in the ravel:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">positiveValues</span> <span class="kd">←</span> <span class="m">8</span> <span class="m">3</span> <span class="m">7</span>  <span class="m">6</span>  <span class="m">2</span>  <span class="m">1</span>  <span class="m">4</span>
-<span class="nv">positions</span>      <span class="kd">←</span> <span class="m">3</span> <span class="m">6</span> <span class="m">9</span> <span class="m">15</span> <span class="m">17</span> <span class="m">21</span> <span class="m">26</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">values</span>    <span class="kd">←</span> <span class="m">8</span> <span class="m">3</span> <span class="m">7</span>  <span class="m">6</span>  <span class="m">2</span>  <span class="m">1</span>  <span class="m">4</span>
+<span class="nv">positions</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">6</span> <span class="m">9</span> <span class="m">15</span> <span class="m">17</span> <span class="m">21</span> <span class="m">26</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>If now we add the shape of the matrix on the left, we have all the necessary information to restore the original matrix when required:</p>
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span> <span class="m">4</span> <span class="m">8</span> <span class="m">3</span> <span class="m">7</span>  <span class="m">6</span>  <span class="m">2</span>  <span class="m">1</span>  <span class="m">4</span>
- <span class="m">7</span> <span class="m">3</span> <span class="m">6</span> <span class="m">9</span> <span class="m">15</span> <span class="m">17</span> <span class="m">21</span> <span class="m">26</span>
-<span class="c1">⍝↑ shape of the original matrix</span>
+<p>Now, if we add the shape of the matrix on the left, we have all the necessary information to restore the original matrix when required:</p>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span>  <span class="m">4</span> <span class="m">8</span> <span class="m">3</span> <span class="m">7</span>  <span class="m">6</span>  <span class="m">2</span>  <span class="m">1</span>  <span class="m">4</span>  <span class="c1">⍝ values</span>
+  <span class="m">7</span> <span class="m">3</span> <span class="m">6</span> <span class="m">9</span> <span class="m">15</span> <span class="m">17</span> <span class="m">21</span> <span class="m">26</span>  <span class="c1">⍝ positions</span>
+<span class="c1">⍝ ^ shape of the original matrix</span>
 </pre></div>
 </div>
-<p>Can you write</p>
-<ul class="simple">
-<li><p>a function which creates this compact form (let us call the function <code class="docutils literal notranslate"><span class="pre">Contraction</span></code>); and</p></li>
-<li><p>a function <code class="docutils literal notranslate"><span class="pre">Restore</span></code> which retrieves the original matrix from its compact form?</p></li>
-</ul>
-<p><strong>Exercise 7</strong>:</p>
-<p>In a given character vector, we would like to replace all the occurrences of a given letter with blanks:</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Contract</span> <span class="nv">xg6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">4 8 3 7  6  2  1  4
+7 3 6 9 15 17 21 26
+</span></div></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">xg6</span> <span class="o">≡</span> <span class="nv">Restore</span> <span class="nv">Contract</span> <span class="nv">xg6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1
+</span></div></div>
+</div>
+<div class="exercise admonition" id="ex-whiten">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8.7 </span></p>
+<div class="section" id="exercise-content">
+<p>Write a dyadic function <code class="docutils literal notranslate"><span class="pre">Whiten</span></code> that replaces all occurrences of the character scalar left argument in the character vector right argument with blanks.</p>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="nv">Whiten</span> <span class="s1">&#39;Panama is a canal between Atlantic and Pacific&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">P n m  is   c n l between Atl ntic  nd P cific
+</span></div></div>
+</div>
+<p>Can you find a solution that uses the function <em>expand</em>?</p>
+<div class="exercise admonition" id="ex-ontop">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8.8 </span></p>
+<div class="section" id="exercise-content">
+<p>Write a dyadic function <code class="docutils literal notranslate"><span class="pre">OnTop</span></code> to centre a title above a character matrix.</p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">sentence</span> <span class="kd">←</span> <span class="s1">&#39;Panama is a canal between Atlantic and Pacific&#39;</span>
-<span class="nv">Whiten</span> <span class="kd">←</span> <span class="kt">{}</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">monMat</span> <span class="kd">←</span> <span class="m">6</span> <span class="m">8</span><span class="o">⍴</span><span class="s1">&#39;January FebruaryMarch   April   May     June    &#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="nv">Whiten</span> <span class="nv">sentence</span>
-<span class="c1">⍝ P n m  is   c n l between Atl ntic  nd P cific</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;2022&#39;</span> <span class="nv">OnTop</span> <span class="nv">monMat</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">  2022  
+--------
+January 
+February
+March   
+April   
+May     
+June    
+</span></div></div>
 </div>
-<p>Find a solution using <em>expand</em>.</p>
-<p><strong>Exercise 8</strong>:</p>
-<p>Write a dyadic function to centre a title above a character matrix, like this:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">OnTop</span> <span class="kd">←</span> <span class="kt">{}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;2007&#39;</span> <span class="nv">OnTop</span> <span class="nv">monMat</span>
-<span class="c1">⍝   2007</span>
-<span class="c1">⍝ --------</span>
-<span class="c1">⍝ January</span>
-<span class="c1">⍝ February</span>
-<span class="c1">⍝ March</span>
-<span class="c1">⍝ April</span>
-<span class="c1">⍝ May</span>
-<span class="c1">⍝ June</span>
-</pre></div>
+<div class="exercise admonition" id="ex-rotations">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8.9 </span></p>
+<div class="section" id="exercise-content">
+<p>Determine the result of the expression <code class="docutils literal notranslate"><span class="pre">¯3</span> <span class="pre">¯1</span> <span class="pre">3⌽(-2</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">2</span> <span class="pre">1</span> <span class="pre">2</span> <span class="pre">0)⊖xg9</span></code> for the matrix <code class="docutils literal notranslate"><span class="pre">xg9</span></code> given below.</p>
 </div>
 </div>
-</div>
-<p><strong>Exercise 9</strong>:</p>
-<p>You are given this matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">xg9</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">9</span><span class="o">⍴</span><span class="s1">&#39;oeornlhtu n siduothf uogYti&#39;</span>
@@ -2672,56 +2719,83 @@ To reduce the memory consumption, we can ravel the matrix,</p>
 hf uogYti
 </span></div></div>
 </div>
-<p>What is the result of the expression <code class="docutils literal notranslate"><span class="pre">¯3</span> <span class="pre">¯1</span> <span class="pre">3⌽(-2</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">1</span> <span class="pre">0</span> <span class="pre">2</span> <span class="pre">1</span> <span class="pre">2</span> <span class="pre">0)⊖xg9</span></code>?</p>
-<p><strong>Exercise 10</strong>:</p>
-<p>You are given a Boolean vector like the following:</p>
+<div class="exercise admonition" id="ex-free">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8.10 </span></p>
+<div class="section" id="exercise-content">
+<p>Write a dyadic function <code class="docutils literal notranslate"><span class="pre">Free</span></code> which looks for a sequence of contiguous zeroes in a Boolean vector.
+The right argument is the Boolean vector in which to look for the sequence of zeroes and the left argument is the integer that specifies the sequence length to look for.
+The function should return the position of the first zero of the first such sequence and, if no such sequence exists, it should return <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">xg10</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">xg10</span> <span class="kd">←</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 0 0 1 1 1 0 1 0 0 0 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">1 0 0 1 1 1 0 0 1 0 0 0 1 1 0 0 0 0 1 1 0 0 0 0 1 0 0
 </span></div></div>
 </div>
-<p>We would like to find a list of <code class="docutils literal notranslate"><span class="pre">n</span></code> contiguous zeroes in this vector.
-Write a function which gives the position of the first zero of the first such list found.
-If there is no list of <code class="docutils literal notranslate"><span class="pre">n</span></code> zeroes, the function is supposed to return 0.
-Loops are (of course) strictly forbidden!</p>
-<div class="cell docutils container">
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Free</span> <span class="kd">←</span> <span class="kt">{}</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="nv">Free</span> <span class="nv">xg10</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0
+</span></div></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="nv">Free</span> <span class="nv">xg10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">2
+</span></div></div>
+</div>
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="nv">Free</span> <span class="nv">xg10</span>
-<span class="c1">⍝ 9</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">10
+</span></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">6</span> <span class="nv">Free</span> <span class="nv">xg10</span>
-<span class="c1">⍝ 0</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">4</span> <span class="nv">Free</span> <span class="nv">xg10</span>
-<span class="c1">⍝ 14</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">15
+</span></div></div>
 </div>
-<p><strong>Exercise 11</strong>:</p>
-<p>The following is a long matrix of names:</p>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">6</span> <span class="nv">Free</span> <span class="nv">xg10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">0
+</span></div></div>
+</div>
+<div class="exercise admonition" id="ex-tocolumns">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8.11 </span></p>
+<div class="section" id="exercise-content">
+<p>Write a dyadic function <code class="docutils literal notranslate"><span class="pre">ToColumns</span></code> that takes an integer scalar left argument and a character matrix right argument.
+The function should split the matrix into as many columns as the left argument specifies. Columns should be separated by, at least, a blank.</p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">xg11</span> <span class="kd">←</span> <span class="m">11</span> <span class="m">8</span><span class="o">⍴</span><span class="s1">&#39;Emily   Luciano Paul    Oxana   Thor    Carmen  VeronicaWilliam VladimirMonica  Colette &#39;</span>
@@ -2742,28 +2816,28 @@ Monica
 Colette 
 </span></div></div>
 </div>
-<p>Write a function to split this matrix into slices, and position these slices one next to the other, like this:</p>
-<div class="cell docutils container">
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Split</span> <span class="kd">←</span> <span class="kt">{}</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="nv">ToColumns</span> <span class="nv">xg11</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">Emily    Thor     Vladimir
+Luciano  Carmen   Monica  
+Paul     Veronica Colette 
+Oxana    William          
+</span></div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="nv">Split</span> <span class="nv">xg11</span>
-<span class="c1">⍝ Emily    Thor     Vladimir</span>
-<span class="c1">⍝ Luciano  Carmen   Monica</span>
-<span class="c1">⍝ Paul     Veronica Colette</span>
-<span class="c1">⍝ Oxana    William</span>
-</pre></div>
+<div class="exercise admonition" id="ex-showcodes">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8.12 </span></p>
+<div class="section" id="exercise-content">
+<p>Write a dyadic function <code class="docutils literal notranslate"><span class="pre">ShowCodes</span></code> that takes a numeric vector left argument and a character matrix right argument.
+The function should display the numerical codes on the left of the rows of the argument matrix, but with a blank row every time the code changes.</p>
 </div>
 </div>
-</div>
-<p>The number of slices is passed as the left argument and a blank is inserted between the slices.</p>
-<p><strong>Exercise 12</strong>:</p>
-<p>You are given a numeric vector:</p>
+<p>Notice that, in the example below, the vector <code class="docutils literal notranslate"><span class="pre">xg12</span></code> with the codes has length equal to the number of rows in <code class="docutils literal notranslate"><span class="pre">xg11</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">xg12</span> <span class="kd">←</span> <span class="m">22</span> <span class="m">22</span> <span class="m">74</span> <span class="m">74</span> <span class="m">74</span> <span class="m">74</span> <span class="m">30</span> <span class="m">65</span> <span class="m">65</span> <span class="m">65</span> <span class="m">19</span>
@@ -2771,37 +2845,29 @@ Colette
 </div>
 </div>
 </div>
-<p>It has the same number of items as there are names in the variable <code class="docutils literal notranslate"><span class="pre">xg9</span></code> from the previous exercise.
-It is composed of groups of identical codes.</p>
-<p>Write a function which displays side by side this vector of codes and the associated matrix of names, with an empty line inserted each time the code changes, like this:</p>
-<div class="cell docutils container">
+<div class="cell tag_skip-execution docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Expand</span> <span class="kd">←</span> <span class="kt">{}</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">xg12</span> <span class="nv">ShowCodes</span> <span class="nv">xg11</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">xg12</span> <span class="nv">Expand</span> <span class="nv">xg11</span>
-<span class="c1">⍝ 22  Emily</span>
-<span class="c1">⍝ 22  Luciano</span>
-<span class="c1">⍝</span>
-<span class="c1">⍝ 74  Paul</span>
-<span class="c1">⍝ 74  Oxana</span>
-<span class="c1">⍝ 74  Thor</span>
-<span class="c1">⍝ 74  Carmen</span>
-<span class="c1">⍝</span>
-<span class="c1">⍝ 30  Veronica</span>
-<span class="c1">⍝</span>
-<span class="c1">⍝ 65  William</span>
-<span class="c1">⍝ 65  Vladimir</span>
-<span class="c1">⍝ 65  Monica</span>
-<span class="c1">⍝</span>
-<span class="c1">⍝ 19  Colette</span>
-</pre></div>
-</div>
-</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">22  Emily   
+22  Luciano 
+
+74  Paul    
+74  Oxana   
+74  Thor    
+74  Carmen  
+
+30  Veronica
+
+65  William 
+65  Vladimir
+65  Monica  
+
+19  Colette 
+</span></div></div>
 </div>
 </div>
 <div class="section" id="the-specialist-s-section">
@@ -3070,7 +3136,12 @@ APL is a very rich language, and due to the general nature of its primitive func
 Which one is “the best” depends on many things, for example the level of experience of the programmer, the importance of system performance, the required behaviour in border cases, the requirement to meet certain programming standards and also personal preferences.
 This is one of the reasons why APL is so pleasant to teach and to learn!</p>
 <p>We advise you to try and solve the exercises before reading the solutions!</p>
-<p><strong>Exercise 1</strong>:</p>
+<div class="solution admonition" id="Working-on-Data-Shape-solution-12">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-take-drop"> Exercise 8.1</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>Starting from <code class="docutils literal notranslate"><span class="pre">xg1</span></code>,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3179,7 +3250,12 @@ Instead, what we can do is two successive <em>takes</em>: first we take the <em>
 7 6 2
 </span></div></div>
 </div>
-<p><strong>Exercise 2</strong>:</p>
+<div class="solution admonition" id="Working-on-Data-Shape-solution-13">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-overtake"> Exercise 8.2</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>We want to produce the matrix</p>
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">9</span> <span class="m">5</span> <span class="m">3</span> <span class="m">6</span> <span class="m">0</span>
 <span class="m">5</span> <span class="m">4</span> <span class="m">8</span> <span class="m">2</span> <span class="m">3</span> <span class="m">0</span>
@@ -3202,7 +3278,12 @@ We immediately notice that <code class="docutils literal notranslate"><span clas
 0 0 0 0 0 0
 </span></div></div>
 </div>
-<p><strong>Exercise 3</strong>:</p>
+<div class="solution admonition" id="Working-on-Data-Shape-solution-14">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-takedropshape"> Exercise 8.3</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>Let us start with <code class="docutils literal notranslate"><span class="pre">TakeShape</span></code>, that is supposed to compute the <em>shape</em> of the result of doing <code class="docutils literal notranslate"><span class="pre">ns↑array</span></code>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">←</span> <span class="pre">ns</span> <span class="pre">TakeShape</span> <span class="pre">⍴array</span></code> should be such that <code class="docutils literal notranslate"><span class="pre">r≡⍴ns↑array</span></code>, and notice that the right argument to <code class="docutils literal notranslate"><span class="pre">TakeShape</span></code> is <code class="docutils literal notranslate"><span class="pre">⍴array</span></code>, not the array itself.</p>
 <p>From reading the specification of <em>take</em> and from the previous exercises, we can start to see that the absolute value of the left argument indicates the length of each dimension.
@@ -3263,7 +3344,12 @@ Finally, we just need to make sure we don’t try to drop too many elements alon
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">0 6 7
 </span></div></div>
 </div>
-<p><strong>Exercise 4</strong>:</p>
+<div class="solution admonition" id="Working-on-Data-Shape-solution-15">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-takeasdrop"> Exercise 8.4</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>This exercise wants us to convert left arguments of <em>take</em> into left arguments of <em>drop</em> and vice-versa, and doing so means we need to understand the lengths of the resulting dimensions, but that is what we have been doing in the previous exercises.</p>
 <p>Start by imagining how it works for a vector <code class="docutils literal notranslate"><span class="pre">v</span></code> of length <code class="docutils literal notranslate"><span class="pre">l</span></code>.</p>
 <ul class="simple">
@@ -3353,7 +3439,7 @@ TakeAsDrop[0] TakeAsDrop←{(-×⍺-0.5)×0⌈⍵-|⍺}
 </div>
 </div>
 <p>The simplest way to fix this is by shortening <code class="docutils literal notranslate"><span class="pre">⍵</span></code> to match the length of <code class="docutils literal notranslate"><span class="pre">⍺</span></code>.
-This works, because the trailing dimensions that are not covered by the left argument to <em>take</em> can also be omitted in the left argument to <em>drop</em>:</p>
+This works because the trailing dimensions that are not covered by the left argument to <em>take</em> can also be omitted in the left argument to <em>drop</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">TakeAsDrop</span> <span class="kd">←</span> <span class="kt">{</span><span class="p">(</span><span class="o">-×</span><span class="bp">⍺</span><span class="o">-</span><span class="m">0.5</span><span class="p">)</span><span class="o">×</span><span class="m">0</span><span class="o">⌈</span><span class="p">((</span><span class="o">≢</span><span class="bp">⍺</span><span class="p">)</span><span class="o">↑</span><span class="bp">⍵</span><span class="p">)</span><span class="o">-|</span><span class="bp">⍺</span><span class="kt">}</span>
@@ -3366,7 +3452,12 @@ This works, because the trailing dimensions that are not covered by the left arg
 </span></div></div>
 </div>
 <p>As for the <code class="docutils literal notranslate"><span class="pre">DropAsTake</span></code> function… It is exactly the same as the <code class="docutils literal notranslate"><span class="pre">TakeAsDrop</span></code> one!</p>
-<p><strong>Exercise 5</strong>:</p>
+<div class="solution admonition" id="Working-on-Data-Shape-solution-16">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-showvowels"> Exercise 8.5</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>It is clear that an integral part of this exercise will be finding the vowels in the given character vector, and we can use the <em>membership</em> primitive for that:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3403,7 +3494,12 @@ If we take advantage of the fact that the blank space <code class="docutils lite
   ↑   ↑   ↑↑   ↑      ↑ ↑  ↑
 </span></div></div>
 </div>
-<p><strong>Exercise 6</strong>:</p>
+<div class="solution admonition" id="Working-on-Data-Shape-solution-17">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-sparse-matrices"> Exercise 8.6</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>Let’s work with the following matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3460,7 +3556,7 @@ If we start by laminating the numbers and the positions together, we can then us
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
-<span class="nv">Contraction</span> <span class="kd">←</span> <span class="kt">{</span>
+<span class="nv">Contract</span> <span class="kd">←</span> <span class="kt">{</span>
     <span class="nv">r</span> <span class="kd">←</span> <span class="o">,</span><span class="bp">⍵</span>
     <span class="p">(</span><span class="o">⍴</span><span class="bp">⍵</span><span class="p">)</span><span class="o">,</span><span class="p">(</span><span class="nv">r</span><span class="o">≠</span><span class="m">0</span><span class="p">)</span><span class="na">/</span><span class="nv">r</span><span class="o">,</span><span class="sr">[</span><span class="m">.5</span><span class="sr">]</span><span class="o">⍳≢</span><span class="nv">r</span>
 <span class="kt">}</span>
@@ -3470,7 +3566,7 @@ If we start by laminating the numbers and the positions together, we can then us
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Contraction</span> <span class="nv">xg6</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Contract</span> <span class="nv">xg6</span>
 </pre></div>
 </div>
 </div>
@@ -3496,7 +3592,7 @@ After populating, we just need to reshape the ravel into the original matrix by 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Restore</span> <span class="nv">Contraction</span> <span class="nv">xg6</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Restore</span> <span class="nv">Contract</span> <span class="nv">xg6</span>
 </pre></div>
 </div>
 </div>
@@ -3507,7 +3603,12 @@ After populating, we just need to reshape the ravel into the original matrix by 
 0 0 0 0 4 0 0
 </span></div></div>
 </div>
-<p><strong>Exercise 7</strong>:</p>
+<div class="solution admonition" id="Working-on-Data-Shape-solution-18">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-whiten"> Exercise 8.7</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>When the problem statement mentions blanks and <em>expand</em>, it hints at the fact that the blank space is the fill element for character vectors, and we know that <em>expand</em> inserts fill elements when it finds zeroes.</p>
 <p>A first hunch might be that we just need to create a Boolean mask that has a 1 for each character we want to keep, and then we use <em>expand</em> with that, but unfortunately that does not work:</p>
 <div class="cell docutils container">
@@ -3560,7 +3661,12 @@ We can remove the occurrences of the letter with a <em>compress</em> or with the
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">P n m  is   c n l between Atl ntic  nd P cific
 </span></div></div>
 </div>
-<p><strong>Exercise 8</strong>:</p>
+<div class="solution admonition" id="Working-on-Data-Shape-solution-19">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-ontop"> Exercise 8.8</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>If we want to centre something, that means we will need to rotate it to the correct place.
 When we receive the title, we first pad it with enough blank spaces so that it can be catenated on top of the matrix:</p>
 <div class="cell docutils container">
@@ -3618,12 +3724,12 @@ Let us put everything together in a dfn:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;2007&#39;</span> <span class="nv">OnTop</span> <span class="nv">monMat</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;2022&#39;</span> <span class="nv">OnTop</span> <span class="nv">monMat</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">  2007  
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">  2022  
 --------
 January 
 February
@@ -3651,7 +3757,12 @@ May
 June    
 </span></div></div>
 </div>
-<p><strong>Exercise 9</strong>:</p>
+<div class="solution admonition" id="Working-on-Data-Shape-solution-20">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-rotations"> Exercise 8.9</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>Best way to check if your solution is correct is by actually running the code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3677,7 +3788,12 @@ the right
 solution 
 </span></div></div>
 </div>
-<p><strong>Exercise 10</strong>:</p>
+<div class="solution admonition" id="Working-on-Data-Shape-solution-21">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-free"> Exercise 8.10</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>Let us prototype our solution with the vector that follows, and let us assume we want to find a run of 4 zeroes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3958,7 +4074,12 @@ Using a reduction, we can figure out which columns have 1s and which do not:</p>
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">14
 </span></div></div>
 </div>
-<p><strong>Exercise 11</strong>:</p>
+<div class="solution admonition" id="Working-on-Data-Shape-solution-22">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-tocolumns"> Exercise 8.11</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>We start with our matrix of names:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3980,7 +4101,7 @@ Monica
 Colette 
 </span></div></div>
 </div>
-<p>Let us also assume we want to make <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">←</span> <span class="pre">3</span></code> slices:</p>
+<p>Let us also assume we want to make <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">←</span> <span class="pre">3</span></code> columns:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">n</span> <span class="kd">←</span> <span class="m">3</span>
@@ -3997,9 +4118,9 @@ The key to doing that is understanding that we actually have 3 dimensions along 
 <li><p>then we want to go down along the column of names,</p></li>
 <li><p>and then we want to go right along the columns of names.</p></li>
 </ol>
-<p>This hints at the fact that we should reshape our data to have 3 dimensions, where one dimension holds the slices, another holds all the names, and the last one holds the characters that compose a name.</p>
+<p>This hints at the fact that we should reshape our data to have 3 dimensions, where one dimension holds the columns, another holds all the names, and the last one holds the characters that compose a name.</p>
 <p>The first thing that we need to do, in order to break up the matrix with the names, into an array with 3 dimensions, is figure out the length of each dimension.
-<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">←</span> <span class="pre">3</span></code> indicates that we want 3 slices, but how many names are there in each slice?</p>
+<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">←</span> <span class="pre">3</span></code> indicates that we want 3 columns, but how many names are there in each slice?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">height</span> <span class="nv">width</span><span class="p">)</span> <span class="kd">←</span> <span class="o">⍴</span><span class="nv">xg11</span>
@@ -4011,11 +4132,11 @@ The key to doing that is understanding that we actually have 3 dimensions along 
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">3.66667
 </span></div></div>
 </div>
-<p>This doesn’t divide evenly, so we use the <em>ceiling</em> primitive to round up, and then we use <em>take</em> to create empty names to pad the slice:</p>
+<p>This doesn’t divide evenly, so we use the <em>ceiling</em> primitive to round up, and then we use <em>take</em> to create empty names to pad the column:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">sliceSize</span> <span class="kd">←</span> <span class="o">⌈</span><span class="nv">height</span><span class="o">÷</span><span class="nv">n</span>
-<span class="vg">⎕</span><span class="kd">←</span> <span class="nv">names</span> <span class="kd">←</span> <span class="p">(</span><span class="nv">sliceSize</span><span class="o">×</span><span class="nv">n</span><span class="p">)</span><span class="o">↑</span><span class="nv">xg11</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">colSize</span> <span class="kd">←</span> <span class="o">⌈</span><span class="nv">height</span><span class="o">÷</span><span class="nv">n</span>
+<span class="vg">⎕</span><span class="kd">←</span> <span class="nv">names</span> <span class="kd">←</span> <span class="p">(</span><span class="nv">colSize</span><span class="o">×</span><span class="nv">n</span><span class="p">)</span><span class="o">↑</span><span class="nv">xg11</span>
 </pre></div>
 </div>
 </div>
@@ -4038,7 +4159,7 @@ Colette
 So, the next step is reshaping the matrix <code class="docutils literal notranslate"><span class="pre">names</span></code> into a 3D array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">slices</span> <span class="kd">←</span> <span class="nv">n</span> <span class="nv">sliceSize</span> <span class="nv">width</span> <span class="o">⍴</span> <span class="nv">names</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">columns</span> <span class="kd">←</span> <span class="nv">n</span> <span class="nv">colSize</span> <span class="nv">width</span> <span class="o">⍴</span> <span class="nv">names</span>
 </pre></div>
 </div>
 </div>
@@ -4064,7 +4185,7 @@ We see that the 3rd dimension is already correct, because the names are laid out
 This means the only thing we can try to do is reorder the first and second dimensions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="m">1</span> <span class="m">3</span><span class="o">⍉</span><span class="nv">slices</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">2</span> <span class="m">1</span> <span class="m">3</span><span class="o">⍉</span><span class="nv">columns</span>
 </pre></div>
 </div>
 </div>
@@ -4089,7 +4210,7 @@ William
 <p>After the reordering of the two leading dimensions, we can now reshape the 3D array into a matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">sliceSize</span> <span class="p">(</span><span class="nv">n</span><span class="o">×</span><span class="nv">width</span><span class="p">)</span><span class="o">⍴</span><span class="m">2</span> <span class="m">1</span> <span class="m">3</span><span class="o">⍉</span><span class="nv">slices</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">colSize</span> <span class="p">(</span><span class="nv">n</span><span class="o">×</span><span class="nv">width</span><span class="p">)</span><span class="o">⍴</span><span class="m">2</span> <span class="m">1</span> <span class="m">3</span><span class="o">⍉</span><span class="nv">columns</span>
 </pre></div>
 </div>
 </div>
@@ -4100,11 +4221,11 @@ Paul    VeronicaColette
 Oxana   William         
 </span></div></div>
 </div>
-<p>This is almost perfect, we just need to add blanks between all the slices.
+<p>This is almost perfect, we just need to add blanks between all the columns.
 In order to do so, we can catenate a blank space at the end of the array (making it one character wider) and then dropping the last column of superfluous blanks:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">¯1</span><span class="o">↓</span><span class="nv">sliceSize</span> <span class="p">(</span><span class="nv">n</span><span class="o">×</span><span class="nv">width</span><span class="o">+</span><span class="m">1</span><span class="p">)</span><span class="o">⍴</span><span class="m">2</span> <span class="m">1</span> <span class="m">3</span><span class="o">⍉</span><span class="nv">slices</span><span class="o">,</span><span class="s1">&#39; &#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">¯1</span><span class="o">↓</span><span class="nv">colSize</span> <span class="p">(</span><span class="nv">n</span><span class="o">×</span><span class="nv">width</span><span class="o">+</span><span class="m">1</span><span class="p">)</span><span class="o">⍴</span><span class="m">2</span> <span class="m">1</span> <span class="m">3</span><span class="o">⍉</span><span class="nv">columns</span><span class="o">,</span><span class="s1">&#39; &#39;</span>
 </pre></div>
 </div>
 </div>
@@ -4119,12 +4240,12 @@ Oxana    William
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
-<span class="nv">Split</span> <span class="kd">←</span> <span class="kt">{</span>
+<span class="nv">ToColumns</span> <span class="kd">←</span> <span class="kt">{</span>
     <span class="p">(</span><span class="nv">h</span> <span class="nv">w</span><span class="p">)</span> <span class="kd">←</span> <span class="o">⍴</span><span class="bp">⍵</span>
     <span class="nv">nh</span> <span class="kd">←</span> <span class="o">⌈</span><span class="nv">h</span><span class="o">÷</span><span class="bp">⍺</span>
     <span class="nv">names</span> <span class="kd">←</span> <span class="p">(</span><span class="nv">nh</span><span class="o">×</span><span class="bp">⍺</span><span class="p">)</span><span class="o">↑</span><span class="bp">⍵</span>
-    <span class="nv">slices</span> <span class="kd">←</span> <span class="bp">⍺</span> <span class="nv">nh</span> <span class="nv">w</span><span class="o">⍴</span><span class="nv">names</span>
-    <span class="m">0</span> <span class="m">¯1</span><span class="o">↓</span><span class="nv">nh</span> <span class="p">(</span><span class="bp">⍺</span><span class="o">×</span><span class="nv">w</span><span class="o">+</span><span class="m">1</span><span class="p">)</span><span class="o">⍴</span><span class="m">2</span> <span class="m">1</span> <span class="m">3</span><span class="o">⍉</span><span class="nv">slices</span><span class="o">,</span><span class="s1">&#39; &#39;</span>
+    <span class="nv">columns</span> <span class="kd">←</span> <span class="bp">⍺</span> <span class="nv">nh</span> <span class="nv">w</span><span class="o">⍴</span><span class="nv">names</span>
+    <span class="m">0</span> <span class="m">¯1</span><span class="o">↓</span><span class="nv">nh</span> <span class="p">(</span><span class="bp">⍺</span><span class="o">×</span><span class="nv">w</span><span class="o">+</span><span class="m">1</span><span class="p">)</span><span class="o">⍴</span><span class="m">2</span> <span class="m">1</span> <span class="m">3</span><span class="o">⍉</span><span class="nv">columns</span><span class="o">,</span><span class="s1">&#39; &#39;</span>
 <span class="kt">}</span>
 </pre></div>
 </div>
@@ -4132,7 +4253,7 @@ Oxana    William
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="nv">Split</span> <span class="nv">xg11</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="nv">ToColumns</span> <span class="nv">xg11</span>
 </pre></div>
 </div>
 </div>
@@ -4148,10 +4269,10 @@ In this alternative solution, the names get listed from left to right, and then 
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
-<span class="nv">SplitWrong</span> <span class="kd">←</span> <span class="kt">{</span>
+<span class="nv">ToColumnsWrong</span> <span class="kd">←</span> <span class="kt">{</span>
     <span class="p">(</span><span class="nv">h</span> <span class="nv">w</span><span class="p">)</span> <span class="kd">←</span> <span class="o">⍴</span><span class="bp">⍵</span>
     <span class="nv">nh</span> <span class="kd">←</span> <span class="o">⌈</span><span class="nv">h</span><span class="o">÷</span><span class="bp">⍺</span>
-    <span class="m">0</span> <span class="m">¯1</span><span class="o">↓</span><span class="nv">nh</span><span class="p">(</span><span class="nv">n</span><span class="o">×</span><span class="nv">w</span><span class="o">+</span><span class="m">1</span><span class="p">)</span><span class="o">⍴</span><span class="p">(</span><span class="nv">n</span><span class="o">×</span><span class="nv">nh</span><span class="o">×</span><span class="nv">w</span><span class="o">+</span><span class="m">1</span><span class="p">)</span><span class="o">↑,</span><span class="nv">xg11</span><span class="o">,</span><span class="s1">&#39; &#39;</span>
+    <span class="m">0</span> <span class="m">¯1</span><span class="o">↓</span><span class="nv">nh</span><span class="p">(</span><span class="bp">⍺</span><span class="o">×</span><span class="nv">w</span><span class="o">+</span><span class="m">1</span><span class="p">)</span><span class="o">⍴</span><span class="p">(</span><span class="bp">⍺</span><span class="o">×</span><span class="nv">nh</span><span class="o">×</span><span class="nv">w</span><span class="o">+</span><span class="m">1</span><span class="p">)</span><span class="o">↑,</span><span class="nv">xg11</span><span class="o">,</span><span class="s1">&#39; &#39;</span>
 <span class="kt">}</span>
 </pre></div>
 </div>
@@ -4159,7 +4280,7 @@ In this alternative solution, the names get listed from left to right, and then 
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="nv">SplitWrong</span> <span class="nv">xg11</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="nv">ToColumnsWrong</span> <span class="nv">xg11</span>
 </pre></div>
 </div>
 </div>
@@ -4170,7 +4291,12 @@ Veronica William  Vladimir
 Monica   Colette          
 </span></div></div>
 </div>
-<p><strong>Exercise 12</strong>:</p>
+<div class="solution admonition" id="Working-on-Data-Shape-solution-23">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#ex-showcodes"> Exercise 8.12</a></p>
+<div class="section" id="solution-content">
+</div>
+</div>
 <p>For this exercise, we are given an extra vector <code class="docutils literal notranslate"><span class="pre">xg12</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4309,7 +4435,7 @@ That is why we need to add the <em>iota</em> of the <em>tally</em> of <code clas
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="sr">]</span><span class="nv">dinput</span>
-<span class="nv">Expand</span> <span class="kd">←</span> <span class="kt">{</span>
+<span class="nv">ShowCodes</span> <span class="kd">←</span> <span class="kt">{</span>
     <span class="nv">labeled</span> <span class="kd">←</span> <span class="o">⍕</span><span class="bp">⍺</span><span class="o">,</span><span class="s1">&#39; &#39;</span><span class="o">,</span><span class="bp">⍵</span>
     <span class="nv">indices</span> <span class="kd">←</span> <span class="o">⍸</span><span class="p">(</span><span class="m">¯1</span><span class="o">↓</span><span class="bp">⍺</span><span class="p">)</span><span class="o">≠</span><span class="m">1</span><span class="o">↓</span><span class="bp">⍺</span>
     <span class="nv">exp</span> <span class="kd">←</span> <span class="o">~</span><span class="p">(</span><span class="o">⍳</span><span class="p">(</span><span class="o">≢</span><span class="nv">indices</span><span class="p">)</span><span class="o">+≢</span><span class="nv">xg12</span><span class="p">)</span><span class="o">∊</span><span class="nv">indices</span><span class="o">+⍳≢</span><span class="nv">indices</span>
@@ -4321,7 +4447,7 @@ That is why we need to add the <em>iota</em> of the <em>tally</em> of <code clas
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">xg12</span> <span class="nv">Expand</span> <span class="nv">xg11</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">xg12</span> <span class="nv">ShowCodes</span> <span class="nv">xg11</span>
 </pre></div>
 </div>
 </div>
