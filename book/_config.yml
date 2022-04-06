@@ -4,7 +4,8 @@ author: Bernard Legrand, reworked by Rodrigo Girão Serrão.
 
 repository:
     url: https://github.com/Dyalog/MDAPL
-    
+    path_to_book: src
+
 html:
     home_page_in_navbar: false
     use_edit_page_button: true
