@@ -1,3 +1,4 @@
 jupyter-book
 ghp-import
 sphinx-exercise
+nbclient>=0.5.5
