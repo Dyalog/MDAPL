@@ -102,7 +102,7 @@ def image_to_figure(lines):
     i = 0
     while i < len(lines):
         # Does this line have a ![caption](path.ext) figure?
-        m = re.match(r"!\[(.*)\]\((res/(.*?)\.(.*?))\)", lines[i])
+        m = re.match(r"!\[(.*)\]\((\.\./res/(.*?)\.(.*?))\)", lines[i])
         if m:
             caption, path, name = m.group(1), m.group(2), m.group(3)
             new_lines = [
@@ -269,26 +269,22 @@ def create_admonitions(filename, lines):
 
     return lines
 
-def parse_md(filename):
-    """Tries to copy a Markdown file to the book folder and parse its lines.
-    
-    This function assumes the filename refers to a .md file.
-    Returns False if the file is not found, True otherwise.
-    """
+def parse_readme():
+    """Tries to parse a README.md file."""
 
-    source = f"{filename}.md"
+    dest = f"{BOOK_FOLDER}/README.md"
+    source = f"{SOURCE_FOLDER}/README.md"
     try:
         with open(source, "r", encoding="utf8") as f:
             contents = f.readlines()
     except FileNotFoundError:
         return False
-    
-    lines = parse_lines(filename, list(contents))
-    destination = os.path.join(BOOK_FOLDER, source)
-    with open(destination, "w", encoding="utf8") as f:
+
+    lines = parse_lines("README.md", list(contents))
+
+    with open(dest, "w", encoding="utf8") as f:
         f.writelines(lines)
-    return True
-        
+
 def parse_lines(filename, lines):
     """Apply all parsing functions to the list of lines."""
     
@@ -307,6 +303,8 @@ if __name__ == "__main__":
     if not os.path.exists(BOOK_FOLDER):
         os.makedirs(BOOK_FOLDER)
 
+    parse_readme()
+
     try:
         with open(f"{BOOK_FOLDER}/_toc.yml", "r") as f:
             data = yaml.safe_load(f)
@@ -316,16 +314,18 @@ if __name__ == "__main__":
 
     for dic in data.get("sections", []):
         try:
-            filename = Path(dic["file"]).name
+            filename = dic["file"]
         except KeyError:
-            continue
+            print(f"Can't retrieve file name from TOC entry {dic}.")
+            raise
 
+        target_nb = f"{SOURCE_FOLDER}/{filename}.ipynb"
         try:
-            with open(f"{SOURCE_FOLDER}/{filename}.ipynb", "r", encoding="utf8") as f:
+            with open(target_nb, "r", encoding="utf8") as f:
                 contents = json.load(f)
         except FileNotFoundError:
-            parse_md(filename)
-            continue
+            print(f"Couldn't locate notebook {target_nb}.")
+            raise
 
         for cell in contents["cells"]:
             lines = cell["source"]
