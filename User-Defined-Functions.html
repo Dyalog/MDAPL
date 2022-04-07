@@ -202,7 +202,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         
-        <a class="edit-button" href="https://github.com/Dyalog/MDAPL/edit/master/User-Defined-Functions.ipynb"><button
+        <a class="edit-button" href="https://github.com/Dyalog/MDAPL/edit/master/docs/User-Defined-Functions.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -3783,8 +3783,8 @@ PARIS
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><span style="white-space:pre; font-family: monospace">                                                                                
-  Divisors 3219        → 1.1E¯3 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
-  DivisorsNoLoops 3219 → 1.3E¯5 | -99%                                          
+  Divisors 3219        → 1.7E¯3 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
+  DivisorsNoLoops 3219 → 2.1E¯5 | -99%                                          
 </span></div></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">]runtime</span> <span class="pre">-c</span></code> is a user command that can be used to compare two or more pieces of code. It uses the first expression as the baseline and then compares the run time of the subsequent pieces of code against the first one. Here, the <code class="docutils literal notranslate"><span class="pre">-99%</span></code> on the second line means <code class="docutils literal notranslate"><span class="pre">DivisorsNoLoops</span></code> is 100 times faster, which can also be understood by comparing the run times (in seconds) of each expression, the <code class="docutils literal notranslate"><span class="pre">1.1E¯3</span></code> and <code class="docutils literal notranslate"><span class="pre">1.1E¯5</span></code> above (the exact numbers might fluctuate, depending on factors like how the CPU is feeling, the machine the code gets ran on, etc.)</p>
@@ -4435,12 +4435,12 @@ As an example, in <a class="reference external" href="https://www.dyalogaplcompe
 <li><p>a CSV file <code class="docutils literal notranslate"><span class="pre">BasicCarSales.csv</span></code>;</p></li>
 <li><p>text files <code class="docutils literal notranslate"><span class="pre">mlk.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">report.txt</span></code>.</p></li>
 </ul>
-<p>We recommend that you place those files in a reference directory where they will be preserved, and copy them to a test directory where you will be able to make some experiments and modify them at will. You can get these helper files from <a class="reference external" href="https://github.com/RojerGS/MDAPL/blob/master/res/testfiles.rar">here</a>.</p>
+<p>We recommend that you place those files in a reference directory where they will be preserved, and copy them to a test directory where you will be able to make some experiments and modify them at will. You can get these helper files from <a class="reference external" href="https://github.com/RojerGS/MDAPL/blob/master/../res/testfiles.rar">here</a>.</p>
 <p>We also suggest that you create a global variable in your WS with the path to that test directory, to avoid repeating it in all the tests you will do.</p>
 <p>For example, we will set</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">filepath</span> <span class="kd">←</span> <span class="s1">&#39;C:/Users/rodri/Documents/Dyalog/MDAPL/res/testfiles/&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">filepath</span> <span class="kd">←</span> <span class="s1">&#39;C:/Users/rodri/Documents/Dyalog/MDAPL/../res/testfiles/&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -4728,7 +4728,7 @@ Following a similar reasoning, the use of implicit output by adding <code class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:/Users/rodri/Documents/Dyalog/MDAPL/res/testfiles/
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:/Users/rodri/Documents/Dyalog/MDAPL/../res/testfiles/
 </span></div></div>
 </div>
 <p>It will be possible for any function to use this path to prefix some file names, for example as</p>
@@ -4739,7 +4739,7 @@ Following a similar reasoning, the use of implicit output by adding <code class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:/Users/rodri/Documents/Dyalog/MDAPL/res/testfiles/sales.xls
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:/Users/rodri/Documents/Dyalog/MDAPL/../res/testfiles/sales.xls
 </span></div></div>
 </div>
 <div class="cell docutils container">
@@ -4749,7 +4749,7 @@ Following a similar reasoning, the use of implicit output by adding <code class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:/Users/rodri/Documents/Dyalog/MDAPL/res/testfiles/customers.txt
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:/Users/rodri/Documents/Dyalog/MDAPL/../res/testfiles/customers.txt
 </span></div></div>
 </div>
 <p>Storing common parameters, like a folder path, in global variables can often be very convenient. For example, it makes it very easy to have the system use another set of files without changing any functions. This technique can for example be used to switch between running on test data and on production data.</p>
@@ -4773,7 +4773,7 @@ Following a similar reasoning, the use of implicit output by adding <code class=
 <p>As an example, the folder in which our files reside can be declared as a global constant:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">FILEPATH</span> <span class="kd">←</span> <span class="s1">&#39;C:/Users/rodri/Documents/Dyalog/MDAPL/res/testfiles/&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">FILEPATH</span> <span class="kd">←</span> <span class="s1">&#39;C:/Users/rodri/Documents/Dyalog/MDAPL/../res/testfiles/&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -4789,7 +4789,7 @@ Following a similar reasoning, the use of implicit output by adding <code class=
 <p>So it is indeed up to the programmer to respect the convention or not. We will respect the convention and hence we’ll redefine <code class="docutils literal notranslate"><span class="pre">FILEPATH</span></code> to its original value:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">FILEPATH</span> <span class="kd">←</span> <span class="s1">&#39;C:/Users/rodri/Documents/Dyalog/MDAPL/res/testfiles/&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">FILEPATH</span> <span class="kd">←</span> <span class="s1">&#39;C:/Users/rodri/Documents/Dyalog/MDAPL/../res/testfiles/&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -4814,40 +4814,13 @@ Following a similar reasoning, the use of implicit output by adding <code class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌──────────┬───────┬────────┬─────┐
-│Make      │January│February│March│
-├──────────┼───────┼────────┼─────┤
-│Subaru    │10     │16      │32   │
-├──────────┼───────┼────────┼─────┤
-│Opel      │7      │3       │32   │
-├──────────┼───────┼────────┼─────┤
-│Citroen   │34     │13      │24   │
-├──────────┼───────┼────────┼─────┤
-│Peugeot   │20     │11      │2    │
-├──────────┼───────┼────────┼─────┤
-│BMW       │39     │22      │8    │
-├──────────┼───────┼────────┼─────┤
-│Lexus     │48     │21      │7    │
-├──────────┼───────┼────────┼─────┤
-│Mitsubishi│45     │5       │9    │
-├──────────┼───────┼────────┼─────┤
-│Skoda     │20     │19      │13   │
-├──────────┼───────┼────────┼─────┤
-│Morgan    │7      │40      │23   │
-├──────────┼───────┼────────┼─────┤
-│Volkswagen│18     │30      │41   │
-├──────────┼───────┼────────┼─────┤
-│Mercedes  │47     │33      │11   │
-├──────────┼───────┼────────┼─────┤
-│Volvo     │34     │46      │13   │
-├──────────┼───────┼────────┼─────┤
-│Fiat      │44     │24      │26   │
-├──────────┼───────┼────────┼─────┤
-│Land-Rover│31     │41      │51   │
-├──────────┼───────┼────────┼─────┤
-│Chrysler  │24     │48      │32   │
-└──────────┴───────┴────────┴─────┘
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FILE NAME ERROR: C:/Users/rodri/Documents/Dyalog/MDAPL/../res/testfiles/BasicCarSales.csv: Unable to open file (&quot;The syste
+m cannot find the path specified.&quot;)
+      ⎕←contents←⎕CSV FILEPATH,&#39;BasicCarSales.csv&#39;
+                 ∧
+</pre></div>
+</div>
+</div>
 </div>
 <p>The return value is a matrix with one row per line of text in the file and one column per data entry:</p>
 <div class="cell docutils container">
@@ -4857,8 +4830,12 @@ Following a similar reasoning, the use of implicit output by adding <code class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">16 4
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: contents
+      ⍴contents
+       ∧
+</pre></div>
+</div>
+</div>
 </div>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">⎕CSV</span></code> to read data and have it separate the header for you and convert columns into the appropriate data types. For example, we can tell <code class="docutils literal notranslate"><span class="pre">⎕CSV</span></code> to convert columns 2, 3 and 4 to numbers and to split the header:</p>
 <div class="cell docutils container">
@@ -4868,40 +4845,13 @@ Following a similar reasoning, the use of implicit output by adding <code class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────────────────────┬─────────────────────────────┐
-│┌──────────┬──┬──┬──┐│┌────┬───────┬────────┬─────┐│
-││Subaru    │10│16│32│││Make│January│February│March││
-│├──────────┼──┼──┼──┤│└────┴───────┴────────┴─────┘│
-││Opel      │7 │3 │32││                             │
-│├──────────┼──┼──┼──┤│                             │
-││Citroen   │34│13│24││                             │
-│├──────────┼──┼──┼──┤│                             │
-││Peugeot   │20│11│2 ││                             │
-│├──────────┼──┼──┼──┤│                             │
-││BMW       │39│22│8 ││                             │
-│├──────────┼──┼──┼──┤│                             │
-││Lexus     │48│21│7 ││                             │
-│├──────────┼──┼──┼──┤│                             │
-││Mitsubishi│45│5 │9 ││                             │
-│├──────────┼──┼──┼──┤│                             │
-││Skoda     │20│19│13││                             │
-│├──────────┼──┼──┼──┤│                             │
-││Morgan    │7 │40│23││                             │
-│├──────────┼──┼──┼──┤│                             │
-││Volkswagen│18│30│41││                             │
-│├──────────┼──┼──┼──┤│                             │
-││Mercedes  │47│33│11││                             │
-│├──────────┼──┼──┼──┤│                             │
-││Volvo     │34│46│13││                             │
-│├──────────┼──┼──┼──┤│                             │
-││Fiat      │44│24│26││                             │
-│├──────────┼──┼──┼──┤│                             │
-││Land-Rover│31│41│51││                             │
-│├──────────┼──┼──┼──┤│                             │
-││Chrysler  │24│48│32││                             │
-│└──────────┴──┴──┴──┘│                             │
-└─────────────────────┴─────────────────────────────┘
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FILE NAME ERROR: C:/Users/rodri/Documents/Dyalog/MDAPL/../res/testfiles/BasicCarSales.csv: Unable to open file (&quot;The syste
+m cannot find the path specified.&quot;)
+      ⎕←contents←⎕CSV(FILEPATH,&#39;BasicCarSales.csv&#39;)&#39;&#39;(1 2 2 2)1
+                 ∧
+</pre></div>
+</div>
+</div>
 </div>
 <p>More advanced use cases of <code class="docutils literal notranslate"><span class="pre">⎕CSV</span></code> can be found in <span class="xref myst">the appropriate section</span> or in the documentation page for <code class="docutils literal notranslate"><span class="pre">⎕CSV</span></code>. As an exercise, open the <a class="reference external" href="https://help.dyalog.com/latest/#Language/System%20Functions/csv.htm">docs for <code class="docutils literal notranslate"><span class="pre">⎕CSV</span></code></a> (by clicking the link or typing <code class="docutils literal notranslate"><span class="pre">⎕CSV</span></code> in your interpreter and then pressing <kbd>F1</kbd>) and try to understand what the <code class="docutils literal notranslate"><span class="pre">1</span></code> in <code class="docutils literal notranslate"><span class="pre">(1</span> <span class="pre">2</span> <span class="pre">2</span> <span class="pre">2)</span></code> does. Learning to read documentation pages may seem daunting at first, but it is an acquired skill that is very helpful for programmers.</p>
 </div>
@@ -4915,10 +4865,9 @@ Following a similar reasoning, the use of implicit output by adding <code class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FILE NAME ERROR: C:/Users/rodri/Documents/Dyalog/MDAPL/res/testfiles/BasicCarSales.csv: Unable to create file (&quot;The file e
-xists.&quot;)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VALUE ERROR: Undefined name: contents
       contents ⎕CSV FILEPATH,&#39;BasicCarSales.csv&#39;
-               ∧
+      ∧
 </pre></div>
 </div>
 </div>
@@ -4987,67 +4936,13 @@ xists.&quot;)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">So I say to you, my friends, that even though we must face the          
-difficulties of today and tomorrow, I still have a dream. It is         
-a dream deeply rooted in the American dream that one day this           
-nation will rise up and live out the true meaning of its creed:         
-we hold these truths to be self-evident, that all men are               
-created equal.                                                          
-I have a dream that one day, on the red hills of Georgia, sons          
-of former slaves, and sons of former slave-owners will be able          
-to sit down together at the table of brotherhood.                       
-I have a dream that one day, even the state of Mississippi, a           
-state sweltering with the heat of injustice, sweltering with the        
-heat of oppression, will be transformed into an oasis of freedom        
-and justice.                                                            
-I have a dream that my four children will one day live in a             
-nation where they will not be juged by the color of their skin          
-but by content of their character.                                      
-I have a dream today!                                                   
-I have a dream that one day, down in Alabama, with its vicious          
-racists, with its governor having his lips dripping with the            
-words of interposition and nullification, that one day, right           
-there in Alabama, little black boys and black girls will be able        
-to join hands with little white boys and white girls as sisters         
-and brothers. I have a dream today!                                     
-I have a dream that one day every valley shall be exalted, every        
-hill and mountain shall be made low, the rough places shall be          
-made plain, and the crooked places shall be made straight and the       
-glory of the Lord will be revealed and all flesh shall seet it          
-together.                                                               
-This is our hope. This is the faith that I go back to the South         
-with.                                                                   
-With this faith, we will be able to hear out of the mountain of         
-despair a stone of hope. With this faith we will be able to             
-transform the jangling discords of our nation into a beautiful          
-symphony of brotherhood.                                                
-With this faith, we will be able to work together, knowing that         
-we will be free one day. This will be the day when all of God's         
-children will be able to sing with new meaning - "My country            
-'this of thee; sweet land of liberty; of thee I sing; land where        
-my fathers died, land of the pilgrim's pride; from every mountain       
-side, let freedom ring" - and if America is to be a great nation,       
-this must become true.                                                  
-So let freedom ring from the prodigious hilltops of New Hampshire.      
-Let freedom ring from the mighty mountains of New York.                 
-Let freedom ring from the heightening Alleghenies of Pennsylvania.      
-Let freedom ring from the snow-capped Rockies of Colorado.              
-Let freedom ring from the curvaceous slopes of California.              
-But not only that.                                                      
-Let freedom ring from Stone Mountain of Georgia.                        
-Let freedom ring from Lookout Mountain of Tennesse.                     
-Let freedom ring from every hill and molehill of Mississippi, from      
-every mountainside, let freedom ring.                                   
-And when we allow freedom to ring, when we let it ring from every       
-village and hamlet, from every state and city, we will be able          
-to speed up that day when all of God's children - black men and         
-white men, Jews and Gentiles, Catholics and Protestants - will be       
-able to join hands and to sing the words of the old Negro Spiritual;    
-"Free at last, free at last; thank God Almighty, we are free at last".  
--- Martin Luther King Jr. --                                            
-Washington,August 28th 1963.                                            
-
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FILE NAME ERROR: C:/Users/rodri/Documents/Dyalog/MDAPL/../res/testfiles/mlk.txt: Unable to open file (&quot;The system cannot f
+ind the path specified.&quot;)
+ReadAllText[3] tn←name ⎕NTIE 0
+                       ∧
+</pre></div>
+</div>
+</div>
 </div>
 <ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">ReadAllLines</span></code> reads the contents of a text file and returns a nested vector of character vectors, one vector per line of text in the file. The syntax is <code class="docutils literal notranslate"><span class="pre">result</span> <span class="pre">←</span> <span class="pre">ReadAllLines</span> <span class="pre">path,fileID</span></code>:</p></li>
@@ -5059,91 +4954,13 @@ Washington,August 28th 1963.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌──────────────────────────────────────────────────────────────┬──────────────────────────────────────────────────────────
-│So I say to you, my friends, that even though we must face the│difficulties of today and tomorrow, I still have a dream. 
-└──────────────────────────────────────────────────────────────┴──────────────────────────────────────────────────────────
-      ─────┬─────────────────────────────────────────────────────────────┬────────────────────────────────────────────────
-      It is│a dream deeply rooted in the American dream that one day this│nation will rise up and live out the true meanin
-      ─────┴─────────────────────────────────────────────────────────────┴────────────────────────────────────────────────
-      ───────────────┬─────────────────────────────────────────────────────────┬──────────────┬───────────────────────────
-      g of its creed:│we hold these truths to be self-evident, that all men are│created equal.│I have a dream that one day
-      ───────────────┴─────────────────────────────────────────────────────────┴──────────────┴───────────────────────────
-      ───────────────────────────────────┬──────────────────────────────────────────────────────────────┬─────────────────
-      , on the red hills of Georgia, sons│of former slaves, and sons of former slave-owners will be able│to sit down toget
-      ───────────────────────────────────┴──────────────────────────────────────────────────────────────┴─────────────────
-      ─────────────────────────────────┬─────────────────────────────────────────────────────────────┬────────────────────
-      her at the table of brotherhood. │I have a dream that one day, even the state of Mississippi, a│state sweltering wit
-      ─────────────────────────────────┴─────────────────────────────────────────────────────────────┴────────────────────
-      ────────────────────────────────────────────┬────────────────────────────────────────────────────────────────┬──────
-      h the heat of injustice, sweltering with the│heat of oppression, will be transformed into an oasis of freedom│and ju
-      ────────────────────────────────────────────┴────────────────────────────────────────────────────────────────┴──────
-      ──────┬───────────────────────────────────────────────────────────┬─────────────────────────────────────────────────
-      stice.│I have a dream that my four children will one day live in a│nation where they will not be juged by the color 
-      ──────┴───────────────────────────────────────────────────────────┴─────────────────────────────────────────────────
-      ─────────────┬──────────────────────────────────┬─────────────────────┬─────────────────────────────────────────────
-      of their skin│but by content of their character.│I have a dream today!│I have a dream that one day, down in Alabama,
-      ─────────────┴──────────────────────────────────┴─────────────────────┴─────────────────────────────────────────────
-      ─────────────────┬────────────────────────────────────────────────────────────┬─────────────────────────────────────
-       with its vicious│racists, with its governor having his lips dripping with the│words of interposition and nullificat
-      ─────────────────┴────────────────────────────────────────────────────────────┴─────────────────────────────────────
-      ─────────────────────────┬────────────────────────────────────────────────────────────────┬─────────────────────────
-      ion, that one day, right │there in Alabama, little black boys and black girls will be able│to join hands with little
-      ─────────────────────────┴────────────────────────────────────────────────────────────────┴─────────────────────────
-      ──────────────────────────────────────┬───────────────────────────────────┬─────────────────────────────────────────
-       white boys and white girls as sisters│and brothers. I have a dream today!│I have a dream that one day every valley 
-      ──────────────────────────────────────┴───────────────────────────────────┴─────────────────────────────────────────
-      ───────────────────────┬──────────────────────────────────────────────────────────────┬─────────────────────────────
-      shall be exalted, every│hill and mountain shall be made low, the rough places shall be│made plain, and the crooked p
-      ───────────────────────┴──────────────────────────────────────────────────────────────┴─────────────────────────────
-      ────────────────────────────────────┬──────────────────────────────────────────────────────────────┬─────────┬──────
-      laces shall be made straight and the│glory of the Lord will be revealed and all flesh shall seet it│together.│This i
-      ────────────────────────────────────┴──────────────────────────────────────────────────────────────┴─────────┴──────
-      ─────────────────────────────────────────────────────────┬─────┬────────────────────────────────────────────────────
-      s our hope. This is the faith that I go back to the South│with.│With this faith, we will be able to hear out of the 
-      ─────────────────────────────────────────────────────────┴─────┴────────────────────────────────────────────────────
-      ───────────┬───────────────────────────────────────────────────────────┬────────────────────────────────────────────
-      mountain of│despair a stone of hope. With this faith we will be able to│transform the jangling discords of our natio
-      ───────────┴───────────────────────────────────────────────────────────┴────────────────────────────────────────────
-      ──────────────────┬────────────────────────┬───────────────────────────────────────────────────────────────┬────────
-      n into a beautiful│symphony of brotherhood.│With this faith, we will be able to work together, knowing that│we will 
-      ──────────────────┴────────────────────────┴───────────────────────────────────────────────────────────────┴────────
-      ───────────────────────────────────────────────────────┬────────────────────────────────────────────────────────────
-      be free one day. This will be the day when all of God's│children will be able to sing with new meaning - "My country
-      ───────────────────────────────────────────────────────┴────────────────────────────────────────────────────────────
-      ─┬────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────
-       │'this of thee; sweet land of liberty; of thee I sing; land where│my fathers died, land of the pilgrim's pride; fro
-      ─┴────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────
-      ────────────────┬─────────────────────────────────────────────────────────────────┬──────────────────────┬──────────
-      m every mountain│side, let freedom ring" - and if America is to be a great nation,│this must become true.│So let fre
-      ────────────────┴─────────────────────────────────────────────────────────────────┴──────────────────────┴──────────
-      ────────────────────────────────────────────────────────┬───────────────────────────────────────────────────────┬───
-      edom ring from the prodigious hilltops of New Hampshire.│Let freedom ring from the mighty mountains of New York.│Let
-      ────────────────────────────────────────────────────────┴───────────────────────────────────────────────────────┴───
-      ───────────────────────────────────────────────────────────────┬────────────────────────────────────────────────────
-       freedom ring from the heightening Alleghenies of Pennsylvania.│Let freedom ring from the snow-capped Rockies of Col
-      ───────────────────────────────────────────────────────────────┴────────────────────────────────────────────────────
-      ──────┬──────────────────────────────────────────────────────────┬──────────────────┬───────────────────────────────
-      orado.│Let freedom ring from the curvaceous slopes of California.│But not only that.│Let freedom ring from Stone Mou
-      ──────┴──────────────────────────────────────────────────────────┴──────────────────┴───────────────────────────────
-      ─────────────────┬───────────────────────────────────────────────────┬──────────────────────────────────────────────
-      ntain of Georgia.│Let freedom ring from Lookout Mountain of Tennesse.│Let freedom ring from every hill and molehill 
-      ─────────────────┴───────────────────────────────────────────────────┴──────────────────────────────────────────────
-      ────────────────────┬─────────────────────────────────────┬─────────────────────────────────────────────────────────
-      of Mississippi, from│every mountainside, let freedom ring.│And when we allow freedom to ring, when we let it ring fr
-      ────────────────────┴─────────────────────────────────────┴─────────────────────────────────────────────────────────
-      ────────┬──────────────────────────────────────────────────────────────┬────────────────────────────────────────────
-      om every│village and hamlet, from every state and city, we will be able│to speed up that day when all of God's child
-      ────────┴──────────────────────────────────────────────────────────────┴────────────────────────────────────────────
-      ───────────────────┬─────────────────────────────────────────────────────────────────┬──────────────────────────────
-      ren - black men and│white men, Jews and Gentiles, Catholics and Protestants - will be│able to join hands and to sing
-      ───────────────────┴─────────────────────────────────────────────────────────────────┴──────────────────────────────
-      ──────────────────────────────────────┬────────────────────────────────────────────────────────────────────────┬────
-       the words of the old Negro Spiritual;│"Free at last, free at last; thank God Almighty, we are free at last".  │-- M
-      ──────────────────────────────────────┴────────────────────────────────────────────────────────────────────────┴────
-      ─────────────────────────┬────────────────────────────┬┐
-      artin Luther King Jr. -- │Washington,August 28th 1963.││
-      ─────────────────────────┴────────────────────────────┴┘
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FILE NAME ERROR: C:/Users/rodri/Documents/Dyalog/MDAPL/../res/testfiles/mlk.txt: Unable to open file (&quot;The system cannot f
+ind the path specified.&quot;)
+ReadAllText[3] tn←name ⎕NTIE 0
+                       ∧
+</pre></div>
+</div>
+</div>
 </div>
 <ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">PutText</span></code> writes a character matrix (or vector) to a file. If a file with the same name already exists, it is replaced by the new file. The function returns the number of characters written to the file. The syntax is <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">←</span> <span class="pre">textMatrix</span> <span class="pre">PutText</span> <span class="pre">path,fileID</span></code>:</p></li>
@@ -5155,8 +4972,13 @@ Washington,August 28th 1963.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">17
-</span></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FILE NAME ERROR: C:/Users/rodri/Documents/Dyalog/MDAPL/../res/testfiles/chemistry.txt: Unable to open file (&quot;The system ca
+nnot find the path specified.&quot;)
+PutText[14] tn←name ⎕NTIE 0
+                    ∧
+</pre></div>
+</div>
+</div>
 </div>
 <p>The workspace <code class="docutils literal notranslate"><span class="pre">loaddata.dws</span></code>, distributed as part of the Dyalog APL system, contains a set of professional grade functions to read from and write to text files, Excel workbooks, SQL databases and XML files.
 <code class="docutils literal notranslate"><span class="pre">loaddata.dws</span></code> contains two functions <code class="docutils literal notranslate"><span class="pre">LoadText</span></code> and <code class="docutils literal notranslate"><span class="pre">SaveText</span></code> to complement the set of functions described above. <code class="docutils literal notranslate"><span class="pre">LoadText</span></code> and <code class="docutils literal notranslate"><span class="pre">SaveText</span></code> are designed to work with comma separated files (.CSV files) and fixed field width text files.</p>
@@ -5450,54 +5272,9 @@ Finally, we wrap that character vector in a little bit of HTML code, so that the
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────────────────────────────────────────────────────────────────────────────────┬───────────────────────────────────────
-│https://www.dyalog.com/uploads/files/student_competition/2021_problems_phase1.pdf│https://www.dyalog.com/uploads/files/st
-└─────────────────────────────────────────────────────────────────────────────────┴───────────────────────────────────────
-      ──────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────
-      udent_competition/2021_problems_phase2.pdf│https://www.dyalog.com/uploads/files/student_competition/2020_problems_ph
-      ──────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────
-      ────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────
-      ase1.pdf│https://www.dyalog.com/uploads/files/student_competition/2020_problems_phase2.pdf│https://www.dyalog.com/up
-      ────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────
-      ────────────────────────────────────────────────────────┬───────────────────────────────────────────────────────────
-      loads/files/student_competition/2019_problems_phase1.pdf│https://www.dyalog.com/uploads/files/student_competition/20
-      ────────────────────────────────────────────────────────┴───────────────────────────────────────────────────────────
-      ──────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬───────────
-      19_problems_phase2.pdf│https://www.dyalog.com/uploads/files/student_competition/2018_problems_phase1.pdf│https://www
-      ──────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴───────────
-      ──────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────
-      .dyalog.com/uploads/files/student_competition/2018_problems_phase2.pdf│https://www.dyalog.com/uploads/files/student_
-      ──────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────
-      ────────────────────────────────────┬───────────────────────────────────────────────────────────────────────────────
-      competition/2017_problems_phase1.pdf│https://www.dyalog.com/uploads/files/student_competition/2017_problems_phase2.p
-      ────────────────────────────────────┴───────────────────────────────────────────────────────────────────────────────
-      ──┬─────────────────────────────────────────────────────────────────────────────────┬───────────────────────────────
-      df│https://www.dyalog.com/uploads/files/student_competition/2016_problems_phase1.pdf│https://www.dyalog.com/uploads/
-      ──┴─────────────────────────────────────────────────────────────────────────────────┴───────────────────────────────
-      ──────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────
-      files/student_competition/2016_problems_phase2.pdf│https://www.dyalog.com/uploads/files/student_competition/2015_pro
-      ──────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────
-      ────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────
-      blems_phase1.pdf│https://www.dyalog.com/uploads/files/student_competition/2015_problems_phase2.pdf│https://www.dyalo
-      ────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────
-      ────────────────────────────────────────────────────────────────┬───────────────────────────────────────────────────
-      g.com/uploads/files/student_competition/2014_problems_phase1.pdf│https://www.dyalog.com/uploads/files/student_compet
-      ────────────────────────────────────────────────────────────────┴───────────────────────────────────────────────────
-      ──────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬───
-      ition/2014_problems_phase2.pdf│https://www.dyalog.com/uploads/files/student_competition/2013_problems_phase1.pdf│htt
-      ──────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴───
-      ──────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────
-      ps://www.dyalog.com/uploads/files/student_competition/2013_problems_phase2.pdf│https://www.dyalog.com/uploads/files/
-      ──────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────
-      ─────────────────────────────────────┬──────────────────────────────────────────────────────────────────────────┬───
-      student_competition/2012_problems.pdf│https://www.dyalog.com/uploads/files/student_competition/2011_problems.pdf│htt
-      ─────────────────────────────────────┴──────────────────────────────────────────────────────────────────────────┴───
-      ───────────────────────────────────────────────────────────────────────┬────────────────────────────────────────────
-      ps://www.dyalog.com/uploads/files/student_competition/2010_problems.pdf│https://www.dyalog.com/uploads/files/student
-      ───────────────────────────────────────────────────────────────────────┴────────────────────────────────────────────
-      ──────────────────────────────┐
-      _competition/2009_problems.pdf│
-      ──────────────────────────────┘
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────────────┐
+│https://www.dyalog.com/uploads/files/student_competition/2021_problems_phase1.pdf│https://www.dyalog.com/uploads/files/student_competition/2021_problems_phase2.pdf│https://www.dyalog.com/uploads/files/student_competition/2020_problems_phase1.pdf│https://www.dyalog.com/uploads/files/student_competition/2020_problems_phase2.pdf│https://www.dyalog.com/uploads/files/student_competition/2019_problems_phase1.pdf│https://www.dyalog.com/uploads/files/student_competition/2019_problems_phase2.pdf│https://www.dyalog.com/uploads/files/student_competition/2018_problems_phase1.pdf│https://www.dyalog.com/uploads/files/student_competition/2018_problems_phase2.pdf│https://www.dyalog.com/uploads/files/student_competition/2017_problems_phase1.pdf│https://www.dyalog.com/uploads/files/student_competition/2017_problems_phase2.pdf│https://www.dyalog.com/uploads/files/student_competition/2016_problems_phase1.pdf│https://www.dyalog.com/uploads/files/student_competition/2016_problems_phase2.pdf│https://www.dyalog.com/uploads/files/student_competition/2015_problems_phase1.pdf│https://www.dyalog.com/uploads/files/student_competition/2015_problems_phase2.pdf│https://www.dyalog.com/uploads/files/student_competition/2014_problems_phase1.pdf│https://www.dyalog.com/uploads/files/student_competition/2014_problems_phase2.pdf│https://www.dyalog.com/uploads/files/student_competition/2013_problems_phase1.pdf│https://www.dyalog.com/uploads/files/student_competition/2013_problems_phase2.pdf│https://www.dyalog.com/uploads/files/student_competition/2012_problems.pdf│https://www.dyalog.com/uploads/files/student_competition/2011_problems.pdf│https://www.dyalog.com/uploads/files/student_competition/2010_problems.pdf│https://www.dyalog.com/uploads/files/student_competition/2009_problems.pdf│
+└─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────┴──────────────────────────────────────────────────────────────────────────┴──────────────────────────────────────────────────────────────────────────┴──────────────────────────────────────────────────────────────────────────┴──────────────────────────────────────────────────────────────────────────┘
 </span></div></div>
 </div>
 <p>Don’t worry if you do not understand the APL code above (it is simpler than it might look, but explaining it is not the purpose of this section). You can see that the code returns some hyperlinks, which point to PDF files with the problem sets that we mentioned. You can read more about <code class="docutils literal notranslate"><span class="pre">HttpCommand</span></code> <a class="reference external" href="https://www.dyalog.com/tools/tools-and-code-libraries.htm">here</a>.</p>
@@ -6480,9 +6257,9 @@ NOPQRSTUVWXYZ
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">FILEPATH        URL     Val     a       actual  array   b       base    c       charMat chemistry       contents        d
-dream   dreamLines      file1   file2   filepath        forecast        hours   inverses        links   mat     nesMat  nm
-number  path    salaries        times   towns   u       v       var     which   x       zap     
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">FILEPATH        URL     Val     a       actual  array   b       base    c       charMat chemistry       d       file1   
+file2   filepath        forecast        hours   inverses        links   mat     nesMat  nm      path    salaries        
+times   towns   u       v       var     which   x       zap     
 </span></div></div>
 </div>
 <p>and you can obtain a list of your functions by typing</p>
