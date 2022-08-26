@@ -7,6 +7,12 @@ In the first instance, it lists the changes between consecutive releases of this
 However, because this book is a rework of the first edition by Bernard Legrand,
 this changelog also marks with [n] content that is new in this rework.
 
+## 0.5.0
+
+  - Add chapter “Operators”:
+    - [n] add exercises on _outer product_;
+  - Remove quotes from figure captions.
+
 ## 0.4.5
 
   - Moved source files into dedicated folder `docs`.
