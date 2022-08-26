@@ -24,6 +24,7 @@ CUSTOM_ADMONITION_STYLES = {
     "advice": "tip",
     "example": "tip",
     "exercise": "hint",
+    "footnote": "note",
     "remark": "tip",
     "rule": "tip",
     "rules": "tip",
