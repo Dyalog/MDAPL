@@ -16,7 +16,8 @@ this changelog also marks with [n] content that is new in this rework.
         - [n] add exercises on _outer product_;
     - refactor section on “Inner Product”:
       - include inner product explanatory diagrams as figures (there is no good way of including the explanatory diagrams as markdown tables or MathJax tables);
-      - remove obsolete example about `∧.=` (a long example showing how to use `∧.=` became obsolete with the extension of index of, dyadic `⍳`, to higher-rank arrays. Instead, this example was moved to the exercises);
+      - remove obsolete example about `∧.=` (a long example showing how to use `∧.=` became obsolete with the extension of index of, dyadic `⍳`, to higher-rank arrays – instead, this example was moved to the exercises);
+      - reword sub-subsection “Is a Graph Contiguous?” (make the text more mathematically precise while keeping it light for people with no/little mathematical background);
         
     - refactor exercises:
       - [n] add exercise about `∧.=` where we try to implement dyadic `⍳` on matrices with inner products, scans, and reductions;
