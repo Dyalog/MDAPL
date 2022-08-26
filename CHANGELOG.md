@@ -10,8 +10,24 @@ this changelog also marks with [n] content that is new in this rework.
 ## 0.5.0
 
   - Add chapter “Operators”:
-    - [n] add exercises on _outer product_;
+    - prefer “operand(s)” over “argument(s)” when talking about operators (the book seldom uses “operands”);
+    - refactor section on “Outer Product”:
+        - remove sub-subsection “Applications” > “Dispatching Items into Categories” (obsolete with the introduction of interval index, dyadic `⍸`);
+        - [n] add exercises on _outer product_;
+    - refactor section on “Inner Product”:
+      - include inner product explanatory diagrams as figures (there is no good way of including the explanatory diagrams as markdown tables or MathJax tables);
+      - remove obsolete example about `∧.=` (a long example showing how to use `∧.=` became obsolete with the extension of index of, dyadic `⍳`, to higher-rank arrays. Instead, this example was moved to the exercises);
+        
+    - refactor exercises:
+      - [n] add exercise about `∧.=` where we try to implement dyadic `⍳` on matrices with inner products, scans, and reductions;
+
   - Remove quotes from figure captions.
+  - Refactor “Variables” appendix:
+    - explicitly order variables by their first appearance;
+    - add cross-references to usage locations;
+  - Add custom admonition type for footnotes.
+  - Restyle footnote in Appendix with new custom admonition (footnotes, often marked with an asterisk `*` in the original book, are being marked with asterisks and then written out with an admonition called a `footnote`).
+
 
 ## 0.4.5
 
