@@ -18,9 +18,23 @@ this changelog also marks with [n] content that is new in this rework.
       - include inner product explanatory diagrams as figures (there is no good way of including the explanatory diagrams as markdown tables or MathJax tables);
       - remove obsolete example about `∧.=` (a long example showing how to use `∧.=` became obsolete with the extension of index of, dyadic `⍳`, to higher-rank arrays – instead, this example was moved to the exercises);
       - reword sub-subsection “Is a Graph Contiguous?” (make the text more mathematically precise while keeping it light for people with no/little mathematical background);
-        
-    - refactor exercises:
+    - refactor intermission exercises:
       - [n] add exercise about `∧.=` where we try to implement dyadic `⍳` on matrices with inner products, scans, and reductions;
+    - remove sections “Compose” and “Commute” (moved to chapter “Tacit Programming”)
+    
+    - [n] add section “At” about `@`;
+    - [n] add section “Rank” about `⍤`;
+    - [n] add section “Key” about `⌸`;
+    - [n] add section “Stencil” about `⌺`;
+    - [n] add exercises:
+      - [n] redo the exercise on cross counting with key `⌸`;
+      - [n] add exercises to test new operators;
+  - [n] Add chapter “Tacit Programming”:
+    - [n] add section “Function Composition”:
+      - add section “Operators > Compose”;
+      - [n] add “Atop” and “Over” `⍤` and `⍥`;
+    - add old “Operators > Commute”;
+    - [n] add section “Constant” on `A⍨`;
 
   - Remove quotes from figure captions.
   - Refactor “Variables” appendix:
@@ -184,7 +198,7 @@ when versioning of the MDAPL rework started.
    - (possibly other changes);
    
  - Add chapter “Some Primitive Functions”:
-   - introduce match and depth (≡) and not-match and tally (≢);
+   - introduce match and depth (`≡`) and not-match and tally (`≢`);
    - [n] mention unique that renders the `((⍳≢vector) = vector ⍳ vector) / vector` example as obsolete;
    - (possibly other changes);
    
