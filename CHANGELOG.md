@@ -21,21 +21,31 @@ this changelog also marks with [n] content that is new in this rework.
     - refactor intermission exercises:
       - [n] add exercise about `∧.=` where we try to implement dyadic `⍳` on matrices with inner products, scans, and reductions;
     - remove sections “Compose” and “Commute” (moved to chapter “Tacit Programming”)
-    
     - [n] add section “At” about `@`;
+
     - [n] add section “Rank” about `⍤`;
+      - [n] explain rank in terms of frames;
     - [n] add section “Key” about `⌸`;
     - [n] add section “Stencil” about `⌺`;
+    - refactor section “The Specialist's Section”:
+      - [n] write about rank outer products `F⍤99 j⍤k 99`;
+      - [n] write about a length-3 right operand to rank `⍤`;
     - [n] add exercises:
       - [n] redo the exercise on cross counting with key `⌸`;
       - [n] add exercises to test new operators;
+      - [n] add exercises to compute frames when using rank `⍤`;
+
   - [n] Add chapter “Tacit Programming”:
     - [n] add section “Function Composition”:
       - add section “Operators > Compose”;
       - [n] add “Atop” and “Over” `⍤` and `⍥`;
+    - [n] add section “Binding” or “Currying”:
+      - [n] add example of binding in the right operand of `@`, e.g. in `0@(>∘5)` to replace values larger than 5;
     - add old “Operators > Commute”;
     - [n] add section “Constant” on `A⍨`;
 
+  - [n] Write about “Choose Indexing” and “Reach Indexing” in the chapter “Nested Arrays (Continued)” (these types of indexing come in handy in later sections):
+    - [n] mention these techniques at “Data and Variables > Indexing > Even More Indexing”;
   - Remove quotes from figure captions.
   - Refactor “Variables” appendix:
     - explicitly order variables by their first appearance;
