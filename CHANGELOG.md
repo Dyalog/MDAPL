@@ -22,9 +22,10 @@ this changelog also marks with [n] content that is new in this rework.
       - [n] add exercise about `∧.=` where we try to implement dyadic `⍳` on matrices with inner products, scans, and reductions;
     - remove sections “Compose” and “Commute” (moved to chapter “Tacit Programming”)
     - [n] add section “At” about `@`;
-
     - [n] add section “Rank” about `⍤`;
       - [n] explain rank in terms of frames;
+      - [n] define cells;
+      - [n] explain rank in terms of cells;
     - [n] add section “Key” about `⌸`;
     - [n] add section “Stencil” about `⌺`;
     - refactor section “The Specialist's Section”:
@@ -34,16 +35,6 @@ this changelog also marks with [n] content that is new in this rework.
       - [n] redo the exercise on cross counting with key `⌸`;
       - [n] add exercises to test new operators;
       - [n] add exercises to compute frames when using rank `⍤`;
-
-  - [n] Add chapter “Tacit Programming”:
-    - [n] add section “Function Composition”:
-      - add section “Operators > Compose”;
-      - [n] add “Atop” and “Over” `⍤` and `⍥`;
-    - [n] add section “Binding” or “Currying”:
-      - [n] add example of binding in the right operand of `@`, e.g. in `0@(>∘5)` to replace values larger than 5;
-    - add old “Operators > Commute”;
-    - [n] add section “Constant” on `A⍨`;
-
   - [n] Write about “Choose Indexing” and “Reach Indexing” in the chapter “Nested Arrays (Continued)” (these types of indexing come in handy in later sections):
     - [n] mention these techniques at “Data and Variables > Indexing > Even More Indexing”;
   - Remove quotes from figure captions.
@@ -52,6 +43,8 @@ this changelog also marks with [n] content that is new in this rework.
     - add cross-references to usage locations;
   - Add custom admonition type for footnotes.
   - Restyle footnote in Appendix with new custom admonition (footnotes, often marked with an asterisk `*` in the original book, are being marked with asterisks and then written out with an admonition called a `footnote`).
+  - Fix bug with preprocessing script (standalone headers were not getting anchor links).
+  - Fix references in “Working with Data Shape”.
 
 
 ## 0.4.5
