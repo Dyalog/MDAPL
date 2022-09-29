@@ -5,10 +5,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>11. Appendices &#8212; Mastering Dyalog APL</title>
+    <title>12. Appendices &#8212; Mastering Dyalog APL</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,49 +19,62 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="10. Nested Arrays (Continued)" href="Nested-Arrays-Continued.html" />
+    <link rel="prev" title="11. Operators" href="Operators.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -69,9 +83,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -135,142 +150,499 @@
    10. Nested Arrays (Continued)
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Operators.html">
+   11. Operators
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   11. Appendices
+   12. Appendices
   </a>
  </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Appendices.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/Dyalog/MDAPL"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        
-        <a class="edit-button" href="https://github.com/Dyalog/MDAPL/edit/master/docs/Appendices.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Dyalog/MDAPL"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Dyalog/MDAPL/edit/master/docs/Appendices.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Appendices.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#scalar-functions">
-   11.1. Scalar Functions
+   12.1. Scalar Functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#invoking-the-editor">
-   11.2. Invoking the Editor
+   12.2. Invoking the Editor
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#selective-assignment">
-   11.3. Selective Assignment
+   12.3. Selective Assignment
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#dyalog-apl-operators">
-   11.4. Dyalog APL Operators
+   12.4. Dyalog APL Operators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendices-identity-elements">
+   12.5. Identity Elements
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#event-numbers">
-   11.5. Event Numbers
+   12.6. Event Numbers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variables">
-   11.6. Variables
+   12.7. Variables
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#forecast-and-actual-numeric-matrices">
+     12.7.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       forecast
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       actual
+      </span>
+     </code>
+     – numeric matrices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#salaries-numeric-vector">
+     12.7.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       salaries
+      </span>
+     </code>
+     – numeric vector
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ages-numeric-vector">
+     12.7.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ages
+      </span>
+     </code>
+     – numeric vector
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prod-numeric-cuboid">
+     12.7.4.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       prod
+      </span>
+     </code>
+     – numeric cuboid
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#monmat-character-matrix">
+     12.7.5.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       monMat
+      </span>
+     </code>
+     – character matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nesmat-mixed-nested-matrix">
+     12.7.6.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       nesMat
+      </span>
+     </code>
+     – mixed nested matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chemistry-character-matrix">
+     12.7.7.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       chemistry
+      </span>
+     </code>
+     – character matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nm-numeric-matrix">
+     12.7.8.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       nm
+      </span>
+     </code>
+     – numeric matrix
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Appendices</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scalar-functions">
+   12.1. Scalar Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#invoking-the-editor">
+   12.2. Invoking the Editor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selective-assignment">
+   12.3. Selective Assignment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dyalog-apl-operators">
+   12.4. Dyalog APL Operators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#appendices-identity-elements">
+   12.5. Identity Elements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#event-numbers">
+   12.6. Event Numbers
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables">
+   12.7. Variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#forecast-and-actual-numeric-matrices">
+     12.7.1.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       forecast
+      </span>
+     </code>
+     and
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       actual
+      </span>
+     </code>
+     – numeric matrices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#salaries-numeric-vector">
+     12.7.2.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       salaries
+      </span>
+     </code>
+     – numeric vector
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ages-numeric-vector">
+     12.7.3.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ages
+      </span>
+     </code>
+     – numeric vector
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prod-numeric-cuboid">
+     12.7.4.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       prod
+      </span>
+     </code>
+     – numeric cuboid
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#monmat-character-matrix">
+     12.7.5.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       monMat
+      </span>
+     </code>
+     – character matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nesmat-mixed-nested-matrix">
+     12.7.6.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       nesMat
+      </span>
+     </code>
+     – mixed nested matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chemistry-character-matrix">
+     12.7.7.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       chemistry
+      </span>
+     </code>
+     – character matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nm-numeric-matrix">
+     12.7.8.
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       nm
+      </span>
+     </code>
+     – numeric matrix
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="appendices">
-<span id="appendices-appendices"></span><h1><span class="section-number">11. </span>Appendices<a class="headerlink" href="#appendices" title="Permalink to this headline">¶</a></h1>
+<span id="appendices-appendices"></span><h1><span class="section-number">12. </span>Appendices<a class="headerlink" href="#appendices" title="Permalink to this headline">#</a></h1>
 <div class="section" id="scalar-functions">
-<span id="appendices-scalar-functions"></span><h2><span class="section-number">11.1. </span>Scalar Functions<a class="headerlink" href="#scalar-functions" title="Permalink to this headline">¶</a></h2>
+<span id="appendices-scalar-functions"></span><h2><span class="section-number">12.1. </span>Scalar Functions<a class="headerlink" href="#scalar-functions" title="Permalink to this headline">#</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Function</p></th>
@@ -409,7 +781,7 @@
 </table>
 </div>
 <div class="section" id="invoking-the-editor">
-<span id="appendices-invoking-the-editor"></span><h2><span class="section-number">11.2. </span>Invoking the Editor<a class="headerlink" href="#invoking-the-editor" title="Permalink to this headline">¶</a></h2>
+<span id="appendices-invoking-the-editor"></span><h2><span class="section-number">12.2. </span>Invoking the Editor<a class="headerlink" href="#invoking-the-editor" title="Permalink to this headline">#</a></h2>
 <p>The editor provided with Dyalog APL can be invoked by double-clicking the name of an <em>existing</em> object. Then the editor knows the type of the object and adapts its behaviour accordingly.</p>
 <p>The system command <code class="docutils literal notranslate"><span class="pre">)ED</span></code> opens the editor and can be used to create a <em>new</em> object. By default a new function is created.</p>
 <p>A prefix can be used to specify the type of the new object, according to the following table:</p>
@@ -460,7 +832,7 @@
 <p>More information is available at <a class="reference external" href="https://help.dyalog.com/latest/#Language/System%20Commands/ed.htm?Highlight=ed">Dyalog’s help page for the “Edit Object”</a>.</p>
 </div>
 <div class="section" id="selective-assignment">
-<span id="appendices-selective-assignment"></span><h2><span class="section-number">11.3. </span>Selective Assignment<a class="headerlink" href="#selective-assignment" title="Permalink to this headline">¶</a></h2>
+<span id="appendices-selective-assignment"></span><h2><span class="section-number">12.3. </span>Selective Assignment<a class="headerlink" href="#selective-assignment" title="Permalink to this headline">#</a></h2>
 <p><em>Selective assignment</em> cannot be used with every single primitive function; only the following selection functions are allowed. When appropriate, these functions can also be used with an <em>axis</em> specification:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -529,7 +901,7 @@
 </ul>
 </div>
 <div class="section" id="dyalog-apl-operators">
-<span id="appendices-dyalog-apl-operators"></span><h2><span class="section-number">11.4. </span>Dyalog APL Operators<a class="headerlink" href="#dyalog-apl-operators" title="Permalink to this headline">¶</a></h2>
+<span id="appendices-dyalog-apl-operators"></span><h2><span class="section-number">12.4. </span>Dyalog APL Operators<a class="headerlink" href="#dyalog-apl-operators" title="Permalink to this headline">#</a></h2>
 <p>The following table of primitive operators in Dyalog APL uses the following conventions:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">f</span></code> and <code class="docutils literal notranslate"><span class="pre">g</span></code> represent functions: primitive, user defined or derived from another operator;</p></li>
@@ -808,16 +1180,128 @@
 </tr>
 </tbody>
 </table>
-<p>(*): Strictly speaking, axis is not an operator, cf. <span class="xref myst">the chapter on operators</span>.</p>
+<div class="note admonition">
+<p class="admonition-title">Footnote</p>
+<p>Strictly speaking, axis is not an operator, cf. <a class="reference internal" href="Operators.html"><span class="doc std std-doc">the chapter on operators</span></a>.</p>
+</div>
+</div>
+<div class="section" id="appendices-identity-elements">
+<span id="identity-elements"></span><h2><span class="section-number">12.5. </span>Identity Elements<a class="headerlink" href="#appendices-identity-elements" title="Permalink to this headline">#</a></h2>
+<p>Reducing an empty vector <code class="docutils literal notranslate"><span class="pre">v</span></code> using any function <code class="docutils literal notranslate"><span class="pre">F/v</span></code> returns the identity element for the function <code class="docutils literal notranslate"><span class="pre">F</span></code>, if such an identity element is defined.
+Here is the list of the identity elements in Dyalog APL.
+The last column specifies the side on which the element acts as the identity element in case the identity element does not work on both sides.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><code class="docutils literal notranslate"><span class="pre">F</span></code></p></th>
+<th class="text-align:center head"><p><code class="docutils literal notranslate"><span class="pre">F/⍬</span></code></p></th>
+<th class="text-align:left head"><p>Identity on what side</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">×</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">-</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td class="text-align:left"><p>right</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">÷</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td class="text-align:left"><p>right</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td class="text-align:left"><p>right</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">⌈</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">¯1.7977E308</span></code>⁽*⁾</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">⌊</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">1.7977E308</span></code>⁽*⁾</p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">∧</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">∨</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&lt;</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">≤</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">=</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">≥</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">&gt;</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">≠</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">∪</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">⍬</span></code> or <code class="docutils literal notranslate"><span class="pre">''</span></code></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>`</p></td>
+<td class="text-align:center"><p>`</p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">!</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td class="text-align:left"><p>left</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">⊤</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td class="text-align:left"><p>left</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">⌽</span></code> and <code class="docutils literal notranslate"><span class="pre">⊖</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+<td class="text-align:left"><p>left</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">/</span></code> and <code class="docutils literal notranslate"><span class="pre">⌿</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td class="text-align:left"><p>left</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">\</span></code> and <code class="docutils literal notranslate"><span class="pre">⍀</span></code></p></td>
+<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td class="text-align:left"><p>left</p></td>
+</tr>
+</tbody>
+</table>
+<p>Functions that do not appear in this table will cause a <code class="docutils literal notranslate"><span class="pre">DOMAIN</span> <span class="pre">ERROR</span></code> if they are used to reduce an empty vector.</p>
+<div class="note admonition">
+<p class="admonition-title">Footnote</p>
+<p>The identity elements for <code class="docutils literal notranslate"><span class="pre">⌈/</span></code> and <code class="docutils literal notranslate"><span class="pre">⌊/</span></code> are system-dependant and are, respectively, the smallest and the largest value supported by the system.</p>
+</div>
 </div>
 <div class="section" id="event-numbers">
-<span id="appendices-event-numbers"></span><h2><span class="section-number">11.5. </span>Event Numbers<a class="headerlink" href="#event-numbers" title="Permalink to this headline">¶</a></h2>
+<span id="appendices-event-numbers"></span><h2><span class="section-number">12.6. </span>Event Numbers<a class="headerlink" href="#event-numbers" title="Permalink to this headline">#</a></h2>
 <p>This page provides a reference table with all the event numbers and their assigned meanings.
 We build the table by making use of the <code class="docutils literal notranslate"><span class="pre">⎕EM</span></code> <em>system function</em>, and then we filter event numbers that do not have an assigned meaning.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">data</span> <span class="kd">←</span> <span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="o">,</span><span class="na">⍨</span><span class="o">,</span><span class="p">(</span><span class="o">⍪,</span><span class="nf">⎕EM</span><span class="na">¨</span><span class="p">)(</span><span class="kt">{</span><span class="p">(</span><span class="o">⊂</span><span class="no">⍬</span><span class="p">)</span><span class="o">≡</span><span class="na">¨</span><span class="p">(</span><span class="s1">&#39;^$&#39;</span> <span class="s1">&#39;^ERROR \d+$&#39;</span> <span class="s1">&#39;^FILE ERROR \d+ Unknown error$&#39;</span><span class="nf">⎕S</span><span class="o">⊢</span><span class="p">)</span><span class="na">∘</span><span class="nf">⎕EM</span><span class="na">¨</span><span class="bp">⍵</span><span class="kt">}</span><span class="o">⊢</span><span class="na">⍤⌿</span><span class="o">⍪</span><span class="p">)</span><span class="o">⍳</span><span class="m">2000</span>
-<span class="nv">data</span><span class="o">⍴</span><span class="na">⍨</span><span class="p">(</span><span class="o">⌊</span><span class="m">4</span><span class="o">÷</span><span class="na">⍨</span><span class="o">≢</span><span class="nv">data</span><span class="p">)</span> <span class="m">4</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">data</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="o">,</span><span class="na">⍨</span><span class="o">,</span><span class="p">(</span><span class="o">⍪,</span><span class="nf">⎕EM</span><span class="na">¨</span><span class="p">)(</span><span class="kt">{</span><span class="p">(</span><span class="o">⊂</span><span class="no">⍬</span><span class="p">)</span><span class="o">≡</span><span class="na">¨</span><span class="p">(</span><span class="s1">&#39;^$&#39;</span><span class="w"> </span><span class="s1">&#39;^ERROR \d+$&#39;</span><span class="w"> </span><span class="s1">&#39;^FILE ERROR \d+ Unknown error$&#39;</span><span class="nf">⎕S</span><span class="o">⊢</span><span class="p">)</span><span class="na">∘</span><span class="nf">⎕EM</span><span class="na">¨</span><span class="bp">⍵</span><span class="kt">}</span><span class="o">⊢</span><span class="na">⍤⌿</span><span class="o">⍪</span><span class="p">)</span><span class="o">⍳</span><span class="m">2000</span><span class="w"></span>
+<span class="nv">data</span><span class="o">⍴</span><span class="na">⍨</span><span class="p">(</span><span class="o">⌊</span><span class="m">4</span><span class="o">÷</span><span class="na">⍨</span><span class="o">≢</span><span class="nv">data</span><span class="p">)</span><span class="w"> </span><span class="m">4</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -929,23 +1413,14 @@ We build the table by making use of the <code class="docutils literal notranslat
 </div>
 </div>
 <div class="section" id="variables">
-<span id="appendices-variables"></span><h2><span class="section-number">11.6. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
-<p>This appendix lists variables and utility functions that are used repeatedly throughout the book.</p>
+<span id="appendices-variables"></span><h2><span class="section-number">12.7. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h2>
+<p>This appendix lists variables and utility functions that are used repeatedly throughout the book, ordering them by first usage.</p>
+<div class="section" id="forecast-and-actual-numeric-matrices">
+<span id="appendices-forecast-and-actual-numeric-matrices"></span><h3><span class="section-number">12.7.1. </span><code class="docutils literal notranslate"><span class="pre">forecast</span></code> and <code class="docutils literal notranslate"><span class="pre">actual</span></code> – numeric matrices<a class="headerlink" href="#forecast-and-actual-numeric-matrices" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
-<span class="vg">⎕</span><span class="kd">←</span> <span class="nv">salaries</span> <span class="kd">←</span> <span class="o">?</span><span class="m">20</span><span class="o">⍴</span><span class="m">5000</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">2121 4778 4914 3139 4561 221 1252 1530 4475 332 3507 1829 1710 4964 3849 669 3653 3415 3867 151
-</span></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
-<span class="vg">⎕</span><span class="kd">←</span> <span class="nv">forecast</span> <span class="kd">←</span> <span class="m">10</span><span class="o">×?</span><span class="m">4</span> <span class="m">6</span><span class="o">⍴</span><span class="m">55</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">73</span><span class="w"></span>
+<span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">forecast</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">10</span><span class="o">×?</span><span class="m">4</span><span class="w"> </span><span class="m">6</span><span class="o">⍴</span><span class="m">55</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -958,8 +1433,8 @@ We build the table by making use of the <code class="docutils literal notranslat
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
-<span class="vg">⎕</span><span class="kd">←</span> <span class="nv">actual</span> <span class="kd">←</span> <span class="nv">forecast</span> <span class="o">+</span> <span class="m">¯10</span><span class="o">+?</span><span class="m">4</span> <span class="m">6</span><span class="o">⍴</span><span class="m">20</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">73</span><span class="w"></span>
+<span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">actual</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nv">forecast</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">¯10</span><span class="o">+?</span><span class="m">4</span><span class="w"> </span><span class="m">6</span><span class="o">⍴</span><span class="m">20</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -970,10 +1445,66 @@ We build the table by making use of the <code class="docutils literal notranslat
 160 467 234 519 485 283
 </span></div></div>
 </div>
+<p>Used in
+<a class="reference external" href="./Introduction.ipynb#array-processing">Array Processing</a>,
+<a class="reference external" href="./Introduction.ipynb#most-symbols-have-a-double-meaning">Most Symbols Have a Double Meaning</a>,
+<a class="reference external" href="./Introduction.ipynb#calculating-without-writing-functions">Calculating Without Writing Functions</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#some-scalar-dyadic-functions">Some Scalar Dyadic Functions</a>,
+<a class="reference external" href="./Introduction.ipynb#calculating-without-writing-functions">Processing Binary Data</a>,
+<a class="reference external" href="./Introduction.ipynb#calculating-without-writing-functions">Axis Specification</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#some-scalar-dyadic-functions">Catenate</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#some-scalar-dyadic-functions">Ravel</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#some-scalar-dyadic-functions">Tradfns</a>,
+<a class="reference external" href="./User-Defined-Functions.ipynb#exercises-on-tradfns">Exercises on Tradfns</a>,
+<a class="reference external" href="./User-Defined-Functions.ipynb#exercises-on-tradfns">When an Error Occurs</a>,
+<a class="reference external" href="./User-Defined-Functions.ipynb#exercises-on-tradfns">Most Frequent Error Messages</a>,
+<a class="reference external" href="./User-Defined-Functions.ipynb#exercises-on-tradfns">Laminate</a>,
+<a class="reference external" href="./User-Defined-Functions.ipynb#exercises-on-tradfns">Expand</a>, and
+<a class="reference external" href="./Working-on-Data-Shape.ipynb#diagonal-section-of-a-matrix">More on Dyadic Transpose</a>.</p>
+</div>
+<div class="section" id="salaries-numeric-vector">
+<span id="appendices-salaries-numeric-vector"></span><h3><span class="section-number">12.7.2. </span><code class="docutils literal notranslate"><span class="pre">salaries</span></code> – numeric vector<a class="headerlink" href="#salaries-numeric-vector" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
-<span class="vg">⎕</span><span class="kd">←</span> <span class="nv">prod</span> <span class="kd">←</span> <span class="o">?</span><span class="m">5</span> <span class="m">2</span> <span class="m">12</span><span class="o">⍴</span><span class="m">50</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">73</span><span class="w"></span>
+<span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">salaries</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="o">?</span><span class="m">20</span><span class="o">⍴</span><span class="m">5000</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">2121 4778 4914 3139 4561 221 1252 1530 4475 332 3507 1829 1710 4964 3849 669 3653 3415 3867 151
+</span></div></div>
+</div>
+<p>Used in
+<a class="reference external" href="./Introduction.ipynb#calculating-without-writing-functions">Calculating Without Writing Functions</a>,
+<a class="reference external" href="./Introduction.ipynb#friendly-binary-data">Friendly Binary Data</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#reduce">Reduce</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#our-first-program">Our First Program</a>, and
+<a class="reference external" href="./User-Defined-Functions.ipynb#input-output-and-format">Input, Output, and Format</a>.</p>
+</div>
+<div class="section" id="ages-numeric-vector">
+<span id="appendices-ages-numeric-vector"></span><h3><span class="section-number">12.7.3. </span><code class="docutils literal notranslate"><span class="pre">ages</span></code> – numeric vector<a class="headerlink" href="#ages-numeric-vector" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">73</span><span class="w"></span>
+<span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="m">20</span><span class="o">↑</span><span class="nv">ages</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="o">?</span><span class="m">400</span><span class="o">⍴</span><span class="m">100</span><span class="w">  </span><span class="c1">⍝ We are only printing the first 20 items of the 400.</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">73 16 42 50 2 67 11 81 37 93 100 98 83 32 76 51 37 15 46 88
+</span></div></div>
+</div>
+<p>Used in
+<a class="reference external" href="./Introduction.ipynb#back-to-primary-school">Back to Primary School</a> and
+<a class="reference external" href="./Operators.ipynb#Inner-Product">Inner Product</a>.</p>
+</div>
+<div class="section" id="prod-numeric-cuboid">
+<span id="appendices-prod-numeric-cuboid"></span><h3><span class="section-number">12.7.4. </span><code class="docutils literal notranslate"><span class="pre">prod</span></code> – numeric cuboid<a class="headerlink" href="#prod-numeric-cuboid" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">73</span><span class="w"></span>
+<span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">prod</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="o">?</span><span class="m">5</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">12</span><span class="o">⍴</span><span class="m">50</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -994,21 +1525,27 @@ We build the table by making use of the <code class="docutils literal notranslat
 41  1 14 50 17 42  6 35 12 48 30 29
 </span></div></div>
 </div>
+<p>Used in
+<a class="reference external" href="./Data-and-Variables.ipynb#arrays-of-items">Arrays of Items</a>,
+<a class="reference external" href="./Data-and-Variables.ipynb#shape-rank-and-vocabulary">Shape, Rank, and Vocabulary</a>,
+<a class="reference external" href="./Data-and-Variables.ipynb#indexing">Indexing</a>,
+<a class="reference external" href="./Data-and-Variables.ipynb#mixed-and-nested-arrays">Mixed and Nested Arrays</a>,
+<a class="reference external" href="./Data-and-Variables.ipynb#workspaces-and-commands">Workspaces and Commands</a>,
+<a class="reference external" href="./Data-and-Variables.ipynb#the-shape-of-the-result-of-indexing">The Shape of the Result of Indexing</a>
+<a class="reference external" href="./Data-and-Variables.ipynb#the-shape-of-the-result-of-indexing">Axis Specification</a>,
+<a class="reference external" href="./Data-and-Variables.ipynb#the-shape-of-the-result-of-indexing">Catenate</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#ravel-with-axis">Index Generator of Arrays</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#ravel-with-axis">Ravel with Axis</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#fractional-axis">Fractional Axis</a>,
+<a class="reference external" href="./Working-on-Data-Shape.ipynb#take-and-drop">Take and Drop</a>,
+<a class="reference external" href="./Working-on-Data-Shape.ipynb#expand">Expand</a>,
+<a class="reference external" href="./Working-on-Data-Shape.ipynb#dyadic-transpose">Dyadic Transpose</a>, and <a class="reference internal" href="Operators.html#operators-more-exercises"><span class="std std-numref">Section 11.14</span></a>.</p>
+</div>
+<div class="section" id="monmat-character-matrix">
+<span id="appendices-monmat-character-matrix"></span><h3><span class="section-number">12.7.5. </span><code class="docutils literal notranslate"><span class="pre">monMat</span></code> – character matrix<a class="headerlink" href="#monmat-character-matrix" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">chemistry</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">5</span><span class="o">⍴</span><span class="s1">&#39;H2SO4CaCO3Fe2O3&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><span style="white-space:pre; font-family: monospace">H2SO4
-CaCO3
-Fe2O3
-</span></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">monMat</span> <span class="kd">←</span> <span class="m">6</span> <span class="m">8</span><span class="o">⍴</span><span class="s1">&#39;January FebruaryMarch   April   May     June    &#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">monMat</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">8</span><span class="o">⍴</span><span class="s1">&#39;January FebruaryMarch   April   May     June    &#39;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1021,9 +1558,20 @@ May
 June    
 </span></div></div>
 </div>
+<p>Used in
+<a class="reference external" href="./Data-and-Variables.ipynb#simple-character-values">Simple Character Values</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#processing-binary-data">Processing Binary Data</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#where">Where</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#index-generator-of-arrays">Index Generator of Arrays</a>,
+<a class="reference external" href="./Execute-and-Format-Control.ipynb#the-fmt-system-function">The <code class="docutils literal notranslate"><span class="pre">⎕FMT</span></code> System Function</a>,
+<a class="reference external" href="./Working-on-Data-Shape.ipynb#rotate">Rotate</a>, and
+<a class="reference external" href="./Special-Syntax.ipynb#selective-assignment">Selective Assignment</a>.</p>
+</div>
+<div class="section" id="nesmat-mixed-nested-matrix">
+<span id="appendices-nesmat-mixed-nested-matrix"></span><h3><span class="section-number">12.7.6. </span><code class="docutils literal notranslate"><span class="pre">nesMat</span></code> – mixed nested matrix<a class="headerlink" href="#nesmat-mixed-nested-matrix" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">nesMat</span> <span class="kd">←</span> <span class="m">2</span> <span class="m">3</span> <span class="o">⍴</span> <span class="s1">&#39;Dyalog&#39;</span> <span class="m">44</span> <span class="s1">&#39;Hello&#39;</span> <span class="m">27</span> <span class="p">(</span><span class="m">2</span> <span class="m">2</span> <span class="o">⍴</span> <span class="m">8</span> <span class="m">6</span> <span class="m">2</span> <span class="m">4</span><span class="p">)</span> <span class="p">(</span><span class="m">2</span> <span class="m">3</span><span class="o">⍴</span><span class="m">1</span> <span class="m">2</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">5</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">nesMat</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">⍴</span><span class="w"> </span><span class="s1">&#39;Dyalog&#39;</span><span class="w"> </span><span class="m">44</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span><span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="p">(</span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">⍴</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="o">⍴</span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">5</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1036,10 +1584,47 @@ June
 └──────┴───┴─────┘
 </span></div></div>
 </div>
+<p>Used in
+<a class="reference external" href="./Data-and-Variables.ipynb#mixed-and-nested-arrays">Mixed and Nested Arrays</a>,
+<a class="reference external" href="./User-Defined-Functions.ipynb#input-output-and-format">Input, Output, and Format</a>,
+<a class="reference external" href="./Execute-and-Format-Control.ipynb#the-format-primitive">The Format Primitive</a>, and
+<a class="reference external" href="./Nested-Arrays-Continued.ipynb#first-contact">First Contact</a>.</p>
+</div>
+<div class="section" id="chemistry-character-matrix">
+<span id="appendices-chemistry-character-matrix"></span><h3><span class="section-number">12.7.7. </span><code class="docutils literal notranslate"><span class="pre">chemistry</span></code> – character matrix<a class="headerlink" href="#chemistry-character-matrix" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
-<span class="vg">⎕</span><span class="kd">←</span> <span class="nv">nm</span> <span class="kd">←</span> <span class="p">(</span><span class="o">?</span><span class="m">3</span> <span class="m">4</span><span class="o">⍴</span><span class="m">200000</span><span class="p">)</span><span class="o">÷</span><span class="m">100</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">chemistry</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">5</span><span class="o">⍴</span><span class="s1">&#39;H2SO4CaCO3Fe2O3&#39;</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">H2SO4
+CaCO3
+Fe2O3
+</span></div></div>
+</div>
+<p>Used in
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#replicate">Replicate</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#position-index-of">Position (Index Of)</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#ravel">Ravel</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#ravel-with-axis">Ravel with Axis</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#border-cases">Border Cases</a>,
+<a class="reference external" href="./Some-Primitive-Functions.ipynb#border-cases">Input, Output, and Format</a>,
+<a class="reference external" href="./User-Defined-Functions.ipynb#syntax-considerations">Syntax Considerations</a>,
+<a class="reference external" href="./Execute-and-Format-Control.ipynb#the-format-primitive">The Format Primitive</a>,
+<a class="reference external" href="./Execute-and-Format-Control.ipynb#the-fmt-system-function">The <code class="docutils literal notranslate"><span class="pre">⎕FMT</span></code> System Function</a>,
+<a class="reference external" href="./Working-on-Data-Shape.ipynb#expand">Expand</a>,
+<a class="reference external" href="./Working-on-Data-Shape.ipynb#rotate">Rotate</a>,
+<a class="reference external" href="./Nested-Arrays-Continued.ipynb#split-and-mix">Split and Mix</a>, and
+<a class="reference external" href="./Nested-Arrays-Continued.ipynb#high-rank-partition">High-rank Partition</a>.</p>
+</div>
+<div class="section" id="nm-numeric-matrix">
+<span id="appendices-nm-numeric-matrix"></span><h3><span class="section-number">12.7.8. </span><code class="docutils literal notranslate"><span class="pre">nm</span></code> – numeric matrix<a class="headerlink" href="#nm-numeric-matrix" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">73</span><span class="w"></span>
+<span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">nm</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="p">(</span><span class="o">?</span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="o">⍴</span><span class="m">200000</span><span class="p">)</span><span class="o">÷</span><span class="m">100</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1048,6 +1633,12 @@ June
 1125.14 1963.52 464.45 1438.25
  796.53 1569    157.14  886.59
 </span></div></div>
+</div>
+<p>Used in
+<a class="reference external" href="./User-Defined-Functions.ipynb#input-output-and-format">Input, Output, and Format</a>,
+<a class="reference external" href="./Execute-and-Format-Control.ipynb#the-format-primitive">The Format Primitive</a>,
+<a class="reference external" href="./Execute-and-Format-Control.ipynb#the-fmt-system-function">The <code class="docutils literal notranslate"><span class="pre">⎕FMT</span></code> System Function</a>, and
+<a class="reference external" href="./Nested-Arrays-Continued.ipynb#processing-nested-arrays">Processing Nested Arrays</a>.</p>
 </div>
 </div>
 </div>
@@ -1074,51 +1665,47 @@ June
 
               </div>
               
-        
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="Nested-Arrays-Continued.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">10. </span>Nested Arrays (Continued)</p>
-            </div>
-        </a>
-    </div>
-
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Operators.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">11. </span>Operators</p>
+        </div>
+    </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Bernard Legrand, reworked by Rodrigo Girão Serrão.<br/>
-        
-          <div class="extra_footer">
-            <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Bernard Legrand, reworked by Rodrigo Girão Serrão.<br/>
+  
+    <div class="extra_footer">
+      <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
   <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
 </a></p>
 <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
 
-          </div>
-      </p>
     </div>
-  </footer>
-</main>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
+
   </body>
 </html>

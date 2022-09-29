@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1. Introduction - Will You Play APL With Me? &#8212; Mastering Dyalog APL</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,50 +19,63 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="2. Getting Started" href="Getting-Started.html" />
     <link rel="prev" title="Mastering Dyalog APL" href="README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -70,9 +84,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -137,96 +152,203 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Operators.html">
+   11. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Appendices.html">
-   11. Appendices
+   12. Appendices
   </a>
  </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Introduction.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/Dyalog/MDAPL"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        
-        <a class="edit-button" href="https://github.com/Dyalog/MDAPL/edit/master/docs/Introduction.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Dyalog/MDAPL"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Dyalog/MDAPL/edit/master/docs/Introduction.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Introduction.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#will-you-follow-us">
    1.1. Will You Follow Us?
@@ -442,27 +564,258 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction - Will You Play APL With Me?</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#will-you-follow-us">
+   1.1. Will You Follow Us?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#beware-dyalog-apl-is-addictive">
+     1.1.1. Beware: Dyalog APL is Addictive!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setup">
+     1.1.2. Setup
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#our-first-steps-into-apl-s-magic-world">
+   1.2. Our First Steps into APL’s Magic World
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-apl-interpreter-session-and-jupyter-notebook-inputs">
+     1.2.1. The APL Interpreter Session and Jupyter Notebook Inputs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simple-operations">
+     1.2.2. Simple Operations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variables">
+     1.2.3. Variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#array-processing">
+   1.3. Array Processing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-symbols">
+   1.4. More Symbols
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#most-symbols-have-a-double-meaning">
+   1.5. Most Symbols Have a Double Meaning
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conventions">
+     1.5.1. Conventions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reduction-unifies-traditional-notations">
+   1.6. Reduction Unifies Traditional Notations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#let-s-write-our-first-functions">
+   1.7. Let’s Write Our First Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexing">
+   1.8. Indexing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-without-writing-functions">
+   1.9. Calculating Without Writing Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#friendly-binary-data">
+   1.10. Friendly Binary Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#counting">
+     1.10.1. Counting
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selection">
+     1.10.2. Selection
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discovery">
+     1.10.3. Discovery
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-touch-of-modern-math">
+   1.11. A Touch of Modern Math
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-powerful-search-function">
+   1.12. A Powerful Search Function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-example">
+     1.12.1. An Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generalisation">
+     1.12.2. Generalisation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#after-values-let-us-process-shapes">
+   1.13. After Values, Let Us Process Shapes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#take-and-drop">
+     1.13.1. Take and Drop
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reverses-and-transposition">
+     1.13.2. Reverses and Transposition
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#back-to-primary-school">
+   1.14. Back to Primary School
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-useful-application">
+     1.14.1. A Useful Application
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#there-is-a-lot-to-discover-yet">
+   1.15. There Is a Lot to Discover Yet
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attractively-simple-syntax-rules">
+     1.15.1. Attractively Simple Syntax Rules
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-many-other-calculating-tools">
+     1.15.2. Use Many Other Calculating Tools
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-user-friendly-applications-with-the-gui">
+     1.15.3. Create User-friendly Applications with the GUI
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#access-your-data">
+     1.15.4. Access Your Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-an-efficient-partnership-with-microsoft-excel">
+     1.15.5. Build an Efficient Partnership With Microsoft Excel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#and-also">
+     1.15.6. And Also…
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#faq">
+   1.16. FAQ
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#is-dyalog-apl-a-professional-tool">
+     1.16.1. Is Dyalog APL A Professional Tool?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-dyalog-apl-fit-a-professional-developer-s-needs">
+     1.16.2. Can Dyalog APL Fit a Professional Developer’s Needs?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#where-is-apl-typically-used">
+     1.16.3. Where is APL Typically Used?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="introduction-will-you-play-apl-with-me">
-<span id="introduction-introduction-will-you-play-apl-with-me"></span><h1><span class="section-number">1. </span>Introduction - Will You Play APL With Me?<a class="headerlink" href="#introduction-will-you-play-apl-with-me" title="Permalink to this headline">¶</a></h1>
+<span id="introduction-introduction-will-you-play-apl-with-me"></span><h1><span class="section-number">1. </span>Introduction - Will You Play APL With Me?<a class="headerlink" href="#introduction-will-you-play-apl-with-me" title="Permalink to this headline">#</a></h1>
 <div class="section" id="will-you-follow-us">
-<span id="introduction-will-you-follow-us"></span><h2><span class="section-number">1.1. </span>Will You Follow Us?<a class="headerlink" href="#will-you-follow-us" title="Permalink to this headline">¶</a></h2>
+<span id="introduction-will-you-follow-us"></span><h2><span class="section-number">1.1. </span>Will You Follow Us?<a class="headerlink" href="#will-you-follow-us" title="Permalink to this headline">#</a></h2>
 <p>We would like to have you discover a new land, a land where people who may or may not be specialists in programming can process their data, build computerised applications, and take pleasure in using a programming language which is an extremely elegant and powerful tool of thought.</p>
 <div class="section" id="beware-dyalog-apl-is-addictive">
-<span id="introduction-beware-dyalog-apl-is-addictive"></span><h3><span class="section-number">1.1.1. </span>Beware: Dyalog APL is Addictive!<a class="headerlink" href="#beware-dyalog-apl-is-addictive" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-beware-dyalog-apl-is-addictive"></span><h3><span class="section-number">1.1.1. </span>Beware: Dyalog APL is Addictive!<a class="headerlink" href="#beware-dyalog-apl-is-addictive" title="Permalink to this headline">#</a></h3>
 <p>Among the hundreds of programming languages which have been created, most of them share the same fundamentals, the same basic instruction set, approximately the same functions, and by and large the same methods to control the logic of a program. This greatly influences the way people imagine and build solutions to computing problems. Because the languages are so similar, the solutions are similar. Does it mean that these are the only ways of solving problems? Of course not!</p>
 <p>Dyalog APL is there to open doors, windows, and minds, prove that original new methods do exist, and that mathematics is not limited to four basic operations. Using APL will expand and extend the range of mental models that you use to solve problems, but beware: once you are hooked on APL, there is a real risk that you will no longer accept the limitations of “traditional” programming languages.</p>
 </div>
 <div class="section" id="setup">
-<span id="introduction-setup"></span><h3><span class="section-number">1.1.2. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-setup"></span><h3><span class="section-number">1.1.2. </span>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">#</a></h3>
 <p>If you are reading this book online, chances are you can make the most of the interactivity provided by the book format: code snippets can be run by you and you can invent your own data and calculations by modifying those same snippets.</p>
 <p>If you are reading this book in a non-interactive format, you can experiment on your own computer by installing Dyalog APL, which you can download from <a class="reference external" href="https://www.dyalog.com/download-zone.htm">here</a>. You can refer to the <a class="reference internal" href="Getting-Started.html"><span class="doc std std-doc">Getting Started</span></a> chapter for installation help. If you do not wish to install Dyalog APL right away you can also follow along online at <a class="reference external" href="https://tryapl.org/">TryAPL</a>, where a large subset of APL is supported.</p>
 <p>If none of these options suit you, you should still be able to gain an appreciation of the language from these pages and, we hope, enjoy the experience.</p>
@@ -475,8 +828,8 @@
 <p>The snippet below uses some APL incantations to display the US keyboard layout, and other layouts (as well as Mac layouts) can be found <a class="reference external" href="https://dfns.dyalog.com/n_keyboards.htm">here</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">)</span><span class="nv">copy</span> <span class="nv">dfns</span> <span class="nv">notes</span><span class="na">.</span><span class="nv">keyboards</span>
-<span class="m">18</span><span class="o">↑</span><span class="nv">k</span><span class="o">↓</span><span class="na">⍨</span><span class="m">¯1</span><span class="o">+⊃⊃⍸</span><span class="s1">&#39;APL/en-US keyboard&#39;</span><span class="o">⍷</span><span class="nv">k</span><span class="kd">←</span><span class="nf">⎕fmt</span> <span class="nv">keyboards</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">)</span><span class="nv">copy</span><span class="w"> </span><span class="nv">dfns</span><span class="w"> </span><span class="nv">notes</span><span class="na">.</span><span class="nv">keyboards</span><span class="w"></span>
+<span class="m">18</span><span class="o">↑</span><span class="nv">k</span><span class="o">↓</span><span class="na">⍨</span><span class="m">¯1</span><span class="o">+⊃⊃⍸</span><span class="s1">&#39;APL/en-US keyboard&#39;</span><span class="o">⍷</span><span class="nv">k</span><span class="kd">←</span><span class="nf">⎕fmt</span><span class="w"> </span><span class="nv">keyboards</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -517,12 +870,12 @@
 </div>
 </div>
 <div class="section" id="our-first-steps-into-apl-s-magic-world">
-<span id="introduction-our-first-steps-into-apls-magic-world"></span><h2><span class="section-number">1.2. </span>Our First Steps into APL’s Magic World<a class="headerlink" href="#our-first-steps-into-apl-s-magic-world" title="Permalink to this headline">¶</a></h2>
+<span id="introduction-our-first-steps-into-apls-magic-world"></span><h2><span class="section-number">1.2. </span>Our First Steps into APL’s Magic World<a class="headerlink" href="#our-first-steps-into-apl-s-magic-world" title="Permalink to this headline">#</a></h2>
 <div class="section" id="the-apl-interpreter-session-and-jupyter-notebook-inputs">
-<span id="introduction-the-apl-interpreter-session-and-jupyter-notebook-inputs"></span><h3><span class="section-number">1.2.1. </span>The APL Interpreter Session and Jupyter Notebook Inputs<a class="headerlink" href="#the-apl-interpreter-session-and-jupyter-notebook-inputs" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-the-apl-interpreter-session-and-jupyter-notebook-inputs"></span><h3><span class="section-number">1.2.1. </span>The APL Interpreter Session and Jupyter Notebook Inputs<a class="headerlink" href="#the-apl-interpreter-session-and-jupyter-notebook-inputs" title="Permalink to this headline">#</a></h3>
 <p>If you installed Dyalog APL or you intend to follow along using <a class="reference external" href="https://tryapl.org">TryAPL</a>, you will see that what you type starts six characters right from the left margin (we say it is “<em>indented</em>”), whereas the computer’s response begins at the left margin. This would look something like this:</p>
-<div class="highlight-apl notranslate"><div class="highlight"><pre><span></span>      <span class="m">3</span> <span class="o">+</span> <span class="m">3</span>
-<span class="m">6</span>
+<div class="highlight-apl notranslate"><div class="highlight"><pre><span></span><span class="w">      </span><span class="m">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">3</span><span class="w"></span>
+<span class="m">6</span><span class="w"></span>
 </pre></div>
 </div>
 <p>If you type <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">3</span></code> on your Dyalog APL interpreter session, you can evaluate it by just pressing <kbd>Enter</kbd> to obtain the answer <code class="docutils literal notranslate"><span class="pre">6</span></code>.</p>
@@ -534,7 +887,7 @@
 <p>Using the same example as above, it looks like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="o">+</span> <span class="m">3</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">3</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -544,11 +897,11 @@
 </div>
 </div>
 <div class="section" id="simple-operations">
-<span id="introduction-simple-operations"></span><h3><span class="section-number">1.2.2. </span>Simple Operations<a class="headerlink" href="#simple-operations" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-simple-operations"></span><h3><span class="section-number">1.2.2. </span>Simple Operations<a class="headerlink" href="#simple-operations" title="Permalink to this headline">#</a></h3>
 <p>Let us try some more simple examples with the four basic arithmetic operations:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">27</span> <span class="o">+</span> <span class="m">53</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">27</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">53</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -558,7 +911,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1271</span> <span class="o">-</span> <span class="m">708</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1271</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">708</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -568,7 +921,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">86</span> <span class="o">÷</span> <span class="m">4</span>        <span class="c1">⍝ The &quot;divide&quot; sign is obtained using APL+=</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">86</span><span class="w"> </span><span class="o">÷</span><span class="w"> </span><span class="m">4</span><span class="w">        </span><span class="c1">⍝ The &quot;divide&quot; sign is obtained using APL+=</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -578,7 +931,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">59</span> <span class="o">×</span> <span class="m">8</span>        <span class="c1">⍝ The &quot;multiply&quot; sign is obtained using APL+-</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">59</span><span class="w"> </span><span class="o">×</span><span class="w"> </span><span class="m">8</span><span class="w">        </span><span class="c1">⍝ The &quot;multiply&quot; sign is obtained using APL+-</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -592,8 +945,8 @@
 <p>If you are familiar with other programming languages, you may occasionally and erroneously use <code class="docutils literal notranslate"><span class="pre">*</span></code> instead of <code class="docutils literal notranslate"><span class="pre">×</span></code>. Let’s see what might happen then:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">7</span> <span class="o">*</span> <span class="m">3</span>        <span class="c1">⍝ In APL the star means &quot;power&quot;</span>
-             <span class="c1">⍝ so that 7*3 is equivalent to 7×7×7</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">7</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">3</span><span class="w">        </span><span class="c1">⍝ In APL the star means &quot;power&quot;</span><span class="w"></span>
+<span class="w">             </span><span class="c1">⍝ so that 7*3 is equivalent to 7×7×7</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -603,12 +956,12 @@
 </div>
 </div>
 <div class="section" id="variables">
-<span id="introduction-variables"></span><h3><span class="section-number">1.2.3. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-variables"></span><h3><span class="section-number">1.2.3. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h3>
 <p>As in any programming language, it is possible to create variables. Just choose a name and use the left arrow to assign it a value. In APL, a numeric value can consist of a single number, or several numbers separated by at least one blank space. The arrow can be obtained using <kbd>APL</kbd>+<kbd>[</kbd> (if you have a non-UK/US layout and <kbd>APL</kbd>+<kbd>[</kbd> did not work for you, refer to the keyboard layout above: the <kbd>P</kbd> is on the top right and <code class="docutils literal notranslate"><span class="pre">←</span></code> is to its right, so you might need to press the same physical key).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">vat</span> <span class="kd">←</span> <span class="m">19.6</span>                    <span class="c1">⍝ Read it as: vat gets 19.6</span>
-<span class="nv">years</span> <span class="kd">←</span> <span class="m">1952</span> <span class="m">1943</span> <span class="m">1986</span> <span class="m">2007</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">vat</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">19.6</span><span class="w">                    </span><span class="c1">⍝ Read it as: vat gets 19.6</span><span class="w"></span>
+<span class="nv">years</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">1952</span><span class="w"> </span><span class="m">1943</span><span class="w"> </span><span class="m">1986</span><span class="w"> </span><span class="m">2007</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -617,7 +970,7 @@
 <p>To ask for the contents of a variable, just type its name and evaluate it like you did for the previous examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">vat</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">vat</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -627,7 +980,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">years</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">years</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -638,7 +991,7 @@
 </div>
 </div>
 <div class="section" id="array-processing">
-<span id="introduction-array-processing"></span><h2><span class="section-number">1.3. </span>Array Processing<a class="headerlink" href="#array-processing" title="Permalink to this headline">¶</a></h2>
+<span id="introduction-array-processing"></span><h2><span class="section-number">1.3. </span>Array Processing<a class="headerlink" href="#array-processing" title="Permalink to this headline">#</a></h2>
 <p>APL is able to operate on two sets of numbers, provided those two sets have the same “shape”. For the moment, understand this as “the same number of items”. For example, suppose that you have a list of prices of five products, and the quantity bought of each:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -667,8 +1020,8 @@
 <p>You can create two variables like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">price</span> <span class="kd">←</span> <span class="m">5.2</span> <span class="m">11.5</span> <span class="m">3.6</span> <span class="m">4</span> <span class="m">8.45</span>
-<span class="nv">qty</span>   <span class="kd">←</span> <span class="m">2</span> <span class="m">1</span> <span class="m">3</span> <span class="m">6</span> <span class="m">2</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">price</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">5.2</span><span class="w"> </span><span class="m">11.5</span><span class="w"> </span><span class="m">3.6</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">8.45</span><span class="w"></span>
+<span class="nv">qty</span><span class="w">   </span><span class="kd">←</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">2</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -676,8 +1029,8 @@
 <p>When multiplied together, the variables are multiplied item by item, and produce a result of the same length. That result can be assigned to a new variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">costs</span> <span class="kd">←</span> <span class="nv">price</span> <span class="o">×</span> <span class="nv">qty</span>
-<span class="nv">costs</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">costs</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nv">price</span><span class="w"> </span><span class="o">×</span><span class="w"> </span><span class="nv">qty</span><span class="w"></span>
+<span class="nv">costs</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -689,9 +1042,9 @@
 <p>To make it clear, imagine that a Sales Director makes forecasts for sales of four products over the coming six months, and assigns them to the variable <code class="docutils literal notranslate"><span class="pre">forecast</span></code>. At the end of the six months, they assign the real values to the variable <code class="docutils literal notranslate"><span class="pre">actual</span></code>. Here they are:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
-<span class="nv">forecast</span> <span class="kd">←</span> <span class="m">10</span><span class="o">×?</span><span class="m">4</span> <span class="m">6</span><span class="o">⍴</span><span class="m">55</span>
-<span class="nv">forecast</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">73</span><span class="w"></span>
+<span class="nv">forecast</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">10</span><span class="o">×?</span><span class="m">4</span><span class="w"> </span><span class="m">6</span><span class="o">⍴</span><span class="m">55</span><span class="w"></span>
+<span class="nv">forecast</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -704,9 +1057,9 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
-<span class="nv">actual</span> <span class="kd">←</span> <span class="nv">forecast</span> <span class="o">+</span> <span class="m">¯10</span><span class="o">+?</span><span class="m">4</span> <span class="m">6</span><span class="o">⍴</span><span class="m">20</span>
-<span class="nv">actual</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">73</span><span class="w"></span>
+<span class="nv">actual</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nv">forecast</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">¯10</span><span class="o">+?</span><span class="m">4</span><span class="w"> </span><span class="m">6</span><span class="o">⍴</span><span class="m">20</span><span class="w"></span>
+<span class="nv">actual</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -724,7 +1077,7 @@
 <p>It is clear that the first idea of any Sales Director will be to ask for the differences between what they expected and what they really got. This can be done easily by typing:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">actual</span> <span class="o">-</span> <span class="nv">forecast</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">actual</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">forecast</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -748,7 +1101,7 @@
 <p>For example, if we want to calculate the amount of 19.6% VAT applied to the variable <code class="docutils literal notranslate"><span class="pre">price</span></code> above, we can type <code class="docutils literal notranslate"><span class="pre">price</span> <span class="pre">×</span> <span class="pre">vat</span> <span class="pre">÷</span> <span class="pre">100</span></code> (or <code class="docutils literal notranslate"><span class="pre">vat</span> <span class="pre">×</span> <span class="pre">price</span> <span class="pre">÷</span> <span class="pre">100</span></code> as well), as shown here:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">price</span> <span class="o">×</span> <span class="nv">vat</span> <span class="o">÷</span> <span class="m">100</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">price</span><span class="w"> </span><span class="o">×</span><span class="w"> </span><span class="nv">vat</span><span class="w"> </span><span class="o">÷</span><span class="w"> </span><span class="m">100</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -759,14 +1112,14 @@
 <p>These prices would then require some rounding, but this is not very important right now.</p>
 </div>
 <div class="section" id="more-symbols">
-<span id="introduction-more-symbols"></span><h2><span class="section-number">1.4. </span>More Symbols<a class="headerlink" href="#more-symbols" title="Permalink to this headline">¶</a></h2>
+<span id="introduction-more-symbols"></span><h2><span class="section-number">1.4. </span>More Symbols<a class="headerlink" href="#more-symbols" title="Permalink to this headline">#</a></h2>
 <p>Most programming languages represent only a very small subset of the mathematical functions using symbols (typically <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">/</span></code>). The creator of APL, Kenneth E. Iverson, chose to include many traditional mathematical symbols in his language, and also added some new symbols to the set that we already know so well.</p>
 <p>For example, many functions which in other programming languages are library routines with names like “maximum” have their own symbols in APL.</p>
 <p>The function <em>maximum</em> (represented by <code class="docutils literal notranslate"><span class="pre">⌈</span></code>, typed with <kbd>APL</kbd>+<kbd>s</kbd>) returns the greater of two numbers, or of two arrays of numbers compared item by item.</p>
 <p>There is also, as one might expect, a symbol for <em>minimum</em> (<code class="docutils literal notranslate"><span class="pre">⌊</span></code>, typed with <kbd>APL</kbd>+<kbd>d</kbd>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">75.6</span> <span class="o">⌈</span> <span class="m">87.3</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">75.6</span><span class="w"> </span><span class="o">⌈</span><span class="w"> </span><span class="m">87.3</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -777,7 +1130,7 @@
 <p>If we type more than one item on either side, we get comparison item by item. Later, we will see this is because <em>maximum</em> is a <em>scalar</em> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">11</span> <span class="m">28</span> <span class="m">52</span> <span class="m">14</span> <span class="o">⌈</span> <span class="m">30</span> <span class="m">10</span> <span class="m">50</span> <span class="m">20</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">11</span><span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">52</span><span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="o">⌈</span><span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">50</span><span class="w"> </span><span class="m">20</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -787,7 +1140,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">11</span> <span class="m">28</span> <span class="m">52</span> <span class="m">14</span> <span class="o">⌊</span> <span class="m">20</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">11</span><span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">52</span><span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="o">⌊</span><span class="w"> </span><span class="m">20</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -799,7 +1152,7 @@
 <p>This is nothing to worry about: some of the symbols are familiar, such as <code class="docutils literal notranslate"><span class="pre">×</span></code> or <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> or again <code class="docutils literal notranslate"><span class="pre">÷</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code>, but also <code class="docutils literal notranslate"><span class="pre">!</span></code> and a good many others.</p>
 </div>
 <div class="section" id="most-symbols-have-a-double-meaning">
-<span id="introduction-most-symbols-have-a-double-meaning"></span><h2><span class="section-number">1.5. </span>Most Symbols Have a Double Meaning<a class="headerlink" href="#most-symbols-have-a-double-meaning" title="Permalink to this headline">¶</a></h2>
+<span id="introduction-most-symbols-have-a-double-meaning"></span><h2><span class="section-number">1.5. </span>Most Symbols Have a Double Meaning<a class="headerlink" href="#most-symbols-have-a-double-meaning" title="Permalink to this headline">#</a></h2>
 <p>This is not a peculiarity of APL; in algebra we are familiar with the use of symbols as common as the minus sign being used in two different ways.</p>
 <p>In the expression <span class="math notranslate nohighlight">\(a = x \color{red}{-} y\)</span> the minus sign means subtract, whereas in <span class="math notranslate nohighlight">\(a = \color{red}{-}y\)</span> the minus sign indicates the negation of <span class="math notranslate nohighlight">\(y\)</span>. The first form is called the <em>dyadic</em> use of the symbol. The second form is called the <em>monadic</em> use of the symbol.</p>
 <p>It is the same in APL, where most of the symbols can have two meanings.</p>
@@ -807,7 +1160,7 @@
 <p>For example,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span> <span class="nv">price</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="w"> </span><span class="nv">price</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -818,7 +1171,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">price</span></code> has 5 items, and <code class="docutils literal notranslate"><span class="pre">forecast</span></code> has 4 rows and 6 columns:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span> <span class="nv">forecast</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="w"> </span><span class="nv">forecast</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -844,8 +1197,8 @@
 <p>It is the symbol <code class="docutils literal notranslate"><span class="pre">⍴</span></code> (Rho) which makes the connection between shape and the contents:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">tab</span> <span class="kd">←</span> <span class="m">4</span> <span class="m">2</span> <span class="o">⍴</span> <span class="m">25</span> <span class="m">60</span> <span class="m">33</span> <span class="m">47</span> <span class="m">11</span> <span class="m">44</span> <span class="m">53</span> <span class="m">28</span>
-<span class="nv">tab</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">tab</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">⍴</span><span class="w"> </span><span class="m">25</span><span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="m">33</span><span class="w"> </span><span class="m">47</span><span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">44</span><span class="w"> </span><span class="m">53</span><span class="w"> </span><span class="m">28</span><span class="w"></span>
+<span class="nv">tab</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -858,7 +1211,7 @@
 </div>
 <p>A new variable <code class="docutils literal notranslate"><span class="pre">tab</span></code> is thereby created, and this is also how the variables <code class="docutils literal notranslate"><span class="pre">forecast</span></code> and <code class="docutils literal notranslate"><span class="pre">actual</span></code> above were made.</p>
 <div class="section" id="conventions">
-<span id="introduction-conventions"></span><h3><span class="section-number">1.5.1. </span>Conventions<a class="headerlink" href="#conventions" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-conventions"></span><h3><span class="section-number">1.5.1. </span>Conventions<a class="headerlink" href="#conventions" title="Permalink to this headline">#</a></h3>
 <p>In APL, we give special names to certain shapes of data:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -890,11 +1243,11 @@
 </div>
 </div>
 <div class="section" id="reduction-unifies-traditional-notations">
-<span id="introduction-reduction-unifies-traditional-notations"></span><h2><span class="section-number">1.6. </span>Reduction Unifies Traditional Notations<a class="headerlink" href="#reduction-unifies-traditional-notations" title="Permalink to this headline">¶</a></h2>
+<span id="introduction-reduction-unifies-traditional-notations"></span><h2><span class="section-number">1.6. </span>Reduction Unifies Traditional Notations<a class="headerlink" href="#reduction-unifies-traditional-notations" title="Permalink to this headline">#</a></h2>
 <p>Perhaps you remember the variable <code class="docutils literal notranslate"><span class="pre">costs</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">costs</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">costs</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -910,7 +1263,7 @@
 <p>In APL, the operation is written like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">costs</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span><span class="w"> </span><span class="nv">costs</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -922,7 +1275,7 @@
 <p>To gain a better understanding of the process: when we write an instruction such as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="m">21</span> <span class="m">45</span> <span class="m">18</span> <span class="m">27</span> <span class="m">11</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span><span class="w"> </span><span class="m">21</span><span class="w"> </span><span class="m">45</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">11</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -933,7 +1286,7 @@
 <p>it works as if we had written</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">21</span> <span class="o">+</span> <span class="m">45</span> <span class="o">+</span> <span class="m">18</span> <span class="o">+</span> <span class="m">27</span> <span class="o">+</span> <span class="m">11</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">21</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">45</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">11</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -945,7 +1298,7 @@
 <p>In fact, it works as if we had “inserted” the symbol <code class="docutils literal notranslate"><span class="pre">+</span></code> between the values. But then, if we write</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">×</span><span class="na">/</span> <span class="m">21</span> <span class="m">45</span> <span class="m">18</span> <span class="m">27</span> <span class="m">11</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">×</span><span class="na">/</span><span class="w"> </span><span class="m">21</span><span class="w"> </span><span class="m">45</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">11</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -956,7 +1309,7 @@
 <p>it works as if we had written</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">21</span> <span class="o">×</span> <span class="m">45</span> <span class="o">×</span> <span class="m">18</span> <span class="o">×</span> <span class="m">27</span> <span class="o">×</span> <span class="m">11</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">21</span><span class="w"> </span><span class="o">×</span><span class="w"> </span><span class="m">45</span><span class="w"> </span><span class="o">×</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="o">×</span><span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="o">×</span><span class="w"> </span><span class="m">11</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -968,7 +1321,7 @@
 <p>Similarly, if we write</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⌈</span><span class="na">/</span> <span class="m">21</span> <span class="m">45</span> <span class="m">18</span> <span class="m">27</span> <span class="m">11</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⌈</span><span class="na">/</span><span class="w"> </span><span class="m">21</span><span class="w"> </span><span class="m">45</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">11</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -979,7 +1332,7 @@
 <p>it works as if we had written</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">21</span> <span class="o">⌈</span> <span class="m">45</span> <span class="o">⌈</span> <span class="m">18</span> <span class="o">⌈</span> <span class="m">27</span> <span class="o">⌈</span> <span class="m">11</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">21</span><span class="w"> </span><span class="o">⌈</span><span class="w"> </span><span class="m">45</span><span class="w"> </span><span class="o">⌈</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="o">⌈</span><span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="o">⌈</span><span class="w"> </span><span class="m">11</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -992,7 +1345,7 @@
 <p>The arguments of a function are always data (arrays):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">price</span> <span class="o">×</span> <span class="nv">qty</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">price</span><span class="w"> </span><span class="o">×</span><span class="w"> </span><span class="nv">qty</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1003,7 +1356,7 @@
 <p>Whereas the “arguments” of an operator (which are called <em>operands</em>) can also be functions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">qty</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span><span class="w"> </span><span class="nv">qty</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1015,11 +1368,11 @@
 <p>Dyalog APL contains around 20 such powerful operators. If that is not enough, you can even write your own operators, just like you can write your own functions!</p>
 </div>
 <div class="section" id="let-s-write-our-first-functions">
-<span id="introduction-lets-write-our-first-functions"></span><h2><span class="section-number">1.7. </span>Let’s Write Our First Functions<a class="headerlink" href="#let-s-write-our-first-functions" title="Permalink to this headline">¶</a></h2>
+<span id="introduction-lets-write-our-first-functions"></span><h2><span class="section-number">1.7. </span>Let’s Write Our First Functions<a class="headerlink" href="#let-s-write-our-first-functions" title="Permalink to this headline">#</a></h2>
 <p>Imagine that we want to calculate the average of the following numbers:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span> <span class="kd">←</span> <span class="m">22</span> <span class="m">37</span> <span class="m">41</span> <span class="m">19</span> <span class="m">54</span> <span class="m">11</span> <span class="m">34</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">22</span><span class="w"> </span><span class="m">37</span><span class="w"> </span><span class="m">41</span><span class="w"> </span><span class="m">19</span><span class="w"> </span><span class="m">54</span><span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">34</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1027,7 +1380,7 @@
 <p>We must first calculate the sum of the values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span><span class="w"> </span><span class="nv">val</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1038,7 +1391,7 @@
 <p>Next, calculate the number of values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span> <span class="nv">val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="w"> </span><span class="nv">val</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1050,7 +1403,7 @@
 <p>The calculation can be written as the single formula:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="nv">val</span><span class="p">)</span> <span class="o">÷</span> <span class="p">(</span><span class="o">⍴</span><span class="nv">val</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="nv">val</span><span class="p">)</span><span class="w"> </span><span class="o">÷</span><span class="w"> </span><span class="p">(</span><span class="o">⍴</span><span class="nv">val</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1062,7 +1415,7 @@
 <p>To define a simple function like this one, here is the easiest way:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Average</span> <span class="kd">←</span> <span class="kt">{</span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="bp">⍵</span><span class="p">)</span><span class="o">÷</span><span class="p">(</span><span class="o">⍴</span><span class="bp">⍵</span><span class="p">)</span><span class="kt">}</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Average</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="kt">{</span><span class="p">(</span><span class="o">+</span><span class="na">/</span><span class="bp">⍵</span><span class="p">)</span><span class="o">÷</span><span class="p">(</span><span class="o">⍴</span><span class="bp">⍵</span><span class="p">)</span><span class="kt">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1076,7 +1429,7 @@
 <p>Once defined, this function may be invoked in a very simple way:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Average</span> <span class="nv">val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Average</span><span class="w"> </span><span class="nv">val</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1087,7 +1440,7 @@
 <p>During the execution above, <code class="docutils literal notranslate"><span class="pre">⍵</span></code> gets the values in <code class="docutils literal notranslate"><span class="pre">val</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Average</span> <span class="m">12</span> <span class="m">74</span> <span class="m">56</span> <span class="m">23</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Average</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">74</span><span class="w"> </span><span class="m">56</span><span class="w"> </span><span class="m">23</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1098,9 +1451,9 @@
 <p>Let us also write two little dyadic functions, the left argument of which is <code class="docutils literal notranslate"><span class="pre">⍺</span></code>, and the right is <code class="docutils literal notranslate"><span class="pre">⍵</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Plus</span> <span class="kd">←</span> <span class="kt">{</span><span class="bp">⍺</span><span class="o">+</span><span class="bp">⍵</span><span class="kt">}</span>
-<span class="nv">Times</span> <span class="kd">←</span> <span class="kt">{</span><span class="bp">⍺</span><span class="o">×</span><span class="bp">⍵</span><span class="kt">}</span>
-<span class="p">(</span><span class="m">3</span> <span class="nv">Plus</span> <span class="m">6</span><span class="p">)</span> <span class="nv">Times</span> <span class="p">(</span><span class="m">5</span> <span class="nv">Plus</span> <span class="m">2</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Plus</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="kt">{</span><span class="bp">⍺</span><span class="o">+</span><span class="bp">⍵</span><span class="kt">}</span><span class="w"></span>
+<span class="nv">Times</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="kt">{</span><span class="bp">⍺</span><span class="o">×</span><span class="bp">⍵</span><span class="kt">}</span><span class="w"></span>
+<span class="p">(</span><span class="m">3</span><span class="w"> </span><span class="nv">Plus</span><span class="w"> </span><span class="m">6</span><span class="p">)</span><span class="w"> </span><span class="nv">Times</span><span class="w"> </span><span class="p">(</span><span class="m">5</span><span class="w"> </span><span class="nv">Plus</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1112,7 +1465,7 @@
 <p>We said in the preceding section that a user-defined function could be used by the <em>reduce</em> operator; let us try:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Plus</span><span class="na">/</span> <span class="nv">val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Plus</span><span class="na">/</span><span class="w"> </span><span class="nv">val</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1123,11 +1476,11 @@
 <p>It works!</p>
 </div>
 <div class="section" id="indexing">
-<span id="introduction-indexing"></span><h2><span class="section-number">1.8. </span>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h2>
+<span id="introduction-indexing"></span><h2><span class="section-number">1.8. </span>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">#</a></h2>
 <p>Returning to our vector of numbers <code class="docutils literal notranslate"><span class="pre">val</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1138,7 +1491,7 @@
 <p>In order to extract the 4th item, we just write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">4</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">4</span><span class="sr">]</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1149,7 +1502,7 @@
 <p>This is similar to most of the most popular programming languages. What is new is that one can extract several items in one instruction:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">2</span> <span class="m">3</span> <span class="m">4</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="sr">]</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1160,7 +1513,7 @@
 <p>Or that you can have repeated indices to extract the same item twice or more:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">2</span> <span class="m">4</span> <span class="m">7</span> <span class="m">1</span> <span class="m">4</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">2</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">4</span><span class="sr">]</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1171,8 +1524,8 @@
 <p>And of course, in the same way, one may modify one or more items of <code class="docutils literal notranslate"><span class="pre">val</span></code> using their indices. Naturally, one must provide as many values as there are items to modify, or a single value for all:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">3</span> <span class="m">5</span> <span class="m">1</span><span class="sr">]</span> <span class="kd">←</span> <span class="m">0</span>
-<span class="nv">val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">3</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">1</span><span class="sr">]</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">0</span><span class="w"></span>
+<span class="nv">val</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1182,8 +1535,8 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">3</span> <span class="m">5</span> <span class="m">1</span><span class="sr">]</span> <span class="kd">←</span> <span class="m">300</span> <span class="m">77</span> <span class="m">111</span>
-<span class="nv">val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">3</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">1</span><span class="sr">]</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">300</span><span class="w"> </span><span class="m">77</span><span class="w"> </span><span class="m">111</span><span class="w"></span>
+<span class="nv">val</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1195,7 +1548,7 @@
 <p>It is often necessary to extract the first few items from a list of values, for example the first 5. Nothing could be easier:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="sr">[</span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="sr">]</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1210,13 +1563,13 @@
 <p>We shall discover later an even simpler method.</p>
 </div>
 <div class="section" id="calculating-without-writing-functions">
-<span id="introduction-calculating-without-writing-functions"></span><h2><span class="section-number">1.9. </span>Calculating Without Writing Functions<a class="headerlink" href="#calculating-without-writing-functions" title="Permalink to this headline">¶</a></h2>
+<span id="introduction-calculating-without-writing-functions"></span><h2><span class="section-number">1.9. </span>Calculating Without Writing Functions<a class="headerlink" href="#calculating-without-writing-functions" title="Permalink to this headline">#</a></h2>
 <p>The employees of a company are divided into three hierarchical categories, denoted simply 1, 2, and 3. One assigns to two variables the salaries and the categories of these employees, as shown here:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
-<span class="nv">salaries</span> <span class="kd">←</span> <span class="o">?</span><span class="m">20</span><span class="o">⍴</span><span class="m">5000</span>
-<span class="nv">salaries</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">73</span><span class="w"></span>
+<span class="nv">salaries</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="o">?</span><span class="m">20</span><span class="o">⍴</span><span class="m">5000</span><span class="w"></span>
+<span class="nv">salaries</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1226,9 +1579,9 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
-<span class="nv">categories</span> <span class="kd">←</span> <span class="o">?</span><span class="m">20</span><span class="o">⍴</span><span class="m">3</span>
-<span class="nv">categories</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">73</span><span class="w"></span>
+<span class="nv">categories</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="o">?</span><span class="m">20</span><span class="o">⍴</span><span class="m">3</span><span class="w"></span>
+<span class="nv">categories</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1260,8 +1613,8 @@
 <p>We create a variable containing the above three rates. Notice how APL allows us to divide three numbers by a single one:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">rates</span> <span class="kd">←</span> <span class="m">8</span> <span class="m">5</span> <span class="m">2</span> <span class="o">÷</span> <span class="m">100</span>
-<span class="nv">rates</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">rates</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">÷</span><span class="w"> </span><span class="m">100</span><span class="w"></span>
+<span class="nv">rates</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1272,7 +1625,7 @@
 <p>The first employee is in category 1, so the rate that applies to them is:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">rates</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">rates</span><span class="sr">[</span><span class="m">1</span><span class="sr">]</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1283,7 +1636,7 @@
 <p>It follows that the first five employees, being in categories <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">2</span> <span class="pre">2</span> <span class="pre">2</span> <span class="pre">3</span></code> respectively, are entitled to the following increases:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">rates</span><span class="sr">[</span><span class="m">1</span> <span class="m">2</span> <span class="m">2</span> <span class="m">2</span> <span class="m">3</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">rates</span><span class="sr">[</span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="sr">]</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1294,7 +1647,7 @@
 <p>More generally, the rates applied to all of our employees could be obtained like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">rates</span><span class="sr">[</span><span class="nv">categories</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">rates</span><span class="sr">[</span><span class="nv">categories</span><span class="sr">]</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1305,7 +1658,7 @@
 <p>Having the rates, one just has to multiply by the salaries to obtain the individual increases:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">salaries</span> <span class="o">×</span> <span class="nv">rates</span><span class="sr">[</span><span class="nv">categories</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">salaries</span><span class="w"> </span><span class="o">×</span><span class="w"> </span><span class="nv">rates</span><span class="sr">[</span><span class="nv">categories</span><span class="sr">]</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1316,7 +1669,7 @@
 <p>Finally, by adding them all, one will know how much it will cost the company:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">salaries</span> <span class="o">×</span> <span class="nv">rates</span><span class="sr">[</span><span class="nv">categories</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span><span class="w"> </span><span class="nv">salaries</span><span class="w"> </span><span class="o">×</span><span class="w"> </span><span class="nv">rates</span><span class="sr">[</span><span class="nv">categories</span><span class="sr">]</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1337,11 +1690,11 @@
 <p>This illustrates how the expression of a solution in APL can be very close to the way that the solution could be phrased in everyday language. This also shows clearly that the ways of reasoning induced by traditional programming languages are not the only possible ones. This difference and originality, introduced by APL, are among the major features of the language.</p>
 </div>
 <div class="section" id="friendly-binary-data">
-<span id="introduction-friendly-binary-data"></span><h2><span class="section-number">1.10. </span>Friendly Binary Data<a class="headerlink" href="#friendly-binary-data" title="Permalink to this headline">¶</a></h2>
+<span id="introduction-friendly-binary-data"></span><h2><span class="section-number">1.10. </span>Friendly Binary Data<a class="headerlink" href="#friendly-binary-data" title="Permalink to this headline">#</a></h2>
 <p>APL makes much use of binary data. It is most often created by means of relational functions like <code class="docutils literal notranslate"><span class="pre">=</span></code> or <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, which give the answer <code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">0</span></code>, depending on whether the relation is true or not:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">salaries</span> <span class="o">&gt;</span> <span class="m">3000</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">salaries</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">3000</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1352,7 +1705,7 @@
 <p>By the use of the correct relational function, one can immediately compare the <code class="docutils literal notranslate"><span class="pre">actual</span></code> results with the <code class="docutils literal notranslate"><span class="pre">forecast</span></code> and find the favourable results:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">actual</span> <span class="o">&gt;</span> <span class="nv">forecast</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">actual</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nv">forecast</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1373,7 +1726,7 @@
 <p>Thus, if I am looking for people in category 3 whose salary is less than 4000 euros, I can write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">categories</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span> <span class="o">∧</span> <span class="p">(</span><span class="nv">salaries</span> <span class="o">&lt;</span> <span class="m">4000</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">categories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="o">∧</span><span class="w"> </span><span class="p">(</span><span class="nv">salaries</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">4000</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1385,7 +1738,7 @@
 <p>There is, however, no special symbol for the function <em>exclusive or</em> (often called <em>xor</em>). This is because it is not needed: the function <em>not equal</em> <code class="docutils literal notranslate"><span class="pre">≠</span></code> gives the same result as <em>exclusive or</em> when it is used with Boolean values, as you can see below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="o">≠</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">≠</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1395,11 +1748,11 @@
 </div>
 <p>Finally, not only can these binary vectors be used as we have described but also for novel purposes, such as counting and selecting.</p>
 <div class="section" id="counting">
-<span id="introduction-counting"></span><h3><span class="section-number">1.10.1. </span>Counting<a class="headerlink" href="#counting" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-counting"></span><h3><span class="section-number">1.10.1. </span>Counting<a class="headerlink" href="#counting" title="Permalink to this headline">#</a></h3>
 <p>Having found which salaries are less than 2500 euros by means of the following expression:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">salaries</span> <span class="o">&lt;</span> <span class="m">2500</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">salaries</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">2500</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1410,7 +1763,7 @@
 <p>It is easy to add all the 1’s and 0’s to calculate how many people earn less than 2500 euros:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span> <span class="nv">salaries</span> <span class="o">&lt;</span> <span class="m">2500</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">+</span><span class="na">/</span><span class="w"> </span><span class="nv">salaries</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">2500</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1420,11 +1773,11 @@
 </div>
 </div>
 <div class="section" id="selection">
-<span id="introduction-selection"></span><h3><span class="section-number">1.10.2. </span>Selection<a class="headerlink" href="#selection" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-selection"></span><h3><span class="section-number">1.10.2. </span>Selection<a class="headerlink" href="#selection" title="Permalink to this headline">#</a></h3>
 <p>One can also use the binary vector as a “mask” to select the items corresponding to the binary 1’s from another array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="na">/</span> <span class="m">23</span> <span class="m">55</span> <span class="m">17</span> <span class="m">46</span> <span class="m">81</span> <span class="m">82</span> <span class="m">83</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="na">/</span><span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">55</span><span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">46</span><span class="w"> </span><span class="m">81</span><span class="w"> </span><span class="m">82</span><span class="w"> </span><span class="m">83</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1435,7 +1788,7 @@
 <p>The procedure is identical for character data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="m">0</span> <span class="m">1</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">1</span> <span class="m">1</span> <span class="na">/</span> <span class="s1">&#39;Drumstick&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="na">/</span><span class="w"> </span><span class="s1">&#39;Drumstick&#39;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1446,7 +1799,7 @@
 <p>This function, called <em>compress</em>, is particularly useful for extracting items conforming to a given criterion from a variable. For example, to display the salaries of people in category 2, one writes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">categories</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span> <span class="na">/</span> <span class="nv">salaries</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">categories</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="na">/</span><span class="w"> </span><span class="nv">salaries</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1457,12 +1810,12 @@
 <p>Looks like a powerful primitive function, doesn’t it?</p>
 </div>
 <div class="section" id="discovery">
-<span id="introduction-discovery"></span><h3><span class="section-number">1.10.3. </span>Discovery<a class="headerlink" href="#discovery" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-discovery"></span><h3><span class="section-number">1.10.3. </span>Discovery<a class="headerlink" href="#discovery" title="Permalink to this headline">#</a></h3>
 <p>To practice our skills some more, let us find in our variable <code class="docutils literal notranslate"><span class="pre">val</span></code> the positions of numbers greater than 35. Here are the necessary steps:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span> <span class="kd">←</span> <span class="m">22</span> <span class="m">37</span> <span class="m">41</span> <span class="m">19</span> <span class="m">54</span> <span class="m">11</span> <span class="m">34</span>
-<span class="nv">val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">22</span><span class="w"> </span><span class="m">37</span><span class="w"> </span><span class="m">41</span><span class="w"> </span><span class="m">19</span><span class="w"> </span><span class="m">54</span><span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">34</span><span class="w"></span>
+<span class="nv">val</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1472,7 +1825,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="o">&gt;</span><span class="m">35</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="o">&gt;</span><span class="m">35</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1482,7 +1835,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍴</span><span class="nv">val</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1493,7 +1846,7 @@
 <p>With this we can generate all possible positions of items in <code class="docutils literal notranslate"><span class="pre">val</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍳⍴</span><span class="nv">val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍳⍴</span><span class="nv">val</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1504,7 +1857,7 @@
 <p>Let us compare two of these results:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="o">&gt;</span><span class="m">35</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">val</span><span class="o">&gt;</span><span class="m">35</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1514,7 +1867,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍳⍴</span><span class="nv">val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍳⍴</span><span class="nv">val</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1526,7 +1879,7 @@
 <p>Thus the job may be done as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">val</span><span class="o">&gt;</span><span class="m">35</span><span class="p">)</span> <span class="na">/</span> <span class="o">⍳⍴</span><span class="nv">val</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">val</span><span class="o">&gt;</span><span class="m">35</span><span class="p">)</span><span class="w"> </span><span class="na">/</span><span class="w"> </span><span class="o">⍳⍴</span><span class="nv">val</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1538,8 +1891,8 @@
 <p>Here is a similar use, but applied to character data to find the positions of “a” within a phrase; the method is the same:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">phrase</span> <span class="kd">←</span> <span class="s1">&#39;Panama is a canal between Atlantic and Pacific&#39;</span>
-<span class="p">(</span><span class="nv">phrase</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="na">/</span> <span class="o">⍳⍴</span><span class="nv">phrase</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">phrase</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="s1">&#39;Panama is a canal between Atlantic and Pacific&#39;</span><span class="w"></span>
+<span class="p">(</span><span class="nv">phrase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;a&#39;</span><span class="p">)</span><span class="w"> </span><span class="na">/</span><span class="w"> </span><span class="o">⍳⍴</span><span class="nv">phrase</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1551,7 +1904,7 @@
 </div>
 </div>
 <div class="section" id="a-touch-of-modern-math">
-<span id="introduction-a-touch-of-modern-math"></span><h2><span class="section-number">1.11. </span>A Touch of Modern Math<a class="headerlink" href="#a-touch-of-modern-math" title="Permalink to this headline">¶</a></h2>
+<span id="introduction-a-touch-of-modern-math"></span><h2><span class="section-number">1.11. </span>A Touch of Modern Math<a class="headerlink" href="#a-touch-of-modern-math" title="Permalink to this headline">#</a></h2>
 <p>Proudly having found all the “a”s, we may wish to find all the vowels.</p>
 <p>Alas, although we can write <code class="docutils literal notranslate"><span class="pre">phrase</span> <span class="pre">=</span> <span class="pre">'a'</span></code>, because a vector can be compared with a single value, one cannot write <code class="docutils literal notranslate"><span class="pre">phrase</span> <span class="pre">=</span> <span class="pre">'aeiouy'</span></code>⁽¹⁾, because that would require the item by item comparison of a phrase of 46 letters and “aeiouy” which has only 6.</p>
 <p>In other words: You may compare 46 letters with 46 other letters, or compare them with one letter, but not with 6.</p>
@@ -1561,7 +1914,7 @@
 <p>For example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="m">7</span> <span class="m">2</span> <span class="m">8</span> <span class="m">4</span> <span class="m">9</span> <span class="o">∊</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span><span class="w"> </span><span class="m">7</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="o">∊</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1572,7 +1925,7 @@
 <p>Only the 5 and the 4 were found in <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">4</span> <span class="pre">5</span> <span class="pre">6</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;dandelion&#39;</span> <span class="o">∊</span> <span class="s1">&#39;garden&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;dandelion&#39;</span><span class="w"> </span><span class="o">∊</span><span class="w"> </span><span class="s1">&#39;garden&#39;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1584,7 +1937,7 @@
 <p>So in pursuit of our inquiry we shall write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">phrase</span> <span class="o">∊</span> <span class="s1">&#39;aeiouy&#39;</span><span class="p">)</span> <span class="na">/</span> <span class="o">⍳⍴</span><span class="nv">phrase</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">phrase</span><span class="w"> </span><span class="o">∊</span><span class="w"> </span><span class="s1">&#39;aeiouy&#39;</span><span class="p">)</span><span class="w"> </span><span class="na">/</span><span class="w"> </span><span class="o">⍳⍴</span><span class="nv">phrase</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1595,8 +1948,8 @@
 <p>One can also use membership between a vector and a matrix, as shown below. We have represented side by side the variable itself and the result of using <em>membership</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">towns</span> <span class="kd">←</span> <span class="m">6</span> <span class="m">10</span><span class="o">⍴</span><span class="s1">&#39;Canberra  Paris     WashingtonMoscow    Martigues Mexico    &#39;</span>
-<span class="nv">towns</span><span class="o">,</span> <span class="nv">towns</span> <span class="o">∊</span> <span class="s1">&#39;aeiouy&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">towns</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">10</span><span class="o">⍴</span><span class="s1">&#39;Canberra  Paris     WashingtonMoscow    Martigues Mexico    &#39;</span><span class="w"></span>
+<span class="nv">towns</span><span class="o">,</span><span class="w"> </span><span class="nv">towns</span><span class="w"> </span><span class="o">∊</span><span class="w"> </span><span class="s1">&#39;aeiouy&#39;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1612,7 +1965,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>We can reverse the expression, but the result has always the same shape as the left argument:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;aeiouy&#39;</span> <span class="o">∊</span> <span class="nv">towns</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;aeiouy&#39;</span><span class="w"> </span><span class="o">∊</span><span class="w"> </span><span class="nv">towns</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1623,12 +1976,12 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>The trailing 0 is because none of the towns has a “y” in it.</p>
 </div>
 <div class="section" id="a-powerful-search-function">
-<span id="introduction-a-powerful-search-function"></span><h2><span class="section-number">1.12. </span>A Powerful Search Function<a class="headerlink" href="#a-powerful-search-function" title="Permalink to this headline">¶</a></h2>
+<span id="introduction-a-powerful-search-function"></span><h2><span class="section-number">1.12. </span>A Powerful Search Function<a class="headerlink" href="#a-powerful-search-function" title="Permalink to this headline">#</a></h2>
 <p>We have harnessed a very useful method to look for the positions of letters or numbers in a vector, but the answer obtained does not provide a one to one correspondence between the search values and the resultant positions.</p>
 <p>Here’s a vector of values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">list</span> <span class="kd">←</span> <span class="m">15</span> <span class="m">40</span> <span class="m">63</span> <span class="m">18</span> <span class="m">27</span> <span class="m">40</span> <span class="m">33</span> <span class="m">29</span> <span class="m">40</span> <span class="m">88</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">list</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">40</span><span class="w"> </span><span class="m">63</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">27</span><span class="w"> </span><span class="m">40</span><span class="w"> </span><span class="m">33</span><span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">40</span><span class="w"> </span><span class="m">88</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1636,7 +1989,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>And these are the numbers we want to find:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">where</span> <span class="kd">←</span> <span class="m">29</span> <span class="m">63</span> <span class="m">40</span> <span class="m">33</span> <span class="m">50</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">where</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">63</span><span class="w"> </span><span class="m">40</span><span class="w"> </span><span class="m">33</span><span class="w"> </span><span class="m">50</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1644,7 +1997,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>Now we apply our method and these are the positions found:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">list</span> <span class="o">∊</span> <span class="nv">where</span><span class="p">)</span> <span class="na">/</span> <span class="o">⍳⍴</span><span class="nv">list</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">list</span><span class="w"> </span><span class="o">∊</span><span class="w"> </span><span class="nv">where</span><span class="p">)</span><span class="w"> </span><span class="na">/</span><span class="w"> </span><span class="o">⍳⍴</span><span class="nv">list</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1658,7 +2011,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>This new method uses the dyadic form of the symbol <code class="docutils literal notranslate"><span class="pre">⍳</span></code> (<em>iota</em>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">list</span> <span class="o">⍳</span> <span class="nv">where</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">list</span><span class="w"> </span><span class="o">⍳</span><span class="w"> </span><span class="nv">where</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1671,7 +2024,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>Second surprise: the value 50 is reported as being found in position 11 in a vector comprising only 10 items! This is how the function <em>index of</em> (dyadic <code class="docutils literal notranslate"><span class="pre">⍳</span></code>) reports that a value is absent.</p>
 <p>At first sight this seems a bit surprising, but in fact it is a property which makes this function so generally powerful, as we shall soon see.</p>
 <div class="section" id="an-example">
-<span id="introduction-an-example"></span><h3><span class="section-number">1.12.1. </span>An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-an-example"></span><h3><span class="section-number">1.12.1. </span>An Example<a class="headerlink" href="#an-example" title="Permalink to this headline">#</a></h3>
 <p>A car manufacturer decides that they will offer their customers a discount on the catalogue price (you can see how this example is imaginary!).</p>
 <p>The country has been divided into 100 areas, and the discount rate will depend on the area according to the following table:</p>
 <table class="colwidths-auto table">
@@ -1704,7 +2057,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>The problem is to calculate the discount rate that may be claimed for a potential customer who lives in a given area <code class="docutils literal notranslate"><span class="pre">d</span></code>; for example</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">d</span> <span class="kd">←</span> <span class="m">84</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">d</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">84</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1712,8 +2065,8 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>Let us begin by creating two variables:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">area</span> <span class="kd">←</span> <span class="m">17</span> <span class="m">50</span> <span class="m">59</span> <span class="m">84</span> <span class="m">89</span>
-<span class="nv">discount</span> <span class="kd">←</span> <span class="m">9</span> <span class="m">8</span> <span class="m">6</span> <span class="m">5</span> <span class="m">4</span> <span class="m">2</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">area</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">50</span><span class="w"> </span><span class="m">59</span><span class="w"> </span><span class="m">84</span><span class="w"> </span><span class="m">89</span><span class="w"></span>
+<span class="nv">discount</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">2</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1721,7 +2074,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>Let us see if <code class="docutils literal notranslate"><span class="pre">d</span></code> is in the list of favoured areas:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">d</span> <span class="o">∊</span> <span class="nv">area</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">d</span><span class="w"> </span><span class="o">∊</span><span class="w"> </span><span class="nv">area</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1732,7 +2085,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>We can see <code class="docutils literal notranslate"><span class="pre">d</span></code> is a favoured area, and we can even see its position in the list of favoured areas:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">area</span> <span class="o">⍳</span> <span class="nv">d</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">area</span><span class="w"> </span><span class="o">⍳</span><span class="w"> </span><span class="nv">d</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1743,7 +2096,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>Let us find the current rate of discount for this index position:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">discount</span><span class="sr">[</span><span class="m">4</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">discount</span><span class="sr">[</span><span class="m">4</span><span class="sr">]</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1755,7 +2108,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>One may simply write</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">discount</span><span class="sr">[</span><span class="nv">area</span><span class="o">⍳</span><span class="nv">d</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">discount</span><span class="sr">[</span><span class="nv">area</span><span class="o">⍳</span><span class="nv">d</span><span class="sr">]</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1767,8 +2120,8 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>The importance of this approach is that it is vector-based. Suppose that publicity attracts crowds and that therefore <code class="docutils literal notranslate"><span class="pre">d</span></code> is no longer a single value but a vector. The solution is still valid:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">d</span> <span class="kd">←</span> <span class="m">24</span> <span class="m">75</span> <span class="m">89</span> <span class="m">60</span> <span class="m">92</span> <span class="m">50</span> <span class="m">51</span> <span class="m">50</span> <span class="m">84</span> <span class="m">66</span> <span class="m">17</span> <span class="m">89</span>
-<span class="nv">discount</span><span class="sr">[</span><span class="nv">area</span><span class="o">⍳</span><span class="nv">d</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">d</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">24</span><span class="w"> </span><span class="m">75</span><span class="w"> </span><span class="m">89</span><span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="m">92</span><span class="w"> </span><span class="m">50</span><span class="w"> </span><span class="m">51</span><span class="w"> </span><span class="m">50</span><span class="w"> </span><span class="m">84</span><span class="w"> </span><span class="m">66</span><span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">89</span><span class="w"></span>
+<span class="nv">discount</span><span class="sr">[</span><span class="nv">area</span><span class="o">⍳</span><span class="nv">d</span><span class="sr">]</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1779,13 +2132,13 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>All that without a function, neither “loop” nor “test”, and whatever the number of areas. Readers who know other programming languages will have no difficulty in making the comparison.</p>
 </div>
 <div class="section" id="generalisation">
-<span id="introduction-generalisation"></span><h3><span class="section-number">1.12.2. </span>Generalisation<a class="headerlink" href="#generalisation" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-generalisation"></span><h3><span class="section-number">1.12.2. </span>Generalisation<a class="headerlink" href="#generalisation" title="Permalink to this headline">#</a></h3>
 <p>In truth, the expression we just wrote is an example of an algorithm for “changing the frame of reference”. Don’t panic, the name may seem esoteric, but the concept is simple. A list of area numbers (the initial set) is translated into a list of discount rates (the final set).</p>
 <p>Let us now imagine the initial set to be an alphabet composed of lower case and upper case letters, and the final set to be composed of only upper case letters (with a blank space in the middle):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">alphLower</span> <span class="kd">←</span> <span class="s1">&#39;abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
-<span class="nv">alphUpper</span> <span class="kd">←</span> <span class="s1">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ ABCDEFGHIJKLMNOPQRSTUVWXYZ*&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">alphLower</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="s1">&#39;abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span><span class="w"></span>
+<span class="nv">alphUpper</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="s1">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ ABCDEFGHIJKLMNOPQRSTUVWXYZ*&#39;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1794,7 +2147,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>Here is a little French sentence, with one accented letter:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">tale</span> <span class="kd">←</span> <span class="s1">&#39;Le Petit Chaperon-Rouge a bouffé le Loup&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">tale</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="s1">&#39;Le Petit Chaperon-Rouge a bouffé le Loup&#39;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1802,7 +2155,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>The expression below converts from lower to upper case.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">alphUpper</span><span class="sr">[</span><span class="nv">alphLower</span><span class="o">⍳</span><span class="nv">tale</span><span class="sr">]</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">alphUpper</span><span class="sr">[</span><span class="nv">alphLower</span><span class="o">⍳</span><span class="nv">tale</span><span class="sr">]</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1815,16 +2168,16 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 </div>
 </div>
 <div class="section" id="after-values-let-us-process-shapes">
-<span id="introduction-after-values-let-us-process-shapes"></span><h2><span class="section-number">1.13. </span>After Values, Let Us Process Shapes<a class="headerlink" href="#after-values-let-us-process-shapes" title="Permalink to this headline">¶</a></h2>
+<span id="introduction-after-values-let-us-process-shapes"></span><h2><span class="section-number">1.13. </span>After Values, Let Us Process Shapes<a class="headerlink" href="#after-values-let-us-process-shapes" title="Permalink to this headline">#</a></h2>
 <p>Many traditional programming languages do not really handle arrays of numbers or characters. They hold them in memory, but when the arrays are required for processing they can only be handled one item at a time. It is not surprising, in these circumstances, that these languages have only limited means of controlling the shape of the data.</p>
 <p>It is quite the opposite in APL, which offers many tools for working with the shape of the data. We shall only look at a few of them here.</p>
 <div class="section" id="take-and-drop">
-<span id="introduction-take-and-drop"></span><h3><span class="section-number">1.13.1. </span>Take and Drop<a class="headerlink" href="#take-and-drop" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-take-and-drop"></span><h3><span class="section-number">1.13.1. </span>Take and Drop<a class="headerlink" href="#take-and-drop" title="Permalink to this headline">#</a></h3>
 <p>The functions <em>take</em> (<code class="docutils literal notranslate"><span class="pre">↑</span></code>, typed with <kbd>APL</kbd>+<kbd>y</kbd>) and <em>drop</em> (<code class="docutils literal notranslate"><span class="pre">↓</span></code>, typed with <kbd>APL</kbd>+<kbd>u</kbd>) serve, as their names suggest, to extract part of a set of values. Here we shall show only examples based on vectors, but all the other shapes of data can be treated in a similar way.</p>
 <p>Recall that</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">list</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">list</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1835,7 +2188,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>We can take its first 4 elements:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">4</span> <span class="o">↑</span> <span class="nv">list</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">4</span><span class="w"> </span><span class="o">↑</span><span class="w"> </span><span class="nv">list</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1846,7 +2199,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>Or we may drop the first 5 elements:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="o">↓</span> <span class="nv">list</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span><span class="w"> </span><span class="o">↓</span><span class="w"> </span><span class="nv">list</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1858,7 +2211,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>For example, we may take the last 3 items of the vector:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯3</span> <span class="o">↑</span> <span class="nv">list</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯3</span><span class="w"> </span><span class="o">↑</span><span class="w"> </span><span class="nv">list</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1869,7 +2222,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>Or we may drop the last 7 items, leaving the first 3 ones:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯7</span> <span class="o">↓</span> <span class="nv">list</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯7</span><span class="w"> </span><span class="o">↓</span><span class="w"> </span><span class="nv">list</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1880,7 +2233,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>The last result is the same as obtained by</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span> <span class="o">↑</span> <span class="nv">list</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">3</span><span class="w"> </span><span class="o">↑</span><span class="w"> </span><span class="nv">list</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1894,8 +2247,8 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>The variable <code class="docutils literal notranslate"><span class="pre">tome</span></code> is the turnover in millions of euros.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">tome</span> <span class="kd">←</span> <span class="m">56</span> <span class="m">59</span> <span class="m">67</span> <span class="m">64</span> <span class="m">60</span> <span class="m">61</span> <span class="m">68</span> <span class="m">73</span> <span class="m">78</span> <span class="m">75</span> <span class="m">81</span> <span class="m">84</span>
-<span class="nv">tome</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">tome</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">56</span><span class="w"> </span><span class="m">59</span><span class="w"> </span><span class="m">67</span><span class="w"> </span><span class="m">64</span><span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="m">61</span><span class="w"> </span><span class="m">68</span><span class="w"> </span><span class="m">73</span><span class="w"> </span><span class="m">78</span><span class="w"> </span><span class="m">75</span><span class="w"> </span><span class="m">81</span><span class="w"> </span><span class="m">84</span><span class="w"></span>
+<span class="nv">tome</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1907,7 +2260,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>If we drop the first value, we get</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="o">↓</span> <span class="nv">tome</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="w"> </span><span class="o">↓</span><span class="w"> </span><span class="nv">tome</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1918,7 +2271,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>and if we drop the last value, we get</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯1</span> <span class="o">↓</span> <span class="nv">tome</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯1</span><span class="w"> </span><span class="o">↓</span><span class="w"> </span><span class="nv">tome</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1930,7 +2283,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>We see that all that remains is to subtract these results item by item. We do this without a function or loops; all very simple!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span><span class="o">↓</span><span class="nv">tome</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="m">¯1</span><span class="o">↓</span><span class="nv">tome</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span><span class="o">↓</span><span class="nv">tome</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="m">¯1</span><span class="o">↓</span><span class="nv">tome</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1941,7 +2294,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>In place of a subtraction, a division would calculate (with some obvious adjustments) the rates of growth instead of the differences:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">100</span> <span class="o">×</span> <span class="p">(</span> <span class="p">(</span><span class="m">1</span><span class="o">↓</span><span class="nv">tome</span><span class="p">)</span> <span class="o">÷</span> <span class="p">(</span><span class="m">¯1</span><span class="o">↓</span><span class="nv">tome</span><span class="p">)</span> <span class="p">)</span><span class="o">-</span><span class="m">1</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">100</span><span class="w"> </span><span class="o">×</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="o">↓</span><span class="nv">tome</span><span class="p">)</span><span class="w"> </span><span class="o">÷</span><span class="w"> </span><span class="p">(</span><span class="m">¯1</span><span class="o">↓</span><span class="nv">tome</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="o">-</span><span class="m">1</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1952,8 +2305,8 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>Let us put that in a small user-defined function, and apply it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Growth</span> <span class="kd">←</span> <span class="kt">{</span><span class="m">100</span><span class="o">×</span><span class="p">((</span><span class="m">1</span><span class="o">↓</span><span class="bp">⍵</span><span class="p">)</span><span class="o">÷</span><span class="p">(</span><span class="m">¯1</span><span class="o">↓</span><span class="bp">⍵</span><span class="p">))</span><span class="o">-</span><span class="m">1</span><span class="kt">}</span>
-<span class="nv">Growth</span> <span class="nv">tome</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">Growth</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="kt">{</span><span class="m">100</span><span class="o">×</span><span class="p">((</span><span class="m">1</span><span class="o">↓</span><span class="bp">⍵</span><span class="p">)</span><span class="o">÷</span><span class="p">(</span><span class="m">¯1</span><span class="o">↓</span><span class="bp">⍵</span><span class="p">))</span><span class="o">-</span><span class="m">1</span><span class="kt">}</span><span class="w"></span>
+<span class="nv">Growth</span><span class="w"> </span><span class="nv">tome</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1963,7 +2316,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 </div>
 </div>
 <div class="section" id="reverses-and-transposition">
-<span id="introduction-reverses-and-transposition"></span><h3><span class="section-number">1.13.2. </span>Reverses and Transposition<a class="headerlink" href="#reverses-and-transposition" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-reverses-and-transposition"></span><h3><span class="section-number">1.13.2. </span>Reverses and Transposition<a class="headerlink" href="#reverses-and-transposition" title="Permalink to this headline">#</a></h3>
 <p>APL is also well equipped with functions to pivot data about any axis, as suggested by the appearances of the symbols used. They apply to both numeric and character data, as we are going to show by applying these functions to the variable <code class="docutils literal notranslate"><span class="pre">towns</span></code> that we used earlier.</p>
 <p>The symbols used hereafter are obtained like this:</p>
 <ul class="simple">
@@ -1974,7 +2327,7 @@ Mexico     0 1 0 1 0 1 0 0 0 0
 <p>Recall the value of the initial variable:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">towns</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">towns</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -1990,7 +2343,7 @@ Mexico
 <p>We can reverse around a vertical axis with <code class="docutils literal notranslate"><span class="pre">⌽</span></code> (notice the vertical bar in the glyph):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⌽</span><span class="nv">towns</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⌽</span><span class="nv">towns</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -2006,7 +2359,7 @@ notgnihsaW
 <p>We can reverse around a horizontal axis with <code class="docutils literal notranslate"><span class="pre">⊖</span></code> (notice the vertical bar in the glyph):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊖</span><span class="nv">towns</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⊖</span><span class="nv">towns</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -2022,7 +2375,7 @@ Canberra
 <p>And we can swap rows and columns (what we call <em>tranpose</em>) with <code class="docutils literal notranslate"><span class="pre">⍉</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍉</span><span class="nv">towns</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="o">⍉</span><span class="nv">towns</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -2042,7 +2395,7 @@ a t e
 <p>And all four of them side by side for comparison:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">towns</span><span class="p">)</span> <span class="p">(</span><span class="o">⌽</span><span class="nv">towns</span><span class="p">)</span> <span class="p">(</span><span class="o">⊖</span><span class="nv">towns</span><span class="p">)</span> <span class="p">(</span><span class="o">⍉</span><span class="nv">towns</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">towns</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">⌽</span><span class="nv">towns</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">⊖</span><span class="nv">towns</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="o">⍉</span><span class="nv">towns</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -2065,7 +2418,7 @@ a t e
 </div>
 </div>
 <div class="section" id="back-to-primary-school">
-<span id="introduction-back-to-primary-school"></span><h2><span class="section-number">1.14. </span>Back to Primary School<a class="headerlink" href="#back-to-primary-school" title="Permalink to this headline">¶</a></h2>
+<span id="introduction-back-to-primary-school"></span><h2><span class="section-number">1.14. </span>Back to Primary School<a class="headerlink" href="#back-to-primary-school" title="Permalink to this headline">#</a></h2>
 <p>Remember when we learned our multiplication tables? In that practically Paleolithic era, to make sure we knew all our tables, my teacher made us calculate the multiplication table for the integers 1 to 9:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{array}{|c|rrrrrrrrr|}
@@ -2097,7 +2450,7 @@ a t e
 <p>This operation is written as follows in APL:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="m">4</span> <span class="m">10</span> <span class="m">3</span> <span class="na">∘.</span><span class="o">×</span> <span class="m">8</span> <span class="m">5</span> <span class="m">15</span> <span class="m">9</span> <span class="m">11</span> <span class="m">40</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="na">∘.</span><span class="o">×</span><span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">15</span><span class="w"> </span><span class="m">9</span><span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">40</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -2113,7 +2466,7 @@ a t e
 <p>Let’s have some fun with it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span><span class="na">∘.</span><span class="o">=</span><span class="p">(</span><span class="o">⍳</span><span class="m">5</span><span class="p">))</span> <span class="p">((</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span><span class="na">∘.</span><span class="o">&lt;</span><span class="p">(</span><span class="o">⍳</span><span class="m">5</span><span class="p">))</span> <span class="p">((</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span><span class="na">∘.</span><span class="o">≥</span><span class="p">(</span><span class="o">⍳</span><span class="m">5</span><span class="p">))</span> <span class="p">((</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span><span class="na">∘.</span><span class="o">⌈</span><span class="p">(</span><span class="o">⍳</span><span class="m">5</span><span class="p">))</span> <span class="p">((</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span><span class="na">∘.</span><span class="nv">Plus</span><span class="p">(</span><span class="o">⍳</span><span class="m">5</span><span class="p">))</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span><span class="na">∘.</span><span class="o">=</span><span class="p">(</span><span class="o">⍳</span><span class="m">5</span><span class="p">))</span><span class="w"> </span><span class="p">((</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span><span class="na">∘.</span><span class="o">&lt;</span><span class="p">(</span><span class="o">⍳</span><span class="m">5</span><span class="p">))</span><span class="w"> </span><span class="p">((</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span><span class="na">∘.</span><span class="o">≥</span><span class="p">(</span><span class="o">⍳</span><span class="m">5</span><span class="p">))</span><span class="w"> </span><span class="p">((</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span><span class="na">∘.</span><span class="o">⌈</span><span class="p">(</span><span class="o">⍳</span><span class="m">5</span><span class="p">))</span><span class="w"> </span><span class="p">((</span><span class="o">⍳</span><span class="m">5</span><span class="p">)</span><span class="na">∘.</span><span class="nv">Plus</span><span class="p">(</span><span class="o">⍳</span><span class="m">5</span><span class="p">))</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -2128,14 +2481,14 @@ a t e
 </span></div></div>
 </div>
 <div class="section" id="a-useful-application">
-<span id="introduction-a-useful-application"></span><h3><span class="section-number">1.14.1. </span>A Useful Application<a class="headerlink" href="#a-useful-application" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-a-useful-application"></span><h3><span class="section-number">1.14.1. </span>A Useful Application<a class="headerlink" href="#a-useful-application" title="Permalink to this headline">#</a></h3>
 <p>Suppose the vector <code class="docutils literal notranslate"><span class="pre">ages</span></code> contains the ages of 400 respondents to an opinion poll. We want to establish how many people there are in each of the following categories: 0 - 25 - 30 - 35 - 45 - 50 - 55 - 65 or above.</p>
 <p>Here is the data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span> <span class="kd">←</span> <span class="m">73</span>
-<span class="nv">ages</span> <span class="kd">←</span> <span class="o">?</span><span class="m">400</span><span class="o">⍴</span><span class="m">100</span>
-<span class="nv">ages</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nf">⎕RL</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">73</span><span class="w"></span>
+<span class="nv">ages</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="o">?</span><span class="m">400</span><span class="o">⍴</span><span class="m">100</span><span class="w"></span>
+<span class="nv">ages</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -2154,7 +2507,7 @@ a t e
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">category</span> <span class="kd">←</span> <span class="m">0</span> <span class="m">25</span> <span class="m">30</span> <span class="m">35</span> <span class="m">45</span> <span class="m">50</span> <span class="m">55</span> <span class="m">65</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">category</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">25</span><span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">35</span><span class="w"> </span><span class="m">45</span><span class="w"> </span><span class="m">50</span><span class="w"> </span><span class="m">55</span><span class="w"> </span><span class="m">65</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -2177,8 +2530,8 @@ a t e
 <p>If one adds up this Boolean matrix, one obtains for each row the number of people who are older than 0 years, older than 25 years, older than 30 years, etc. This is the expression:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">counts</span> <span class="kd">←</span> <span class="o">+</span><span class="na">/</span> <span class="p">(</span><span class="nv">category</span> <span class="na">∘.</span><span class="o">&lt;</span> <span class="nv">ages</span><span class="p">)</span>
-<span class="nv">counts</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">counts</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="o">+</span><span class="na">/</span><span class="w"> </span><span class="p">(</span><span class="nv">category</span><span class="w"> </span><span class="na">∘.</span><span class="o">&lt;</span><span class="w"> </span><span class="nv">ages</span><span class="p">)</span><span class="w"></span>
+<span class="nv">counts</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -2201,8 +2554,8 @@ a t e
 <p>If one no longer works with a small extract of data, but with the full list of 400 people, this is what one gets:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">counts</span> <span class="kd">←</span> <span class="o">+</span><span class="na">/</span> <span class="p">(</span><span class="nv">category</span> <span class="na">∘.</span><span class="o">&lt;</span> <span class="nv">ages</span><span class="p">)</span>
-<span class="nv">counts</span> <span class="o">-</span> <span class="p">(</span><span class="m">1</span><span class="o">↓</span><span class="nv">counts</span><span class="o">,</span><span class="m">0</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">counts</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="o">+</span><span class="na">/</span><span class="w"> </span><span class="p">(</span><span class="nv">category</span><span class="w"> </span><span class="na">∘.</span><span class="o">&lt;</span><span class="w"> </span><span class="nv">ages</span><span class="p">)</span><span class="w"></span>
+<span class="nv">counts</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="o">↓</span><span class="nv">counts</span><span class="o">,</span><span class="m">0</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -2215,18 +2568,18 @@ a t e
 </div>
 </div>
 <div class="section" id="there-is-a-lot-to-discover-yet">
-<span id="introduction-there-is-a-lot-to-discover-yet"></span><h2><span class="section-number">1.15. </span>There Is a Lot to Discover Yet<a class="headerlink" href="#there-is-a-lot-to-discover-yet" title="Permalink to this headline">¶</a></h2>
+<span id="introduction-there-is-a-lot-to-discover-yet"></span><h2><span class="section-number">1.15. </span>There Is a Lot to Discover Yet<a class="headerlink" href="#there-is-a-lot-to-discover-yet" title="Permalink to this headline">#</a></h2>
 <p>In the course of these pages we have flown over APL country and glimpsed certain bold ideas which explain the attraction of the language. A thousand other things remain to be seen! If you are convinced that Dyalog APL is worth the effort, you can start studying APL in much more detail in the rest of this book.</p>
 <p>Let us just discover some additional attractive features of APL.</p>
 <div class="section" id="attractively-simple-syntax-rules">
-<span id="introduction-attractively-simple-syntax-rules"></span><h3><span class="section-number">1.15.1. </span>Attractively Simple Syntax Rules<a class="headerlink" href="#attractively-simple-syntax-rules" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-attractively-simple-syntax-rules"></span><h3><span class="section-number">1.15.1. </span>Attractively Simple Syntax Rules<a class="headerlink" href="#attractively-simple-syntax-rules" title="Permalink to this headline">#</a></h3>
 <p>Most other programming languages contain rather complex rules to determine how an expression is evaluated, a concept called <em>operator precedence</em>. Very often it says that, for example, multiplication and division have higher precedence than addition and subtraction, meaning that an expression like <span class="math notranslate nohighlight">\(5 \times 3 + 2\)</span> gives <span class="math notranslate nohighlight">\(17\)</span>, because the multiplication is done first, and then the addition.</p>
 <p>This sounds simple and familiar, but it quickly gets very complex and difficult to remember, especially in a language containing many functions, like APL. For example, which precedence should we give to <code class="docutils literal notranslate"><span class="pre">⍳</span></code> or <code class="docutils literal notranslate"><span class="pre">↓</span></code> or <code class="docutils literal notranslate"><span class="pre">⌈</span></code>, for which we do not have an established tradition? And what about the functions we write ourselves?</p>
 <p>The democratic solution adopted in APL is “<em>We hold these truths to be self-evident that all functions are created equal!</em>”. The only and very simple rule is that any function works on the result of the entire expression to its right, and, if it is a dyadic function, the value immediately to the left of it. As usual, parentheses can be used to group parts of an expression.</p>
 <p>So, let us see how this applies to the expression above:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span> <span class="o">×</span> <span class="m">3</span> <span class="o">+</span> <span class="m">2</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">5</span><span class="w"> </span><span class="o">×</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">2</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -2239,36 +2592,36 @@ a t e
 <p>It may take a little while to get used to this slightly unfamiliar rule, but once it has been learned it is really a great advantage because you can direct your energy towards solving your problem and not have to remember complex rules just to satisfy the computer’s need for guidance.</p>
 </div>
 <div class="section" id="use-many-other-calculating-tools">
-<span id="introduction-use-many-other-calculating-tools"></span><h3><span class="section-number">1.15.2. </span>Use Many Other Calculating Tools<a class="headerlink" href="#use-many-other-calculating-tools" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-use-many-other-calculating-tools"></span><h3><span class="section-number">1.15.2. </span>Use Many Other Calculating Tools<a class="headerlink" href="#use-many-other-calculating-tools" title="Permalink to this headline">#</a></h3>
 <p>We have discovered some original functions, which are completely absent from most other programming languages, like <code class="docutils literal notranslate"><span class="pre">⍴</span></code>, <code class="docutils literal notranslate"><span class="pre">↑</span></code>, <code class="docutils literal notranslate"><span class="pre">⍉</span></code>, <code class="docutils literal notranslate"><span class="pre">∊</span></code> and <em>outer product</em>. Those features lead to new methods and new algorithms to process data; this is one of the main advantages of APL.</p>
 <p>Not only do you have a lot more functions, like <em>inner product</em> (generalised matrix product) and many built-in mathematical tools (trigonometry, matrix inverse, conversions to and from any numerical base, etc.), but you can also handle generalised (nested) arrays: arrays which contain arrays, which themselves contain arrays, and so on.</p>
 <p>The scope of the possible solutions to a single problem is often so wide that it is probably the reason why people never get tired of using APL: they always have something new to discover and to invent.</p>
 </div>
 <div class="section" id="create-user-friendly-applications-with-the-gui">
-<span id="introduction-create-user-friendly-applications-with-the-gui"></span><h3><span class="section-number">1.15.3. </span>Create User-friendly Applications with the GUI<a class="headerlink" href="#create-user-friendly-applications-with-the-gui" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-create-user-friendly-applications-with-the-gui"></span><h3><span class="section-number">1.15.3. </span>Create User-friendly Applications with the GUI<a class="headerlink" href="#create-user-friendly-applications-with-the-gui" title="Permalink to this headline">#</a></h3>
 <p>Like all modern programming languages, Dyalog APL has a Graphic User Interface (GUI) under Microsoft Windows and Win32 emulators under Unix. It allows you to design pleasant user interfaces with all the items and features you are familiar with. Even a beginner can quickly create an interface and process the data with all the power of the language, whereas in traditional languages, the same operation would need days or weeks of programming. The <a class="reference external" href="http://Microsoft.NET">Microsoft.NET</a> interface supports the use of WinForms and Windows Presentation Foundation GUI elements as well.</p>
 </div>
 <div class="section" id="access-your-data">
-<span id="introduction-access-your-data"></span><h3><span class="section-number">1.15.4. </span>Access Your Data<a class="headerlink" href="#access-your-data" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-access-your-data"></span><h3><span class="section-number">1.15.4. </span>Access Your Data<a class="headerlink" href="#access-your-data" title="Permalink to this headline">#</a></h3>
 <p>Of course, Dyalog APL has facilities to access data files, and SQL databases like Oracle, SQL Server, or other popular databases. These interfaces allow you to visualise and process part or all of a database as if it were an array, to which you can apply all the array processing functions available in APL. That saves you a lot of heavy programming tasks.</p>
 <p>Dyalog APL has also its own powerful file system. These files are collections of arrays of any shapes or sizes, which can be processed with the full power of the language. Databases built with this special feature are extremely compact (2 to 3 times smaller than an equivalent relational database). They can be shared, and they offer much greater flexibility and superior performance compared to traditional database management systems.</p>
 </div>
 <div class="section" id="build-an-efficient-partnership-with-microsoft-excel">
-<span id="introduction-build-an-efficient-partnership-with-microsoft-excel"></span><h3><span class="section-number">1.15.5. </span>Build an Efficient Partnership With Microsoft Excel<a class="headerlink" href="#build-an-efficient-partnership-with-microsoft-excel" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-build-an-efficient-partnership-with-microsoft-excel"></span><h3><span class="section-number">1.15.5. </span>Build an Efficient Partnership With Microsoft Excel<a class="headerlink" href="#build-an-efficient-partnership-with-microsoft-excel" title="Permalink to this headline">#</a></h3>
 <p>Microsoft Excel, probably the most popular spreadsheet manager, is used all over the world by millions of people. It appears that Excel is an easy way to enter data into a computer in a tabular form, and it is also an excellent product to produce everyday business reports and graphs.</p>
 <p>While Excel is convenient for small business applications, it is too limited to process complex calculations, or when some operations involve data located in many workbooks.</p>
 <p>Excel and APL can easily be combined in an efficient partnership. Excel is used to input data in a very flexible way into spreadsheets, which most users are familiar with. APL can then read dozens (and sometimes hundreds) of sheets, aggregate the data, and perform very complex calculations, which may be controlled and parameterised through the GUI interface. Of course, the results can be printed, but they can also be output to the users in the form of specially prepared Excel worksheets. In these worksheets, the users can proceed to additional operations for their particular needs, or produce graphs of their own.</p>
 </div>
 <div class="section" id="and-also">
-<span id="introduction-and-also"></span><h3><span class="section-number">1.15.6. </span>And Also…<a class="headerlink" href="#and-also" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-and-also"></span><h3><span class="section-number">1.15.6. </span>And Also…<a class="headerlink" href="#and-also" title="Permalink to this headline">#</a></h3>
 <p>You can interface APL with the Internet, write your own web server, use multithreading to process simultaneous tasks, use all the advantages of true <em>object oriented programming</em>, and use many attractive features, which are beyond the scope of this quick survey.</p>
 </div>
 </div>
 <div class="section" id="faq">
-<span id="introduction-faq"></span><h2><span class="section-number">1.16. </span>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h2>
+<span id="introduction-faq"></span><h2><span class="section-number">1.16. </span>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">#</a></h2>
 <p>Perhaps you have found this language rather engaging, but before you decide to invest time and energy in developing APL applications, you would like to be sure of your choice. Let’s give you some answers.</p>
 <div class="section" id="is-dyalog-apl-a-professional-tool">
-<span id="introduction-is-dyalog-apl-a-professional-tool"></span><h3><span class="section-number">1.16.1. </span>Is Dyalog APL A Professional Tool?<a class="headerlink" href="#is-dyalog-apl-a-professional-tool" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-is-dyalog-apl-a-professional-tool"></span><h3><span class="section-number">1.16.1. </span>Is Dyalog APL A Professional Tool?<a class="headerlink" href="#is-dyalog-apl-a-professional-tool" title="Permalink to this headline">#</a></h3>
 <p>Among many others, here are some significant examples of important applications:</p>
 <ul class="simple">
 <li><p>long-term board-level financial planning for one of the world’s five biggest petroleum companies, used over 12 years;</p></li>
@@ -2284,7 +2637,7 @@ a t e
 <p>So we can answer: yes, for a reasonable cost in labour, APL makes it possible to create, maintain, support, and further develop large, sensitive applications of the highest level of quality, reliability, and flexibility.</p>
 </div>
 <div class="section" id="can-dyalog-apl-fit-a-professional-developer-s-needs">
-<span id="introduction-can-dyalog-apl-fit-a-professional-developers-needs"></span><h3><span class="section-number">1.16.2. </span>Can Dyalog APL Fit a Professional Developer’s Needs?<a class="headerlink" href="#can-dyalog-apl-fit-a-professional-developer-s-needs" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-can-dyalog-apl-fit-a-professional-developers-needs"></span><h3><span class="section-number">1.16.2. </span>Can Dyalog APL Fit a Professional Developer’s Needs?<a class="headerlink" href="#can-dyalog-apl-fit-a-professional-developer-s-needs" title="Permalink to this headline">#</a></h3>
 <p>The characteristics of APL make it easy to use, lead to quick development, and help to produce light and flexible code. Programs developed in APL can evolve quickly, to fit changing user requirements at will. Here are some characteristics of APL to take into account:</p>
 <ul class="simple">
 <li><p>because APL uses symbols rather than words to represent operations, a programmer can use any word for his own data and functions’ names; they will never be in conflict with the language structure and contents;</p></li>
@@ -2295,7 +2648,7 @@ a t e
 </ul>
 </div>
 <div class="section" id="where-is-apl-typically-used">
-<span id="introduction-where-is-apl-typically-used"></span><h3><span class="section-number">1.16.3. </span>Where is APL Typically Used?<a class="headerlink" href="#where-is-apl-typically-used" title="Permalink to this headline">¶</a></h3>
+<span id="introduction-where-is-apl-typically-used"></span><h3><span class="section-number">1.16.3. </span>Where is APL Typically Used?<a class="headerlink" href="#where-is-apl-typically-used" title="Permalink to this headline">#</a></h3>
 <p>APL is typically used in situations where there is a lot to be gained if people who understand a problem can be closely involved in developing solutions. Sometimes application code is written in the afternoon by the same people who read the latest research reports or legislation in the morning - or by members of a very small team who have overlapping skills.</p>
 <p>In a more traditional approach, in which the specialist teams would need the help of professional programmers, such teams may find that valuable information was lost in the “process”, so that several iterations would be required in order to reach a satisfactory solution. Especially when a problem has a mathematical or technical foundation, APL can turbo-charge the development cycle.</p>
 <p>Even if there is no immediate urgency, APL allows the path between “users and coders” to be much shorter than is the case when “traditional” technologies, in which <em>requirement gathering</em>, <em>specification</em>, <em>architecture</em> and <em>coding</em> are often handled by separate teams. If you have a novel idea that you would like to investigate (or “get to market”) quickly, you may reach your goal very much more easily by learning APL or employing a small team of APL developers (who will be able to “speak your language”), rather than becoming or using “programmers” to develop solutions for you.</p>
@@ -2309,7 +2662,7 @@ a t e
 <p>If you still think APL might be the very tool you need, you are ready to read the full text of the following tutorial. You will revisit some of the examples you have seen above, plus many, many others.</p>
 <div class="figure align-default" id="back-to-c">
 <span id="fig-back-to-c"></span><img alt="_images/back_to_C.png" src="_images/back_to_C.png" />
-<p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text">A sad man complaining about having to code in C#.</span><a class="headerlink" href="#back-to-c" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text">A sad man complaining about having to code in C#.</span><a class="headerlink" href="#back-to-c" title="Permalink to this image">#</a></p>
 </div>
 </div>
 </div>
@@ -2337,60 +2690,54 @@ a t e
 
               </div>
               
-        
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="README.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Mastering Dyalog APL</p>
-            </div>
-        </a>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Mastering Dyalog APL</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Getting-Started.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Getting Started</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="Getting-Started.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">2. </span>Getting Started</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Bernard Legrand, reworked by Rodrigo Girão Serrão.<br/>
-        
-          <div class="extra_footer">
-            <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Bernard Legrand, reworked by Rodrigo Girão Serrão.<br/>
+  
+    <div class="extra_footer">
+      <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
   <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
 </a></p>
 <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
 
-          </div>
-      </p>
     </div>
-  </footer>
-</main>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
+
   </body>
 </html>

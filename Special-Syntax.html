@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>9. Special Syntax &#8212; Mastering Dyalog APL</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,48 +19,61 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="10. Nested Arrays (Continued)" href="Nested-Arrays-Continued.html" />
     <link rel="prev" title="8. Working on Data Shape" href="Working-on-Data-Shape.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -68,9 +82,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -135,96 +150,203 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="Operators.html">
+   11. Operators
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="Appendices.html">
-   11. Appendices
+   12. Appendices
   </a>
  </li>
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Special-Syntax.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/Dyalog/MDAPL"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        
-        <a class="edit-button" href="https://github.com/Dyalog/MDAPL/edit/master/docs/Special-Syntax.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Dyalog/MDAPL"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Dyalog/MDAPL/edit/master/docs/Special-Syntax.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Special-Syntax.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modified-assignment">
    9.1. Modified Assignment
@@ -278,23 +400,92 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Special Syntax</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modified-assignment">
+   9.1. Modified Assignment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#application">
+     9.1.1. Application
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-assignment">
+   9.2. Multiple Assignment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#introduction">
+     9.2.1. Introduction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-parentheses">
+     9.2.2. Using Parentheses
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selective-assignment">
+   9.3. Selective Assignment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quick-overview">
+     9.3.1. Quick Overview
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#available-primitives">
+     9.3.2. Available Primitives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     9.3.3. Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="special-syntax">
-<span id="special-syntax-special-syntax"></span><h1><span class="section-number">9. </span>Special Syntax<a class="headerlink" href="#special-syntax" title="Permalink to this headline">¶</a></h1>
+<span id="special-syntax-special-syntax"></span><h1><span class="section-number">9. </span>Special Syntax<a class="headerlink" href="#special-syntax" title="Permalink to this headline">#</a></h1>
 <div class="section" id="modified-assignment">
-<span id="special-syntax-modified-assignment"></span><h2><span class="section-number">9.1. </span>Modified Assignment<a class="headerlink" href="#modified-assignment" title="Permalink to this headline">¶</a></h2>
+<span id="special-syntax-modified-assignment"></span><h2><span class="section-number">9.1. </span>Modified Assignment<a class="headerlink" href="#modified-assignment" title="Permalink to this headline">#</a></h2>
 <p>Changes to a variable, like</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="kd">←</span> <span class="m">4</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">4</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -302,7 +493,7 @@
 <p>or</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">languages</span> <span class="kd">←</span> <span class="s1">&#39;APLL&#39;</span> <span class="s1">&#39;Pithon&#39;</span> <span class="s1">&#39;Jaba&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">languages</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="s1">&#39;APLL&#39;</span><span class="w"> </span><span class="s1">&#39;Pithon&#39;</span><span class="w"> </span><span class="s1">&#39;Jaba&#39;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -310,7 +501,7 @@
 <p>frequently involve modifying its current value, and such expressions naturally contain two references to its name:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">a</span> <span class="kd">←</span> <span class="nv">a</span> <span class="o">+</span> <span class="m">1</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -321,7 +512,7 @@
 <p>or</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">languages</span> <span class="kd">←</span> <span class="nv">languages</span><span class="o">,</span><span class="s1">&#39;Cee&#39;</span> <span class="s1">&#39;Paskal&#39;</span> <span class="s1">&#39;Russt&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">languages</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nv">languages</span><span class="o">,</span><span class="s1">&#39;Cee&#39;</span><span class="w"> </span><span class="s1">&#39;Paskal&#39;</span><span class="w"> </span><span class="s1">&#39;Russt&#39;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -333,7 +524,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">languageThousandsUsersByYear</span> <span class="kd">←</span> <span class="m">4</span> <span class="m">6</span><span class="o">⍴</span><span class="m">2562</span> <span class="m">2435</span> <span class="m">3254</span> <span class="m">9843</span> <span class="m">6234</span> <span class="m">2634</span> <span class="m">2345</span> <span class="m">6543</span> <span class="m">9875</span> <span class="m">2452</span> <span class="m">5645</span> <span class="m">2345</span> <span class="m">3411</span> <span class="m">5462</span> <span class="m">8787</span> <span class="m">2435</span> <span class="m">2435</span> <span class="m">7634</span> <span class="m">5632</span> <span class="m">6543</span> <span class="m">2345</span> <span class="m">2345</span> <span class="m">6486</span> <span class="m">3452</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">languageThousandsUsersByYear</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">6</span><span class="o">⍴</span><span class="m">2562</span><span class="w"> </span><span class="m">2435</span><span class="w"> </span><span class="m">3254</span><span class="w"> </span><span class="m">9843</span><span class="w"> </span><span class="m">6234</span><span class="w"> </span><span class="m">2634</span><span class="w"> </span><span class="m">2345</span><span class="w"> </span><span class="m">6543</span><span class="w"> </span><span class="m">9875</span><span class="w"> </span><span class="m">2452</span><span class="w"> </span><span class="m">5645</span><span class="w"> </span><span class="m">2345</span><span class="w"> </span><span class="m">3411</span><span class="w"> </span><span class="m">5462</span><span class="w"> </span><span class="m">8787</span><span class="w"> </span><span class="m">2435</span><span class="w"> </span><span class="m">2435</span><span class="w"> </span><span class="m">7634</span><span class="w"> </span><span class="m">5632</span><span class="w"> </span><span class="m">6543</span><span class="w"> </span><span class="m">2345</span><span class="w"> </span><span class="m">2345</span><span class="w"> </span><span class="m">6486</span><span class="w"> </span><span class="m">3452</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -348,7 +539,7 @@
 <p>If you want to change just part of the variable using indexing, there is even more repetition:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">languageThousandsUsersByYear</span><span class="sr">[</span><span class="m">2</span> <span class="m">3</span><span class="sr">;</span><span class="m">1</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span><span class="sr">]</span> <span class="kd">←</span> <span class="nv">languageThousandsUsersByYear</span><span class="sr">[</span><span class="m">2</span> <span class="m">3</span><span class="sr">;</span><span class="m">1</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span><span class="sr">]</span> <span class="o">-</span> <span class="m">100</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">languageThousandsUsersByYear</span><span class="sr">[</span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="sr">;</span><span class="m">1</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="sr">]</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nv">languageThousandsUsersByYear</span><span class="sr">[</span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="sr">;</span><span class="m">1</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="sr">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">100</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -364,7 +555,7 @@ This array would otherwise appear as the right argument of the function:</p>
 <p>Instead of <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">←</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">1</span></code>, one can write</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="o">+</span><span class="kd">←</span> <span class="m">1</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span><span class="w"> </span><span class="o">+</span><span class="kd">←</span><span class="w"> </span><span class="m">1</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -372,7 +563,7 @@ This array would otherwise appear as the right argument of the function:</p>
 <p>And instead of <code class="docutils literal notranslate"><span class="pre">languages</span> <span class="pre">←</span> <span class="pre">languages,'Cee'</span> <span class="pre">'Paskal'</span> <span class="pre">'Russt'</span></code> one can write</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">languages</span> <span class="o">,</span><span class="kd">←</span> <span class="s1">&#39;Cee&#39;</span> <span class="s1">&#39;Paskal&#39;</span> <span class="s1">&#39;Russt&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">languages</span><span class="w"> </span><span class="o">,</span><span class="kd">←</span><span class="w"> </span><span class="s1">&#39;Cee&#39;</span><span class="w"> </span><span class="s1">&#39;Paskal&#39;</span><span class="w"> </span><span class="s1">&#39;Russt&#39;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -380,7 +571,7 @@ This array would otherwise appear as the right argument of the function:</p>
 <p>Using <em>modified assignment</em>, the other expression can be rewritten as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">languageThousandsUsersByYear</span><span class="sr">[</span><span class="m">2</span> <span class="m">3</span><span class="sr">;</span><span class="m">1</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span><span class="sr">]</span> <span class="o">-</span><span class="kd">←</span> <span class="m">100</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">languageThousandsUsersByYear</span><span class="sr">[</span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="sr">;</span><span class="m">1</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="sr">]</span><span class="w"> </span><span class="o">-</span><span class="kd">←</span><span class="w"> </span><span class="m">100</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -388,14 +579,14 @@ This array would otherwise appear as the right argument of the function:</p>
 <p><em>Modified assignment</em> is concise and can reduce errors (such as misspelling the variable name in the second part of the expression).</p>
 <p>However, there is a disadvantage to <em>modified assignment</em>: when reading a statement it is very easy to miss the function to the left of the assignment arrow and assume that the statement contains a plain assignment.</p>
 <div class="section" id="application">
-<span id="special-syntax-application"></span><h3><span class="section-number">9.1.1. </span>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h3>
+<span id="special-syntax-application"></span><h3><span class="section-number">9.1.1. </span>Application<a class="headerlink" href="#application" title="Permalink to this headline">#</a></h3>
 <p><em>Modified assignment</em> can be used to enter a very long list of values, which would otherwise exceed the screen width, as illustrated in the following example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">vec</span>  <span class="kd">←</span> <span class="m">52</span> <span class="m">17</span> <span class="m">39</span> <span class="m">77</span> <span class="m">40</span> <span class="m">17</span> <span class="m">29</span> <span class="m">0</span> <span class="m">0</span> <span class="m">14</span>
-<span class="nv">vec</span> <span class="o">,</span><span class="kd">←</span> <span class="m">80</span> <span class="m">12</span> <span class="m">31</span> <span class="m">46</span> <span class="m">100</span> <span class="m">51</span> <span class="m">49</span> <span class="m">43</span> <span class="m">21</span>
-<span class="nv">vec</span> <span class="o">,</span><span class="kd">←</span> <span class="m">17</span> <span class="m">18</span> <span class="m">19</span> <span class="m">63</span> <span class="m">61</span> <span class="m">70</span> <span class="m">44</span> <span class="m">0</span> <span class="m">20</span> <span class="m">11</span>
-<span class="nv">vec</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">vec</span><span class="w">  </span><span class="kd">←</span><span class="w"> </span><span class="m">52</span><span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">39</span><span class="w"> </span><span class="m">77</span><span class="w"> </span><span class="m">40</span><span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">29</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">14</span><span class="w"></span>
+<span class="nv">vec</span><span class="w"> </span><span class="o">,</span><span class="kd">←</span><span class="w"> </span><span class="m">80</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">31</span><span class="w"> </span><span class="m">46</span><span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="m">51</span><span class="w"> </span><span class="m">49</span><span class="w"> </span><span class="m">43</span><span class="w"> </span><span class="m">21</span><span class="w"></span>
+<span class="nv">vec</span><span class="w"> </span><span class="o">,</span><span class="kd">←</span><span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">19</span><span class="w"> </span><span class="m">63</span><span class="w"> </span><span class="m">61</span><span class="w"> </span><span class="m">70</span><span class="w"> </span><span class="m">44</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">11</span><span class="w"></span>
+<span class="nv">vec</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -407,21 +598,21 @@ This array would otherwise appear as the right argument of the function:</p>
 </div>
 </div>
 <div class="section" id="multiple-assignment">
-<span id="special-syntax-multiple-assignment"></span><h2><span class="section-number">9.2. </span>Multiple Assignment<a class="headerlink" href="#multiple-assignment" title="Permalink to this headline">¶</a></h2>
+<span id="special-syntax-multiple-assignment"></span><h2><span class="section-number">9.2. </span>Multiple Assignment<a class="headerlink" href="#multiple-assignment" title="Permalink to this headline">#</a></h2>
 <div class="section" id="introduction">
-<span id="special-syntax-introduction"></span><h3><span class="section-number">9.2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<span id="special-syntax-introduction"></span><h3><span class="section-number">9.2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h3>
 <p>It is possible to assign several values to several variables at the same time.
 This is as true for nested arrays as it is for simple arrays:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">)</span> <span class="kd">←</span> <span class="m">23</span> <span class="m">41</span> <span class="m">56</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nv">c</span><span class="p">)</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">41</span><span class="w"> </span><span class="m">56</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -431,7 +622,7 @@ This is as true for nested arrays as it is for simple arrays:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">b</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">b</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -441,7 +632,7 @@ This is as true for nested arrays as it is for simple arrays:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">c</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">c</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -451,14 +642,14 @@ This is as true for nested arrays as it is for simple arrays:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">d</span> <span class="nv">e</span> <span class="nv">f</span><span class="p">)</span> <span class="kd">←</span> <span class="p">(</span><span class="m">20</span> <span class="m">61</span><span class="p">)</span> <span class="p">(</span><span class="m">2</span> <span class="m">2</span><span class="o">⍴⍳</span><span class="m">4</span><span class="p">)</span> <span class="s1">&#39;Africa&#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">d</span><span class="w"> </span><span class="nv">e</span><span class="w"> </span><span class="nv">f</span><span class="p">)</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="p">(</span><span class="m">20</span><span class="w"> </span><span class="m">61</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="m">2</span><span class="w"> </span><span class="m">2</span><span class="o">⍴⍳</span><span class="m">4</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;Africa&#39;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">d</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">d</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -468,7 +659,7 @@ This is as true for nested arrays as it is for simple arrays:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">e</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">e</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -479,7 +670,7 @@ This is as true for nested arrays as it is for simple arrays:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">f</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">f</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -494,14 +685,14 @@ This technique, called <em>multiple assignment</em>, is a simple way to split th
 For example, we can update <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">c</span></code> (which we have just set to <code class="docutils literal notranslate"><span class="pre">23</span></code>, <code class="docutils literal notranslate"><span class="pre">41</span></code>, and <code class="docutils literal notranslate"><span class="pre">56</span></code>, respectively), as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span><span class="p">)</span> <span class="o">+</span><span class="kd">←</span> <span class="m">57</span> <span class="p">(</span><span class="m">19</span> <span class="m">¯16</span><span class="p">)</span> <span class="p">(</span><span class="m">2</span> <span class="m">3</span><span class="o">⍴⍳</span><span class="m">6</span><span class="p">)</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nv">c</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="kd">←</span><span class="w"> </span><span class="m">57</span><span class="w"> </span><span class="p">(</span><span class="m">19</span><span class="w"> </span><span class="m">¯16</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="o">⍴⍳</span><span class="m">6</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nv">c</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -515,7 +706,7 @@ For example, we can update <code class="docutils literal notranslate"><span clas
 <p>Of course, the number of variable names must be equal to the length of the vector to the right of the assignment arrow, otherwise a <code class="docutils literal notranslate"><span class="pre">LENGTH</span> <span class="pre">ERROR</span></code> is issued:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">a</span> <span class="nv">b</span><span class="p">)</span> <span class="kd">←</span> <span class="m">23</span> <span class="m">41</span> <span class="m">56</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">41</span><span class="w"> </span><span class="m">56</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -529,12 +720,12 @@ For example, we can update <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <div class="section" id="using-parentheses">
-<span id="special-syntax-using-parentheses"></span><h3><span class="section-number">9.2.2. </span>Using Parentheses<a class="headerlink" href="#using-parentheses" title="Permalink to this headline">¶</a></h3>
+<span id="special-syntax-using-parentheses"></span><h3><span class="section-number">9.2.2. </span>Using Parentheses<a class="headerlink" href="#using-parentheses" title="Permalink to this headline">#</a></h3>
 <p>As we have already mentioned in <a class="reference internal" href="Data-and-Variables.html"><span class="doc std std-doc">the “Data and Variables” chapter</span></a>, for clarity and also for compatibility with other APL systems, we recommend that you parenthesise the names of the variables to the left of the arrow.
 However, this is not mandatory in Dyalog APL and you may come across the following syntax, especially in environments where compatibility with other APL systems is not an issue:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="kd">←</span> <span class="m">23</span> <span class="m">41</span> <span class="m">56</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">41</span><span class="w"> </span><span class="m">56</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -542,7 +733,7 @@ However, this is not mandatory in Dyalog APL and you may come across the followi
 <p>However this is highly discouraged. Using parentheses indicates much more clearly the intent of performing multiple assignment and helps prevent some erroneous behaviour. For example, notice how the expression below raises an error because we are trying to assign <code class="docutils literal notranslate"><span class="pre">5</span></code> to <code class="docutils literal notranslate"><span class="pre">3</span></code>, and yet, <code class="docutils literal notranslate"><span class="pre">var</span></code> gets assigned <code class="docutils literal notranslate"><span class="pre">5</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">var</span> <span class="m">3</span> <span class="kd">←</span> <span class="m">5</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">var</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">5</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -556,7 +747,7 @@ However, this is not mandatory in Dyalog APL and you may come across the followi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">var</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">var</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -567,7 +758,7 @@ However, this is not mandatory in Dyalog APL and you may come across the followi
 <p>However, if we use parentheses the assignment is not performed at all:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">var</span> <span class="m">3</span><span class="p">)</span> <span class="kd">←</span> <span class="m">50</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nv">var</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">50</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -581,7 +772,7 @@ However, this is not mandatory in Dyalog APL and you may come across the followi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">var</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">var</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -591,7 +782,7 @@ However, this is not mandatory in Dyalog APL and you may come across the followi
 </div>
 <p>If you still aren’t convinced that unparenthesised multiple assignment is evil, another argument against it is that multiple assignments can be ambiguous to read.
 For example, what does</p>
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="kd">←</span> <span class="m">42</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">42</span><span class="w"></span>
 </pre></div>
 </div>
 <p>do?</p>
@@ -599,15 +790,15 @@ For example, what does</p>
 For example, if all three variables are arrays, then we reassign them:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="kd">←</span> <span class="nv">b</span> <span class="kd">←</span> <span class="nv">c</span> <span class="kd">←</span> <span class="m">0</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">0</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="kd">←</span> <span class="m">42</span>
-<span class="vg">⎕</span><span class="kd">←</span> <span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">42</span><span class="w"></span>
+<span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nv">c</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -618,17 +809,17 @@ For example, if all three variables are arrays, then we reassign them:</p>
 <p>However, if <code class="docutils literal notranslate"><span class="pre">c</span></code> were a function, for example <code class="docutils literal notranslate"><span class="pre">-</span></code>, this is what we get:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">)</span><span class="nv">erase</span> <span class="nv">c</span>
-<span class="nv">c</span> <span class="kd">←</span> <span class="o">-</span>
-<span class="nv">a</span> <span class="kd">←</span> <span class="nv">b</span> <span class="kd">←</span> <span class="m">0</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">)</span><span class="nv">erase</span><span class="w"> </span><span class="nv">c</span><span class="w"></span>
+<span class="nv">c</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="o">-</span><span class="w"></span>
+<span class="nv">a</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">0</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span> <span class="nv">b</span> <span class="nv">c</span> <span class="kd">←</span> <span class="m">42</span>
-<span class="vg">⎕</span><span class="kd">←</span> <span class="nv">a</span> <span class="nv">b</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">42</span><span class="w"></span>
+<span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -640,13 +831,13 @@ For example, if all three variables are arrays, then we reassign them:</p>
 </div>
 </div>
 <div class="section" id="selective-assignment">
-<span id="special-syntax-selective-assignment"></span><h2><span class="section-number">9.3. </span>Selective Assignment<a class="headerlink" href="#selective-assignment" title="Permalink to this headline">¶</a></h2>
+<span id="special-syntax-selective-assignment"></span><h2><span class="section-number">9.3. </span>Selective Assignment<a class="headerlink" href="#selective-assignment" title="Permalink to this headline">#</a></h2>
 <div class="section" id="quick-overview">
-<span id="special-syntax-quick-overview"></span><h3><span class="section-number">9.3.1. </span>Quick Overview<a class="headerlink" href="#quick-overview" title="Permalink to this headline">¶</a></h3>
+<span id="special-syntax-quick-overview"></span><h3><span class="section-number">9.3.1. </span>Quick Overview<a class="headerlink" href="#quick-overview" title="Permalink to this headline">#</a></h3>
 <p>Let us consider the following matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">mat</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">4</span><span class="o">⍴</span><span class="m">13</span> <span class="m">52</span> <span class="m">33</span> <span class="m">81</span> <span class="m">42</span> <span class="m">62</span> <span class="m">70</span> <span class="m">47</span> <span class="m">51</span> <span class="m">73</span> <span class="m">28</span> <span class="m">19</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">mat</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="o">⍴</span><span class="m">13</span><span class="w"> </span><span class="m">52</span><span class="w"> </span><span class="m">33</span><span class="w"> </span><span class="m">81</span><span class="w"> </span><span class="m">42</span><span class="w"> </span><span class="m">62</span><span class="w"> </span><span class="m">70</span><span class="w"> </span><span class="m">47</span><span class="w"> </span><span class="m">51</span><span class="w"> </span><span class="m">73</span><span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">19</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -659,7 +850,7 @@ For example, if all three variables are arrays, then we reassign them:</p>
 <p>It is easy to select (extract) the first row and a half of that matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">6</span><span class="o">⍴</span><span class="nv">mat</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">6</span><span class="o">⍴</span><span class="nv">mat</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -671,9 +862,9 @@ For example, if all three variables are arrays, then we reassign them:</p>
 Previously, we would have had to use two steps:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">mat</span><span class="sr">[</span><span class="m">1</span><span class="sr">;]</span> <span class="kd">←</span> <span class="m">37</span> <span class="m">38</span> <span class="m">11</span> <span class="m">12</span>
-<span class="nv">mat</span><span class="sr">[</span><span class="m">2</span><span class="sr">;</span><span class="m">1</span> <span class="m">2</span><span class="sr">]</span> <span class="kd">←</span> <span class="m">20</span> <span class="m">88</span>
-<span class="nv">mat</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">mat</span><span class="sr">[</span><span class="m">1</span><span class="sr">;]</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">37</span><span class="w"> </span><span class="m">38</span><span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">12</span><span class="w"></span>
+<span class="nv">mat</span><span class="sr">[</span><span class="m">2</span><span class="sr">;</span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="sr">]</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">88</span><span class="w"></span>
+<span class="nv">mat</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -690,9 +881,9 @@ The replacement array appears on the right.</p>
 <p>Let us restore <code class="docutils literal notranslate"><span class="pre">mat</span></code> to its original state, and try out this new technique:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">mat</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">4</span><span class="o">⍴</span><span class="m">13</span> <span class="m">52</span> <span class="m">33</span> <span class="m">81</span> <span class="m">42</span> <span class="m">62</span> <span class="m">70</span> <span class="m">47</span> <span class="m">51</span> <span class="m">73</span> <span class="m">28</span> <span class="m">19</span>
-<span class="p">(</span><span class="m">6</span><span class="o">⍴</span><span class="nv">mat</span><span class="p">)</span> <span class="kd">←</span> <span class="m">37</span> <span class="m">38</span> <span class="m">11</span> <span class="m">12</span> <span class="m">20</span> <span class="m">88</span>
-<span class="nv">mat</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">mat</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="o">⍴</span><span class="m">13</span><span class="w"> </span><span class="m">52</span><span class="w"> </span><span class="m">33</span><span class="w"> </span><span class="m">81</span><span class="w"> </span><span class="m">42</span><span class="w"> </span><span class="m">62</span><span class="w"> </span><span class="m">70</span><span class="w"> </span><span class="m">47</span><span class="w"> </span><span class="m">51</span><span class="w"> </span><span class="m">73</span><span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">19</span><span class="w"></span>
+<span class="p">(</span><span class="m">6</span><span class="o">⍴</span><span class="nv">mat</span><span class="p">)</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">37</span><span class="w"> </span><span class="m">38</span><span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">88</span><span class="w"></span>
+<span class="nv">mat</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -711,7 +902,7 @@ In this case, <code class="docutils literal notranslate"><span class="pre">6⍴m
 <p>This is also true if we select/replace a sub-matrix of <code class="docutils literal notranslate"><span class="pre">mat</span></code> using <em>take</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯2</span> <span class="m">3</span><span class="o">↑</span><span class="nv">mat</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">¯2</span><span class="w"> </span><span class="m">3</span><span class="o">↑</span><span class="nv">mat</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -722,8 +913,8 @@ In this case, <code class="docutils literal notranslate"><span class="pre">6⍴m
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">¯2</span> <span class="m">3</span><span class="o">↑</span><span class="nv">mat</span><span class="p">)</span> <span class="kd">←</span> <span class="m">2</span> <span class="m">3</span><span class="o">⍴</span><span class="m">10</span><span class="o">×⍳</span><span class="m">6</span>
-<span class="nv">mat</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">¯2</span><span class="w"> </span><span class="m">3</span><span class="o">↑</span><span class="nv">mat</span><span class="p">)</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="o">⍴</span><span class="m">10</span><span class="o">×⍳</span><span class="m">6</span><span class="w"></span>
+<span class="nv">mat</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -736,8 +927,8 @@ In this case, <code class="docutils literal notranslate"><span class="pre">6⍴m
 <p>We can even try using a nested replacement array, here using <em>drop</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span> <span class="m">1</span><span class="o">↓</span><span class="nv">mat</span><span class="p">)</span> <span class="kd">←</span> <span class="m">2</span> <span class="m">3</span><span class="o">⍴</span><span class="s1">&#39;To&#39;</span> <span class="s1">&#39;be&#39;</span> <span class="s1">&#39;or&#39;</span> <span class="s1">&#39;not&#39;</span> <span class="s1">&#39;to&#39;</span> <span class="s1">&#39;be&#39;</span>
-<span class="nv">mat</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="o">↓</span><span class="nv">mat</span><span class="p">)</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="o">⍴</span><span class="s1">&#39;To&#39;</span><span class="w"> </span><span class="s1">&#39;be&#39;</span><span class="w"> </span><span class="s1">&#39;or&#39;</span><span class="w"> </span><span class="s1">&#39;not&#39;</span><span class="w"> </span><span class="s1">&#39;to&#39;</span><span class="w"> </span><span class="s1">&#39;be&#39;</span><span class="w"></span>
+<span class="nv">mat</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -756,8 +947,8 @@ If the parentheses are omitted, the selection expression will just act like an e
 <p>Compare the value of <code class="docutils literal notranslate"><span class="pre">mat</span></code> here:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span><span class="o">⍴</span><span class="nv">mat</span><span class="p">)</span> <span class="kd">←</span> <span class="m">999</span>
-<span class="nv">mat</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span><span class="o">⍴</span><span class="nv">mat</span><span class="p">)</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">999</span><span class="w"></span>
+<span class="nv">mat</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -774,8 +965,8 @@ If the parentheses are omitted, the selection expression will just act like an e
 <p>with the value of <code class="docutils literal notranslate"><span class="pre">mat</span></code> here:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="o">⍴</span><span class="nv">mat</span> <span class="kd">←</span> <span class="m">888</span>
-<span class="nv">mat</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="o">⍴</span><span class="nv">mat</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">888</span><span class="w"></span>
+<span class="nv">mat</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -786,7 +977,7 @@ If the parentheses are omitted, the selection expression will just act like an e
 </div>
 </div>
 <div class="section" id="available-primitives">
-<span id="special-syntax-available-primitives"></span><h3><span class="section-number">9.3.2. </span>Available Primitives<a class="headerlink" href="#available-primitives" title="Permalink to this headline">¶</a></h3>
+<span id="special-syntax-available-primitives"></span><h3><span class="section-number">9.3.2. </span>Available Primitives<a class="headerlink" href="#available-primitives" title="Permalink to this headline">#</a></h3>
 <p>This technique cannot be used with every single primitive function; only the following selection functions are allowed.
 When appropriate, these functions can also be used with an <em>axis</em> specification:</p>
 <ul class="simple">
@@ -806,12 +997,12 @@ When appropriate, these functions can also be used with an <em>axis</em> specifi
 <p>Some of the functions listed here haven’t been introduced yet, but will be soon.</p>
 </div>
 <div class="section" id="examples">
-<span id="special-syntax-examples"></span><h3><span class="section-number">9.3.3. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<span id="special-syntax-examples"></span><h3><span class="section-number">9.3.3. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h3>
 <p>One of the most interesting selection tools is <em>compress</em>.
 Let us restore <code class="docutils literal notranslate"><span class="pre">mat</span></code> again:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">mat</span> <span class="kd">←</span> <span class="m">3</span> <span class="m">4</span><span class="o">⍴</span><span class="m">13</span> <span class="m">52</span> <span class="m">33</span> <span class="m">81</span> <span class="m">42</span> <span class="m">62</span> <span class="m">70</span> <span class="m">47</span> <span class="m">51</span> <span class="m">73</span> <span class="m">28</span> <span class="m">19</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">mat</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">4</span><span class="o">⍴</span><span class="m">13</span><span class="w"> </span><span class="m">52</span><span class="w"> </span><span class="m">33</span><span class="w"> </span><span class="m">81</span><span class="w"> </span><span class="m">42</span><span class="w"> </span><span class="m">62</span><span class="w"> </span><span class="m">70</span><span class="w"> </span><span class="m">47</span><span class="w"> </span><span class="m">51</span><span class="w"> </span><span class="m">73</span><span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">19</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -824,8 +1015,8 @@ Let us restore <code class="docutils literal notranslate"><span class="pre">mat<
 <p>How can we negate all the values which are smaller than 40?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="o">,</span><span class="nv">mat</span><span class="o">&lt;</span><span class="m">40</span><span class="p">)</span><span class="na">/</span><span class="o">,</span><span class="nv">mat</span><span class="p">)</span> <span class="o">×</span><span class="kd">←</span> <span class="m">¯1</span>
-<span class="nv">mat</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="o">,</span><span class="nv">mat</span><span class="o">&lt;</span><span class="m">40</span><span class="p">)</span><span class="na">/</span><span class="o">,</span><span class="nv">mat</span><span class="p">)</span><span class="w"> </span><span class="o">×</span><span class="kd">←</span><span class="w"> </span><span class="m">¯1</span><span class="w"></span>
+<span class="nv">mat</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -838,7 +1029,7 @@ Let us restore <code class="docutils literal notranslate"><span class="pre">mat<
 <p>We can also use <em>compress</em> to replace vowels scattered throughout a matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span> <span class="nv">monMat</span> <span class="kd">←</span> <span class="m">6</span> <span class="m">8</span><span class="o">⍴</span><span class="s1">&#39;January FebruaryMarch   April   May     June    &#39;</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="vg">⎕</span><span class="kd">←</span><span class="w"> </span><span class="nv">monMat</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="m">8</span><span class="o">⍴</span><span class="s1">&#39;January FebruaryMarch   April   May     June    &#39;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -853,8 +1044,8 @@ June
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="o">,</span><span class="nv">monMat</span><span class="o">∊</span><span class="s1">&#39;aeiouy&#39;</span><span class="p">)</span><span class="na">/</span><span class="o">,</span><span class="nv">monMat</span><span class="p">)</span> <span class="kd">←</span> <span class="s1">&#39;_&#39;</span>
-<span class="nv">monMat</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="o">,</span><span class="nv">monMat</span><span class="o">∊</span><span class="s1">&#39;aeiouy&#39;</span><span class="p">)</span><span class="na">/</span><span class="o">,</span><span class="nv">monMat</span><span class="p">)</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="s1">&#39;_&#39;</span><span class="w"></span>
+<span class="nv">monMat</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -867,12 +1058,12 @@ M__
 J_n_    
 </span></div></div>
 </div>
-<p>Later on, in <span class="xref myst">the chapter about operators</span>, we will learn about another tool that is suitable for this kind of job.</p>
+<p>Later on, in <a class="reference internal" href="Operators.html"><span class="doc std std-doc">the chapter about operators</span></a>, we will learn about another tool that is suitable for this kind of job.</p>
 <p>Using <em>dyadic transpose</em>, it is possible to select and modify a diagonal in a matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span> <span class="m">1</span><span class="o">⍉</span><span class="nv">mat</span><span class="p">)</span> <span class="kd">←</span> <span class="m">0</span>
-<span class="nv">mat</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="m">1</span><span class="o">⍉</span><span class="nv">mat</span><span class="p">)</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">0</span><span class="w"></span>
+<span class="nv">mat</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -886,8 +1077,8 @@ J_n_
 <p>The obvious:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">mat</span> <span class="kd">←</span> <span class="p">(</span><span class="o">⍴</span><span class="nv">mat</span><span class="p">)</span><span class="o">⍴⍳</span><span class="m">12</span>
-<span class="nv">mat</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">mat</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="p">(</span><span class="o">⍴</span><span class="nv">mat</span><span class="p">)</span><span class="o">⍴⍳</span><span class="m">12</span><span class="w"></span>
+<span class="nv">mat</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -900,8 +1091,8 @@ J_n_
 <p>And the one with <em>selective assignment</em>, using <em>ravel</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">,</span><span class="nv">mat</span><span class="p">)</span> <span class="kd">←</span> <span class="m">12</span><span class="o">+⍳</span><span class="m">12</span>
-<span class="nv">mat</span>
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="o">,</span><span class="nv">mat</span><span class="p">)</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="m">12</span><span class="o">+⍳</span><span class="m">12</span><span class="w"></span>
+<span class="nv">mat</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -937,60 +1128,54 @@ J_n_
 
               </div>
               
-        
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="Working-on-Data-Shape.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">8. </span>Working on Data Shape</p>
-            </div>
-        </a>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Working-on-Data-Shape.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">8. </span>Working on Data Shape</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Nested-Arrays-Continued.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">10. </span>Nested Arrays (Continued)</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="Nested-Arrays-Continued.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">10. </span>Nested Arrays (Continued)</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Bernard Legrand, reworked by Rodrigo Girão Serrão.<br/>
-        
-          <div class="extra_footer">
-            <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Bernard Legrand, reworked by Rodrigo Girão Serrão.<br/>
+  
+    <div class="extra_footer">
+      <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
   <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
 </a></p>
 <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
 
-          </div>
-      </p>
     </div>
-  </footer>
-</main>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
+
   </body>
 </html>
