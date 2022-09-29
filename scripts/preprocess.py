@@ -24,6 +24,7 @@ CUSTOM_ADMONITION_STYLES = {
     "advice": "tip",
     "example": "tip",
     "exercise": "hint",
+    "footnote": "note",
     "remark": "tip",
     "rule": "tip",
     "rules": "tip",
@@ -48,7 +49,7 @@ def generate_header_labels(filename, lines):
     i = 0
     label_prefix = safe_hyphenate(filename)
     while i < len(lines):
-        m = re.match(r"^(#)+ (.*)\n$", lines[i])
+        m = re.match(r"^(#)+ (.*?)\n?$", lines[i])
         if m:
             header_name = m.group(2)
             label_name = safe_hyphenate(header_name)

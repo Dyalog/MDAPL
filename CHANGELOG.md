@@ -7,6 +7,46 @@ In the first instance, it lists the changes between consecutive releases of this
 However, because this book is a rework of the first edition by Bernard Legrand,
 this changelog also marks with [n] content that is new in this rework.
 
+## 0.5.0
+
+  - Add chapter “Operators”:
+    - prefer “operand(s)” over “argument(s)” when talking about operators (the book seldom uses “operands”);
+    - refactor section on “Outer Product”:
+        - remove sub-subsection “Applications” > “Dispatching Items into Categories” (obsolete with the introduction of interval index, dyadic `⍸`);
+        - [n] add exercises on _outer product_;
+    - refactor section on “Inner Product”:
+      - include inner product explanatory diagrams as figures (there is no good way of including the explanatory diagrams as markdown tables or MathJax tables);
+      - remove obsolete example about `∧.=` (a long example showing how to use `∧.=` became obsolete with the extension of index of, dyadic `⍳`, to higher-rank arrays – instead, this example was moved to the exercises);
+      - reword sub-subsection “Is a Graph Contiguous?” (make the text more mathematically precise while keeping it light for people with no/little mathematical background);
+    - refactor intermission exercises:
+      - [n] add exercise about `∧.=` where we try to implement dyadic `⍳` on matrices with inner products, scans, and reductions;
+    - remove sections “Compose” and “Commute” (moved to chapter “Tacit Programming”)
+    - [n] add section “At” about `@`;
+    - [n] add section “Rank” about `⍤`;
+      - [n] explain rank in terms of frames;
+      - [n] define cells;
+      - [n] explain rank in terms of cells;
+    - [n] add section “Key” about `⌸`;
+    - [n] add section “Stencil” about `⌺`;
+    - refactor section “The Specialist's Section”:
+      - [n] write about rank outer products `F⍤99 j⍤k 99`;
+      - [n] write about a length-3 right operand to rank `⍤`;
+    - [n] add exercises:
+      - [n] redo the exercise on cross counting with key `⌸`;
+      - [n] add exercises to test new operators;
+      - [n] add exercises to compute frames when using rank `⍤`;
+  - [n] Write about “Choose Indexing” and “Reach Indexing” in the chapter “Nested Arrays (Continued)” (these types of indexing come in handy in later sections):
+    - [n] mention these techniques at “Data and Variables > Indexing > Even More Indexing”;
+  - Remove quotes from figure captions.
+  - Refactor “Variables” appendix:
+    - explicitly order variables by their first appearance;
+    - add cross-references to usage locations;
+  - Add custom admonition type for footnotes.
+  - Restyle footnote in Appendix with new custom admonition (footnotes, often marked with an asterisk `*` in the original book, are being marked with asterisks and then written out with an admonition called a `footnote`).
+  - Fix bug with preprocessing script (standalone headers were not getting anchor links).
+  - Fix references in “Working with Data Shape”.
+
+
 ## 0.4.5
 
   - Moved source files into dedicated folder `docs`.
@@ -161,7 +201,7 @@ when versioning of the MDAPL rework started.
    - (possibly other changes);
    
  - Add chapter “Some Primitive Functions”:
-   - introduce match and depth (≡) and not-match and tally (≢);
+   - introduce match and depth (`≡`) and not-match and tally (`≢`);
    - [n] mention unique that renders the `((⍳≢vector) = vector ⍳ vector) / vector` example as obsolete;
    - (possibly other changes);
    
