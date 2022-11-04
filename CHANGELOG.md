@@ -8,6 +8,12 @@ However, because this book is a rework of the first edition by Bernard Legrand,
 this changelog also marks with [n] content that is new in this rework.
 
 
+## 0.6.1
+
+  - Add section “More about DISPLAY” to chapter “Nested Arrays (Continued)”.
+  - Fix bad cross-reference.
+
+
 ## 0.6.0
 
   - [n] Add chapter “Tacit Programming”:
