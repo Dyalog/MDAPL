@@ -1,0 +1,53 @@
+<svg viewBox="0 0 230 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2">
+<style>
+svg text {
+  white-space: pre;
+}
+.code {
+  fill: #fff;
+  stroke: none;
+}
+.Value     ,a.Value        { color: #19177C; }
+.Function  ,a.Function     { color: #666666; }
+.Modifier2 ,a.Modifier2    { color: #7D9029; }
+
+svg tspan {
+  fill: currentColor;
+}
+.purple    { fill:#d6afe0; stroke:#3d1b46; } text.purple   ,.purple    text { fill:#3b1346; stroke:none; }
+.lilac     { fill:none;    stroke:#736480; } text.lilac    ,.lilac     text { fill:#3b373e; stroke:none; }
+.bluegreen { fill:#55cbcb; stroke:#1c4e4e; } text.bluegreen,.bluegreen text { fill:#183d3d; stroke:none; }
+.yellow    { fill:#e2d17f; stroke:#B00040; } text.yellow   ,.yellow    text { fill:#7a5a0e; stroke:none; }
+.red       { fill:#ce8379; stroke:#861d17; } text.red      ,.red       text { fill:#510d09; stroke:none; }
+.green     { fill:#6fb360; stroke:#1b6720; } text.green    ,.green     text { fill:#14401a; stroke:none; }
+
+g tspan{font-family:APL385 Unicode}
+</style>
+  <g font-size="20px" text-anchor="middle" transform="translate(40,25)">
+    <g font-size="21px">
+      <text dy="0.32em" y="155" font-size="19px"><tspan class="Function">F</tspan><tspan class="Modifier2">∘</tspan><tspan class="Function">G</tspan> <tspan class="Value">⍵</tspan></text>
+      <path class="yellow" style="fill:none" stroke-width="2" d="M0 0L0 57"></path>
+      <path class="yellow" style="fill:none" stroke-width="2" d="M0 57L0 114"></path>
+      <circle r="12" class="code" stroke-width="0" cx="0" cy="0"></circle>
+      <circle r="12" class="code" stroke-width="0" cx="0" cy="57"></circle>
+      <circle r="12" class="code" stroke-width="0" cx="0" cy="114"></circle>
+      <text dy="0.32em" x="0" y="0"><tspan class="Function">F</tspan></text>
+      <text dy="0.32em" x="0" y="57"><tspan class="Function">G</tspan></text>
+      <text dy="0.32em" x="0" y="114"><tspan class="Value">⍵</tspan></text>
+    </g>
+    <g font-size="21px" transform="translate(120,0)">
+      <text dy="0.32em" y="155" font-size="19px"><tspan class="Value">⍺</tspan> <tspan class="Function">F</tspan><tspan class="Modifier2">∘</tspan><tspan class="Function">G</tspan> <tspan class="Value">⍵</tspan></text>
+      <path class="yellow" style="fill:none" stroke-width="2" d="M0 0C-40 57 -32 51.3 -32 114"></path>
+      <path class="yellow" style="fill:none" stroke-width="2" d="M0 0L32 57"></path>
+      <path class="yellow" style="fill:none" stroke-width="2" d="M32 57L32 114"></path>
+      <circle r="12" class="code" stroke-width="0" cx="0" cy="0"></circle>
+      <circle r="12" class="code" stroke-width="0" cx="32" cy="57"></circle>
+      <circle r="12" class="code" stroke-width="0" cx="-32" cy="114"></circle>
+      <circle r="12" class="code" stroke-width="0" cx="32" cy="114"></circle>
+      <text dy="0.32em" x="0" y="0"><tspan class="Function">F</tspan></text>
+      <text dy="0.32em" x="32" y="57"><tspan class="Function">G</tspan></text>
+      <text dy="0.32em" x="-32" y="114"><tspan class="Value">⍺</tspan></text>
+      <text dy="0.32em" x="32" y="114"><tspan class="Value">⍵</tspan></text>
+    </g>
+  </g>
+</svg>
