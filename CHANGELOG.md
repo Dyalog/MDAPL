@@ -7,6 +7,22 @@ In the first instance, it lists the changes between consecutive releases of this
 However, because this book is a rework of the first edition by Bernard Legrand,
 this changelog also marks with [n] content that is new in this rework.
 
+
+## 0.6.0
+
+  - [n] Add chapter “Tacit Programming”:
+    - [n] add section “Function Composition”:
+      - add section “Operators > Compose”;
+      - [n] add “Atop” `⍤` and “Over” `⍥`;
+    - [n] add section “Binding”:
+      - [n] add example of binding in the right operand of `@`, e.g. in `0@(>∘5)` to replace values larger than 5;
+    - add old “Operators > Commute”:
+      - [n] distinguish between “Commute” and “Selfie”;
+    - [n] add section “Constant” on `A⍨`;
+    - [n] write about trains;
+    - [n] add exercises.
+
+
 ## 0.5.0
 
   - Add chapter “Operators”:
