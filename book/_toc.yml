@@ -14,4 +14,5 @@ sections:
 - file: Special-Syntax
 - file: Nested-Arrays-Continued
 - file: Operators
+- file: Tacit-Programming
 - file: Appendices
