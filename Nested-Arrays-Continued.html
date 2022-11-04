@@ -389,6 +389,33 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-about-display">
+     10.1.3. More about DISPLAY
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conventions">
+       10.1.3.1. Conventions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#change-the-default-presentation">
+       10.1.3.2. Change the Default Presentation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#distinguish-between-items">
+       10.1.3.3. Distinguish Between Items
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#empty-arrays">
+       10.1.3.4. Empty Arrays
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -535,7 +562,7 @@ title="Print to PDF"
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#mix-applied-to-heterogeneous-data">
-       10.8.1.1. Mix applied to heterogeneous data
+       10.8.1.1. Mix Applied to Heterogeneous Data
       </a>
      </li>
     </ul>
@@ -811,6 +838,33 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-about-display">
+     10.1.3. More about DISPLAY
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conventions">
+       10.1.3.1. Conventions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#change-the-default-presentation">
+       10.1.3.2. Change the Default Presentation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#distinguish-between-items">
+       10.1.3.3. Distinguish Between Items
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#empty-arrays">
+       10.1.3.4. Empty Arrays
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -957,7 +1011,7 @@ title="Print to PDF"
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#mix-applied-to-heterogeneous-data">
-       10.8.1.1. Mix applied to heterogeneous data
+       10.8.1.1. Mix Applied to Heterogeneous Data
       </a>
      </li>
     </ul>
@@ -1575,6 +1629,246 @@ And the results also vary depending on where the <em>enclose</em> primitives are
 └∊────────────────────────────────────────────────────────────────────────────────────────┘
 </span></div></div>
 </div>
+<p>Now, we revert back to the original values because we will need <code class="docutils literal notranslate"><span class="pre">nesVec</span></code> below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">nesVec</span><span class="sr">[</span><span class="m">1</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">6</span><span class="sr">]</span><span class="w"> </span><span class="kd">←</span><span class="w"> </span><span class="s1">&#39;Yes&#39;</span><span class="w"> </span><span class="m">987</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="more-about-display">
+<span id="nested-arrays-continued-more-about-display"></span><h3><span class="section-number">10.1.3. </span>More about DISPLAY<a class="headerlink" href="#more-about-display" title="Permalink to this headline">#</a></h3>
+<p>Most of the time, the user command <code class="docutils literal notranslate"><span class="pre">]box</span></code> displays enough information when working with nested arrays in the session.
+However, in some situations, you might want or need more granular display information, which you can obtain by using the function <code class="docutils literal notranslate"><span class="pre">DISPLAY</span></code>.
+We have already seen the function <code class="docutils literal notranslate"><span class="pre">DISPLAY</span></code> and its main characteristics in <a class="reference internal" href="Data-and-Variables.html#data-and-variables-display"><span class="std std-numref">Section 3.6.4</span></a>.
+We now need to explore some additional characteristics of it.</p>
+<div class="section" id="conventions">
+<span id="nested-arrays-continued-conventions"></span><h4><span class="section-number">10.1.3.1. </span>Conventions<a class="headerlink" href="#conventions" title="Permalink to this headline">#</a></h4>
+<p>The following conventions are used in the character matrix that <code class="docutils literal notranslate"><span class="pre">DISPLAY</span></code> returns:</p>
+<ul class="simple">
+<li><p>A simple scalar has no box around it.</p></li>
+<li><p>All other arrays are shown with a surrounding box.
+The upper-left hand corner of the box describes the <em>shape</em> of the array.
+It can be:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">─</span></code>, a simple line for a scalar that is an enclosed array;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">→</span></code>, a single arrow, for a vector;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">↓</span></code> or <code class="docutils literal notranslate"><span class="pre">↓↓</span></code>, one or more vertical arrows for matrices and higher-rank arrays;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">⊖</span></code>, a horizontal circled minus for an array with empty last axis; or</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">⌽</span></code>, a vertical circled bar for an array with another empty axis.</p></li>
+</ul>
+</li>
+<li><p>The bottom-left hand corner of the box describes the nature of the array:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">─</span></code>, a simple line for character contents;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~</span></code>, a tilde for numeric contents;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code>, a <em>plus</em> symbol for mixed contents;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">∊</span></code>, a <em>membership</em> symbol for nested arrays;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">∇</span></code>, a <em>del</em> for <code class="docutils literal notranslate"><span class="pre">⎕OR</span></code> arrays; or</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span></code>, a hash for <em>namespace</em> references.</p></li>
+</ul>
+</li>
+</ul>
+<p>We have not yet studied the last two concepts (<code class="docutils literal notranslate"><span class="pre">⎕OR</span></code> and namespaces); you can ignore them for now.</p>
+</div>
+<div class="section" id="change-the-default-presentation">
+<span id="nested-arrays-continued-change-the-default-presentation"></span><h4><span class="section-number">10.1.3.2. </span>Change the Default Presentation<a class="headerlink" href="#change-the-default-presentation" title="Permalink to this headline">#</a></h4>
+<p>By default, the boxes are drawn with special line-drawing characters, but you can provide a zero left argument to force the function to use alternative (standard APL) characters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="p">)</span><span class="nv">copy</span><span class="w"> </span><span class="nv">DISPLAY</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">C:\Program Files\Dyalog\Dyalog APL-64 18.2 Unicode\ws\DISPLAY.dws saved Thu Apr  7 00:29:10 2022
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">DISPLAY</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→────┐
+│Hello│
+└─────┘
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="m">0</span><span class="w"> </span><span class="nv">DISPLAY</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">.→----.
+|Hello|
+'-----'
+</span></div></div>
+</div>
+<p>As mentioned previously, the default presentation looks a lot better on the screen, but there may be situations where using standard APL characters may be preferred.</p>
+</div>
+<div class="section" id="distinguish-between-items">
+<span id="nested-arrays-continued-distinguish-between-items"></span><h4><span class="section-number">10.1.3.3. </span>Distinguish Between Items<a class="headerlink" href="#distinguish-between-items" title="Permalink to this headline">#</a></h4>
+<p>Now that we have discovered the existence of scalars which are enclosed arrays, we can use <code class="docutils literal notranslate"><span class="pre">DISPLAY</span></code> to distinguish between the two kinds of scalars.</p>
+<p>Notice how <code class="docutils literal notranslate"><span class="pre">DISPLAY</span></code> does not draw a box around the 34 below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">DISPLAY</span><span class="w"> </span><span class="m">34</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">  
+34
+
+</span></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">DISPLAY</span><span class="w"> </span><span class="nv">nesVec</span><span class="sr">[</span><span class="m">6</span><span class="sr">]</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌─────────┐
+│ ┌→────┐ │
+│ │Hello│ │
+│ └─────┘ │
+└∊────────┘
+</span></div></div>
+</div>
+<p>The sixth item of <code class="docutils literal notranslate"><span class="pre">nesVec</span></code> is an enclosed vector, so its corners are marked with a simple line and an <code class="docutils literal notranslate"><span class="pre">∊</span></code>.
+It contains a second box whose corners tell us that <code class="docutils literal notranslate"><span class="pre">'Hello'</span></code> is a character vector.
+<code class="docutils literal notranslate"><span class="pre">nesVec[6]</span></code> is a scalar containing a vector.
+If we <em>disclose</em> the item, we obtain a simple vector:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">DISPLAY</span><span class="w"> </span><span class="o">⊃</span><span class="nv">nesVec</span><span class="sr">[</span><span class="m">6</span><span class="sr">]</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→────┐
+│Hello│
+└─────┘
+</span></div></div>
+</div>
+</div>
+<div class="section" id="empty-arrays">
+<span id="nested-arrays-continued-empty-arrays"></span><h4><span class="section-number">10.1.3.4. </span>Empty Arrays<a class="headerlink" href="#empty-arrays" title="Permalink to this headline">#</a></h4>
+<p>Here is how <code class="docutils literal notranslate"><span class="pre">DISPLAY</span></code> identifies some empty arrays:</p>
+<ul class="simple">
+<li><p>Empty numeric vector:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">DISPLAY</span><span class="w"> </span><span class="no">⍬</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌⊖┐
+│0│
+└~┘
+</span></div></div>
+</div>
+<ul class="simple">
+<li><p>Empty text vector:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">DISPLAY</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌⊖┐
+│ │
+└─┘
+</span></div></div>
+</div>
+<p>These are vectors, because there is not vertical arrow, and the <code class="docutils literal notranslate"><span class="pre">⊖</span></code> sign indicates that they are empty.
+At the bottom of the boxes, the symbols <code class="docutils literal notranslate"><span class="pre">~</span></code> and <code class="docutils literal notranslate"><span class="pre">─</span></code> show that an empty numeric vector and an empty character vector are different.
+One contains a zero, the other contains a blank.
+This indicates the type of the array, which is a property of an array even when the array is empty (in <a class="reference internal" href="#nested-arrays-continued-type-prototype-fill-item"><span class="std std-numref">Section 10.9</span></a> we talk more about <em>fill</em> items).</p>
+<p>We can see the same kind of output for empty matrices:</p>
+<ul class="simple">
+<li><p>Empty numeric matrix:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">DISPLAY</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">5</span><span class="o">⍴</span><span class="m">0</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→────────┐
+⌽0 0 0 0 0│
+└~────────┘
+</span></div></div>
+</div>
+<ul class="simple">
+<li><p>Empty character matrix:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">DISPLAY</span><span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">10</span><span class="o">⍴</span><span class="s1">&#39;&#39;</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌→─────────┐
+⌽          │
+└──────────┘
+</span></div></div>
+</div>
+<ul class="simple">
+<li><p>Another empty character matrix:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">DISPLAY</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">0</span><span class="o">⍴</span><span class="s1">&#39;&#39;</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌⊖┐
+↓ │
+│ │
+│ │
+│ │
+│ │
+└─┘
+</span></div></div>
+</div>
+<ul class="simple">
+<li><p>Empty numeric 3D array:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-APL notranslate"><div class="highlight"><pre><span></span><span class="nv">DISPLAY</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">0</span><span class="o">⍴</span><span class="m">0</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><span style="white-space:pre; font-family: monospace">┌┌⊖┐
+↓↓0│
+││0│
+││0│
+││ │
+││0│
+││0│
+││0│
+└└~┘
+</span></div></div>
+</div>
+<p>The output for the empty numeric 3D array contains 2 sets of 3 zeroes to show that its shape is <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span> <span class="pre">0</span></code>.</p>
 </div>
 </div>
 </div>
@@ -3347,7 +3641,7 @@ Three
 <p>Note that the two new vectors (<code class="docutils literal notranslate"><span class="pre">newtex</span></code> and <code class="docutils literal notranslate"><span class="pre">newnum</span></code>) are not identical to the original ones (<code class="docutils literal notranslate"><span class="pre">vtex</span></code> and <code class="docutils literal notranslate"><span class="pre">vnum</span></code>) because, when they were converted into the matrices <code class="docutils literal notranslate"><span class="pre">rtex</span></code> and <code class="docutils literal notranslate"><span class="pre">rnum</span></code>, the shorter items were padded.
 When one splits a matrix, the items of the result all have the same size.</p>
 <div class="section" id="mix-applied-to-heterogeneous-data">
-<span id="nested-arrays-continued-mix-applied-to-heterogeneous-data"></span><h4><span class="section-number">10.8.1.1. </span>Mix applied to heterogeneous data<a class="headerlink" href="#mix-applied-to-heterogeneous-data" title="Permalink to this headline">#</a></h4>
+<span id="nested-arrays-continued-mix-applied-to-heterogeneous-data"></span><h4><span class="section-number">10.8.1.1. </span>Mix Applied to Heterogeneous Data<a class="headerlink" href="#mix-applied-to-heterogeneous-data" title="Permalink to this headline">#</a></h4>
 <p>The examples shown above represent very common uses of <em>mix</em> and <em>split</em>.
 However, it is of course also possible to apply the functions to heterogeneous data.</p>
 <p>For example, we can mix text and numbers:</p>
