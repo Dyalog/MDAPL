@@ -8,6 +8,27 @@ However, because this book is a rework of the first edition by Bernard Legrand,
 this changelog also marks with [n] content that is new in this rework.
 
 
+## 0.7.0
+
+  - Add chapter “Mathematical Functions”:
+    - refactor “Sorting and Searching Data”:
+        - [n] explain how “Grade Up/Down” sort numeric arrays of arbitrary rank;
+        - [n] add subsection on how “Grade Up” `⍋` inverts a permutation;
+    - remove subsection “Encode & Decode > Applications > Calculating Positions in a Matrix” (rendered obsolete by high-rank “Index Of”);
+    - refactor “Randomised Values”:
+        - [n] say “Deal” `?0` generates decimal numbers between 0 and 1;
+        - move Specialist's Subsection “Random Link” to the main section (the book uses `⎕RL` a lot to generate variables, so it makes sense to describe it in the main text).
+    - refactor subsection “Some More Maths”:
+        - [n] list the “Circle” functions for complex numbers;
+        - [n] add the identity `(×≡∨×∧)`;
+        - [n] mention “Unique” `∪` next to “Union” and “Intersection”.
+    - refactor “Exercises”:
+        - [n] add exercise on representing sparse matrices and using “Encode” and “Decode” (replaces old “Encode & Decode > Applications > Calculating Positions in a Matrix”).
+    - refactor “The Specialist's Section”:
+        - move “Random Link” out;
+        - [n] write about total array ordering.
+
+
 ## 0.6.1
 
   - Add section “More about DISPLAY” to chapter “Nested Arrays (Continued)”.
